@@ -9,7 +9,7 @@ HYTOPIA allows you to create your own highly-sharable, immersive, massively mult
 
 ## What is this SDK?
 
-The HYTOPIA SDK makes it easy for developers to create multiplayer games on the HYTOPIA platform using TypeScript or JavaScript. 
+The HYTOPIA SDK makes it easy for developers to create multiplayer games on the HYTOPIA platform using JavaScript or TypeScript. 
 
 Available as a simple NPM package, this SDK provides everything you need to get started:
 
