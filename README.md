@@ -3,8 +3,7 @@
 ## What is HYTOPIA?
 
 ![HYTOPIA Banner](./docs/assets/banner.png)
-
-HYTOPIA is a modern game creation and publication platform inspired by Minecraft, Roblox, and Rec Room. HYTOPIA allows you to create your own immersive massively multiplayer games in a voxel-like style. 
+HYTOPIA is a modern game creation and publication platform inspired by Minecraft, Roblox, and Rec Room. HYTOPIA allows you to create your own highly-sharable, immersive massively multiplayer games in a voxel-like style. All playable in a web browser on any device!
 
 ## What is this SDK?
 
