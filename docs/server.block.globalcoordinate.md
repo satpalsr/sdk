@@ -4,6 +4,8 @@
 
 ## Block.globalCoordinate property
 
+The global coordinate of the block.
+
 **Signature:**
 
 ```typescript

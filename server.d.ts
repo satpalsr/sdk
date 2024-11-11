@@ -286,11 +286,23 @@ export declare class BaseCharacterController {
     tickPathfindingMovement(destination: Vector3, deltaTimeMs: number): void;
 }
 
+/**
+ * Represents a block in a world.
+ *
+ * @remarks
+ * Instances of this class are created internally but made
+ * publicly available through various public facing API
+ * methods.
+ *
+ * @public
+ */
 export declare class Block {
+    /** The global coordinate of the block. */
     readonly globalCoordinate: Vector3;
+    /** The block type of the block. */
     readonly blockType: BlockType;
-    constructor(coordinate: Vector3, blockType: BlockType);
-    static fromGlobalCoordinate(globalCoordinate: Vector3, blockType: BlockType): Block;
+
+
 }
 
 export declare class BlockType implements protocol.Serializable {

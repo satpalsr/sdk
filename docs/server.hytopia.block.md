@@ -4,45 +4,19 @@
 
 ## HYTOPIA.Block class
 
+Represents a block in a world.
+
 **Signature:**
 
 ```typescript
 export default class Block 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+Instances of this class are created internally but made publicly available through various public facing API methods.
 
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(coordinate, blockType)](./server.hytopia.block._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `Block` class
-
-
-</td></tr>
-</tbody></table>
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Block` class.
 
 ## Properties
 
@@ -84,6 +58,8 @@ Description
 
 </td><td>
 
+The block type of the block.
+
 
 </td></tr>
 <tr><td>
@@ -103,39 +79,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-</tbody></table>
-
-## Methods
-
-<table><thead><tr><th>
-
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[fromGlobalCoordinate(globalCoordinate, blockType)](./server.hytopia.block.fromglobalcoordinate.md)
-
-
-</td><td>
-
-`static`
-
-
-</td><td>
+The global coordinate of the block.
 
 
 </td></tr>

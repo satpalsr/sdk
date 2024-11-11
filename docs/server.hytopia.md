@@ -55,6 +55,8 @@ Manages audio instances in a world.
 
 </td><td>
 
+Represents a block in a world.
+
 
 </td></tr>
 <tr><td>

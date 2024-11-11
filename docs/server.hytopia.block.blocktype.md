@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Block.blockType property
 
+The block type of the block.
+
 **Signature:**
 
 ```typescript
