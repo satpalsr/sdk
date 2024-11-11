@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.setPosition() method
 
+Sets the position of the audio. Will detach from entity if attached.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ position
 
 
 </td><td>
+
+The position in the world.
 
 
 </td></tr>

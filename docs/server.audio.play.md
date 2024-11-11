@@ -4,6 +4,8 @@
 
 ## Audio.play() method
 
+Plays or resumes the audio.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ world
 
 </td><td>
 
+The world to play the audio in.
+
 
 </td></tr>
 <tr><td>
@@ -54,7 +58,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ If true, the audio will restart from the beginning if it is already playing.
 
 
 </td></tr>

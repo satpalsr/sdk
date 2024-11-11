@@ -24,6 +24,8 @@ Description
 
 </td><td>
 
+An audio instance in a world.
+
 
 </td></tr>
 <tr><td>

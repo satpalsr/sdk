@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.setDistortion() method
 
+Sets the distortion of the audio.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The distortion amount.
 
 
 </td></tr>

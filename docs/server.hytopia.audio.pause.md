@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.pause() method
 
+Pauses the audio.
+
 **Signature:**
 
 ```typescript

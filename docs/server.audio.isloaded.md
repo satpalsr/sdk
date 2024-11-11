@@ -4,6 +4,8 @@
 
 ## Audio.isLoaded property
 
+Whether the audio has loaded into the world. Audio is loaded the first time play() is called.
+
 **Signature:**
 
 ```typescript

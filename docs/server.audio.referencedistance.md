@@ -4,6 +4,8 @@
 
 ## Audio.referenceDistance property
 
+The reference distance of the audio if explicitly set.
+
 **Signature:**
 
 ```typescript

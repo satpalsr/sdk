@@ -4,12 +4,29 @@
 
 ## HYTOPIA.Audio class
 
+An audio instance in a world.
+
 **Signature:**
 
 ```typescript
 export default class Audio implements protocol.Serializable 
 ```
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Audio instances are created directly as instances. They support a variety of configuration options through the
+
+## Example
+
+
+```typescript
+(new Audio({
+  uri: 'assets/music/song.mp3',
+  loop: true,
+  volume: 0.5,
+})).play(world);
+```
 
 ## Constructors
 
@@ -85,6 +102,8 @@ Description
 
 </td><td>
 
+The entity to which the audio is attached if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -103,6 +122,8 @@ number \| undefined
 
 
 </td><td>
+
+The detune of the audio in cents if explicitly set.
 
 
 </td></tr>
@@ -123,6 +144,8 @@ number \| undefined
 
 </td><td>
 
+The amount of distortion to apply to the audio if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -141,6 +164,8 @@ number \| undefined
 
 
 </td><td>
+
+The duration of the audio in seconds if explicitly set.
 
 
 </td></tr>
@@ -161,6 +186,8 @@ number \| undefined
 
 </td><td>
 
+The unique identifier for the audio.
+
 
 </td></tr>
 <tr><td>
@@ -179,6 +206,8 @@ boolean
 
 
 </td><td>
+
+Whether the audio has loaded into the world. Audio is loaded the first time play() is called.
 
 
 </td></tr>
@@ -199,6 +228,8 @@ boolean
 
 </td><td>
 
+Whether the audio is currently playing.
+
 
 </td></tr>
 <tr><td>
@@ -217,6 +248,8 @@ boolean
 
 
 </td><td>
+
+Whether the audio is positional (Entity or position attached).
 
 
 </td></tr>
@@ -237,6 +270,8 @@ boolean
 
 </td><td>
 
+Whether the audio is looped.
+
 
 </td></tr>
 <tr><td>
@@ -255,6 +290,8 @@ number \| undefined
 
 
 </td><td>
+
+The offset time in seconds from which the audio should start playing if explicitly set.
 
 
 </td></tr>
@@ -275,6 +312,8 @@ number \| undefined
 
 </td><td>
 
+The playback rate of the audio if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -293,6 +332,8 @@ number \| undefined
 
 
 </td><td>
+
+The position of the audio in the world if explicitly set.
 
 
 </td></tr>
@@ -313,6 +354,8 @@ number \| undefined
 
 </td><td>
 
+The reference distance of the audio if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -331,6 +374,8 @@ number \| undefined
 
 
 </td><td>
+
+The server tick at which the audio started playing.
 
 
 </td></tr>
@@ -351,6 +396,8 @@ string
 
 </td><td>
 
+The URI of the audio asset.
+
 
 </td></tr>
 <tr><td>
@@ -370,6 +417,8 @@ number \| undefined
 
 </td><td>
 
+The volume of the audio if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -388,6 +437,8 @@ number \| undefined
 
 
 </td><td>
+
+The world the audio is in if already loaded.
 
 
 </td></tr>
@@ -421,6 +472,8 @@ Description
 
 </td><td>
 
+Pauses the audio.
+
 
 </td></tr>
 <tr><td>
@@ -433,17 +486,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[serialize()](./server.hytopia.audio.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
+Plays or resumes the audio.
 
 
 </td></tr>
@@ -457,6 +500,8 @@ Description
 
 </td><td>
 
+Sets the entity to which the audio is attached, following its position.
+
 
 </td></tr>
 <tr><td>
@@ -468,6 +513,8 @@ Description
 
 
 </td><td>
+
+Sets the detune of the audio.
 
 
 </td></tr>
@@ -481,6 +528,8 @@ Description
 
 </td><td>
 
+Sets the distortion of the audio.
+
 
 </td></tr>
 <tr><td>
@@ -492,6 +541,8 @@ Description
 
 
 </td><td>
+
+Sets the playback rate of the audio.
 
 
 </td></tr>
@@ -505,6 +556,8 @@ Description
 
 </td><td>
 
+Sets the position of the audio. Will detach from entity if attached.
+
 
 </td></tr>
 <tr><td>
@@ -517,6 +570,8 @@ Description
 
 </td><td>
 
+Sets the reference distance of the audio.
+
 
 </td></tr>
 <tr><td>
@@ -528,6 +583,8 @@ Description
 
 
 </td><td>
+
+Sets the volume of the audio.
 
 
 </td></tr>

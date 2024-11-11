@@ -4,6 +4,8 @@
 
 ## Audio.volume property
 
+The volume of the audio if explicitly set.
+
 **Signature:**
 
 ```typescript

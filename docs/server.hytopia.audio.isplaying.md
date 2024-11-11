@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.isPlaying property
 
+Whether the audio is currently playing.
+
 **Signature:**
 
 ```typescript

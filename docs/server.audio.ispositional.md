@@ -4,6 +4,8 @@
 
 ## Audio.isPositional property
 
+Whether the audio is positional (Entity or position attached).
+
 **Signature:**
 
 ```typescript

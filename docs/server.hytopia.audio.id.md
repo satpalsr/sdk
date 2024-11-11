@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.id property
 
+The unique identifier for the audio.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## Audio.loop property
 
+Whether the audio is looped.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.attachedToEntity property
 
+The entity to which the audio is attached if explicitly set.
+
 **Signature:**
 
 ```typescript

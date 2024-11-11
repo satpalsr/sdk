@@ -4,6 +4,8 @@
 
 ## Audio.playbackRate property
 
+The playback rate of the audio if explicitly set.
+
 **Signature:**
 
 ```typescript

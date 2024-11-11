@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.setReferenceDistance() method
 
+Sets the reference distance of the audio.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The reference distance.
 
 
 </td></tr>

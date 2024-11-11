@@ -4,6 +4,8 @@
 
 ## Audio.uri property
 
+The URI of the audio asset.
+
 **Signature:**
 
 ```typescript

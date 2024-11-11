@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.offset property
 
+The offset time in seconds from which the audio should start playing if explicitly set.
+
 **Signature:**
 
 ```typescript

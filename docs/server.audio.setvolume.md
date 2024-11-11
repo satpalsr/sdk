@@ -4,6 +4,8 @@
 
 ## Audio.setVolume() method
 
+Sets the volume of the audio.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The volume level.
 
 
 </td></tr>

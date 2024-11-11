@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "",
+          "docComment": "/**\n * An audio instance in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -201,7 +201,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!Audio:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Audio` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `Audio` class\n *\n * @param audioData - The options for the audio instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -234,7 +234,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#attachedToEntity:member",
-              "docComment": "",
+              "docComment": "/**\n * The entity to which the audio is attached if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -269,7 +269,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#detune:member",
-              "docComment": "",
+              "docComment": "/**\n * The detune of the audio in cents if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -299,7 +299,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#distortion:member",
-              "docComment": "",
+              "docComment": "/**\n * The amount of distortion to apply to the audio if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -329,7 +329,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#duration:member",
-              "docComment": "",
+              "docComment": "/**\n * The duration of the audio in seconds if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -359,7 +359,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#id:member",
-              "docComment": "",
+              "docComment": "/**\n * The unique identifier for the audio.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -389,7 +389,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#isLoaded:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the audio has loaded into the world. Audio is loaded the first time play() is called.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -419,7 +419,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#isPlaying:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the audio is currently playing.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -449,7 +449,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#isPositional:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the audio is positional (Entity or position attached).\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -479,7 +479,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#loop:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the audio is looped.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -509,7 +509,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#offset:member",
-              "docComment": "",
+              "docComment": "/**\n * The offset time in seconds from which the audio should start playing if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -539,7 +539,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#pause:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Pauses the audio.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -570,7 +570,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#play:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Plays or resumes the audio.\n *\n * @param world - The world to play the audio in.\n *\n * @param restart - If true, the audio will restart from the beginning if it is already playing.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -635,7 +635,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#playbackRate:member",
-              "docComment": "",
+              "docComment": "/**\n * The playback rate of the audio if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -665,7 +665,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#position:member",
-              "docComment": "",
+              "docComment": "/**\n * The position of the audio in the world if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -700,7 +700,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#referenceDistance:member",
-              "docComment": "",
+              "docComment": "/**\n * The reference distance of the audio if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -729,40 +729,8 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!Audio#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.AudioSchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!AudioSchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!Audio#setAttachedToEntity:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the entity to which the audio is attached, following its position.\n *\n * @param entity - The entity to attach the audio to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -811,7 +779,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setDetune:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the detune of the audio.\n *\n * @param detune - The detune in cents.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -859,7 +827,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setDistortion:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the distortion of the audio.\n *\n * @param distortion - The distortion amount.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -907,7 +875,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setPlaybackRate:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the playback rate of the audio.\n *\n * @param playbackRate - The playback rate.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -955,7 +923,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setPosition:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the position of the audio. Will detach from entity if attached.\n *\n * @param position - The position in the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1004,7 +972,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setReferenceDistance:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the reference distance of the audio.\n *\n * @param referenceDistance - The reference distance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1052,7 +1020,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setVolume:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the volume of the audio.\n *\n * @param volume - The volume level.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1100,7 +1068,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#startTick:member",
-              "docComment": "",
+              "docComment": "/**\n * The server tick at which the audio started playing.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1130,7 +1098,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#uri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI of the audio asset.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1160,7 +1128,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#volume:member",
-              "docComment": "",
+              "docComment": "/**\n * The volume of the audio if explicitly set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1190,7 +1158,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Audio#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the audio is in if already loaded.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -13006,7 +12974,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Audio:class",
-              "docComment": "",
+              "docComment": "/**\n * An audio instance in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -13031,7 +12999,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.Audio:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `Audio` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `Audio` class\n *\n * @param audioData - The options for the audio instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13064,7 +13032,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#attachedToEntity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The entity to which the audio is attached if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13099,7 +13067,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#detune:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The detune of the audio in cents if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13129,7 +13097,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#distortion:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The amount of distortion to apply to the audio if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13159,7 +13127,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#duration:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The duration of the audio in seconds if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13189,7 +13157,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#id:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The unique identifier for the audio.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13219,7 +13187,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#isLoaded:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the audio has loaded into the world. Audio is loaded the first time play() is called.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13249,7 +13217,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#isPlaying:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the audio is currently playing.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13279,7 +13247,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#isPositional:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the audio is positional (Entity or position attached).\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13309,7 +13277,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#loop:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the audio is looped.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13339,7 +13307,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#offset:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The offset time in seconds from which the audio should start playing if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13369,7 +13337,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#pause:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Pauses the audio.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13400,7 +13368,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#play:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Plays or resumes the audio.\n *\n * @param world - The world to play the audio in.\n *\n * @param restart - If true, the audio will restart from the beginning if it is already playing.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13465,7 +13433,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#playbackRate:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The playback rate of the audio if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13495,7 +13463,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#position:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The position of the audio in the world if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13530,7 +13498,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#referenceDistance:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The reference distance of the audio if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13559,40 +13527,8 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Audio#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.AudioSchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!AudioSchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setAttachedToEntity:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the entity to which the audio is attached, following its position.\n *\n * @param entity - The entity to attach the audio to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13641,7 +13577,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setDetune:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the detune of the audio.\n *\n * @param detune - The detune in cents.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13689,7 +13625,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setDistortion:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the distortion of the audio.\n *\n * @param distortion - The distortion amount.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13737,7 +13673,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setPlaybackRate:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the playback rate of the audio.\n *\n * @param playbackRate - The playback rate.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13785,7 +13721,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setPosition:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the position of the audio. Will detach from entity if attached.\n *\n * @param position - The position in the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13834,7 +13770,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setReferenceDistance:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the reference distance of the audio.\n *\n * @param referenceDistance - The reference distance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13882,7 +13818,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Audio#setVolume:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the volume of the audio.\n *\n * @param volume - The volume level.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13930,7 +13866,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#startTick:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The server tick at which the audio started playing.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13960,7 +13896,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#uri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI of the audio asset.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -13990,7 +13926,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#volume:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The volume of the audio if explicitly set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14020,7 +13956,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Audio#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the audio is in if already loaded.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

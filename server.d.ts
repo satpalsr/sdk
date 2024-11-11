@@ -10,51 +10,134 @@ import { SdpMatrix3 } from '@dimforge/rapier3d-compat';
 import { Vector } from '@dimforge/rapier3d-compat';
 import { WebSocket as WebSocket_2 } from 'ws';
 
+/**
+ * An audio instance in a world.
+ *
+ * @remarks
+ * Audio instances are created directly as instances.
+ * They support a variety of configuration options through
+ * the @see {@link AudioData} constructor argument.
+ *
+ * @example
+ * ```typescript
+ * (new Audio({
+ *   uri: 'assets/music/song.mp3',
+ *   loop: true,
+ *   volume: 0.5,
+ * })).play(world);
+ * ```
+ *
+ * @public
+ */
 export declare class Audio implements protocol.Serializable {
-    private _id;
-    private _attachedToEntity;
-    private _duration;
-    private _detune;
-    private _distortion;
-    private _loop;
-    private _offset;
-    private _position;
-    private _playbackRate;
-    private _playing;
-    private _referenceDistance;
-    private _startTick;
-    private _uri;
-    private _volume;
-    private _world;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @param audioData - The options for the audio instance.
+     */
     constructor(audioData: AudioData);
+    /** The unique identifier for the audio. */
     get id(): number | undefined;
+    /** The entity to which the audio is attached if explicitly set. */
     get attachedToEntity(): Entity | undefined;
+    /** The duration of the audio in seconds if explicitly set. */
     get duration(): number | undefined;
+    /** The detune of the audio in cents if explicitly set. */
     get detune(): number | undefined;
+    /** The amount of distortion to apply to the audio if explicitly set. */
     get distortion(): number | undefined;
+    /** Whether the audio is looped. */
     get loop(): boolean;
+    /** The offset time in seconds from which the audio should start playing if explicitly set. */
     get offset(): number | undefined;
+    /** Whether the audio has loaded into the world. Audio is loaded the first time play() is called. */
     get isLoaded(): boolean;
+    /** Whether the audio is currently playing. */
     get isPlaying(): boolean;
+    /** Whether the audio is positional (Entity or position attached). */
     get isPositional(): boolean;
+    /** The position of the audio in the world if explicitly set. */
     get position(): Vector3 | undefined;
+    /** The playback rate of the audio if explicitly set. */
     get playbackRate(): number | undefined;
+    /** The reference distance of the audio if explicitly set. */
     get referenceDistance(): number | undefined;
+    /** The server tick at which the audio started playing. */
     get startTick(): number | undefined;
+    /** The URI of the audio asset. */
     get uri(): string;
+    /** The volume of the audio if explicitly set. */
     get volume(): number | undefined;
+    /** The world the audio is in if already loaded. */
     get world(): World | undefined;
+    /**
+     * Plays or resumes the audio.
+     *
+     * @param world - The world to play the audio in.
+     * @param restart - If true, the audio will restart from the beginning if it is already playing.
+     */
     play(world: World, restart?: boolean): void;
+    /**
+     * Pauses the audio.
+     */
     pause(): void;
+    /**
+     * Sets the entity to which the audio is attached, following its position.
+     *
+     * @param entity - The entity to attach the audio to.
+     */
     setAttachedToEntity(entity: Entity): void;
+    /**
+     * Sets the detune of the audio.
+     *
+     * @param detune - The detune in cents.
+     */
     setDetune(detune: number): void;
+    /**
+     * Sets the distortion of the audio.
+     *
+     * @param distortion - The distortion amount.
+     */
     setDistortion(distortion: number): void;
+    /**
+     * Sets the position of the audio. Will detach from entity if attached.
+     *
+     * @param position - The position in the world.
+     */
     setPosition(position: Vector3): void;
+    /**
+     * Sets the playback rate of the audio.
+     *
+     * @param playbackRate - The playback rate.
+     */
     setPlaybackRate(playbackRate: number): void;
+    /**
+     * Sets the reference distance of the audio.
+     *
+     * @param referenceDistance - The reference distance.
+     */
     setReferenceDistance(referenceDistance: number): void;
+    /**
+     * Sets the volume of the audio.
+     *
+     * @param volume - The volume level.
+     */
     setVolume(volume: number): void;
-    serialize(): protocol.AudioSchema;
-    private _requirePositional;
+
+
 }
 
 /** Options for creating an Audio instance. @public */

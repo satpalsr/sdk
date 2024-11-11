@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.setPlaybackRate() method
 
+Sets the playback rate of the audio.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The playback rate.
 
 
 </td></tr>

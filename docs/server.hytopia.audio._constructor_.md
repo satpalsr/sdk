@@ -42,6 +42,8 @@ audioData
 
 </td><td>
 
+The options for the audio instance.
+
 
 </td></tr>
 </tbody></table>

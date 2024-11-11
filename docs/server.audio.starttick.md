@@ -4,6 +4,8 @@
 
 ## Audio.startTick property
 
+The server tick at which the audio started playing.
+
 **Signature:**
 
 ```typescript

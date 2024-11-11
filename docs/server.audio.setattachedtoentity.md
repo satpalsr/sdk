@@ -4,6 +4,8 @@
 
 ## Audio.setAttachedToEntity() method
 
+Sets the entity to which the audio is attached, following its position.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ entity
 
 
 </td><td>
+
+The entity to attach the audio to.
 
 
 </td></tr>

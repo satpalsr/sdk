@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.position property
 
+The position of the audio in the world if explicitly set.
+
 **Signature:**
 
 ```typescript

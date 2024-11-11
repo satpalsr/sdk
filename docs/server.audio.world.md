@@ -4,6 +4,8 @@
 
 ## Audio.world property
 
+The world the audio is in if already loaded.
+
 **Signature:**
 
 ```typescript

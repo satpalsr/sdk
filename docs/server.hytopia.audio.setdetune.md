@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.setDetune() method
 
+Sets the detune of the audio.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The detune in cents.
 
 
 </td></tr>

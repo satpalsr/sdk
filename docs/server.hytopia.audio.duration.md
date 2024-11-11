@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Audio.duration property
 
+The duration of the audio in seconds if explicitly set.
+
 **Signature:**
 
 ```typescript
