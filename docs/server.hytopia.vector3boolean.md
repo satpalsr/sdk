@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Vector3Boolean interface
 
+A 3-dimensional vector of boolean values.
+
 **Signature:**
 
 ```typescript

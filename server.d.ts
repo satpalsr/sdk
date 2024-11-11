@@ -421,33 +421,6 @@ export declare type CollisionObject = BlockType | Entity | CollisionCallback;
 
 export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
-declare class Connection {
-    private _ws;
-    readonly id: string;
-    constructor(ws: WebSocket_2, req: IncomingMessage);
-    send(packet: AnyPacket): void;
-    close(): void;
-    on<TConnectionEventPayload>(event: ConnectionEventType, callback: (payload: TConnectionEventPayload) => void): void;
-    onPacket<T extends AnyPacket>(id: T[0], callback: (packet: T) => void): void;
-    off<TConnectionEventPayload>(event: ConnectionEventType, callback: (payload: TConnectionEventPayload) => void): void;
-    offAll(): void;
-    offPacket<T extends AnyPacket>(id: T[0], callback: (packet: T) => void): void;
-    private _onClose;
-    private _onError;
-    private _onMessage;
-    private _serialize;
-    private _deserialize;
-    private _instanceEventType;
-}
-
-declare enum ConnectionEventType {
-    OPENED = "CONNECTION.OPENED",
-    CLOSED = "CONNECTION.CLOSED",
-    PACKET_RECEIVED = "CONNECTION.PACKET_RECEIVED",
-    PACKET_SENT = "CONNECTION.PACKET_SENT",
-    ERROR = "CONNECTION.ERROR"
-}
-
 declare type ContactForceData = {
     totalForce: RAPIER.Vector;
     totalForceMagnitude: number;
@@ -595,7 +568,7 @@ export declare interface EntityOptions {
     rigidBodyOptions?: RigidBodyOptions;
 }
 
-/** An EventRouter event. */
+/** An EventRouter event. @public */
 declare interface Event_2<TPayload> {
     /** The type of event */
     type: string;
@@ -613,6 +586,8 @@ export { Event_2 as Event }
  * internal EventRouter instance is instantiated per world. EventRouters
  * only have visibility of events emitted and subscribed to relative to
  * their unique instances.
+ *
+ * @public
  */
 export declare class EventRouter {
     /** The singleton instance for global server events. */
@@ -719,81 +694,23 @@ declare namespace HYTOPIA {
         Vector3Boolean,
         Player,
         PlayerEventType,
+        SUPPORTED_INPUT_KEYS,
         PlayerInputState,
         PlayerOrientationState,
         PlayerEventPayload,
         PlayerEntity,
         PlayerEntityOptions,
-        PlayerManager,
-        PlayerManagerEventType,
-        PlayerManagerEventPayload,
         RigidBody,
         RigidBodyType,
         RigidBodyAdditionalMassProperties,
         RigidBodyOptions,
         Simulation,
-        Ticker,
         World,
         WorldData,
         WorldLoop
     }
 }
 export default HYTOPIA;
-
-declare class NetworkSynchronizer {
-    private _queuedBroadcasts;
-    private _queuedAudioSynchronizations;
-    private _queuedBlockSynchronizations;
-    private _queuedBlockTypeSynchronizations;
-    private _queuedChunkSynchronizations;
-    private _queuedDebugRaycastSynchronizations;
-    private _queuedEntitySynchronizations;
-    private _queuedPlayerPackets;
-    private _spawnedChunks;
-    private _spawnedEntities;
-    private _world;
-    constructor(world: World);
-    synchronize(): void;
-    private _subscribeToAudioEvents;
-    private _subscribeToBlockTypeRegistryEvents;
-    private _subscribeToChatEvents;
-    private _subscribeToChunkEvents;
-    private _subscribeToEntityEvents;
-    private _subscribeToPlayerEvents;
-    private _subscribeToSimulationEvents;
-    private _onAudioPause;
-    private _onAudioPlay;
-    private _onAudioPlayRestart;
-    private _onAudioSetAttachedToEntity;
-    private _onAudioSetDetune;
-    private _onAudioSetDistortion;
-    private _onAudioSetPosition;
-    private _onAudioSetPlaybackRate;
-    private _onAudioSetReferenceDistance;
-    private _onAudioSetVolume;
-    private _onBlockTypeRegistryRegisterBlockType;
-    private _onChatSendBroadcastMessage;
-    private _onChatSendPlayerMessage;
-    private _onChunkSpawn;
-    private _onChunkDespawn;
-    private _onChunkSetBlock;
-    private _onEntitySpawn;
-    private _onEntityDespawn;
-    private _onEntityStartModelLoopedAnimations;
-    private _onEntityStartModelOneshotAnimations;
-    private _onEntityStopModelAnimations;
-    private _onEntityUpdateRotation;
-    private _onEntityUpdateTranslation;
-    private _onPlayerJoinedWorld;
-    private _onPlayerLeftWorld;
-    private _onPlayerRequestSync;
-    private _onSimulationDebugRaycast;
-    private _onSimulationDebugRender;
-    private _createOrGetQueuedAudioSync;
-    private _createOrGetQueuedBlockSync;
-    private _createOrGetQueuedChunkSync;
-    private _createOrGetQueuedEntitySync;
-}
 
 /**
  * Represents a player in the game.
@@ -803,14 +720,15 @@ declare class NetworkSynchronizer {
  * authenticate with the game server. This is all handled
  * internally. Player instances should never be instantiated
  * directly.
+ *
+ * @public
  */
 export declare class Player {
     /** The unique identifier for the player. */
     readonly id: number;
     /** The username for the player. */
     readonly username: string;
-    /** The low-level @see {@link Connection} associated with the player. */
-    readonly connection: Connection;
+
 
 
 
@@ -856,7 +774,7 @@ export declare interface PlayerEntityOptions extends EntityOptions {
     player: Player;
 }
 
-/** Payloads for events a Player can emit. */
+/** Payloads for events a Player can emit. @public */
 export declare namespace PlayerEventPayload {
     export interface ChatMessageSend {
         player: Player;
@@ -885,34 +803,10 @@ export declare enum PlayerEventType {
     REQUEST_SYNC = "PLAYER.REQUEST_SYNC"
 }
 
-/** The input state of a @see {@link Player}. */
+/** The input state of a @see {@link Player}; keys from @see {@link SUPPORTED_INPUT_KEYS}. @public */
 export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
 
-export declare class PlayerManager {
-    static readonly instance: PlayerManager;
-    private _connectionPlayers;
-    private constructor();
-    broadcast(packet: IPacket<number, any>): void;
-    broadcastForWorld(worldId: number, packet: IPacket<number, any>): void;
-    private _onConnectionOpened;
-    private _onConnectionClosed;
-}
-
-export declare namespace PlayerManagerEventPayload {
-    export interface PlayerConnected {
-        player: Player;
-    }
-    export interface PlayerDisconnected {
-        player: Player;
-    }
-}
-
-export declare enum PlayerManagerEventType {
-    PLAYER_CONNECTED = "PLAYER_MANAGER.PLAYER_CONNECTED",
-    PLAYER_DISCONNECTED = "PLAYER_MANAGER.PLAYER_DISCONNECTED"
-}
-
-/** The camera orientation state of a @see {@link Player}. */
+/** The camera orientation state of a @see {@link Player}. @public */
 export declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
@@ -1076,6 +970,7 @@ export declare enum RigidBodyType {
     KINEMATIC_VELOCITY = "kinematic_velocity"
 }
 
+/** A rotation in quaternion form. @public */
 export declare interface Rotation {
     x: number;
     y: number;
@@ -1106,39 +1001,25 @@ export declare class Simulation {
     private _getCollisionObjects;
 }
 
+/** A 3x3 symmetric positive-definite matrix for spatial dynamics. @public */
 export declare interface SpdMatrix3 extends SdpMatrix3 {
 }
 
 export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
 
-export declare class Ticker {
-    private _accumulatorMs;
-    private _targetTicksPerSecond;
-    private _fixedTimestepMs;
-    private _fixedTimestepS;
-    private _nextTickMs;
-    private _lastLoopTimeMs;
-    private _tickFunction;
-    private _tickErrorCallback?;
-    private _tickHandle;
-    constructor(ticksPerSecond: number, tickFunction: (tickDeltaMs: number) => void, tickErrorCallback?: (error: Error) => void);
-    get targetTicksPerSecond(): number;
-    get fixedTimestepMs(): number;
-    get fixedTimestepS(): number;
-    get nextTickMs(): number;
-    start(): void;
-    stop(): void;
-    private _tick;
-}
+/** The input keys included in the @see {@link PlayerInputState}. @public */
+export declare const SUPPORTED_INPUT_KEYS: string[];
 
 export declare const TRANSLATION_UPDATE_THRESHOLD_SQ: number;
 
+/** A 3-dimensional vector. @public */
 export declare interface Vector3 {
     x: number;
     y: number;
     z: number;
 }
 
+/** A 3-dimensional vector of boolean values. @public */
 export declare interface Vector3Boolean {
     x: boolean;
     y: boolean;

@@ -4,6 +4,8 @@
 
 ## Rotation interface
 
+A rotation in quaternion form.
+
 **Signature:**
 
 ```typescript

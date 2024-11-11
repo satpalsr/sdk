@@ -4,6 +4,8 @@
 
 ## Vector3 interface
 
+A 3-dimensional vector.
+
 **Signature:**
 
 ```typescript

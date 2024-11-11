@@ -43,27 +43,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[connection](./server.player.connection.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-Connection
-
-
-</td><td>
-
-The low-level
-
-
-</td></tr>
-<tr><td>
-
 [id](./server.player.id.md)
 
 

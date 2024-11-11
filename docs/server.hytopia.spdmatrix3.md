@@ -4,6 +4,8 @@
 
 ## HYTOPIA.SpdMatrix3 interface
 
+A 3x3 symmetric positive-definite matrix for spatial dynamics.
+
 **Signature:**
 
 ```typescript

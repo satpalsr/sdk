@@ -185,15 +185,6 @@ Represents a player in the game.
 </td></tr>
 <tr><td>
 
-[PlayerManager](./server.hytopia.playermanager.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [RigidBody](./server.hytopia.rigidbody.md)
 
 
@@ -204,15 +195,6 @@ Represents a player in the game.
 <tr><td>
 
 [Simulation](./server.hytopia.simulation.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[Ticker](./server.hytopia.ticker.md)
 
 
 </td><td>
@@ -323,15 +305,6 @@ Description
 </td><td>
 
 Event types a
-
-
-</td></tr>
-<tr><td>
-
-[PlayerManagerEventType](./server.hytopia.playermanagereventtype.md)
-
-
-</td><td>
 
 
 </td></tr>
@@ -464,6 +437,8 @@ An EventRouter event.
 
 </td><td>
 
+A rotation in quaternion form.
+
 
 </td></tr>
 <tr><td>
@@ -472,6 +447,8 @@ An EventRouter event.
 
 
 </td><td>
+
+A 3x3 symmetric positive-definite matrix for spatial dynamics.
 
 
 </td></tr>
@@ -482,6 +459,8 @@ An EventRouter event.
 
 </td><td>
 
+A 3-dimensional vector.
+
 
 </td></tr>
 <tr><td>
@@ -490,6 +469,8 @@ An EventRouter event.
 
 
 </td><td>
+
+A 3-dimensional vector of boolean values.
 
 
 </td></tr>
@@ -573,15 +554,6 @@ Payloads for events a Player can emit.
 
 
 </td></tr>
-<tr><td>
-
-[PlayerManagerEventPayload](./server.hytopia.playermanagereventpayload.md)
-
-
-</td><td>
-
-
-</td></tr>
 </tbody></table>
 
 ## Variables
@@ -612,6 +584,17 @@ Description
 
 
 </td><td>
+
+
+</td></tr>
+<tr><td>
+
+[SUPPORTED\_INPUT\_KEYS](./server.hytopia.supported_input_keys.md)
+
+
+</td><td>
+
+The input keys included in the
 
 
 </td></tr>

@@ -12411,7 +12411,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!Event_2:interface",
-          "docComment": "/**\n * An EventRouter event.\n */\n",
+          "docComment": "/**\n * An EventRouter event.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -12496,7 +12496,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!EventRouter:class",
-          "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n */\n",
+          "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25241,7 +25241,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Event:interface",
-              "docComment": "/**\n * An EventRouter event.\n */\n",
+              "docComment": "/**\n * An EventRouter event.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25326,7 +25326,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.EventRouter:class",
-              "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n */\n",
+              "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25826,7 +25826,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Player:class",
-              "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n */\n",
+              "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25839,37 +25839,6 @@
               "name": "Player",
               "preserveMemberOrder": false,
               "members": [
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Player#connection:member",
-                  "docComment": "/**\n * The low-level\n *\n * @see\n *\n * {@link Connection} associated with the player.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "readonly connection: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Connection",
-                      "canonicalReference": "server!~Connection:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "connection",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Player#disconnect:member(1)",
@@ -26374,7 +26343,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.PlayerEventPayload:namespace",
-              "docComment": "/**\n * Payloads for events a Player can emit.\n */\n",
+              "docComment": "/**\n * Payloads for events a Player can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26810,7 +26779,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.PlayerInputState:type",
-              "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}.\n */\n",
+              "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}; keys from\n *\n * @see\n *\n * {@link SUPPORTED_INPUT_KEYS}.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26857,347 +26826,9 @@
               }
             },
             {
-              "kind": "Class",
-              "canonicalReference": "server!HYTOPIA.PlayerManager:class",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export default class PlayerManager "
-                }
-              ],
-              "fileUrlPath": "src/networking/players/PlayerManager.ts",
-              "releaseTag": "Public",
-              "isAbstract": false,
-              "name": "PlayerManager",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.PlayerManager#broadcast:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "broadcast(packet: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "IPacket",
-                      "canonicalReference": "@hytopia.com/server-protocol!IPacket:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "<number, any>"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "packet",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 3
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "broadcast"
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.PlayerManager#broadcastForWorld:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "broadcastForWorld(worldId: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ", packet: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "IPacket",
-                      "canonicalReference": "@hytopia.com/server-protocol!IPacket:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "<number, any>"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 6,
-                    "endIndex": 7
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "worldId",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    },
-                    {
-                      "parameterName": "packet",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 3,
-                        "endIndex": 5
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "broadcastForWorld"
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.PlayerManager.instance:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "static readonly instance: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "PlayerManager",
-                      "canonicalReference": "server!PlayerManager:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "instance",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": true,
-                  "isProtected": false,
-                  "isAbstract": false
-                }
-              ],
-              "implementsTokenRanges": []
-            },
-            {
-              "kind": "Namespace",
-              "canonicalReference": "server!HYTOPIA.PlayerManagerEventPayload:namespace",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export declare namespace PlayerManagerEventPayload "
-                }
-              ],
-              "fileUrlPath": "src/networking/players/PlayerManager.ts",
-              "releaseTag": "Public",
-              "name": "PlayerManagerEventPayload",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "Interface",
-                  "canonicalReference": "server!HYTOPIA.PlayerManagerEventPayload.PlayerConnected:interface",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "interface PlayerConnected "
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "name": "PlayerConnected",
-                  "preserveMemberOrder": false,
-                  "members": [
-                    {
-                      "kind": "PropertySignature",
-                      "canonicalReference": "server!HYTOPIA.PlayerManagerEventPayload.PlayerConnected#player:member",
-                      "docComment": "",
-                      "excerptTokens": [
-                        {
-                          "kind": "Content",
-                          "text": "player: "
-                        },
-                        {
-                          "kind": "Reference",
-                          "text": "Player",
-                          "canonicalReference": "server!Player:class"
-                        },
-                        {
-                          "kind": "Content",
-                          "text": ";"
-                        }
-                      ],
-                      "isReadonly": false,
-                      "isOptional": false,
-                      "releaseTag": "Public",
-                      "name": "player",
-                      "propertyTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      }
-                    }
-                  ],
-                  "extendsTokenRanges": []
-                },
-                {
-                  "kind": "Interface",
-                  "canonicalReference": "server!HYTOPIA.PlayerManagerEventPayload.PlayerDisconnected:interface",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "interface PlayerDisconnected "
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "name": "PlayerDisconnected",
-                  "preserveMemberOrder": false,
-                  "members": [
-                    {
-                      "kind": "PropertySignature",
-                      "canonicalReference": "server!HYTOPIA.PlayerManagerEventPayload.PlayerDisconnected#player:member",
-                      "docComment": "",
-                      "excerptTokens": [
-                        {
-                          "kind": "Content",
-                          "text": "player: "
-                        },
-                        {
-                          "kind": "Reference",
-                          "text": "Player",
-                          "canonicalReference": "server!Player:class"
-                        },
-                        {
-                          "kind": "Content",
-                          "text": ";"
-                        }
-                      ],
-                      "isReadonly": false,
-                      "isOptional": false,
-                      "releaseTag": "Public",
-                      "name": "player",
-                      "propertyTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      }
-                    }
-                  ],
-                  "extendsTokenRanges": []
-                }
-              ]
-            },
-            {
-              "kind": "Enum",
-              "canonicalReference": "server!HYTOPIA.PlayerManagerEventType:enum",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export declare enum PlayerManagerEventType "
-                }
-              ],
-              "fileUrlPath": "src/networking/players/PlayerManager.ts",
-              "releaseTag": "Public",
-              "name": "PlayerManagerEventType",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "EnumMember",
-                  "canonicalReference": "server!HYTOPIA.PlayerManagerEventType.PLAYER_CONNECTED:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "PLAYER_CONNECTED = "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "\"PLAYER_MANAGER.PLAYER_CONNECTED\""
-                    }
-                  ],
-                  "initializerTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "name": "PLAYER_CONNECTED"
-                },
-                {
-                  "kind": "EnumMember",
-                  "canonicalReference": "server!HYTOPIA.PlayerManagerEventType.PLAYER_DISCONNECTED:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "PLAYER_DISCONNECTED = "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "\"PLAYER_MANAGER.PLAYER_DISCONNECTED\""
-                    }
-                  ],
-                  "initializerTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "name": "PLAYER_DISCONNECTED"
-                }
-              ]
-            },
-            {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.PlayerOrientationState:type",
-              "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n */\n",
+              "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31375,7 +31006,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Rotation:interface",
-              "docComment": "",
+              "docComment": "/**\n * A rotation in quaternion form.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32067,7 +31698,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.SpdMatrix3:interface",
-              "docComment": "",
+              "docComment": "/**\n * A 3x3 symmetric positive-definite matrix for spatial dynamics.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32164,278 +31795,27 @@
               "name": "startServer"
             },
             {
-              "kind": "Class",
-              "canonicalReference": "server!HYTOPIA.Ticker:class",
-              "docComment": "",
+              "kind": "Variable",
+              "canonicalReference": "server!HYTOPIA.SUPPORTED_INPUT_KEYS:var",
+              "docComment": "/**\n * The input keys included in the\n *\n * @see\n *\n * {@link PlayerInputState}.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "export default class Ticker "
+                  "text": "SUPPORTED_INPUT_KEYS: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
                 }
               ],
-              "fileUrlPath": "src/shared/classes/Ticker.ts",
+              "fileUrlPath": "src/networking/players/Player.ts",
+              "isReadonly": true,
               "releaseTag": "Public",
-              "isAbstract": false,
-              "name": "Ticker",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "Constructor",
-                  "canonicalReference": "server!HYTOPIA.Ticker:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `Ticker` class\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "constructor(ticksPerSecond: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ", tickFunction: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "(tickDeltaMs: number) => void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ", tickErrorCallback?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "(error: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Error",
-                      "canonicalReference": "!Error:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ") => void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ");"
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "ticksPerSecond",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    },
-                    {
-                      "parameterName": "tickFunction",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 3,
-                        "endIndex": 4
-                      },
-                      "isOptional": false
-                    },
-                    {
-                      "parameterName": "tickErrorCallback",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 5,
-                        "endIndex": 8
-                      },
-                      "isOptional": true
-                    }
-                  ]
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Ticker#fixedTimestepMs:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get fixedTimestepMs(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "fixedTimestepMs",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Ticker#fixedTimestepS:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get fixedTimestepS(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "fixedTimestepS",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Ticker#nextTickMs:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get nextTickMs(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "nextTickMs",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Ticker#start:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "start(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "start"
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Ticker#stop:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "stop(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "stop"
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Ticker#targetTicksPerSecond:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get targetTicksPerSecond(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "targetTicksPerSecond",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                }
-              ],
-              "implementsTokenRanges": []
+              "name": "SUPPORTED_INPUT_KEYS",
+              "variableTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
             },
             {
               "kind": "Variable",
@@ -32463,7 +31843,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Vector3:interface",
-              "docComment": "",
+              "docComment": "/**\n * A 3-dimensional vector.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32562,7 +31942,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Vector3Boolean:interface",
-              "docComment": "",
+              "docComment": "/**\n * A 3-dimensional vector of boolean values.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33744,7 +33124,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Player:class",
-          "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n */\n",
+          "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -33757,37 +33137,6 @@
           "name": "Player",
           "preserveMemberOrder": false,
           "members": [
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Player#connection:member",
-              "docComment": "/**\n * The low-level\n *\n * @see\n *\n * {@link Connection} associated with the player.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "readonly connection: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Connection",
-                  "canonicalReference": "server!~Connection:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "connection",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
             {
               "kind": "Method",
               "canonicalReference": "server!Player#disconnect:member(1)",
@@ -34292,7 +33641,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!PlayerEventPayload:namespace",
-          "docComment": "/**\n * Payloads for events a Player can emit.\n */\n",
+          "docComment": "/**\n * Payloads for events a Player can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34728,7 +34077,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!PlayerInputState:type",
-          "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}.\n */\n",
+          "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}; keys from\n *\n * @see\n *\n * {@link SUPPORTED_INPUT_KEYS}.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34775,347 +34124,9 @@
           }
         },
         {
-          "kind": "Class",
-          "canonicalReference": "server!PlayerManager:class",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export default class PlayerManager "
-            }
-          ],
-          "fileUrlPath": "src/networking/players/PlayerManager.ts",
-          "releaseTag": "Public",
-          "isAbstract": false,
-          "name": "PlayerManager",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerManager#broadcast:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "broadcast(packet: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IPacket",
-                  "canonicalReference": "@hytopia.com/server-protocol!IPacket:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<number, any>"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 4,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "packet",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 3
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "broadcast"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerManager#broadcastForWorld:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "broadcastForWorld(worldId: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", packet: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IPacket",
-                  "canonicalReference": "@hytopia.com/server-protocol!IPacket:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<number, any>"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "worldId",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "packet",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 5
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "broadcastForWorld"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerManager.instance:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "static readonly instance: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerManager",
-                  "canonicalReference": "server!PlayerManager:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "instance",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": true,
-              "isProtected": false,
-              "isAbstract": false
-            }
-          ],
-          "implementsTokenRanges": []
-        },
-        {
-          "kind": "Namespace",
-          "canonicalReference": "server!PlayerManagerEventPayload:namespace",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare namespace PlayerManagerEventPayload "
-            }
-          ],
-          "fileUrlPath": "src/networking/players/PlayerManager.ts",
-          "releaseTag": "Public",
-          "name": "PlayerManagerEventPayload",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "Interface",
-              "canonicalReference": "server!PlayerManagerEventPayload.PlayerConnected:interface",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interface PlayerConnected "
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "PlayerConnected",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!PlayerManagerEventPayload.PlayerConnected#player:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "player: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Player",
-                      "canonicalReference": "server!Player:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "player",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
-            },
-            {
-              "kind": "Interface",
-              "canonicalReference": "server!PlayerManagerEventPayload.PlayerDisconnected:interface",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interface PlayerDisconnected "
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "PlayerDisconnected",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!PlayerManagerEventPayload.PlayerDisconnected#player:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "player: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Player",
-                      "canonicalReference": "server!Player:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "player",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
-            }
-          ]
-        },
-        {
-          "kind": "Enum",
-          "canonicalReference": "server!PlayerManagerEventType:enum",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare enum PlayerManagerEventType "
-            }
-          ],
-          "fileUrlPath": "src/networking/players/PlayerManager.ts",
-          "releaseTag": "Public",
-          "name": "PlayerManagerEventType",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "server!PlayerManagerEventType.PLAYER_CONNECTED:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "PLAYER_CONNECTED = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"PLAYER_MANAGER.PLAYER_CONNECTED\""
-                }
-              ],
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "PLAYER_CONNECTED"
-            },
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "server!PlayerManagerEventType.PLAYER_DISCONNECTED:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "PLAYER_DISCONNECTED = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"PLAYER_MANAGER.PLAYER_DISCONNECTED\""
-                }
-              ],
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "PLAYER_DISCONNECTED"
-            }
-          ]
-        },
-        {
           "kind": "TypeAlias",
           "canonicalReference": "server!PlayerOrientationState:type",
-          "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n */\n",
+          "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -39293,7 +38304,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!Rotation:interface",
-          "docComment": "",
+          "docComment": "/**\n * A rotation in quaternion form.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -39985,7 +38996,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!SpdMatrix3:interface",
-          "docComment": "",
+          "docComment": "/**\n * A 3x3 symmetric positive-definite matrix for spatial dynamics.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -40082,278 +39093,27 @@
           "name": "startServer"
         },
         {
-          "kind": "Class",
-          "canonicalReference": "server!Ticker:class",
-          "docComment": "",
+          "kind": "Variable",
+          "canonicalReference": "server!SUPPORTED_INPUT_KEYS:var",
+          "docComment": "/**\n * The input keys included in the\n *\n * @see\n *\n * {@link PlayerInputState}.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class Ticker "
+              "text": "SUPPORTED_INPUT_KEYS: "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
             }
           ],
-          "fileUrlPath": "src/shared/classes/Ticker.ts",
+          "fileUrlPath": "src/networking/players/Player.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
-          "isAbstract": false,
-          "name": "Ticker",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "Constructor",
-              "canonicalReference": "server!Ticker:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Ticker` class\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor(ticksPerSecond: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", tickFunction: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(tickDeltaMs: number) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", tickErrorCallback?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(error: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Error",
-                  "canonicalReference": "!Error:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ");"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "ticksPerSecond",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "tickFunction",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "tickErrorCallback",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 8
-                  },
-                  "isOptional": true
-                }
-              ]
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Ticker#fixedTimestepMs:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get fixedTimestepMs(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "fixedTimestepMs",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Ticker#fixedTimestepS:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get fixedTimestepS(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "fixedTimestepS",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Ticker#nextTickMs:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get nextTickMs(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "nextTickMs",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Ticker#start:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "start(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "start"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Ticker#stop:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "stop(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "stop"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Ticker#targetTicksPerSecond:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get targetTicksPerSecond(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "targetTicksPerSecond",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            }
-          ],
-          "implementsTokenRanges": []
+          "name": "SUPPORTED_INPUT_KEYS",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         },
         {
           "kind": "Variable",
@@ -40381,7 +39141,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!Vector3:interface",
-          "docComment": "",
+          "docComment": "/**\n * A 3-dimensional vector.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -40480,7 +39240,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!Vector3Boolean:interface",
-          "docComment": "",
+          "docComment": "/**\n * A 3-dimensional vector of boolean values.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
