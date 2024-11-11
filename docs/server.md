@@ -97,6 +97,8 @@ Manages known block types in a world.
 
 </td><td>
 
+A 16^3 chunk of blocks. Used within a [ChunkLattice](./server.chunklattice.md) to represent world terrain.
+
 
 </td></tr>
 <tr><td>
@@ -281,6 +283,8 @@ Event types a BlockTypeRegistry instance can emit.
 
 
 </td><td>
+
+Event types a Chunk instance can emit.
 
 
 </td></tr>
@@ -553,6 +557,8 @@ Payloads for events a BlockTypeRegistry instance can emit.
 
 
 </td><td>
+
+Payloads for events a Chunk instance can emit.
 
 
 </td></tr>

@@ -398,15 +398,35 @@ export declare interface BlockTypeOptions {
  * @public
  */
 export declare class BlockTypeRegistry implements protocol.Serializable {
-    private _blockTypes;
-    private _world;
-    constructor(world: World);
+
+
+
+    /** The world the block type registry is for. */
     get world(): World;
+    /**
+     * Get all registered block types.
+     * @returns An array of all registered block types.
+     */
     getAllBlockTypes(): BlockType[];
+    /**
+     * Get a registered block type by its id.
+     * @param id - The id of the block type to get.
+     * @returns The block type with the given id.
+     */
     getBlockType(id: number): BlockType;
+    /**
+     * Register a generic block type.
+     * @param blockTypeOptions - The options for the block type.
+     * @returns The registered block type.
+     */
     registerGenericBlockType(blockTypeOptions: BlockTypeOptions): BlockType;
+    /**
+     * Register a block type.
+     * @param id - The id of the block type to register.
+     * @param blockTypeReference - The block type to register.
+     */
     registerBlockType(id: number, blockTypeReference: BlockType): void;
-    serialize(): protocol.BlockTypesSchema;
+
 }
 
 /** Payloads for events a BlockTypeRegistry instance can emit. @public */
@@ -452,35 +472,109 @@ export declare class ChatManager {
     private _onPlayerChatMessage;
 }
 
+/**
+ * A 16^3 chunk of blocks. Used within a {@link ChunkLattice} to represent world terrain.
+ *
+ * @remarks
+ * Chunks make up the bulk of the terrain in a world. Chunks are
+ * fixed size, each containing 16^3 possible blocks as
+ * a 16x16x16 cube. Chunks can be spawned, despawned, have their
+ * unique blocks set or removed, and more. Chunks represent their
+ * internal block coordinates in local space, meaning only coordinates
+ * x: 0...15, y: 0...15, z: 0...15 are valid.
+ *
+ * The Chunk follows a spawn and despawn lifecycle pattern.
+ * When you create a chunk, when you're ready to load it in your
+ * world you use .spawn(). To remove it, you use .despawn().
+ *
+ * Use .setBlock() to set the block type id at a specific local cooridnate.
+ * Block type ids are ones that have been registered in the {@link BlockTypeRegistry}
+ * associated with the {@link World} the chunk belongs to. A block type id of 0
+ * is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
+ *
+ * @example
+ * ```typescript
+ * // Assume we previously registered a stone block with type id of 10..
+ *
+ * const chunk = new Chunk();
+ *
+ * chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone
+ * chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16
+ * ```
+ *
+ * @public
+ */
 export declare class Chunk implements protocol.Serializable {
-    private _blocks;
-    private _originCoordinate;
-    private _requiresUpdate;
-    private _rigidBody;
-    private _world;
+
+
+
+
+
+    /**
+     * Creates a new chunk instance.
+     */
     constructor();
+    /** The blocks in the chunk as a flat Uint8Array[4096], each index as 0 or a block type id. */
     get blocks(): Readonly<Uint8Array>;
-    get requiresUpdate(): boolean;
+
+    /** Whether the chunk is actively simulated in the internal physics engine. */
     get isSimulated(): boolean;
+    /** Whether the chunk has been spawned. */
     get isSpawned(): boolean;
+    /** The origin coordinate of the chunk. */
     get originCoordinate(): Vector3 | undefined;
+    /** The world the chunk belongs to. */
     get world(): World | undefined;
+    /**
+     * Convert a block index to a local coordinate.
+     * @param index - The index of the block to convert.
+     * @returns The local coordinate of the block.
+     */
     static blockIndexToLocalCoordinate(index: number): Vector3;
+    /**
+     * Convert a global coordinate to a local coordinate.
+     * @param globalCoordinate - The global coordinate to convert.
+     * @returns The local coordinate.
+     */
     static globalCoordinateToLocalCoordinate(globalCoordinate: Vector3): Vector3;
+    /**
+     * Convert a global coordinate to an origin coordinate.
+     * @param globalCoordinate - The global coordinate to convert.
+     * @returns The origin coordinate.
+     */
     static globalCoordinateToOriginCoordinate(globalCoordinate: Vector3): Vector3;
+    /**
+     * Check if an origin coordinate is valid.
+     * @param coordinate - The coordinate to check.
+     * @returns Whether the coordinate is valid.
+     */
     static isValidOriginCoordinate(coordinate: Vector3): boolean;
+    /**
+     * Spawn the chunk in the world.
+     * @param world - The world to spawn the chunk in.
+     * @param originCoordinate - The origin coordinate of the chunk.
+     */
     spawn(world: World, originCoordinate: Vector3): void;
+    /**
+     * Despawn the chunk from the world.
+     */
     despawn(): void;
+    /**
+     * Set the block at a specific local coordinate by block type id.
+     * @param localCoordinate - The local coordinate of the block to set.
+     * @param blockTypeId - The block type id to set.
+     */
     setBlock(localCoordinate: Vector3, blockTypeId: number): void;
-    update(): void;
-    serialize(): protocol.ChunkSchema;
-    private _meshColliders;
-    private _removeFromSimulation;
-    private _getGlobalCoordinate;
-    private _getIndex;
-    private _isValidLocalCoordinate;
+
+
+
+
+
+
+
 }
 
+/** Payloads for events a Chunk instance can emit. @public */
 export declare namespace ChunkEventPayload {
     export interface Despawn {
         chunk: Chunk;
@@ -496,6 +590,7 @@ export declare namespace ChunkEventPayload {
     }
 }
 
+/** Event types a Chunk instance can emit. @public */
 export declare enum ChunkEventType {
     DESPAWN = "CHUNK.DESPAWN",
     SET_BLOCK = "CHUNK.SET_BLOCK",

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockTypeRegistry.getAllBlockTypes() method
 
+Get all registered block types.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllBlockTypes(): BlockType[];
 **Returns:**
 
 [BlockType](./server.blocktype.md)<!-- -->\[\]
+
+An array of all registered block types.
 

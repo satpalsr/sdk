@@ -17,6 +17,8 @@ export default class BlockTypeRegistry implements protocol.Serializable
 
 Block type registries are created internally as a singleton for each [World](./server.world.md) instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.
 
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.
+
 ## Example
 
 
@@ -27,40 +29,6 @@ world.blockTypeRegistry.registerGenericBlockType({
   name: 'Dirt',
 });
 ```
-
-## Constructors
-
-<table><thead><tr><th>
-
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world)](./server.hytopia.blocktyperegistry._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `BlockTypeRegistry` class
-
-
-</td></tr>
-</tbody></table>
 
 ## Properties
 
@@ -102,6 +70,8 @@ Description
 
 </td><td>
 
+The world the block type registry is for.
+
 
 </td></tr>
 </tbody></table>
@@ -134,6 +104,8 @@ Description
 
 </td><td>
 
+Get all registered block types.
+
 
 </td></tr>
 <tr><td>
@@ -145,6 +117,8 @@ Description
 
 
 </td><td>
+
+Get a registered block type by its id.
 
 
 </td></tr>
@@ -158,6 +132,8 @@ Description
 
 </td><td>
 
+Register a block type.
+
 
 </td></tr>
 <tr><td>
@@ -170,17 +146,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[serialize()](./server.hytopia.blocktyperegistry.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
+Register a generic block type.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Chunk.blockIndexToLocalCoordinate() method
 
+Convert a block index to a local coordinate.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ number
 
 </td><td>
 
+The index of the block to convert.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The local coordinate of the block.
 

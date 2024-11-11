@@ -4,12 +4,34 @@
 
 ## Chunk class
 
+A 16^3 chunk of blocks. Used within a [ChunkLattice](./server.chunklattice.md) to represent world terrain.
+
 **Signature:**
 
 ```typescript
 export default class Chunk implements protocol.Serializable 
 ```
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each containing 16^3 possible blocks as a 16x16x16 cube. Chunks can be spawned, despawned, have their unique blocks set or removed, and more. Chunks represent their internal block coordinates in local space, meaning only coordinates x: 0...15, y: 0...15, z: 0...15 are valid.
+
+The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().
+
+Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the [BlockTypeRegistry](./server.blocktyperegistry.md) associated with the [World](./server.world.md) the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
+
+## Example
+
+
+```typescript
+// Assume we previously registered a stone block with type id of 10..
+
+const chunk = new Chunk();
+
+chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone
+chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16
+```
 
 ## Constructors
 
@@ -39,7 +61,7 @@ Description
 
 </td><td>
 
-Constructs a new instance of the `Chunk` class
+Creates a new chunk instance.
 
 
 </td></tr>
@@ -85,6 +107,8 @@ Readonly&lt;Uint8Array&gt;
 
 </td><td>
 
+The blocks in the chunk as a flat Uint8Array\[4096\], each index as 0 or a block type id.
+
 
 </td></tr>
 <tr><td>
@@ -103,6 +127,8 @@ boolean
 
 
 </td><td>
+
+Whether the chunk is actively simulated in the internal physics engine.
 
 
 </td></tr>
@@ -123,6 +149,8 @@ boolean
 
 </td><td>
 
+Whether the chunk has been spawned.
+
 
 </td></tr>
 <tr><td>
@@ -142,24 +170,7 @@ boolean
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[requiresUpdate](./server.chunk.requiresupdate.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
+The origin coordinate of the chunk.
 
 
 </td></tr>
@@ -179,6 +190,8 @@ boolean
 
 
 </td><td>
+
+The world the chunk belongs to.
 
 
 </td></tr>
@@ -214,6 +227,8 @@ Description
 
 </td><td>
 
+Convert a block index to a local coordinate.
+
 
 </td></tr>
 <tr><td>
@@ -225,6 +240,8 @@ Description
 
 
 </td><td>
+
+Despawn the chunk from the world.
 
 
 </td></tr>
@@ -240,6 +257,8 @@ Description
 
 </td><td>
 
+Convert a global coordinate to a local coordinate.
+
 
 </td></tr>
 <tr><td>
@@ -253,6 +272,8 @@ Description
 
 
 </td><td>
+
+Convert a global coordinate to an origin coordinate.
 
 
 </td></tr>
@@ -268,17 +289,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[serialize()](./server.chunk.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
+Check if an origin coordinate is valid.
 
 
 </td></tr>
@@ -292,6 +303,8 @@ Description
 
 </td><td>
 
+Set the block at a specific local coordinate by block type id.
+
 
 </td></tr>
 <tr><td>
@@ -304,17 +317,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[update()](./server.chunk.update.md)
-
-
-</td><td>
-
-
-</td><td>
+Spawn the chunk in the world.
 
 
 </td></tr>

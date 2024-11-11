@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Chunk.isValidOriginCoordinate() method
 
+Check if an origin coordinate is valid.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ coordinate
 
 </td><td>
 
+The coordinate to check.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 boolean
+
+Whether the coordinate is valid.
 

@@ -4,6 +4,8 @@
 
 ## Chunk.setBlock() method
 
+Set the block at a specific local coordinate by block type id.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ localCoordinate
 
 </td><td>
 
+The local coordinate of the block to set.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ number
 
 
 </td><td>
+
+The block type id to set.
 
 
 </td></tr>

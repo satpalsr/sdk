@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockTypeRegistry.world property
 
+The world the block type registry is for.
+
 **Signature:**
 
 ```typescript

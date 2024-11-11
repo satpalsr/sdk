@@ -4,6 +4,8 @@
 
 ## Chunk.isSpawned property
 
+Whether the chunk has been spawned.
+
 **Signature:**
 
 ```typescript

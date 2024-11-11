@@ -4,6 +4,8 @@
 
 ## ChunkEventType enum
 
+Event types a Chunk instance can emit.
+
 **Signature:**
 
 ```typescript

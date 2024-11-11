@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChunkEventPayload namespace
 
+Payloads for events a Chunk instance can emit.
+
 **Signature:**
 
 ```typescript

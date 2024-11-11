@@ -4,6 +4,8 @@
 
 ## Chunk.spawn() method
 
+Spawn the chunk in the world.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ world
 
 </td><td>
 
+The world to spawn the chunk in.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ originCoordinate
 
 
 </td><td>
+
+The origin coordinate of the chunk.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## Chunk.despawn() method
 
+Despawn the chunk from the world.
+
 **Signature:**
 
 ```typescript

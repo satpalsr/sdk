@@ -4,6 +4,8 @@
 
 ## BlockTypeRegistry.registerBlockType() method
 
+Register a block type.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ number
 
 </td><td>
 
+The id of the block type to register.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ blockTypeReference
 
 
 </td><td>
+
+The block type to register.
 
 
 </td></tr>

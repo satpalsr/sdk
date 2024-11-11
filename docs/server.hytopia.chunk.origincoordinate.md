@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Chunk.originCoordinate property
 
+The origin coordinate of the chunk.
+
 **Signature:**
 
 ```typescript

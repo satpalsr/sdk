@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockTypeRegistry.getBlockType() method
 
+Get a registered block type by its id.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ number
 
 </td><td>
 
+The id of the block type to get.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [BlockType](./server.blocktype.md)
+
+The block type with the given id.
 

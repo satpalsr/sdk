@@ -4,6 +4,8 @@
 
 ## Chunk.isSimulated property
 
+Whether the chunk is actively simulated in the internal physics engine.
+
 **Signature:**
 
 ```typescript

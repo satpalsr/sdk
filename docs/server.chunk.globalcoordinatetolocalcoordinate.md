@@ -4,6 +4,8 @@
 
 ## Chunk.globalCoordinateToLocalCoordinate() method
 
+Convert a global coordinate to a local coordinate.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ globalCoordinate
 
 </td><td>
 
+The global coordinate to convert.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The local coordinate.
 

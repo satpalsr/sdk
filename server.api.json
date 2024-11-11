@@ -3523,7 +3523,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3546,42 +3546,9 @@
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "Constructor",
-              "canonicalReference": "server!BlockTypeRegistry:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `BlockTypeRegistry` class\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor(world: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ");"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "world",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ]
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!BlockTypeRegistry#getAllBlockTypes:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Get all registered block types.\n *\n * @returns An array of all registered block types.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3617,7 +3584,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BlockTypeRegistry#getBlockType:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Get a registered block type by its id.\n *\n * @param id - The id of the block type to get.\n *\n * @returns The block type with the given id.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3666,7 +3633,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BlockTypeRegistry#registerBlockType:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Register a block type.\n *\n * @param id - The id of the block type to register.\n *\n * @param blockTypeReference - The block type to register.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3731,7 +3698,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BlockTypeRegistry#registerGenericBlockType:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Register a generic block type.\n *\n * @param blockTypeOptions - The options for the block type.\n *\n * @returns The registered block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3779,41 +3746,9 @@
               "name": "registerGenericBlockType"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!BlockTypeRegistry#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.BlockTypesSchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!BlockTypesSchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!BlockTypeRegistry#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the block type registry is for.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4563,7 +4498,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Chunk:class",
-          "docComment": "",
+          "docComment": "/**\n * A 16^3 chunk of blocks. Used within a {@link ChunkLattice} to represent world terrain.\n *\n * @remarks\n *\n * Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each containing 16^3 possible blocks as a 16x16x16 cube. Chunks can be spawned, despawned, have their unique blocks set or removed, and more. Chunks represent their internal block coordinates in local space, meaning only coordinates x: 0...15, y: 0...15, z: 0...15 are valid.\n *\n * The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().\n *\n * Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the {@link BlockTypeRegistry} associated with the {@link World} the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).\n *\n * @example\n * ```typescript\n * // Assume we previously registered a stone block with type id of 10..\n *\n * const chunk = new Chunk();\n *\n * chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone\n * chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4588,7 +4523,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!Chunk:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Chunk` class\n */\n",
+              "docComment": "/**\n * Creates a new chunk instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4603,7 +4538,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk.blockIndexToLocalCoordinate:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Convert a block index to a local coordinate.\n *\n * @param index - The index of the block to convert.\n *\n * @returns The local coordinate of the block.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4652,7 +4587,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Chunk#blocks:member",
-              "docComment": "",
+              "docComment": "/**\n * The blocks in the chunk as a flat Uint8Array[4096], each index as 0 or a block type id.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4696,7 +4631,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk#despawn:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Despawn the chunk from the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4727,7 +4662,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk.globalCoordinateToLocalCoordinate:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Convert a global coordinate to a local coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The local coordinate.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4777,7 +4712,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk.globalCoordinateToOriginCoordinate:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Convert a global coordinate to an origin coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The origin coordinate.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4827,7 +4762,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Chunk#isSimulated:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the chunk is actively simulated in the internal physics engine.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4857,7 +4792,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Chunk#isSpawned:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the chunk has been spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4887,7 +4822,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk.isValidOriginCoordinate:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Check if an origin coordinate is valid.\n *\n * @param coordinate - The coordinate to check.\n *\n * @returns Whether the coordinate is valid.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4936,7 +4871,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Chunk#originCoordinate:member",
-              "docComment": "",
+              "docComment": "/**\n * The origin coordinate of the chunk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4969,71 +4904,9 @@
               "isAbstract": false
             },
             {
-              "kind": "Property",
-              "canonicalReference": "server!Chunk#requiresUpdate:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get requiresUpdate(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "requiresUpdate",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Chunk#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.ChunkSchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!ChunkSchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!Chunk#setBlock:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Set the block at a specific local coordinate by block type id.\n *\n * @param localCoordinate - The local coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -5098,7 +4971,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Chunk#spawn:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Spawn the chunk in the world.\n *\n * @param world - The world to spawn the chunk in.\n *\n * @param originCoordinate - The origin coordinate of the chunk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -5162,40 +5035,9 @@
               "name": "spawn"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Chunk#update:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "update(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "update"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!Chunk#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the chunk belongs to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -5238,7 +5080,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!ChunkEventPayload:namespace",
-          "docComment": "",
+          "docComment": "/**\n * Payloads for events a Chunk instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -5473,7 +5315,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!ChunkEventType:enum",
-          "docComment": "",
+          "docComment": "/**\n * Event types a Chunk instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -15886,7 +15728,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:class",
-              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15909,42 +15751,9 @@
               "preserveMemberOrder": false,
               "members": [
                 {
-                  "kind": "Constructor",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `BlockTypeRegistry` class\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "constructor(world: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "World",
-                      "canonicalReference": "server!World:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ");"
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "world",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ]
-                },
-                {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#getAllBlockTypes:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Get all registered block types.\n *\n * @returns An array of all registered block types.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15980,7 +15789,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#getBlockType:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Get a registered block type by its id.\n *\n * @param id - The id of the block type to get.\n *\n * @returns The block type with the given id.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16029,7 +15838,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#registerBlockType:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Register a block type.\n *\n * @param id - The id of the block type to register.\n *\n * @param blockTypeReference - The block type to register.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16094,7 +15903,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#registerGenericBlockType:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Register a generic block type.\n *\n * @param blockTypeOptions - The options for the block type.\n *\n * @returns The registered block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16142,41 +15951,9 @@
                   "name": "registerGenericBlockType"
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.BlockTypesSchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!BlockTypesSchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockTypeRegistry#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the block type registry is for.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16926,7 +16703,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Chunk:class",
-              "docComment": "",
+              "docComment": "/**\n * A 16^3 chunk of blocks. Used within a {@link ChunkLattice} to represent world terrain.\n *\n * @remarks\n *\n * Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each containing 16^3 possible blocks as a 16x16x16 cube. Chunks can be spawned, despawned, have their unique blocks set or removed, and more. Chunks represent their internal block coordinates in local space, meaning only coordinates x: 0...15, y: 0...15, z: 0...15 are valid.\n *\n * The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().\n *\n * Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the {@link BlockTypeRegistry} associated with the {@link World} the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).\n *\n * @example\n * ```typescript\n * // Assume we previously registered a stone block with type id of 10..\n *\n * const chunk = new Chunk();\n *\n * chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone\n * chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16951,7 +16728,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.Chunk:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `Chunk` class\n */\n",
+                  "docComment": "/**\n * Creates a new chunk instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16966,7 +16743,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk.blockIndexToLocalCoordinate:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Convert a block index to a local coordinate.\n *\n * @param index - The index of the block to convert.\n *\n * @returns The local coordinate of the block.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17015,7 +16792,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Chunk#blocks:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The blocks in the chunk as a flat Uint8Array[4096], each index as 0 or a block type id.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17059,7 +16836,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk#despawn:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Despawn the chunk from the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17090,7 +16867,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk.globalCoordinateToLocalCoordinate:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Convert a global coordinate to a local coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The local coordinate.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17140,7 +16917,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk.globalCoordinateToOriginCoordinate:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Convert a global coordinate to an origin coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The origin coordinate.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17190,7 +16967,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Chunk#isSimulated:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the chunk is actively simulated in the internal physics engine.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17220,7 +16997,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Chunk#isSpawned:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the chunk has been spawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17250,7 +17027,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk.isValidOriginCoordinate:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Check if an origin coordinate is valid.\n *\n * @param coordinate - The coordinate to check.\n *\n * @returns Whether the coordinate is valid.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17299,7 +17076,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Chunk#originCoordinate:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The origin coordinate of the chunk.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17332,71 +17109,9 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Chunk#requiresUpdate:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get requiresUpdate(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "boolean"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "requiresUpdate",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Chunk#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.ChunkSchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!ChunkSchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
-                },
-                {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk#setBlock:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Set the block at a specific local coordinate by block type id.\n *\n * @param localCoordinate - The local coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17461,7 +17176,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk#spawn:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Spawn the chunk in the world.\n *\n * @param world - The world to spawn the chunk in.\n *\n * @param originCoordinate - The origin coordinate of the chunk.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17525,40 +17240,9 @@
                   "name": "spawn"
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Chunk#update:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "update(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "update"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Chunk#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the chunk belongs to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -17601,7 +17285,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.ChunkEventPayload:namespace",
-              "docComment": "",
+              "docComment": "/**\n * Payloads for events a Chunk instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -17836,7 +17520,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.ChunkEventType:enum",
-              "docComment": "",
+              "docComment": "/**\n * Event types a Chunk instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Chunk.world property
 
+The world the chunk belongs to.
+
 **Signature:**
 
 ```typescript

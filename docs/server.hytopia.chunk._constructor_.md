@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Chunk.(constructor)
 
-Constructs a new instance of the `Chunk` class
+Creates a new chunk instance.
 
 **Signature:**
 
