@@ -200,10 +200,9 @@ export declare enum AudioEventType {
  *
  * @remarks
  * The AudioManager is created internally as a singleton
- * for each {@link World} instance in a game server
- * and should never be instantiated directly. It allows
- * retrieval of all loaded audio, entity attached audio,
- * looped audio, and more.
+ * for each {@link World} instance in a game server.
+ * It allows retrieval of all loaded audio, entity
+ * attached audio, looped audio, and more.
  *
  * @example
  * ```typescript
@@ -380,11 +379,8 @@ export declare interface BlockTypeOptions {
  * Manages known block types in a world.
  *
  * @remarks
- * Block type registries are created internally as a singleton
- * for each {@link World} instance in a game server and should
- * never be instantiated directly. A block type registry allows
- * you to register and retrieve block types by their unique id
- * for a world.
+ * A block type registry allows you to register and
+ * retrieve block types by their unique id for a world.
  *
  * @example
  * ```typescript
@@ -467,11 +463,11 @@ export declare enum ChatEventType {
  *
  * @remarks
  * The ChatManager is created internally as a singleton
- * for each {@link World} instance in a game server
- * and should never be instantiated directly. The ChatManager
- * allows you to broadcast messages, send messages to specific
- * players, and register commands that can be used in chat to
- * execute game logic.
+ * for each {@link World} instance in a game server.
+ * The ChatManager allows you to broadcast messages,
+ * send messages to specific players, and register
+ * commands that can be used in chat to execute game
+ * logic.
  *
  * @example
  * ```typescript
@@ -1129,8 +1125,7 @@ export default HYTOPIA;
  * @remarks
  * Players are automatically created when they connect and
  * authenticate with the game server. This is all handled
- * internally. Player instances should never be instantiated
- * directly.
+ * internally.
  *
  * @public
  */

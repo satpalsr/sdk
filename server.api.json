@@ -2090,7 +2090,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!AudioManager:class",
-          "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each {@link World} instance in a game server. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3523,7 +3523,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4188,7 +4188,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!ChatManager:class",
-          "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -14133,7 +14133,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.AudioManager:class",
-              "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each {@link World} instance in a game server. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15566,7 +15566,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:class",
-              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16231,7 +16231,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.ChatManager:class",
-              "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -24252,7 +24252,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Player:class",
-              "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
+              "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31689,7 +31689,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Player:class",
-          "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

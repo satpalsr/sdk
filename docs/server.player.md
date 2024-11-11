@@ -14,7 +14,7 @@ export default class Player
 
 ## Remarks
 
-Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.
+Players are automatically created when they connect and authenticate with the game server. This is all handled internally.
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.
 
