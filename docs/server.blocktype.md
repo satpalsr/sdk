@@ -21,12 +21,15 @@ Block types are created directly as instances. They support a variety of configu
 
 
 ```typescript
-const blockTypeId = 10;
-world.blockTypeRegistry.registerBlockType(blockTypeId, new BlockType(world, {
-  id: blockTypeId,
+const stoneBlockTypeId = 10;
+world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType(world, {
+  id: stoneBlockTypeId,
   textureUri: 'assets/textures/stone.png',
   name: 'Stone',
 }));
+
+// Create a stone block at coordinate 0, 1, 0
+world.chunkLattice.setBlock({ x: 0, y: 1, z: 0 }, stoneBlockTypeId);
 ```
 
 ## Constructors
