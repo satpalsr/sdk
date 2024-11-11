@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Audio class
 
-An audio instance in a world.
+An instance of audio, supporting a variety of configuration options.
 
 **Signature:**
 

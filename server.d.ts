@@ -11,7 +11,7 @@ import { Vector } from '@dimforge/rapier3d-compat';
 import { WebSocket as WebSocket_2 } from 'ws';
 
 /**
- * An audio instance in a world.
+ * An instance of audio, supporting a variety of configuration options.
  *
  * @remarks
  * Audio instances are created directly as instances.
@@ -810,7 +810,7 @@ declare namespace HYTOPIA {
 export default HYTOPIA;
 
 /**
- * Represents a player in the game.
+ * A player in the game.
  *
  * @remarks
  * Players are automatically created when they connect and

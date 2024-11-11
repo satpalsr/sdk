@@ -24,7 +24,7 @@ Description
 
 </td><td>
 
-An audio instance in a world.
+An instance of audio, supporting a variety of configuration options.
 
 
 </td></tr>
@@ -172,7 +172,7 @@ Manages event emission and assigned listener callbacks.
 
 </td><td>
 
-Represents a player in the game.
+A player in the game.
 
 
 </td></tr>

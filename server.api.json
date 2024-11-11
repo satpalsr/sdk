@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "/**\n * An audio instance in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
+          "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -12974,7 +12974,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Audio:class",
-              "docComment": "/**\n * An audio instance in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
+              "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25762,7 +25762,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Player:class",
-              "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
+              "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33060,7 +33060,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Player:class",
-          "docComment": "/**\n * Represents a player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally. Player instances should never be instantiated directly.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

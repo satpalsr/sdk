@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Player class
 
-Represents a player in the game.
+A player in the game.
 
 **Signature:**
 
