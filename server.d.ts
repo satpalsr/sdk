@@ -319,7 +319,7 @@ export declare class Block {
  * @example
  * ```typescript
  * const stoneBlockTypeId = 10;
- * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType(world, {
+ * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({
  *   id: stoneBlockTypeId,
  *   textureUri: 'assets/textures/stone.png',
  *   name: 'Stone',

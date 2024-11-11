@@ -22,7 +22,7 @@ Block types are created directly as instances. They support a variety of configu
 
 ```typescript
 const stoneBlockTypeId = 10;
-world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType(world, {
+world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({
   id: stoneBlockTypeId,
   textureUri: 'assets/textures/stone.png',
   name: 'Stone',
