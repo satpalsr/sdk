@@ -9,7 +9,7 @@ Creates a new block type instance.
 **Signature:**
 
 ```typescript
-constructor(world: World, options?: BlockTypeOptions);
+constructor(options?: BlockTypeOptions);
 ```
 
 ## Parameters
@@ -31,22 +31,6 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
-
-world
-
-
-</td><td>
-
-[World](./server.world.md)
-
-
-</td><td>
-
-The world the block type is for.
-
-
-</td></tr>
-<tr><td>
 
 options
 

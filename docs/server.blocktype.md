@@ -52,7 +52,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[(constructor)(world, options)](./server.blocktype._constructor_.md)
+[(constructor)(options)](./server.blocktype._constructor_.md)
 
 
 </td><td>
@@ -229,27 +229,6 @@ string
 </td><td>
 
 The URI of the texture for the block type.
-
-
-</td></tr>
-<tr><td>
-
-[world](./server.blocktype.world.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-[World](./server.world.md)
-
-
-</td><td>
-
-The world the block type is for.
 
 
 </td></tr>

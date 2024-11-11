@@ -3103,16 +3103,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(world: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
+                  "text": "constructor(options?: "
                 },
                 {
                   "kind": "Reference",
@@ -3129,18 +3120,10 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "world",
+                  "parameterName": "options",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
                   },
                   "isOptional": true
                 }
@@ -3394,37 +3377,6 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "textureUri",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!BlockType#world:member",
-              "docComment": "/**\n * The world the block type is for.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get world(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "world",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -15514,16 +15466,7 @@
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "constructor(world: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "World",
-                      "canonicalReference": "server!World:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ", options?: "
+                      "text": "constructor(options?: "
                     },
                     {
                       "kind": "Reference",
@@ -15540,18 +15483,10 @@
                   "overloadIndex": 1,
                   "parameters": [
                     {
-                      "parameterName": "world",
+                      "parameterName": "options",
                       "parameterTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2
-                      },
-                      "isOptional": false
-                    },
-                    {
-                      "parameterName": "options",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 3,
-                        "endIndex": 4
                       },
                       "isOptional": true
                     }
@@ -15805,37 +15740,6 @@
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "textureUri",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.BlockType#world:member",
-                  "docComment": "/**\n * The world the block type is for.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get world(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "World",
-                      "canonicalReference": "server!World:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "world",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2

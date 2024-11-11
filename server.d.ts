@@ -348,13 +348,12 @@ export declare class BlockType implements protocol.Serializable {
 
 
 
-
     /**
      * Creates a new block type instance.
      * @param world - The world the block type is for.
      * @param options - The options for the block type.
      */
-    constructor(world: World, options?: BlockTypeOptions);
+    constructor(options?: BlockTypeOptions);
     /** The unique identifier for the block type. */
     get id(): number;
     /** The collider options for the block type. */
@@ -365,8 +364,6 @@ export declare class BlockType implements protocol.Serializable {
     get name(): string;
     /** Whether the block type is meshable. */
     get isMeshable(): boolean;
-    /** The world the block type is for. */
-    get world(): World;
 
 
 }
