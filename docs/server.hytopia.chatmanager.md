@@ -22,7 +22,7 @@ The constructor for this class is marked as internal. Third-party code should no
 
 
 ```typescript
-chatManager.registerCommand('/kick', (player, args, message) => {
+world.chatManager.registerCommand('/kick', (player, args, message) => {
   const admins = [ 'arkdev', 'testuser123' ];
   if (admins.includes(player.username)) {
     const targetUsername = args[0];
