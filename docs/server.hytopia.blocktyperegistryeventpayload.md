@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockTypeRegistryEventPayload namespace
 
+Payloads for events a BlockTypeRegistry instance can emit.
+
 **Signature:**
 
 ```typescript

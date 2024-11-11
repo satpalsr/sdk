@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockTypeRegistryEventType enum
 
+Event types a BlockTypeRegistry instance can emit.
+
 **Signature:**
 
 ```typescript

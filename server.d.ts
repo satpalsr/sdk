@@ -376,6 +376,27 @@ export declare interface BlockTypeOptions {
     customColliderOptions?: ColliderOptions;
 }
 
+/**
+ * Manages known block types in a world.
+ *
+ * @remarks
+ * Block type registries are created internally as a singleton
+ * for each {@link World} instance in a game server and should
+ * never be instantiated directly. A block type registry allows,
+ * you to register and retrieve block types by their unique id
+ * for a world.
+ *
+ * @example
+ * ```typescript
+ * world.blockTypeRegistry.registerGenericBlockType({
+ *   id: 15,
+ *   textureUri: 'assets/textures/dirt.png',
+ *   name: 'Dirt',
+ * });
+ * ```
+ *
+ * @public
+ */
 export declare class BlockTypeRegistry implements protocol.Serializable {
     private _blockTypes;
     private _world;
@@ -388,6 +409,7 @@ export declare class BlockTypeRegistry implements protocol.Serializable {
     serialize(): protocol.BlockTypesSchema;
 }
 
+/** Payloads for events a BlockTypeRegistry instance can emit. @public */
 export declare namespace BlockTypeRegistryEventPayload {
     export interface RegisterBlockType {
         blockTypeRegistry: BlockTypeRegistry;
@@ -396,6 +418,7 @@ export declare namespace BlockTypeRegistryEventPayload {
     }
 }
 
+/** Event types a BlockTypeRegistry instance can emit. @public */
 export declare enum BlockTypeRegistryEventType {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }

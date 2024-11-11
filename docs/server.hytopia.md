@@ -77,6 +77,8 @@ An instance of a block type, supporting a variety of configuration options.
 
 </td><td>
 
+Manages known block types in a world.
+
 
 </td></tr>
 <tr><td>
@@ -259,6 +261,8 @@ Event types an Audio instance can emit.
 
 
 </td><td>
+
+Event types a BlockTypeRegistry instance can emit.
 
 
 </td></tr>
@@ -529,6 +533,8 @@ Payloads for events an Audio instance can emit.
 
 
 </td><td>
+
+Payloads for events a BlockTypeRegistry instance can emit.
 
 
 </td></tr>

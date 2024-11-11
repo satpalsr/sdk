@@ -3523,7 +3523,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3852,7 +3852,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!BlockTypeRegistryEventPayload:namespace",
-          "docComment": "",
+          "docComment": "/**\n * Payloads for events a BlockTypeRegistry instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3969,7 +3969,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!BlockTypeRegistryEventType:enum",
-          "docComment": "",
+          "docComment": "/**\n * Event types a BlockTypeRegistry instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -15886,7 +15886,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:class",
-              "docComment": "",
+              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16215,7 +16215,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistryEventPayload:namespace",
-              "docComment": "",
+              "docComment": "/**\n * Payloads for events a BlockTypeRegistry instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16332,7 +16332,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistryEventType:enum",
-              "docComment": "",
+              "docComment": "/**\n * Event types a BlockTypeRegistry instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

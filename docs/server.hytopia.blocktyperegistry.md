@@ -4,12 +4,29 @@
 
 ## HYTOPIA.BlockTypeRegistry class
 
+Manages known block types in a world.
+
 **Signature:**
 
 ```typescript
 export default class BlockTypeRegistry implements protocol.Serializable 
 ```
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Block type registries are created internally as a singleton for each [World](./server.world.md) instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.
+
+## Example
+
+
+```typescript
+world.blockTypeRegistry.registerGenericBlockType({
+  id: 15,
+  textureUri: 'assets/textures/dirt.png',
+  name: 'Dirt',
+});
+```
 
 ## Constructors
 
