@@ -379,8 +379,10 @@ export declare interface BlockTypeOptions {
  * Manages known block types in a world.
  *
  * @remarks
- * A block type registry allows you to register and
- * retrieve block types by their unique id for a world.
+ * Block type registries are created internally as a singleton
+ * for each {@link World} instance in a game server. A block
+ * type registry allows you to register and retrieve block
+ * types by their unique id for a world.
  *
  * @example
  * ```typescript

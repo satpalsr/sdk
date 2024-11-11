@@ -3523,7 +3523,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -15566,7 +15566,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:class",
-              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
