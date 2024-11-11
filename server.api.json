@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioData} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -205,12 +205,12 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(audioData: "
+                  "text": "constructor(options: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "AudioData",
-                  "canonicalReference": "server!AudioData:interface"
+                  "text": "AudioOptions",
+                  "canonicalReference": "server!AudioOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -222,7 +222,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "audioData",
+                  "parameterName": "options",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -1197,323 +1197,6 @@
               "endIndex": 2
             }
           ]
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "server!AudioData:interface",
-          "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface AudioData "
-            }
-          ],
-          "fileUrlPath": "src/world/audios/Audio.ts",
-          "releaseTag": "Public",
-          "name": "AudioData",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#attachedToEntity:member",
-              "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "attachedToEntity?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "attachedToEntity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#detune:member",
-              "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "detune?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "detune",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#distortion:member",
-              "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "distortion?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "distortion",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#duration:member",
-              "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "duration?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "duration",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#loop:member",
-              "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "loop?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "loop",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#offset:member",
-              "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "offset?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "offset",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#playbackRate:member",
-              "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "playbackRate?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "playbackRate",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#position:member",
-              "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "position?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3",
-                  "canonicalReference": "server!Vector3:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "position",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#referenceDistance:member",
-              "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "referenceDistance?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "referenceDistance",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#uri:member",
-              "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "uri: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "uri",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!AudioData#volume:member",
-              "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "volume?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "volume",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
         },
         {
           "kind": "Namespace",
@@ -2617,6 +2300,323 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!AudioOptions:interface",
+          "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface AudioOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/audios/Audio.ts",
+          "releaseTag": "Public",
+          "name": "AudioOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#attachedToEntity:member",
+              "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "attachedToEntity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "attachedToEntity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#detune:member",
+              "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "detune?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "detune",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#distortion:member",
+              "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "distortion?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "distortion",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#duration:member",
+              "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "duration?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "duration",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#loop:member",
+              "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "loop?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "loop",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#offset:member",
+              "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "offset?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "offset",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#playbackRate:member",
+              "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "playbackRate?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "playbackRate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#position:member",
+              "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "position?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "position",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#referenceDistance:member",
+              "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "referenceDistance?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "referenceDistance",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#uri:member",
+              "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "uri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "uri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!AudioOptions#volume:member",
+              "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "volume?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "volume",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!BaseCharacterController:class",
           "docComment": "",
@@ -3074,7 +3074,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockType:class",
-          "docComment": "",
+          "docComment": "/**\n * An instance of a block type, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Block types are created directly as instances. They support a variety of configuration options through the {@link BlockTypeOptions} constructor argument. Block types are registered with a {@link BlockTypeRegistry} instance, allowing you to create custom blocks with unique visual representations and behaviors.\n *\n * @example\n * ```typescript\n * const blockTypeId = 10;\n * world.blockTypeRegistry.registerBlockType(blockTypeId, new BlockType(world, {\n *   id: blockTypeId,\n *   textureUri: 'assets/textures/stone.png',\n *   name: 'Stone',\n * }));\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3099,7 +3099,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!BlockType:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `BlockType` class\n */\n",
+              "docComment": "/**\n * Creates a new block type instance.\n *\n * @param world - The world the block type is for.\n *\n * @param options - The options for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3112,12 +3112,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", blockTypeData?: "
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "BlockTypeData",
-                  "canonicalReference": "server!BlockTypeData:interface"
+                  "text": "BlockTypeOptions",
+                  "canonicalReference": "server!BlockTypeOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -3137,7 +3137,7 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "blockTypeData",
+                  "parameterName": "options",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
@@ -3149,7 +3149,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#colliderOptions:member",
-              "docComment": "",
+              "docComment": "/**\n * The collider options for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3178,59 +3178,9 @@
               "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!BlockType#createCollider:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createCollider(halfExtents?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3",
-                  "canonicalReference": "server!Vector3:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "halfExtents",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createCollider"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!BlockType#id:member",
-              "docComment": "",
+              "docComment": "/**\n * The unique identifier for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3260,7 +3210,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#isMeshable:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the block type is meshable.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3289,38 +3239,8 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!BlockType#isSolid:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get isSolid(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "isSolid",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
               "canonicalReference": "server!BlockType#name:member",
-              "docComment": "",
+              "docComment": "/**\n * The name of the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3350,7 +3270,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityCollision:member",
-              "docComment": "",
+              "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param entity - The entity that collided with the block.\n *\n * @param started - Whether the collision started.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3398,7 +3318,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityContactForce:member",
-              "docComment": "",
+              "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param entity - The entity that contacted the block.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3453,41 +3373,9 @@
               "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!BlockType#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.BlockTypeSchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!BlockTypeSchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!BlockType#textureUri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI of the texture for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3517,7 +3405,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the block type is for.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3555,22 +3443,22 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "server!BlockTypeData:interface",
-          "docComment": "",
+          "canonicalReference": "server!BlockTypeOptions:interface",
+          "docComment": "/**\n * Options for creating a block type instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface BlockTypeData "
+              "text": "export interface BlockTypeOptions "
             }
           ],
           "fileUrlPath": "src/world/blocks/BlockType.ts",
           "releaseTag": "Public",
-          "name": "BlockTypeData",
+          "name": "BlockTypeOptions",
           "preserveMemberOrder": false,
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BlockTypeData#customColliderOptions:member",
+              "canonicalReference": "server!BlockTypeOptions#customColliderOptions:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -3598,7 +3486,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BlockTypeData#id:member",
+              "canonicalReference": "server!BlockTypeOptions#id:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -3625,34 +3513,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BlockTypeData#isSolid:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "isSolid?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "isSolid",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!BlockTypeData#name:member",
+              "canonicalReference": "server!BlockTypeOptions#name:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -3679,7 +3540,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BlockTypeData#textureUri:member",
+              "canonicalReference": "server!BlockTypeOptions#textureUri:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -3922,12 +3783,12 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "registerGenericBlockType(blockTypeData: "
+                  "text": "registerGenericBlockType(blockTypeOptions: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "BlockTypeData",
-                  "canonicalReference": "server!BlockTypeData:interface"
+                  "text": "BlockTypeOptions",
+                  "canonicalReference": "server!BlockTypeOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -3953,7 +3814,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "blockTypeData",
+                  "parameterName": "blockTypeOptions",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -12726,7 +12587,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Audio:class",
-              "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioData} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -12755,12 +12616,12 @@
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "constructor(audioData: "
+                      "text": "constructor(options: "
                     },
                     {
                       "kind": "Reference",
-                      "text": "AudioData",
-                      "canonicalReference": "server!AudioData:interface"
+                      "text": "AudioOptions",
+                      "canonicalReference": "server!AudioOptions:interface"
                     },
                     {
                       "kind": "Content",
@@ -12772,7 +12633,7 @@
                   "overloadIndex": 1,
                   "parameters": [
                     {
-                      "parameterName": "audioData",
+                      "parameterName": "options",
                       "parameterTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2
@@ -13747,323 +13608,6 @@
                   "endIndex": 2
                 }
               ]
-            },
-            {
-              "kind": "Interface",
-              "canonicalReference": "server!HYTOPIA.AudioData:interface",
-              "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export interface AudioData "
-                }
-              ],
-              "fileUrlPath": "src/world/audios/Audio.ts",
-              "releaseTag": "Public",
-              "name": "AudioData",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#attachedToEntity:member",
-                  "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "attachedToEntity?: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Entity",
-                      "canonicalReference": "server!Entity:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "attachedToEntity",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#detune:member",
-                  "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "detune?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "detune",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#distortion:member",
-                  "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "distortion?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "distortion",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#duration:member",
-                  "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "duration?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "duration",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#loop:member",
-                  "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "loop?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "boolean"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "loop",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#offset:member",
-                  "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "offset?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "offset",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#playbackRate:member",
-                  "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "playbackRate?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "playbackRate",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#position:member",
-                  "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "position?: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Vector3",
-                      "canonicalReference": "server!Vector3:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "position",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#referenceDistance:member",
-                  "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "referenceDistance?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "referenceDistance",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#uri:member",
-                  "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "uri: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "uri",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.AudioData#volume:member",
-                  "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "volume?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "volume",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
             },
             {
               "kind": "Namespace",
@@ -15167,6 +14711,323 @@
               "implementsTokenRanges": []
             },
             {
+              "kind": "Interface",
+              "canonicalReference": "server!HYTOPIA.AudioOptions:interface",
+              "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export interface AudioOptions "
+                }
+              ],
+              "fileUrlPath": "src/world/audios/Audio.ts",
+              "releaseTag": "Public",
+              "name": "AudioOptions",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#attachedToEntity:member",
+                  "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "attachedToEntity?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "attachedToEntity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#detune:member",
+                  "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "detune?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "detune",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#distortion:member",
+                  "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "distortion?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "distortion",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#duration:member",
+                  "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "duration?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "duration",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#loop:member",
+                  "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "loop?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "loop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#offset:member",
+                  "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "offset?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "offset",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#playbackRate:member",
+                  "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "playbackRate?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "playbackRate",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#position:member",
+                  "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "position?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "position",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#referenceDistance:member",
+                  "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "referenceDistance?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "referenceDistance",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#uri:member",
+                  "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "uri: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "uri",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.AudioOptions#volume:member",
+                  "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "volume?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "volume",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BaseCharacterController:class",
               "docComment": "",
@@ -15624,7 +15485,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockType:class",
-              "docComment": "",
+              "docComment": "/**\n * An instance of a block type, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Block types are created directly as instances. They support a variety of configuration options through the {@link BlockTypeOptions} constructor argument. Block types are registered with a {@link BlockTypeRegistry} instance, allowing you to create custom blocks with unique visual representations and behaviors.\n *\n * @example\n * ```typescript\n * const blockTypeId = 10;\n * world.blockTypeRegistry.registerBlockType(blockTypeId, new BlockType(world, {\n *   id: blockTypeId,\n *   textureUri: 'assets/textures/stone.png',\n *   name: 'Stone',\n * }));\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15649,7 +15510,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.BlockType:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `BlockType` class\n */\n",
+                  "docComment": "/**\n * Creates a new block type instance.\n *\n * @param world - The world the block type is for.\n *\n * @param options - The options for the block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15662,12 +15523,12 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", blockTypeData?: "
+                      "text": ", options?: "
                     },
                     {
                       "kind": "Reference",
-                      "text": "BlockTypeData",
-                      "canonicalReference": "server!BlockTypeData:interface"
+                      "text": "BlockTypeOptions",
+                      "canonicalReference": "server!BlockTypeOptions:interface"
                     },
                     {
                       "kind": "Content",
@@ -15687,7 +15548,7 @@
                       "isOptional": false
                     },
                     {
-                      "parameterName": "blockTypeData",
+                      "parameterName": "options",
                       "parameterTypeTokenRange": {
                         "startIndex": 3,
                         "endIndex": 4
@@ -15699,7 +15560,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#colliderOptions:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The collider options for the block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15728,59 +15589,9 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.BlockType#createCollider:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "createCollider(halfExtents?: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Vector3",
-                      "canonicalReference": "server!Vector3:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Collider",
-                      "canonicalReference": "server!Collider:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "halfExtents",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": true
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "createCollider"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#id:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The unique identifier for the block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15810,7 +15621,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#isMeshable:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the block type is meshable.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15839,38 +15650,8 @@
                 },
                 {
                   "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.BlockType#isSolid:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get isSolid(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "boolean"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "isSolid",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#name:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The name of the block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15900,7 +15681,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityCollision:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param entity - The entity that collided with the block.\n *\n * @param started - Whether the collision started.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15948,7 +15729,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityContactForce:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param entity - The entity that contacted the block.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16003,41 +15784,9 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.BlockType#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.BlockTypeSchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!BlockTypeSchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#textureUri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI of the texture for the block type.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16067,7 +15816,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the block type is for.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16105,22 +15854,22 @@
             },
             {
               "kind": "Interface",
-              "canonicalReference": "server!HYTOPIA.BlockTypeData:interface",
-              "docComment": "",
+              "canonicalReference": "server!HYTOPIA.BlockTypeOptions:interface",
+              "docComment": "/**\n * Options for creating a block type instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "export interface BlockTypeData "
+                  "text": "export interface BlockTypeOptions "
                 }
               ],
               "fileUrlPath": "src/world/blocks/BlockType.ts",
               "releaseTag": "Public",
-              "name": "BlockTypeData",
+              "name": "BlockTypeOptions",
               "preserveMemberOrder": false,
               "members": [
                 {
                   "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeData#customColliderOptions:member",
+                  "canonicalReference": "server!HYTOPIA.BlockTypeOptions#customColliderOptions:member",
                   "docComment": "",
                   "excerptTokens": [
                     {
@@ -16148,7 +15897,7 @@
                 },
                 {
                   "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeData#id:member",
+                  "canonicalReference": "server!HYTOPIA.BlockTypeOptions#id:member",
                   "docComment": "",
                   "excerptTokens": [
                     {
@@ -16175,34 +15924,7 @@
                 },
                 {
                   "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeData#isSolid:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "isSolid?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "boolean"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "isSolid",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeData#name:member",
+                  "canonicalReference": "server!HYTOPIA.BlockTypeOptions#name:member",
                   "docComment": "",
                   "excerptTokens": [
                     {
@@ -16229,7 +15951,7 @@
                 },
                 {
                   "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.BlockTypeData#textureUri:member",
+                  "canonicalReference": "server!HYTOPIA.BlockTypeOptions#textureUri:member",
                   "docComment": "",
                   "excerptTokens": [
                     {
@@ -16472,12 +16194,12 @@
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "registerGenericBlockType(blockTypeData: "
+                      "text": "registerGenericBlockType(blockTypeOptions: "
                     },
                     {
                       "kind": "Reference",
-                      "text": "BlockTypeData",
-                      "canonicalReference": "server!BlockTypeData:interface"
+                      "text": "BlockTypeOptions",
+                      "canonicalReference": "server!BlockTypeOptions:interface"
                     },
                     {
                       "kind": "Content",
@@ -16503,7 +16225,7 @@
                   "overloadIndex": 1,
                   "parameters": [
                     {
-                      "parameterName": "blockTypeData",
+                      "parameterName": "blockTypeOptions",
                       "parameterTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2

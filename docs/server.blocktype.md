@@ -4,12 +4,30 @@
 
 ## BlockType class
 
+An instance of a block type, supporting a variety of configuration options.
+
 **Signature:**
 
 ```typescript
 export default class BlockType implements protocol.Serializable 
 ```
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Block types are created directly as instances. They support a variety of configuration options through the [BlockTypeOptions](./server.blocktypeoptions.md) constructor argument. Block types are registered with a [BlockTypeRegistry](./server.blocktyperegistry.md) instance, allowing you to create custom blocks with unique visual representations and behaviors.
+
+## Example
+
+
+```typescript
+const blockTypeId = 10;
+world.blockTypeRegistry.registerBlockType(blockTypeId, new BlockType(world, {
+  id: blockTypeId,
+  textureUri: 'assets/textures/stone.png',
+  name: 'Stone',
+}));
+```
 
 ## Constructors
 
@@ -31,7 +49,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[(constructor)(world, blockTypeData)](./server.blocktype._constructor_.md)
+[(constructor)(world, options)](./server.blocktype._constructor_.md)
 
 
 </td><td>
@@ -39,7 +57,7 @@ Description
 
 </td><td>
 
-Constructs a new instance of the `BlockType` class
+Creates a new block type instance.
 
 
 </td></tr>
@@ -85,6 +103,8 @@ Description
 
 </td><td>
 
+The collider options for the block type.
+
 
 </td></tr>
 <tr><td>
@@ -103,6 +123,8 @@ number
 
 
 </td><td>
+
+The unique identifier for the block type.
 
 
 </td></tr>
@@ -123,24 +145,7 @@ boolean
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[isSolid](./server.blocktype.issolid.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
+Whether the block type is meshable.
 
 
 </td></tr>
@@ -161,6 +166,8 @@ string
 
 </td><td>
 
+The name of the block type.
+
 
 </td></tr>
 <tr><td>
@@ -178,7 +185,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A callback function that is invoked when an entity collides with blocks of this type.
 
 
 </td></tr>
@@ -197,7 +204,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A callback function that is invoked when an entity contacts a block of this type.
 
 
 </td></tr>
@@ -218,6 +225,8 @@ string
 
 </td><td>
 
+The URI of the texture for the block type.
+
 
 </td></tr>
 <tr><td>
@@ -237,49 +246,7 @@ string
 
 </td><td>
 
-
-</td></tr>
-</tbody></table>
-
-## Methods
-
-<table><thead><tr><th>
-
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[createCollider(halfExtents)](./server.blocktype.createcollider.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[serialize()](./server.blocktype.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
+The world the block type is for.
 
 
 </td></tr>

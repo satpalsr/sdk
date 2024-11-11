@@ -66,6 +66,8 @@ Represents a block in a world.
 
 </td><td>
 
+An instance of a block type, supporting a variety of configuration options.
+
 
 </td></tr>
 <tr><td>
@@ -366,7 +368,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[AudioData](./server.audiodata.md)
+[AudioOptions](./server.audiooptions.md)
 
 
 </td><td>
@@ -377,10 +379,12 @@ Options for creating an Audio instance.
 </td></tr>
 <tr><td>
 
-[BlockTypeData](./server.blocktypedata.md)
+[BlockTypeOptions](./server.blocktypeoptions.md)
 
 
 </td><td>
+
+Options for creating a block type instance.
 
 
 </td></tr>

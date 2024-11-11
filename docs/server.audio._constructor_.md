@@ -9,7 +9,7 @@ Constructs a new instance of the `Audio` class
 **Signature:**
 
 ```typescript
-constructor(audioData: AudioData);
+constructor(options: AudioOptions);
 ```
 
 ## Parameters
@@ -32,17 +32,15 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-audioData
+options
 
 
 </td><td>
 
-[AudioData](./server.audiodata.md)
+[AudioOptions](./server.audiooptions.md)
 
 
 </td><td>
-
-The options for the audio instance.
 
 
 </td></tr>

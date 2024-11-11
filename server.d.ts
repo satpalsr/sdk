@@ -16,7 +16,7 @@ import { WebSocket as WebSocket_2 } from 'ws';
  * @remarks
  * Audio instances are created directly as instances.
  * They support a variety of configuration options through
- * the {@link AudioData} constructor argument.
+ * the {@link AudioOptions} constructor argument.
  *
  * @example
  * ```typescript
@@ -48,7 +48,7 @@ export declare class Audio implements protocol.Serializable {
     /**
      * @param audioData - The options for the audio instance.
      */
-    constructor(audioData: AudioData);
+    constructor(options: AudioOptions);
     /** The unique identifier for the audio. */
     get id(): number | undefined;
     /** The entity to which the audio is attached if explicitly set. */
@@ -138,32 +138,6 @@ export declare class Audio implements protocol.Serializable {
     setVolume(volume: number): void;
 
 
-}
-
-/** Options for creating an Audio instance. @public */
-export declare interface AudioData {
-    /** If set, audio playback will follow the entity's position. */
-    attachedToEntity?: Entity;
-    /** The duration of the audio in seconds. Defaults to full duration. */
-    duration?: number;
-    /** The detuning of the audio in cents. */
-    detune?: number;
-    /** The amount of distortion to apply to the audio. */
-    distortion?: number;
-    /** Whether the audio should loop when it reaches the end. Defaults to false. */
-    loop?: boolean;
-    /** The offset time in seconds from which the audio should start playing. */
-    offset?: number;
-    /** The position in the world where the audio is played. */
-    position?: Vector3;
-    /** The playback speed of the audio. Defaults to 1. */
-    playbackRate?: number;
-    /** The reference distance for reducing volume as the audio source moves away from the listener. */
-    referenceDistance?: number;
-    /** The URI or path to the audio asset to be played. */
-    uri: string;
-    /** The volume level of the audio. Defaults to 0.5. */
-    volume?: number;
 }
 
 /** Payloads for events an Audio instance can emit. @public */
@@ -276,6 +250,32 @@ export declare class AudioManager {
     getAllOneshotAudios(): Audio[];
 }
 
+/** Options for creating an Audio instance. @public */
+export declare interface AudioOptions {
+    /** If set, audio playback will follow the entity's position. */
+    attachedToEntity?: Entity;
+    /** The duration of the audio in seconds. Defaults to full duration. */
+    duration?: number;
+    /** The detuning of the audio in cents. */
+    detune?: number;
+    /** The amount of distortion to apply to the audio. */
+    distortion?: number;
+    /** Whether the audio should loop when it reaches the end. Defaults to false. */
+    loop?: boolean;
+    /** The offset time in seconds from which the audio should start playing. */
+    offset?: number;
+    /** The position in the world where the audio is played. */
+    position?: Vector3;
+    /** The playback speed of the audio. Defaults to 1. */
+    playbackRate?: number;
+    /** The reference distance for reducing volume as the audio source moves away from the listener. */
+    referenceDistance?: number;
+    /** The URI or path to the audio asset to be played. */
+    uri: string;
+    /** The volume level of the audio. Defaults to 0.5. */
+    volume?: number;
+}
+
 export declare class BaseCharacterController {
     readonly entity: Entity;
     onTickPlayerMovement?: (inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) => void;
@@ -305,33 +305,75 @@ export declare class Block {
 
 }
 
+/**
+ * An instance of a block type, supporting a variety of configuration options.
+ *
+ * @remarks
+ * Block types are created directly as instances.
+ * They support a variety of configuration options through
+ * the {@link BlockTypeOptions} constructor argument.
+ * Block types are registered with a {@link BlockTypeRegistry} instance,
+ * allowing you to create custom blocks with unique visual representations
+ * and behaviors.
+ *
+ * @example
+ * ```typescript
+ * const blockTypeId = 10;
+ * world.blockTypeRegistry.registerBlockType(blockTypeId, new BlockType(world, {
+ *   id: blockTypeId,
+ *   textureUri: 'assets/textures/stone.png',
+ *   name: 'Stone',
+ * }));
+ * ```
+ *
+ * @public
+ */
 export declare class BlockType implements protocol.Serializable {
+    /**
+     * A callback function that is invoked when an entity collides with blocks of this type.
+     * @param entity - The entity that collided with the block.
+     * @param started - Whether the collision started.
+     */
     onEntityCollision?: (this: BlockType, entity: Entity, started: boolean) => void;
+    /**
+     * A callback function that is invoked when an entity contacts a block of this type.
+     * @param entity - The entity that contacted the block.
+     * @param contactForceData - The contact force data.
+     */
     onEntityContactForce?: (this: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
-    private readonly _id;
-    private _textureUri;
-    private _name;
-    private _customColliderOptions;
-    private _isSolid;
-    private _world;
-    constructor(world: World, blockTypeData?: BlockTypeData);
+
+
+
+
+
+    /**
+     * Creates a new block type instance.
+     * @param world - The world the block type is for.
+     * @param options - The options for the block type.
+     */
+    constructor(world: World, options?: BlockTypeOptions);
+    /** The unique identifier for the block type. */
     get id(): number;
+    /** The collider options for the block type. */
     get colliderOptions(): ColliderOptions;
+    /** The URI of the texture for the block type. */
     get textureUri(): string;
+    /** The name of the block type. */
     get name(): string;
-    get world(): World;
-    get isSolid(): boolean;
+    /** Whether the block type is meshable. */
     get isMeshable(): boolean;
-    createCollider(halfExtents?: Vector3): Collider;
-    serialize(): protocol.BlockTypeSchema;
+    /** The world the block type is for. */
+    get world(): World;
+
+
 }
 
-export declare interface BlockTypeData {
+/** Options for creating a block type instance. @public */
+export declare interface BlockTypeOptions {
     id: number;
     textureUri: string;
     name: string;
     customColliderOptions?: ColliderOptions;
-    isSolid?: boolean;
 }
 
 export declare class BlockTypeRegistry implements protocol.Serializable {
@@ -341,7 +383,7 @@ export declare class BlockTypeRegistry implements protocol.Serializable {
     get world(): World;
     getAllBlockTypes(): BlockType[];
     getBlockType(id: number): BlockType;
-    registerGenericBlockType(blockTypeData: BlockTypeData): BlockType;
+    registerGenericBlockType(blockTypeOptions: BlockTypeOptions): BlockType;
     registerBlockType(id: number, blockTypeReference: BlockType): void;
     serialize(): protocol.BlockTypesSchema;
 }
@@ -796,13 +838,13 @@ declare namespace HYTOPIA {
     export {
         Audio,
         AudioEventType,
-        AudioData,
+        AudioOptions,
         AudioEventPayload,
         AudioManager,
         BaseCharacterController,
         Block,
         BlockType,
-        BlockTypeData,
+        BlockTypeOptions,
         BlockTypeRegistry,
         BlockTypeRegistryEventType,
         BlockTypeRegistryEventPayload,

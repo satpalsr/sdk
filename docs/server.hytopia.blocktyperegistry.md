@@ -145,7 +145,7 @@ Description
 </td></tr>
 <tr><td>
 
-[registerGenericBlockType(blockTypeData)](./server.hytopia.blocktyperegistry.registergenericblocktype.md)
+[registerGenericBlockType(blockTypeOptions)](./server.hytopia.blocktyperegistry.registergenericblocktype.md)
 
 
 </td><td>

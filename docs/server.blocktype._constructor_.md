@@ -4,12 +4,12 @@
 
 ## BlockType.(constructor)
 
-Constructs a new instance of the `BlockType` class
+Creates a new block type instance.
 
 **Signature:**
 
 ```typescript
-constructor(world: World, blockTypeData?: BlockTypeData);
+constructor(world: World, options?: BlockTypeOptions);
 ```
 
 ## Parameters
@@ -42,21 +42,23 @@ world
 
 </td><td>
 
+The world the block type is for.
+
 
 </td></tr>
 <tr><td>
 
-blockTypeData
+options
 
 
 </td><td>
 
-[BlockTypeData](./server.blocktypedata.md)
+[BlockTypeOptions](./server.blocktypeoptions.md)
 
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The options for the block type.
 
 
 </td></tr>

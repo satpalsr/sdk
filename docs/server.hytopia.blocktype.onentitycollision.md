@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockType.onEntityCollision property
 
+A callback function that is invoked when an entity collides with blocks of this type.
+
 **Signature:**
 
 ```typescript

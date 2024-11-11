@@ -7,7 +7,7 @@
 **Signature:**
 
 ```typescript
-registerGenericBlockType(blockTypeData: BlockTypeData): BlockType;
+registerGenericBlockType(blockTypeOptions: BlockTypeOptions): BlockType;
 ```
 
 ## Parameters
@@ -30,12 +30,12 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-blockTypeData
+blockTypeOptions
 
 
 </td><td>
 
-[BlockTypeData](./server.blocktypedata.md)
+[BlockTypeOptions](./server.blocktypeoptions.md)
 
 
 </td><td>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockType.onEntityContactForce property
 
+A callback function that is invoked when an entity contacts a block of this type.
+
 **Signature:**
 
 ```typescript

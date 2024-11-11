@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockType.world property
 
+The world the block type is for.
+
 **Signature:**
 
 ```typescript

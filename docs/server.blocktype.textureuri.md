@@ -4,6 +4,8 @@
 
 ## BlockType.textureUri property
 
+The URI of the texture for the block type.
+
 **Signature:**
 
 ```typescript

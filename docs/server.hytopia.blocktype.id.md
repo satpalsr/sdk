@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BlockType.id property
 
+The unique identifier for the block type.
+
 **Signature:**
 
 ```typescript

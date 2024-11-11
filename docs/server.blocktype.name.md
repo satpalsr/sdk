@@ -4,6 +4,8 @@
 
 ## BlockType.name property
 
+The name of the block type.
+
 **Signature:**
 
 ```typescript

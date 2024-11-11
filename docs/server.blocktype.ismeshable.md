@@ -4,6 +4,8 @@
 
 ## BlockType.isMeshable property
 
+Whether the block type is meshable.
+
 **Signature:**
 
 ```typescript

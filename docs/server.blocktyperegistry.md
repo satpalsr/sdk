@@ -145,7 +145,7 @@ Description
 </td></tr>
 <tr><td>
 
-[registerGenericBlockType(blockTypeData)](./server.blocktyperegistry.registergenericblocktype.md)
+[registerGenericBlockType(blockTypeOptions)](./server.blocktyperegistry.registergenericblocktype.md)
 
 
 </td><td>
