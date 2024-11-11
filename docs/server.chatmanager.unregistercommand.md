@@ -4,6 +4,8 @@
 
 ## ChatManager.unregisterCommand() method
 
+Unregister a command.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ string
 
 
 </td><td>
+
+The command to unregister.
 
 
 </td></tr>

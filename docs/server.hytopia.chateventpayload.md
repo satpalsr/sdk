@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChatEventPayload namespace
 
+Payloads for events a ChatManager instance can emit.
+
 **Signature:**
 
 ```typescript

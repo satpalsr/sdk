@@ -4,6 +4,8 @@
 
 ## ChatEventType enum
 
+Event types a ChatManager instance can emit.
+
 **Signature:**
 
 ```typescript

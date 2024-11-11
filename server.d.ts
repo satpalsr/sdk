@@ -382,7 +382,7 @@ export declare interface BlockTypeOptions {
  * @remarks
  * Block type registries are created internally as a singleton
  * for each {@link World} instance in a game server and should
- * never be instantiated directly. A block type registry allows,
+ * never be instantiated directly. A block type registry allows
  * you to register and retrieve block types by their unique id
  * for a world.
  *
@@ -443,6 +443,7 @@ export declare enum BlockTypeRegistryEventType {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }
 
+/** Payloads for events a ChatManager instance can emit. @public */
 export declare namespace ChatEventPayload {
     export interface SendBroadcastMessage {
         message: string;
@@ -455,21 +456,80 @@ export declare namespace ChatEventPayload {
     }
 }
 
+/** Event types a ChatManager instance can emit. @public */
 export declare enum ChatEventType {
     SEND_BROADCAST_MESSAGE = "CHAT.SEND_BROADCAST_MESSAGE",
     SEND_PLAYER_MESSAGE = "CHAT.SEND_PLAYER_MESSAGE"
 }
 
+/**
+ * Manages chat and commands in a world.
+ *
+ * @remarks
+ * The ChatManager is created internally as a singleton
+ * for each {@link World} instance in a game server
+ * and should never be instantiated directly. The ChatManager
+ * allows you to broadcast messages, send messages to specific
+ * players, and register commands that can be used in chat to
+ * execute game logic.
+ *
+ * @example
+ * ```typescript
+ * chatManager.registerCommand('/kick', (player, args, message) => {
+ *   const admins = [ 'arkdev', 'testuser123' ];
+ *   if (admins.includes(player.username)) {
+ *     const targetUsername = args[0];
+ *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);
+ *
+ *     if (targetPlayer) {
+ *       targetPlayer.disconnect();
+ *     }
+ *   }
+ * });
+ * ```
+ *
+ * @public
+ */
 export declare class ChatManager {
-    private _commandCallbacks;
-    private _world;
-    constructor(world: World);
+
+
+
+    /**
+     * Register a command and its callback.
+     * @param command - The command to register.
+     * @param callback - The callback function to execute when the command is used.
+     */
     registerCommand(command: string, callback: CommandCallback): void;
+    /**
+     * Unregister a command.
+     * @param command - The command to unregister.
+     */
     unregisterCommand(command: string): void;
+    /**
+     * Send a broadcast message to all players in the world.
+     * @param message - The message to send.
+     * @param color - The color of the message as a hex color code, excluding #.
+     *
+     * @example
+     * ```typescript
+     * chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');
+     * ```
+     */
     sendBroadcastMessage(message: string, color?: string): void;
+    /**
+     * Send a message to a specific player, only visible to them.
+     * @param player - The player to send the message to.
+     * @param message - The message to send.
+     * @param color - The color of the message as a hex color code, excluding #.
+     *
+     * @example
+     * ```typescript
+     * chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');
+     * ```
+     */
     sendPlayerMessage(player: Player, message: string, color?: string): void;
-    private _subscribeToPlayerEvents;
-    private _onPlayerChatMessage;
+
+
 }
 
 /**
@@ -762,6 +822,13 @@ export declare class CollisionGroupsBuilder {
 
 export declare type CollisionObject = BlockType | Entity | CollisionCallback;
 
+/**
+ * A callback function for a chat command.
+ * @param player - The player that sent the command.
+ * @param args - An array of arguments, comprised of all space separated text after the command.
+ * @param message - The full message of the command.
+ * @public
+ */
 export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
 declare type ContactForceData = {
@@ -1043,6 +1110,7 @@ declare namespace HYTOPIA {
         PlayerEventPayload,
         PlayerEntity,
         PlayerEntityOptions,
+        PlayerManager,
         RigidBody,
         RigidBodyType,
         RigidBodyAdditionalMassProperties,
@@ -1148,6 +1216,31 @@ export declare enum PlayerEventType {
 
 /** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
 export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
+
+/**
+ *
+ */
+export declare class PlayerManager {
+    /** The global PlayerManager instance as a singleton. */
+    static readonly instance: PlayerManager;
+
+
+
+
+    /**
+     * Get all connected players.
+     * @returns An array of all connected players.
+     */
+    getConnectedPlayers(): Player[];
+    /**
+     * Get a connected player by their username (case insensitive).
+     * @param username - The username of the player to get.
+     * @returns The connected player with the given username or undefined if not found.
+     */
+    getConnectedPlayerByUsername(username: string): Player | undefined;
+
+
+}
 
 /** The camera orientation state of a Player. @public */
 export declare type PlayerOrientationState = {

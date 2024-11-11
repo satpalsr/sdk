@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChatManager.registerCommand() method
 
+Register a command and its callback.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ string
 
 </td><td>
 
+The command to register.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ callback
 
 
 </td><td>
+
+The callback function to execute when the command is used.
 
 
 </td></tr>

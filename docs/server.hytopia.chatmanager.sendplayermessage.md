@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChatManager.sendPlayerMessage() method
 
+Send a message to a specific player, only visible to them.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ player
 
 </td><td>
 
+The player to send the message to.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ string
 
 
 </td><td>
+
+The message to send.
 
 
 </td></tr>
@@ -68,7 +74,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The color of the message as a hex color code, excluding \#.
 
 
 </td></tr>
@@ -76,4 +82,11 @@ _(Optional)_
 **Returns:**
 
 void
+
+## Example
+
+
+```typescript
+chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');
+```
 

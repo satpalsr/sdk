@@ -88,6 +88,8 @@ Manages known block types in a world.
 
 </td><td>
 
+Manages chat and commands in a world.
+
 
 </td></tr>
 <tr><td>
@@ -199,6 +201,15 @@ A player in the game.
 </td></tr>
 <tr><td>
 
+[PlayerManager](./server.playermanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [RigidBody](./server.rigidbody.md)
 
 
@@ -276,6 +287,8 @@ Event types a BlockTypeRegistry instance can emit.
 
 
 </td><td>
+
+Event types a ChatManager instance can emit.
 
 
 </td></tr>
@@ -551,6 +564,8 @@ Payloads for events a BlockTypeRegistry instance can emit.
 
 </td><td>
 
+Payloads for events a ChatManager instance can emit.
+
 
 </td></tr>
 <tr><td>
@@ -694,6 +709,8 @@ Description
 
 
 </td><td>
+
+A callback function for a chat command.
 
 
 </td></tr>

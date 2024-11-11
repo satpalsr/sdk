@@ -4,6 +4,8 @@
 
 ## CommandCallback type
 
+A callback function for a chat command.
+
 **Signature:**
 
 ```typescript

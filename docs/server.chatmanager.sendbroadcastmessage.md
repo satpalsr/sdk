@@ -4,6 +4,8 @@
 
 ## ChatManager.sendBroadcastMessage() method
 
+Send a broadcast message to all players in the world.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ string
 
 </td><td>
 
+The message to send.
+
 
 </td></tr>
 <tr><td>
@@ -54,7 +58,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The color of the message as a hex color code, excluding \#.
 
 
 </td></tr>
@@ -62,4 +66,11 @@ _(Optional)_
 **Returns:**
 
 void
+
+## Example
+
+
+```typescript
+chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');
+```
 

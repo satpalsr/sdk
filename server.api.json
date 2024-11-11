@@ -3523,7 +3523,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3942,7 +3942,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!ChatEventPayload:namespace",
-          "docComment": "",
+          "docComment": "/**\n * Payloads for events a ChatManager instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4129,7 +4129,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!ChatEventType:enum",
-          "docComment": "",
+          "docComment": "/**\n * Event types a ChatManager instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4188,7 +4188,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!ChatManager:class",
-          "docComment": "",
+          "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4202,42 +4202,9 @@
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "Constructor",
-              "canonicalReference": "server!ChatManager:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `ChatManager` class\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor(world: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ");"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "world",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ]
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#registerCommand:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Register a command and its callback.\n *\n * @param command - The command to register.\n *\n * @param callback - The callback function to execute when the command is used.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4302,7 +4269,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#sendBroadcastMessage:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Send a broadcast message to all players in the world.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4366,7 +4333,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#sendPlayerMessage:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Send a message to a specific player, only visible to them.\n *\n * @param player - The player to send the message to.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4447,7 +4414,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#unregisterCommand:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Unregister a command.\n *\n * @param command - The command to unregister.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8497,7 +8464,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!CommandCallback:type",
-          "docComment": "",
+          "docComment": "/**\n * A callback function for a chat command.\n *\n * @param player - The player that sent the command.\n *\n * @param args - An array of arguments, comprised of all space separated text after the command.\n *\n * @param message - The full message of the command.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -15599,7 +15566,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BlockTypeRegistry:class",
-              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows, you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'assets/textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16018,7 +15985,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.ChatEventPayload:namespace",
-              "docComment": "",
+              "docComment": "/**\n * Payloads for events a ChatManager instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16205,7 +16172,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.ChatEventType:enum",
-              "docComment": "",
+              "docComment": "/**\n * Event types a ChatManager instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16264,7 +16231,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.ChatManager:class",
-              "docComment": "",
+              "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server and should never be instantiated directly. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16278,42 +16245,9 @@
               "preserveMemberOrder": false,
               "members": [
                 {
-                  "kind": "Constructor",
-                  "canonicalReference": "server!HYTOPIA.ChatManager:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `ChatManager` class\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "constructor(world: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "World",
-                      "canonicalReference": "server!World:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ");"
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "world",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ]
-                },
-                {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.ChatManager#registerCommand:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Register a command and its callback.\n *\n * @param command - The command to register.\n *\n * @param callback - The callback function to execute when the command is used.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16378,7 +16312,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.ChatManager#sendBroadcastMessage:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Send a broadcast message to all players in the world.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');\n * ```\n *\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16442,7 +16376,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.ChatManager#sendPlayerMessage:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Send a message to a specific player, only visible to them.\n *\n * @param player - The player to send the message to.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');\n * ```\n *\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -16523,7 +16457,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.ChatManager#unregisterCommand:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Unregister a command.\n *\n * @param command - The command to unregister.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20573,7 +20507,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.CommandCallback:type",
-              "docComment": "",
+              "docComment": "/**\n * A callback function for a chat command.\n *\n * @param player - The player that sent the command.\n *\n * @param args - An array of arguments, comprised of all space separated text after the command.\n *\n * @param message - The full message of the command.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25316,6 +25250,145 @@
                 "startIndex": 1,
                 "endIndex": 7
               }
+            },
+            {
+              "kind": "Class",
+              "canonicalReference": "server!HYTOPIA.PlayerManager:class",
+              "docComment": "/**\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export default class PlayerManager "
+                }
+              ],
+              "fileUrlPath": "src/networking/players/PlayerManager.ts",
+              "releaseTag": "Public",
+              "isAbstract": false,
+              "name": "PlayerManager",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.PlayerManager#getConnectedPlayerByUsername:member(1)",
+                  "docComment": "/**\n * Get a connected player by their username (case insensitive).\n *\n * @param username - The username of the player to get.\n *\n * @returns The connected player with the given username or undefined if not found.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getConnectedPlayerByUsername(username: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Player",
+                      "canonicalReference": "server!Player:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "username",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getConnectedPlayerByUsername"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.PlayerManager#getConnectedPlayers:member(1)",
+                  "docComment": "/**\n * Get all connected players.\n *\n * @returns An array of all connected players.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getConnectedPlayers(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Player",
+                      "canonicalReference": "server!Player:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getConnectedPlayers"
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.PlayerManager.instance:member",
+                  "docComment": "/**\n * The global PlayerManager instance as a singleton.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "static readonly instance: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "PlayerManager",
+                      "canonicalReference": "server!PlayerManager:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "instance",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": true,
+                  "isProtected": false,
+                  "isAbstract": false
+                }
+              ],
+              "implementsTokenRanges": []
             },
             {
               "kind": "TypeAlias",
@@ -32614,6 +32687,145 @@
             "startIndex": 1,
             "endIndex": 7
           }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!PlayerManager:class",
+          "docComment": "/**\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class PlayerManager "
+            }
+          ],
+          "fileUrlPath": "src/networking/players/PlayerManager.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "PlayerManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerManager#getConnectedPlayerByUsername:member(1)",
+              "docComment": "/**\n * Get a connected player by their username (case insensitive).\n *\n * @param username - The username of the player to get.\n *\n * @returns The connected player with the given username or undefined if not found.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getConnectedPlayerByUsername(username: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "username",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getConnectedPlayerByUsername"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerManager#getConnectedPlayers:member(1)",
+              "docComment": "/**\n * Get all connected players.\n *\n * @returns An array of all connected players.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getConnectedPlayers(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getConnectedPlayers"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerManager.instance:member",
+              "docComment": "/**\n * The global PlayerManager instance as a singleton.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static readonly instance: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerManager",
+                  "canonicalReference": "server!PlayerManager:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "instance",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": true,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": []
         },
         {
           "kind": "TypeAlias",

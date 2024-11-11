@@ -4,45 +4,36 @@
 
 ## HYTOPIA.ChatManager class
 
+Manages chat and commands in a world.
+
 **Signature:**
 
 ```typescript
 export default class ChatManager 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+The ChatManager is created internally as a singleton for each [World](./server.world.md) instance in a game server and should never be instantiated directly. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.
 
-Constructor
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.
 
-
-</th><th>
-
-Modifiers
+## Example
 
 
-</th><th>
+```typescript
+chatManager.registerCommand('/kick', (player, args, message) => {
+  const admins = [ 'arkdev', 'testuser123' ];
+  if (admins.includes(player.username)) {
+    const targetUsername = args[0];
+    const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);
 
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world)](./server.hytopia.chatmanager._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `ChatManager` class
-
-
-</td></tr>
-</tbody></table>
+    if (targetPlayer) {
+      targetPlayer.disconnect();
+    }
+  }
+});
+```
 
 ## Methods
 
@@ -72,6 +63,8 @@ Description
 
 </td><td>
 
+Register a command and its callback.
+
 
 </td></tr>
 <tr><td>
@@ -83,6 +76,8 @@ Description
 
 
 </td><td>
+
+Send a broadcast message to all players in the world.
 
 
 </td></tr>
@@ -96,6 +91,8 @@ Description
 
 </td><td>
 
+Send a message to a specific player, only visible to them.
+
 
 </td></tr>
 <tr><td>
@@ -107,6 +104,8 @@ Description
 
 
 </td><td>
+
+Unregister a command.
 
 
 </td></tr>
