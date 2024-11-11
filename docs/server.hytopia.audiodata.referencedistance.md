@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.referenceDistance property
 
+The reference distance for reducing volume as the audio source moves away from the listener.
+
 **Signature:**
 
 ```typescript

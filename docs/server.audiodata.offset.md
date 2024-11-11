@@ -4,6 +4,8 @@
 
 ## AudioData.offset property
 
+The offset time in seconds from which the audio should start playing.
+
 **Signature:**
 
 ```typescript

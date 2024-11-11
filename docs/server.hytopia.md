@@ -241,6 +241,8 @@ Description
 
 </td><td>
 
+Event types a
+
 
 </td></tr>
 <tr><td>
@@ -362,6 +364,8 @@ Description
 
 
 </td><td>
+
+Options for creating an instance of
 
 
 </td></tr>
@@ -504,6 +508,8 @@ Description
 
 
 </td><td>
+
+Payloads for events a
 
 
 </td></tr>

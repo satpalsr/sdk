@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.distortion property
 
+The amount of distortion to apply to the audio.
+
 **Signature:**
 
 ```typescript

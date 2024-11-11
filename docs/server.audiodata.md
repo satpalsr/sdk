@@ -4,6 +4,8 @@
 
 ## AudioData interface
 
+Options for creating an instance of
+
 **Signature:**
 
 ```typescript
@@ -48,7 +50,7 @@ Description
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ If set, audio playback will follow the entity's position.
 
 
 </td></tr>
@@ -67,7 +69,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The detuning of the audio in cents.
 
 
 </td></tr>
@@ -86,7 +88,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The amount of distortion to apply to the audio.
 
 
 </td></tr>
@@ -105,7 +107,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The duration of the audio in seconds. Defaults to full duration.
 
 
 </td></tr>
@@ -124,7 +126,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the audio should loop when it reaches the end. Defaults to false.
 
 
 </td></tr>
@@ -143,7 +145,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The offset time in seconds from which the audio should start playing.
 
 
 </td></tr>
@@ -162,7 +164,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The playback speed of the audio. Defaults to 1.
 
 
 </td></tr>
@@ -181,7 +183,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The position in the world where the audio is played.
 
 
 </td></tr>
@@ -200,7 +202,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The reference distance for reducing volume as the audio source moves away from the listener.
 
 
 </td></tr>
@@ -219,6 +221,8 @@ string
 
 </td><td>
 
+The URI or path to the audio asset to be played.
+
 
 </td></tr>
 <tr><td>
@@ -236,7 +240,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The volume level of the audio. Defaults to 0.5.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioEventPayload namespace
 
+Payloads for events a
+
 **Signature:**
 
 ```typescript

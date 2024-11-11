@@ -4,6 +4,8 @@
 
 ## AudioData.duration property
 
+The duration of the audio in seconds. Defaults to full duration.
+
 **Signature:**
 
 ```typescript

@@ -57,20 +57,33 @@ export declare class Audio implements protocol.Serializable {
     private _requirePositional;
 }
 
+/** Options for creating an instance of @see {@link Audio}. @public */
 export declare interface AudioData {
+    /** If set, audio playback will follow the entity's position. */
     attachedToEntity?: Entity;
+    /** The duration of the audio in seconds. Defaults to full duration. */
     duration?: number;
+    /** The detuning of the audio in cents. */
     detune?: number;
+    /** The amount of distortion to apply to the audio. */
     distortion?: number;
+    /** Whether the audio should loop when it reaches the end. Defaults to false. */
     loop?: boolean;
+    /** The offset time in seconds from which the audio should start playing. */
     offset?: number;
+    /** The position in the world where the audio is played. */
     position?: Vector3;
+    /** The playback speed of the audio. Defaults to 1. */
     playbackRate?: number;
+    /** The reference distance for reducing volume as the audio source moves away from the listener. */
     referenceDistance?: number;
+    /** The URI or path to the audio asset to be played. */
     uri: string;
+    /** The volume level of the audio. Defaults to 0.5. */
     volume?: number;
 }
 
+/** Payloads for events a @see {@link Audio} can emit. @public */
 export declare namespace AudioEventPayload {
     export interface Pause {
         audio: Audio;
@@ -111,6 +124,7 @@ export declare namespace AudioEventPayload {
     }
 }
 
+/** Event types a @see {@link Audio} can emit. @public */
 export declare enum AudioEventType {
     PAUSE = "AUDIO.PAUSE",
     PLAY = "AUDIO.PLAY",

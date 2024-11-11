@@ -4,6 +4,8 @@
 
 ## AudioData.volume property
 
+The volume level of the audio. Defaults to 0.5.
+
 **Signature:**
 
 ```typescript

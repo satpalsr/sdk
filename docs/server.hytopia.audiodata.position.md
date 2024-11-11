@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.position property
 
+The position in the world where the audio is played.
+
 **Signature:**
 
 ```typescript

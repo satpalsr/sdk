@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.loop property
 
+Whether the audio should loop when it reaches the end. Defaults to false.
+
 **Signature:**
 
 ```typescript

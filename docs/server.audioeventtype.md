@@ -4,6 +4,8 @@
 
 ## AudioEventType enum
 
+Event types a
+
 **Signature:**
 
 ```typescript

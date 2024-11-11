@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.attachedToEntity property
 
+If set, audio playback will follow the entity's position.
+
 **Signature:**
 
 ```typescript

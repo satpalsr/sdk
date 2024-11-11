@@ -1,5 +1,7 @@
 # HYTOPIA SDK
 
+
+
 ## What is HYTOPIA?
 
 ![HYTOPIA Banner](./docs/assets/banner.png)
@@ -24,7 +26,9 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 ## Quickstart
 
-1. Install the SDK in a new or existing [Node.js](https://nodejs.org/), [Bun (recommended)](https://bun.sh/) or [Deno](https://deno.com/) project.
+1. Install a compatible JavaScript runtime. We recommend [Bun (recommended)](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) are also supported.
+
+2. Install the SDK in a new or existing project.
 ```bash
 npm install hytopia
 ```

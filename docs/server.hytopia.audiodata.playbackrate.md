@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.playbackRate property
 
+The playback speed of the audio. Defaults to 1.
+
 **Signature:**
 
 ```typescript

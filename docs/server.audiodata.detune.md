@@ -4,6 +4,8 @@
 
 ## AudioData.detune property
 
+The detuning of the audio in cents.
+
 **Signature:**
 
 ```typescript

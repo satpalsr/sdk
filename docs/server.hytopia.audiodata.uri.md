@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioData.uri property
 
+The URI or path to the audio asset to be played.
+
 **Signature:**
 
 ```typescript

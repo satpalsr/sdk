@@ -1233,7 +1233,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!AudioData:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating an instance of\n *\n * @see\n *\n * {@link Audio}.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1248,7 +1248,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#attachedToEntity:member",
-              "docComment": "",
+              "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1276,7 +1276,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#detune:member",
-              "docComment": "",
+              "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1303,7 +1303,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#distortion:member",
-              "docComment": "",
+              "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1330,7 +1330,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#duration:member",
-              "docComment": "",
+              "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1357,7 +1357,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#loop:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1384,7 +1384,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#offset:member",
-              "docComment": "",
+              "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1411,7 +1411,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#playbackRate:member",
-              "docComment": "",
+              "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1438,7 +1438,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#position:member",
-              "docComment": "",
+              "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1466,7 +1466,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#referenceDistance:member",
-              "docComment": "",
+              "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1493,7 +1493,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#uri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1520,7 +1520,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioData#volume:member",
-              "docComment": "",
+              "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1550,7 +1550,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!AudioEventPayload:namespace",
-          "docComment": "",
+          "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2212,7 +2212,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!AudioEventType:enum",
-          "docComment": "",
+          "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -14063,7 +14063,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.AudioData:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating an instance of\n *\n * @see\n *\n * {@link Audio}.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14078,7 +14078,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#attachedToEntity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * If set, audio playback will follow the entity's position.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14106,7 +14106,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#detune:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The detuning of the audio in cents.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14133,7 +14133,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#distortion:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The amount of distortion to apply to the audio.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14160,7 +14160,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#duration:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The duration of the audio in seconds. Defaults to full duration.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14187,7 +14187,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#loop:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the audio should loop when it reaches the end. Defaults to false.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14214,7 +14214,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#offset:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The offset time in seconds from which the audio should start playing.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14241,7 +14241,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#playbackRate:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The playback speed of the audio. Defaults to 1.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14268,7 +14268,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#position:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The position in the world where the audio is played.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14296,7 +14296,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#referenceDistance:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The reference distance for reducing volume as the audio source moves away from the listener.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14323,7 +14323,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#uri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI or path to the audio asset to be played.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14350,7 +14350,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.AudioData#volume:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The volume level of the audio. Defaults to 0.5.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14380,7 +14380,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.AudioEventPayload:namespace",
-              "docComment": "",
+              "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15042,7 +15042,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.AudioEventType:enum",
-              "docComment": "",
+              "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
