@@ -473,7 +473,7 @@ export declare class ChatManager {
 }
 
 /**
- * A 16^3 chunk of blocks. Used within a {@link ChunkLattice} to represent world terrain.
+ * A 16^3 chunk of blocks. Used to represent a world's terrain.
  *
  * @remarks
  * Chunks make up the bulk of the terrain in a world. Chunks are

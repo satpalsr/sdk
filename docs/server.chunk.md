@@ -4,7 +4,7 @@
 
 ## Chunk class
 
-A 16^3 chunk of blocks. Used within a [ChunkLattice](./server.chunklattice.md) to represent world terrain.
+A 16^3 chunk of blocks. Used to represent a world's terrain.
 
 **Signature:**
 
