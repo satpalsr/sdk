@@ -1,0 +1,51 @@
+{
+  "name": "hytopia-sdk",
+  "version": "0.1.0",
+  "description": "The HYTOPIA SDK makes it easy for developers to create multiplayer games on the HYTOPIA platform using JavaScript or TypeScript.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hytopiagg/sdk.git"
+  },
+  "keywords": [
+    "hytopia",
+    "multiplayer",
+    "games",
+    "game",
+    "sdk",
+    "mmo",
+    "mmorpg",
+    "engine",
+    "ugc",
+    "platform",
+    "voxel",
+    "blocks",
+    "game-engine",
+    "game-maker",
+    "build-games",
+    "create-games",
+    "game-builder",
+    "game-server",
+    "multiplayer-game",
+    "minecraft",
+    "bukkit",
+    "spigot",
+    "roblox",
+    "recroom"
+  ],
+  "author": "HYTOPIA, Inc.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "types": "./server.d.ts",
+  "bugs": {
+    "url": "https://github.com/hytopiagg/sdk/issues"
+  },
+  "homepage": "https://github.com/hytopiagg/sdk#readme"
+}
