@@ -206,6 +206,8 @@ A player in the game.
 
 </td><td>
 
+Manages all connected players in a game server.
+
 
 </td></tr>
 <tr><td>

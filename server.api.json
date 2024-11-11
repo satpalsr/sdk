@@ -25254,7 +25254,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.PlayerManager:class",
-              "docComment": "/**\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n */\n",
+              "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32691,7 +32691,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerManager:class",
-          "docComment": "/**\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n */\n",
+          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

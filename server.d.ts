@@ -1218,7 +1218,20 @@ export declare enum PlayerEventType {
 export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
 
 /**
+ * Manages all connected players in a game server.
  *
+ * @remarks
+ * The PlayerManager is created internally as a global
+ * singleton accessible with the static property
+ * `PlayerManager.instance`.
+ *
+ * @example
+ * ```typescript
+ * import { PlayerManager } from 'hytopia';
+ *
+ * const playerManager = PlayerManager.instance;
+ * const connectedPlayers = playerManager.getConnectedPlayers();
+ * ```
  */
 export declare class PlayerManager {
     /** The global PlayerManager instance as a singleton. */
