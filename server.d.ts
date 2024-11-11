@@ -16,7 +16,7 @@ import { WebSocket as WebSocket_2 } from 'ws';
  * @remarks
  * Audio instances are created directly as instances.
  * They support a variety of configuration options through
- * the @see {@link AudioData} constructor argument.
+ * the {@link AudioData} constructor argument.
  *
  * @example
  * ```typescript
@@ -252,26 +252,26 @@ export declare class AudioManager {
     /**
      * Retrieves all loaded audio instances for the world.
      *
-     * @returns An array of audio instances. @see {@link Audio}
+     * @returns An array of audio instances.
      */
     getAllAudios(): Audio[];
     /**
      * Retrieves all loaded audio instances attached to a specific entity.
      *
-     * @param entity - The entity to get attached audio instances for. @see {@link Entity}
-     * @returns An array of audio instances. @see {@link Audio}
+     * @param entity - The entity to get attached audio instances for.
+     * @returns An array of audio instances.
      */
     getAllEntityAttachedAudios(entity: Entity): Audio[];
     /**
      * Retrieves all looped audio instances for the world.
      *
-     * @returns An array of audio instances. @see {@link Audio}
+     * @returns An array of audio instances.
      */
     getAllLoopedAudios(): Audio[];
     /**
      * Retrieves all oneshot (non-looped) audio instances for the world.
      *
-     * @returns An array of audio instances. @see {@link Audio}
+     * @returns An array of audio instances.
      */
     getAllOneshotAudios(): Audio[];
 }
@@ -720,7 +720,7 @@ export { Event_2 as Event }
  *
  * @remarks
  * This class is used as a singleton for global server events via
- * @see {@link EventRouter.serverInstance}. For individual worlds, an
+ * {@link EventRouter.serverInstance}. For individual worlds, an
  * internal EventRouter instance is instantiated per world. EventRouters
  * only have visibility of events emitted and subscribed to relative to
  * their unique instances.
@@ -871,17 +871,17 @@ export declare class Player {
 
 
 
-    /** The current @see {@link PlayerInputState} of the player. */
+    /** The current {@link PlayerInputState} of the player. */
     get inputState(): Readonly<PlayerInputState>;
-    /** The current @see {@link PlayerOrientationState} of the player. */
+    /** The current {@link PlayerOrientationState} of the player. */
     get orientationState(): Readonly<PlayerOrientationState>;
-    /** The current @see {@link World} the player is in. */
+    /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
      * Joins a player to a world.
      *
      * @remarks
-     * If the player is already in a @see {@link World}, they
+     * If the player is already in a {@link World}, they
      * will be removed from their current world before joining
      * the new world.
      *
@@ -889,7 +889,7 @@ export declare class Player {
      */
     joinWorld(world: World): void;
     /**
-     * Removes the player from the current @see {@link World} they are in.
+     * Removes the player from the current {@link World} they are in.
      */
     leaveWorld(): void;
     /**

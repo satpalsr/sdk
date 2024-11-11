@@ -15,7 +15,7 @@ export default class Audio implements protocol.Serializable
 
 ## Remarks
 
-Audio instances are created directly as instances. They support a variety of configuration options through the
+Audio instances are created directly as instances. They support a variety of configuration options through the [AudioData](./server.audiodata.md) constructor argument.
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 ## Player.inputState property
 
-The current
+The current [PlayerInputState](./server.playerinputstate.md) of the player.
 
 **Signature:**
 

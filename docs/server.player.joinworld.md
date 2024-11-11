@@ -53,5 +53,5 @@ void
 
 ## Remarks
 
-If the player is already in a
+If the player is already in a [World](./server.world.md)<!-- -->, they will be removed from their current world before joining the new world.
 

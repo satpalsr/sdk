@@ -79,7 +79,7 @@ Readonly&lt;[PlayerInputState](./server.playerinputstate.md)<!-- -->&gt;
 
 </td><td>
 
-The current
+The current [PlayerInputState](./server.playerinputstate.md) of the player.
 
 
 </td></tr>
@@ -100,7 +100,7 @@ Readonly&lt;[PlayerOrientationState](./server.playerorientationstate.md)<!-- -->
 
 </td><td>
 
-The current
+The current [PlayerOrientationState](./server.playerorientationstate.md) of the player.
 
 
 </td></tr>
@@ -142,7 +142,7 @@ The username for the player.
 
 </td><td>
 
-The current
+The current [World](./server.world.md) the player is in.
 
 
 </td></tr>
@@ -204,7 +204,7 @@ Joins a player to a world.
 
 </td><td>
 
-Removes the player from the current
+Removes the player from the current [World](./server.world.md) they are in.
 
 
 </td></tr>

@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
+          "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioData} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2423,7 +2423,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllAudios:member(1)",
-              "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+              "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2459,7 +2459,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllEntityAttachedAudios:member(1)",
-              "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Entity}\n *\n * @see\n *\n * {@link Audio}\n */\n",
+              "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2513,7 +2513,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllLoopedAudios:member(1)",
-              "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+              "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2549,7 +2549,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllOneshotAudios:member(1)",
-              "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+              "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -12333,7 +12333,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!EventRouter:class",
-          "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -12843,7 +12843,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Audio:class",
-              "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @see\n *\n * {@link AudioData} constructor argument.\n *\n * @public\n */\n",
+              "docComment": "/**\n * An instance of audio, supporting a variety of configuration options.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioData} constructor argument.\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'assets/music/song.mp3',\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15090,7 +15090,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllAudios:member(1)",
-                  "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+                  "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15126,7 +15126,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllEntityAttachedAudios:member(1)",
-                  "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Entity}\n *\n * @see\n *\n * {@link Audio}\n */\n",
+                  "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15180,7 +15180,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllLoopedAudios:member(1)",
-                  "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+                  "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15216,7 +15216,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllOneshotAudios:member(1)",
-                  "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
+                  "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25000,7 +25000,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.EventRouter:class",
-              "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via\n *\n * @see\n *\n * {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
+              "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @remarks\n *\n * This class is used as a singleton for global server events via {@link EventRouter.serverInstance}. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25577,7 +25577,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Player#inputState:member",
-                  "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link PlayerInputState} of the player.\n */\n",
+                  "docComment": "/**\n * The current {@link PlayerInputState} of the player.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25621,7 +25621,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Player#joinWorld:member(1)",
-                  "docComment": "/**\n * Joins a player to a world.\n *\n * @remarks\n *\n * If the player is already in a\n *\n * @param world - The world to join the player to.\n *\n * @see\n *\n * {@link World}, they will be removed from their current world before joining the new world.\n */\n",
+                  "docComment": "/**\n * Joins a player to a world.\n *\n * @remarks\n *\n * If the player is already in a {@link World}, they will be removed from their current world before joining the new world.\n *\n * @param world - The world to join the player to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25670,7 +25670,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Player#leaveWorld:member(1)",
-                  "docComment": "/**\n * Removes the player from the current\n *\n * @see\n *\n * {@link World} they are in.\n */\n",
+                  "docComment": "/**\n * Removes the player from the current {@link World} they are in.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25701,7 +25701,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Player#orientationState:member",
-                  "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link PlayerOrientationState} of the player.\n */\n",
+                  "docComment": "/**\n * The current {@link PlayerOrientationState} of the player.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25775,7 +25775,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Player#world:member",
-                  "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link World} the player is in.\n */\n",
+                  "docComment": "/**\n * The current {@link World} the player is in.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -32875,7 +32875,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Player#inputState:member",
-              "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link PlayerInputState} of the player.\n */\n",
+              "docComment": "/**\n * The current {@link PlayerInputState} of the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32919,7 +32919,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Player#joinWorld:member(1)",
-              "docComment": "/**\n * Joins a player to a world.\n *\n * @remarks\n *\n * If the player is already in a\n *\n * @param world - The world to join the player to.\n *\n * @see\n *\n * {@link World}, they will be removed from their current world before joining the new world.\n */\n",
+              "docComment": "/**\n * Joins a player to a world.\n *\n * @remarks\n *\n * If the player is already in a {@link World}, they will be removed from their current world before joining the new world.\n *\n * @param world - The world to join the player to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32968,7 +32968,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Player#leaveWorld:member(1)",
-              "docComment": "/**\n * Removes the player from the current\n *\n * @see\n *\n * {@link World} they are in.\n */\n",
+              "docComment": "/**\n * Removes the player from the current {@link World} they are in.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32999,7 +32999,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Player#orientationState:member",
-              "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link PlayerOrientationState} of the player.\n */\n",
+              "docComment": "/**\n * The current {@link PlayerOrientationState} of the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33073,7 +33073,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Player#world:member",
-              "docComment": "/**\n * The current\n *\n * @see\n *\n * {@link World} the player is in.\n */\n",
+              "docComment": "/**\n * The current {@link World} the player is in.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

@@ -4,7 +4,7 @@
 
 ## Player.leaveWorld() method
 
-Removes the player from the current
+Removes the player from the current [World](./server.world.md) they are in.
 
 **Signature:**
 

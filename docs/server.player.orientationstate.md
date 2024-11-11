@@ -4,7 +4,7 @@
 
 ## Player.orientationState property
 
-The current
+The current [PlayerOrientationState](./server.playerorientationstate.md) of the player.
 
 **Signature:**
 
