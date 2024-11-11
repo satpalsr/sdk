@@ -4,7 +4,7 @@
 
 ## HYTOPIA.PlayerEventPayload namespace
 
-Payloads for events a
+Payloads for events a Player can emit.
 
 **Signature:**
 

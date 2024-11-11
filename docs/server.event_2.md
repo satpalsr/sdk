@@ -4,7 +4,7 @@
 
 ## Event\_2 interface
 
-An
+An EventRouter event.
 
 **Signature:**
 

@@ -595,7 +595,7 @@ export declare interface EntityOptions {
     rigidBodyOptions?: RigidBodyOptions;
 }
 
-/** An @see {@link EventRouter} event. */
+/** An EventRouter event. */
 declare interface Event_2<TPayload> {
     /** The type of event */
     type: string;
@@ -856,7 +856,7 @@ export declare interface PlayerEntityOptions extends EntityOptions {
     player: Player;
 }
 
-/** Payloads for events a @see {@link Player} can emit. */
+/** Payloads for events a Player can emit. */
 export declare namespace PlayerEventPayload {
     export interface ChatMessageSend {
         player: Player;

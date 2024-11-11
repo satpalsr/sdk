@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Event interface
 
-An
+An EventRouter event.
 
 **Signature:**
 

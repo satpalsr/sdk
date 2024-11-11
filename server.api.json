@@ -12411,7 +12411,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!Event_2:interface",
-          "docComment": "/**\n * An\n *\n * @see\n *\n * {@link EventRouter} event.\n */\n",
+          "docComment": "/**\n * An EventRouter event.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25241,7 +25241,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Event:interface",
-              "docComment": "/**\n * An\n *\n * @see\n *\n * {@link EventRouter} event.\n */\n",
+              "docComment": "/**\n * An EventRouter event.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26374,7 +26374,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.PlayerEventPayload:namespace",
-              "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Player} can emit.\n */\n",
+              "docComment": "/**\n * Payloads for events a Player can emit.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34292,7 +34292,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!PlayerEventPayload:namespace",
-          "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Player} can emit.\n */\n",
+          "docComment": "/**\n * Payloads for events a Player can emit.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

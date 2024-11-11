@@ -435,7 +435,7 @@ Description
 
 </td><td>
 
-An
+An EventRouter event.
 
 
 </td></tr>
@@ -569,7 +569,7 @@ Description
 
 </td><td>
 
-Payloads for events a
+Payloads for events a Player can emit.
 
 
 </td></tr>
