@@ -226,7 +226,7 @@ export declare enum AudioEventType {
  *
  * @remarks
  * The AudioManager is created internally as a singleton
- * for each @see {@link World} instance in a game server
+ * for each {@link World} instance in a game server
  * and should never be instantiated directly. It allows
  * retrieval of all loaded audio, entity attached audio,
  * looped audio, and more.
