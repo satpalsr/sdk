@@ -4,6 +4,8 @@
 
 ## ChunkLattice.hasChunk() method
 
+Check if a chunk exists by its origin coordinate.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ originCoordinate
 
 </td><td>
 
+The origin coordinate of the chunk to check.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 boolean
+
+Whether the chunk exists.
 

@@ -4,6 +4,8 @@
 
 ## ChunkLattice.getChunk() method
 
+Get a chunk by its origin coordinate.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ originCoordinate
 
 </td><td>
 
+The origin coordinate of the chunk to get.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Chunk](./server.chunk.md) \| undefined
+
+The chunk at the given origin coordinate or undefined if not found.
 

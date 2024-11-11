@@ -597,18 +597,51 @@ export declare enum ChunkEventType {
     SPAWN = "CHUNK.SPAWN"
 }
 
+/**
+ * A lattice of chunks that represent a world's terrain.
+ *
+ * @remarks
+ * The ChunkLattice lattice tracks the current terrain of a world,
+ * comprised of {@link Chunk} instances.
+ *
+ * @public
+ */
 export declare class ChunkLattice {
-    private _chunks;
-    private _world;
+
+
+    /**
+     * Creates a new chunk lattice instance.
+     * @param world - The world the chunk lattice is for.
+     */
     constructor(world: World);
-    registerChunk(chunk: Chunk): void;
-    unregisterChunk(chunk: Chunk): void;
+
+
+    /**
+     * Get a chunk by its origin coordinate.
+     * @param originCoordinate - The origin coordinate of the chunk to get.
+     * @returns The chunk at the given origin coordinate or undefined if not found.
+     */
     getChunk(originCoordinate: Vector3): Chunk | undefined;
+    /**
+     * Get all chunks in the lattice.
+     * @returns An array of all chunks in the lattice.
+     */
     getAllChunks(): Chunk[];
+    /**
+     * Check if a chunk exists by its origin coordinate.
+     * @param originCoordinate - The origin coordinate of the chunk to check.
+     * @returns Whether the chunk exists.
+     */
     hasChunk(originCoordinate: Vector3): boolean;
+    /**
+     * Set the block at a global coordinate by block type id, automatically
+     * creating a chunk if it doesn't exist.
+     * @param globalCoordinate - The global coordinate of the block to set.
+     * @param blockTypeId - The block type id to set.
+     */
     setBlock(globalCoordinate: Vector3, blockTypeId: number): void;
-    updateChunks(): void;
-    private _getChunkKey;
+
+
 }
 
 export declare class Collider {

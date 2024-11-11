@@ -4,11 +4,17 @@
 
 ## HYTOPIA.ChunkLattice class
 
+A lattice of chunks that represent a world's terrain.
+
 **Signature:**
 
 ```typescript
 export default class ChunkLattice 
 ```
+
+## Remarks
+
+The ChunkLattice lattice tracks the current terrain of a world, comprised of [Chunk](./server.chunk.md) instances.
 
 ## Constructors
 
@@ -38,7 +44,7 @@ Description
 
 </td><td>
 
-Constructs a new instance of the `ChunkLattice` class
+Creates a new chunk lattice instance.
 
 
 </td></tr>
@@ -72,6 +78,8 @@ Description
 
 </td><td>
 
+Get all chunks in the lattice.
+
 
 </td></tr>
 <tr><td>
@@ -83,6 +91,8 @@ Description
 
 
 </td><td>
+
+Get a chunk by its origin coordinate.
 
 
 </td></tr>
@@ -96,17 +106,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[registerChunk(chunk)](./server.hytopia.chunklattice.registerchunk.md)
-
-
-</td><td>
-
-
-</td><td>
+Check if a chunk exists by its origin coordinate.
 
 
 </td></tr>
@@ -120,29 +120,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[unregisterChunk(chunk)](./server.hytopia.chunklattice.unregisterchunk.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[updateChunks()](./server.hytopia.chunklattice.updatechunks.md)
-
-
-</td><td>
-
-
-</td><td>
+Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.
 
 
 </td></tr>

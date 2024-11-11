@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChunkLattice.getAllChunks() method
 
+Get all chunks in the lattice.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllChunks(): Chunk[];
 **Returns:**
 
 [Chunk](./server.chunk.md)<!-- -->\[\]
+
+An array of all chunks in the lattice.
 

@@ -4,7 +4,7 @@
 
 ## HYTOPIA.ChunkLattice.(constructor)
 
-Constructs a new instance of the `ChunkLattice` class
+Creates a new chunk lattice instance.
 
 **Signature:**
 
@@ -41,6 +41,8 @@ world
 
 
 </td><td>
+
+The world the chunk lattice is for.
 
 
 </td></tr>

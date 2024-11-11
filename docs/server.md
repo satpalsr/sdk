@@ -108,6 +108,8 @@ A 16^3 chunk of blocks. Used to represent a world's terrain.
 
 </td><td>
 
+A lattice of chunks that represent a world's terrain.
+
 
 </td></tr>
 <tr><td>

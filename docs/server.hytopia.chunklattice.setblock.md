@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ChunkLattice.setBlock() method
 
+Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ globalCoordinate
 
 </td><td>
 
+The global coordinate of the block to set.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ number
 
 
 </td><td>
+
+The block type id to set.
 
 
 </td></tr>
