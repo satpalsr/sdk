@@ -595,26 +595,75 @@ export declare interface EntityOptions {
     rigidBodyOptions?: RigidBodyOptions;
 }
 
+/** An @see {@link EventRouter} event. */
 declare interface Event_2<TPayload> {
+    /** The type of event */
     type: string;
+    /** The payload of the event, passed to listeners */
     payload: TPayload;
 }
 export { Event_2 as Event }
 
+/**
+ * Manages event emission and assigned listener callbacks.
+ *
+ * @remarks
+ * This class is used as a singleton for global server events via
+ * @see {@link EventRouter.serverInstance}. For individual worlds, an
+ * internal EventRouter instance is instantiated per world. EventRouters
+ * only have visibility of events emitted and subscribed to relative to
+ * their unique instances.
+ */
 export declare class EventRouter {
+    /** The singleton instance for global server events. */
     static readonly serverInstance: EventRouter;
     private _emitter;
     private _wrappedListenerMap;
     private _tag;
+    /** Enable logging of all events. Default: false */
     logAllEvents: boolean;
+    /** Enable logging of event payloads. Default: false */
     logEventsPayloads: boolean;
+    /** Enable logging of events with no listeners. Default: false */
     logUnlistenedEvents: boolean;
+    /** Array of events to exclude from logging */
     logIgnoreEvents: string[];
+    /** Array of event prefixes to exclude from logging */
     logIgnoreEventPrefixes: string[];
+    /** @param tag - Tag for logging, used to identify EventRouter instances in logs. */
     constructor(tag: string);
+    /**
+     * Register a listener for a specific event type.
+     *
+     * @remarks
+     * When the same event router instance used to register a listener
+     * emits an event a listener was registered for, the listener will
+     * be invoked with the event payload. Listeners are called in the order
+     * they are registered.
+     *
+     * @param eventType - The type of event to listen for.
+     * @param listener - The listener function to invoke when the event is emitted.
+     */
     on<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    /**
+     * Remove a listener for a specific event type.
+     *
+     * @param eventType - The type of event to remove the listener from.
+     * @param listener - The listener function to remove.
+     */
     off<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    /**
+     * Remove all listeners for a specific event type.
+     *
+     * @param eventType - The type of event to remove all listeners from.
+     */
     offAll(eventType: string): void;
+    /**
+     * Emit an event, invoking all registered listeners for the event type.
+     *
+     * @param event - The event to emit.
+     * @returns `true` if listeners were found and invoked, `false` otherwise.
+     */
     emit<TPayload>(event: Event_2<TPayload>): boolean;
 }
 
@@ -746,24 +795,55 @@ declare class NetworkSynchronizer {
     private _createOrGetQueuedEntitySync;
 }
 
+/**
+ * Represents a player in the game.
+ *
+ * @remarks
+ * Players are automatically created when they connect and
+ * authenticate with the game server. This is all handled
+ * internally. Player instances should never be instantiated
+ * directly.
+ */
 export declare class Player {
+    /** The unique identifier for the player. */
     readonly id: number;
+    /** The username for the player. */
     readonly username: string;
+    /** The low-level @see {@link Connection} associated with the player. */
     readonly connection: Connection;
-    private _inputState;
-    private _orientationState;
-    private _world;
-    constructor(connection: Connection);
+
+
+
+
+    /** The current @see {@link PlayerInputState} of the player. */
     get inputState(): Readonly<PlayerInputState>;
+    /** The current @see {@link PlayerOrientationState} of the player. */
     get orientationState(): Readonly<PlayerOrientationState>;
+    /** The current @see {@link World} the player is in. */
     get world(): World | undefined;
+    /**
+     * Joins a player to a world.
+     *
+     * @remarks
+     * If the player is already in a @see {@link World}, they
+     * will be removed from their current world before joining
+     * the new world.
+     *
+     * @param world - The world to join the player to.
+     */
     joinWorld(world: World): void;
+    /**
+     * Removes the player from the current @see {@link World} they are in.
+     */
     leaveWorld(): void;
+    /**
+     * Disconnects the player from the game server.
+     */
     disconnect(): void;
-    private _onChatMessageSendPacket;
-    private _onDebugPacket;
-    private _onInputPacket;
-    private _onSyncRequestPacket;
+
+
+
+
 }
 
 export declare class PlayerEntity extends Entity {
@@ -776,6 +856,7 @@ export declare interface PlayerEntityOptions extends EntityOptions {
     player: Player;
 }
 
+/** Payloads for events a @see {@link Player} can emit. */
 export declare namespace PlayerEventPayload {
     export interface ChatMessageSend {
         player: Player;
@@ -796,6 +877,7 @@ export declare namespace PlayerEventPayload {
     }
 }
 
+/** Event types a @see {@link Player} can emit. */
 export declare enum PlayerEventType {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
@@ -803,6 +885,7 @@ export declare enum PlayerEventType {
     REQUEST_SYNC = "PLAYER.REQUEST_SYNC"
 }
 
+/** The input state of a @see {@link Player}. */
 export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
 
 export declare class PlayerManager {
@@ -829,6 +912,7 @@ export declare enum PlayerManagerEventType {
     PLAYER_DISCONNECTED = "PLAYER_MANAGER.PLAYER_DISCONNECTED"
 }
 
+/** The camera orientation state of a @see {@link Player}. */
 export declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
