@@ -4,7 +4,7 @@
 
 ## HYTOPIA.AudioData interface
 
-Options for creating an instance of
+Options for creating an Audio instance.
 
 **Signature:**
 

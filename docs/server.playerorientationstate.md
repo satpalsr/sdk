@@ -4,7 +4,7 @@
 
 ## PlayerOrientationState type
 
-The camera orientation state of a
+The camera orientation state of a Player.
 
 **Signature:**
 

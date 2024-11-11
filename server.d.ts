@@ -57,7 +57,7 @@ export declare class Audio implements protocol.Serializable {
     private _requirePositional;
 }
 
-/** Options for creating an instance of @see {@link Audio}. @public */
+/** Options for creating an Audio instance. @public */
 export declare interface AudioData {
     /** If set, audio playback will follow the entity's position. */
     attachedToEntity?: Entity;
@@ -83,7 +83,7 @@ export declare interface AudioData {
     volume?: number;
 }
 
-/** Payloads for events a @see {@link Audio} can emit. @public */
+/** Payloads for events an Audio instance can emit. @public */
 export declare namespace AudioEventPayload {
     export interface Pause {
         audio: Audio;
@@ -124,7 +124,7 @@ export declare namespace AudioEventPayload {
     }
 }
 
-/** Event types a @see {@link Audio} can emit. @public */
+/** Event types an Audio instance can emit. @public */
 export declare enum AudioEventType {
     PAUSE = "AUDIO.PAUSE",
     PLAY = "AUDIO.PLAY",
@@ -809,7 +809,7 @@ export declare namespace PlayerEventPayload {
     }
 }
 
-/** Event types a @see {@link Player} can emit. */
+/** Event types a Player can emit. @public */
 export declare enum PlayerEventType {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
@@ -817,10 +817,10 @@ export declare enum PlayerEventType {
     REQUEST_SYNC = "PLAYER.REQUEST_SYNC"
 }
 
-/** The input state of a @see {@link Player}; keys from @see {@link SUPPORTED_INPUT_KEYS}. @public */
+/** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
 export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
 
-/** The camera orientation state of a @see {@link Player}. @public */
+/** The camera orientation state of a Player. @public */
 export declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
@@ -1021,7 +1021,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
 
 export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
 
-/** The input keys included in the @see {@link PlayerInputState}. @public */
+/** The input keys included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: string[];
 
 export declare const TRANSLATION_UPDATE_THRESHOLD_SQ: number;

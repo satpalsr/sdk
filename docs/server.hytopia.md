@@ -241,7 +241,7 @@ Description
 
 </td><td>
 
-Event types a
+Event types an Audio instance can emit.
 
 
 </td></tr>
@@ -306,7 +306,7 @@ Event types a
 
 </td><td>
 
-Event types a
+Event types a Player can emit.
 
 
 </td></tr>
@@ -365,7 +365,7 @@ Description
 
 </td><td>
 
-Options for creating an instance of
+Options for creating an Audio instance.
 
 
 </td></tr>
@@ -509,7 +509,7 @@ Description
 
 </td><td>
 
-Payloads for events a
+Payloads for events an Audio instance can emit.
 
 
 </td></tr>
@@ -600,7 +600,7 @@ Description
 
 </td><td>
 
-The input keys included in the
+The input keys included in the PlayerInputState.
 
 
 </td></tr>
@@ -680,7 +680,7 @@ Description
 
 </td><td>
 
-The input state of a
+The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
 
 
 </td></tr>
@@ -691,7 +691,7 @@ The input state of a
 
 </td><td>
 
-The camera orientation state of a
+The camera orientation state of a Player.
 
 
 </td></tr>

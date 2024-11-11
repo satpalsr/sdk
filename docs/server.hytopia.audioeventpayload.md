@@ -4,7 +4,7 @@
 
 ## HYTOPIA.AudioEventPayload namespace
 
-Payloads for events a
+Payloads for events an Audio instance can emit.
 
 **Signature:**
 

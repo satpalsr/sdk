@@ -4,7 +4,7 @@
 
 ## AudioEventType enum
 
-Event types a
+Event types an Audio instance can emit.
 
 **Signature:**
 

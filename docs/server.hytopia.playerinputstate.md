@@ -4,7 +4,7 @@
 
 ## HYTOPIA.PlayerInputState type
 
-The input state of a
+The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
 
 **Signature:**
 

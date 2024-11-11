@@ -1233,7 +1233,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!AudioData:interface",
-          "docComment": "/**\n * Options for creating an instance of\n *\n * @see\n *\n * {@link Audio}.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1550,7 +1550,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!AudioEventPayload:namespace",
-          "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Payloads for events an Audio instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2212,7 +2212,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!AudioEventType:enum",
-          "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types an Audio instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -14063,7 +14063,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.AudioData:interface",
-              "docComment": "/**\n * Options for creating an instance of\n *\n * @see\n *\n * {@link Audio}.\n *\n * @public\n */\n",
+              "docComment": "/**\n * Options for creating an Audio instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14380,7 +14380,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.AudioEventPayload:namespace",
-              "docComment": "/**\n * Payloads for events a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
+              "docComment": "/**\n * Payloads for events an Audio instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15042,7 +15042,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.AudioEventType:enum",
-              "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Audio} can emit.\n *\n * @public\n */\n",
+              "docComment": "/**\n * Event types an Audio instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26678,7 +26678,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.PlayerEventType:enum",
-              "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Player} can emit.\n */\n",
+              "docComment": "/**\n * Event types a Player can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26779,7 +26779,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.PlayerInputState:type",
-              "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}; keys from\n *\n * @see\n *\n * {@link SUPPORTED_INPUT_KEYS}.\n *\n * @public\n */\n",
+              "docComment": "/**\n * The input state of a Player; keys from SUPPORTED_INPUT_KEYS.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26828,7 +26828,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.PlayerOrientationState:type",
-              "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n *\n * @public\n */\n",
+              "docComment": "/**\n * The camera orientation state of a Player.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31797,7 +31797,7 @@
             {
               "kind": "Variable",
               "canonicalReference": "server!HYTOPIA.SUPPORTED_INPUT_KEYS:var",
-              "docComment": "/**\n * The input keys included in the\n *\n * @see\n *\n * {@link PlayerInputState}.\n *\n * @public\n */\n",
+              "docComment": "/**\n * The input keys included in the PlayerInputState.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33976,7 +33976,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerEventType:enum",
-          "docComment": "/**\n * Event types a\n *\n * @see\n *\n * {@link Player} can emit.\n */\n",
+          "docComment": "/**\n * Event types a Player can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34077,7 +34077,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!PlayerInputState:type",
-          "docComment": "/**\n * The input state of a\n *\n * @see\n *\n * {@link Player}; keys from\n *\n * @see\n *\n * {@link SUPPORTED_INPUT_KEYS}.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The input state of a Player; keys from SUPPORTED_INPUT_KEYS.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34126,7 +34126,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!PlayerOrientationState:type",
-          "docComment": "/**\n * The camera orientation state of a\n *\n * @see\n *\n * {@link Player}.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The camera orientation state of a Player.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -39095,7 +39095,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "server!SUPPORTED_INPUT_KEYS:var",
-          "docComment": "/**\n * The input keys included in the\n *\n * @see\n *\n * {@link PlayerInputState}.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The input keys included in the PlayerInputState.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

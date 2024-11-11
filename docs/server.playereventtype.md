@@ -4,7 +4,7 @@
 
 ## PlayerEventType enum
 
-Event types a
+Event types a Player can emit.
 
 **Signature:**
 
