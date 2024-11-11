@@ -4,6 +4,8 @@
 
 ## AudioManager.world property
 
+The world the audio manager is for.
+
 **Signature:**
 
 ```typescript

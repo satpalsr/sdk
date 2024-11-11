@@ -2407,7 +2407,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!AudioManager:class",
-          "docComment": "",
+          "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @see\n *\n * {@link World} instance in a game server and should never be instantiated directly. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2421,42 +2421,9 @@
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "Constructor",
-              "canonicalReference": "server!AudioManager:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `AudioManager` class\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor(world: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ");"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "world",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ]
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllAudios:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2492,7 +2459,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllEntityAttachedAudios:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Entity}\n *\n * @see\n *\n * {@link Audio}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2546,7 +2513,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllLoopedAudios:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2582,7 +2549,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#getAllOneshotAudios:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2616,107 +2583,9 @@
               "name": "getAllOneshotAudios"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!AudioManager#registerAudio:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "registerAudio(audio: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Audio",
-                  "canonicalReference": "server!Audio:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "audio",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "registerAudio"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!AudioManager#unregisterAudio:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "unregisterAudio(audio: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Audio",
-                  "canonicalReference": "server!Audio:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "audio",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "unregisterAudio"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!AudioManager#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the audio manager is for.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15205,7 +15074,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.AudioManager:class",
-              "docComment": "",
+              "docComment": "/**\n * Manages audio instances in a world.\n *\n * @remarks\n *\n * The AudioManager is created internally as a singleton for each\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.\n *\n * @example\n * ```typescript\n * // Stop all audio in the world\n * const audioManager = world.audioManager;\n * audioManager.getAllAudios().map(audio => audio.pause());\n * ```\n *\n * @see\n *\n * {@link World} instance in a game server and should never be instantiated directly. It allows retrieval of all loaded audio, entity attached audio, looped audio, and more.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15219,42 +15088,9 @@
               "preserveMemberOrder": false,
               "members": [
                 {
-                  "kind": "Constructor",
-                  "canonicalReference": "server!HYTOPIA.AudioManager:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `AudioManager` class\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "constructor(world: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "World",
-                      "canonicalReference": "server!World:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ");"
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "world",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ]
-                },
-                {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllAudios:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Retrieves all loaded audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15290,7 +15126,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllEntityAttachedAudios:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Retrieves all loaded audio instances attached to a specific entity.\n *\n * @param entity - The entity to get attached audio instances for.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Entity}\n *\n * @see\n *\n * {@link Audio}\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15344,7 +15180,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllLoopedAudios:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Retrieves all looped audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15380,7 +15216,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.AudioManager#getAllOneshotAudios:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Retrieves all oneshot (non-looped) audio instances for the world.\n *\n * @returns An array of audio instances.\n *\n * @see\n *\n * {@link Audio}\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15414,107 +15250,9 @@
                   "name": "getAllOneshotAudios"
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.AudioManager#registerAudio:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "registerAudio(audio: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Audio",
-                      "canonicalReference": "server!Audio:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "audio",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "registerAudio"
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.AudioManager#unregisterAudio:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "unregisterAudio(audio: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Audio",
-                      "canonicalReference": "server!Audio:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "audio",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "unregisterAudio"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.AudioManager#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the audio manager is for.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

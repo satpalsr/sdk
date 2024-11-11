@@ -4,6 +4,8 @@
 
 ## AudioManager.getAllLoopedAudios() method
 
+Retrieves all looped audio instances for the world.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllLoopedAudios(): Audio[];
 **Returns:**
 
 [Audio](./server.audio.md)<!-- -->\[\]
+
+An array of audio instances.
 

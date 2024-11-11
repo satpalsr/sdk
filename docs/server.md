@@ -35,6 +35,8 @@ An instance of audio, supporting a variety of configuration options.
 
 </td><td>
 
+Manages audio instances in a world.
+
 
 </td></tr>
 <tr><td>

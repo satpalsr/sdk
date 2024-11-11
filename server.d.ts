@@ -221,17 +221,58 @@ export declare enum AudioEventType {
     SET_VOLUME = "AUDIO.SET_VOLUME"
 }
 
+/**
+ * Manages audio instances in a world.
+ *
+ * @remarks
+ * The AudioManager is created internally as a singleton
+ * for each @see {@link World} instance in a game server
+ * and should never be instantiated directly. It allows
+ * retrieval of all loaded audio, entity attached audio,
+ * looped audio, and more.
+ *
+ * @example
+ * ```typescript
+ * // Stop all audio in the world
+ * const audioManager = world.audioManager;
+ * audioManager.getAllAudios().map(audio => audio.pause());
+ * ```
+ *
+ * @public
+ */
 export declare class AudioManager {
-    private _audios;
-    private _nextAudioId;
-    private _world;
-    constructor(world: World);
+
+
+
+
+    /** The world the audio manager is for. */
     get world(): World;
-    registerAudio(audio: Audio): number;
-    unregisterAudio(audio: Audio): void;
+
+
+    /**
+     * Retrieves all loaded audio instances for the world.
+     *
+     * @returns An array of audio instances. @see {@link Audio}
+     */
     getAllAudios(): Audio[];
+    /**
+     * Retrieves all loaded audio instances attached to a specific entity.
+     *
+     * @param entity - The entity to get attached audio instances for. @see {@link Entity}
+     * @returns An array of audio instances. @see {@link Audio}
+     */
     getAllEntityAttachedAudios(entity: Entity): Audio[];
+    /**
+     * Retrieves all looped audio instances for the world.
+     *
+     * @returns An array of audio instances. @see {@link Audio}
+     */
     getAllLoopedAudios(): Audio[];
+    /**
+     * Retrieves all oneshot (non-looped) audio instances for the world.
+     *
+     * @returns An array of audio instances. @see {@link Audio}
+     */
     getAllOneshotAudios(): Audio[];
 }
 

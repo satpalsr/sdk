@@ -4,45 +4,28 @@
 
 ## HYTOPIA.AudioManager class
 
+Manages audio instances in a world.
+
 **Signature:**
 
 ```typescript
 export default class AudioManager 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+The AudioManager is created internally as a singleton for each
 
-Constructor
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `AudioManager` class.
 
-
-</th><th>
-
-Modifiers
+## Example
 
 
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world)](./server.hytopia.audiomanager._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `AudioManager` class
-
-
-</td></tr>
-</tbody></table>
+```typescript
+// Stop all audio in the world
+const audioManager = world.audioManager;
+audioManager.getAllAudios().map(audio => audio.pause());
+```
 
 ## Properties
 
@@ -84,6 +67,8 @@ Description
 
 </td><td>
 
+The world the audio manager is for.
+
 
 </td></tr>
 </tbody></table>
@@ -116,6 +101,8 @@ Description
 
 </td><td>
 
+Retrieves all loaded audio instances for the world.
+
 
 </td></tr>
 <tr><td>
@@ -127,6 +114,8 @@ Description
 
 
 </td><td>
+
+Retrieves all loaded audio instances attached to a specific entity.
 
 
 </td></tr>
@@ -140,6 +129,8 @@ Description
 
 </td><td>
 
+Retrieves all looped audio instances for the world.
+
 
 </td></tr>
 <tr><td>
@@ -152,29 +143,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[registerAudio(audio)](./server.hytopia.audiomanager.registeraudio.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[unregisterAudio(audio)](./server.hytopia.audiomanager.unregisteraudio.md)
-
-
-</td><td>
-
-
-</td><td>
+Retrieves all oneshot (non-looped) audio instances for the world.
 
 
 </td></tr>

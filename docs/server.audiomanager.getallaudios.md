@@ -4,6 +4,8 @@
 
 ## AudioManager.getAllAudios() method
 
+Retrieves all loaded audio instances for the world.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllAudios(): Audio[];
 **Returns:**
 
 [Audio](./server.audio.md)<!-- -->\[\]
+
+An array of audio instances.
 

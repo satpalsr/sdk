@@ -4,6 +4,8 @@
 
 ## HYTOPIA.AudioManager.getAllOneshotAudios() method
 
+Retrieves all oneshot (non-looped) audio instances for the world.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllOneshotAudios(): Audio[];
 **Returns:**
 
 [Audio](./server.audio.md)<!-- -->\[\]
+
+An array of audio instances.
 

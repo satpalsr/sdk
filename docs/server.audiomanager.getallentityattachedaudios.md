@@ -4,6 +4,8 @@
 
 ## AudioManager.getAllEntityAttachedAudios() method
 
+Retrieves all loaded audio instances attached to a specific entity.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ entity
 
 </td><td>
 
+The entity to get attached audio instances for.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Audio](./server.audio.md)<!-- -->\[\]
+
+An array of audio instances.
 
