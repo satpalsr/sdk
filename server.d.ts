@@ -2389,10 +2389,10 @@ export declare class World implements protocol.Serializable {
  * operations is as follows:
  *
  * 1. Update chunks and meshing
- * 2. Tick entity logic
- * 3. Step physics
- * 4. Check and emit entity updates
- * 5. Synchronize network packets with player clients
+ * 1. Tick entity logic
+ * 1. Step physics
+ * 1. Check and emit entity updates
+ * 1. Synchronize network packets with player clients
  *
  * @public
  */
