@@ -42,6 +42,8 @@ options
 
 </td><td>
 
+The options for the entity instance.
+
 
 </td></tr>
 </tbody></table>

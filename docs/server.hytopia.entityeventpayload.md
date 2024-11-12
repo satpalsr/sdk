@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityEventPayload namespace
 
+Payloads for events an Entity instance can emit.
+
 **Signature:**
 
 ```typescript

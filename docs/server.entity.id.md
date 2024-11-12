@@ -4,6 +4,8 @@
 
 ## Entity.id property
 
+The unique identifier for the entity.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.isSpawned property
 
+Whether the entity is spawned.
+
 **Signature:**
 
 ```typescript

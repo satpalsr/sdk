@@ -8525,7 +8525,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "server!DEFAULT_ENTITY_RIGID_BODY_OPTIONS:var",
-          "docComment": "",
+          "docComment": "/**\n * The default rigid body options when EntityOptions.rigidBodyOptions is not provided.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -9296,7 +9296,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Entity:class",
-          "docComment": "",
+          "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -9330,7 +9330,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!Entity:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Entity` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9363,7 +9363,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#characterController:member",
-              "docComment": "",
+              "docComment": "/**\n * The character controller for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9396,40 +9396,9 @@
               "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Entity#checkAndEmitUpdates:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "checkAndEmitUpdates(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "checkAndEmitUpdates"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!Entity#createCustomCharacterController:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that creates a custom character controller for the entity.\n *\n * @param this - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9473,7 +9442,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#despawn:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Despawns the entity from the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9504,7 +9473,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#id:member",
-              "docComment": "",
+              "docComment": "/**\n * The unique identifier for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9534,7 +9503,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#isSpawned:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the entity is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9564,7 +9533,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#modelLoopedAnimations:member",
-              "docComment": "",
+              "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9599,7 +9568,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#modelScale:member",
-              "docComment": "",
+              "docComment": "/**\n * The scale of the entity's model.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9629,7 +9598,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#modelUri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9659,7 +9628,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#name:member",
-              "docComment": "",
+              "docComment": "/**\n * The name of the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9689,7 +9658,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockCollision:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9737,7 +9706,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockContactForce:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9794,7 +9763,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onDespawn:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param this - The Entity instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9833,7 +9802,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityCollision:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9881,7 +9850,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityContactForce:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9938,7 +9907,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onSpawn:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param this - The Entity instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9977,7 +9946,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onTick:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called every tick.\n *\n * @param this - The Entity instance.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10012,38 +9981,6 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Entity#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.EntitySchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!EntitySchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
             },
             {
               "kind": "Method",
@@ -10097,7 +10034,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#spawn:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param coordinate - The coordinate to spawn the entity at.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10211,7 +10148,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#startModelOneshotAnimations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10259,7 +10196,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#stopModelAnimations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @param animations - The animations to stop.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10305,57 +10242,9 @@
               "name": "stopModelAnimations"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Entity#tick:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tick(tickDeltaMs: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "tickDeltaMs",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "tick"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!Entity#world:member",
-              "docComment": "",
+              "docComment": "/**\n * The world the entity is in.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10402,7 +10291,7 @@
         {
           "kind": "Namespace",
           "canonicalReference": "server!EntityEventPayload:namespace",
-          "docComment": "",
+          "docComment": "/**\n * Payloads for events an Entity instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -10886,7 +10775,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!EntityEventType:enum",
-          "docComment": "",
+          "docComment": "/**\n * Event types an Entity instance can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -11470,7 +11359,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!EntityOptions:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating an Entity instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -11485,7 +11374,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#modelLoopedAnimations:member",
-              "docComment": "",
+              "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11512,7 +11401,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#modelScale:member",
-              "docComment": "",
+              "docComment": "/**\n * The scale of the entity's model.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11539,7 +11428,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#modelUri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11566,7 +11455,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#name:member",
-              "docComment": "",
+              "docComment": "/**\n * The name of the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11593,7 +11482,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#rigidBodyOptions:member",
-              "docComment": "",
+              "docComment": "/**\n * The rigid body options for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -20568,7 +20457,7 @@
             {
               "kind": "Variable",
               "canonicalReference": "server!HYTOPIA.DEFAULT_ENTITY_RIGID_BODY_OPTIONS:var",
-              "docComment": "",
+              "docComment": "/**\n * The default rigid body options when EntityOptions.rigidBodyOptions is not provided.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21339,7 +21228,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Entity:class",
-              "docComment": "",
+              "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21373,7 +21262,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.Entity:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `Entity` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21406,7 +21295,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#characterController:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The character controller for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21439,40 +21328,9 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Entity#checkAndEmitUpdates:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "checkAndEmitUpdates(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "checkAndEmitUpdates"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#createCustomCharacterController:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that creates a custom character controller for the entity.\n *\n * @param this - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21516,7 +21374,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#despawn:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Despawns the entity from the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21547,7 +21405,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#id:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The unique identifier for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21577,7 +21435,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#isSpawned:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the entity is spawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21607,7 +21465,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#modelLoopedAnimations:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21642,7 +21500,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#modelScale:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The scale of the entity's model.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21672,7 +21530,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#modelUri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21702,7 +21560,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#name:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The name of the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21732,7 +21590,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockCollision:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21780,7 +21638,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockContactForce:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21837,7 +21695,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onDespawn:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param this - The Entity instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21876,7 +21734,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityCollision:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21924,7 +21782,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityContactForce:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21981,7 +21839,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onSpawn:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param this - The Entity instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22020,7 +21878,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onTick:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called every tick.\n *\n * @param this - The Entity instance.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22055,38 +21913,6 @@
                   "isStatic": false,
                   "isProtected": false,
                   "isAbstract": false
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Entity#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.EntitySchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!EntitySchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
                 },
                 {
                   "kind": "Method",
@@ -22140,7 +21966,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#spawn:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param coordinate - The coordinate to spawn the entity at.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22254,7 +22080,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#startModelOneshotAnimations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22302,7 +22128,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#stopModelAnimations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @param animations - The animations to stop.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22348,57 +22174,9 @@
                   "name": "stopModelAnimations"
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Entity#tick:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "tick(tickDeltaMs: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "tickDeltaMs",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "tick"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#world:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world the entity is in.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22445,7 +22223,7 @@
             {
               "kind": "Namespace",
               "canonicalReference": "server!HYTOPIA.EntityEventPayload:namespace",
-              "docComment": "",
+              "docComment": "/**\n * Payloads for events an Entity instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -22929,7 +22707,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.EntityEventType:enum",
-              "docComment": "",
+              "docComment": "/**\n * Event types an Entity instance can emit.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23513,7 +23291,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.EntityOptions:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating an Entity instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23528,7 +23306,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#modelLoopedAnimations:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23555,7 +23333,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#modelScale:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The scale of the entity's model.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23582,7 +23360,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#modelUri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23609,7 +23387,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#name:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The name of the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23636,7 +23414,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#rigidBodyOptions:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The rigid body options for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -29546,29 +29324,6 @@
               ]
             },
             {
-              "kind": "Variable",
-              "canonicalReference": "server!HYTOPIA.ROTATION_UPDATE_THRESHOLD:var",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "ROTATION_UPDATE_THRESHOLD: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                }
-              ],
-              "fileUrlPath": "src/world/entities/Entity.ts",
-              "isReadonly": true,
-              "releaseTag": "Public",
-              "name": "ROTATION_UPDATE_THRESHOLD",
-              "variableTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.Rotation:interface",
               "docComment": "/**\n * A rotation in quaternion form.\n *\n * @public\n */\n",
@@ -30377,29 +30132,6 @@
               "isReadonly": true,
               "releaseTag": "Public",
               "name": "SUPPORTED_INPUT_KEYS",
-              "variableTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "Variable",
-              "canonicalReference": "server!HYTOPIA.TRANSLATION_UPDATE_THRESHOLD_SQ:var",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "TRANSLATION_UPDATE_THRESHOLD_SQ: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                }
-              ],
-              "fileUrlPath": "src/world/entities/Entity.ts",
-              "isReadonly": true,
-              "releaseTag": "Public",
-              "name": "TRANSLATION_UPDATE_THRESHOLD_SQ",
               "variableTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -36983,29 +36715,6 @@
           ]
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "server!ROTATION_UPDATE_THRESHOLD:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "ROTATION_UPDATE_THRESHOLD: "
-            },
-            {
-              "kind": "Content",
-              "text": "number"
-            }
-          ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "ROTATION_UPDATE_THRESHOLD",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
           "kind": "Interface",
           "canonicalReference": "server!Rotation:interface",
           "docComment": "/**\n * A rotation in quaternion form.\n *\n * @public\n */\n",
@@ -37814,29 +37523,6 @@
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "SUPPORTED_INPUT_KEYS",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "server!TRANSLATION_UPDATE_THRESHOLD_SQ:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "TRANSLATION_UPDATE_THRESHOLD_SQ: "
-            },
-            {
-              "kind": "Content",
-              "text": "number"
-            }
-          ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "TRANSLATION_UPDATE_THRESHOLD_SQ",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2

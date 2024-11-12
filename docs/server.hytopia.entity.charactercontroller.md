@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.characterController property
 
+The character controller for the entity.
+
 **Signature:**
 
 ```typescript

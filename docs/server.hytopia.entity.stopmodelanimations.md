@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.stopModelAnimations() method
 
+Stops the provided model animations for the entity.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ string\[\]
 
 
 </td><td>
+
+The animations to stop.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.name property
 
+The name of the entity.
+
 **Signature:**
 
 ```typescript

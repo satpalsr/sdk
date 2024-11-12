@@ -4,6 +4,8 @@
 
 ## EntityOptions.rigidBodyOptions property
 
+The rigid body options for the entity.
+
 **Signature:**
 
 ```typescript

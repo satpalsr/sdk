@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.world property
 
+The world the entity is in.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onDespawn property
 
+A function that is called when the entity is despawned.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityEventType enum
 
+Event types an Entity instance can emit.
+
 **Signature:**
 
 ```typescript

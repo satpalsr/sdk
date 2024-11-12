@@ -4,6 +4,8 @@
 
 ## EntityOptions.modelScale property
 
+The scale of the entity's model.
+
 **Signature:**
 
 ```typescript

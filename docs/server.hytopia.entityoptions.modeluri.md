@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityOptions.modelUri property
 
+The URI or path to the .gltf model asset to be used for the entity.
+
 **Signature:**
 
 ```typescript

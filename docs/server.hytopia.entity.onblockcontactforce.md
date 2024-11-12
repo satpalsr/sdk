@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onBlockContactForce property
 
+A function that is called when the entity collides with a block.
+
 **Signature:**
 
 ```typescript

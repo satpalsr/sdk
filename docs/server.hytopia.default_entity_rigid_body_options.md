@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DEFAULT\_ENTITY\_RIGID\_BODY\_OPTIONS variable
 
+The default rigid body options when EntityOptions.rigidBodyOptions is not provided.
+
 **Signature:**
 
 ```typescript

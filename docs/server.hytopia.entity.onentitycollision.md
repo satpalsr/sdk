@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onEntityCollision property
 
+A function that is called when the entity collides with another entity.
+
 **Signature:**
 
 ```typescript

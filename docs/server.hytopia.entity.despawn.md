@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.despawn() method
 
+Despawns the entity from the world.
+
 **Signature:**
 
 ```typescript

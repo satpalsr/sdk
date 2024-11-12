@@ -4,6 +4,8 @@
 
 ## Entity.spawn() method
 
+Spawns the entity in the world.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ world
 
 </td><td>
 
+The world to spawn the entity in.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ coordinate
 
 
 </td><td>
+
+The coordinate to spawn the entity at.
 
 
 </td></tr>

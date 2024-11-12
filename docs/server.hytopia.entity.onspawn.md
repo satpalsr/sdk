@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onSpawn property
 
+A function that is called when the entity is spawned.
+
 **Signature:**
 
 ```typescript

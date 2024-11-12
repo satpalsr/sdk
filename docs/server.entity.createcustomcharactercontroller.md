@@ -4,6 +4,8 @@
 
 ## Entity.createCustomCharacterController property
 
+A function that creates a custom character controller for the entity.
+
 **Signature:**
 
 ```typescript

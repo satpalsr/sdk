@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onEntityContactForce property
 
+A function that is called when the entity contacts another entity.
+
 **Signature:**
 
 ```typescript

@@ -150,6 +150,8 @@ The default character controller implementation.
 
 </td><td>
 
+Represents an entity in a world.
+
 
 </td></tr>
 <tr><td>
@@ -349,6 +351,8 @@ Event types a Chunk instance can emit.
 
 </td><td>
 
+Event types an Entity instance can emit.
+
 
 </td></tr>
 <tr><td>
@@ -458,6 +462,8 @@ Options for creating a DefaultCharacterController instance.
 
 
 </td><td>
+
+Options for creating an Entity instance.
 
 
 </td></tr>
@@ -609,6 +615,8 @@ Payloads for events a Chunk instance can emit.
 
 </td><td>
 
+Payloads for events an Entity instance can emit.
+
 
 </td></tr>
 <tr><td>
@@ -653,14 +661,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[ROTATION\_UPDATE\_THRESHOLD](./server.rotation_update_threshold.md)
-
-
-</td><td>
+The default rigid body options when EntityOptions.rigidBodyOptions is not provided.
 
 
 </td></tr>
@@ -672,15 +673,6 @@ Description
 </td><td>
 
 The input keys included in the PlayerInputState.
-
-
-</td></tr>
-<tr><td>
-
-[TRANSLATION\_UPDATE\_THRESHOLD\_SQ](./server.translation_update_threshold_sq.md)
-
-
-</td><td>
 
 
 </td></tr>

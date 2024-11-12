@@ -4,6 +4,8 @@
 
 ## EntityOptions interface
 
+Options for creating an Entity instance.
+
 **Signature:**
 
 ```typescript
@@ -48,7 +50,7 @@ string\[\]
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The looped animations to start when the entity is spawned.
 
 
 </td></tr>
@@ -67,7 +69,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The scale of the entity's model.
 
 
 </td></tr>
@@ -86,7 +88,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The URI or path to the .gltf model asset to be used for the entity.
 
 
 </td></tr>
@@ -105,7 +107,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The name of the entity.
 
 
 </td></tr>
@@ -124,7 +126,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The rigid body options for the entity.
 
 
 </td></tr>

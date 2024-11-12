@@ -4,6 +4,8 @@
 
 ## Entity class
 
+Represents an entity in a world.
+
 **Signature:**
 
 ```typescript
@@ -12,6 +14,34 @@ export default class Entity extends RigidBody implements protocol.Serializable
 **Extends:** [RigidBody](./server.rigidbody.md)
 
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.
+
+## Example
+
+
+```typescript
+const spider = new Entity({
+  name: 'Spider',
+  modelUri: 'models/spider.gltf',
+  modelLoopedAnimations: [ 'walk' ],
+  rigidBodyOptions: {
+    type: RigidBodyType.DYNAMIC,
+    enabledRotations: { x: false, y: true, z: false },
+    colliders: [
+      {
+        shape: ColliderShape.ROUND_CYLINDER,
+        borderRadius: 0.1,
+        halfHeight: 0.225,
+        radius: 0.5,
+        tag: 'body',
+      }
+    ],
+  },
+});
+```
 
 ## Constructors
 
@@ -87,6 +117,8 @@ Description
 
 </td><td>
 
+The character controller for the entity.
+
 
 </td></tr>
 <tr><td>
@@ -104,7 +136,7 @@ Description
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that creates a custom character controller for the entity.
 
 
 </td></tr>
@@ -125,6 +157,8 @@ number \| undefined
 
 </td><td>
 
+The unique identifier for the entity.
+
 
 </td></tr>
 <tr><td>
@@ -143,6 +177,8 @@ boolean
 
 
 </td><td>
+
+Whether the entity is spawned.
 
 
 </td></tr>
@@ -163,6 +199,8 @@ ReadonlySet&lt;string&gt;
 
 </td><td>
 
+The looped animations to start when the entity is spawned.
+
 
 </td></tr>
 <tr><td>
@@ -181,6 +219,8 @@ number \| undefined
 
 
 </td><td>
+
+The scale of the entity's model.
 
 
 </td></tr>
@@ -201,6 +241,8 @@ string \| undefined
 
 </td><td>
 
+The URI or path to the .gltf model asset to be used for the entity.
+
 
 </td></tr>
 <tr><td>
@@ -220,6 +262,8 @@ string
 
 </td><td>
 
+The name of the entity.
+
 
 </td></tr>
 <tr><td>
@@ -237,7 +281,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity collides with a block.
 
 
 </td></tr>
@@ -256,7 +300,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity collides with a block.
 
 
 </td></tr>
@@ -275,7 +319,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity is despawned.
 
 
 </td></tr>
@@ -294,7 +338,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity collides with another entity.
 
 
 </td></tr>
@@ -313,7 +357,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity contacts another entity.
 
 
 </td></tr>
@@ -332,7 +376,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when the entity is spawned.
 
 
 </td></tr>
@@ -351,7 +395,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called every tick.
 
 
 </td></tr>
@@ -371,6 +415,8 @@ _(Optional)_
 
 
 </td><td>
+
+The world the entity is in.
 
 
 </td></tr>
@@ -396,18 +442,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[checkAndEmitUpdates()](./server.entity.checkandemitupdates.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [despawn()](./server.entity.despawn.md)
 
 
@@ -416,17 +450,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[serialize()](./server.entity.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
+Despawns the entity from the world.
 
 
 </td></tr>
@@ -452,6 +476,8 @@ Description
 
 </td><td>
 
+Spawns the entity in the world.
+
 
 </td></tr>
 <tr><td>
@@ -476,6 +502,8 @@ Description
 
 </td><td>
 
+Starts a oneshot animation for the entity, blending with other animations currently playing.
+
 
 </td></tr>
 <tr><td>
@@ -488,17 +516,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[tick(tickDeltaMs)](./server.entity.tick.md)
-
-
-</td><td>
-
-
-</td><td>
+Stops the provided model animations for the entity.
 
 
 </td></tr>

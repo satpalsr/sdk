@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.startModelOneshotAnimations() method
 
+Starts a oneshot animation for the entity, blending with other animations currently playing.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ string\[\]
 
 
 </td><td>
+
+The animations to start.
 
 
 </td></tr>

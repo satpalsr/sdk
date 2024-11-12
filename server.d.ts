@@ -888,6 +888,7 @@ export declare type DecodedCollisionGroups = {
     collidesWith: string[];
 };
 
+/** The default rigid body options when EntityOptions.rigidBodyOptions is not provided. */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
@@ -996,49 +997,153 @@ export declare interface DefaultCharacterControllerOptions {
     canRun?: () => boolean;
 }
 
+/**
+ * Represents an entity in a world.
+ *
+ * @remarks
+ * Entities are highly configurable and controllable. All
+ * entities are created from a .gltf model asset and
+ * allow full control of their rigid body and attached collider
+ * dynamics.
+ *
+ * @example
+ * ```typescript
+ * const spider = new Entity({
+ *   name: 'Spider',
+ *   modelUri: 'models/spider.gltf',
+ *   modelLoopedAnimations: [ 'walk' ],
+ *   rigidBodyOptions: {
+ *     type: RigidBodyType.DYNAMIC,
+ *     enabledRotations: { x: false, y: true, z: false },
+ *     colliders: [
+ *       {
+ *         shape: ColliderShape.ROUND_CYLINDER,
+ *         borderRadius: 0.1,
+ *         halfHeight: 0.225,
+ *         radius: 0.5,
+ *         tag: 'body',
+ *       }
+ *     ],
+ *   },
+ * });
+ * ```
+ *
+ * @public
+ */
 export declare class Entity extends RigidBody implements protocol.Serializable {
+    /**
+     * A function that creates a custom character controller for the entity.
+     * @param this - The Entity instance.
+     * @returns A character controller that extends {@link BaseCharacterController}.
+     */
     createCustomCharacterController?: (this: Entity) => BaseCharacterController;
+    /**
+     * A function that is called when the entity collides with a block.
+     * @param this - The Entity instance.
+     * @param block - The block that the entity collided with.
+     * @param started - Whether the collision started or ended.
+     */
     onBlockCollision?: (this: Entity, block: BlockType, started: boolean) => void;
+    /**
+     * A function that is called when the entity collides with a block.
+     * @param this - The Entity instance.
+     * @param block - The block that the entity collided with.
+     * @param contactForceData - The contact force data.
+     */
     onBlockContactForce?: (this: Entity, block: BlockType, contactForceData: ContactForceData) => void;
+    /**
+     * A function that is called when the entity collides with another entity.
+     * @param this - The Entity instance.
+     * @param entity - The entity that the entity collided with.
+     * @param started - Whether the collision started or ended.
+     */
     onEntityCollision?: (this: Entity, entity: Entity, started: boolean) => void;
+    /**
+     * A function that is called when the entity contacts another entity.
+     * @param this - The Entity instance.
+     * @param entity - The entity that the entity collided with.
+     * @param contactForceData - The contact force data.
+     */
     onEntityContactForce?: (this: Entity, entity: Entity, contactForceData: ContactForceData) => void;
+    /**
+     * A function that is called when the entity is spawned.
+     * @param this - The Entity instance.
+     */
     onSpawn?: (this: Entity) => void;
+    /**
+     * A function that is called when the entity is despawned.
+     * @param this - The Entity instance.
+     */
     onDespawn?: (this: Entity) => void;
+    /**
+     * A function that is called every tick.
+     * @param this - The Entity instance.
+     * @param tickDeltaMs - The delta time in milliseconds since the last tick.
+     */
     onTick?: (this: Entity, tickDeltaMs: number) => void;
-    private _id;
-    private _modelUri;
-    private _modelLoopedAnimations;
-    private _modelOneshotAnimations;
-    private _modelScale;
-    private _name;
-    private _characterController;
-    private _lastUpdatedRotation;
-    private _lastUpdatedTranslation;
-    private _world;
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @param options - The options for the entity instance.
+     */
     constructor(options: EntityOptions);
+    /** The unique identifier for the entity. */
     get id(): number | undefined;
+    /** The URI or path to the .gltf model asset to be used for the entity. */
     get modelUri(): string | undefined;
+    /** The looped animations to start when the entity is spawned. */
     get modelLoopedAnimations(): ReadonlySet<string>;
+    /** The scale of the entity's model. */
     get modelScale(): number | undefined;
+    /** The name of the entity. */
     get name(): string;
+    /** The character controller for the entity. */
     get characterController(): BaseCharacterController | undefined;
+    /** Whether the entity is spawned. */
     get isSpawned(): boolean;
+    /** The world the entity is in. */
     get world(): World | undefined;
+    /**
+     * Spawns the entity in the world.
+     * @param world - The world to spawn the entity in.
+     * @param coordinate - The coordinate to spawn the entity at.
+     */
     spawn(world: World, coordinate: Vector3): void;
+    /**
+     * Despawns the entity from the world.
+     */
     despawn(): void;
     setCharacterController(characterController: BaseCharacterController): void;
     startModelLoopedAnimations(animations: string[]): void;
+    /**
+     * Starts a oneshot animation for the entity, blending with
+     * other animations currently playing.
+     * @param animations - The animations to start.
+     */
     startModelOneshotAnimations(animations: string[]): void;
+    /**
+     * Stops the provided model animations for the entity.
+     * @param animations - The animations to stop.
+     */
     stopModelAnimations(animations: string[]): void;
-    serialize(): protocol.EntitySchema;
-    tick(tickDeltaMs: number): void;
-    checkAndEmitUpdates(): void;
-    private _requireSpawned;
-    private _requireModelUri;
-    private _rotationExceedsThreshold;
-    private _translationExceedsThreshold;
+
+
+
+
+
+
+
 }
 
+/** Payloads for events an Entity instance can emit. @public */
 export declare namespace EntityEventPayload {
     export interface Despawn {
         entity: Entity;
@@ -1068,6 +1173,7 @@ export declare namespace EntityEventPayload {
     }
 }
 
+/** Event types an Entity instance can emit. @public */
 export declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
     SPAWN = "ENTITY.SPAWN",
@@ -1093,11 +1199,17 @@ export declare class EntityManager {
     checkAndEmitUpdates(): void;
 }
 
+/** Options for creating an Entity instance. @public */
 export declare interface EntityOptions {
+    /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
+    /** The looped animations to start when the entity is spawned. */
     modelLoopedAnimations?: string[];
+    /** The scale of the entity's model. */
     modelScale?: number;
+    /** The name of the entity. */
     name?: string;
+    /** The rigid body options for the entity. */
     rigidBodyOptions?: RigidBodyOptions;
 }
 
@@ -1213,8 +1325,6 @@ declare namespace HYTOPIA {
         Entity,
         EntityEventType,
         DEFAULT_ENTITY_RIGID_BODY_OPTIONS,
-        ROTATION_UPDATE_THRESHOLD,
-        TRANSLATION_UPDATE_THRESHOLD_SQ,
         EntityOptions,
         EntityEventPayload,
         EntityManager,
@@ -1549,8 +1659,6 @@ export declare interface Rotation {
     w: number;
 }
 
-export declare const ROTATION_UPDATE_THRESHOLD: number;
-
 export declare class Simulation {
     private _colliderMap;
     private _rapierEventQueue;
@@ -1580,8 +1688,6 @@ export declare function startServer(init: (world: World) => Promise<void>): Prom
 
 /** The input keys included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: string[];
-
-export declare const TRANSLATION_UPDATE_THRESHOLD_SQ: number;
 
 /** A 3-dimensional vector. @public */
 export declare interface Vector3 {

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Entity.onTick property
 
+A function that is called every tick.
+
 **Signature:**
 
 ```typescript

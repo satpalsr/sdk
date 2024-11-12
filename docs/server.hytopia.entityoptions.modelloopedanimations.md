@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityOptions.modelLoopedAnimations property
 
+The looped animations to start when the entity is spawned.
+
 **Signature:**
 
 ```typescript
