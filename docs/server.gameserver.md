@@ -14,7 +14,7 @@ export default class GameServer
 
 ## Remarks
 
-This class is a singleton and should be accessed via the `instance` property via .
+This class is a singleton and should be accessed via the `instance` property
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `GameServer` class.
 

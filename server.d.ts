@@ -1511,8 +1511,8 @@ export declare class EventRouter {
  * Manages the game and associated worlds and systems.
  *
  * @remarks
- * This class is a singleton and should be accessed via the `instance`
- * property via {@link GamerServer."instance"}.
+ * This class is a singleton and should be accessed via
+ * the `instance` property
  *
  * @public
  */
