@@ -2284,6 +2284,8 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  * should be executed in the init function.
  *
  * @param init - A function that initializes the world.
+ *
+ * @public
  */
 export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
 
