@@ -23981,7 +23981,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.PlayerEntity#player:member",
-                  "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
+                  "docComment": "/**\n * The player the player entity is assigned to and controlled by.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -31324,7 +31324,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!PlayerEntity#player:member",
-              "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
+              "docComment": "/**\n * The player the player entity is assigned to and controlled by.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

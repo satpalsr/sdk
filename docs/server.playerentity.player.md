@@ -4,7 +4,7 @@
 
 ## PlayerEntity.player property
 
-The player the player entity is assigned to.
+The player the player entity is assigned to and controlled by.
 
 **Signature:**
 

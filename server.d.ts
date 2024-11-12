@@ -1481,7 +1481,7 @@ export declare class Player {
  * @public
  */
 export declare class PlayerEntity extends Entity {
-    /** The player the player entity is assigned to. */
+    /** The player the player entity is assigned to and controlled by. */
     readonly player: Player;
     /**
      * @param options - The options for the player entity.
