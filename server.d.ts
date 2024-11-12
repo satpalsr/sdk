@@ -1062,7 +1062,7 @@ export declare type DecodedCollisionGroups = {
     collidesWith: string[];
 };
 
-/** The default rigid body options when EntityOptions.rigidBodyOptions is not provided. */
+/** The default rigid body options when EntityOptions.rigidBodyOptions is not provided. @public */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
@@ -2316,6 +2316,8 @@ export declare interface Vector3Boolean {
  *   skyboxUri: 'textures/skyboxes/default.png',
  * });
  * ```
+ *
+ * @public
  */
 export declare class World implements protocol.Serializable {
     /**
