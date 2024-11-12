@@ -1195,19 +1195,52 @@ export declare enum EntityEventType {
     UPDATE_TRANSLATION = "ENTITY.UPDATE_TRANSLATION"
 }
 
+/**
+ * Manages entities in a world.
+ *
+ * @remarks
+ * The EntityManager is created internally as a singleton
+ * for each {@link World} instance in a game server.
+ * It allows retrieval of all entities, player entities,
+ * and more.
+ *
+ * @example
+ * ```typescript
+ * // Get all entities in the world
+ * const entityManager = world.entityManager;
+ * const entities = entityManager.getAllEntities();
+ * ```
+ *
+ * @public
+ */
 export declare class EntityManager {
-    private _entities;
-    private _nextEntityId;
-    private _world;
-    constructor(world: World);
+
+
+
+
+    /** The world the entity manager is for. */
     get world(): World;
-    registerEntity(entity: Entity): number;
-    unregisterEntity(entity: Entity): void;
+
+
+    /**
+     * Gets all entities in the world.
+     * @returns All entities in the world.
+     */
     getAllEntities(): Entity[];
+    /**
+     * Gets all entities in the world assigned to a player.
+     * @param player - The player to get the entities for.
+     * @returns All entities in the world assigned to the player.
+     */
     getAllPlayerEntities(player: Player): PlayerEntity[];
+    /**
+     * Gets an entity in the world by its id.
+     * @param id - The id of the entity to get.
+     * @returns The entity with the provided id, or undefined if no entity is found.
+     */
     getEntity<T extends Entity>(id: number): T | undefined;
-    tickEntities(tickDeltaMs: number): void;
-    checkAndEmitUpdates(): void;
+
+
 }
 
 /** Options for creating an Entity instance. @public */

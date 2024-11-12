@@ -4,6 +4,8 @@
 
 ## EntityManager.getAllPlayerEntities() method
 
+Gets all entities in the world assigned to a player.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ player
 
 </td><td>
 
+The player to get the entities for.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [PlayerEntity](./server.playerentity.md)<!-- -->\[\]
+
+All entities in the world assigned to the player.
 

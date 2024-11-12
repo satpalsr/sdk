@@ -4,6 +4,8 @@
 
 ## EntityManager.world property
 
+The world the entity manager is for.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityManager.getAllEntities() method
 
+Gets all entities in the world.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAllEntities(): Entity[];
 **Returns:**
 
 [Entity](./server.entity.md)<!-- -->\[\]
+
+All entities in the world.
 

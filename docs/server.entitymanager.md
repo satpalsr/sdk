@@ -4,45 +4,28 @@
 
 ## EntityManager class
 
+Manages entities in a world.
+
 **Signature:**
 
 ```typescript
 export default class EntityManager 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+The EntityManager is created internally as a singleton for each [World](./server.world.md) instance in a game server. It allows retrieval of all entities, player entities, and more.
 
-Constructor
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `EntityManager` class.
 
-
-</th><th>
-
-Modifiers
+## Example
 
 
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world)](./server.entitymanager._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `EntityManager` class
-
-
-</td></tr>
-</tbody></table>
+```typescript
+// Get all entities in the world
+const entityManager = world.entityManager;
+const entities = entityManager.getAllEntities();
+```
 
 ## Properties
 
@@ -84,6 +67,8 @@ Description
 
 </td><td>
 
+The world the entity manager is for.
+
 
 </td></tr>
 </tbody></table>
@@ -108,18 +93,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[checkAndEmitUpdates()](./server.entitymanager.checkandemitupdates.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [getAllEntities()](./server.entitymanager.getallentities.md)
 
 
@@ -127,6 +100,8 @@ Description
 
 
 </td><td>
+
+Gets all entities in the world.
 
 
 </td></tr>
@@ -140,6 +115,8 @@ Description
 
 </td><td>
 
+Gets all entities in the world assigned to a player.
+
 
 </td></tr>
 <tr><td>
@@ -152,41 +129,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[registerEntity(entity)](./server.entitymanager.registerentity.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[tickEntities(tickDeltaMs)](./server.entitymanager.tickentities.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[unregisterEntity(entity)](./server.entitymanager.unregisterentity.md)
-
-
-</td><td>
-
-
-</td><td>
+Gets an entity in the world by its id.
 
 
 </td></tr>

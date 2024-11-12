@@ -4,6 +4,8 @@
 
 ## HYTOPIA.EntityManager.getEntity() method
 
+Gets an entity in the world by its id.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ number
 
 </td><td>
 
+The id of the entity to get.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 T \| undefined
+
+The entity with the provided id, or undefined if no entity is found.
 

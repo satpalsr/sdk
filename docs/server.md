@@ -161,6 +161,8 @@ Represents an entity in a world.
 
 </td><td>
 
+Manages entities in a world.
+
 
 </td></tr>
 <tr><td>
