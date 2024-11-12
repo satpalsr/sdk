@@ -4,6 +4,8 @@
 
 ## DefaultCharacterController.createSensorColliders() method
 
+Creates the sensor colliders for the character controller, overriding the default implementation.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ createSensorColliders(): Collider[];
 **Returns:**
 
 [Collider](./server.collider.md)<!-- -->\[\]
+
+An array of colliders.
 

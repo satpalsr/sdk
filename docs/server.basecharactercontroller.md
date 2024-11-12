@@ -14,7 +14,7 @@ export default abstract class BaseCharacterController
 
 ## Remarks
 
-The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.
+The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements.
 
 ## Constructors
 

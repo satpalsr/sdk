@@ -139,6 +139,8 @@ A lattice of chunks that represent a world's terrain.
 
 </td><td>
 
+A default character controller implementation.
+
 
 </td></tr>
 <tr><td>
@@ -445,6 +447,8 @@ Options for creating a block type instance.
 
 
 </td><td>
+
+Options for creating a DefaultCharacterController instance.
 
 
 </td></tr>

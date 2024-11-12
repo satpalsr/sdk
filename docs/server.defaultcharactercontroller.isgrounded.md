@@ -4,6 +4,8 @@
 
 ## DefaultCharacterController.isGrounded property
 
+Whether the entity is grounded.
+
 **Signature:**
 
 ```typescript

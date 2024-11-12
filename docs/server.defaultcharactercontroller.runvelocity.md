@@ -4,6 +4,8 @@
 
 ## DefaultCharacterController.runVelocity property
 
+The normalized horizontal velocity applied to the entity when it runs.
+
 **Signature:**
 
 ```typescript

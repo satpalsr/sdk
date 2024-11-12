@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DefaultCharacterController.canRun property
 
+A function allowing custom logic to determine if the entity can run.
+
 **Signature:**
 
 ```typescript

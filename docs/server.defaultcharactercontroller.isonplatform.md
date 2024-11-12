@@ -4,6 +4,8 @@
 
 ## DefaultCharacterController.isOnPlatform property
 
+Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.
+
 **Signature:**
 
 ```typescript

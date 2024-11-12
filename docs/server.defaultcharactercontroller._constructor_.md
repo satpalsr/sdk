@@ -42,6 +42,8 @@ entity
 
 </td><td>
 
+The entity the controller is for.
+
 
 </td></tr>
 <tr><td>
@@ -56,7 +58,7 @@ options
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Options for the controller.
 
 
 </td></tr>

@@ -279,9 +279,9 @@ export declare interface AudioOptions {
  * A base class for character controller implementations.
  *
  * @remarks
- * The BaseCharacterController should not be used directly,
- * but rather extended by a more specific character controller
- * that you or a plugin implements.
+ * The BaseCharacterController should be extended
+ * by a more specific character controller that you or a
+ * plugin implements.
  *
  * @public
  */
@@ -890,31 +890,108 @@ export declare type DecodedCollisionGroups = {
 
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
+/**
+ * A default character controller implementation.
+ *
+ * @remarks
+ * This class extends {@link BaseCharacterController}
+ * and implements the default movement logic for a
+ * character entity. This class may be extended if
+ * you'd like to implement additional logic on
+ * top of the DefaultCharacterController implementation.
+ *
+ * @example
+ * ```typescript
+ * // Create a custom character controller for myEntity, prior to spawning it.
+ * myEntity.createCustomCharacterController = () => {
+ *   return new DefaultCharacterController(myEntity, {
+ *     jumpVelocity: 10,
+ *     runVelocity: 8,
+ *     walkVelocity: 4,
+ *   });
+ * };
+ *
+ * // Spawn the entity in the world.
+ * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
+ * ```
+ *
+ * @public
+ */
 export declare class DefaultCharacterController extends BaseCharacterController {
+    /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
     runVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
     walkVelocity: number;
+    /**
+     * A function allowing custom logic to determine if the entity can walk.
+     * @param this - The character controller instance.
+     * @returns Whether the entity can walk.
+     */
     canWalk: (this: DefaultCharacterController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can run.
+     * @param this - The character controller instance.
+     * @returns Whether the entity can run.
+     */
     canRun: (this: DefaultCharacterController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can jump.
+     * @param this - The character controller instance.
+     * @returns Whether the entity can jump.
+     */
     canJump: (this: DefaultCharacterController) => boolean;
-    private _stepAudio;
-    private _groundContactCount;
-    private _platform;
+
+
+
+    /**
+     * @param entity - The entity the controller is for.
+     * @param options - Options for the controller.
+     */
     constructor(entity: Entity, options?: DefaultCharacterControllerOptions);
+    /** Whether the entity is grounded. */
     get isGrounded(): boolean;
+    /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
     get isOnPlatform(): boolean;
+    /** The platform the entity is on, if any. */
     get platform(): Entity | undefined;
+    /**
+     * Creates the sensor colliders for the character controller,
+     * overriding the default implementation.
+     * @returns An array of colliders.
+     */
     createSensorColliders(): Collider[];
+    /**
+     * Ticks the player movement for the character controller,
+     * overriding the default implementation.
+     * @param inputState - The current input state of the player.
+     * @param orientationState - The current orientation state of the player.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    /**
+     * Ticks the pathfinding movement for the character controller,
+     * overriding the default implementation.
+     * @param destination - The destination to move to.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     tickPathfindingMovement(destination: Vector3, deltaTimeMs: number): void;
 }
 
+/** Options for creating a DefaultCharacterController instance. @public */
 export declare interface DefaultCharacterControllerOptions {
+    /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
     runVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
     walkVelocity?: number;
+    /** A function allowing custom logic to determine if the entity can jump. */
     canJump?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can walk. */
     canWalk?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can run. */
     canRun?: () => boolean;
 }
 

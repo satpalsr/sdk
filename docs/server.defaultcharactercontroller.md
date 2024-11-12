@@ -4,12 +4,35 @@
 
 ## DefaultCharacterController class
 
+A default character controller implementation.
+
 **Signature:**
 
 ```typescript
 export default class DefaultCharacterController extends BaseCharacterController 
 ```
 **Extends:** [BaseCharacterController](./server.basecharactercontroller.md)
+
+## Remarks
+
+This class extends [BaseCharacterController](./server.basecharactercontroller.md) and implements the default movement logic for a character entity. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.
+
+## Example
+
+
+```typescript
+// Create a custom character controller for myEntity, prior to spawning it.
+myEntity.createCustomCharacterController = () => {
+  return new DefaultCharacterController(myEntity, {
+    jumpVelocity: 10,
+    runVelocity: 8,
+    walkVelocity: 4,
+  });
+};
+
+// Spawn the entity in the world.
+myEntity.spawn(world, { x: 53, y: 10, z: 23 });
+```
 
 ## Constructors
 
@@ -83,6 +106,8 @@ Description
 
 </td><td>
 
+A function allowing custom logic to determine if the entity can jump.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +125,8 @@ Description
 
 </td><td>
 
+A function allowing custom logic to determine if the entity can run.
+
 
 </td></tr>
 <tr><td>
@@ -116,6 +143,8 @@ Description
 
 
 </td><td>
+
+A function allowing custom logic to determine if the entity can walk.
 
 
 </td></tr>
@@ -136,6 +165,8 @@ boolean
 
 </td><td>
 
+Whether the entity is grounded.
+
 
 </td></tr>
 <tr><td>
@@ -155,6 +186,8 @@ boolean
 
 </td><td>
 
+Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -171,6 +204,8 @@ number
 
 
 </td><td>
+
+The upward velocity applied to the entity when it jumps.
 
 
 </td></tr>
@@ -191,6 +226,8 @@ number
 
 </td><td>
 
+The platform the entity is on, if any.
+
 
 </td></tr>
 <tr><td>
@@ -208,6 +245,8 @@ number
 
 </td><td>
 
+The normalized horizontal velocity applied to the entity when it runs.
+
 
 </td></tr>
 <tr><td>
@@ -224,6 +263,8 @@ number
 
 
 </td><td>
+
+The normalized horizontal velocity applied to the entity when it walks.
 
 
 </td></tr>
@@ -257,6 +298,8 @@ Description
 
 </td><td>
 
+Creates the sensor colliders for the character controller, overriding the default implementation.
+
 
 </td></tr>
 <tr><td>
@@ -269,6 +312,8 @@ Description
 
 </td><td>
 
+Ticks the pathfinding movement for the character controller, overriding the default implementation.
+
 
 </td></tr>
 <tr><td>
@@ -280,6 +325,8 @@ Description
 
 
 </td><td>
+
+Ticks the player movement for the character controller, overriding the default implementation.
 
 
 </td></tr>

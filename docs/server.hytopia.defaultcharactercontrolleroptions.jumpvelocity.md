@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DefaultCharacterControllerOptions.jumpVelocity property
 
+The upward velocity applied to the entity when it jumps.
+
 **Signature:**
 
 ```typescript

@@ -2619,7 +2619,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BaseCharacterController:class",
-          "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -8549,7 +8549,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!DefaultCharacterController:class",
-          "docComment": "",
+          "docComment": "/**\n * A default character controller implementation.\n *\n * @remarks\n *\n * This class extends {@link BaseCharacterController} and implements the default movement logic for a character entity. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new DefaultCharacterController(myEntity, {\n *     jumpVelocity: 10,\n *     runVelocity: 8,\n *     walkVelocity: 4,\n *   });\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -8574,7 +8574,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!DefaultCharacterController:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param options - Options for the controller.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8624,7 +8624,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canJump:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can jump.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8663,7 +8663,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canRun:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can run.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8702,7 +8702,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canWalk:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can walk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8741,7 +8741,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!DefaultCharacterController#createSensorColliders:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Creates the sensor colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8777,7 +8777,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#isGrounded:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the entity is grounded.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8807,7 +8807,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#isOnPlatform:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8837,7 +8837,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#jumpVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8867,7 +8867,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#platform:member",
-              "docComment": "",
+              "docComment": "/**\n * The platform the entity is on, if any.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8902,7 +8902,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#runVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8932,7 +8932,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!DefaultCharacterController#tickPathfindingMovement:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Ticks the pathfinding movement for the character controller, overriding the default implementation.\n *\n * @param destination - The destination to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8997,7 +8997,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!DefaultCharacterController#tickPlayerMovement:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9079,7 +9079,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#walkVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9116,7 +9116,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!DefaultCharacterControllerOptions:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating a DefaultCharacterController instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -9131,7 +9131,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#canJump:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9158,7 +9158,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#canRun:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9185,7 +9185,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#canWalk:member",
-              "docComment": "",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9212,7 +9212,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#jumpVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9239,7 +9239,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#runVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9266,7 +9266,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!DefaultCharacterControllerOptions#walkVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14662,7 +14662,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BaseCharacterController:class",
-              "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
+              "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -20592,7 +20592,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.DefaultCharacterController:class",
-              "docComment": "",
+              "docComment": "/**\n * A default character controller implementation.\n *\n * @remarks\n *\n * This class extends {@link BaseCharacterController} and implements the default movement logic for a character entity. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new DefaultCharacterController(myEntity, {\n *     jumpVelocity: 10,\n *     runVelocity: 8,\n *     walkVelocity: 4,\n *   });\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -20617,7 +20617,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param options - Options for the controller.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20667,7 +20667,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canJump:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can jump.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20706,7 +20706,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canRun:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can run.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20745,7 +20745,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canWalk:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can walk.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20784,7 +20784,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#createSensorColliders:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Creates the sensor colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20820,7 +20820,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#isGrounded:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the entity is grounded.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20850,7 +20850,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#isOnPlatform:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20880,7 +20880,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#jumpVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20910,7 +20910,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#platform:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The platform the entity is on, if any.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20945,7 +20945,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#runVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20975,7 +20975,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#tickPathfindingMovement:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Ticks the pathfinding movement for the character controller, overriding the default implementation.\n *\n * @param destination - The destination to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21040,7 +21040,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#tickPlayerMovement:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21122,7 +21122,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#walkVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21159,7 +21159,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating a DefaultCharacterController instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21174,7 +21174,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#canJump:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21201,7 +21201,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#canRun:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21228,7 +21228,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#canWalk:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21255,7 +21255,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#jumpVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21282,7 +21282,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#runVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21309,7 +21309,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterControllerOptions#walkVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

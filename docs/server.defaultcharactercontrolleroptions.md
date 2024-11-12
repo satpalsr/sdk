@@ -4,6 +4,8 @@
 
 ## DefaultCharacterControllerOptions interface
 
+Options for creating a DefaultCharacterController instance.
+
 **Signature:**
 
 ```typescript
@@ -48,7 +50,7 @@ Description
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function allowing custom logic to determine if the entity can jump.
 
 
 </td></tr>
@@ -67,7 +69,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function allowing custom logic to determine if the entity can run.
 
 
 </td></tr>
@@ -86,7 +88,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function allowing custom logic to determine if the entity can walk.
 
 
 </td></tr>
@@ -105,7 +107,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The upward velocity applied to the entity when it jumps.
 
 
 </td></tr>
@@ -124,7 +126,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The normalized horizontal velocity applied to the entity when it runs.
 
 
 </td></tr>
@@ -143,7 +145,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The normalized horizontal velocity applied to the entity when it walks.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DefaultCharacterController.canJump property
 
+A function allowing custom logic to determine if the entity can jump.
+
 **Signature:**
 
 ```typescript

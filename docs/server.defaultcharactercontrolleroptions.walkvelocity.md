@@ -4,6 +4,8 @@
 
 ## DefaultCharacterControllerOptions.walkVelocity property
 
+The normalized horizontal velocity applied to the entity when it walks.
+
 **Signature:**
 
 ```typescript

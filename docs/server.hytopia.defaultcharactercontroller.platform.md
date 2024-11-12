@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DefaultCharacterController.platform property
 
+The platform the entity is on, if any.
+
 **Signature:**
 
 ```typescript
