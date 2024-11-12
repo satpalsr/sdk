@@ -4,6 +4,8 @@
 
 ## ColliderOptions.collisionGroups property
 
+The collision groups the collider belongs to.
+
 **Signature:**
 
 ```typescript

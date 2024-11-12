@@ -4,6 +4,8 @@
 
 ## ColliderOptions.simulation property
 
+The simulation the collider is in.
+
 **Signature:**
 
 ```typescript

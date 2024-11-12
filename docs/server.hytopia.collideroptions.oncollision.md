@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.onCollision property
 
+The on collision callback for the collider.
+
 **Signature:**
 
 ```typescript

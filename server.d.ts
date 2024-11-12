@@ -749,6 +749,19 @@ export declare class ChunkLattice {
 
 }
 
+/**
+ * Represents a collider in a world's physics simulation.
+ *
+ * @remarks
+ * Colliders make up the foundation of the physical interactions
+ * in a world. They are highly configurable and have many
+ * aspects that can be adjusted both before simulation and
+ * while simulated. Colliders will most often be used through
+ * passing {@link ColliderOptions} to a {@link RigidBody} or
+ * an entity's {@link EntityOptions}.
+ *
+ * @public
+ */
 export declare class Collider {
     private _collider;
     private _colliderDesc;
@@ -809,26 +822,45 @@ export declare class ColliderMap {
     private _requireSimulatedRigidBody;
 }
 
+/** Options for creating a Collider instance. @public */
 export declare interface ColliderOptions {
+    /** The shape of the collider. */
     shape: ColliderShape;
+    /** The border radius of the collider if the shape is a round cylinder. */
     borderRadius?: number;
+    /** The bounciness of the collider. */
     bounciness?: number;
+    /** The collision groups the collider belongs to. */
     collisionGroups?: CollisionGroups;
+    /** Whether the collider is enabled. */
     enabled?: boolean;
+    /** The friction of the collider. */
     friction?: number;
+    /** The half extents of the collider if the shape is a block. */
     halfExtents?: Vector3;
+    /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
+    /** Whether the collider is a sensor. */
     isSensor?: boolean;
+    /** The mass of the collider. */
     mass?: number;
+    /** The on collision callback for the collider. */
     onCollision?: CollisionCallback;
+    /** The parent rigid body of the collider. */
     parentRigidBody?: RigidBody;
+    /** The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder. */
     radius?: number;
+    /** The relative rotation of the collider. */
     relativeRotation?: Rotation;
+    /** The relative translation of the collider. Relative to parent rigid body. */
     relativeTranslation?: Vector3;
+    /** The simulation the collider is in. */
     simulation?: Simulation;
+    /** An arbitrary identifier tag of the collider. */
     tag?: string;
 }
 
+/** The shapes a collider can be. @public */
 export declare enum ColliderShape {
     BALL = "ball",
     BLOCK = "block",

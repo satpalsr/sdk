@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.borderRadius property
 
+The border radius of the collider if the shape is a round cylinder.
+
 **Signature:**
 
 ```typescript

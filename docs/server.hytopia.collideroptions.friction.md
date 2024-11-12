@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.friction property
 
+The friction of the collider.
+
 **Signature:**
 
 ```typescript

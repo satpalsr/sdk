@@ -4,6 +4,8 @@
 
 ## ColliderOptions.enabled property
 
+Whether the collider is enabled.
+
 **Signature:**
 
 ```typescript

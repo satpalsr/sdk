@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.tag property
 
+An arbitrary identifier tag of the collider.
+
 **Signature:**
 
 ```typescript

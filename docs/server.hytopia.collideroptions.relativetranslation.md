@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.relativeTranslation property
 
+The relative translation of the collider. Relative to parent rigid body.
+
 **Signature:**
 
 ```typescript

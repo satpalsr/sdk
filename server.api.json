@@ -5618,7 +5618,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Collider:class",
-          "docComment": "",
+          "docComment": "/**\n * Represents a collider in a world's physics simulation.\n *\n * @remarks\n *\n * Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing {@link ColliderOptions} to a {@link RigidBody} or an entity's {@link EntityOptions}.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7363,7 +7363,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!ColliderOptions:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating a Collider instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7378,7 +7378,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#borderRadius:member",
-              "docComment": "",
+              "docComment": "/**\n * The border radius of the collider if the shape is a round cylinder.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7405,7 +7405,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#bounciness:member",
-              "docComment": "",
+              "docComment": "/**\n * The bounciness of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7432,7 +7432,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#collisionGroups:member",
-              "docComment": "",
+              "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7460,7 +7460,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#enabled:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the collider is enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7487,7 +7487,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#friction:member",
-              "docComment": "",
+              "docComment": "/**\n * The friction of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7514,7 +7514,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#halfExtents:member",
-              "docComment": "",
+              "docComment": "/**\n * The half extents of the collider if the shape is a block.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7542,7 +7542,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#halfHeight:member",
-              "docComment": "",
+              "docComment": "/**\n * The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7569,7 +7569,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#isSensor:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7596,7 +7596,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#mass:member",
-              "docComment": "",
+              "docComment": "/**\n * The mass of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7623,7 +7623,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#onCollision:member",
-              "docComment": "",
+              "docComment": "/**\n * The on collision callback for the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7651,7 +7651,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#parentRigidBody:member",
-              "docComment": "",
+              "docComment": "/**\n * The parent rigid body of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7679,7 +7679,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#radius:member",
-              "docComment": "",
+              "docComment": "/**\n * The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7706,7 +7706,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#relativeRotation:member",
-              "docComment": "",
+              "docComment": "/**\n * The relative rotation of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7734,7 +7734,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#relativeTranslation:member",
-              "docComment": "",
+              "docComment": "/**\n * The relative translation of the collider. Relative to parent rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7762,7 +7762,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#shape:member",
-              "docComment": "",
+              "docComment": "/**\n * The shape of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7790,7 +7790,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#simulation:member",
-              "docComment": "",
+              "docComment": "/**\n * The simulation the collider is in.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7818,7 +7818,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#tag:member",
-              "docComment": "",
+              "docComment": "/**\n * An arbitrary identifier tag of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7848,7 +7848,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!ColliderShape:enum",
-          "docComment": "",
+          "docComment": "/**\n * The shapes a collider can be.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -17340,7 +17340,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Collider:class",
-              "docComment": "",
+              "docComment": "/**\n * Represents a collider in a world's physics simulation.\n *\n * @remarks\n *\n * Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing {@link ColliderOptions} to a {@link RigidBody} or an entity's {@link EntityOptions}.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -19085,7 +19085,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.ColliderOptions:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating a Collider instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -19100,7 +19100,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#borderRadius:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The border radius of the collider if the shape is a round cylinder.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19127,7 +19127,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#bounciness:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The bounciness of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19154,7 +19154,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#collisionGroups:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19182,7 +19182,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#enabled:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the collider is enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19209,7 +19209,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#friction:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The friction of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19236,7 +19236,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#halfExtents:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The half extents of the collider if the shape is a block.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19264,7 +19264,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#halfHeight:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19291,7 +19291,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#isSensor:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19318,7 +19318,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#mass:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The mass of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19345,7 +19345,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#onCollision:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The on collision callback for the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19373,7 +19373,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#parentRigidBody:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The parent rigid body of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19401,7 +19401,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#radius:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19428,7 +19428,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#relativeRotation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The relative rotation of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19456,7 +19456,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#relativeTranslation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The relative translation of the collider. Relative to parent rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19484,7 +19484,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#shape:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The shape of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19512,7 +19512,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#simulation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The simulation the collider is in.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19540,7 +19540,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#tag:member",
-                  "docComment": "",
+                  "docComment": "/**\n * An arbitrary identifier tag of the collider.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19570,7 +19570,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.ColliderShape:enum",
-              "docComment": "",
+              "docComment": "/**\n * The shapes a collider can be.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

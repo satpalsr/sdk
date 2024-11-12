@@ -4,11 +4,17 @@
 
 ## HYTOPIA.Collider class
 
+Represents a collider in a world's physics simulation.
+
 **Signature:**
 
 ```typescript
 export default class Collider 
 ```
+
+## Remarks
+
+Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing [ColliderOptions](./server.collideroptions.md) to a [RigidBody](./server.rigidbody.md) or an entity's [EntityOptions](./server.entityoptions.md)<!-- -->.
 
 ## Constructors
 

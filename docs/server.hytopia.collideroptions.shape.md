@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.shape property
 
+The shape of the collider.
+
 **Signature:**
 
 ```typescript

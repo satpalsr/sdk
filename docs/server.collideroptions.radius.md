@@ -4,6 +4,8 @@
 
 ## ColliderOptions.radius property
 
+The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder.
+
 **Signature:**
 
 ```typescript

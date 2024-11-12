@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.relativeRotation property
 
+The relative rotation of the collider.
+
 **Signature:**
 
 ```typescript

@@ -112,6 +112,8 @@ A lattice of chunks that represent a world's terrain.
 
 </td><td>
 
+Represents a collider in a world's physics simulation.
+
 
 </td></tr>
 <tr><td>
@@ -337,6 +339,8 @@ Event types a Chunk instance can emit.
 
 </td><td>
 
+The shapes a collider can be.
+
 
 </td></tr>
 <tr><td>
@@ -446,6 +450,8 @@ Options for creating a block type instance.
 
 
 </td><td>
+
+Options for creating a Collider instance.
 
 
 </td></tr>

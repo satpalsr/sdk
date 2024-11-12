@@ -4,6 +4,8 @@
 
 ## ColliderOptions.bounciness property
 
+The bounciness of the collider.
+
 **Signature:**
 
 ```typescript

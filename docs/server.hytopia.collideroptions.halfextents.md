@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.halfExtents property
 
+The half extents of the collider if the shape is a block.
+
 **Signature:**
 
 ```typescript

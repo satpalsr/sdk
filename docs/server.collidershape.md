@@ -4,6 +4,8 @@
 
 ## ColliderShape enum
 
+The shapes a collider can be.
+
 **Signature:**
 
 ```typescript

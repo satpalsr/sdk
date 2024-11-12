@@ -4,6 +4,8 @@
 
 ## HYTOPIA.ColliderOptions.mass property
 
+The mass of the collider.
+
 **Signature:**
 
 ```typescript

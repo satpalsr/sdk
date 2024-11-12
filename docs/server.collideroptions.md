@@ -4,6 +4,8 @@
 
 ## ColliderOptions interface
 
+Options for creating a Collider instance.
+
 **Signature:**
 
 ```typescript
@@ -48,7 +50,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The border radius of the collider if the shape is a round cylinder.
 
 
 </td></tr>
@@ -67,7 +69,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The bounciness of the collider.
 
 
 </td></tr>
@@ -86,7 +88,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The collision groups the collider belongs to.
 
 
 </td></tr>
@@ -105,7 +107,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the collider is enabled.
 
 
 </td></tr>
@@ -124,7 +126,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The friction of the collider.
 
 
 </td></tr>
@@ -143,7 +145,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The half extents of the collider if the shape is a block.
 
 
 </td></tr>
@@ -162,7 +164,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder.
 
 
 </td></tr>
@@ -181,7 +183,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the collider is a sensor.
 
 
 </td></tr>
@@ -200,7 +202,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The mass of the collider.
 
 
 </td></tr>
@@ -219,7 +221,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The on collision callback for the collider.
 
 
 </td></tr>
@@ -238,7 +240,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The parent rigid body of the collider.
 
 
 </td></tr>
@@ -257,7 +259,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder.
 
 
 </td></tr>
@@ -276,7 +278,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The relative rotation of the collider.
 
 
 </td></tr>
@@ -295,7 +297,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The relative translation of the collider. Relative to parent rigid body.
 
 
 </td></tr>
@@ -314,6 +316,8 @@ _(Optional)_
 
 </td><td>
 
+The shape of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -331,7 +335,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The simulation the collider is in.
 
 
 </td></tr>
@@ -350,7 +354,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ An arbitrary identifier tag of the collider.
 
 
 </td></tr>
