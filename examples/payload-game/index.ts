@@ -276,8 +276,6 @@ function spawnPayloadEntity(world: World) {
             } else if (other instanceof Entity) {
               started ? payloadPlayerEntityCount-- : payloadPlayerEntityCount++;
             }
-
-            console.log('truck payload sensed:', other.name, payloadPlayerEntityCount);
           },
         },
       ],
@@ -464,9 +462,7 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
     const dz = enemyPathfindingTargets[entityId].z - currentPosition.z;
     const distance = Math.sqrt(dx * dx + dz * dz);
     
-    console.log('distance', distance);
     if (distance < 10) {
-      console.log('jumping');
       const mass = entity.getMass();
       entity.applyImpulse({ x: 0, y: (10 * Math.random() + 5) * mass, z: 0 });
     }
