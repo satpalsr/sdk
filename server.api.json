@@ -10955,7 +10955,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!EntityManager#getAllEntities:member(1)",
-              "docComment": "/**\n * Gets all entities in the world.\n *\n * @returns All entities in the world.\n */\n",
+              "docComment": "/**\n * Gets all spawned entities in the world.\n *\n * @returns All spawned entities in the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10991,7 +10991,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!EntityManager#getAllPlayerEntities:member(1)",
-              "docComment": "/**\n * Gets all entities in the world assigned to a player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All entities in the world assigned to the player.\n */\n",
+              "docComment": "/**\n * Gets all spawned entities in the world assigned to a player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All spawned entities in the world assigned to the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11045,7 +11045,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!EntityManager#getEntity:member(1)",
-              "docComment": "/**\n * Gets an entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The entity with the provided id, or undefined if no entity is found.\n */\n",
+              "docComment": "/**\n * Gets a spawned entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The spawned entity with the provided id, or undefined if no entity is found.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -22677,7 +22677,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.EntityManager#getAllEntities:member(1)",
-                  "docComment": "/**\n * Gets all entities in the world.\n *\n * @returns All entities in the world.\n */\n",
+                  "docComment": "/**\n * Gets all spawned entities in the world.\n *\n * @returns All spawned entities in the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22713,7 +22713,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.EntityManager#getAllPlayerEntities:member(1)",
-                  "docComment": "/**\n * Gets all entities in the world assigned to a player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All entities in the world assigned to the player.\n */\n",
+                  "docComment": "/**\n * Gets all spawned entities in the world assigned to a player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All spawned entities in the world assigned to the player.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22767,7 +22767,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.EntityManager#getEntity:member(1)",
-                  "docComment": "/**\n * Gets an entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The entity with the provided id, or undefined if no entity is found.\n */\n",
+                  "docComment": "/**\n * Gets a spawned entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The spawned entity with the provided id, or undefined if no entity is found.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

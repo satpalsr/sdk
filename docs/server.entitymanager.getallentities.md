@@ -4,7 +4,7 @@
 
 ## EntityManager.getAllEntities() method
 
-Gets all entities in the world.
+Gets all spawned entities in the world.
 
 **Signature:**
 
@@ -15,5 +15,5 @@ getAllEntities(): Entity[];
 
 [Entity](./server.entity.md)<!-- -->\[\]
 
-All entities in the world.
+All spawned entities in the world.
 

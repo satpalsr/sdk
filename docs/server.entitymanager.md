@@ -101,7 +101,7 @@ Description
 
 </td><td>
 
-Gets all entities in the world.
+Gets all spawned entities in the world.
 
 
 </td></tr>
@@ -115,7 +115,7 @@ Gets all entities in the world.
 
 </td><td>
 
-Gets all entities in the world assigned to a player.
+Gets all spawned entities in the world assigned to a player.
 
 
 </td></tr>
@@ -129,7 +129,7 @@ Gets all entities in the world assigned to a player.
 
 </td><td>
 
-Gets an entity in the world by its id.
+Gets a spawned entity in the world by its id.
 
 
 </td></tr>

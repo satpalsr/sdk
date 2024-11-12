@@ -1223,20 +1223,20 @@ export declare class EntityManager {
 
 
     /**
-     * Gets all entities in the world.
-     * @returns All entities in the world.
+     * Gets all spawned entities in the world.
+     * @returns All spawned entities in the world.
      */
     getAllEntities(): Entity[];
     /**
-     * Gets all entities in the world assigned to a player.
+     * Gets all spawned entities in the world assigned to a player.
      * @param player - The player to get the entities for.
-     * @returns All entities in the world assigned to the player.
+     * @returns All spawned entities in the world assigned to the player.
      */
     getAllPlayerEntities(player: Player): PlayerEntity[];
     /**
-     * Gets an entity in the world by its id.
+     * Gets a spawned entity in the world by its id.
      * @param id - The id of the entity to get.
-     * @returns The entity with the provided id, or undefined if no entity is found.
+     * @returns The spawned entity with the provided id, or undefined if no entity is found.
      */
     getEntity<T extends Entity>(id: number): T | undefined;
 

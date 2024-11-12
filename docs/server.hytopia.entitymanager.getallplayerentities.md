@@ -4,7 +4,7 @@
 
 ## HYTOPIA.EntityManager.getAllPlayerEntities() method
 
-Gets all entities in the world assigned to a player.
+Gets all spawned entities in the world assigned to a player.
 
 **Signature:**
 
@@ -51,5 +51,5 @@ The player to get the entities for.
 
 [PlayerEntity](./server.playerentity.md)<!-- -->\[\]
 
-All entities in the world assigned to the player.
+All spawned entities in the world assigned to the player.
 
