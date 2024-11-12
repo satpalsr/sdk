@@ -23923,7 +23923,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.PlayerEntity:class",
-              "docComment": "",
+              "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23948,7 +23948,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.PlayerEntity:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `PlayerEntity` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `PlayerEntity` class\n *\n * @param options - The options for the player entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23981,11 +23981,11 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.PlayerEntity#player:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "player: "
+                      "text": "readonly player: "
                     },
                     {
                       "kind": "Reference",
@@ -23997,7 +23997,7 @@
                       "text": ";"
                     }
                   ],
-                  "isReadonly": false,
+                  "isReadonly": true,
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "player",
@@ -24008,54 +24008,6 @@
                   "isStatic": false,
                   "isProtected": false,
                   "isAbstract": false
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.PlayerEntity#tick:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "tick(tickDeltaMs: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "tickDeltaMs",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "tick"
                 }
               ],
               "extendsTokenRange": {
@@ -24067,7 +24019,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.PlayerEntityOptions:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating a PlayerEntity instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -24091,7 +24043,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.PlayerEntityOptions#player:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -31314,7 +31266,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerEntity:class",
-          "docComment": "",
+          "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -31339,7 +31291,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!PlayerEntity:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `PlayerEntity` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `PlayerEntity` class\n *\n * @param options - The options for the player entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31372,11 +31324,11 @@
             {
               "kind": "Property",
               "canonicalReference": "server!PlayerEntity#player:member",
-              "docComment": "",
+              "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "player: "
+                  "text": "readonly player: "
                 },
                 {
                   "kind": "Reference",
@@ -31388,7 +31340,7 @@
                   "text": ";"
                 }
               ],
-              "isReadonly": false,
+              "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
               "name": "player",
@@ -31399,54 +31351,6 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerEntity#tick:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tick(tickDeltaMs: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "tickDeltaMs",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "tick"
             }
           ],
           "extendsTokenRange": {
@@ -31458,7 +31362,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!PlayerEntityOptions:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating a PlayerEntity instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -31482,7 +31386,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEntityOptions#player:member",
-              "docComment": "",
+              "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

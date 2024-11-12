@@ -4,6 +4,8 @@
 
 ## HYTOPIA.PlayerEntityOptions.player property
 
+The player the player entity is assigned to.
+
 **Signature:**
 
 ```typescript

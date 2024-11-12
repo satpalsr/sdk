@@ -194,6 +194,8 @@ A player in the game.
 
 </td><td>
 
+Represents a player controlled entity in a world.
+
 
 </td></tr>
 <tr><td>
@@ -486,6 +488,8 @@ An EventRouter event.
 
 
 </td><td>
+
+Options for creating a PlayerEntity instance.
 
 
 </td></tr>

@@ -42,6 +42,8 @@ options
 
 </td><td>
 
+The options for the player entity.
+
 
 </td></tr>
 </tbody></table>

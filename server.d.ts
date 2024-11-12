@@ -1451,13 +1451,33 @@ export declare class Player {
 
 }
 
+/**
+ * Represents a player controlled entity in a world.
+ *
+ * @remarks
+ * Player entities extend the {@link Entity} class.
+ * They can be created and assigned to a player when
+ * a player joins a world. PlayerEntity automatically
+ * handles mapping player inputs to the associated
+ * character controller of the entity, calling the
+ * character controller's onTickPlayerMovement method
+ * when player input has changed.
+ *
+ * @public
+ */
 export declare class PlayerEntity extends Entity {
-    player: Player;
+    /** The player the player entity is assigned to. */
+    readonly player: Player;
+    /**
+     * @param options - The options for the player entity.
+     */
     constructor(options: PlayerEntityOptions);
-    tick(tickDeltaMs: number): void;
+
 }
 
+/** Options for creating a PlayerEntity instance. @public */
 export declare interface PlayerEntityOptions extends EntityOptions {
+    /** The player the player entity is assigned to. */
     player: Player;
 }
 

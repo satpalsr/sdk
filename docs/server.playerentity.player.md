@@ -4,8 +4,10 @@
 
 ## PlayerEntity.player property
 
+The player the player entity is assigned to.
+
 **Signature:**
 
 ```typescript
-player: Player;
+readonly player: Player;
 ```

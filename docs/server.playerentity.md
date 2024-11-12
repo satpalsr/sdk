@@ -4,12 +4,18 @@
 
 ## PlayerEntity class
 
+Represents a player controlled entity in a world.
+
 **Signature:**
 
 ```typescript
 export default class PlayerEntity extends Entity 
 ```
 **Extends:** [Entity](./server.entity.md)
+
+## Remarks
+
+Player entities extend the [Entity](./server.entity.md) class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.
 
 ## Constructors
 
@@ -75,6 +81,8 @@ Description
 
 </td><td>
 
+`readonly`
+
 
 </td><td>
 
@@ -83,37 +91,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-</tbody></table>
-
-## Methods
-
-<table><thead><tr><th>
-
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[tick(tickDeltaMs)](./server.playerentity.tick.md)
-
-
-</td><td>
-
-
-</td><td>
+The player the player entity is assigned to.
 
 
 </td></tr>

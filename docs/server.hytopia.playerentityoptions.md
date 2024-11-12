@@ -4,6 +4,8 @@
 
 ## HYTOPIA.PlayerEntityOptions interface
 
+Options for creating a PlayerEntity instance.
+
 **Signature:**
 
 ```typescript
@@ -48,6 +50,8 @@ Description
 
 
 </td><td>
+
+The player the player entity is assigned to.
 
 
 </td></tr>
