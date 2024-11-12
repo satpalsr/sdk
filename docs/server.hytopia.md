@@ -211,6 +211,8 @@ Manages all connected players in a game server.
 
 </td><td>
 
+Represents a rigid body in a world's physics simulation.
+
 
 </td></tr>
 <tr><td>
@@ -376,6 +378,8 @@ Event types a Player can emit.
 
 </td><td>
 
+The types a RigidBody can be.
+
 
 </td></tr>
 </tbody></table>
@@ -500,6 +504,8 @@ Options for creating a PlayerEntity instance.
 
 
 </td><td>
+
+Options for creating a RigidBody instance.
 
 
 </td></tr>
@@ -772,6 +778,8 @@ A raw set of collision groups represented as a 32-bit number.
 
 
 </td><td>
+
+Additional mass properties for a RigidBody.
 
 
 </td></tr>

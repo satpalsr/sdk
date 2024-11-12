@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.addChildColliderToSimulation() method
 
+Adds an unsimulated child collider to the rigid body for the simulation it belongs to.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ collider
 
 
 </td><td>
+
+The child collider to add to the rigid body for the simulation it belongs to.
 
 
 </td></tr>

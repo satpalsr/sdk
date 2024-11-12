@@ -4,6 +4,8 @@
 
 ## RigidBody.getSoftCcdPrediction() method
 
+Gets the soft ccd prediction of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getSoftCcdPrediction(): number;
 **Returns:**
 
 number
+
+The soft ccd prediction of the rigid body.
 

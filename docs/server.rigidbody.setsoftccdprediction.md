@@ -4,6 +4,8 @@
 
 ## RigidBody.setSoftCcdPrediction() method
 
+Sets the soft ccd prediction of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The soft ccd prediction of the rigid body.
 
 
 </td></tr>

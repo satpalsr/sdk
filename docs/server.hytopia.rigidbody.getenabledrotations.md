@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getEnabledRotations() method
 
+Gets the enabled rotations of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEnabledRotations(): Vector3Boolean;
 **Returns:**
 
 [Vector3Boolean](./server.vector3boolean.md)
+
+The enabled rotations of the rigid body.
 

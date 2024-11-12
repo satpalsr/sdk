@@ -4,6 +4,8 @@
 
 ## RigidBodyAdditionalMassProperties type
 
+Additional mass properties for a RigidBody.
+
 **Signature:**
 
 ```typescript

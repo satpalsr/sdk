@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.gravityScale property
 
+The gravity scale of the rigid body.
+
 **Signature:**
 
 ```typescript

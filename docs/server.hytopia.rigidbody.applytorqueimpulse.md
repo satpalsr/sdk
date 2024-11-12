@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.applyTorqueImpulse() method
 
+Applies a torque impulse to the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The torque impulse to apply to the rigid body.
 
 
 </td></tr>

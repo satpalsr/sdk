@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getTranslation() method
 
+Gets the translation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getTranslation(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The translation of the rigid body.
 

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getEffectiveAngularInertia() method
 
+Gets the effective angular inertia of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEffectiveAngularInertia(): SpdMatrix3 | undefined;
 **Returns:**
 
 [SpdMatrix3](./server.spdmatrix3.md) \| undefined
+
+The effective angular inertia of the rigid body.
 

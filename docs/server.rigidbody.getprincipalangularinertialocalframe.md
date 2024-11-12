@@ -4,6 +4,8 @@
 
 ## RigidBody.getPrincipalAngularInertiaLocalFrame() method
 
+Gets the principal angular inertia local frame of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getPrincipalAngularInertiaLocalFrame(): Rotation | undefined;
 **Returns:**
 
 [Rotation](./server.rotation.md) \| undefined
+
+The principal angular inertia local frame of the rigid body.
 

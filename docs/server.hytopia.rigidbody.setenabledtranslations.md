@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setEnabledTranslations() method
 
+Sets whether the rigid body has enabled translations.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ enabledTranslations
 
 
 </td><td>
+
+Whether the rigid body has enabled translations.
 
 
 </td></tr>

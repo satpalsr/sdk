@@ -4,6 +4,8 @@
 
 ## RigidBody.getAngularVelocity() method
 
+Gets the angular velocity of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAngularVelocity(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The angular velocity of the rigid body.
 

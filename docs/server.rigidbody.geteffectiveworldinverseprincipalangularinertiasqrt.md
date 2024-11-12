@@ -4,6 +4,8 @@
 
 ## RigidBody.getEffectiveWorldInversePrincipalAngularInertiaSqrt() method
 
+Gets the effective world inverse principal angular inertia square root of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEffectiveWorldInversePrincipalAngularInertiaSqrt(): SpdMatrix3 | undefined;
 **Returns:**
 
 [SpdMatrix3](./server.spdmatrix3.md) \| undefined
+
+The effective world inverse principal angular inertia square root of the rigid body.
 

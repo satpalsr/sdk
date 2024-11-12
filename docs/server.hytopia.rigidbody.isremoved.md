@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.isRemoved property
 
+Whether the rigid body has been removed from the simulation.
+
 **Signature:**
 
 ```typescript

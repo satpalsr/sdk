@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.addTorque() method
 
+Adds a torque to the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The torque to add to the rigid body.
 
 
 </td></tr>

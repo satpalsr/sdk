@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.tag property
 
+An arbitrary identifier tag of the rigid body. Useful for your own logic.
+
 **Signature:**
 
 ```typescript

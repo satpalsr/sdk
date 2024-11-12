@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.additionalMass property
 
+The additional mass of the rigid body.
+
 **Signature:**
 
 ```typescript

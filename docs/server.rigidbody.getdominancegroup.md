@@ -4,6 +4,8 @@
 
 ## RigidBody.getDominanceGroup() method
 
+Gets the dominance group of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getDominanceGroup(): number;
 **Returns:**
 
 number
+
+The dominance group of the rigid body.
 

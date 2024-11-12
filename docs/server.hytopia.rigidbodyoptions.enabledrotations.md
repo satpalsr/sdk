@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.enabledRotations property
 
+The enabled rotations of the rigid body.
+
 **Signature:**
 
 ```typescript

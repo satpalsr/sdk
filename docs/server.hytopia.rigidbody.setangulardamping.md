@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setAngularDamping() method
 
+Sets the angular damping of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The angular damping of the rigid body.
 
 
 </td></tr>

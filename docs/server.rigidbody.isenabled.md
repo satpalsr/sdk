@@ -4,6 +4,8 @@
 
 ## RigidBody.isEnabled property
 
+Whether the rigid body is enabled.
+
 **Signature:**
 
 ```typescript

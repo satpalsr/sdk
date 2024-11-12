@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getLinearDamping() method
 
+Gets the linear damping of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getLinearDamping(): number;
 **Returns:**
 
 number
+
+The linear damping of the rigid body.
 

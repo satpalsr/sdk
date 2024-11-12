@@ -23206,7 +23206,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.PlayerManager:class",
-              "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n */\n",
+              "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23398,7 +23398,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.RigidBody:class",
-              "docComment": "",
+              "docComment": "/**\n * Represents a rigid body in a world's physics simulation.\n *\n * @remarks\n *\n * Rigid bodies are the core of the physics simulation. They are used to represent physical objects (IE: entities) that can interact with each other.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23414,7 +23414,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.RigidBody:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `RigidBody` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `RigidBody` class\n *\n * @param options - The options for the rigid body instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23447,7 +23447,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#addChildColliderToSimulation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Adds an unsimulated child collider to the rigid body for the simulation it belongs to.\n *\n * @param collider - The child collider to add to the rigid body for the simulation it belongs to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23496,7 +23496,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#addForce:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Adds a force to the rigid body.\n *\n * @param force - The force to add to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23545,7 +23545,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#addTorque:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Adds a torque to the rigid body.\n *\n * @param torque - The torque to add to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23594,7 +23594,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#addToSimulation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Adds the rigid body to a simulation.\n *\n * @param simulation - The simulation to add the rigid body to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23643,7 +23643,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#applyImpulse:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Applies an impulse to the rigid body.\n *\n * @param impulse - The impulse to apply to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23692,7 +23692,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#applyImpulseAtPoint:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Applies an impulse to the rigid body at a point.\n *\n * @param impulse - The impulse to apply to the rigid body.\n *\n * @param point - The point at which to apply the impulse.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23758,7 +23758,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#applyTorqueImpulse:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Applies a torque impulse to the rigid body.\n *\n * @param impulse - The torque impulse to apply to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23807,7 +23807,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#colliders:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The colliders of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23851,7 +23851,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#createAndAddChildCollidersToSimulation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child colliders to add to the rigid body.\n *\n * @returns The child colliders that were added to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23909,7 +23909,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#createAndAddChildColliderToSimulation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -23958,116 +23958,8 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#createAndAddPendingChildCollider:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "createAndAddPendingChildCollider(colliderOptions: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "ColliderOptions",
-                      "canonicalReference": "server!ColliderOptions:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Collider",
-                      "canonicalReference": "server!Collider:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "colliderOptions",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "createAndAddPendingChildCollider"
-                },
-                {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#createAndAddPendingChildColliders:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "createAndAddPendingChildColliders(colliderOptions: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "ColliderOptions",
-                      "canonicalReference": "server!ColliderOptions:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "[]"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Collider",
-                      "canonicalReference": "server!Collider:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "[]"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 6
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "colliderOptions",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 3
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "createAndAddPendingChildColliders"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getAdditionalMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the additional mass of the rigid body.\n *\n * @returns The additional mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24098,7 +23990,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getAdditionalSolverIterations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the additional solver iterations of the rigid body.\n *\n * @returns The additional solver iterations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24129,7 +24021,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getAngularDamping:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the angular damping of the rigid body.\n *\n * @returns The angular damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24160,7 +24052,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getAngularVelocity:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the angular velocity of the rigid body.\n *\n * @returns The angular velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24192,7 +24084,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getCollidersByTag:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the colliders of the rigid body by tag.\n *\n * @param tag - The tag to filter by.\n *\n * @returns The colliders of the rigid body with the given tag.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24245,7 +24137,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getDirectionFromRotation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the direction from the rotation of the rigid body.\n *\n * @returns The direction from the rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24277,7 +24169,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getDominanceGroup:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the dominance group of the rigid body.\n *\n * @returns The dominance group of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24308,7 +24200,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getEffectiveAngularInertia:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the effective angular inertia of the rigid body.\n *\n * @returns The effective angular inertia of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24344,7 +24236,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getEffectiveInverseMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the effective inverse mass of the rigid body.\n *\n * @returns The effective inverse mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24380,7 +24272,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getEffectiveWorldInversePrincipalAngularInertiaSqrt:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the effective world inverse principal angular inertia square root of the rigid body.\n *\n * @returns The effective world inverse principal angular inertia square root of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24416,7 +24308,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getEnabledRotations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the enabled rotations of the rigid body.\n *\n * @returns The enabled rotations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24448,7 +24340,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getEnabledTranslations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the enabled translations of the rigid body.\n *\n * @returns The enabled translations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24480,7 +24372,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getGravityScale:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the gravity scale of the rigid body.\n *\n * @returns The gravity scale of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24511,7 +24403,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getInverseMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the inverse mass of the rigid body.\n *\n * @returns The inverse mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24542,7 +24434,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getInversePrincipalAngularInertiaSqrt:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the inverse principal angular inertia square root of the rigid body.\n *\n * @returns The inverse principal angular inertia square root of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24578,7 +24470,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getLinearDamping:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the linear damping of the rigid body.\n *\n * @returns The linear damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24609,7 +24501,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getLinearVelocity:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the linear velocity of the rigid body.\n *\n * @returns The linear velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24641,7 +24533,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getLocalCenterOfMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the local center of mass of the rigid body.\n *\n * @returns The local center of mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24673,7 +24565,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the mass of the rigid body.\n *\n * @returns The mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24704,7 +24596,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getNextKinematicRotation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the next kinematic rotation of the rigid body.\n *\n * @returns The next kinematic rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24736,7 +24628,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getNextKinematicTranslation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the next kinematic translation of the rigid body.\n *\n * @returns The next kinematic translation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24768,7 +24660,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getPrincipalAngularInertia:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the principal angular inertia of the rigid body.\n *\n * @returns The principal angular inertia of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24800,7 +24692,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getPrincipalAngularInertiaLocalFrame:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the principal angular inertia local frame of the rigid body.\n *\n * @returns The principal angular inertia local frame of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24836,7 +24728,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getRotation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the rotation of the rigid body.\n *\n * @returns The rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24868,7 +24760,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getSoftCcdPrediction:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the soft ccd prediction of the rigid body.\n *\n * @returns The soft ccd prediction of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24899,7 +24791,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getTranslation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the translation of the rigid body.\n *\n * @returns The translation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24931,7 +24823,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getType:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the type of the rigid body.\n *\n * @returns The type of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24963,7 +24855,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#getWorldCenterOfMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Gets the world center of mass of the rigid body.\n *\n * @returns The world center of mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24999,7 +24891,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isCcdEnabled:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25029,7 +24921,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isDynamic:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is dynamic.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25059,7 +24951,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isEnabled:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25089,7 +24981,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isFixed:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is fixed.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25119,7 +25011,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isKinematic:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is kinematic.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25149,7 +25041,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isKinematicPositionBased:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is kinematic position based.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25179,7 +25071,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isKinematicVelocityBased:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is kinematic velocity based.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25209,7 +25101,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isMoving:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is moving.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25239,7 +25131,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isRemoved:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body has been removed from the simulation.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25269,7 +25161,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isSimulated:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is simulated.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25299,7 +25191,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#isSleeping:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25328,57 +25220,8 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#linkCollider:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "linkCollider(collider: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Collider",
-                      "canonicalReference": "server!Collider:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "collider",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "linkCollider"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#lockAllRotations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Locks all rotations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25409,7 +25252,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#lockAllTranslations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Locks all translations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25440,7 +25283,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#numColliders:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The number of colliders in the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25470,7 +25313,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#rawRigidBody:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The raw RAPIER rigid body instance.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25505,7 +25348,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#removeFromSimulation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Removes the rigid body from the simulation it belongs to.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25536,7 +25379,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setAdditionalMass:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the additional mass of the rigid body.\n *\n * @param additionalMass - The additional mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25584,7 +25427,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setAdditionalMassProperties:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the additional mass properties of the rigid body.\n *\n * @param additionalMassProperties - The additional mass properties of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25633,7 +25476,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setAdditionalSolverIterations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the additional solver iterations of the rigid body.\n *\n * @param solverIterations - The additional solver iterations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25681,7 +25524,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setAngularDamping:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the angular damping of the rigid body.\n *\n * @param angularDamping - The angular damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25729,7 +25572,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setAngularVelocity:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the angular velocity of the rigid body.\n *\n * @param angularVelocity - The angular velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25778,7 +25621,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setCcdEnabled:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets whether the rigid body has continuous collision detection enabled.\n *\n * @param ccdEnabled - Whether the rigid body has continuous collision detection enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25826,7 +25669,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setCollisionGroupsForSolidColliders:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the collision groups for solid colliders (non-sensor) of the rigid body.\n *\n * @param collisionGroups - The collision groups for solid colliders of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25875,7 +25718,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setDominanceGroup:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the dominance group of the rigid body.\n *\n * @param dominanceGroup - The dominance group of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25923,7 +25766,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setEnabled:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets whether the rigid body is enabled.\n *\n * @param enabled - Whether the rigid body is enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -25971,7 +25814,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setEnabledRotations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets whether the rigid body has enabled rotations.\n *\n * @param enabledRotations - Whether the rigid body has enabled rotations.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26020,7 +25863,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setEnabledTranslations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets whether the rigid body has enabled translations.\n *\n * @param enabledTranslations - Whether the rigid body has enabled translations.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26069,7 +25912,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setGravityScale:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the gravity scale of the rigid body.\n *\n * @param gravityScale - The gravity scale of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26117,7 +25960,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setLinearDamping:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the linear damping of the rigid body.\n *\n * @param linearDamping - The linear damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26165,7 +26008,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setLinearVelocity:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the linear velocity of the rigid body.\n *\n * @param linearVelocity - The linear velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26214,7 +26057,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setNextKinematicRotation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the next kinematic rotation of the rigid body.\n *\n * @param nextKinematicRotation - The next kinematic rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26263,7 +26106,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setNextKinematicTranslation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the next kinematic translation of the rigid body.\n *\n * @param nextKinematicTranslation - The next kinematic translation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26312,7 +26155,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setRotation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the rotation of the rigid body.\n *\n * @param rotation - The rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26361,7 +26204,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setSleeping:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets whether the rigid body is sleeping.\n *\n * @param sleeping - Whether the rigid body is sleeping.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26409,7 +26252,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setSoftCcdPrediction:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the soft ccd prediction of the rigid body.\n *\n * @param softCcdPrediction - The soft ccd prediction of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26457,7 +26300,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setTag:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the tag of the rigid body.\n *\n * @param tag - The tag of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26505,7 +26348,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setTranslation:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the translation of the rigid body.\n *\n * @param translation - The translation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26554,7 +26397,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setType:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the type of the rigid body.\n *\n * @param type - The type of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26603,7 +26446,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#sleep:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26634,7 +26477,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.RigidBody#tag:member",
-                  "docComment": "",
+                  "docComment": "/**\n * An arbitrary identifier tag of the rigid body. Useful for your own logic.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26663,57 +26506,8 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#unlinkCollider:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "unlinkCollider(collider: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Collider",
-                      "canonicalReference": "server!Collider:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "collider",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "unlinkCollider"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#wakeUp:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26747,7 +26541,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.RigidBodyAdditionalMassProperties:type",
-              "docComment": "",
+              "docComment": "/**\n * Additional mass properties for a RigidBody.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26800,7 +26594,7 @@
             {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.RigidBodyOptions:interface",
-              "docComment": "",
+              "docComment": "/**\n * Options for creating a RigidBody instance.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26815,7 +26609,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#additionalMass:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The additional mass of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26842,7 +26636,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#additionalMassProperties:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The additional mass properties of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26870,7 +26664,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#additionalSolverIterations:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The additional solver iterations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26897,7 +26691,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#angularDamping:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The angular damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26924,7 +26718,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#angularVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26952,7 +26746,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#ccdEnabled:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -26979,7 +26773,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#colliders:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The colliders of the rigid body, provided as {@link ColliderOptions}.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27011,7 +26805,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#dominanceGroup:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The dominance group of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27038,7 +26832,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#enabled:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27065,7 +26859,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#enabledRotations:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The enabled rotations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27093,7 +26887,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#enabledTranslations:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The enabled translations of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27121,7 +26915,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#gravityScale:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The gravity scale of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27148,7 +26942,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#linearDamping:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The linear damping of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27175,7 +26969,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#linearVelocity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27203,7 +26997,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#rotation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The rotation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27231,7 +27025,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#simulation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27259,7 +27053,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#sleeping:member",
-                  "docComment": "",
+                  "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27286,7 +27080,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#softCcdPrediction:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The soft continuous collision detection prediction of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27313,7 +27107,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#tag:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The tag of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27340,7 +27134,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#translation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The translation of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27368,7 +27162,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.RigidBodyOptions#type:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The type of the rigid body.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27399,7 +27193,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.RigidBodyType:enum",
-              "docComment": "",
+              "docComment": "/**\n * The types a RigidBody can be.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30549,7 +30343,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerManager:class",
-          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n */\n",
+          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -30741,7 +30535,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!RigidBody:class",
-          "docComment": "",
+          "docComment": "/**\n * Represents a rigid body in a world's physics simulation.\n *\n * @remarks\n *\n * Rigid bodies are the core of the physics simulation. They are used to represent physical objects (IE: entities) that can interact with each other.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -30757,7 +30551,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!RigidBody:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `RigidBody` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `RigidBody` class\n *\n * @param options - The options for the rigid body instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30790,7 +30584,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#addChildColliderToSimulation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds an unsimulated child collider to the rigid body for the simulation it belongs to.\n *\n * @param collider - The child collider to add to the rigid body for the simulation it belongs to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30839,7 +30633,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#addForce:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds a force to the rigid body.\n *\n * @param force - The force to add to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30888,7 +30682,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#addTorque:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds a torque to the rigid body.\n *\n * @param torque - The torque to add to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30937,7 +30731,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#addToSimulation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds the rigid body to a simulation.\n *\n * @param simulation - The simulation to add the rigid body to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30986,7 +30780,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#applyImpulse:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Applies an impulse to the rigid body.\n *\n * @param impulse - The impulse to apply to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31035,7 +30829,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#applyImpulseAtPoint:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Applies an impulse to the rigid body at a point.\n *\n * @param impulse - The impulse to apply to the rigid body.\n *\n * @param point - The point at which to apply the impulse.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31101,7 +30895,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#applyTorqueImpulse:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Applies a torque impulse to the rigid body.\n *\n * @param impulse - The torque impulse to apply to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31150,7 +30944,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#colliders:member",
-              "docComment": "",
+              "docComment": "/**\n * The colliders of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31194,7 +30988,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#createAndAddChildCollidersToSimulation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child colliders to add to the rigid body.\n *\n * @returns The child colliders that were added to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31252,7 +31046,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#createAndAddChildColliderToSimulation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31301,116 +31095,8 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#createAndAddPendingChildCollider:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createAndAddPendingChildCollider(colliderOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "colliderOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createAndAddPendingChildCollider"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#createAndAddPendingChildColliders:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createAndAddPendingChildColliders(colliderOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 4,
-                "endIndex": 6
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "colliderOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 3
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createAndAddPendingChildColliders"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!RigidBody#getAdditionalMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the additional mass of the rigid body.\n *\n * @returns The additional mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31441,7 +31127,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getAdditionalSolverIterations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the additional solver iterations of the rigid body.\n *\n * @returns The additional solver iterations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31472,7 +31158,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getAngularDamping:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the angular damping of the rigid body.\n *\n * @returns The angular damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31503,7 +31189,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getAngularVelocity:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the angular velocity of the rigid body.\n *\n * @returns The angular velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31535,7 +31221,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getCollidersByTag:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the colliders of the rigid body by tag.\n *\n * @param tag - The tag to filter by.\n *\n * @returns The colliders of the rigid body with the given tag.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31588,7 +31274,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getDirectionFromRotation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the direction from the rotation of the rigid body.\n *\n * @returns The direction from the rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31620,7 +31306,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getDominanceGroup:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the dominance group of the rigid body.\n *\n * @returns The dominance group of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31651,7 +31337,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getEffectiveAngularInertia:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the effective angular inertia of the rigid body.\n *\n * @returns The effective angular inertia of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31687,7 +31373,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getEffectiveInverseMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the effective inverse mass of the rigid body.\n *\n * @returns The effective inverse mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31723,7 +31409,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getEffectiveWorldInversePrincipalAngularInertiaSqrt:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the effective world inverse principal angular inertia square root of the rigid body.\n *\n * @returns The effective world inverse principal angular inertia square root of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31759,7 +31445,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getEnabledRotations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the enabled rotations of the rigid body.\n *\n * @returns The enabled rotations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31791,7 +31477,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getEnabledTranslations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the enabled translations of the rigid body.\n *\n * @returns The enabled translations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31823,7 +31509,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getGravityScale:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the gravity scale of the rigid body.\n *\n * @returns The gravity scale of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31854,7 +31540,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getInverseMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the inverse mass of the rigid body.\n *\n * @returns The inverse mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31885,7 +31571,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getInversePrincipalAngularInertiaSqrt:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the inverse principal angular inertia square root of the rigid body.\n *\n * @returns The inverse principal angular inertia square root of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31921,7 +31607,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getLinearDamping:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the linear damping of the rigid body.\n *\n * @returns The linear damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31952,7 +31638,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getLinearVelocity:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the linear velocity of the rigid body.\n *\n * @returns The linear velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31984,7 +31670,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getLocalCenterOfMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the local center of mass of the rigid body.\n *\n * @returns The local center of mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32016,7 +31702,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the mass of the rigid body.\n *\n * @returns The mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32047,7 +31733,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getNextKinematicRotation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the next kinematic rotation of the rigid body.\n *\n * @returns The next kinematic rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32079,7 +31765,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getNextKinematicTranslation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the next kinematic translation of the rigid body.\n *\n * @returns The next kinematic translation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32111,7 +31797,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getPrincipalAngularInertia:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the principal angular inertia of the rigid body.\n *\n * @returns The principal angular inertia of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32143,7 +31829,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getPrincipalAngularInertiaLocalFrame:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the principal angular inertia local frame of the rigid body.\n *\n * @returns The principal angular inertia local frame of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32179,7 +31865,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getRotation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the rotation of the rigid body.\n *\n * @returns The rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32211,7 +31897,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getSoftCcdPrediction:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the soft ccd prediction of the rigid body.\n *\n * @returns The soft ccd prediction of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32242,7 +31928,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getTranslation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the translation of the rigid body.\n *\n * @returns The translation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32274,7 +31960,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getType:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the type of the rigid body.\n *\n * @returns The type of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32306,7 +31992,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#getWorldCenterOfMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Gets the world center of mass of the rigid body.\n *\n * @returns The world center of mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32342,7 +32028,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isCcdEnabled:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32372,7 +32058,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isDynamic:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is dynamic.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32402,7 +32088,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isEnabled:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32432,7 +32118,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isFixed:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is fixed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32462,7 +32148,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isKinematic:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is kinematic.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32492,7 +32178,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isKinematicPositionBased:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is kinematic position based.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32522,7 +32208,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isKinematicVelocityBased:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is kinematic velocity based.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32552,7 +32238,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isMoving:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is moving.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32582,7 +32268,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isRemoved:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body has been removed from the simulation.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32612,7 +32298,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isSimulated:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is simulated.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32642,7 +32328,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#isSleeping:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32671,57 +32357,8 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#linkCollider:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "linkCollider(collider: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "collider",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "linkCollider"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!RigidBody#lockAllRotations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Locks all rotations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32752,7 +32389,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#lockAllTranslations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Locks all translations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32783,7 +32420,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#numColliders:member",
-              "docComment": "",
+              "docComment": "/**\n * The number of colliders in the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32813,7 +32450,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#rawRigidBody:member",
-              "docComment": "",
+              "docComment": "/**\n * The raw RAPIER rigid body instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32848,7 +32485,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#removeFromSimulation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Removes the rigid body from the simulation it belongs to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32879,7 +32516,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setAdditionalMass:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the additional mass of the rigid body.\n *\n * @param additionalMass - The additional mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32927,7 +32564,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setAdditionalMassProperties:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the additional mass properties of the rigid body.\n *\n * @param additionalMassProperties - The additional mass properties of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32976,7 +32613,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setAdditionalSolverIterations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the additional solver iterations of the rigid body.\n *\n * @param solverIterations - The additional solver iterations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33024,7 +32661,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setAngularDamping:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the angular damping of the rigid body.\n *\n * @param angularDamping - The angular damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33072,7 +32709,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setAngularVelocity:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the angular velocity of the rigid body.\n *\n * @param angularVelocity - The angular velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33121,7 +32758,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setCcdEnabled:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets whether the rigid body has continuous collision detection enabled.\n *\n * @param ccdEnabled - Whether the rigid body has continuous collision detection enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33169,7 +32806,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setCollisionGroupsForSolidColliders:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the collision groups for solid colliders (non-sensor) of the rigid body.\n *\n * @param collisionGroups - The collision groups for solid colliders of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33218,7 +32855,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setDominanceGroup:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the dominance group of the rigid body.\n *\n * @param dominanceGroup - The dominance group of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33266,7 +32903,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setEnabled:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets whether the rigid body is enabled.\n *\n * @param enabled - Whether the rigid body is enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33314,7 +32951,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setEnabledRotations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets whether the rigid body has enabled rotations.\n *\n * @param enabledRotations - Whether the rigid body has enabled rotations.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33363,7 +33000,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setEnabledTranslations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets whether the rigid body has enabled translations.\n *\n * @param enabledTranslations - Whether the rigid body has enabled translations.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33412,7 +33049,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setGravityScale:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the gravity scale of the rigid body.\n *\n * @param gravityScale - The gravity scale of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33460,7 +33097,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setLinearDamping:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the linear damping of the rigid body.\n *\n * @param linearDamping - The linear damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33508,7 +33145,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setLinearVelocity:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the linear velocity of the rigid body.\n *\n * @param linearVelocity - The linear velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33557,7 +33194,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setNextKinematicRotation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the next kinematic rotation of the rigid body.\n *\n * @param nextKinematicRotation - The next kinematic rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33606,7 +33243,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setNextKinematicTranslation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the next kinematic translation of the rigid body.\n *\n * @param nextKinematicTranslation - The next kinematic translation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33655,7 +33292,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setRotation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the rotation of the rigid body.\n *\n * @param rotation - The rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33704,7 +33341,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setSleeping:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets whether the rigid body is sleeping.\n *\n * @param sleeping - Whether the rigid body is sleeping.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33752,7 +33389,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setSoftCcdPrediction:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the soft ccd prediction of the rigid body.\n *\n * @param softCcdPrediction - The soft ccd prediction of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33800,7 +33437,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setTag:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the tag of the rigid body.\n *\n * @param tag - The tag of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33848,7 +33485,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setTranslation:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the translation of the rigid body.\n *\n * @param translation - The translation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33897,7 +33534,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#setType:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the type of the rigid body.\n *\n * @param type - The type of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33946,7 +33583,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#sleep:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33977,7 +33614,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#tag:member",
-              "docComment": "",
+              "docComment": "/**\n * An arbitrary identifier tag of the rigid body. Useful for your own logic.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34006,57 +33643,8 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#unlinkCollider:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "unlinkCollider(collider: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "collider",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "unlinkCollider"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!RigidBody#wakeUp:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34090,7 +33678,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!RigidBodyAdditionalMassProperties:type",
-          "docComment": "",
+          "docComment": "/**\n * Additional mass properties for a RigidBody.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34143,7 +33731,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "server!RigidBodyOptions:interface",
-          "docComment": "",
+          "docComment": "/**\n * Options for creating a RigidBody instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34158,7 +33746,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#additionalMass:member",
-              "docComment": "",
+              "docComment": "/**\n * The additional mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34185,7 +33773,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#additionalMassProperties:member",
-              "docComment": "",
+              "docComment": "/**\n * The additional mass properties of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34213,7 +33801,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#additionalSolverIterations:member",
-              "docComment": "",
+              "docComment": "/**\n * The additional solver iterations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34240,7 +33828,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#angularDamping:member",
-              "docComment": "",
+              "docComment": "/**\n * The angular damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34267,7 +33855,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#angularVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34295,7 +33883,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#ccdEnabled:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34322,7 +33910,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#colliders:member",
-              "docComment": "",
+              "docComment": "/**\n * The colliders of the rigid body, provided as {@link ColliderOptions}.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34354,7 +33942,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#dominanceGroup:member",
-              "docComment": "",
+              "docComment": "/**\n * The dominance group of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34381,7 +33969,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#enabled:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34408,7 +33996,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#enabledRotations:member",
-              "docComment": "",
+              "docComment": "/**\n * The enabled rotations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34436,7 +34024,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#enabledTranslations:member",
-              "docComment": "",
+              "docComment": "/**\n * The enabled translations of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34464,7 +34052,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#gravityScale:member",
-              "docComment": "",
+              "docComment": "/**\n * The gravity scale of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34491,7 +34079,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#linearDamping:member",
-              "docComment": "",
+              "docComment": "/**\n * The linear damping of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34518,7 +34106,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#linearVelocity:member",
-              "docComment": "",
+              "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34546,7 +34134,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#rotation:member",
-              "docComment": "",
+              "docComment": "/**\n * The rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34574,7 +34162,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#simulation:member",
-              "docComment": "",
+              "docComment": "/**\n * The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34602,7 +34190,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#sleeping:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34629,7 +34217,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#softCcdPrediction:member",
-              "docComment": "",
+              "docComment": "/**\n * The soft continuous collision detection prediction of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34656,7 +34244,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#tag:member",
-              "docComment": "",
+              "docComment": "/**\n * The tag of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34683,7 +34271,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#translation:member",
-              "docComment": "",
+              "docComment": "/**\n * The translation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34711,7 +34299,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#type:member",
-              "docComment": "",
+              "docComment": "/**\n * The type of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34742,7 +34330,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!RigidBodyType:enum",
-          "docComment": "",
+          "docComment": "/**\n * The types a RigidBody can be.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

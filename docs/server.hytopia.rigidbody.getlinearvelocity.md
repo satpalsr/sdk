@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getLinearVelocity() method
 
+Gets the linear velocity of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getLinearVelocity(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The linear velocity of the rigid body.
 

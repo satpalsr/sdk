@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getEffectiveInverseMass() method
 
+Gets the effective inverse mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEffectiveInverseMass(): Vector3 | undefined;
 **Returns:**
 
 [Vector3](./server.vector3.md) \| undefined
+
+The effective inverse mass of the rigid body.
 

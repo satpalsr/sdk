@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getCollidersByTag() method
 
+Gets the colliders of the rigid body by tag.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ string
 
 </td><td>
 
+The tag to filter by.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Collider](./server.collider.md)<!-- -->\[\]
+
+The colliders of the rigid body with the given tag.
 

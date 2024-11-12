@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.addForce() method
 
+Adds a force to the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The force to add to the rigid body.
 
 
 </td></tr>

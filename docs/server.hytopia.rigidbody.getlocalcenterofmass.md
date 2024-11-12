@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getLocalCenterOfMass() method
 
+Gets the local center of mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getLocalCenterOfMass(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The local center of mass of the rigid body.
 

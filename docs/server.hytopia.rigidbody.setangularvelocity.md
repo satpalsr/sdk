@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setAngularVelocity() method
 
+Sets the angular velocity of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The angular velocity of the rigid body.
 
 
 </td></tr>

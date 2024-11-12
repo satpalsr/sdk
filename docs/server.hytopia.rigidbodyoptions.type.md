@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.type property
 
+The type of the rigid body.
+
 **Signature:**
 
 ```typescript

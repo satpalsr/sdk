@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.addToSimulation() method
 
+Adds the rigid body to a simulation.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ simulation
 
 
 </td><td>
+
+The simulation to add the rigid body to.
 
 
 </td></tr>

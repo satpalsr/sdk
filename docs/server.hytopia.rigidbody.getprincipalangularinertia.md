@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getPrincipalAngularInertia() method
 
+Gets the principal angular inertia of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getPrincipalAngularInertia(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The principal angular inertia of the rigid body.
 

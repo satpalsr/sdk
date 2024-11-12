@@ -4,6 +4,8 @@
 
 ## RigidBodyOptions.additionalSolverIterations property
 
+The additional solver iterations of the rigid body.
+
 **Signature:**
 
 ```typescript

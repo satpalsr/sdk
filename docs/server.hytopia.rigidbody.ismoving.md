@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.isMoving property
 
+Whether the rigid body is moving.
+
 **Signature:**
 
 ```typescript

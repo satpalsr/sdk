@@ -4,6 +4,8 @@
 
 ## RigidBody.getMass() method
 
+Gets the mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getMass(): number;
 **Returns:**
 
 number
+
+The mass of the rigid body.
 

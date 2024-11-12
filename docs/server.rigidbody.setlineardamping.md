@@ -4,6 +4,8 @@
 
 ## RigidBody.setLinearDamping() method
 
+Sets the linear damping of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The linear damping of the rigid body.
 
 
 </td></tr>

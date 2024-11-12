@@ -4,6 +4,8 @@
 
 ## RigidBody.getEnabledTranslations() method
 
+Gets the enabled translations of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEnabledTranslations(): Vector3Boolean;
 **Returns:**
 
 [Vector3Boolean](./server.vector3boolean.md)
+
+The enabled translations of the rigid body.
 

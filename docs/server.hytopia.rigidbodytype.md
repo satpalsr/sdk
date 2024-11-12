@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyType enum
 
+The types a RigidBody can be.
+
 **Signature:**
 
 ```typescript

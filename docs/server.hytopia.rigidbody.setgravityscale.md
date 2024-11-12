@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setGravityScale() method
 
+Sets the gravity scale of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The gravity scale of the rigid body.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setEnabledRotations() method
 
+Sets whether the rigid body has enabled rotations.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ enabledRotations
 
 
 </td><td>
+
+Whether the rigid body has enabled rotations.
 
 
 </td></tr>

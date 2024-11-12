@@ -4,6 +4,8 @@
 
 ## RigidBody.setCollisionGroupsForSolidColliders() method
 
+Sets the collision groups for solid colliders (non-sensor) of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ collisionGroups
 
 
 </td><td>
+
+The collision groups for solid colliders of the rigid body.
 
 
 </td></tr>

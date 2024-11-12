@@ -4,6 +4,8 @@
 
 ## RigidBody.wakeUp() method
 
+Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.
+
 **Signature:**
 
 ```typescript

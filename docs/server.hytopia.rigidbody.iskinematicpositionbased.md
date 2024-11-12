@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.isKinematicPositionBased property
 
+Whether the rigid body is kinematic position based.
+
 **Signature:**
 
 ```typescript

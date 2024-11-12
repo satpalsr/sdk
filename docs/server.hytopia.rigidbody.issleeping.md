@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.isSleeping property
 
+Whether the rigid body is sleeping.
+
 **Signature:**
 
 ```typescript

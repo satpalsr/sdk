@@ -4,6 +4,8 @@
 
 ## RigidBody.applyImpulseAtPoint() method
 
+Applies an impulse to the rigid body at a point.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ Vector
 
 </td><td>
 
+The impulse to apply to the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ Vector
 
 
 </td><td>
+
+The point at which to apply the impulse.
 
 
 </td></tr>

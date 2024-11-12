@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getNextKinematicRotation() method
 
+Gets the next kinematic rotation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getNextKinematicRotation(): Rotation;
 **Returns:**
 
 [Rotation](./server.rotation.md)
+
+The next kinematic rotation of the rigid body.
 

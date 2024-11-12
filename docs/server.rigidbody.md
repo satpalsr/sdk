@@ -4,11 +4,17 @@
 
 ## RigidBody class
 
+Represents a rigid body in a world's physics simulation.
+
 **Signature:**
 
 ```typescript
 export default class RigidBody 
 ```
+
+## Remarks
+
+Rigid bodies are the core of the physics simulation. They are used to represent physical objects (IE: entities) that can interact with each other.
 
 ## Constructors
 
@@ -84,6 +90,8 @@ Set&lt;[Collider](./server.collider.md)<!-- -->&gt;
 
 </td><td>
 
+The colliders of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -102,6 +110,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body has continuous collision detection enabled.
 
 
 </td></tr>
@@ -122,6 +132,8 @@ boolean
 
 </td><td>
 
+Whether the rigid body is dynamic.
+
 
 </td></tr>
 <tr><td>
@@ -140,6 +152,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is enabled.
 
 
 </td></tr>
@@ -160,6 +174,8 @@ boolean
 
 </td><td>
 
+Whether the rigid body is fixed.
+
 
 </td></tr>
 <tr><td>
@@ -178,6 +194,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is kinematic.
 
 
 </td></tr>
@@ -198,6 +216,8 @@ boolean
 
 </td><td>
 
+Whether the rigid body is kinematic position based.
+
 
 </td></tr>
 <tr><td>
@@ -216,6 +236,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is kinematic velocity based.
 
 
 </td></tr>
@@ -236,6 +258,8 @@ boolean
 
 </td><td>
 
+Whether the rigid body is moving.
+
 
 </td></tr>
 <tr><td>
@@ -254,6 +278,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body has been removed from the simulation.
 
 
 </td></tr>
@@ -274,6 +300,8 @@ boolean
 
 </td><td>
 
+Whether the rigid body is simulated.
+
 
 </td></tr>
 <tr><td>
@@ -292,6 +320,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is sleeping.
 
 
 </td></tr>
@@ -312,6 +342,8 @@ number
 
 </td><td>
 
+The number of colliders in the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -331,6 +363,8 @@ RAPIER.RigidBody \| undefined
 
 </td><td>
 
+The raw RAPIER rigid body instance.
+
 
 </td></tr>
 <tr><td>
@@ -349,6 +383,8 @@ string \| undefined
 
 
 </td><td>
+
+An arbitrary identifier tag of the rigid body. Useful for your own logic.
 
 
 </td></tr>
@@ -382,6 +418,8 @@ Description
 
 </td><td>
 
+Adds an unsimulated child collider to the rigid body for the simulation it belongs to.
+
 
 </td></tr>
 <tr><td>
@@ -393,6 +431,8 @@ Description
 
 
 </td><td>
+
+Adds a force to the rigid body.
 
 
 </td></tr>
@@ -406,6 +446,8 @@ Description
 
 </td><td>
 
+Adds a torque to the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -417,6 +459,8 @@ Description
 
 
 </td><td>
+
+Adds the rigid body to a simulation.
 
 
 </td></tr>
@@ -430,6 +474,8 @@ Description
 
 </td><td>
 
+Applies an impulse to the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -441,6 +487,8 @@ Description
 
 
 </td><td>
+
+Applies an impulse to the rigid body at a point.
 
 
 </td></tr>
@@ -454,6 +502,8 @@ Description
 
 </td><td>
 
+Applies a torque impulse to the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -465,6 +515,8 @@ Description
 
 
 </td><td>
+
+Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
 
 
 </td></tr>
@@ -478,29 +530,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[createAndAddPendingChildCollider(colliderOptions)](./server.rigidbody.createandaddpendingchildcollider.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[createAndAddPendingChildColliders(colliderOptions)](./server.rigidbody.createandaddpendingchildcolliders.md)
-
-
-</td><td>
-
-
-</td><td>
+Creates and adds a child collider to the rigid body for the simulation it belongs to.
 
 
 </td></tr>
@@ -514,6 +544,8 @@ Description
 
 </td><td>
 
+Gets the additional mass of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -525,6 +557,8 @@ Description
 
 
 </td><td>
+
+Gets the additional solver iterations of the rigid body.
 
 
 </td></tr>
@@ -538,6 +572,8 @@ Description
 
 </td><td>
 
+Gets the angular damping of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -549,6 +585,8 @@ Description
 
 
 </td><td>
+
+Gets the angular velocity of the rigid body.
 
 
 </td></tr>
@@ -562,6 +600,8 @@ Description
 
 </td><td>
 
+Gets the colliders of the rigid body by tag.
+
 
 </td></tr>
 <tr><td>
@@ -573,6 +613,8 @@ Description
 
 
 </td><td>
+
+Gets the direction from the rotation of the rigid body.
 
 
 </td></tr>
@@ -586,6 +628,8 @@ Description
 
 </td><td>
 
+Gets the dominance group of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -597,6 +641,8 @@ Description
 
 
 </td><td>
+
+Gets the effective angular inertia of the rigid body.
 
 
 </td></tr>
@@ -610,6 +656,8 @@ Description
 
 </td><td>
 
+Gets the effective inverse mass of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -621,6 +669,8 @@ Description
 
 
 </td><td>
+
+Gets the effective world inverse principal angular inertia square root of the rigid body.
 
 
 </td></tr>
@@ -634,6 +684,8 @@ Description
 
 </td><td>
 
+Gets the enabled rotations of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -645,6 +697,8 @@ Description
 
 
 </td><td>
+
+Gets the enabled translations of the rigid body.
 
 
 </td></tr>
@@ -658,6 +712,8 @@ Description
 
 </td><td>
 
+Gets the gravity scale of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -669,6 +725,8 @@ Description
 
 
 </td><td>
+
+Gets the inverse mass of the rigid body.
 
 
 </td></tr>
@@ -682,6 +740,8 @@ Description
 
 </td><td>
 
+Gets the inverse principal angular inertia square root of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -693,6 +753,8 @@ Description
 
 
 </td><td>
+
+Gets the linear damping of the rigid body.
 
 
 </td></tr>
@@ -706,6 +768,8 @@ Description
 
 </td><td>
 
+Gets the linear velocity of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -717,6 +781,8 @@ Description
 
 
 </td><td>
+
+Gets the local center of mass of the rigid body.
 
 
 </td></tr>
@@ -730,6 +796,8 @@ Description
 
 </td><td>
 
+Gets the mass of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -741,6 +809,8 @@ Description
 
 
 </td><td>
+
+Gets the next kinematic rotation of the rigid body.
 
 
 </td></tr>
@@ -754,6 +824,8 @@ Description
 
 </td><td>
 
+Gets the next kinematic translation of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -765,6 +837,8 @@ Description
 
 
 </td><td>
+
+Gets the principal angular inertia of the rigid body.
 
 
 </td></tr>
@@ -778,6 +852,8 @@ Description
 
 </td><td>
 
+Gets the principal angular inertia local frame of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -789,6 +865,8 @@ Description
 
 
 </td><td>
+
+Gets the rotation of the rigid body.
 
 
 </td></tr>
@@ -802,6 +880,8 @@ Description
 
 </td><td>
 
+Gets the soft ccd prediction of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -813,6 +893,8 @@ Description
 
 
 </td><td>
+
+Gets the translation of the rigid body.
 
 
 </td></tr>
@@ -826,6 +908,8 @@ Description
 
 </td><td>
 
+Gets the type of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -838,17 +922,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[linkCollider(collider)](./server.rigidbody.linkcollider.md)
-
-
-</td><td>
-
-
-</td><td>
+Gets the world center of mass of the rigid body.
 
 
 </td></tr>
@@ -862,6 +936,8 @@ Description
 
 </td><td>
 
+Locks all rotations of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -873,6 +949,8 @@ Description
 
 
 </td><td>
+
+Locks all translations of the rigid body.
 
 
 </td></tr>
@@ -886,6 +964,8 @@ Description
 
 </td><td>
 
+Removes the rigid body from the simulation it belongs to.
+
 
 </td></tr>
 <tr><td>
@@ -897,6 +977,8 @@ Description
 
 
 </td><td>
+
+Sets the additional mass of the rigid body.
 
 
 </td></tr>
@@ -910,6 +992,8 @@ Description
 
 </td><td>
 
+Sets the additional mass properties of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -921,6 +1005,8 @@ Description
 
 
 </td><td>
+
+Sets the additional solver iterations of the rigid body.
 
 
 </td></tr>
@@ -934,6 +1020,8 @@ Description
 
 </td><td>
 
+Sets the angular damping of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -945,6 +1033,8 @@ Description
 
 
 </td><td>
+
+Sets the angular velocity of the rigid body.
 
 
 </td></tr>
@@ -958,6 +1048,8 @@ Description
 
 </td><td>
 
+Sets whether the rigid body has continuous collision detection enabled.
+
 
 </td></tr>
 <tr><td>
@@ -969,6 +1061,8 @@ Description
 
 
 </td><td>
+
+Sets the collision groups for solid colliders (non-sensor) of the rigid body.
 
 
 </td></tr>
@@ -982,6 +1076,8 @@ Description
 
 </td><td>
 
+Sets the dominance group of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -993,6 +1089,8 @@ Description
 
 
 </td><td>
+
+Sets whether the rigid body is enabled.
 
 
 </td></tr>
@@ -1006,6 +1104,8 @@ Description
 
 </td><td>
 
+Sets whether the rigid body has enabled rotations.
+
 
 </td></tr>
 <tr><td>
@@ -1017,6 +1117,8 @@ Description
 
 
 </td><td>
+
+Sets whether the rigid body has enabled translations.
 
 
 </td></tr>
@@ -1030,6 +1132,8 @@ Description
 
 </td><td>
 
+Sets the gravity scale of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -1041,6 +1145,8 @@ Description
 
 
 </td><td>
+
+Sets the linear damping of the rigid body.
 
 
 </td></tr>
@@ -1054,6 +1160,8 @@ Description
 
 </td><td>
 
+Sets the linear velocity of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -1065,6 +1173,8 @@ Description
 
 
 </td><td>
+
+Sets the next kinematic rotation of the rigid body.
 
 
 </td></tr>
@@ -1078,6 +1188,8 @@ Description
 
 </td><td>
 
+Sets the next kinematic translation of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -1089,6 +1201,8 @@ Description
 
 
 </td><td>
+
+Sets the rotation of the rigid body.
 
 
 </td></tr>
@@ -1102,6 +1216,8 @@ Description
 
 </td><td>
 
+Sets whether the rigid body is sleeping.
+
 
 </td></tr>
 <tr><td>
@@ -1113,6 +1229,8 @@ Description
 
 
 </td><td>
+
+Sets the soft ccd prediction of the rigid body.
 
 
 </td></tr>
@@ -1126,6 +1244,8 @@ Description
 
 </td><td>
 
+Sets the tag of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -1137,6 +1257,8 @@ Description
 
 
 </td><td>
+
+Sets the translation of the rigid body.
 
 
 </td></tr>
@@ -1150,6 +1272,8 @@ Description
 
 </td><td>
 
+Sets the type of the rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -1162,17 +1286,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[unlinkCollider(collider)](./server.rigidbody.unlinkcollider.md)
-
-
-</td><td>
-
-
-</td><td>
+Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.
 
 
 </td></tr>
@@ -1185,6 +1299,8 @@ Description
 
 
 </td><td>
+
+Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.
 
 
 </td></tr>

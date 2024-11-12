@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setAdditionalMass() method
 
+Sets the additional mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The additional mass of the rigid body.
 
 
 </td></tr>

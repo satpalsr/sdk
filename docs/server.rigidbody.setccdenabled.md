@@ -4,6 +4,8 @@
 
 ## RigidBody.setCcdEnabled() method
 
+Sets whether the rigid body has continuous collision detection enabled.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body has continuous collision detection enabled.
 
 
 </td></tr>

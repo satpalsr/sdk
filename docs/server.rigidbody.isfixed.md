@@ -4,6 +4,8 @@
 
 ## RigidBody.isFixed property
 
+Whether the rigid body is fixed.
+
 **Signature:**
 
 ```typescript

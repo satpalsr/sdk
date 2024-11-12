@@ -4,6 +4,8 @@
 
 ## RigidBody.setTranslation() method
 
+Sets the translation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The translation of the rigid body.
 
 
 </td></tr>

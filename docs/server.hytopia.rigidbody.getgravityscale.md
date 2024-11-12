@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getGravityScale() method
 
+Gets the gravity scale of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getGravityScale(): number;
 **Returns:**
 
 number
+
+The gravity scale of the rigid body.
 

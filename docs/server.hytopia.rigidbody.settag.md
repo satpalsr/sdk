@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setTag() method
 
+Sets the tag of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ string
 
 
 </td><td>
+
+The tag of the rigid body.
 
 
 </td></tr>

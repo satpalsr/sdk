@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.dominanceGroup property
 
+The dominance group of the rigid body.
+
 **Signature:**
 
 ```typescript

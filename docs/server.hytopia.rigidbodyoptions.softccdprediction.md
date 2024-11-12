@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.softCcdPrediction property
 
+The soft continuous collision detection prediction of the rigid body.
+
 **Signature:**
 
 ```typescript

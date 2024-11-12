@@ -4,6 +4,8 @@
 
 ## RigidBodyOptions.linearDamping property
 
+The linear damping of the rigid body.
+
 **Signature:**
 
 ```typescript

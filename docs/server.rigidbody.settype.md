@@ -4,6 +4,8 @@
 
 ## RigidBody.setType() method
 
+Sets the type of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ type
 
 
 </td><td>
+
+The type of the rigid body.
 
 
 </td></tr>

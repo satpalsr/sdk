@@ -4,6 +4,8 @@
 
 ## RigidBody.getRotation() method
 
+Gets the rotation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getRotation(): Rotation;
 **Returns:**
 
 [Rotation](./server.rotation.md)
+
+The rotation of the rigid body.
 

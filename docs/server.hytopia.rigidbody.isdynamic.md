@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.isDynamic property
 
+Whether the rigid body is dynamic.
+
 **Signature:**
 
 ```typescript

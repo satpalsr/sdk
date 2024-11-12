@@ -4,6 +4,8 @@
 
 ## RigidBody.setEnabled() method
 
+Sets whether the rigid body is enabled.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is enabled.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## RigidBody.lockAllTranslations() method
 
+Locks all translations of the rigid body.
+
 **Signature:**
 
 ```typescript

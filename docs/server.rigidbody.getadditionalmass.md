@@ -4,6 +4,8 @@
 
 ## RigidBody.getAdditionalMass() method
 
+Gets the additional mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAdditionalMass(): number;
 **Returns:**
 
 number
+
+The additional mass of the rigid body.
 

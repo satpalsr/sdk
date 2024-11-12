@@ -1709,6 +1709,8 @@ export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean
  * const playerManager = PlayerManager.instance;
  * const connectedPlayers = playerManager.getConnectedPlayers();
  * ```
+ *
+ * @public
  */
 export declare class PlayerManager {
     /** The global PlayerManager instance as a singleton. */
@@ -1750,115 +1752,399 @@ declare type RayCastOptions = {
     filterPredicate?: (collider: RAPIER.Collider) => boolean;
 };
 
+/**
+ * Represents a rigid body in a world's physics simulation.
+ *
+ * @remarks
+ * Rigid bodies are the core of the physics simulation. They are
+ * used to represent physical objects (IE: entities) that can
+ * interact with each other.
+ *
+ * @public
+ */
 export declare class RigidBody {
-    private _additionalMass;
-    private _colliders;
-    private _explicitSleep;
-    private _enabledRotations;
-    private _enabledTranslations;
-    private _rigidBody;
-    private _rigidBodyDesc;
-    private _rigidBodyType;
-    private _simulation;
-    private _tag;
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @param options - The options for the rigid body instance.
+     */
     constructor(options: RigidBodyOptions);
+    /** The colliders of the rigid body. */
     get colliders(): Set<Collider>;
+    /** Whether the rigid body has continuous collision detection enabled. */
     get isCcdEnabled(): boolean;
+    /** Whether the rigid body is dynamic. */
     get isDynamic(): boolean;
+    /** Whether the rigid body is enabled. */
     get isEnabled(): boolean;
+    /** Whether the rigid body is fixed. */
     get isFixed(): boolean;
+    /** Whether the rigid body is kinematic. */
     get isKinematic(): boolean;
+    /** Whether the rigid body is kinematic position based. */
     get isKinematicPositionBased(): boolean;
+    /** Whether the rigid body is kinematic velocity based. */
     get isKinematicVelocityBased(): boolean;
+    /** Whether the rigid body is moving. */
     get isMoving(): boolean;
+    /** Whether the rigid body has been removed from the simulation. */
     get isRemoved(): boolean;
+    /** Whether the rigid body is simulated. */
     get isSimulated(): boolean;
+    /** Whether the rigid body is sleeping. */
     get isSleeping(): boolean;
+    /** The number of colliders in the rigid body. */
     get numColliders(): number;
+    /** The raw RAPIER rigid body instance. */
     get rawRigidBody(): RAPIER.RigidBody | undefined;
+    /** An arbitrary identifier tag of the rigid body. Useful for your own logic. */
     get tag(): string | undefined;
+    /**
+     * Gets the additional mass of the rigid body.
+     * @returns The additional mass of the rigid body.
+     */
     getAdditionalMass(): number;
+    /**
+     * Gets the additional solver iterations of the rigid body.
+     * @returns The additional solver iterations of the rigid body.
+     */
     getAdditionalSolverIterations(): number;
+    /**
+     * Gets the angular damping of the rigid body.
+     * @returns The angular damping of the rigid body.
+     */
     getAngularDamping(): number;
+    /**
+     * Gets the angular velocity of the rigid body.
+     * @returns The angular velocity of the rigid body.
+     */
     getAngularVelocity(): Vector3;
+    /**
+     * Gets the colliders of the rigid body by tag.
+     * @param tag - The tag to filter by.
+     * @returns The colliders of the rigid body with the given tag.
+     */
     getCollidersByTag(tag: string): Collider[];
+    /**
+     * Gets the dominance group of the rigid body.
+     * @returns The dominance group of the rigid body.
+     */
     getDominanceGroup(): number;
+    /**
+     * Gets the direction from the rotation of the rigid body.
+     * @returns The direction from the rotation of the rigid body.
+     */
     getDirectionFromRotation(): Vector3;
+    /**
+     * Gets the effective angular inertia of the rigid body.
+     * @returns The effective angular inertia of the rigid body.
+     */
     getEffectiveAngularInertia(): SpdMatrix3 | undefined;
+    /**
+     * Gets the effective inverse mass of the rigid body.
+     * @returns The effective inverse mass of the rigid body.
+     */
     getEffectiveInverseMass(): Vector3 | undefined;
+    /**
+     * Gets the effective world inverse principal angular inertia square root of the rigid body.
+     * @returns The effective world inverse principal angular inertia square root of the rigid body.
+     */
     getEffectiveWorldInversePrincipalAngularInertiaSqrt(): SpdMatrix3 | undefined;
+    /**
+     * Gets the enabled rotations of the rigid body.
+     * @returns The enabled rotations of the rigid body.
+     */
     getEnabledRotations(): Vector3Boolean;
+    /**
+     * Gets the enabled translations of the rigid body.
+     * @returns The enabled translations of the rigid body.
+     */
     getEnabledTranslations(): Vector3Boolean;
+    /**
+     * Gets the gravity scale of the rigid body.
+     * @returns The gravity scale of the rigid body.
+     */
     getGravityScale(): number;
+    /**
+     * Gets the inverse mass of the rigid body.
+     * @returns The inverse mass of the rigid body.
+     */
     getInverseMass(): number | undefined;
+    /**
+     * Gets the inverse principal angular inertia square root of the rigid body.
+     * @returns The inverse principal angular inertia square root of the rigid body.
+     */
     getInversePrincipalAngularInertiaSqrt(): Vector3 | undefined;
+    /**
+     * Gets the linear damping of the rigid body.
+     * @returns The linear damping of the rigid body.
+     */
     getLinearDamping(): number;
+    /**
+     * Gets the linear velocity of the rigid body.
+     * @returns The linear velocity of the rigid body.
+     */
     getLinearVelocity(): Vector3;
+    /**
+     * Gets the local center of mass of the rigid body.
+     * @returns The local center of mass of the rigid body.
+     */
     getLocalCenterOfMass(): Vector3;
+    /**
+     * Gets the mass of the rigid body.
+     * @returns The mass of the rigid body.
+     */
     getMass(): number;
+    /**
+     * Gets the next kinematic rotation of the rigid body.
+     * @returns The next kinematic rotation of the rigid body.
+     */
     getNextKinematicRotation(): Rotation;
+    /**
+     * Gets the next kinematic translation of the rigid body.
+     * @returns The next kinematic translation of the rigid body.
+     */
     getNextKinematicTranslation(): Vector3;
+    /**
+     * Gets the principal angular inertia of the rigid body.
+     * @returns The principal angular inertia of the rigid body.
+     */
     getPrincipalAngularInertia(): Vector3;
+    /**
+     * Gets the principal angular inertia local frame of the rigid body.
+     * @returns The principal angular inertia local frame of the rigid body.
+     */
     getPrincipalAngularInertiaLocalFrame(): Rotation | undefined;
+    /**
+     * Gets the rotation of the rigid body.
+     * @returns The rotation of the rigid body.
+     */
     getRotation(): Rotation;
+    /**
+     * Gets the soft ccd prediction of the rigid body.
+     * @returns The soft ccd prediction of the rigid body.
+     */
     getSoftCcdPrediction(): number;
+    /**
+     * Gets the translation of the rigid body.
+     * @returns The translation of the rigid body.
+     */
     getTranslation(): Vector3;
+    /**
+     * Gets the type of the rigid body.
+     * @returns The type of the rigid body.
+     */
     getType(): RigidBodyType;
+    /**
+     * Gets the world center of mass of the rigid body.
+     * @returns The world center of mass of the rigid body.
+     */
     getWorldCenterOfMass(): Vector3 | undefined;
+    /**
+     * Sets the additional mass of the rigid body.
+     * @param additionalMass - The additional mass of the rigid body.
+     */
     setAdditionalMass(additionalMass: number): void;
+    /**
+     * Sets the additional mass properties of the rigid body.
+     * @param additionalMassProperties - The additional mass properties of the rigid body.
+     */
     setAdditionalMassProperties(additionalMassProperties: RigidBodyAdditionalMassProperties): void;
+    /**
+     * Sets the additional solver iterations of the rigid body.
+     * @param solverIterations - The additional solver iterations of the rigid body.
+     */
     setAdditionalSolverIterations(solverIterations: number): void;
+    /**
+     * Sets the angular damping of the rigid body.
+     * @param angularDamping - The angular damping of the rigid body.
+     */
     setAngularDamping(angularDamping: number): void;
+    /**
+     * Sets the angular velocity of the rigid body.
+     * @param angularVelocity - The angular velocity of the rigid body.
+     */
     setAngularVelocity(angularVelocity: Vector): void;
+    /**
+     * Sets whether the rigid body has continuous collision detection enabled.
+     * @param ccdEnabled - Whether the rigid body has continuous collision detection enabled.
+     */
     setCcdEnabled(ccdEnabled: boolean): void;
+    /**
+     * Sets the dominance group of the rigid body.
+     * @param dominanceGroup - The dominance group of the rigid body.
+     */
     setDominanceGroup(dominanceGroup: number): void;
+    /**
+     * Sets whether the rigid body is enabled.
+     * @param enabled - Whether the rigid body is enabled.
+     */
     setEnabled(enabled: boolean): void;
+    /**
+     * Sets whether the rigid body has enabled rotations.
+     * @param enabledRotations - Whether the rigid body has enabled rotations.
+     */
     setEnabledRotations(enabledRotations: Vector3Boolean): void;
+    /**
+     * Sets whether the rigid body has enabled translations.
+     * @param enabledTranslations - Whether the rigid body has enabled translations.
+     */
     setEnabledTranslations(enabledTranslations: Vector3Boolean): void;
+    /**
+     * Sets the gravity scale of the rigid body.
+     * @param gravityScale - The gravity scale of the rigid body.
+     */
     setGravityScale(gravityScale: number): void;
+    /**
+     * Sets the linear damping of the rigid body.
+     * @param linearDamping - The linear damping of the rigid body.
+     */
     setLinearDamping(linearDamping: number): void;
+    /**
+     * Sets the linear velocity of the rigid body.
+     * @param linearVelocity - The linear velocity of the rigid body.
+     */
     setLinearVelocity(linearVelocity: Vector): void;
+    /**
+     * Sets the next kinematic rotation of the rigid body.
+     * @param nextKinematicRotation - The next kinematic rotation of the rigid body.
+     */
     setNextKinematicRotation(nextKinematicRotation: Rotation): void;
+    /**
+     * Sets the next kinematic translation of the rigid body.
+     * @param nextKinematicTranslation - The next kinematic translation of the rigid body.
+     */
     setNextKinematicTranslation(nextKinematicTranslation: Vector): void;
+    /**
+     * Sets the rotation of the rigid body.
+     * @param rotation - The rotation of the rigid body.
+     */
     setRotation(rotation: Rotation): void;
+    /**
+     * Sets whether the rigid body is sleeping.
+     * @param sleeping - Whether the rigid body is sleeping.
+     */
     setSleeping(sleeping: boolean): void;
+    /**
+     * Sets the soft ccd prediction of the rigid body.
+     * @param softCcdPrediction - The soft ccd prediction of the rigid body.
+     */
     setSoftCcdPrediction(softCcdPrediction: number): void;
+    /**
+     * Sets the collision groups for solid colliders (non-sensor) of the rigid body.
+     * @param collisionGroups - The collision groups for solid colliders of the rigid body.
+     */
     setCollisionGroupsForSolidColliders(collisionGroups: CollisionGroups): void;
+    /**
+     * Sets the tag of the rigid body.
+     * @param tag - The tag of the rigid body.
+     */
     setTag(tag: string): void;
+    /**
+     * Sets the translation of the rigid body.
+     * @param translation - The translation of the rigid body.
+     */
     setTranslation(translation: Vector): void;
+    /**
+     * Sets the type of the rigid body.
+     * @param type - The type of the rigid body.
+     */
     setType(type: RigidBodyType): void;
+    /**
+     * Adds a force to the rigid body.
+     * @param force - The force to add to the rigid body.
+     */
     addForce(force: Vector): void;
+    /**
+     * Adds a torque to the rigid body.
+     * @param torque - The torque to add to the rigid body.
+     */
     addTorque(torque: Vector): void;
+    /**
+     * Adds an unsimulated child collider to the rigid body for the simulation it belongs to.
+     * @param collider - The child collider to add to the rigid body for the simulation it belongs to.
+     */
     addChildColliderToSimulation(collider: Collider): void;
+    /**
+     * Adds the rigid body to a simulation.
+     * @param simulation - The simulation to add the rigid body to.
+     */
     addToSimulation(simulation: Simulation): void;
+    /**
+     * Applies an impulse to the rigid body.
+     * @param impulse - The impulse to apply to the rigid body.
+     */
     applyImpulse(impulse: Vector): void;
+    /**
+     * Applies an impulse to the rigid body at a point.
+     * @param impulse - The impulse to apply to the rigid body.
+     * @param point - The point at which to apply the impulse.
+     */
     applyImpulseAtPoint(impulse: Vector, point: Vector): void;
+    /**
+     * Applies a torque impulse to the rigid body.
+     * @param impulse - The torque impulse to apply to the rigid body.
+     */
     applyTorqueImpulse(impulse: Vector): void;
-    createAndAddPendingChildCollider(colliderOptions: ColliderOptions): Collider;
-    createAndAddPendingChildColliders(colliderOptions: ColliderOptions[]): Collider[];
+    /**
+     * Creates and adds a child collider to the rigid body for the simulation it belongs to.
+     * @param colliderOptions - The options for the child collider to add.
+     * @returns The child collider that was added to the rigid body.
+     */
     createAndAddChildColliderToSimulation(colliderOptions: ColliderOptions): Collider;
+    /**
+     * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
+     * @param colliderOptions - The options for the child colliders to add to the rigid body.
+     * @returns The child colliders that were added to the rigid body.
+     */
     createAndAddChildCollidersToSimulation(colliderOptions: ColliderOptions[]): Collider[];
-    linkCollider(collider: Collider): void;
+
+    /**
+     * Locks all rotations of the rigid body.
+     */
     lockAllRotations(): void;
+    /**
+     * Locks all translations of the rigid body.
+     */
     lockAllTranslations(): void;
+    /**
+     * Removes the rigid body from the simulation it belongs to.
+     */
     removeFromSimulation(): void;
-    unlinkCollider(collider: Collider): void;
+
+    /**
+     * Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.
+     */
     sleep(): void;
+    /**
+     * Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.
+     */
     wakeUp(): void;
-    private _applyRigidBodyOptions;
-    private _autoAddToSimulation;
-    private _createRigidBodyDesc;
-    private _requireCreated;
-    private _requireDynamic;
-    private _requireKinematic;
-    private _requireNotKinematicPositionBased;
-    private _requireNotRemoved;
-    private _requireNotSimulated;
-    private _isEqualVectors;
-    private _isEqualRotations;
-    private _isNegligibleVector;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
+/** Additional mass properties for a RigidBody. @public */
 export declare type RigidBodyAdditionalMassProperties = {
     additionalMass: number;
     centerOfMass: Vector3;
@@ -1866,30 +2152,53 @@ export declare type RigidBodyAdditionalMassProperties = {
     principalAngularInertiaLocalFrame: Rotation;
 };
 
+/** Options for creating a RigidBody instance. @public */
 export declare interface RigidBodyOptions {
+    /** The type of the rigid body. */
     type: RigidBodyType;
+    /** The additional mass of the rigid body. */
     additionalMass?: number;
+    /** The additional mass properties of the rigid body. */
     additionalMassProperties?: RigidBodyAdditionalMassProperties;
+    /** The additional solver iterations of the rigid body. */
     additionalSolverIterations?: number;
+    /** The angular damping of the rigid body. */
     angularDamping?: number;
+    /** The angular velocity of the rigid body. */
     angularVelocity?: Vector3;
+    /** Whether the rigid body has continuous collision detection enabled. */
     ccdEnabled?: boolean;
+    /** The colliders of the rigid body, provided as {@link ColliderOptions}. */
     colliders?: ColliderOptions[];
+    /** The dominance group of the rigid body. */
     dominanceGroup?: number;
+    /** Whether the rigid body is enabled. */
     enabled?: boolean;
+    /** The enabled rotations of the rigid body. */
     enabledRotations?: Vector3Boolean;
+    /** The enabled translations of the rigid body. */
     enabledTranslations?: Vector3Boolean;
+    /** The gravity scale of the rigid body. */
     gravityScale?: number;
+    /** The linear damping of the rigid body. */
     linearDamping?: number;
+    /** The linear velocity of the rigid body. */
     linearVelocity?: Vector3;
+    /** The rotation of the rigid body. */
     rotation?: Rotation;
+    /** The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation. */
     simulation?: Simulation;
+    /** Whether the rigid body is sleeping. */
     sleeping?: boolean;
+    /** The soft continuous collision detection prediction of the rigid body. */
     softCcdPrediction?: number;
+    /** The tag of the rigid body. */
     tag?: string;
+    /** The translation of the rigid body. */
     translation?: Vector3;
 }
 
+/** The types a RigidBody can be. @public */
 export declare enum RigidBodyType {
     DYNAMIC = "dynamic",
     FIXED = "fixed",

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setRotation() method
 
+Sets the rotation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ rotation
 
 
 </td><td>
+
+The rotation of the rigid body.
 
 
 </td></tr>

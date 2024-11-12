@@ -4,6 +4,8 @@
 
 ## RigidBody.colliders property
 
+The colliders of the rigid body.
+
 **Signature:**
 
 ```typescript

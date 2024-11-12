@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.enabledTranslations property
 
+The enabled translations of the rigid body.
+
 **Signature:**
 
 ```typescript

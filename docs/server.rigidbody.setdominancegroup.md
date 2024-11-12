@@ -4,6 +4,8 @@
 
 ## RigidBody.setDominanceGroup() method
 
+Sets the dominance group of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The dominance group of the rigid body.
 
 
 </td></tr>

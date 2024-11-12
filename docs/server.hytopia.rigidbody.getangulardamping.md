@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getAngularDamping() method
 
+Gets the angular damping of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAngularDamping(): number;
 **Returns:**
 
 number
+
+The angular damping of the rigid body.
 

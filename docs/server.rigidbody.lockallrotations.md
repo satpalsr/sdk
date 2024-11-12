@@ -4,6 +4,8 @@
 
 ## RigidBody.lockAllRotations() method
 
+Locks all rotations of the rigid body.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## RigidBody.setSleeping() method
 
+Sets whether the rigid body is sleeping.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether the rigid body is sleeping.
 
 
 </td></tr>

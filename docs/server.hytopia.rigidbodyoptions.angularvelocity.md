@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.angularVelocity property
 
+The angular velocity of the rigid body.
+
 **Signature:**
 
 ```typescript

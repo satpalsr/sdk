@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setAdditionalMassProperties() method
 
+Sets the additional mass properties of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ additionalMassProperties
 
 
 </td><td>
+
+The additional mass properties of the rigid body.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.linearVelocity property
 
+The linear velocity of the rigid body.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setNextKinematicRotation() method
 
+Sets the next kinematic rotation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ nextKinematicRotation
 
 
 </td><td>
+
+The next kinematic rotation of the rigid body.
 
 
 </td></tr>

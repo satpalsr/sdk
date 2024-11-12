@@ -4,6 +4,8 @@
 
 ## RigidBody.isKinematicVelocityBased property
 
+Whether the rigid body is kinematic velocity based.
+
 **Signature:**
 
 ```typescript

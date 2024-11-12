@@ -4,6 +4,8 @@
 
 ## RigidBodyOptions.angularDamping property
 
+The angular damping of the rigid body.
+
 **Signature:**
 
 ```typescript

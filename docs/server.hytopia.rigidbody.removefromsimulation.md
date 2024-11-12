@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.removeFromSimulation() method
 
+Removes the rigid body from the simulation it belongs to.
+
 **Signature:**
 
 ```typescript

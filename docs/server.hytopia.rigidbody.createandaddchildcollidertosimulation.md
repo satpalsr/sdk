@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.createAndAddChildColliderToSimulation() method
 
+Creates and adds a child collider to the rigid body for the simulation it belongs to.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ colliderOptions
 
 </td><td>
 
+The options for the child collider to add.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Collider](./server.collider.md)
+
+The child collider that was added to the rigid body.
 

@@ -4,6 +4,8 @@
 
 ## RigidBody.sleep() method
 
+Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.
+
 **Signature:**
 
 ```typescript

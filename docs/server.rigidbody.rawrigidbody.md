@@ -4,6 +4,8 @@
 
 ## RigidBody.rawRigidBody property
 
+The raw RAPIER rigid body instance.
+
 **Signature:**
 
 ```typescript

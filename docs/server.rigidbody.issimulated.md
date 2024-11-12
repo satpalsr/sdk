@@ -4,6 +4,8 @@
 
 ## RigidBody.isSimulated property
 
+Whether the rigid body is simulated.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## RigidBodyOptions interface
 
+Options for creating a RigidBody instance.
+
 **Signature:**
 
 ```typescript
@@ -48,7 +50,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The additional mass of the rigid body.
 
 
 </td></tr>
@@ -67,7 +69,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The additional mass properties of the rigid body.
 
 
 </td></tr>
@@ -86,7 +88,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The additional solver iterations of the rigid body.
 
 
 </td></tr>
@@ -105,7 +107,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The angular damping of the rigid body.
 
 
 </td></tr>
@@ -124,7 +126,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The angular velocity of the rigid body.
 
 
 </td></tr>
@@ -143,7 +145,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the rigid body has continuous collision detection enabled.
 
 
 </td></tr>
@@ -162,7 +164,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The colliders of the rigid body, provided as [ColliderOptions](./server.collideroptions.md)<!-- -->.
 
 
 </td></tr>
@@ -181,7 +183,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The dominance group of the rigid body.
 
 
 </td></tr>
@@ -200,7 +202,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the rigid body is enabled.
 
 
 </td></tr>
@@ -219,7 +221,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The enabled rotations of the rigid body.
 
 
 </td></tr>
@@ -238,7 +240,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The enabled translations of the rigid body.
 
 
 </td></tr>
@@ -257,7 +259,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The gravity scale of the rigid body.
 
 
 </td></tr>
@@ -276,7 +278,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The linear damping of the rigid body.
 
 
 </td></tr>
@@ -295,7 +297,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The linear velocity of the rigid body.
 
 
 </td></tr>
@@ -314,7 +316,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The rotation of the rigid body.
 
 
 </td></tr>
@@ -333,7 +335,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation.
 
 
 </td></tr>
@@ -352,7 +354,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the rigid body is sleeping.
 
 
 </td></tr>
@@ -371,7 +373,7 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The soft continuous collision detection prediction of the rigid body.
 
 
 </td></tr>
@@ -390,7 +392,7 @@ string
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The tag of the rigid body.
 
 
 </td></tr>
@@ -409,7 +411,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The translation of the rigid body.
 
 
 </td></tr>
@@ -427,6 +429,8 @@ _(Optional)_
 
 
 </td><td>
+
+The type of the rigid body.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## RigidBody.getDirectionFromRotation() method
 
+Gets the direction from the rotation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getDirectionFromRotation(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The direction from the rotation of the rigid body.
 

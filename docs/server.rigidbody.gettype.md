@@ -4,6 +4,8 @@
 
 ## RigidBody.getType() method
 
+Gets the type of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getType(): RigidBodyType;
 **Returns:**
 
 [RigidBodyType](./server.rigidbodytype.md)
+
+The type of the rigid body.
 

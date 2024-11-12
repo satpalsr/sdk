@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.getInverseMass() method
 
+Gets the inverse mass of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getInverseMass(): number | undefined;
 **Returns:**
 
 number \| undefined
+
+The inverse mass of the rigid body.
 

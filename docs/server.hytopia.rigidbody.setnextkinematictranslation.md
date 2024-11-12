@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setNextKinematicTranslation() method
 
+Sets the next kinematic translation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The next kinematic translation of the rigid body.
 
 
 </td></tr>

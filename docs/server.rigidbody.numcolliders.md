@@ -4,6 +4,8 @@
 
 ## RigidBody.numColliders property
 
+The number of colliders in the rigid body.
+
 **Signature:**
 
 ```typescript

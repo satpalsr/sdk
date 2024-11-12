@@ -4,6 +4,8 @@
 
 ## RigidBody.getNextKinematicTranslation() method
 
+Gets the next kinematic translation of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getNextKinematicTranslation(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The next kinematic translation of the rigid body.
 

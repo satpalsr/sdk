@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setLinearVelocity() method
 
+Sets the linear velocity of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ Vector
 
 
 </td><td>
+
+The linear velocity of the rigid body.
 
 
 </td></tr>

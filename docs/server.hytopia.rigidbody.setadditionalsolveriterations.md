@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBody.setAdditionalSolverIterations() method
 
+Sets the additional solver iterations of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The additional solver iterations of the rigid body.
 
 
 </td></tr>

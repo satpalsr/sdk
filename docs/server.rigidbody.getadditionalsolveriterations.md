@@ -4,6 +4,8 @@
 
 ## RigidBody.getAdditionalSolverIterations() method
 
+Gets the additional solver iterations of the rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getAdditionalSolverIterations(): number;
 **Returns:**
 
 number
+
+The additional solver iterations of the rigid body.
 

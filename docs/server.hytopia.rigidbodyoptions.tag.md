@@ -4,6 +4,8 @@
 
 ## HYTOPIA.RigidBodyOptions.tag property
 
+The tag of the rigid body.
+
 **Signature:**
 
 ```typescript

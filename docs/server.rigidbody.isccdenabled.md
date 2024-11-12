@@ -4,6 +4,8 @@
 
 ## RigidBody.isCcdEnabled property
 
+Whether the rigid body has continuous collision detection enabled.
+
 **Signature:**
 
 ```typescript

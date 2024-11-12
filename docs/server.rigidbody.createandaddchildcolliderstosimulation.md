@@ -4,6 +4,8 @@
 
 ## RigidBody.createAndAddChildCollidersToSimulation() method
 
+Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ colliderOptions
 
 </td><td>
 
+The options for the child colliders to add to the rigid body.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [Collider](./server.collider.md)<!-- -->\[\]
+
+The child colliders that were added to the rigid body.
 
