@@ -4,45 +4,19 @@
 
 ## HYTOPIA.Simulation class
 
+Represents the physics simulation for a world.
+
 **Signature:**
 
 ```typescript
 export default class Simulation 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+The simulation internally and automatically handles the physical interactions, collisions, contact forces, and events for all aspects of the world. Most methods are not often used directly, but are provided for advanced usage.
 
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world, tickRate, gravity)](./server.hytopia.simulation._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `Simulation` class
-
-
-</td></tr>
-</tbody></table>
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Simulation` class.
 
 ## Properties
 
@@ -69,25 +43,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[colliderMap](./server.hytopia.simulation.collidermap.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-ColliderMap
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [gravity](./server.hytopia.simulation.gravity.md)
 
 
@@ -103,22 +58,7 @@ RAPIER.Vector3
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[step](./server.hytopia.simulation.step.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(tickDeltaMs: number) =&gt; void
-
-
-</td><td>
+The gravity vector for the simulation.
 
 
 </td></tr>
@@ -139,6 +79,8 @@ number
 
 </td><td>
 
+The fixed timestep for the simulation.
+
 
 </td></tr>
 <tr><td>
@@ -157,6 +99,8 @@ number
 
 
 </td><td>
+
+The world the simulation is for.
 
 
 </td></tr>
@@ -190,53 +134,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[createRawCollider(rawColliderDesc, rawParent)](./server.hytopia.simulation.createrawcollider.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[createRawRigidBody(rawRigidBodyDesc)](./server.hytopia.simulation.createrawrigidbody.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[removeRawCollider(rawCollider)](./server.hytopia.simulation.removerawcollider.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[removeRawRigidBody(rawRigidBody)](./server.hytopia.simulation.removerawrigidbody.md)
-
-
-</td><td>
-
-
-</td><td>
+Casts a ray through the simulation.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Simulation.world property
 
+The world the simulation is for.
+
 **Signature:**
 
 ```typescript

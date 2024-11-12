@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Simulation.timestepS property
 
+The fixed timestep for the simulation.
+
 **Signature:**
 
 ```typescript

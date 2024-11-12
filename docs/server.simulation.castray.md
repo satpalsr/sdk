@@ -4,6 +4,8 @@
 
 ## Simulation.castRay() method
 
+Casts a ray through the simulation.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ RAPIER.Vector3
 
 </td><td>
 
+The origin of the ray.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ RAPIER.Vector3
 
 
 </td><td>
+
+The direction of the ray.
 
 
 </td></tr>
@@ -68,6 +74,8 @@ number
 
 </td><td>
 
+The length of the ray.
+
 
 </td></tr>
 <tr><td>
@@ -82,7 +90,7 @@ RayCastOptions
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The options for the raycast.
 
 
 </td></tr>
@@ -90,4 +98,6 @@ _(Optional)_
 **Returns:**
 
 [Block](./server.block.md) \| [Entity](./server.entity.md) \| null
+
+The first block or entity hit by the ray, or null if no hit.
 

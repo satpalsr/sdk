@@ -943,6 +943,7 @@ export declare enum ColliderShape {
  * A callback function that is called when a collision occurs.
  * @param other - The other object involved in the collision, a block or entity.
  * @param started - Whether the collision has started or ended.
+ * @public
  */
 export declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
 
@@ -1043,10 +1044,15 @@ export declare class CollisionGroupsBuilder {
  */
 export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
+/** Data for contact forces. @public */
 declare type ContactForceData = {
+    /** The total force vector. */
     totalForce: RAPIER.Vector;
+    /** The magnitude of the total force. */
     totalForceMagnitude: number;
+    /** The direction of the maximum force. */
     maxForceDirection: RAPIER.Vector;
+    /** The magnitude of the maximum force. */
     maxForceMagnitude: number;
 };
 
@@ -1743,12 +1749,19 @@ export declare type PlayerOrientationState = {
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
+/** Options for raycasting. @public */
 declare type RayCastOptions = {
+    /** Whether to ignore sensor colliders. */
     ignoresSensors?: boolean;
+    /** The query filter flags. */
     filterFlags?: RAPIER.QueryFilterFlags;
+    /** The collision group to filter by. */
     filterGroups?: number;
+    /** The collider to exclude. */
     filterExcludeCollider?: RAPIER.Collider;
+    /** The rigid body to exclude. */
     filterExcludeRigidBody?: RAPIER.RigidBody;
+    /** The predicate to filter by. */
     filterPredicate?: (collider: RAPIER.Collider) => boolean;
 };
 
@@ -2214,25 +2227,47 @@ export declare interface Rotation {
     w: number;
 }
 
+/**
+ * Represents the physics simulation for a world.
+ *
+ * @remarks
+ * The simulation internally and automatically handles the physical
+ * interactions, collisions, contact forces, and events for all aspects
+ * of the world. Most methods are not often used directly, but are
+ * provided for advanced usage.
+ *
+ * @public
+ */
 export declare class Simulation {
-    private _colliderMap;
-    private _rapierEventQueue;
-    private _rapierSimulation;
-    private _world;
-    constructor(world: World, tickRate?: number, gravity?: RAPIER.Vector3);
-    get colliderMap(): ColliderMap;
+
+
+
+
+
+
+    /** The gravity vector for the simulation. */
     get gravity(): RAPIER.Vector3;
+    /** The fixed timestep for the simulation. */
     get timestepS(): number;
+    /** The world the simulation is for. */
     get world(): World;
+    /**
+     * Casts a ray through the simulation.
+     * @param origin - The origin of the ray.
+     * @param direction - The direction of the ray.
+     * @param length - The length of the ray.
+     * @param options - The options for the raycast.
+     * @returns The first block or entity hit by the ray, or null if no hit.
+     */
     castRay(origin: RAPIER.Vector3, direction: RAPIER.Vector3, length: number, options?: RayCastOptions): Block | Entity | null;
-    createRawCollider(rawColliderDesc: RAPIER.ColliderDesc, rawParent?: RAPIER.RigidBody): RAPIER.Collider;
-    createRawRigidBody(rawRigidBodyDesc: RAPIER.RigidBodyDesc): RAPIER.RigidBody;
-    removeRawCollider(rawCollider: RAPIER.Collider): void;
-    removeRawRigidBody(rawRigidBody: RAPIER.RigidBody): void;
-    step: (tickDeltaMs: number) => void;
-    private _onCollisionEvent;
-    private _onContactForceEvent;
-    private _getCollisionObjects;
+
+
+
+
+
+
+
+
 }
 
 /** A 3x3 symmetric positive-definite matrix for spatial dynamics. @public */

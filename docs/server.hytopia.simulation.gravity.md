@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Simulation.gravity property
 
+The gravity vector for the simulation.
+
 **Signature:**
 
 ```typescript

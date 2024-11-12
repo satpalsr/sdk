@@ -222,6 +222,8 @@ Represents a rigid body in a world's physics simulation.
 
 </td><td>
 
+Represents the physics simulation for a world.
+
 
 </td></tr>
 <tr><td>
