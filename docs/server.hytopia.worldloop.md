@@ -16,7 +16,15 @@ export default class WorldLoop
 
 The world loop automatically handles ticking physics, entities, and other world logic. The internal order of tick operations is as follows:
 
-1. Update chunks and meshing 1. Tick entity logic 1. Step physics 1. Check and emit entity updates 1. Synchronize network packets with player clients
+1. Update chunks and meshing
+
+2. Tick entity logic
+
+3. Step physics
+
+4. Check and emit entity updates
+
+5. Synchronize network packets with player clients
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WorldLoop` class.
 
