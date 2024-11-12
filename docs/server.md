@@ -41,17 +41,6 @@ Manages audio instances in a world.
 </td></tr>
 <tr><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md)
-
-
-</td><td>
-
-A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.
-
-
-</td></tr>
-<tr><td>
-
 [Block](./server.block.md)
 
 
@@ -245,6 +234,32 @@ Manages all connected players in a game server.
 
 
 </td><td>
+
+
+</td></tr>
+</tbody></table>
+
+## Abstract Classes
+
+<table><thead><tr><th>
+
+Abstract Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[BaseCharacterController](./server.basecharactercontroller.md)
+
+
+</td><td>
+
+A base class for character controller implementations.
 
 
 </td></tr>

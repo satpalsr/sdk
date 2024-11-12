@@ -276,16 +276,16 @@ export declare interface AudioOptions {
 }
 
 /**
- * A base class for character controllers that manage
- * the movement of a character entity based on player
- * driven movements or pathfinding. This class should
- * not be used directly, but rather extended by
- * a more specific character controller that you
- * or a plugin may implement.
+ * A base class for character controller implementations.
+ *
+ * @remarks
+ * The BaseCharacterController should not be used directly,
+ * but rather extended by a more specific character controller
+ * that you or a plugin implements.
  *
  * @public
  */
-export declare class BaseCharacterController {
+export declare abstract class BaseCharacterController {
     /** The entity the controller is for. */
     readonly entity: Entity;
     /**

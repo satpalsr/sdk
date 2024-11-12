@@ -2619,16 +2619,16 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BaseCharacterController:class",
-          "docComment": "/**\n * A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class BaseCharacterController "
+              "text": "export default abstract class BaseCharacterController "
             }
           ],
           "fileUrlPath": "src/world/entities/controllers/BaseCharacterController.ts",
           "releaseTag": "Public",
-          "isAbstract": false,
+          "isAbstract": true,
           "name": "BaseCharacterController",
           "preserveMemberOrder": false,
           "members": [
@@ -14662,16 +14662,16 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BaseCharacterController:class",
-              "docComment": "/**\n * A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.\n *\n * @public\n */\n",
+              "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "export default class BaseCharacterController "
+                  "text": "export default abstract class BaseCharacterController "
                 }
               ],
               "fileUrlPath": "src/world/entities/controllers/BaseCharacterController.ts",
               "releaseTag": "Public",
-              "isAbstract": false,
+              "isAbstract": true,
               "name": "BaseCharacterController",
               "preserveMemberOrder": false,
               "members": [

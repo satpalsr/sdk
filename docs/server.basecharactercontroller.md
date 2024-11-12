@@ -4,13 +4,17 @@
 
 ## BaseCharacterController class
 
-A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.
+A base class for character controller implementations.
 
 **Signature:**
 
 ```typescript
-export default class BaseCharacterController 
+export default abstract class BaseCharacterController 
 ```
+
+## Remarks
+
+The BaseCharacterController should not be used directly, but rather extended by a more specific character controller that you or a plugin implements.
 
 ## Constructors
 
