@@ -4,6 +4,8 @@
 
 ## Entity.setCharacterController() method
 
+Sets the character controller for the entity.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ characterController
 
 
 </td><td>
+
+The character controller to set.
 
 
 </td></tr>

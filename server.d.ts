@@ -1026,6 +1026,8 @@ export declare interface DefaultCharacterControllerOptions {
  *     ],
  *   },
  * });
+ *
+ * spider.spawn(world, { x: 20, y: 6, z: 10 });
  * ```
  *
  * @public
@@ -1121,7 +1123,16 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * Despawns the entity from the world.
      */
     despawn(): void;
+    /**
+     * Sets the character controller for the entity.
+     * @param characterController - The character controller to set.
+     */
     setCharacterController(characterController: BaseCharacterController): void;
+    /**
+     * Starts looped animations for the entity, blending with
+     * other animations currently playing.
+     * @param animations - The animations to start.
+     */
     startModelLoopedAnimations(animations: string[]): void;
     /**
      * Starts a oneshot animation for the entity, blending with

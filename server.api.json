@@ -9296,7 +9296,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Entity:class",
-          "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n *\n * spider.spawn(world, { x: 20, y: 6, z: 10 });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -9985,7 +9985,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#setCharacterController:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Sets the character controller for the entity.\n *\n * @param characterController - The character controller to set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10100,7 +10100,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#startModelLoopedAnimations:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21228,7 +21228,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Entity:class",
-              "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n *\n * spider.spawn(world, { x: 20, y: 6, z: 10 });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21917,7 +21917,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#setCharacterController:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Sets the character controller for the entity.\n *\n * @param characterController - The character controller to set.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22032,7 +22032,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#startModelLoopedAnimations:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

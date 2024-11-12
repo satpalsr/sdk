@@ -41,6 +41,8 @@ const spider = new Entity({
     ],
   },
 });
+
+spider.spawn(world, { x: 20, y: 6, z: 10 });
 ```
 
 ## Constructors
@@ -464,6 +466,8 @@ Despawns the entity from the world.
 
 </td><td>
 
+Sets the character controller for the entity.
+
 
 </td></tr>
 <tr><td>
@@ -489,6 +493,8 @@ Spawns the entity in the world.
 
 
 </td><td>
+
+Starts looped animations for the entity, blending with other animations currently playing.
 
 
 </td></tr>
