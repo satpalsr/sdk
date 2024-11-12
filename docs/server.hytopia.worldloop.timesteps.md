@@ -4,6 +4,8 @@
 
 ## HYTOPIA.WorldLoop.timestepS property
 
+The fixed timestep of the world loop in seconds.
+
 **Signature:**
 
 ```typescript

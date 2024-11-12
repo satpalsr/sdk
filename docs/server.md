@@ -244,6 +244,8 @@ Represents a world in the game server.
 
 </td><td>
 
+Manages the tick loop for a world.
+
 
 </td></tr>
 </tbody></table>

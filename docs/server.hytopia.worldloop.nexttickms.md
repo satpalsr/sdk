@@ -4,6 +4,8 @@
 
 ## HYTOPIA.WorldLoop.nextTickMs property
 
+The next tick time in milliseconds.
+
 **Signature:**
 
 ```typescript

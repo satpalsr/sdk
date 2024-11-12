@@ -2378,19 +2378,39 @@ export declare class World implements protocol.Serializable {
 
 }
 
+/**
+ * Manages the tick loop for a world.
+ *
+ * @remarks
+ * The world loop automatically handles ticking physics,
+ * entities, and other world logic. The internal order of tick
+ * operations is as follows:
+ *
+ * 1. Update chunks and meshing
+ * 2. Tick entity logic
+ * 3. Step physics
+ * 4. Check and emit entity updates
+ * 5. Synchronize network packets with player clients
+ *
+ * @public
+ */
 export declare class WorldLoop {
-    private _currentTick;
-    private _ticker;
-    private _world;
-    constructor(world: World, tickRate?: number);
+
+
+
+
+    /** The current tick of the world loop. */
     get currentTick(): number;
+    /** The next tick time in milliseconds. */
     get nextTickMs(): number;
+    /** The fixed timestep of the world loop in seconds. */
     get timestepS(): number;
+    /** The world that the loop manages. */
     get world(): World;
-    start(): void;
-    stop(): void;
-    protected _tick: (tickDeltaMs: number) => void;
-    protected _onTickError: (error: Error) => void;
+
+
+
+
 }
 
 /** Options for creating a World instance. @public */

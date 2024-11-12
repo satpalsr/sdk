@@ -4,45 +4,21 @@
 
 ## WorldLoop class
 
+Manages the tick loop for a world.
+
 **Signature:**
 
 ```typescript
 export default class WorldLoop 
 ```
 
-## Constructors
+## Remarks
 
-<table><thead><tr><th>
+The world loop automatically handles ticking physics, entities, and other world logic. The internal order of tick operations is as follows:
 
-Constructor
+1. Update chunks and meshing 2. Tick entity logic 3. Step physics 4. Check and emit entity updates 5. Synchronize network packets with player clients
 
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(world, tickRate)](./server.worldloop._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `WorldLoop` class
-
-
-</td></tr>
-</tbody></table>
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WorldLoop` class.
 
 ## Properties
 
@@ -69,44 +45,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[\_onTickError](./server.worldloop._ontickerror.md)
-
-
-</td><td>
-
-`protected`
-
-
-</td><td>
-
-(error: Error) =&gt; void
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[\_tick](./server.worldloop._tick.md)
-
-
-</td><td>
-
-`protected`
-
-
-</td><td>
-
-(tickDeltaMs: number) =&gt; void
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [currentTick](./server.worldloop.currenttick.md)
 
 
@@ -121,6 +59,8 @@ number
 
 
 </td><td>
+
+The current tick of the world loop.
 
 
 </td></tr>
@@ -141,6 +81,8 @@ number
 
 </td><td>
 
+The next tick time in milliseconds.
+
 
 </td></tr>
 <tr><td>
@@ -159,6 +101,8 @@ number
 
 
 </td><td>
+
+The fixed timestep of the world loop in seconds.
 
 
 </td></tr>
@@ -179,49 +123,7 @@ number
 
 </td><td>
 
-
-</td></tr>
-</tbody></table>
-
-## Methods
-
-<table><thead><tr><th>
-
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[start()](./server.worldloop.start.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[stop()](./server.worldloop.stop.md)
-
-
-</td><td>
-
-
-</td><td>
+The world that the loop manages.
 
 
 </td></tr>

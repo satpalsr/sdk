@@ -4,6 +4,8 @@
 
 ## HYTOPIA.WorldLoop.currentTick property
 
+The current tick of the world loop.
+
 **Signature:**
 
 ```typescript
