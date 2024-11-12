@@ -27,7 +27,7 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 ## Quickstart
 
-1. Install a compatible JavaScript runtime. We recommend [Bun (recommended)](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) are also supported.
+1. Install a compatible JavaScript runtime. We recommend [Bun (recommended)](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) are also supported. All examples will be given using Bun.
 
 2. Install the SDK in a new or existing project.
 ```bash
@@ -36,13 +36,12 @@ npm install hytopia
 
 2. Run a local HYTOPIA server using an example game included in the SDK. The following command will start the Zombie Arena example game on port 8080.
 ```bash
-npx hytopia examples/zombie-arena
+bun hytopia examples/zombie-arena
 ```
 
 3. Visit https://play.hytopia.com - when prompted, enter the local server your game is running on, which is `http://localhost:8080`.
 
-*Going Further*
-- [Boilerplate Game](./boilerplate)
+Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
 - [API Reference](./docs/server.md)
 
