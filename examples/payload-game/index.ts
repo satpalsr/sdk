@@ -443,7 +443,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) {
   }
 }
 
-function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, speed: number, tickDeltaMs: number) {
+function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, speed: number, _tickDeltaMs: number) {
   if (!entity.isSpawned || !payloadEntity) return;
   
   const entityId = entity.id!;
@@ -451,7 +451,7 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
 
   // Handle pathfinding
   if (!enemyPathfindingTargets[entityId] || enemyPathfindAccumulators[entityId] >= PATHFIND_ACCUMULATOR_THRESHOLD) {
-    const targetPlayer = targetPlayers.values().next().value;
+    const targetPlayer = targetPlayers.values().next().value as PlayerEntity | undefined;
 
     enemyPathfindingTargets[entityId] = targetPlayer?.isSpawned
       ? targetPlayer.getTranslation()

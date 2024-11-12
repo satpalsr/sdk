@@ -37,7 +37,7 @@ map
 
 </td><td>
 
-WorldMap
+[WorldMap](./server.worldmap.md)
 
 
 </td><td>

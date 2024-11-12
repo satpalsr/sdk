@@ -28267,13 +28267,8 @@
                   "text": "): "
                 },
                 {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
                   "kind": "Content",
-                  "text": "<void>"
+                  "text": "void"
                 },
                 {
                   "kind": "Content",
@@ -28283,7 +28278,7 @@
               "fileUrlPath": "src/GameServer.ts",
               "returnTypeTokenRange": {
                 "startIndex": 5,
-                "endIndex": 7
+                "endIndex": 6
               },
               "releaseTag": "Public",
               "overloadIndex": 1,
@@ -28806,7 +28801,7 @@
                     {
                       "kind": "Reference",
                       "text": "WorldMap",
-                      "canonicalReference": "server!~WorldMap:interface"
+                      "canonicalReference": "server!WorldMap:interface"
                     },
                     {
                       "kind": "Content",
@@ -29252,6 +29247,78 @@
                 }
               ],
               "implementsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!HYTOPIA.WorldMap:interface",
+              "docComment": "/**\n * A map representation for a world.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export interface WorldMap "
+                }
+              ],
+              "fileUrlPath": "src/world/World.ts",
+              "releaseTag": "Public",
+              "name": "WorldMap",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldMap#blocks:member",
+                  "docComment": "/**\n * The blocks in the map\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "blocks: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "{\n        [coordinate: string]: number;\n    }"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "blocks",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldMap#blockTypes:member",
+                  "docComment": "/**\n * The block types in the map.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "blockTypes: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "{\n        id: number;\n        name: string;\n        textureUri: string;\n    }[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "blockTypes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
             },
             {
               "kind": "Interface",
@@ -34859,13 +34926,8 @@
               "text": "): "
             },
             {
-              "kind": "Reference",
-              "text": "Promise",
-              "canonicalReference": "!Promise:interface"
-            },
-            {
               "kind": "Content",
-              "text": "<void>"
+              "text": "void"
             },
             {
               "kind": "Content",
@@ -34875,7 +34937,7 @@
           "fileUrlPath": "src/GameServer.ts",
           "returnTypeTokenRange": {
             "startIndex": 5,
-            "endIndex": 7
+            "endIndex": 6
           },
           "releaseTag": "Public",
           "overloadIndex": 1,
@@ -35398,7 +35460,7 @@
                 {
                   "kind": "Reference",
                   "text": "WorldMap",
-                  "canonicalReference": "server!~WorldMap:interface"
+                  "canonicalReference": "server!WorldMap:interface"
                 },
                 {
                   "kind": "Content",
@@ -35844,6 +35906,78 @@
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!WorldMap:interface",
+          "docComment": "/**\n * A map representation for a world.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface WorldMap "
+            }
+          ],
+          "fileUrlPath": "src/world/World.ts",
+          "releaseTag": "Public",
+          "name": "WorldMap",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldMap#blocks:member",
+              "docComment": "/**\n * The blocks in the map\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blocks: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [coordinate: string]: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "blocks",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldMap#blockTypes:member",
+              "docComment": "/**\n * The block types in the map.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blockTypes: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        id: number;\n        name: string;\n        textureUri: string;\n    }[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "blockTypes",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Interface",

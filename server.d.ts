@@ -1617,6 +1617,7 @@ declare namespace HYTOPIA {
         RigidBodyOptions,
         Simulation,
         World,
+        WorldMap,
         WorldOptions,
         WorldLoop
     }
@@ -2338,7 +2339,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  *
  * @public
  */
-export declare function startServer(init: (world: World) => void): Promise<void>;
+export declare function startServer(init: (world: World) => void): void;
 
 /** The input keys included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: string[];
@@ -2490,7 +2491,7 @@ export declare class WorldLoop {
 }
 
 /** A map representation for a world. @public */
-declare interface WorldMap {
+export declare interface WorldMap {
     /** The block types in the map. */
     blockTypes: {
         /** The ID of the block type. */

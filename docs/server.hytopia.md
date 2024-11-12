@@ -585,6 +585,17 @@ A 3-dimensional vector of boolean values.
 </td></tr>
 <tr><td>
 
+[WorldMap](./server.hytopia.worldmap.md)
+
+
+</td><td>
+
+A map representation for a world.
+
+
+</td></tr>
+<tr><td>
+
 [WorldOptions](./server.hytopia.worldoptions.md)
 
 
