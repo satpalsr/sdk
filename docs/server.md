@@ -123,6 +123,8 @@ Represents a collider in a world's physics simulation.
 
 </td><td>
 
+A helper class for building and decoding collision groups.
+
 
 </td></tr>
 <tr><td>
@@ -187,7 +189,7 @@ A player in the game.
 
 </td><td>
 
-Represents a player controlled entity in a world.
+Represents an entity controlled by a player in a world.
 
 
 </td></tr>
@@ -340,6 +342,8 @@ The shapes a collider can be.
 
 
 </td><td>
+
+The default collision groups.
 
 
 </td></tr>
@@ -701,6 +705,8 @@ Description
 
 </td><td>
 
+A callback function that is called when a collision occurs.
+
 
 </td></tr>
 <tr><td>
@@ -710,14 +716,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[CollisionObject](./server.collisionobject.md)
-
-
-</td><td>
+A set of collision groups.
 
 
 </td></tr>
@@ -738,6 +737,8 @@ A callback function for a chat command.
 
 
 </td><td>
+
+A decoded set of collision groups represented as their string equivalents.
 
 
 </td></tr>
@@ -769,6 +770,8 @@ The camera orientation state of a Player.
 
 
 </td><td>
+
+A raw set of collision groups represented as a 32-bit number.
 
 
 </td></tr>

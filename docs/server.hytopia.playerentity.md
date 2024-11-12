@@ -4,7 +4,7 @@
 
 ## HYTOPIA.PlayerEntity class
 
-Represents a player controlled entity in a world.
+Represents an entity controlled by a player in a world.
 
 **Signature:**
 

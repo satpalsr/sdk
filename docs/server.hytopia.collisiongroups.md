@@ -4,6 +4,8 @@
 
 ## HYTOPIA.CollisionGroups type
 
+A set of collision groups.
+
 **Signature:**
 
 ```typescript

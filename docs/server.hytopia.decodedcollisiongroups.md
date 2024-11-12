@@ -4,6 +4,8 @@
 
 ## HYTOPIA.DecodedCollisionGroups type
 
+A decoded set of collision groups represented as their string equivalents.
+
 **Signature:**
 
 ```typescript

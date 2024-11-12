@@ -4,6 +4,8 @@
 
 ## RawCollisionGroups type
 
+A raw set of collision groups represented as a 32-bit number.
+
 **Signature:**
 
 ```typescript

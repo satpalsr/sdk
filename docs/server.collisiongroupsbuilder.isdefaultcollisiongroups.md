@@ -4,6 +4,8 @@
 
 ## CollisionGroupsBuilder.isDefaultCollisionGroups() method
 
+Checks if the collision groups are the default collision groups.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ collisionGroups
 
 </td><td>
 
+The set of collision groups to check.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 boolean
+
+Whether the collision groups are the default collision groups.
 

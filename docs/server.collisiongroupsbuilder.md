@@ -4,11 +4,17 @@
 
 ## CollisionGroupsBuilder class
 
+A helper class for building and decoding collision groups.
+
 **Signature:**
 
 ```typescript
 export default class CollisionGroupsBuilder 
 ```
+
+## Remarks
+
+This class should be used directly with its static methods. You can assign collision groups to colliders of entities and blocks to control optimized collision interactions and filterings between blocks and entities, and entities and other entities.
 
 ## Methods
 
@@ -40,6 +46,8 @@ Description
 
 </td><td>
 
+Builds a raw set of collision groups from a set of collision groups.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +61,8 @@ Description
 
 
 </td><td>
+
+Decodes a set of collision groups into a set of their string equivalents.
 
 
 </td></tr>
@@ -68,6 +78,8 @@ Description
 
 </td><td>
 
+Decodes a raw set of collision groups into a set of collision groups.
+
 
 </td></tr>
 <tr><td>
@@ -81,6 +93,8 @@ Description
 
 
 </td><td>
+
+Checks if the collision groups are the default collision groups.
 
 
 </td></tr>

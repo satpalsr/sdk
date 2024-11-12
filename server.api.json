@@ -7357,7 +7357,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!CollisionCallback:type",
-          "docComment": "",
+          "docComment": "/**\n * A callback function that is called when a collision occurs.\n *\n * @param other - The other object involved in the collision, a block or entity.\n *\n * @param started - Whether the collision has started or ended.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7401,7 +7401,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!CollisionGroup:enum",
-          "docComment": "",
+          "docComment": "/**\n * The default collision groups.\n *\n * @remarks\n *\n * The collision groups are used to determine which objects collide and generate collision and contact force events. The default collision groups can be used for most entity and block interactions, but you may want to create your own for more complex scenarios. Up to 15 collision groups can be registered. Collision groups use pairwise filtering using bit masks.\n *\n * This filtering method is based on two 16-bit values: - The belongsTo groups (the 16 left-most bits of `self.0`). - The collidesWith mask (the 16 right-most bits of `self.0`).\n *\n * An interaction is allowed between two filters `a` and `b` two conditions are met simultaneously: - The belongsTo groups of `a` has at least one bit set to `1` in common with the collidesWith mask of `b`. - The belongsTo groups of `b` has at least one bit set to `1` in common with the collidesWith mask of `a`. In other words, interactions are allowed between two filter if the following condition is met:\n * ```\n * ((a >> 16) & b) != 0 && ((b >> 16) & a) != 0\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7523,7 +7523,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!CollisionGroups:type",
-          "docComment": "",
+          "docComment": "/**\n * A set of collision groups.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7567,7 +7567,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!CollisionGroupsBuilder:class",
-          "docComment": "",
+          "docComment": "/**\n * A helper class for building and decoding collision groups.\n *\n * @remarks\n *\n * This class should be used directly with its static methods. You can assign collision groups to colliders of entities and blocks to control optimized collision interactions and filterings between blocks and entities, and entities and other entities.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -7583,7 +7583,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!CollisionGroupsBuilder.buildRawCollisionGroups:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Builds a raw set of collision groups from a set of collision groups.\n *\n * @param collisionGroups - The set of collision groups to build.\n *\n * @returns A raw set of collision groups represented as a 32-bit number.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7633,7 +7633,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!CollisionGroupsBuilder.decodeCollisionGroups:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Decodes a set of collision groups into a set of their string equivalents.\n *\n * @param collisionGroups - The set of collision groups to decode.\n *\n * @returns A set of collision groups represented as their string equivalents.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7683,7 +7683,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!CollisionGroupsBuilder.decodeRawCollisionGroups:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Decodes a raw set of collision groups into a set of collision groups.\n *\n * @param groups - The raw set of collision groups to decode.\n *\n * @returns A set of collision groups.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7733,7 +7733,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!CollisionGroupsBuilder.isDefaultCollisionGroups:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Checks if the collision groups are the default collision groups.\n *\n * @param collisionGroups - The set of collision groups to check.\n *\n * @returns Whether the collision groups are the default collision groups.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7784,51 +7784,6 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "server!CollisionObject:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type CollisionObject = "
-            },
-            {
-              "kind": "Reference",
-              "text": "BlockType",
-              "canonicalReference": "server!BlockType:class"
-            },
-            {
-              "kind": "Content",
-              "text": " | "
-            },
-            {
-              "kind": "Reference",
-              "text": "Entity",
-              "canonicalReference": "server!Entity:class"
-            },
-            {
-              "kind": "Content",
-              "text": " | "
-            },
-            {
-              "kind": "Reference",
-              "text": "CollisionCallback",
-              "canonicalReference": "server!CollisionCallback:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/world/physics/ColliderMap.ts",
-          "releaseTag": "Public",
-          "name": "CollisionObject",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
-        },
-        {
-          "kind": "TypeAlias",
           "canonicalReference": "server!CommandCallback:type",
           "docComment": "/**\n * A callback function for a chat command.\n *\n * @param player - The player that sent the command.\n *\n * @param args - An array of arguments, comprised of all space separated text after the command.\n *\n * @param message - The full message of the command.\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -7865,7 +7820,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!DecodedCollisionGroups:type",
-          "docComment": "",
+          "docComment": "/**\n * A decoded set of collision groups represented as their string equivalents.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -18445,7 +18400,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.CollisionCallback:type",
-              "docComment": "",
+              "docComment": "/**\n * A callback function that is called when a collision occurs.\n *\n * @param other - The other object involved in the collision, a block or entity.\n *\n * @param started - Whether the collision has started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18489,7 +18444,7 @@
             {
               "kind": "Enum",
               "canonicalReference": "server!HYTOPIA.CollisionGroup:enum",
-              "docComment": "",
+              "docComment": "/**\n * The default collision groups.\n *\n * @remarks\n *\n * The collision groups are used to determine which objects collide and generate collision and contact force events. The default collision groups can be used for most entity and block interactions, but you may want to create your own for more complex scenarios. Up to 15 collision groups can be registered. Collision groups use pairwise filtering using bit masks.\n *\n * This filtering method is based on two 16-bit values: - The belongsTo groups (the 16 left-most bits of `self.0`). - The collidesWith mask (the 16 right-most bits of `self.0`).\n *\n * An interaction is allowed between two filters `a` and `b` two conditions are met simultaneously: - The belongsTo groups of `a` has at least one bit set to `1` in common with the collidesWith mask of `b`. - The belongsTo groups of `b` has at least one bit set to `1` in common with the collidesWith mask of `a`. In other words, interactions are allowed between two filter if the following condition is met:\n * ```\n * ((a >> 16) & b) != 0 && ((b >> 16) & a) != 0\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18611,7 +18566,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.CollisionGroups:type",
-              "docComment": "",
+              "docComment": "/**\n * A set of collision groups.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18655,7 +18610,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.CollisionGroupsBuilder:class",
-              "docComment": "",
+              "docComment": "/**\n * A helper class for building and decoding collision groups.\n *\n * @remarks\n *\n * This class should be used directly with its static methods. You can assign collision groups to colliders of entities and blocks to control optimized collision interactions and filterings between blocks and entities, and entities and other entities.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18671,7 +18626,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.CollisionGroupsBuilder.buildRawCollisionGroups:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Builds a raw set of collision groups from a set of collision groups.\n *\n * @param collisionGroups - The set of collision groups to build.\n *\n * @returns A raw set of collision groups represented as a 32-bit number.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -18721,7 +18676,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.CollisionGroupsBuilder.decodeCollisionGroups:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Decodes a set of collision groups into a set of their string equivalents.\n *\n * @param collisionGroups - The set of collision groups to decode.\n *\n * @returns A set of collision groups represented as their string equivalents.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -18771,7 +18726,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.CollisionGroupsBuilder.decodeRawCollisionGroups:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Decodes a raw set of collision groups into a set of collision groups.\n *\n * @param groups - The raw set of collision groups to decode.\n *\n * @returns A set of collision groups.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -18821,7 +18776,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.CollisionGroupsBuilder.isDefaultCollisionGroups:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Checks if the collision groups are the default collision groups.\n *\n * @param collisionGroups - The set of collision groups to check.\n *\n * @returns Whether the collision groups are the default collision groups.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -18872,51 +18827,6 @@
             },
             {
               "kind": "TypeAlias",
-              "canonicalReference": "server!HYTOPIA.CollisionObject:type",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export type CollisionObject = "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "BlockType",
-                  "canonicalReference": "server!BlockType:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CollisionCallback",
-                  "canonicalReference": "server!CollisionCallback:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "fileUrlPath": "src/world/physics/ColliderMap.ts",
-              "releaseTag": "Public",
-              "name": "CollisionObject",
-              "typeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 6
-              }
-            },
-            {
-              "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.CommandCallback:type",
               "docComment": "/**\n * A callback function for a chat command.\n *\n * @param player - The player that sent the command.\n *\n * @param args - An array of arguments, comprised of all space separated text after the command.\n *\n * @param message - The full message of the command.\n *\n * @public\n */\n",
               "excerptTokens": [
@@ -18953,7 +18863,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.DecodedCollisionGroups:type",
-              "docComment": "",
+              "docComment": "/**\n * A decoded set of collision groups represented as their string equivalents.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -22655,7 +22565,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.PlayerEntity:class",
-              "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * Represents an entity controlled by a player in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23461,7 +23371,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.RawCollisionGroups:type",
-              "docComment": "",
+              "docComment": "/**\n * A raw set of collision groups represented as a 32-bit number.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -29998,7 +29908,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerEntity:class",
-          "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents an entity controlled by a player in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -30804,7 +30714,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!RawCollisionGroups:type",
-          "docComment": "",
+          "docComment": "/**\n * A raw set of collision groups represented as a 32-bit number.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

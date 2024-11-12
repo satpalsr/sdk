@@ -4,6 +4,8 @@
 
 ## CollisionGroupsBuilder.decodeCollisionGroups() method
 
+Decodes a set of collision groups into a set of their string equivalents.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ collisionGroups
 
 </td><td>
 
+The set of collision groups to decode.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [DecodedCollisionGroups](./server.decodedcollisiongroups.md)
+
+A set of collision groups represented as their string equivalents.
 

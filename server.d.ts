@@ -939,8 +939,39 @@ export declare enum ColliderShape {
     ROUND_CYLINDER = "round-cylinder"
 }
 
+/**
+ * A callback function that is called when a collision occurs.
+ * @param other - The other object involved in the collision, a block or entity.
+ * @param started - Whether the collision has started or ended.
+ */
 export declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
 
+/**
+ * The default collision groups.
+ *
+ * @remarks
+ * The collision groups are used to determine which objects collide and
+ * generate collision and contact force events. The default collision groups
+ * can be used for most entity and block interactions, but you may want to
+ * create your own for more complex scenarios. Up to 15 collision groups can be
+ * registered. Collision groups use pairwise filtering using bit masks.
+ *
+ * This filtering method is based on two 16-bit values:
+ * - The belongsTo groups (the 16 left-most bits of `self.0`).
+ * - The collidesWith mask (the 16 right-most bits of `self.0`).
+ *
+ * An interaction is allowed between two filters `a` and `b` two conditions
+ * are met simultaneously:
+ * - The belongsTo groups of `a` has at least one bit set to `1` in common with the collidesWith mask of `b`.
+ * - The belongsTo groups of `b` has at least one bit set to `1` in common with the collidesWith mask of `a`.
+ * In other words, interactions are allowed between two filter if the following condition is met:
+ *
+ * ```
+ * ((a >> 16) & b) != 0 && ((b >> 16) & a) != 0
+ * ```
+ *
+ * @public
+ */
 export declare enum CollisionGroup {
     BLOCK = 1,
     ENTITY = 2,
@@ -949,24 +980,59 @@ export declare enum CollisionGroup {
     ALL = 65535
 }
 
+/** A set of collision groups. @public */
 export declare type CollisionGroups = {
     belongsTo: CollisionGroup[];
     collidesWith: CollisionGroup[];
 };
 
+/**
+ * A helper class for building and decoding collision groups.
+ *
+ * @remarks
+ * This class should be used directly with its static methods.
+ * You can assign collision groups to colliders of entities and
+ * blocks to control optimized collision interactions and filterings
+ * between blocks and entities, and entities and other entities.
+ *
+ * @public
+ */
 export declare class CollisionGroupsBuilder {
     private static readonly BELONGS_TO_SHIFT;
     private static readonly COLLIDES_WITH_MASK;
+    /**
+     * Builds a raw set of collision groups from a set of collision groups.
+     * @param collisionGroups - The set of collision groups to build.
+     * @returns A raw set of collision groups represented as a 32-bit number.
+     */
     static buildRawCollisionGroups(collisionGroups: CollisionGroups): RawCollisionGroups;
+    /**
+     * Decodes a raw set of collision groups into a set of collision groups.
+     * @param groups - The raw set of collision groups to decode.
+     * @returns A set of collision groups.
+     */
     static decodeRawCollisionGroups(groups: RawCollisionGroups): CollisionGroups;
+    /**
+     * Decodes a set of collision groups into a set of their string equivalents.
+     * @param collisionGroups - The set of collision groups to decode.
+     * @returns A set of collision groups represented as their string equivalents.
+     */
     static decodeCollisionGroups(collisionGroups: CollisionGroups): DecodedCollisionGroups;
+    /**
+     * Checks if the collision groups are the default collision groups.
+     * @param collisionGroups - The set of collision groups to check.
+     * @returns Whether the collision groups are the default collision groups.
+     */
     static isDefaultCollisionGroups(collisionGroups: CollisionGroups): boolean;
+    /**
+     * Combines an array of collision groups into a raw set of collision groups.
+     * @param groups - The array of collision groups to combine.
+     * @returns A raw set of collision groups represented as a 32-bit number.
+     */
     private static combineGroups;
-    private static bitsToGroups;
-    private static groupToName;
-}
 
-export declare type CollisionObject = BlockType | Entity | CollisionCallback;
+
+}
 
 /**
  * A callback function for a chat command.
@@ -984,6 +1050,7 @@ declare type ContactForceData = {
     maxForceMagnitude: number;
 };
 
+/** A decoded set of collision groups represented as their string equivalents. @public */
 export declare type DecodedCollisionGroups = {
     belongsTo: string[];
     collidesWith: string[];
@@ -1458,7 +1525,6 @@ declare namespace HYTOPIA {
         ColliderShape,
         ColliderOptions,
         CollisionCallback,
-        CollisionObject,
         CollisionGroupsBuilder,
         CollisionGroup,
         CollisionGroups,
@@ -1552,7 +1618,7 @@ export declare class Player {
 }
 
 /**
- * Represents a player controlled entity in a world.
+ * Represents an entity controlled by a player in a world.
  *
  * @remarks
  * Player entities extend the {@link Entity} class.
@@ -1672,6 +1738,7 @@ export declare type PlayerOrientationState = {
     yaw: number;
 };
 
+/** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
 declare type RayCastOptions = {

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.CollisionGroupsBuilder.decodeRawCollisionGroups() method
 
+Decodes a raw set of collision groups into a set of collision groups.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ groups
 
 </td><td>
 
+The raw set of collision groups to decode.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [CollisionGroups](./server.collisiongroups.md)
+
+A set of collision groups.
 

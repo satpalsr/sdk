@@ -4,6 +4,8 @@
 
 ## CollisionCallback type
 
+A callback function that is called when a collision occurs.
+
 **Signature:**
 
 ```typescript

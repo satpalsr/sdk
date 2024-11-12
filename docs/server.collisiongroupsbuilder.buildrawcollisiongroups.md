@@ -4,6 +4,8 @@
 
 ## CollisionGroupsBuilder.buildRawCollisionGroups() method
 
+Builds a raw set of collision groups from a set of collision groups.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,14 @@ collisionGroups
 
 </td><td>
 
+The set of collision groups to build.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 [RawCollisionGroups](./server.rawcollisiongroups.md)
+
+A raw set of collision groups represented as a 32-bit number.
 
