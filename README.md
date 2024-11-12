@@ -41,6 +41,11 @@ npx hytopia examples/zombie-arena
 
 3. Visit https://play.hytopia.com - when prompted, enter the local server your game is running on, which is `http://localhost:8080`.
 
+*Going Further*
+- [Boilerplate Game](./boilerplate)
+- [Game Examples](./examples)
+- [API Reference](./docs/server.md)
+
 ## Architecture & Motivation
 
 HYTOPIA gives developers full control to create any game imaginable in a voxel-like style. The underlying architecture handles low-level tasks like networking, prediction, entity lifecycle, physics and more, so you can focus on building and deploying games quickly.
