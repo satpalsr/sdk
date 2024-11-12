@@ -27675,7 +27675,7 @@
             {
               "kind": "Function",
               "canonicalReference": "server!HYTOPIA.startServer:function(1)",
-              "docComment": "",
+              "docComment": "/**\n * The entry point for running game setup and starting the game server.\n *\n * @remarks\n *\n * This function should always be called first when initializing your game. It will internally handle initialization of the physics engine and other systems required systems. All of your game setup logic should be executed in the init function.\n *\n * @param init - A function that initializes the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34227,7 +34227,7 @@
         {
           "kind": "Function",
           "canonicalReference": "server!startServer:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * The entry point for running game setup and starting the game server.\n *\n * @remarks\n *\n * This function should always be called first when initializing your game. It will internally handle initialization of the physics engine and other systems required systems. All of your game setup logic should be executed in the init function.\n *\n * @param init - A function that initializes the world.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

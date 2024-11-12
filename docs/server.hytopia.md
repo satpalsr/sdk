@@ -410,6 +410,8 @@ Description
 
 </td><td>
 
+The entry point for running game setup and starting the game server.
+
 
 </td></tr>
 </tbody></table>

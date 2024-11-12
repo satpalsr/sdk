@@ -4,6 +4,8 @@
 
 ## HYTOPIA.startServer() function
 
+The entry point for running game setup and starting the game server.
+
 **Signature:**
 
 ```typescript
@@ -40,10 +42,16 @@ init
 
 </td><td>
 
+A function that initializes the world.
+
 
 </td></tr>
 </tbody></table>
 **Returns:**
 
 Promise&lt;void&gt;
+
+## Remarks
+
+This function should always be called first when initializing your game. It will internally handle initialization of the physics engine and other systems required systems. All of your game setup logic should be executed in the init function.
 

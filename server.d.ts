@@ -2274,6 +2274,17 @@ export declare class Simulation {
 export declare interface SpdMatrix3 extends SdpMatrix3 {
 }
 
+/**
+ * The entry point for running game setup and starting the game server.
+ *
+ * @remarks
+ * This function should always be called first when initializing your
+ * game. It will internally handle initialization of the physics engine
+ * and other systems required systems. All of your game setup logic
+ * should be executed in the init function.
+ *
+ * @param init - A function that initializes the world.
+ */
 export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
 
 /** The input keys included in the PlayerInputState. @public */
