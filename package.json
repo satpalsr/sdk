@@ -44,6 +44,9 @@
   "author": "HYTOPIA, Inc.",
   "license": "SEE LICENSE IN LICENSE.md",
   "types": "./server.d.ts",
+  "devDependencies": {
+    "hytopia": "file:./"
+  },
   "bugs": {
     "url": "https://github.com/hytopiagg/sdk/issues"
   },

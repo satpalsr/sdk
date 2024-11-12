@@ -376,6 +376,20 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[loadMap(map)](./server.world.loadmap.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Loads a map into the world.
+
+
+</td></tr>
+<tr><td>
+
 [start()](./server.world.start.md)
 
 

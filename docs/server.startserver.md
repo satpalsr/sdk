@@ -9,7 +9,7 @@ The entry point for running game setup and starting the game server.
 **Signature:**
 
 ```typescript
-export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
+export declare function startServer(init: (world: World) => void): Promise<void>;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ init
 
 </td><td>
 
-(world: [World](./server.world.md)<!-- -->) =&gt; Promise&lt;void&gt;
+(world: [World](./server.world.md)<!-- -->) =&gt; void
 
 
 </td><td>

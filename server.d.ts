@@ -2338,7 +2338,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  *
  * @public
  */
-export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
+export declare function startServer(init: (world: World) => void): Promise<void>;
 
 /** The input keys included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: string[];
@@ -2434,6 +2434,11 @@ export declare class World implements protocol.Serializable {
     /** The simulation for the world. */
     get simulation(): Simulation;
     /**
+     * Loads a map into the world.
+     * @param map - The map to load.
+     */
+    loadMap(map: WorldMap): void;
+    /**
      * Starts the world loop, which begins ticking physics, entities, etc.
      */
     start(): void;
@@ -2482,6 +2487,24 @@ export declare class WorldLoop {
 
 
 
+}
+
+/** A map representation for a world. @public */
+declare interface WorldMap {
+    /** The block types in the map. */
+    blockTypes: {
+        /** The ID of the block type. */
+        id: number;
+        /** The name of the block type. */
+        name: string;
+        /** The URI of the texture for the block type. */
+        textureUri: string;
+    }[];
+    /** The blocks in the map */
+    blocks: {
+        /** The global coordinate to block type id mapping. */
+        [coordinate: string]: number;
+    };
 }
 
 /** Options for creating a World instance. @public */
