@@ -8,8 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "init": "cp -r boilerplate/* ."
   },
   "repository": {
     "type": "git",
