@@ -2297,7 +2297,7 @@ export declare interface Vector3Boolean {
  * Represents a world in the game server.
  *
  * @remarks
- * Worlds are the primary container for all game objects
+ * Worlds are the primary container for game objects
  * and interactions. A game can have multiple worlds running
  * simultaneously, each uniquely isolated from each other.
  * Players who have joined your server can be assigned to a world
