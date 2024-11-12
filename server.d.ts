@@ -275,13 +275,60 @@ export declare interface AudioOptions {
     volume?: number;
 }
 
+/**
+ * A base class for character controllers that manage
+ * the movement of a character entity based on player
+ * driven movements or pathfinding. This class should
+ * not be used directly, but rather extended by
+ * a more specific character controller that you
+ * or a plugin may implement.
+ *
+ * @public
+ */
 export declare class BaseCharacterController {
+    /** The entity the controller is for. */
     readonly entity: Entity;
+    /**
+     * A callback function for when the controller ticks
+     * player movement.
+     * @param inputState - The current input state of the player.
+     * @param orientationState - The current orientation state of the player.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     onTickPlayerMovement?: (inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) => void;
+    /**
+     * A callback function for when the controller ticks
+     * pathfinding movement.
+     * @param destination - The destination to move to.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     onTickPathfindingMovement?: (destination: Vector3, deltaTimeMs: number) => void;
+    /**
+     * @param entity - The entity the controller is for.
+     * @param _options - Arbitrary options you may provide or omit for your controller implementation.
+     */
     constructor(entity: Entity, _options?: Record<string, unknown>);
+    /**
+     * Override this method to create sensor colliders
+     * to be attached to the controlled entity when it spawns.
+     * @returns An array of colliders.
+     */
     createSensorColliders(): Collider[];
+    /**
+     * Override this method to handle entity movements
+     * based on player input for your character controller.
+     * @param inputState - The current input state of the player.
+     * @param orientationState - The current orientation state of the player.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    /**
+     * Override this method to implement pathfinding
+     * movement logic for your character controller.
+     * NOTE: This method is not fully supported yet.
+     * @param destination - The destination target to move to.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
     tickPathfindingMovement(destination: Vector3, deltaTimeMs: number): void;
 }
 

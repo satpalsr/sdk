@@ -4,6 +4,8 @@
 
 ## BaseCharacterController.onTickPlayerMovement property
 
+A callback function for when the controller ticks player movement.
+
 **Signature:**
 
 ```typescript

@@ -2619,7 +2619,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BaseCharacterController:class",
-          "docComment": "",
+          "docComment": "/**\n * A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2635,7 +2635,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!BaseCharacterController:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `BaseCharacterController` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `BaseCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param _options - Arbitrary options you may provide or omit for your controller implementation.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2689,7 +2689,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BaseCharacterController#createSensorColliders:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Override this method to create sensor colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2725,7 +2725,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BaseCharacterController#entity:member",
-              "docComment": "",
+              "docComment": "/**\n * The entity the controller is for.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2756,7 +2756,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BaseCharacterController#onTickPathfindingMovement:member",
-              "docComment": "",
+              "docComment": "/**\n * A callback function for when the controller ticks pathfinding movement.\n *\n * @param destination - The destination to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2795,7 +2795,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BaseCharacterController#onTickPlayerMovement:member",
-              "docComment": "",
+              "docComment": "/**\n * A callback function for when the controller ticks player movement.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2843,7 +2843,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BaseCharacterController#tickPathfindingMovement:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Override this method to implement pathfinding movement logic for your character controller. NOTE: This method is not fully supported yet.\n *\n * @param destination - The destination target to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2908,7 +2908,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BaseCharacterController#tickPlayerMovement:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14662,7 +14662,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.BaseCharacterController:class",
-              "docComment": "",
+              "docComment": "/**\n * A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14678,7 +14678,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `BaseCharacterController` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `BaseCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param _options - Arbitrary options you may provide or omit for your controller implementation.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14732,7 +14732,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#createSensorColliders:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Override this method to create sensor colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14768,7 +14768,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#entity:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The entity the controller is for.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14799,7 +14799,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#onTickPathfindingMovement:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A callback function for when the controller ticks pathfinding movement.\n *\n * @param destination - The destination to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14838,7 +14838,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#onTickPlayerMovement:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A callback function for when the controller ticks player movement.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14886,7 +14886,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#tickPathfindingMovement:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Override this method to implement pathfinding movement logic for your character controller. NOTE: This method is not fully supported yet.\n *\n * @param destination - The destination target to move to.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14951,7 +14951,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.BaseCharacterController#tickPlayerMovement:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

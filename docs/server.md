@@ -46,6 +46,8 @@ Manages audio instances in a world.
 
 </td><td>
 
+A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.
+
 
 </td></tr>
 <tr><td>

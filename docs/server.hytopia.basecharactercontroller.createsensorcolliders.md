@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BaseCharacterController.createSensorColliders() method
 
+Override this method to create sensor colliders to be attached to the controlled entity when it spawns.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ createSensorColliders(): Collider[];
 **Returns:**
 
 [Collider](./server.collider.md)<!-- -->\[\]
+
+An array of colliders.
 

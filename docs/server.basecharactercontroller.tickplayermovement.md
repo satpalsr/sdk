@@ -4,6 +4,8 @@
 
 ## BaseCharacterController.tickPlayerMovement() method
 
+Override this method to handle entity movements based on player input for your character controller.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ inputState
 
 </td><td>
 
+The current input state of the player.
+
 
 </td></tr>
 <tr><td>
@@ -54,6 +58,8 @@ orientationState
 
 </td><td>
 
+The current orientation state of the player.
+
 
 </td></tr>
 <tr><td>
@@ -67,6 +73,8 @@ number
 
 
 </td><td>
+
+The delta time in milliseconds since the last tick.
 
 
 </td></tr>

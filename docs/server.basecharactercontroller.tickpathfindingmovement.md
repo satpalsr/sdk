@@ -4,6 +4,8 @@
 
 ## BaseCharacterController.tickPathfindingMovement() method
 
+Override this method to implement pathfinding movement logic for your character controller. NOTE: This method is not fully supported yet.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ destination
 
 </td><td>
 
+The destination target to move to.
+
 
 </td></tr>
 <tr><td>
@@ -53,6 +57,8 @@ number
 
 
 </td><td>
+
+The delta time in milliseconds since the last tick.
 
 
 </td></tr>

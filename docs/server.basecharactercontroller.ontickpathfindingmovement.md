@@ -4,6 +4,8 @@
 
 ## BaseCharacterController.onTickPathfindingMovement property
 
+A callback function for when the controller ticks pathfinding movement.
+
 **Signature:**
 
 ```typescript

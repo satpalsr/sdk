@@ -42,6 +42,8 @@ entity
 
 </td><td>
 
+The entity the controller is for.
+
 
 </td></tr>
 <tr><td>
@@ -56,7 +58,7 @@ Record&lt;string, unknown&gt;
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Arbitrary options you may provide or omit for your controller implementation.
 
 
 </td></tr>

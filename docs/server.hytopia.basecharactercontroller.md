@@ -4,6 +4,8 @@
 
 ## HYTOPIA.BaseCharacterController class
 
+A base class for character controllers that manage the movement of a character entity based on player driven movements or pathfinding. This class should not be used directly, but rather extended by a more specific character controller that you or a plugin may implement.
+
 **Signature:**
 
 ```typescript
@@ -84,6 +86,8 @@ Description
 
 </td><td>
 
+The entity the controller is for.
+
 
 </td></tr>
 <tr><td>
@@ -101,7 +105,7 @@ Description
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A callback function for when the controller ticks pathfinding movement.
 
 
 </td></tr>
@@ -120,7 +124,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A callback function for when the controller ticks player movement.
 
 
 </td></tr>
@@ -154,6 +158,8 @@ Description
 
 </td><td>
 
+Override this method to create sensor colliders to be attached to the controlled entity when it spawns.
+
 
 </td></tr>
 <tr><td>
@@ -166,6 +172,8 @@ Description
 
 </td><td>
 
+Override this method to implement pathfinding movement logic for your character controller. NOTE: This method is not fully supported yet.
+
 
 </td></tr>
 <tr><td>
@@ -177,6 +185,8 @@ Description
 
 
 </td><td>
+
+Override this method to handle entity movements based on player input for your character controller.
 
 
 </td></tr>
