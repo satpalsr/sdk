@@ -2305,8 +2305,8 @@ export declare interface Vector3Boolean {
  * for things like mini-games, or complex dungeons with multiple
  * floors that can be optimized by splitting them into seperate
  * world or "room" simulations, etc. In most cases, the single
- * default world is all you need, but this flexibility is available
- * for more complex games.
+ * automatically created default world is all you need, but
+ * this flexibility is available for more complex games.
  *
  * @example
  * ```typescript
