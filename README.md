@@ -33,15 +33,20 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 2. Install the SDK in a new or existing project.
 ```bash
-npm install hytopia
+bun add hytopia
 ```
 
-2. Run a local HYTOPIA server using an example game included in the SDK. The following command will start the Zombie Arena example game on port 8080.
+2. Initialize boilerplate. Copies assets and an index.ts game script into your project.
 ```bash
-bun hytopia examples/zombie-arena
+bunx hytopia init
 ```
 
-3. Visit https://play.hytopia.com - when prompted, enter the local server your game is running on, which is `http://localhost:8080`.
+3. Start the server, use --watch for hot reloads as you make changes.
+```bash
+bun --watch index.ts
+```
+
+4. Visit https://play.hytopia.com - when prompted, enter the local server your game is running on, which is `localhost:8080`.
 
 Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
