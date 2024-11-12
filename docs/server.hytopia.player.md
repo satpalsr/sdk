@@ -74,12 +74,12 @@ The unique identifier for the player.
 
 </td><td>
 
-Readonly&lt;[PlayerInputState](./server.hytopia.playerinputstate.md)<!-- -->&gt;
+Readonly&lt;[PlayerInputState](./server.playerinputstate.md)<!-- -->&gt;
 
 
 </td><td>
 
-The current  of the player.
+The current [PlayerInputState](./server.playerinputstate.md) of the player.
 
 
 </td></tr>
@@ -95,12 +95,12 @@ The current  of the player.
 
 </td><td>
 
-Readonly&lt;[PlayerOrientationState](./server.hytopia.playerorientationstate.md)<!-- -->&gt;
+Readonly&lt;[PlayerOrientationState](./server.playerorientationstate.md)<!-- -->&gt;
 
 
 </td><td>
 
-The current  of the player.
+The current [PlayerOrientationState](./server.playerorientationstate.md) of the player.
 
 
 </td></tr>
@@ -137,12 +137,12 @@ The username for the player.
 
 </td><td>
 
-[World](./server.hytopia.world.md) \| undefined
+[World](./server.world.md) \| undefined
 
 
 </td><td>
 
-The current  the player is in.
+The current [World](./server.world.md) the player is in.
 
 
 </td></tr>
@@ -204,7 +204,7 @@ Joins a player to a world.
 
 </td><td>
 
-Removes the player from the current  they are in.
+Removes the player from the current [World](./server.world.md) they are in.
 
 
 </td></tr>

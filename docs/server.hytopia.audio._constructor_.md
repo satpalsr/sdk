@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[AudioOptions](./server.hytopia.audiooptions.md)
+[AudioOptions](./server.audiooptions.md)
 
 
 </td><td>

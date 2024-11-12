@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Player.leaveWorld() method
 
-Removes the player from the current  they are in.
+Removes the player from the current [World](./server.world.md) they are in.
 
 **Signature:**
 

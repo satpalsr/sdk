@@ -13,7 +13,7 @@ getEnabledRotations(): Vector3Boolean;
 ```
 **Returns:**
 
-[Vector3Boolean](./server.hytopia.vector3boolean.md)
+[Vector3Boolean](./server.vector3boolean.md)
 
 The enabled rotations of the rigid body.
 

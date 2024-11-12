@@ -15,7 +15,7 @@ export default class BlockTypeRegistry implements protocol.Serializable
 
 ## Remarks
 
-Block type registries are created internally as a singleton for each  instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.
+Block type registries are created internally as a singleton for each [World](./server.world.md) instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.
 
@@ -65,7 +65,7 @@ Description
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>

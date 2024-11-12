@@ -13,7 +13,7 @@ getRotation(): Rotation;
 ```
 **Returns:**
 
-[Rotation](./server.hytopia.rotation.md)
+[Rotation](./server.rotation.md)
 
 The rotation of the rigid body.
 

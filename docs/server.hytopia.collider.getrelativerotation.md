@@ -13,7 +13,7 @@ getRelativeRotation(): Rotation;
 ```
 **Returns:**
 
-[Rotation](./server.hytopia.rotation.md)
+[Rotation](./server.rotation.md)
 
 The relative rotation of the collider.
 

@@ -14,7 +14,7 @@ export default class ChunkLattice
 
 ## Remarks
 
-The ChunkLattice lattice tracks the current terrain of a world, comprised of  instances.
+The ChunkLattice lattice tracks the current terrain of a world, comprised of [Chunk](./server.chunk.md) instances.
 
 ## Constructors
 

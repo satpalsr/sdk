@@ -53,7 +53,7 @@ Description
 
 </td><td>
 
-[BlockType](./server.hytopia.blocktype.md)
+[BlockType](./server.blocktype.md)
 
 
 </td><td>
@@ -74,7 +74,7 @@ The block type of the block.
 
 </td><td>
 
-[Vector3](./server.hytopia.vector3.md)
+[Vector3](./server.vector3.md)
 
 
 </td><td>

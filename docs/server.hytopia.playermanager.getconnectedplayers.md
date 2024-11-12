@@ -13,7 +13,7 @@ getConnectedPlayers(): Player[];
 ```
 **Returns:**
 
-[Player](./server.hytopia.player.md)<!-- -->\[\]
+[Player](./server.player.md)<!-- -->\[\]
 
 An array of all connected players.
 

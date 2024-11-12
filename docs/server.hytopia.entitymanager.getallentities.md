@@ -13,7 +13,7 @@ getAllEntities(): Entity[];
 ```
 **Returns:**
 
-[Entity](./server.hytopia.entity.md)<!-- -->\[\]
+[Entity](./server.entity.md)<!-- -->\[\]
 
 All spawned entities in the world.
 

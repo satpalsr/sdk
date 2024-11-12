@@ -14,7 +14,7 @@ export default class EntityManager
 
 ## Remarks
 
-The EntityManager is created internally as a singleton for each  instance in a game server. It allows retrieval of all entities, player entities, and more.
+The EntityManager is created internally as a singleton for each [World](./server.world.md) instance in a game server. It allows retrieval of all entities, player entities, and more.
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `EntityManager` class.
 
@@ -62,7 +62,7 @@ Description
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>

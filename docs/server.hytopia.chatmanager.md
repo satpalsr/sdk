@@ -14,7 +14,7 @@ export default class ChatManager
 
 ## Remarks
 
-The ChatManager is created internally as a singleton for each  instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.
+The ChatManager is created internally as a singleton for each [World](./server.world.md) instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.
 

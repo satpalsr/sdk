@@ -37,7 +37,7 @@ entity
 
 </td><td>
 
-[Entity](./server.hytopia.entity.md)
+[Entity](./server.entity.md)
 
 
 </td><td>

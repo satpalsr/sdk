@@ -16,5 +16,5 @@ export type RigidBodyAdditionalMassProperties = {
     principalAngularInertiaLocalFrame: Rotation;
 };
 ```
-**References:** [Vector3](./server.hytopia.vector3.md)<!-- -->, [Rotation](./server.hytopia.rotation.md)
+**References:** [Vector3](./server.vector3.md)<!-- -->, [Rotation](./server.rotation.md)
 

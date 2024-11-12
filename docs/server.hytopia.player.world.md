@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Player.world property
 
-The current  the player is in.
+The current [World](./server.world.md) the player is in.
 
 **Signature:**
 

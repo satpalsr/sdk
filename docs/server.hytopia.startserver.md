@@ -37,7 +37,7 @@ init
 
 </td><td>
 
-(world: [World](./server.hytopia.world.md)<!-- -->) =&gt; Promise&lt;void&gt;
+(world: [World](./server.world.md)<!-- -->) =&gt; Promise&lt;void&gt;
 
 
 </td><td>

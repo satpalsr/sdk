@@ -37,7 +37,7 @@ collider
 
 </td><td>
 
-[Collider](./server.hytopia.collider.md)
+[Collider](./server.collider.md)
 
 
 </td><td>

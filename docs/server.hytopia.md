@@ -173,6 +173,17 @@ Manages event emission and assigned listener callbacks.
 </td></tr>
 <tr><td>
 
+[GameServer](./server.hytopia.gameserver.md)
+
+
+</td><td>
+
+Manages the game and associated worlds and systems.
+
+
+</td></tr>
+<tr><td>
+
 [Player](./server.hytopia.player.md)
 
 
@@ -363,6 +374,17 @@ The default collision groups.
 </td><td>
 
 Event types an Entity instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[GameServerEventType](./server.hytopia.gameservereventtype.md)
+
+
+</td><td>
+
+Event types a GameServer instance can emit.
 
 
 </td></tr>
@@ -639,6 +661,17 @@ Payloads for events a Chunk instance can emit.
 </td><td>
 
 Payloads for events an Entity instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[GameServerEventPayload](./server.hytopia.gameservereventpayload.md)
+
+
+</td><td>
+
+Payloads for events emitted by a GameServer instance.
 
 
 </td></tr>

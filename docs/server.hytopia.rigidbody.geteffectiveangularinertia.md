@@ -13,7 +13,7 @@ getEffectiveAngularInertia(): SpdMatrix3 | undefined;
 ```
 **Returns:**
 
-[SpdMatrix3](./server.hytopia.spdmatrix3.md) \| undefined
+[SpdMatrix3](./server.spdmatrix3.md) \| undefined
 
 The effective angular inertia of the rigid body.
 

@@ -11,11 +11,11 @@ Represents an entity controlled by a player in a world.
 ```typescript
 export default class PlayerEntity extends Entity 
 ```
-**Extends:** [Entity](./server.hytopia.entity.md)
+**Extends:** [Entity](./server.entity.md)
 
 ## Remarks
 
-Player entities extend the  class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.
+Player entities extend the [Entity](./server.entity.md) class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.
 
 ## Example
 
@@ -103,7 +103,7 @@ Description
 
 </td><td>
 
-[Player](./server.hytopia.player.md)
+[Player](./server.player.md)
 
 
 </td><td>

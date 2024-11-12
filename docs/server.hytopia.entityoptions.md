@@ -121,7 +121,7 @@ _(Optional)_ The name of the entity.
 
 </td><td>
 
-[RigidBodyOptions](./server.hytopia.rigidbodyoptions.md)
+[RigidBodyOptions](./server.rigidbodyoptions.md)
 
 
 </td><td>

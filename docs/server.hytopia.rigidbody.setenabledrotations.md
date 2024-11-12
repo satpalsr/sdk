@@ -37,7 +37,7 @@ enabledRotations
 
 </td><td>
 
-[Vector3Boolean](./server.hytopia.vector3boolean.md)
+[Vector3Boolean](./server.vector3boolean.md)
 
 
 </td><td>

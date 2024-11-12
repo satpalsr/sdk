@@ -13,7 +13,7 @@ getPrincipalAngularInertiaLocalFrame(): Rotation | undefined;
 ```
 **Returns:**
 
-[Rotation](./server.hytopia.rotation.md) \| undefined
+[Rotation](./server.rotation.md) \| undefined
 
 The principal angular inertia local frame of the rigid body.
 

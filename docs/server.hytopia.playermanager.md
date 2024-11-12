@@ -65,7 +65,7 @@ Description
 
 </td><td>
 
-[PlayerManager](./server.hytopia.playermanager.md)
+[PlayerManager](./server.playermanager.md)
 
 
 </td><td>

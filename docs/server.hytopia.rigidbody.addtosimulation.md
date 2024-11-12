@@ -37,7 +37,7 @@ simulation
 
 </td><td>
 
-[Simulation](./server.hytopia.simulation.md)
+[Simulation](./server.simulation.md)
 
 
 </td><td>

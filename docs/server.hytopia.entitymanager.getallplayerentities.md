@@ -37,7 +37,7 @@ player
 
 </td><td>
 
-[Player](./server.hytopia.player.md)
+[Player](./server.player.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The player to get the entities for.
 </tbody></table>
 **Returns:**
 
-[PlayerEntity](./server.hytopia.playerentity.md)<!-- -->\[\]
+[PlayerEntity](./server.playerentity.md)<!-- -->\[\]
 
 All spawned entities in the world assigned to the player.
 

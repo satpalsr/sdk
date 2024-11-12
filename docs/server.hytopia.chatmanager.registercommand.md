@@ -53,7 +53,7 @@ callback
 
 </td><td>
 
-[CommandCallback](./server.hytopia.commandcallback.md)
+[CommandCallback](./server.commandcallback.md)
 
 
 </td><td>

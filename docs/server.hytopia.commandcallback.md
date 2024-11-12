@@ -11,5 +11,5 @@ A callback function for a chat command.
 ```typescript
 export type CommandCallback = (player: Player, args: string[], message: string) => void;
 ```
-**References:** [Player](./server.hytopia.player.md)
+**References:** [Player](./server.player.md)
 

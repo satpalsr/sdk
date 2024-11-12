@@ -37,7 +37,7 @@ colliderOptions
 
 </td><td>
 
-[ColliderOptions](./server.hytopia.collideroptions.md)<!-- -->\[\]
+[ColliderOptions](./server.collideroptions.md)<!-- -->\[\]
 
 
 </td><td>
@@ -49,7 +49,7 @@ The options for the child colliders to add to the rigid body.
 </tbody></table>
 **Returns:**
 
-[Collider](./server.hytopia.collider.md)<!-- -->\[\]
+[Collider](./server.collider.md)<!-- -->\[\]
 
 The child colliders that were added to the rigid body.
 

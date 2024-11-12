@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Player.orientationState property
 
-The current  of the player.
+The current [PlayerOrientationState](./server.playerorientationstate.md) of the player.
 
 **Signature:**
 

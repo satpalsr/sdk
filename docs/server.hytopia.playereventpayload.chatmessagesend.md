@@ -60,7 +60,7 @@ protocol.ChatMessageSchema
 
 </td><td>
 
-[Player](./server.hytopia.player.md)
+[Player](./server.player.md)
 
 
 </td><td>

@@ -37,7 +37,7 @@ collisionGroups
 
 </td><td>
 
-[CollisionGroups](./server.hytopia.collisiongroups.md)
+[CollisionGroups](./server.collisiongroups.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The set of collision groups to decode.
 </tbody></table>
 **Returns:**
 
-[DecodedCollisionGroups](./server.hytopia.decodedcollisiongroups.md)
+[DecodedCollisionGroups](./server.decodedcollisiongroups.md)
 
 A set of collision groups represented as their string equivalents.
 

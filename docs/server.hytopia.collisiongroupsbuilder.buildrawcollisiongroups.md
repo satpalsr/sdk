@@ -37,7 +37,7 @@ collisionGroups
 
 </td><td>
 
-[CollisionGroups](./server.hytopia.collisiongroups.md)
+[CollisionGroups](./server.collisiongroups.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The set of collision groups to build.
 </tbody></table>
 **Returns:**
 
-[RawCollisionGroups](./server.hytopia.rawcollisiongroups.md)
+[RawCollisionGroups](./server.rawcollisiongroups.md)
 
 A raw set of collision groups represented as a 32-bit number.
 

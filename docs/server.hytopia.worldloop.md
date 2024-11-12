@@ -128,7 +128,7 @@ The fixed timestep of the world loop in seconds.
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>

@@ -11,11 +11,11 @@ The default character controller implementation.
 ```typescript
 export default class DefaultCharacterController extends BaseCharacterController 
 ```
-**Extends:** [BaseCharacterController](./server.hytopia.basecharactercontroller.md)
+**Extends:** [BaseCharacterController](./server.basecharactercontroller.md)
 
 ## Remarks
 
-This class extends  and implements the default movement logic for a character entity. This is used as the default for players when they join your game. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.
+This class extends [BaseCharacterController](./server.basecharactercontroller.md) and implements the default movement logic for a character entity. This is used as the default for players when they join your game. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.
 
 ## Example
 
@@ -101,7 +101,7 @@ Description
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.hytopia.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>
@@ -120,7 +120,7 @@ A function allowing custom logic to determine if the entity can jump.
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.hytopia.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>
@@ -139,7 +139,7 @@ A function allowing custom logic to determine if the entity can run.
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.hytopia.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>
@@ -221,7 +221,7 @@ The upward velocity applied to the entity when it jumps.
 
 </td><td>
 
-[Entity](./server.hytopia.entity.md) \| undefined
+[Entity](./server.entity.md) \| undefined
 
 
 </td><td>

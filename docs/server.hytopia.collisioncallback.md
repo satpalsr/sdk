@@ -11,5 +11,5 @@ A callback function that is called when a collision occurs.
 ```typescript
 export type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
 ```
-**References:** [BlockType](./server.hytopia.blocktype.md)<!-- -->, [Entity](./server.hytopia.entity.md)
+**References:** [BlockType](./server.blocktype.md)<!-- -->, [Entity](./server.entity.md)
 

@@ -37,7 +37,7 @@ nextKinematicRotation
 
 </td><td>
 
-[Rotation](./server.hytopia.rotation.md)
+[Rotation](./server.rotation.md)
 
 
 </td><td>

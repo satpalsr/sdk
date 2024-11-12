@@ -13,7 +13,7 @@ createSensorColliders(): Collider[];
 ```
 **Returns:**
 
-[Collider](./server.hytopia.collider.md)<!-- -->\[\]
+[Collider](./server.collider.md)<!-- -->\[\]
 
 An array of colliders.
 

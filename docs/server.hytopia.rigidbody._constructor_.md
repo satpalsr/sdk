@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[RigidBodyOptions](./server.hytopia.rigidbodyoptions.md)
+[RigidBodyOptions](./server.rigidbodyoptions.md)
 
 
 </td><td>

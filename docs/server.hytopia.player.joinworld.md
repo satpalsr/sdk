@@ -37,7 +37,7 @@ world
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>
@@ -53,5 +53,5 @@ void
 
 ## Remarks
 
-If the player is already in a , they will be removed from their current world before joining the new world.
+If the player is already in a [World](./server.world.md)<!-- -->, they will be removed from their current world before joining the new world.
 

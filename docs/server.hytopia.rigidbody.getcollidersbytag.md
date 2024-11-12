@@ -49,7 +49,7 @@ The tag to filter by.
 </tbody></table>
 **Returns:**
 
-[Collider](./server.hytopia.collider.md)<!-- -->\[\]
+[Collider](./server.collider.md)<!-- -->\[\]
 
 The colliders of the rigid body with the given tag.
 

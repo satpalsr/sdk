@@ -37,7 +37,7 @@ world
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>

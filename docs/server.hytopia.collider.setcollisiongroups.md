@@ -37,7 +37,7 @@ collisionGroups
 
 </td><td>
 
-[CollisionGroups](./server.hytopia.collisiongroups.md)
+[CollisionGroups](./server.collisiongroups.md)
 
 
 </td><td>

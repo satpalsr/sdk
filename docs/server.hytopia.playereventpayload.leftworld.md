@@ -43,7 +43,7 @@ Description
 
 </td><td>
 
-[Player](./server.hytopia.player.md)
+[Player](./server.player.md)
 
 
 </td><td>
@@ -60,7 +60,7 @@ Description
 
 </td><td>
 
-[World](./server.hytopia.world.md)
+[World](./server.world.md)
 
 
 </td><td>

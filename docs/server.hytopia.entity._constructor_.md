@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[EntityOptions](./server.hytopia.entityoptions.md)
+[EntityOptions](./server.entityoptions.md)
 
 
 </td><td>

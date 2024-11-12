@@ -37,7 +37,7 @@ entity
 
 </td><td>
 
-[Entity](./server.hytopia.entity.md)
+[Entity](./server.entity.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The entity to get attached audio instances for.
 </tbody></table>
 **Returns:**
 
-[Audio](./server.hytopia.audio.md)<!-- -->\[\]
+[Audio](./server.audio.md)<!-- -->\[\]
 
 An array of audio instances.
 

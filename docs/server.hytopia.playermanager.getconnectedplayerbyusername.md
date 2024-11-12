@@ -49,7 +49,7 @@ The username of the player to get.
 </tbody></table>
 **Returns:**
 
-[Player](./server.hytopia.player.md) \| undefined
+[Player](./server.player.md) \| undefined
 
 The connected player with the given username or undefined if not found.
 

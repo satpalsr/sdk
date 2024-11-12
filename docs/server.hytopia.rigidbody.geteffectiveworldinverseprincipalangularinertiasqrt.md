@@ -13,7 +13,7 @@ getEffectiveWorldInversePrincipalAngularInertiaSqrt(): SpdMatrix3 | undefined;
 ```
 **Returns:**
 
-[SpdMatrix3](./server.hytopia.spdmatrix3.md) \| undefined
+[SpdMatrix3](./server.spdmatrix3.md) \| undefined
 
 The effective world inverse principal angular inertia square root of the rigid body.
 

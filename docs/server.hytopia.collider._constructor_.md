@@ -37,7 +37,7 @@ colliderOptions
 
 </td><td>
 
-[ColliderOptions](./server.hytopia.collideroptions.md)
+[ColliderOptions](./server.collideroptions.md)
 
 
 </td><td>

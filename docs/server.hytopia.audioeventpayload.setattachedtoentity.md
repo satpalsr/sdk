@@ -43,7 +43,7 @@ Description
 
 </td><td>
 
-[Audio](./server.hytopia.audio.md)
+[Audio](./server.audio.md)
 
 
 </td><td>
@@ -60,7 +60,7 @@ Description
 
 </td><td>
 
-[Entity](./server.hytopia.entity.md) \| undefined
+[Entity](./server.entity.md) \| undefined
 
 
 </td><td>

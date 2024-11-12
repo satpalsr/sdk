@@ -15,7 +15,7 @@ export default class Audio implements protocol.Serializable
 
 ## Remarks
 
-Audio instances are created directly as instances. They support a variety of configuration options through the  constructor argument.
+Audio instances are created directly as instances. They support a variety of configuration options through the [AudioOptions](./server.audiooptions.md) constructor argument.
 
 ## Example
 
@@ -97,7 +97,7 @@ Description
 
 </td><td>
 
-[Entity](./server.hytopia.entity.md) \| undefined
+[Entity](./server.entity.md) \| undefined
 
 
 </td><td>
@@ -328,7 +328,7 @@ The playback rate of the audio if explicitly set.
 
 </td><td>
 
-[Vector3](./server.hytopia.vector3.md) \| undefined
+[Vector3](./server.vector3.md) \| undefined
 
 
 </td><td>
@@ -433,7 +433,7 @@ The volume of the audio if explicitly set.
 
 </td><td>
 
-[World](./server.hytopia.world.md) \| undefined
+[World](./server.world.md) \| undefined
 
 
 </td><td>

@@ -37,7 +37,7 @@ type
 
 </td><td>
 
-[RigidBodyType](./server.hytopia.rigidbodytype.md)
+[RigidBodyType](./server.rigidbodytype.md)
 
 
 </td><td>

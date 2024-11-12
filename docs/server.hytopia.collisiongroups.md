@@ -14,5 +14,5 @@ export type CollisionGroups = {
     collidesWith: CollisionGroup[];
 };
 ```
-**References:** [CollisionGroup](./server.hytopia.collisiongroup.md)
+**References:** [CollisionGroup](./server.collisiongroup.md)
 

@@ -37,7 +37,7 @@ callback
 
 </td><td>
 
-[CollisionCallback](./server.hytopia.collisioncallback.md) \| undefined
+[CollisionCallback](./server.collisioncallback.md) \| undefined
 
 
 </td><td>
