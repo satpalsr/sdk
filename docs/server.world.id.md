@@ -4,6 +4,8 @@
 
 ## World.id property
 
+The unique ID of the world.
+
 **Signature:**
 
 ```typescript

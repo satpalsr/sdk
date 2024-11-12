@@ -1268,7 +1268,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
     /**
-     * @param options - The options for the entity instance.
+     * @param options - The options for the entity.
      */
     constructor(options: EntityOptions);
     /** The unique identifier for the entity. */
@@ -1566,7 +1566,7 @@ declare namespace HYTOPIA {
         RigidBodyOptions,
         Simulation,
         World,
-        WorldData,
+        WorldOptions,
         WorldLoop
     }
 }
@@ -2293,45 +2293,89 @@ export declare interface Vector3Boolean {
     z: boolean;
 }
 
+/**
+ * Represents a world in the game server.
+ *
+ * @remarks
+ * Worlds are the primary container for all game objects
+ * and interactions. A game can have multiple worlds running
+ * simultaneously, each uniquely isolated from each other.
+ * Players who have joined your server can be assigned to a world
+ * programmatically by your game logic if desired. This is useful
+ * for things like mini-games, or complex dungeons with multiple
+ * floors that can be optimized by splitting them into seperate
+ * world or "room" simulations, etc. In most cases, the single
+ * default world is all you need, but this flexibility is available
+ * for more complex games.
+ *
+ * @example
+ * ```typescript
+ * const world = new World({
+ *   id: 1,
+ *   name: 'My World',
+ *   skyboxUri: 'textures/skyboxes/default.png',
+ * });
+ * ```
+ */
 export declare class World implements protocol.Serializable {
+    /**
+     * A function that is called when a player joins the world.
+     * @param player - The player that joined the world.
+     */
     onPlayerJoin?: (player: Player) => void;
+    /**
+     * A function that is called when a player leaves the world.
+     * @param player - The player that left the world.
+     */
     onPlayerLeave?: (player: Player) => void;
-    private _id;
-    private _name;
-    private _skyboxUri;
-    private _audioManager;
-    private _blockTypeRegistry;
-    private _chatManager;
-    private _chunkLattice;
-    private _entityManager;
-    private _eventRouter;
-    private _loop;
-    private _networkSynchronizer;
-    private _simulation;
-    constructor(worldData: WorldData);
-    get id(): number;
-    get name(): string;
-    get skyboxUri(): string;
-    get audioManager(): AudioManager;
-    get blockTypeRegistry(): BlockTypeRegistry;
-    get chatManager(): ChatManager;
-    get chunkLattice(): ChunkLattice;
-    get entityManager(): EntityManager;
-    get eventRouter(): EventRouter;
-    get loop(): WorldLoop;
-    get networkSynchronizer(): NetworkSynchronizer;
-    get simulation(): Simulation;
-    start(): void;
-    stop(): void;
-    serialize(): protocol.WorldSchema;
-}
 
-export declare interface WorldData {
-    id: number;
-    name: string;
-    skyboxUri: string;
-    tickRate?: number;
-    gravity?: Vector3;
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @param options - The options for the world.
+     */
+    constructor(options: WorldOptions);
+    /** The unique ID of the world. */
+    get id(): number;
+    /** The name of the world. */
+    get name(): string;
+    /** The URI of the skybox cubemap for the world. */
+    get skyboxUri(): string;
+    /** The audio manager for the world. */
+    get audioManager(): AudioManager;
+    /** The block type registry for the world. */
+    get blockTypeRegistry(): BlockTypeRegistry;
+    /** The chat manager for the world. */
+    get chatManager(): ChatManager;
+    /** The chunk lattice for the world. */
+    get chunkLattice(): ChunkLattice;
+    /** The entity manager for the world. */
+    get entityManager(): EntityManager;
+    /** The event router for the world. */
+    get eventRouter(): EventRouter;
+    /** The world loop for the world. */
+    get loop(): WorldLoop;
+
+    /** The simulation for the world. */
+    get simulation(): Simulation;
+    /**
+     * Starts the world loop, which begins ticking physics, entities, etc.
+     */
+    start(): void;
+    /**
+     * Stops the world loop, which stops ticking physics, entities, etc.
+     */
+    stop(): void;
+
 }
 
 export declare class WorldLoop {
@@ -2347,6 +2391,20 @@ export declare class WorldLoop {
     stop(): void;
     protected _tick: (tickDeltaMs: number) => void;
     protected _onTickError: (error: Error) => void;
+}
+
+/** Options for creating a World instance. @public */
+export declare interface WorldOptions {
+    /** The unique ID of the world. */
+    id: number;
+    /** The name of the world. */
+    name: string;
+    /** The URI of the skybox cubemap for the world. */
+    skyboxUri: string;
+    /** The tick rate for the world. */
+    tickRate?: number;
+    /** The gravity vector for the world. */
+    gravity?: Vector3;
 }
 
 export { }

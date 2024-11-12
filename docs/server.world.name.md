@@ -4,6 +4,8 @@
 
 ## World.name property
 
+The name of the world.
+
 **Signature:**
 
 ```typescript

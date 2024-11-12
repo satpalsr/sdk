@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.loop property
 
+The world loop for the world.
+
 **Signature:**
 
 ```typescript

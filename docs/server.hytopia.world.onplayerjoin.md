@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.onPlayerJoin property
 
+A function that is called when a player joins the world.
+
 **Signature:**
 
 ```typescript

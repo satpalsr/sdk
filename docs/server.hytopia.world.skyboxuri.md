@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.skyboxUri property
 
+The URI of the skybox cubemap for the world.
+
 **Signature:**
 
 ```typescript

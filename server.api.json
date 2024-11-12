@@ -8651,7 +8651,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!Entity:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity instance.\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -19694,7 +19694,7 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.Entity:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity instance.\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `Entity` class\n *\n * @param options - The options for the entity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27964,7 +27964,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.World:class",
-              "docComment": "",
+              "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for all game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single default world is all you need, but this flexibility is available for more complex games.\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'textures/skyboxes/default.png',\n * });\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -27989,16 +27989,16 @@
                 {
                   "kind": "Constructor",
                   "canonicalReference": "server!HYTOPIA.World:constructor(1)",
-                  "docComment": "/**\n * Constructs a new instance of the `World` class\n */\n",
+                  "docComment": "/**\n * Constructs a new instance of the `World` class\n *\n * @param options - The options for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "constructor(worldData: "
+                      "text": "constructor(options: "
                     },
                     {
                       "kind": "Reference",
-                      "text": "WorldData",
-                      "canonicalReference": "server!WorldData:interface"
+                      "text": "WorldOptions",
+                      "canonicalReference": "server!WorldOptions:interface"
                     },
                     {
                       "kind": "Content",
@@ -28010,7 +28010,7 @@
                   "overloadIndex": 1,
                   "parameters": [
                     {
-                      "parameterName": "worldData",
+                      "parameterName": "options",
                       "parameterTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2
@@ -28022,7 +28022,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#audioManager:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The audio manager for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28053,7 +28053,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#blockTypeRegistry:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The block type registry for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28084,7 +28084,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#chatManager:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The chat manager for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28115,7 +28115,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#chunkLattice:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The chunk lattice for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28146,7 +28146,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#entityManager:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The entity manager for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28177,7 +28177,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#eventRouter:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The event router for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28208,7 +28208,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#id:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The unique ID of the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28238,7 +28238,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#loop:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The world loop for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28269,7 +28269,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#name:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The name of the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28298,39 +28298,8 @@
                 },
                 {
                   "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.World#networkSynchronizer:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get networkSynchronizer(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "NetworkSynchronizer",
-                      "canonicalReference": "server!~NetworkSynchronizer:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "networkSynchronizer",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
-                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#onPlayerJoin:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when a player joins the world.\n *\n * @param player - The player that joined the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28369,7 +28338,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#onPlayerLeave:member",
-                  "docComment": "",
+                  "docComment": "/**\n * A function that is called when a player leaves the world.\n *\n * @param player - The player that left the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28406,41 +28375,9 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.World#serialize:member(1)",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "serialize(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "protocol.WorldSchema",
-                      "canonicalReference": "@hytopia.com/server-protocol!WorldSchema:type"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "serialize"
-                },
-                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#simulation:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The simulation for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28471,7 +28408,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.World#skyboxUri:member",
-                  "docComment": "",
+                  "docComment": "/**\n * The URI of the skybox cubemap for the world.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28501,7 +28438,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.World#start:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Starts the world loop, which begins ticking physics, entities, etc.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28532,7 +28469,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.World#stop:member(1)",
-                  "docComment": "",
+                  "docComment": "/**\n * Stops the world loop, which stops ticking physics, entities, etc.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28567,160 +28504,6 @@
                   "endIndex": 2
                 }
               ]
-            },
-            {
-              "kind": "Interface",
-              "canonicalReference": "server!HYTOPIA.WorldData:interface",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "export interface WorldData "
-                }
-              ],
-              "fileUrlPath": "src/world/World.ts",
-              "releaseTag": "Public",
-              "name": "WorldData",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.WorldData#gravity:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "gravity?: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Vector3",
-                      "canonicalReference": "server!Vector3:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "gravity",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.WorldData#id:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "id: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "id",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.WorldData#name:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "name: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "name",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.WorldData#skyboxUri:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "skyboxUri: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "skyboxUri",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.WorldData#tickRate:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "tickRate?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "number"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "tickRate",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
             },
             {
               "kind": "Class",
@@ -29041,6 +28824,160 @@
                 }
               ],
               "implementsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!HYTOPIA.WorldOptions:interface",
+              "docComment": "/**\n * Options for creating a World instance.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export interface WorldOptions "
+                }
+              ],
+              "fileUrlPath": "src/world/World.ts",
+              "releaseTag": "Public",
+              "name": "WorldOptions",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldOptions#gravity:member",
+                  "docComment": "/**\n * The gravity vector for the world.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "gravity?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "gravity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldOptions#id:member",
+                  "docComment": "/**\n * The unique ID of the world.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "id: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "id",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldOptions#name:member",
+                  "docComment": "/**\n * The name of the world.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "name: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "name",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldOptions#skyboxUri:member",
+                  "docComment": "/**\n * The URI of the skybox cubemap for the world.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "skyboxUri: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "skyboxUri",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.WorldOptions#tickRate:member",
+                  "docComment": "/**\n * The tick rate for the world.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tickRate?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "tickRate",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
             }
           ]
         },
@@ -34759,7 +34696,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!World:class",
-          "docComment": "",
+          "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for all game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single default world is all you need, but this flexibility is available for more complex games.\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'textures/skyboxes/default.png',\n * });\n * ```\n *\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34784,16 +34721,16 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!World:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `World` class\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `World` class\n *\n * @param options - The options for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(worldData: "
+                  "text": "constructor(options: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "WorldData",
-                  "canonicalReference": "server!WorldData:interface"
+                  "text": "WorldOptions",
+                  "canonicalReference": "server!WorldOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -34805,7 +34742,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "worldData",
+                  "parameterName": "options",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -34817,7 +34754,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#audioManager:member",
-              "docComment": "",
+              "docComment": "/**\n * The audio manager for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34848,7 +34785,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#blockTypeRegistry:member",
-              "docComment": "",
+              "docComment": "/**\n * The block type registry for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34879,7 +34816,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#chatManager:member",
-              "docComment": "",
+              "docComment": "/**\n * The chat manager for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34910,7 +34847,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#chunkLattice:member",
-              "docComment": "",
+              "docComment": "/**\n * The chunk lattice for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34941,7 +34878,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#entityManager:member",
-              "docComment": "",
+              "docComment": "/**\n * The entity manager for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34972,7 +34909,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#eventRouter:member",
-              "docComment": "",
+              "docComment": "/**\n * The event router for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35003,7 +34940,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#id:member",
-              "docComment": "",
+              "docComment": "/**\n * The unique ID of the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35033,7 +34970,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#loop:member",
-              "docComment": "",
+              "docComment": "/**\n * The world loop for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35064,7 +35001,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#name:member",
-              "docComment": "",
+              "docComment": "/**\n * The name of the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35093,39 +35030,8 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!World#networkSynchronizer:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get networkSynchronizer(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "NetworkSynchronizer",
-                  "canonicalReference": "server!~NetworkSynchronizer:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "networkSynchronizer",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
               "canonicalReference": "server!World#onPlayerJoin:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when a player joins the world.\n *\n * @param player - The player that joined the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35164,7 +35070,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#onPlayerLeave:member",
-              "docComment": "",
+              "docComment": "/**\n * A function that is called when a player leaves the world.\n *\n * @param player - The player that left the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35201,41 +35107,9 @@
               "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!World#serialize:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "serialize(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "protocol.WorldSchema",
-                  "canonicalReference": "@hytopia.com/server-protocol!WorldSchema:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "serialize"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!World#simulation:member",
-              "docComment": "",
+              "docComment": "/**\n * The simulation for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35266,7 +35140,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!World#skyboxUri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI of the skybox cubemap for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35296,7 +35170,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#start:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Starts the world loop, which begins ticking physics, entities, etc.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35327,7 +35201,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#stop:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Stops the world loop, which stops ticking physics, entities, etc.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35362,160 +35236,6 @@
               "endIndex": 2
             }
           ]
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "server!WorldData:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface WorldData "
-            }
-          ],
-          "fileUrlPath": "src/world/World.ts",
-          "releaseTag": "Public",
-          "name": "WorldData",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!WorldData#gravity:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "gravity?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3",
-                  "canonicalReference": "server!Vector3:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "gravity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!WorldData#id:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "id: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "id",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!WorldData#name:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "name: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "name",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!WorldData#skyboxUri:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "skyboxUri: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "skyboxUri",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!WorldData#tickRate:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tickRate?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "tickRate",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
         },
         {
           "kind": "Class",
@@ -35836,6 +35556,160 @@
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!WorldOptions:interface",
+          "docComment": "/**\n * Options for creating a World instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface WorldOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/World.ts",
+          "releaseTag": "Public",
+          "name": "WorldOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#gravity:member",
+              "docComment": "/**\n * The gravity vector for the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "gravity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "gravity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#id:member",
+              "docComment": "/**\n * The unique ID of the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#name:member",
+              "docComment": "/**\n * The name of the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#skyboxUri:member",
+              "docComment": "/**\n * The URI of the skybox cubemap for the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "skyboxUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "skyboxUri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#tickRate:member",
+              "docComment": "/**\n * The tick rate for the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tickRate?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tickRate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         }
       ]
     }

@@ -9,7 +9,7 @@ Constructs a new instance of the `World` class
 **Signature:**
 
 ```typescript
-constructor(worldData: WorldData);
+constructor(options: WorldOptions);
 ```
 
 ## Parameters
@@ -32,15 +32,17 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-worldData
+options
 
 
 </td><td>
 
-[WorldData](./server.worlddata.md)
+[WorldOptions](./server.worldoptions.md)
 
 
 </td><td>
+
+The options for the world.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.start() method
 
+Starts the world loop, which begins ticking physics, entities, etc.
+
 **Signature:**
 
 ```typescript

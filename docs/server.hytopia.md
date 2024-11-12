@@ -233,6 +233,8 @@ Represents the physics simulation for a world.
 
 </td><td>
 
+Represents a world in the game server.
+
 
 </td></tr>
 <tr><td>
@@ -557,10 +559,12 @@ A 3-dimensional vector of boolean values.
 </td></tr>
 <tr><td>
 
-[WorldData](./server.hytopia.worlddata.md)
+[WorldOptions](./server.hytopia.worldoptions.md)
 
 
 </td><td>
+
+Options for creating a World instance.
 
 
 </td></tr>

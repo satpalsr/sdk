@@ -4,12 +4,29 @@
 
 ## HYTOPIA.World class
 
+Represents a world in the game server.
+
 **Signature:**
 
 ```typescript
 export default class World implements protocol.Serializable 
 ```
 **Implements:** protocol.Serializable
+
+## Remarks
+
+Worlds are the primary container for all game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or "room" simulations, etc. In most cases, the single default world is all you need, but this flexibility is available for more complex games.
+
+## Example
+
+
+```typescript
+const world = new World({
+  id: 1,
+  name: 'My World',
+  skyboxUri: 'textures/skyboxes/default.png',
+});
+```
 
 ## Constructors
 
@@ -31,7 +48,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[(constructor)(worldData)](./server.hytopia.world._constructor_.md)
+[(constructor)(options)](./server.hytopia.world._constructor_.md)
 
 
 </td><td>
@@ -85,6 +102,8 @@ Description
 
 </td><td>
 
+The audio manager for the world.
+
 
 </td></tr>
 <tr><td>
@@ -103,6 +122,8 @@ Description
 
 
 </td><td>
+
+The block type registry for the world.
 
 
 </td></tr>
@@ -123,6 +144,8 @@ Description
 
 </td><td>
 
+The chat manager for the world.
+
 
 </td></tr>
 <tr><td>
@@ -141,6 +164,8 @@ Description
 
 
 </td><td>
+
+The chunk lattice for the world.
 
 
 </td></tr>
@@ -161,6 +186,8 @@ Description
 
 </td><td>
 
+The entity manager for the world.
+
 
 </td></tr>
 <tr><td>
@@ -179,6 +206,8 @@ Description
 
 
 </td><td>
+
+The event router for the world.
 
 
 </td></tr>
@@ -199,6 +228,8 @@ number
 
 </td><td>
 
+The unique ID of the world.
+
 
 </td></tr>
 <tr><td>
@@ -217,6 +248,8 @@ number
 
 
 </td><td>
+
+The world loop for the world.
 
 
 </td></tr>
@@ -237,24 +270,7 @@ string
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[networkSynchronizer](./server.hytopia.world.networksynchronizer.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-NetworkSynchronizer
-
-
-</td><td>
+The name of the world.
 
 
 </td></tr>
@@ -273,7 +289,7 @@ NetworkSynchronizer
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when a player joins the world.
 
 
 </td></tr>
@@ -292,7 +308,7 @@ _(Optional)_
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ A function that is called when a player leaves the world.
 
 
 </td></tr>
@@ -313,6 +329,8 @@ _(Optional)_
 
 </td><td>
 
+The simulation for the world.
+
 
 </td></tr>
 <tr><td>
@@ -331,6 +349,8 @@ string
 
 
 </td><td>
+
+The URI of the skybox cubemap for the world.
 
 
 </td></tr>
@@ -356,18 +376,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[serialize()](./server.hytopia.world.serialize.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [start()](./server.hytopia.world.start.md)
 
 
@@ -375,6 +383,8 @@ Description
 
 
 </td><td>
+
+Starts the world loop, which begins ticking physics, entities, etc.
 
 
 </td></tr>
@@ -387,6 +397,8 @@ Description
 
 
 </td><td>
+
+Stops the world loop, which stops ticking physics, entities, etc.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## World.blockTypeRegistry property
 
+The block type registry for the world.
+
 **Signature:**
 
 ```typescript

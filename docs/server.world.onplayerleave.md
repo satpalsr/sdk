@@ -4,6 +4,8 @@
 
 ## World.onPlayerLeave property
 
+A function that is called when a player leaves the world.
+
 **Signature:**
 
 ```typescript

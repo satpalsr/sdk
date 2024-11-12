@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.chunkLattice property
 
+The chunk lattice for the world.
+
 **Signature:**
 
 ```typescript

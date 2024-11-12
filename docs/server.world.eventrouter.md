@@ -4,6 +4,8 @@
 
 ## World.eventRouter property
 
+The event router for the world.
+
 **Signature:**
 
 ```typescript

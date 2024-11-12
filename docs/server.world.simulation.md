@@ -4,6 +4,8 @@
 
 ## World.simulation property
 
+The simulation for the world.
+
 **Signature:**
 
 ```typescript

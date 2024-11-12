@@ -4,6 +4,8 @@
 
 ## World.entityManager property
 
+The entity manager for the world.
+
 **Signature:**
 
 ```typescript

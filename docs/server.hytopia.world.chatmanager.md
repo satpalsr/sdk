@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.chatManager property
 
+The chat manager for the world.
+
 **Signature:**
 
 ```typescript

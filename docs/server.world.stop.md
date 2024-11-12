@@ -4,6 +4,8 @@
 
 ## World.stop() method
 
+Stops the world loop, which stops ticking physics, entities, etc.
+
 **Signature:**
 
 ```typescript

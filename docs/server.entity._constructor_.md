@@ -42,7 +42,7 @@ options
 
 </td><td>
 
-The options for the entity instance.
+The options for the entity.
 
 
 </td></tr>

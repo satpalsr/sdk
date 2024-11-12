@@ -4,6 +4,8 @@
 
 ## HYTOPIA.World.audioManager property
 
+The audio manager for the world.
+
 **Signature:**
 
 ```typescript
