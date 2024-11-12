@@ -19,7 +19,7 @@ Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each c
 
 The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().
 
-Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the [BlockTypeRegistry](./server.blocktyperegistry.md) associated with the [World](./server.world.md) the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
+Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the  associated with the  the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
 
 ## Example
 
@@ -165,7 +165,7 @@ Whether the chunk has been spawned.
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3](./server.hytopia.vector3.md) \| undefined
 
 
 </td><td>
@@ -186,7 +186,7 @@ The origin coordinate of the chunk.
 
 </td><td>
 
-[World](./server.world.md) \| undefined
+[World](./server.hytopia.world.md) \| undefined
 
 
 </td><td>

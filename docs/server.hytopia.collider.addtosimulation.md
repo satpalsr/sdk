@@ -37,7 +37,7 @@ simulation
 
 </td><td>
 
-[Simulation](./server.simulation.md)
+[Simulation](./server.hytopia.simulation.md)
 
 
 </td><td>
@@ -53,7 +53,7 @@ parentRigidBody
 
 </td><td>
 
-[RigidBody](./server.rigidbody.md)
+[RigidBody](./server.hytopia.rigidbody.md)
 
 
 </td><td>

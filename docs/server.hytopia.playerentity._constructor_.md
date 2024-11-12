@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[PlayerEntityOptions](./server.playerentityoptions.md)
+[PlayerEntityOptions](./server.hytopia.playerentityoptions.md)
 
 
 </td><td>

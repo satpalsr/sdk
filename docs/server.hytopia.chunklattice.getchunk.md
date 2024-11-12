@@ -37,7 +37,7 @@ originCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The origin coordinate of the chunk to get.
 </tbody></table>
 **Returns:**
 
-[Chunk](./server.chunk.md) \| undefined
+[Chunk](./server.hytopia.chunk.md) \| undefined
 
 The chunk at the given origin coordinate or undefined if not found.
 

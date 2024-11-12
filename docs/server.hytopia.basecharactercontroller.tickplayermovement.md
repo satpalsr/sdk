@@ -37,7 +37,7 @@ inputState
 
 </td><td>
 
-[PlayerInputState](./server.playerinputstate.md)
+[PlayerInputState](./server.hytopia.playerinputstate.md)
 
 
 </td><td>
@@ -53,7 +53,7 @@ orientationState
 
 </td><td>
 
-[PlayerOrientationState](./server.playerorientationstate.md)
+[PlayerOrientationState](./server.hytopia.playerorientationstate.md)
 
 
 </td><td>

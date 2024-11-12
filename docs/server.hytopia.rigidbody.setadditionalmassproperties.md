@@ -37,7 +37,7 @@ additionalMassProperties
 
 </td><td>
 
-[RigidBodyAdditionalMassProperties](./server.rigidbodyadditionalmassproperties.md)
+[RigidBodyAdditionalMassProperties](./server.hytopia.rigidbodyadditionalmassproperties.md)
 
 
 </td><td>

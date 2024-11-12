@@ -29,7 +29,7 @@ import { WebSocket as WebSocket_2 } from 'ws';
  *
  * @public
  */
-export declare class Audio implements protocol.Serializable {
+declare class Audio implements protocol.Serializable {
 
 
 
@@ -141,48 +141,48 @@ export declare class Audio implements protocol.Serializable {
 }
 
 /** Payloads for events an Audio instance can emit. @public */
-export declare namespace AudioEventPayload {
-    export interface Pause {
+declare namespace AudioEventPayload {
+    interface Pause {
         audio: Audio;
     }
-    export interface Play {
+    interface Play {
         audio: Audio;
     }
-    export interface PlayRestart {
+    interface PlayRestart {
         audio: Audio;
     }
-    export interface SetAttachedToEntity {
+    interface SetAttachedToEntity {
         audio: Audio;
         entity: Entity | undefined;
     }
-    export interface SetDetune {
+    interface SetDetune {
         audio: Audio;
         detune: number;
     }
-    export interface SetDistortion {
+    interface SetDistortion {
         audio: Audio;
         distortion: number;
     }
-    export interface SetPosition {
+    interface SetPosition {
         audio: Audio;
         position: Vector3;
     }
-    export interface SetPlaybackRate {
+    interface SetPlaybackRate {
         audio: Audio;
         playbackRate: number;
     }
-    export interface SetReferenceDistance {
+    interface SetReferenceDistance {
         audio: Audio;
         referenceDistance: number;
     }
-    export interface SetVolume {
+    interface SetVolume {
         audio: Audio;
         volume: number;
     }
 }
 
 /** Event types an Audio instance can emit. @public */
-export declare enum AudioEventType {
+declare enum AudioEventType {
     PAUSE = "AUDIO.PAUSE",
     PLAY = "AUDIO.PLAY",
     PLAY_RESTART = "AUDIO.PLAY_RESTART",
@@ -213,7 +213,7 @@ export declare enum AudioEventType {
  *
  * @public
  */
-export declare class AudioManager {
+declare class AudioManager {
 
 
 
@@ -250,7 +250,7 @@ export declare class AudioManager {
 }
 
 /** Options for creating an Audio instance. @public */
-export declare interface AudioOptions {
+declare interface AudioOptions {
     /** If set, audio playback will follow the entity's position. */
     attachedToEntity?: Entity;
     /** The duration of the audio in seconds. Defaults to full duration. */
@@ -285,7 +285,7 @@ export declare interface AudioOptions {
  *
  * @public
  */
-export declare abstract class BaseCharacterController {
+declare abstract class BaseCharacterController {
     /** The entity the controller is for. */
     readonly entity: Entity;
     /**
@@ -342,7 +342,7 @@ export declare abstract class BaseCharacterController {
  *
  * @public
  */
-export declare class Block {
+declare class Block {
     /** The global coordinate of the block. */
     readonly globalCoordinate: Vector3;
     /** The block type of the block. */
@@ -377,7 +377,7 @@ export declare class Block {
  *
  * @public
  */
-export declare class BlockType implements protocol.Serializable {
+declare class BlockType implements protocol.Serializable {
     /**
      * A callback function that is invoked when an entity collides with blocks of this type.
      * @param entity - The entity that collided with the block.
@@ -415,7 +415,7 @@ export declare class BlockType implements protocol.Serializable {
 }
 
 /** Options for creating a block type instance. @public */
-export declare interface BlockTypeOptions {
+declare interface BlockTypeOptions {
     id: number;
     textureUri: string;
     name: string;
@@ -442,7 +442,7 @@ export declare interface BlockTypeOptions {
  *
  * @public
  */
-export declare class BlockTypeRegistry implements protocol.Serializable {
+declare class BlockTypeRegistry implements protocol.Serializable {
 
 
 
@@ -475,8 +475,8 @@ export declare class BlockTypeRegistry implements protocol.Serializable {
 }
 
 /** Payloads for events a BlockTypeRegistry instance can emit. @public */
-export declare namespace BlockTypeRegistryEventPayload {
-    export interface RegisterBlockType {
+declare namespace BlockTypeRegistryEventPayload {
+    interface RegisterBlockType {
         blockTypeRegistry: BlockTypeRegistry;
         id: number;
         blockType: BlockType;
@@ -484,17 +484,17 @@ export declare namespace BlockTypeRegistryEventPayload {
 }
 
 /** Event types a BlockTypeRegistry instance can emit. @public */
-export declare enum BlockTypeRegistryEventType {
+declare enum BlockTypeRegistryEventType {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }
 
 /** Payloads for events a ChatManager instance can emit. @public */
-export declare namespace ChatEventPayload {
-    export interface SendBroadcastMessage {
+declare namespace ChatEventPayload {
+    interface SendBroadcastMessage {
         message: string;
         color?: string;
     }
-    export interface SendPlayerMessage {
+    interface SendPlayerMessage {
         player: Player;
         message: string;
         color?: string;
@@ -502,7 +502,7 @@ export declare namespace ChatEventPayload {
 }
 
 /** Event types a ChatManager instance can emit. @public */
-export declare enum ChatEventType {
+declare enum ChatEventType {
     SEND_BROADCAST_MESSAGE = "CHAT.SEND_BROADCAST_MESSAGE",
     SEND_PLAYER_MESSAGE = "CHAT.SEND_PLAYER_MESSAGE"
 }
@@ -535,7 +535,7 @@ export declare enum ChatEventType {
  *
  * @public
  */
-export declare class ChatManager {
+declare class ChatManager {
 
 
 
@@ -609,7 +609,7 @@ export declare class ChatManager {
  *
  * @public
  */
-export declare class Chunk implements protocol.Serializable {
+declare class Chunk implements protocol.Serializable {
 
 
 
@@ -680,23 +680,23 @@ export declare class Chunk implements protocol.Serializable {
 }
 
 /** Payloads for events a Chunk instance can emit. @public */
-export declare namespace ChunkEventPayload {
-    export interface Despawn {
+declare namespace ChunkEventPayload {
+    interface Despawn {
         chunk: Chunk;
     }
-    export interface SetBlock {
+    interface SetBlock {
         chunk: Chunk;
         globalCoordinate: Vector3;
         localCoordinate: Vector3;
         blockTypeId: number;
     }
-    export interface Spawn {
+    interface Spawn {
         chunk: Chunk;
     }
 }
 
 /** Event types a Chunk instance can emit. @public */
-export declare enum ChunkEventType {
+declare enum ChunkEventType {
     DESPAWN = "CHUNK.DESPAWN",
     SET_BLOCK = "CHUNK.SET_BLOCK",
     SPAWN = "CHUNK.SPAWN"
@@ -711,7 +711,7 @@ export declare enum ChunkEventType {
  *
  * @public
  */
-export declare class ChunkLattice {
+declare class ChunkLattice {
 
 
     /**
@@ -762,7 +762,7 @@ export declare class ChunkLattice {
  *
  * @public
  */
-export declare class Collider {
+declare class Collider {
 
 
 
@@ -892,7 +892,7 @@ export declare class Collider {
 }
 
 /** Options for creating a Collider instance. @public */
-export declare interface ColliderOptions {
+declare interface ColliderOptions {
     /** The shape of the collider. */
     shape: ColliderShape;
     /** The border radius of the collider if the shape is a round cylinder. */
@@ -930,7 +930,7 @@ export declare interface ColliderOptions {
 }
 
 /** The shapes a collider can be. @public */
-export declare enum ColliderShape {
+declare enum ColliderShape {
     BALL = "ball",
     BLOCK = "block",
     CAPSULE = "capsule",
@@ -945,7 +945,7 @@ export declare enum ColliderShape {
  * @param started - Whether the collision has started or ended.
  * @public
  */
-export declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
+declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
 
 /**
  * The default collision groups.
@@ -973,7 +973,7 @@ export declare type CollisionCallback = (other: BlockType | Entity, started: boo
  *
  * @public
  */
-export declare enum CollisionGroup {
+declare enum CollisionGroup {
     BLOCK = 1,
     ENTITY = 2,
     ENTITY_SENSOR = 4,
@@ -982,7 +982,7 @@ export declare enum CollisionGroup {
 }
 
 /** A set of collision groups. @public */
-export declare type CollisionGroups = {
+declare type CollisionGroups = {
     belongsTo: CollisionGroup[];
     collidesWith: CollisionGroup[];
 };
@@ -998,7 +998,7 @@ export declare type CollisionGroups = {
  *
  * @public
  */
-export declare class CollisionGroupsBuilder {
+declare class CollisionGroupsBuilder {
     private static readonly BELONGS_TO_SHIFT;
     private static readonly COLLIDES_WITH_MASK;
     /**
@@ -1042,7 +1042,7 @@ export declare class CollisionGroupsBuilder {
  * @param message - The full message of the command.
  * @public
  */
-export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
+declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
 /** Data for contact forces. @public */
 declare type ContactForceData = {
@@ -1057,13 +1057,13 @@ declare type ContactForceData = {
 };
 
 /** A decoded set of collision groups represented as their string equivalents. @public */
-export declare type DecodedCollisionGroups = {
+declare type DecodedCollisionGroups = {
     belongsTo: string[];
     collidesWith: string[];
 };
 
 /** The default rigid body options when EntityOptions.rigidBodyOptions is not provided. @public */
-export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
+declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
  * The default character controller implementation.
@@ -1093,7 +1093,7 @@ export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
  *
  * @public
  */
-export declare class DefaultCharacterController extends BaseCharacterController {
+declare class DefaultCharacterController extends BaseCharacterController {
     /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity: number;
     /** The normalized horizontal velocity applied to the entity when it runs. */
@@ -1156,7 +1156,7 @@ export declare class DefaultCharacterController extends BaseCharacterController 
 }
 
 /** Options for creating a DefaultCharacterController instance. @public */
-export declare interface DefaultCharacterControllerOptions {
+declare interface DefaultCharacterControllerOptions {
     /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity?: number;
     /** The normalized horizontal velocity applied to the entity when it runs. */
@@ -1206,7 +1206,7 @@ export declare interface DefaultCharacterControllerOptions {
  *
  * @public
  */
-export declare class Entity extends RigidBody implements protocol.Serializable {
+declare class Entity extends RigidBody implements protocol.Serializable {
     /**
      * A function that creates a custom character controller for the entity.
      * @param this - The Entity instance.
@@ -1329,37 +1329,37 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 }
 
 /** Payloads for events an Entity instance can emit. @public */
-export declare namespace EntityEventPayload {
-    export interface Despawn {
+declare namespace EntityEventPayload {
+    interface Despawn {
         entity: Entity;
     }
-    export interface Spawn {
+    interface Spawn {
         entity: Entity;
     }
-    export interface StartModelLoopedAnimations {
-        entity: Entity;
-        animations: Set<string>;
-    }
-    export interface StartModelOneshotAnimations {
+    interface StartModelLoopedAnimations {
         entity: Entity;
         animations: Set<string>;
     }
-    export interface StopModelAnimations {
+    interface StartModelOneshotAnimations {
         entity: Entity;
         animations: Set<string>;
     }
-    export interface UpdateRotation {
+    interface StopModelAnimations {
+        entity: Entity;
+        animations: Set<string>;
+    }
+    interface UpdateRotation {
         entity: Entity;
         rotation: Rotation;
     }
-    export interface UpdateTranslation {
+    interface UpdateTranslation {
         entity: Entity;
         translation: Vector3;
     }
 }
 
 /** Event types an Entity instance can emit. @public */
-export declare enum EntityEventType {
+declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
     SPAWN = "ENTITY.SPAWN",
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.UPDATE_MODEL_LOOPED_ANIMATIONS",
@@ -1387,7 +1387,7 @@ export declare enum EntityEventType {
  *
  * @public
  */
-export declare class EntityManager {
+declare class EntityManager {
 
 
 
@@ -1418,7 +1418,7 @@ export declare class EntityManager {
 }
 
 /** Options for creating an Entity instance. @public */
-export declare interface EntityOptions {
+declare interface EntityOptions {
     /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
     /** The looped animations to start when the entity is spawned. */
@@ -1438,7 +1438,6 @@ declare interface Event_2<TPayload> {
     /** The payload of the event, passed to listeners */
     payload: TPayload;
 }
-export { Event_2 as Event }
 
 /**
  * Manages event emission and assigned listener callbacks.
@@ -1452,7 +1451,7 @@ export { Event_2 as Event }
  *
  * @public
  */
-export declare class EventRouter {
+declare class EventRouter {
     /** The singleton instance for global server events. */
     static readonly serverInstance: EventRouter;
     private _emitter;
@@ -1582,7 +1581,7 @@ export default HYTOPIA;
  *
  * @public
  */
-export declare class Player {
+declare class Player {
     /** The unique identifier for the player. */
     readonly id: number;
     /** The username for the player. */
@@ -1652,7 +1651,7 @@ export declare class Player {
  *
  * @public
  */
-export declare class PlayerEntity extends Entity {
+declare class PlayerEntity extends Entity {
     /** The player the player entity is assigned to and controlled by. */
     readonly player: Player;
     /**
@@ -1663,26 +1662,26 @@ export declare class PlayerEntity extends Entity {
 }
 
 /** Options for creating a PlayerEntity instance. @public */
-export declare interface PlayerEntityOptions extends EntityOptions {
+declare interface PlayerEntityOptions extends EntityOptions {
     /** The player the player entity is assigned to. */
     player: Player;
 }
 
 /** Payloads for events a Player can emit. @public */
-export declare namespace PlayerEventPayload {
-    export interface ChatMessageSend {
+declare namespace PlayerEventPayload {
+    interface ChatMessageSend {
         player: Player;
         message: protocol.ChatMessageSchema;
     }
-    export interface JoinedWorld {
+    interface JoinedWorld {
         player: Player;
         world: World;
     }
-    export interface LeftWorld {
+    interface LeftWorld {
         player: Player;
         world: World;
     }
-    export interface RequestSync {
+    interface RequestSync {
         player: Player;
         receivedAt: number;
         receivedAtMs: number;
@@ -1690,7 +1689,7 @@ export declare namespace PlayerEventPayload {
 }
 
 /** Event types a Player can emit. @public */
-export declare enum PlayerEventType {
+declare enum PlayerEventType {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
     LEFT_WORLD = "PLAYER.LEFT_WORLD",
@@ -1698,7 +1697,7 @@ export declare enum PlayerEventType {
 }
 
 /** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
-export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
+declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
 
 /**
  * Manages all connected players in a game server.
@@ -1718,7 +1717,7 @@ export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean
  *
  * @public
  */
-export declare class PlayerManager {
+declare class PlayerManager {
     /** The global PlayerManager instance as a singleton. */
     static readonly instance: PlayerManager;
 
@@ -1741,13 +1740,13 @@ export declare class PlayerManager {
 }
 
 /** The camera orientation state of a Player. @public */
-export declare type PlayerOrientationState = {
+declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
 };
 
 /** A raw set of collision groups represented as a 32-bit number. @public */
-export declare type RawCollisionGroups = RAPIER.InteractionGroups;
+declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
 /** Options for raycasting. @public */
 declare type RayCastOptions = {
@@ -1775,7 +1774,7 @@ declare type RayCastOptions = {
  *
  * @public
  */
-export declare class RigidBody {
+declare class RigidBody {
 
 
 
@@ -2158,7 +2157,7 @@ export declare class RigidBody {
 }
 
 /** Additional mass properties for a RigidBody. @public */
-export declare type RigidBodyAdditionalMassProperties = {
+declare type RigidBodyAdditionalMassProperties = {
     additionalMass: number;
     centerOfMass: Vector3;
     principalAngularInertia: Vector3;
@@ -2166,7 +2165,7 @@ export declare type RigidBodyAdditionalMassProperties = {
 };
 
 /** Options for creating a RigidBody instance. @public */
-export declare interface RigidBodyOptions {
+declare interface RigidBodyOptions {
     /** The type of the rigid body. */
     type: RigidBodyType;
     /** The additional mass of the rigid body. */
@@ -2212,7 +2211,7 @@ export declare interface RigidBodyOptions {
 }
 
 /** The types a RigidBody can be. @public */
-export declare enum RigidBodyType {
+declare enum RigidBodyType {
     DYNAMIC = "dynamic",
     FIXED = "fixed",
     KINEMATIC_POSITION = "kinematic_position",
@@ -2220,7 +2219,7 @@ export declare enum RigidBodyType {
 }
 
 /** A rotation in quaternion form. @public */
-export declare interface Rotation {
+declare interface Rotation {
     x: number;
     y: number;
     z: number;
@@ -2238,7 +2237,7 @@ export declare interface Rotation {
  *
  * @public
  */
-export declare class Simulation {
+declare class Simulation {
 
 
 
@@ -2271,7 +2270,7 @@ export declare class Simulation {
 }
 
 /** A 3x3 symmetric positive-definite matrix for spatial dynamics. @public */
-export declare interface SpdMatrix3 extends SdpMatrix3 {
+declare interface SpdMatrix3 extends SdpMatrix3 {
 }
 
 /**
@@ -2287,20 +2286,20 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  *
  * @public
  */
-export declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
+declare function startServer(init: (world: World) => Promise<void>): Promise<void>;
 
 /** The input keys included in the PlayerInputState. @public */
-export declare const SUPPORTED_INPUT_KEYS: string[];
+declare const SUPPORTED_INPUT_KEYS: string[];
 
 /** A 3-dimensional vector. @public */
-export declare interface Vector3 {
+declare interface Vector3 {
     x: number;
     y: number;
     z: number;
 }
 
 /** A 3-dimensional vector of boolean values. @public */
-export declare interface Vector3Boolean {
+declare interface Vector3Boolean {
     x: boolean;
     y: boolean;
     z: boolean;
@@ -2332,7 +2331,7 @@ export declare interface Vector3Boolean {
  *
  * @public
  */
-export declare class World implements protocol.Serializable {
+declare class World implements protocol.Serializable {
     /**
      * A function that is called when a player joins the world.
      * @param player - The player that joined the world.
@@ -2414,7 +2413,7 @@ export declare class World implements protocol.Serializable {
  *
  * @public
  */
-export declare class WorldLoop {
+declare class WorldLoop {
 
 
 
@@ -2434,7 +2433,7 @@ export declare class WorldLoop {
 }
 
 /** Options for creating a World instance. @public */
-export declare interface WorldOptions {
+declare interface WorldOptions {
     /** The unique ID of the world. */
     id: number;
     /** The name of the world. */

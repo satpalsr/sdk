@@ -60,7 +60,7 @@ number
 
 </td><td>
 
-[Chunk](./server.chunk.md)
+[Chunk](./server.hytopia.chunk.md)
 
 
 </td><td>
@@ -77,7 +77,7 @@ number
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -94,7 +94,7 @@ number
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>

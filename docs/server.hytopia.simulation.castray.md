@@ -97,7 +97,7 @@ _(Optional)_ The options for the raycast.
 </tbody></table>
 **Returns:**
 
-[Block](./server.block.md) \| [Entity](./server.entity.md) \| null
+[Block](./server.hytopia.block.md) \| [Entity](./server.hytopia.entity.md) \| null
 
 The first block or entity hit by the ray, or null if no hit.
 

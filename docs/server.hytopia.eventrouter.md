@@ -14,7 +14,7 @@ export default class EventRouter
 
 ## Remarks
 
-This class is used as a singleton for global server events via [EventRouter.serverInstance](./server.eventrouter.serverinstance.md)<!-- -->. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.
+This class is used as a singleton for global server events via . For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.
 
 ## Constructors
 
@@ -182,7 +182,7 @@ Enable logging of events with no listeners. Default: false
 
 </td><td>
 
-[EventRouter](./server.eventrouter.md)
+[EventRouter](./server.hytopia.eventrouter.md)
 
 
 </td><td>

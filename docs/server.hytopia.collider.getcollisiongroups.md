@@ -13,7 +13,7 @@ getCollisionGroups(): CollisionGroups;
 ```
 **Returns:**
 
-[CollisionGroups](./server.collisiongroups.md)
+[CollisionGroups](./server.hytopia.collisiongroups.md)
 
 The collision groups the collider belongs to.
 

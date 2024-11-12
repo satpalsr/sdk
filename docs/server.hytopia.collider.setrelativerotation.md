@@ -37,7 +37,7 @@ rotation
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[Rotation](./server.hytopia.rotation.md)
 
 
 </td><td>

@@ -13,7 +13,7 @@ getInversePrincipalAngularInertiaSqrt(): Vector3 | undefined;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3](./server.hytopia.vector3.md) \| undefined
 
 The inverse principal angular inertia square root of the rigid body.
 

@@ -11,7 +11,7 @@ Options for creating a PlayerEntity instance.
 ```typescript
 export interface PlayerEntityOptions extends EntityOptions 
 ```
-**Extends:** [EntityOptions](./server.entityoptions.md)
+**Extends:** [EntityOptions](./server.hytopia.entityoptions.md)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Description
 
 </td><td>
 
-[Player](./server.player.md)
+[Player](./server.hytopia.player.md)
 
 
 </td><td>

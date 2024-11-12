@@ -15,7 +15,7 @@ export default class BlockType implements protocol.Serializable
 
 ## Remarks
 
-Block types are created directly as instances. They support a variety of configuration options through the [BlockTypeOptions](./server.blocktypeoptions.md) constructor argument. Block types are registered with a [BlockTypeRegistry](./server.blocktyperegistry.md) instance, allowing you to create custom blocks with unique visual representations and behaviors.
+Block types are created directly as instances. They support a variety of configuration options through the  constructor argument. Block types are registered with a  instance, allowing you to create custom blocks with unique visual representations and behaviors.
 
 ## Example
 
@@ -101,7 +101,7 @@ Description
 
 </td><td>
 
-[ColliderOptions](./server.collideroptions.md)
+[ColliderOptions](./server.hytopia.collideroptions.md)
 
 
 </td><td>
@@ -183,7 +183,7 @@ The name of the block type.
 
 </td><td>
 
-(this: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+(this: [BlockType](./server.hytopia.blocktype.md)<!-- -->, entity: [Entity](./server.hytopia.entity.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -202,7 +202,7 @@ _(Optional)_ A callback function that is invoked when an entity collides with bl
 
 </td><td>
 
-(this: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(this: [BlockType](./server.hytopia.blocktype.md)<!-- -->, entity: [Entity](./server.hytopia.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>

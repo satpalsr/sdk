@@ -85,7 +85,7 @@ Description
 
 </td><td>
 
-Set&lt;[Collider](./server.collider.md)<!-- -->&gt;
+Set&lt;[Collider](./server.hytopia.collider.md)<!-- -->&gt;
 
 
 </td><td>

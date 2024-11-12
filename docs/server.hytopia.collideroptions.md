@@ -83,7 +83,7 @@ _(Optional)_ The bounciness of the collider.
 
 </td><td>
 
-[CollisionGroups](./server.collisiongroups.md)
+[CollisionGroups](./server.hytopia.collisiongroups.md)
 
 
 </td><td>
@@ -140,7 +140,7 @@ _(Optional)_ The friction of the collider.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -216,7 +216,7 @@ _(Optional)_ The mass of the collider.
 
 </td><td>
 
-[CollisionCallback](./server.collisioncallback.md)
+[CollisionCallback](./server.hytopia.collisioncallback.md)
 
 
 </td><td>
@@ -235,7 +235,7 @@ _(Optional)_ The on collision callback for the collider.
 
 </td><td>
 
-[RigidBody](./server.rigidbody.md)
+[RigidBody](./server.hytopia.rigidbody.md)
 
 
 </td><td>
@@ -273,7 +273,7 @@ _(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, c
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[Rotation](./server.hytopia.rotation.md)
 
 
 </td><td>
@@ -292,7 +292,7 @@ _(Optional)_ The relative rotation of the collider. Relative to parent rigid bod
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -311,7 +311,7 @@ _(Optional)_ The relative translation of the collider. Relative to parent rigid 
 
 </td><td>
 
-[ColliderShape](./server.collidershape.md)
+[ColliderShape](./server.hytopia.collidershape.md)
 
 
 </td><td>
@@ -330,7 +330,7 @@ The shape of the collider.
 
 </td><td>
 
-[Simulation](./server.simulation.md)
+[Simulation](./server.hytopia.simulation.md)
 
 
 </td><td>

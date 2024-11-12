@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[BlockTypeOptions](./server.blocktypeoptions.md)
+[BlockTypeOptions](./server.hytopia.blocktypeoptions.md)
 
 
 </td><td>

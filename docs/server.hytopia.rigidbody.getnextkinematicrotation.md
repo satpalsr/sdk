@@ -13,7 +13,7 @@ getNextKinematicRotation(): Rotation;
 ```
 **Returns:**
 
-[Rotation](./server.rotation.md)
+[Rotation](./server.hytopia.rotation.md)
 
 The next kinematic rotation of the rigid body.
 

@@ -13,7 +13,7 @@ getAllChunks(): Chunk[];
 ```
 **Returns:**
 
-[Chunk](./server.chunk.md)<!-- -->\[\]
+[Chunk](./server.hytopia.chunk.md)<!-- -->\[\]
 
 An array of all chunks in the lattice.
 

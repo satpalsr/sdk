@@ -13,7 +13,7 @@ getAllBlockTypes(): BlockType[];
 ```
 **Returns:**
 
-[BlockType](./server.blocktype.md)<!-- -->\[\]
+[BlockType](./server.hytopia.blocktype.md)<!-- -->\[\]
 
 An array of all registered block types.
 

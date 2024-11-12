@@ -13,7 +13,7 @@ getAllLoopedAudios(): Audio[];
 ```
 **Returns:**
 
-[Audio](./server.audio.md)<!-- -->\[\]
+[Audio](./server.hytopia.audio.md)<!-- -->\[\]
 
 An array of audio instances.
 

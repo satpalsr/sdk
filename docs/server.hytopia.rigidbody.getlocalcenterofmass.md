@@ -13,7 +13,7 @@ getLocalCenterOfMass(): Vector3;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 The local center of mass of the rigid body.
 

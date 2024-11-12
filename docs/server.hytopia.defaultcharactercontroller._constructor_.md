@@ -37,7 +37,7 @@ entity
 
 </td><td>
 
-[Entity](./server.entity.md)
+[Entity](./server.hytopia.entity.md)
 
 
 </td><td>
@@ -53,7 +53,7 @@ options
 
 </td><td>
 
-[DefaultCharacterControllerOptions](./server.defaultcharactercontrolleroptions.md)
+[DefaultCharacterControllerOptions](./server.hytopia.defaultcharactercontrolleroptions.md)
 
 
 </td><td>

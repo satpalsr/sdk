@@ -13,7 +13,7 @@ getLinearVelocity(): Vector3;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 The linear velocity of the rigid body.
 

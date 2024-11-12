@@ -49,7 +49,7 @@ The id of the block type to get.
 </tbody></table>
 **Returns:**
 
-[BlockType](./server.blocktype.md)
+[BlockType](./server.hytopia.blocktype.md)
 
 The block type with the given id.
 

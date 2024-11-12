@@ -43,7 +43,7 @@ Description
 
 </td><td>
 
-[BlockType](./server.blocktype.md)
+[BlockType](./server.hytopia.blocktype.md)
 
 
 </td><td>
@@ -60,7 +60,7 @@ Description
 
 </td><td>
 
-[BlockTypeRegistry](./server.blocktyperegistry.md)
+[BlockTypeRegistry](./server.hytopia.blocktyperegistry.md)
 
 
 </td><td>

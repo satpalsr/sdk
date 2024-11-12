@@ -45,7 +45,7 @@ Description
 
 </td><td>
 
-[Entity](./server.entity.md)
+[Entity](./server.hytopia.entity.md)
 
 
 </td><td>
@@ -178,7 +178,7 @@ _(Optional)_ The playback speed of the audio. Defaults to 1.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>

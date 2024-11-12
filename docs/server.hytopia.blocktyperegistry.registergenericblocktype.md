@@ -37,7 +37,7 @@ blockTypeOptions
 
 </td><td>
 
-[BlockTypeOptions](./server.blocktypeoptions.md)
+[BlockTypeOptions](./server.hytopia.blocktypeoptions.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The options for the block type.
 </tbody></table>
 **Returns:**
 
-[BlockType](./server.blocktype.md)
+[BlockType](./server.hytopia.blocktype.md)
 
 The registered block type.
 

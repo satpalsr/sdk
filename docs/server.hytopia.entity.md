@@ -11,7 +11,7 @@ Represents an entity in a world.
 ```typescript
 export default class Entity extends RigidBody implements protocol.Serializable 
 ```
-**Extends:** [RigidBody](./server.rigidbody.md)
+**Extends:** [RigidBody](./server.hytopia.rigidbody.md)
 
 **Implements:** protocol.Serializable
 
@@ -114,7 +114,7 @@ Description
 
 </td><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md) \| undefined
+[BaseCharacterController](./server.hytopia.basecharactercontroller.md) \| undefined
 
 
 </td><td>
@@ -133,7 +133,7 @@ The character controller for the entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
+(this: [Entity](./server.hytopia.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.hytopia.basecharactercontroller.md)
 
 
 </td><td>
@@ -278,7 +278,7 @@ The name of the entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->, block: [BlockType](./server.hytopia.blocktype.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -297,7 +297,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->, block: [BlockType](./server.hytopia.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>
@@ -316,7 +316,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -335,7 +335,7 @@ _(Optional)_ A function that is called when the entity is despawned.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->, entity: [Entity](./server.hytopia.entity.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -354,7 +354,7 @@ _(Optional)_ A function that is called when the entity collides with another ent
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->, entity: [Entity](./server.hytopia.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>
@@ -373,7 +373,7 @@ _(Optional)_ A function that is called when the entity contacts another entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -392,7 +392,7 @@ _(Optional)_ A function that is called when the entity is spawned.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, tickDeltaMs: number) =&gt; void
+(this: [Entity](./server.hytopia.entity.md)<!-- -->, tickDeltaMs: number) =&gt; void
 
 
 </td><td>
@@ -413,7 +413,7 @@ _(Optional)_ A function that is called every tick.
 
 </td><td>
 
-[World](./server.world.md) \| undefined
+[World](./server.hytopia.world.md) \| undefined
 
 
 </td><td>

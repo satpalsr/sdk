@@ -37,7 +37,7 @@ translation
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>

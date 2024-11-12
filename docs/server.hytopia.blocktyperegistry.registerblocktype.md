@@ -53,7 +53,7 @@ blockTypeReference
 
 </td><td>
 
-[BlockType](./server.blocktype.md)
+[BlockType](./server.hytopia.blocktype.md)
 
 
 </td><td>

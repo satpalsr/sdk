@@ -37,7 +37,7 @@ event
 
 </td><td>
 
-[Event](./server.event_2.md)<!-- -->&lt;TPayload&gt;
+Event&lt;TPayload&gt;
 
 
 </td><td>

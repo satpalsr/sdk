@@ -49,7 +49,7 @@ The index of the block to convert.
 </tbody></table>
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 The local coordinate of the block.
 

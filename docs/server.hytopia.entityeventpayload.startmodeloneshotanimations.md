@@ -60,7 +60,7 @@ Set&lt;string&gt;
 
 </td><td>
 
-[Entity](./server.entity.md)
+[Entity](./server.hytopia.entity.md)
 
 
 </td><td>

@@ -13,7 +13,7 @@ getType(): RigidBodyType;
 ```
 **Returns:**
 
-[RigidBodyType](./server.rigidbodytype.md)
+[RigidBodyType](./server.hytopia.rigidbodytype.md)
 
 The type of the rigid body.
 

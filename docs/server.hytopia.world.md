@@ -97,7 +97,7 @@ Description
 
 </td><td>
 
-[AudioManager](./server.audiomanager.md)
+[AudioManager](./server.hytopia.audiomanager.md)
 
 
 </td><td>
@@ -118,7 +118,7 @@ The audio manager for the world.
 
 </td><td>
 
-[BlockTypeRegistry](./server.blocktyperegistry.md)
+[BlockTypeRegistry](./server.hytopia.blocktyperegistry.md)
 
 
 </td><td>
@@ -139,7 +139,7 @@ The block type registry for the world.
 
 </td><td>
 
-[ChatManager](./server.chatmanager.md)
+[ChatManager](./server.hytopia.chatmanager.md)
 
 
 </td><td>
@@ -160,7 +160,7 @@ The chat manager for the world.
 
 </td><td>
 
-[ChunkLattice](./server.chunklattice.md)
+[ChunkLattice](./server.hytopia.chunklattice.md)
 
 
 </td><td>
@@ -181,7 +181,7 @@ The chunk lattice for the world.
 
 </td><td>
 
-[EntityManager](./server.entitymanager.md)
+[EntityManager](./server.hytopia.entitymanager.md)
 
 
 </td><td>
@@ -202,7 +202,7 @@ The entity manager for the world.
 
 </td><td>
 
-[EventRouter](./server.eventrouter.md)
+[EventRouter](./server.hytopia.eventrouter.md)
 
 
 </td><td>
@@ -244,7 +244,7 @@ The unique ID of the world.
 
 </td><td>
 
-[WorldLoop](./server.worldloop.md)
+[WorldLoop](./server.hytopia.worldloop.md)
 
 
 </td><td>
@@ -284,7 +284,7 @@ The name of the world.
 
 </td><td>
 
-(player: [Player](./server.player.md)<!-- -->) =&gt; void
+(player: [Player](./server.hytopia.player.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -303,7 +303,7 @@ _(Optional)_ A function that is called when a player joins the world.
 
 </td><td>
 
-(player: [Player](./server.player.md)<!-- -->) =&gt; void
+(player: [Player](./server.hytopia.player.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -324,7 +324,7 @@ _(Optional)_ A function that is called when a player leaves the world.
 
 </td><td>
 
-[Simulation](./server.simulation.md)
+[Simulation](./server.hytopia.simulation.md)
 
 
 </td><td>

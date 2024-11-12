@@ -37,7 +37,7 @@ characterController
 
 </td><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md)
+[BaseCharacterController](./server.hytopia.basecharactercontroller.md)
 
 
 </td><td>

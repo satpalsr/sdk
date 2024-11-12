@@ -43,7 +43,7 @@ Description
 
 </td><td>
 
-[Entity](./server.entity.md)
+[Entity](./server.hytopia.entity.md)
 
 
 </td><td>
@@ -60,7 +60,7 @@ Description
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[Rotation](./server.hytopia.rotation.md)
 
 
 </td><td>

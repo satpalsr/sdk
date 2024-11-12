@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-[WorldOptions](./server.worldoptions.md)
+[WorldOptions](./server.hytopia.worldoptions.md)
 
 
 </td><td>

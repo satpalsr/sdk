@@ -85,7 +85,7 @@ Description
 
 </td><td>
 
-[Entity](./server.entity.md)
+[Entity](./server.hytopia.entity.md)
 
 
 </td><td>
@@ -104,7 +104,7 @@ The entity the controller is for.
 
 </td><td>
 
-(destination: [Vector3](./server.vector3.md)<!-- -->, deltaTimeMs: number) =&gt; void
+(destination: [Vector3](./server.hytopia.vector3.md)<!-- -->, deltaTimeMs: number) =&gt; void
 
 
 </td><td>
@@ -123,7 +123,7 @@ _(Optional)_ A callback function for when the controller ticks pathfinding movem
 
 </td><td>
 
-(inputState: [PlayerInputState](./server.playerinputstate.md)<!-- -->, orientationState: [PlayerOrientationState](./server.playerorientationstate.md)<!-- -->, deltaTimeMs: number) =&gt; void
+(inputState: [PlayerInputState](./server.hytopia.playerinputstate.md)<!-- -->, orientationState: [PlayerOrientationState](./server.hytopia.playerorientationstate.md)<!-- -->, deltaTimeMs: number) =&gt; void
 
 
 </td><td>

@@ -64,7 +64,7 @@ _(Optional)_ The additional mass of the rigid body.
 
 </td><td>
 
-[RigidBodyAdditionalMassProperties](./server.rigidbodyadditionalmassproperties.md)
+[RigidBodyAdditionalMassProperties](./server.hytopia.rigidbodyadditionalmassproperties.md)
 
 
 </td><td>
@@ -121,7 +121,7 @@ _(Optional)_ The angular damping of the rigid body.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -159,12 +159,12 @@ _(Optional)_ Whether the rigid body has continuous collision detection enabled.
 
 </td><td>
 
-[ColliderOptions](./server.collideroptions.md)<!-- -->\[\]
+[ColliderOptions](./server.hytopia.collideroptions.md)<!-- -->\[\]
 
 
 </td><td>
 
-_(Optional)_ The colliders of the rigid body, provided as [ColliderOptions](./server.collideroptions.md)<!-- -->.
+_(Optional)_ The colliders of the rigid body, provided as .
 
 
 </td></tr>
@@ -216,7 +216,7 @@ _(Optional)_ Whether the rigid body is enabled.
 
 </td><td>
 
-[Vector3Boolean](./server.vector3boolean.md)
+[Vector3Boolean](./server.hytopia.vector3boolean.md)
 
 
 </td><td>
@@ -235,7 +235,7 @@ _(Optional)_ The enabled rotations of the rigid body.
 
 </td><td>
 
-[Vector3Boolean](./server.vector3boolean.md)
+[Vector3Boolean](./server.hytopia.vector3boolean.md)
 
 
 </td><td>
@@ -292,7 +292,7 @@ _(Optional)_ The linear damping of the rigid body.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -311,7 +311,7 @@ _(Optional)_ The linear velocity of the rigid body.
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[Rotation](./server.hytopia.rotation.md)
 
 
 </td><td>
@@ -330,7 +330,7 @@ _(Optional)_ The rotation of the rigid body.
 
 </td><td>
 
-[Simulation](./server.simulation.md)
+[Simulation](./server.hytopia.simulation.md)
 
 
 </td><td>
@@ -406,7 +406,7 @@ _(Optional)_ The tag of the rigid body.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3](./server.hytopia.vector3.md)
 
 
 </td><td>
@@ -425,7 +425,7 @@ _(Optional)_ The translation of the rigid body.
 
 </td><td>
 
-[RigidBodyType](./server.rigidbodytype.md)
+[RigidBodyType](./server.hytopia.rigidbodytype.md)
 
 
 </td><td>

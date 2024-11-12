@@ -4,7 +4,7 @@
 
 ## HYTOPIA.Player.inputState property
 
-The current [PlayerInputState](./server.playerinputstate.md) of the player.
+The current  of the player.
 
 **Signature:**
 

@@ -14,7 +14,7 @@ export default class Collider
 
 ## Remarks
 
-Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing [ColliderOptions](./server.collideroptions.md) to a [RigidBody](./server.rigidbody.md) or an entity's [EntityOptions](./server.entityoptions.md)<!-- -->.
+Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing  to a  or an entity's .
 
 ## Constructors
 
@@ -169,7 +169,7 @@ Whether the collider is simulated.
 
 </td><td>
 
-[RigidBody](./server.rigidbody.md) \| undefined
+[RigidBody](./server.hytopia.rigidbody.md) \| undefined
 
 
 </td><td>
