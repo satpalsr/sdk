@@ -854,6 +854,7 @@ export declare class Collider {
     setRelativeTranslation(translation: Vector3): void;
     /**
      * Sets whether the collider is a sensor.
+     * Sensors do not collide or generate contact events.
      * @param sensor - Whether the collider is a sensor.
      */
     setSensor(sensor: boolean): void;
@@ -928,7 +929,7 @@ export declare interface ColliderOptions {
     halfExtents?: Vector3;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
-    /** Whether the collider is a sensor. */
+    /** Whether the collider is a sensor. Sensors do not collide or generate contact events. */
     isSensor?: boolean;
     /** The mass of the collider. */
     mass?: number;

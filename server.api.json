@@ -6600,7 +6600,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Collider#setSensor:member(1)",
-              "docComment": "/**\n * Sets whether the collider is a sensor.\n *\n * @param sensor - Whether the collider is a sensor.\n */\n",
+              "docComment": "/**\n * Sets whether the collider is a sensor. Sensors do not collide or generate contact events.\n *\n * @param sensor - Whether the collider is a sensor.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7569,7 +7569,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#isSensor:member",
-              "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
+              "docComment": "/**\n * Whether the collider is a sensor. Sensors do not collide or generate contact events.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18322,7 +18322,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Collider#setSensor:member(1)",
-                  "docComment": "/**\n * Sets whether the collider is a sensor.\n *\n * @param sensor - Whether the collider is a sensor.\n */\n",
+                  "docComment": "/**\n * Sets whether the collider is a sensor. Sensors do not collide or generate contact events.\n *\n * @param sensor - Whether the collider is a sensor.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19291,7 +19291,7 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#isSensor:member",
-                  "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
+                  "docComment": "/**\n * Whether the collider is a sensor. Sensors do not collide or generate contact events.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

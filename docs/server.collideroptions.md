@@ -183,7 +183,7 @@ boolean
 
 </td><td>
 
-_(Optional)_ Whether the collider is a sensor.
+_(Optional)_ Whether the collider is a sensor. Sensors do not collide or generate contact events.
 
 
 </td></tr>
