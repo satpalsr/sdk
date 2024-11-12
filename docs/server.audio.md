@@ -4,7 +4,7 @@
 
 ## Audio class
 
-An instance of audio, supporting a variety of configuration options.
+Represents a audio playback in a world.
 
 **Signature:**
 

@@ -24,7 +24,7 @@ Description
 
 </td><td>
 
-An instance of audio, supporting a variety of configuration options.
+Represents a audio playback in a world.
 
 
 </td></tr>
@@ -57,7 +57,7 @@ Represents a block in a world.
 
 </td><td>
 
-An instance of a block type, supporting a variety of configuration options.
+Represents a block type.
 
 
 </td></tr>

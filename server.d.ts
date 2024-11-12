@@ -13,7 +13,7 @@ import { Vector } from '@dimforge/rapier3d-compat';
 import { WebSocket as WebSocket_2 } from 'ws';
 
 /**
- * An instance of audio, supporting a variety of configuration options.
+ * Represents a audio playback in a world.
  *
  * @remarks
  * Audio instances are created directly as instances.
@@ -354,7 +354,7 @@ export declare class Block {
 }
 
 /**
- * An instance of a block type, supporting a variety of configuration options.
+ * Represents a block type.
  *
  * @remarks
  * Block types are created directly as instances.
@@ -1511,8 +1511,8 @@ export declare class EventRouter {
  * Manages the game and associated worlds and systems.
  *
  * @remarks
- * This class is a singleton and should be accessed via
- * the `instance` property
+ * This class is used as a singleton and should be
+ * accessed via the `instance` property
  *
  * @public
  */

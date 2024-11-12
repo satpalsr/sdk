@@ -4,7 +4,7 @@
 
 ## BlockType class
 
-An instance of a block type, supporting a variety of configuration options.
+Represents a block type.
 
 **Signature:**
 
