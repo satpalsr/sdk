@@ -118,15 +118,6 @@ Represents a collider in a world's physics simulation.
 </td></tr>
 <tr><td>
 
-[ColliderMap](./server.hytopia.collidermap.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [CollisionGroupsBuilder](./server.hytopia.collisiongroupsbuilder.md)
 
 

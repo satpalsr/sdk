@@ -854,7 +854,6 @@ export declare class Collider {
     setRelativeTranslation(translation: Vector3): void;
     /**
      * Sets whether the collider is a sensor.
-     * Sensors do not collide or generate contact events.
      * @param sensor - Whether the collider is a sensor.
      */
     setSensor(sensor: boolean): void;
@@ -892,25 +891,6 @@ export declare class Collider {
 
 }
 
-export declare class ColliderMap {
-    private _rawColliderBlockTypeMap;
-    private _rawColliderCollisionCallbackMap;
-    private _rawRigidBodyEntityMap;
-    getRawColliderBlockType(collider: RAPIER.Collider): BlockType | undefined;
-    getColliderBlockType(collider: Collider): BlockType | undefined;
-    setColliderBlockType(collider: Collider, block: BlockType): void;
-    removeColliderBlockType(collider: Collider): void;
-    getRawColliderCollisionCallback(collider: RAPIER.Collider): CollisionCallback | undefined;
-    getColliderCollisionCallback(collider: Collider): CollisionCallback | undefined;
-    setColliderCollisionCallback(collider: Collider, callback: CollisionCallback): void;
-    removeColliderCollisionCallback(collider: Collider): void;
-    getRawRigidBodyEntity(rigidBody: RAPIER.RigidBody): Entity | undefined;
-    setRawRigidBodyEntity(rigidBody: RAPIER.RigidBody, entity: Entity): void;
-    removeRawRigidBodyEntity(rigidBody: RAPIER.RigidBody): void;
-    private _requireSimulatedCollider;
-    private _requireSimulatedRigidBody;
-}
-
 /** Options for creating a Collider instance. @public */
 export declare interface ColliderOptions {
     /** The shape of the collider. */
@@ -929,7 +909,7 @@ export declare interface ColliderOptions {
     halfExtents?: Vector3;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
-    /** Whether the collider is a sensor. Sensors do not collide or generate contact events. */
+    /** Whether the collider is a sensor. */
     isSensor?: boolean;
     /** The mass of the collider. */
     mass?: number;
@@ -1477,7 +1457,6 @@ declare namespace HYTOPIA {
         Collider,
         ColliderShape,
         ColliderOptions,
-        ColliderMap,
         CollisionCallback,
         CollisionObject,
         CollisionGroupsBuilder,

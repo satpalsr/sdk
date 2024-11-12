@@ -4,7 +4,7 @@
 
 ## Collider.setSensor() method
 
-Sets whether the collider is a sensor. Sensors do not collide or generate contact events.
+Sets whether the collider is a sensor.
 
 **Signature:**
 

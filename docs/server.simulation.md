@@ -79,7 +79,7 @@ Description
 
 </td><td>
 
-[ColliderMap](./server.collidermap.md)
+ColliderMap
 
 
 </td><td>

@@ -4,7 +4,7 @@
 
 ## ColliderOptions.isSensor property
 
-Whether the collider is a sensor. Sensors do not collide or generate contact events.
+Whether the collider is a sensor.
 
 **Signature:**
 

@@ -488,7 +488,7 @@ Sets the relative translation of the collider to its parent rigid body.
 
 </td><td>
 
-Sets whether the collider is a sensor. Sensors do not collide or generate contact events.
+Sets whether the collider is a sensor.
 
 
 </td></tr>
