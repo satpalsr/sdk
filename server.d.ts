@@ -1463,6 +1463,21 @@ export declare class Player {
  * character controller's onTickPlayerMovement method
  * when player input has changed.
  *
+ * @example
+ * ```typescript
+ * world.onPlayerJoin = player => {
+ *   const playerEntity = new PlayerEntity({
+ *     player,
+ *     name: 'Player',
+ *     modelUri: 'models/player-with-gun.gltf',
+ *     modelLoopedAnimations: [ 'idle' ],
+ *     modelScale: 0.5,
+ *   });
+ *
+ *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });
+ * };
+ * ```
+ *
  * @public
  */
 export declare class PlayerEntity extends Entity {

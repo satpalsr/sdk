@@ -17,6 +17,23 @@ export default class PlayerEntity extends Entity
 
 Player entities extend the [Entity](./server.entity.md) class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.
 
+## Example
+
+
+```typescript
+world.onPlayerJoin = player => {
+  const playerEntity = new PlayerEntity({
+    player,
+    name: 'Player',
+    modelUri: 'models/player-with-gun.gltf',
+    modelLoopedAnimations: [ 'idle' ],
+    modelScale: 0.5,
+  });
+
+  playerEntity.spawn(world, { x: 10, y: 20, z: 15 });
+};
+```
+
 ## Constructors
 
 <table><thead><tr><th>

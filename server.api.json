@@ -23923,7 +23923,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.PlayerEntity:class",
-              "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @public\n */\n",
+              "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31266,7 +31266,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerEntity:class",
-          "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a player controlled entity in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
