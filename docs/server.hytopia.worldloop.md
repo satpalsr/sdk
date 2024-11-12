@@ -14,7 +14,9 @@ export default class WorldLoop
 
 ## Remarks
 
-The world loop automatically handles ticking physics, entities, and other world logic. The internal order of tick operations is as follows:
+The world loop automatically handles ticking physics, entities, and other world logic.
+
+The internal order of tick operations is as follows:
 
 1. Update chunks and meshing
 
