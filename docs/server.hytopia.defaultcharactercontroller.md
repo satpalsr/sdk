@@ -4,7 +4,7 @@
 
 ## HYTOPIA.DefaultCharacterController class
 
-A default character controller implementation.
+The default character controller implementation.
 
 **Signature:**
 
@@ -15,7 +15,7 @@ export default class DefaultCharacterController extends BaseCharacterController
 
 ## Remarks
 
-This class extends [BaseCharacterController](./server.basecharactercontroller.md) and implements the default movement logic for a character entity. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.
+This class extends [BaseCharacterController](./server.basecharactercontroller.md) and implements the default movement logic for a character entity. This is used as the default for players when they join your game. This class may be extended if you'd like to implement additional logic on top of the DefaultCharacterController implementation.
 
 ## Example
 

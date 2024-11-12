@@ -139,7 +139,7 @@ A lattice of chunks that represent a world's terrain.
 
 </td><td>
 
-A default character controller implementation.
+The default character controller implementation.
 
 
 </td></tr>

@@ -891,14 +891,15 @@ export declare type DecodedCollisionGroups = {
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
- * A default character controller implementation.
+ * The default character controller implementation.
  *
  * @remarks
  * This class extends {@link BaseCharacterController}
  * and implements the default movement logic for a
- * character entity. This class may be extended if
- * you'd like to implement additional logic on
- * top of the DefaultCharacterController implementation.
+ * character entity. This is used as the default for
+ * players when they join your game. This class may be extended
+ * if you'd like to implement additional logic on top of the
+ * DefaultCharacterController implementation.
  *
  * @example
  * ```typescript
