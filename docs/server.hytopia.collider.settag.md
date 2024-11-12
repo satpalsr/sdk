@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setTag() method
 
+Sets the tag of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ string
 
 
 </td><td>
+
+The tag of the collider.
 
 
 </td></tr>

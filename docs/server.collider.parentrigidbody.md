@@ -4,6 +4,8 @@
 
 ## Collider.parentRigidBody property
 
+The parent rigid body of the collider.
+
 **Signature:**
 
 ```typescript

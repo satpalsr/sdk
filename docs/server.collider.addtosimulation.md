@@ -4,6 +4,8 @@
 
 ## Collider.addToSimulation() method
 
+Adds the collider to the simulation.
+
 **Signature:**
 
 ```typescript
@@ -40,6 +42,8 @@ simulation
 
 </td><td>
 
+The simulation to add the collider to.
+
 
 </td></tr>
 <tr><td>
@@ -54,7 +58,7 @@ parentRigidBody
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The parent rigid body of the collider.
 
 
 </td></tr>

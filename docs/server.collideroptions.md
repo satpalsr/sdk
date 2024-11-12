@@ -278,7 +278,7 @@ _(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, c
 
 </td><td>
 
-_(Optional)_ The relative rotation of the collider.
+_(Optional)_ The relative rotation of the collider. Relative to parent rigid body.
 
 
 </td></tr>
@@ -335,7 +335,7 @@ The shape of the collider.
 
 </td><td>
 
-_(Optional)_ The simulation the collider is in.
+_(Optional)_ The simulation the collider is in, if provided the collider will automatically be added to the simulation.
 
 
 </td></tr>
@@ -354,7 +354,7 @@ string
 
 </td><td>
 
-_(Optional)_ An arbitrary identifier tag of the collider.
+_(Optional)_ An arbitrary identifier tag of the collider. Useful for your own logic.
 
 
 </td></tr>

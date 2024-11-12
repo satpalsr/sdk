@@ -4,6 +4,8 @@
 
 ## Collider.getFriction() method
 
+Gets the friction of the collider.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getFriction(): number;
 **Returns:**
 
 number
+
+The friction of the collider.
 

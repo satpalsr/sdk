@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setMass() method
 
+Sets the mass of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The mass of the collider.
 
 
 </td></tr>

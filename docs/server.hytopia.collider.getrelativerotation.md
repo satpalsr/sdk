@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.getRelativeRotation() method
 
+Gets the relative rotation of the collider.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getRelativeRotation(): Rotation;
 **Returns:**
 
 [Rotation](./server.rotation.md)
+
+The relative rotation of the collider.
 

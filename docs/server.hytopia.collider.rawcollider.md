@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.rawCollider property
 
+The raw collider object from the Rapier physics engine.
+
 **Signature:**
 
 ```typescript

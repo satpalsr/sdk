@@ -4,6 +4,8 @@
 
 ## Collider.enableContactForceEvents() method
 
+Enables or disables contact force events for the collider. This is automatically enabled if an on contact force callback is set.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether contact force events are enabled.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## Collider.tag property
 
+An arbitrary identifier tag of the collider. Useful for your own logic.
+
 **Signature:**
 
 ```typescript

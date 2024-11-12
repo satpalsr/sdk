@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setOnCollision() method
 
+Sets the on collision callback for the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ callback
 
 
 </td><td>
+
+The on collision callback for the collider.
 
 
 </td></tr>

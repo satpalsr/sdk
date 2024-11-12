@@ -4,7 +4,7 @@
 
 ## HYTOPIA.ColliderOptions.simulation property
 
-The simulation the collider is in.
+The simulation the collider is in, if provided the collider will automatically be added to the simulation.
 
 **Signature:**
 

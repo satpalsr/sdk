@@ -763,44 +763,132 @@ export declare class ChunkLattice {
  * @public
  */
 export declare class Collider {
-    private _collider;
-    private _colliderDesc;
-    private _onCollision;
-    private _parentRigidBody;
-    private _simulation;
-    private _tag;
+
+
+
+
+
+
+    /**
+     * @param colliderOptions - The options for the collider instance.
+     */
     constructor(colliderOptions: ColliderOptions);
+    /** Whether the collider is enabled. */
     get isEnabled(): boolean;
+    /** Whether the collider has been removed from the simulation. */
     get isRemoved(): boolean;
+    /** Whether the collider is a sensor. */
     get isSensor(): boolean;
+    /** Whether the collider is simulated. */
     get isSimulated(): boolean;
+    /** The parent rigid body of the collider. */
     get parentRigidBody(): RigidBody | undefined;
+    /** The raw collider object from the Rapier physics engine. */
     get rawCollider(): RAPIER.Collider | undefined;
+    /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     get tag(): string | undefined;
+    /**
+     * Gets the bounciness of the collider.
+     * @returns The bounciness of the collider.
+     */
+    getBounciness(): number;
+    /**
+     * Gets the collision groups the collider belongs to.
+     * @returns The collision groups the collider belongs to.
+     */
     getCollisionGroups(): CollisionGroups;
+    /**
+     * Gets the friction of the collider.
+     * @returns The friction of the collider.
+     */
     getFriction(): number;
-    getRestitution(): number;
+    /**
+     * Gets the relative rotation of the collider.
+     * @returns The relative rotation of the collider.
+     */
     getRelativeRotation(): Rotation;
+    /**
+     * Gets the relative translation of the collider to its parent rigid body.
+     * @returns The relative translation of the collider.
+     */
     getRelativeTranslation(): Vector3;
+    /**
+     * Sets the bounciness of the collider.
+     * @param bounciness - The bounciness of the collider.
+     */
     setBounciness(bounciness: number): void;
+    /**
+     * Sets the on collision callback for the collider.
+     * @param callback - The on collision callback for the collider.
+     */
     setOnCollision(callback: CollisionCallback | undefined): void;
+    /**
+     * Sets the collision groups of the collider.
+     * @param collisionGroups - The collision groups of the collider.
+     */
     setCollisionGroups(collisionGroups: CollisionGroups): void;
+    /**
+     * Sets whether the collider is enabled.
+     * @param enabled - Whether the collider is enabled.
+     */
     setEnabled(enabled: boolean): void;
+    /**
+     * Sets the friction of the collider.
+     * @param friction - The friction of the collider.
+     */
     setFriction(friction: number): void;
+    /**
+     * Sets the mass of the collider.
+     * @param mass - The mass of the collider.
+     */
     setMass(mass: number): void;
+    /**
+     * Sets the relative rotation of the collider.
+     * @param rotation - The relative rotation of the collider.
+     */
     setRelativeRotation(rotation: Rotation): void;
+    /**
+     * Sets the relative translation of the collider to its parent rigid body.
+     * @param translation - The relative translation of the collider.
+     */
     setRelativeTranslation(translation: Vector3): void;
+    /**
+     * Sets whether the collider is a sensor.
+     * @param sensor - Whether the collider is a sensor.
+     */
     setSensor(sensor: boolean): void;
+    /**
+     * Sets the tag of the collider.
+     * @param tag - The tag of the collider.
+     */
     setTag(tag: string): void;
+    /**
+     * Adds the collider to the simulation.
+     * @param simulation - The simulation to add the collider to.
+     * @param parentRigidBody - The parent rigid body of the collider.
+     */
     addToSimulation(simulation: Simulation, parentRigidBody?: RigidBody): void;
+    /**
+     * Enables or disables collision events for the collider.
+     * This is automatically enabled if an on collision callback is set.
+     * @param enabled - Whether collision events are enabled.
+     */
     enableCollisionEvents(enabled: boolean): void;
+    /**
+     * Enables or disables contact force events for the collider.
+     * This is automatically enabled if an on contact force callback is set.
+     * @param enabled - Whether contact force events are enabled.
+     */
     enableContactForceEvents(enabled: boolean): void;
+    /**
+     * Removes the collider from the simulation.
+     */
     removeFromSimulation(): void;
-    private _applyColliderOptions;
-    private _autoAddToSimulation;
-    private _createColliderDesc;
-    private _requireNotRemoved;
-    private _setActiveCollisionTypes;
+
+
+
+
+
 }
 
 export declare class ColliderMap {
@@ -850,13 +938,13 @@ export declare interface ColliderOptions {
     parentRigidBody?: RigidBody;
     /** The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder. */
     radius?: number;
-    /** The relative rotation of the collider. */
+    /** The relative rotation of the collider. Relative to parent rigid body. */
     relativeRotation?: Rotation;
     /** The relative translation of the collider. Relative to parent rigid body. */
     relativeTranslation?: Vector3;
-    /** The simulation the collider is in. */
+    /** The simulation the collider is in, if provided the collider will automatically be added to the simulation. */
     simulation?: Simulation;
-    /** An arbitrary identifier tag of the collider. */
+    /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     tag?: string;
 }
 

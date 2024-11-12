@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.isSimulated property
 
+Whether the collider is simulated.
+
 **Signature:**
 
 ```typescript

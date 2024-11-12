@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setSensor() method
 
+Sets whether the collider is a sensor.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether the collider is a sensor.
 
 
 </td></tr>

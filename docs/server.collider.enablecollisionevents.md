@@ -4,6 +4,8 @@
 
 ## Collider.enableCollisionEvents() method
 
+Enables or disables collision events for the collider. This is automatically enabled if an on collision callback is set.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether collision events are enabled.
 
 
 </td></tr>

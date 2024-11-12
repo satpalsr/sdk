@@ -4,6 +4,8 @@
 
 ## Collider.removeFromSimulation() method
 
+Removes the collider from the simulation.
+
 **Signature:**
 
 ```typescript

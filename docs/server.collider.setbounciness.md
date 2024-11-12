@@ -4,6 +4,8 @@
 
 ## Collider.setBounciness() method
 
+Sets the bounciness of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The bounciness of the collider.
 
 
 </td></tr>

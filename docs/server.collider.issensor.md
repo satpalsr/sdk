@@ -4,6 +4,8 @@
 
 ## Collider.isSensor property
 
+Whether the collider is a sensor.
+
 **Signature:**
 
 ```typescript

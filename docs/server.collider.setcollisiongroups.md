@@ -4,6 +4,8 @@
 
 ## Collider.setCollisionGroups() method
 
+Sets the collision groups of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ collisionGroups
 
 
 </td><td>
+
+The collision groups of the collider.
 
 
 </td></tr>

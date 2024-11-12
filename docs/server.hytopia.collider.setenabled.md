@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setEnabled() method
 
+Sets whether the collider is enabled.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ boolean
 
 
 </td><td>
+
+Whether the collider is enabled.
 
 
 </td></tr>

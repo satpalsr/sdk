@@ -90,6 +90,8 @@ boolean
 
 </td><td>
 
+Whether the collider is enabled.
+
 
 </td></tr>
 <tr><td>
@@ -108,6 +110,8 @@ boolean
 
 
 </td><td>
+
+Whether the collider has been removed from the simulation.
 
 
 </td></tr>
@@ -128,6 +132,8 @@ boolean
 
 </td><td>
 
+Whether the collider is a sensor.
+
 
 </td></tr>
 <tr><td>
@@ -146,6 +152,8 @@ boolean
 
 
 </td><td>
+
+Whether the collider is simulated.
 
 
 </td></tr>
@@ -166,6 +174,8 @@ boolean
 
 </td><td>
 
+The parent rigid body of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -185,6 +195,8 @@ RAPIER.Collider \| undefined
 
 </td><td>
 
+The raw collider object from the Rapier physics engine.
+
 
 </td></tr>
 <tr><td>
@@ -203,6 +215,8 @@ string \| undefined
 
 
 </td><td>
+
+An arbitrary identifier tag of the collider. Useful for your own logic.
 
 
 </td></tr>
@@ -236,6 +250,8 @@ Description
 
 </td><td>
 
+Adds the collider to the simulation.
+
 
 </td></tr>
 <tr><td>
@@ -247,6 +263,8 @@ Description
 
 
 </td><td>
+
+Enables or disables collision events for the collider. This is automatically enabled if an on collision callback is set.
 
 
 </td></tr>
@@ -260,6 +278,22 @@ Description
 
 </td><td>
 
+Enables or disables contact force events for the collider. This is automatically enabled if an on contact force callback is set.
+
+
+</td></tr>
+<tr><td>
+
+[getBounciness()](./server.collider.getbounciness.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets the bounciness of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -271,6 +305,8 @@ Description
 
 
 </td><td>
+
+Gets the collision groups the collider belongs to.
 
 
 </td></tr>
@@ -284,6 +320,8 @@ Description
 
 </td><td>
 
+Gets the friction of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -295,6 +333,8 @@ Description
 
 
 </td><td>
+
+Gets the relative rotation of the collider.
 
 
 </td></tr>
@@ -308,17 +348,7 @@ Description
 
 </td><td>
 
-
-</td></tr>
-<tr><td>
-
-[getRestitution()](./server.collider.getrestitution.md)
-
-
-</td><td>
-
-
-</td><td>
+Gets the relative translation of the collider to its parent rigid body.
 
 
 </td></tr>
@@ -332,6 +362,8 @@ Description
 
 </td><td>
 
+Removes the collider from the simulation.
+
 
 </td></tr>
 <tr><td>
@@ -343,6 +375,8 @@ Description
 
 
 </td><td>
+
+Sets the bounciness of the collider.
 
 
 </td></tr>
@@ -356,6 +390,8 @@ Description
 
 </td><td>
 
+Sets the collision groups of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -367,6 +403,8 @@ Description
 
 
 </td><td>
+
+Sets whether the collider is enabled.
 
 
 </td></tr>
@@ -380,6 +418,8 @@ Description
 
 </td><td>
 
+Sets the friction of the collider.
+
 
 </td></tr>
 <tr><td>
@@ -391,6 +431,8 @@ Description
 
 
 </td><td>
+
+Sets the mass of the collider.
 
 
 </td></tr>
@@ -404,6 +446,8 @@ Description
 
 </td><td>
 
+Sets the on collision callback for the collider.
+
 
 </td></tr>
 <tr><td>
@@ -415,6 +459,8 @@ Description
 
 
 </td><td>
+
+Sets the relative rotation of the collider.
 
 
 </td></tr>
@@ -428,6 +474,8 @@ Description
 
 </td><td>
 
+Sets the relative translation of the collider to its parent rigid body.
+
 
 </td></tr>
 <tr><td>
@@ -440,6 +488,8 @@ Description
 
 </td><td>
 
+Sets whether the collider is a sensor.
+
 
 </td></tr>
 <tr><td>
@@ -451,6 +501,8 @@ Description
 
 
 </td><td>
+
+Sets the tag of the collider.
 
 
 </td></tr>

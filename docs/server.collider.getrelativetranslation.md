@@ -4,6 +4,8 @@
 
 ## Collider.getRelativeTranslation() method
 
+Gets the relative translation of the collider to its parent rigid body.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getRelativeTranslation(): Vector3;
 **Returns:**
 
 [Vector3](./server.vector3.md)
+
+The relative translation of the collider.
 

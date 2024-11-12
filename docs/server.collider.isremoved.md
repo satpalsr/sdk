@@ -4,6 +4,8 @@
 
 ## Collider.isRemoved property
 
+Whether the collider has been removed from the simulation.
+
 **Signature:**
 
 ```typescript

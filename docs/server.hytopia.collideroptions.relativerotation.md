@@ -4,7 +4,7 @@
 
 ## HYTOPIA.ColliderOptions.relativeRotation property
 
-The relative rotation of the collider.
+The relative rotation of the collider. Relative to parent rigid body.
 
 **Signature:**
 

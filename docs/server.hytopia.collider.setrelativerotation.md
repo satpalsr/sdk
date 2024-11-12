@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.setRelativeRotation() method
 
+Sets the relative rotation of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ rotation
 
 
 </td><td>
+
+The relative rotation of the collider.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## HYTOPIA.Collider.getCollisionGroups() method
 
+Gets the collision groups the collider belongs to.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getCollisionGroups(): CollisionGroups;
 **Returns:**
 
 [CollisionGroups](./server.collisiongroups.md)
+
+The collision groups the collider belongs to.
 

@@ -4,6 +4,8 @@
 
 ## Collider.setRelativeTranslation() method
 
+Sets the relative translation of the collider to its parent rigid body.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ translation
 
 
 </td><td>
+
+The relative translation of the collider.
 
 
 </td></tr>

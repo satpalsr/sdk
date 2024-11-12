@@ -4,6 +4,8 @@
 
 ## Collider.setFriction() method
 
+Sets the friction of the collider.
+
 **Signature:**
 
 ```typescript
@@ -39,6 +41,8 @@ number
 
 
 </td><td>
+
+The friction of the collider.
 
 
 </td></tr>
