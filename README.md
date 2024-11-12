@@ -31,22 +31,27 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 1. Install a compatible JavaScript runtime. We recommend [Bun (recommended)](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) are also supported. All examples will be given using Bun.
 
-2. Install the SDK in a new or existing project.
+2. If you're starting a new project, initialize it.
+```bash
+bun init
+```
+
+3. Install the SDK in a new or existing project.
 ```bash
 bun add hytopia
 ```
 
-2. Initialize boilerplate. Copies assets and an index.ts game script into your project.
+4. Initialize boilerplate. Copies assets and an index.ts game script into your project.
 ```bash
 bunx hytopia init
 ```
 
-3. Start the server, use --watch for hot reloads as you make changes.
+5. Start the server, use --watch for hot reloads as you make changes.
 ```bash
 bun --watch index.ts
 ```
 
-4. Visit https://play.hytopia.com - when prompted, enter the local server your game is running on, which is `localhost:8080`.
+4. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the default port of the local server you started in the previous step.
 
 Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
