@@ -51,7 +51,7 @@ bunx hytopia init
 bun --watch index.ts
 ```
 
-4. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the default port of the local server you started in the previous step.
+6. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the hostname of the local server you started in the previous step.
 
 Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
