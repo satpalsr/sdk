@@ -2392,10 +2392,11 @@ export declare class WebServer implements Readyable {
     /**
      * Enables SSL for local development. The server will be
      * available at https://localhost:8080. This is intended
-     * for local development without a reverse proxy. (IE,
-     * don't use it when using ngrok.com) Usage of this method
-     * will be ignored in production. Must be called in init
-     * function of {@link startServer}.
+     * for local development without a reverse proxy. Don't
+     * use it when using tunnels like ngrok.com that already
+     * handle SSL. Usage of this method will be ignored
+     * in production. Must be called in init function of
+     * {@link startServer}.
      */
     enableLocalSSL(): void;
 
