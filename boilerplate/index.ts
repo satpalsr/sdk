@@ -84,7 +84,7 @@ startServer(world => {
     world.chatManager.sendPlayerMessage(player, 'Use WASD to move around.');
     world.chatManager.sendPlayerMessage(player, 'Press space to jump.');
     world.chatManager.sendPlayerMessage(player, 'Hold shift to sprint.');
-    world.chatManager.sendPlayerMessage(player, 'Type /rocket for a little surprise!');
+    world.chatManager.sendPlayerMessage(player, 'Press \\ to enter or exit debug view.');
   };
 
   /**
