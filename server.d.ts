@@ -2392,7 +2392,8 @@ export declare class WebServer implements Readyable {
     /**
      * Closes the existing http server and creates a new HTTPS server.
      * This is intended for local development without a reverse proxy.
-     * Usage of this method will be ignored in production.
+     * (IE, don't use it when using NGROK) Usage of this method will
+     * be ignored in production.
      */
     enableLocalSSL(): void;
 
