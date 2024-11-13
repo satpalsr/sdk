@@ -28115,6 +28115,54 @@
                   "name": "castRay"
                 },
                 {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Simulation#enableDebug:member(1)",
+                  "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "enableDebug(enabled: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "enabled",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "enableDebug"
+                },
+                {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Simulation#gravity:member",
                   "docComment": "/**\n * The gravity vector for the simulation.\n */\n",
@@ -28137,6 +28185,36 @@
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "gravity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Simulation#isDebugEnabled:member",
+                  "docComment": "/**\n * Whether the simulation has debug rendering enabled.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get isDebugEnabled(): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "isDebugEnabled",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -34774,6 +34852,54 @@
               "name": "castRay"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Simulation#enableDebug:member(1)",
+              "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enableDebug(enabled: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "enabled",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "enableDebug"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Simulation#gravity:member",
               "docComment": "/**\n * The gravity vector for the simulation.\n */\n",
@@ -34796,6 +34922,36 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "gravity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Simulation#isDebugEnabled:member",
+              "docComment": "/**\n * Whether the simulation has debug rendering enabled.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isDebugEnabled(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isDebugEnabled",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

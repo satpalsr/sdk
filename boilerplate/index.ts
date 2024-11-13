@@ -42,6 +42,17 @@ import worldMap from './assets/map.json';
 
 startServer(world => {
   /**
+   * Enable debugging of the physics simulation.
+   * This will overlay lines in-game representing colliders,
+   * rigid bodies, and raycasts. This is useful for debugging
+   * physics-related issues and is very frequently used.
+   * For larger worlds, enabling this can cause performance
+   * issues, which will be noticed as dropped frame rates
+   * and higher RTT times.
+   */
+  world.simulation.enableDebug(true);
+
+  /**
    * Load our map.
    * You can build your own map using https://build.hytopia.com
    * After building, hit export and drop the .json file in

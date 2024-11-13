@@ -64,6 +64,27 @@ The gravity vector for the simulation.
 </td></tr>
 <tr><td>
 
+[isDebugEnabled](./server.simulation.isdebugenabled.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the simulation has debug rendering enabled.
+
+
+</td></tr>
+<tr><td>
+
 [timestepS](./server.simulation.timesteps.md)
 
 
@@ -135,6 +156,20 @@ Description
 </td><td>
 
 Casts a ray through the simulation.
+
+
+</td></tr>
+<tr><td>
+
+[enableDebug(enabled)](./server.simulation.enabledebug.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.
 
 
 </td></tr>
