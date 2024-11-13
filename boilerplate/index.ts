@@ -25,6 +25,7 @@
 
 import {
   startServer,
+  GameServer,
   PlayerEntity,
 } from 'hytopia';
 
@@ -41,6 +42,17 @@ import worldMap from './assets/map.json';
  */
 
 startServer(world => {
+  /**
+   * Enable SSL for local development. This allows you to
+   * connect to your local game server from https://play.hytopia.com
+   * without having to manually set up SSL.
+   * 
+   * If you are using a reverse proxy like ngrok (IE, `ngrok http 8080`)
+   * so others can connect to your local game server via the ngrok
+   * provided URL, make sure to remove this or comment it out.
+   */
+  GameServer.instance.webServer.enableLocalSSL();
+
   /**
    * Enable debug rendering of the physics simulation.
    * This will overlay lines in-game representing colliders,
