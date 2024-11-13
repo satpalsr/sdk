@@ -64,7 +64,7 @@ The gravity vector for the simulation.
 </td></tr>
 <tr><td>
 
-[isDebugEnabled](./server.hytopia.simulation.isdebugenabled.md)
+[isDebugRenderingEnabled](./server.hytopia.simulation.isdebugrenderingenabled.md)
 
 
 </td><td>
@@ -161,7 +161,7 @@ Casts a ray through the simulation.
 </td></tr>
 <tr><td>
 
-[enableDebug(enabled)](./server.hytopia.simulation.enabledebug.md)
+[enableDebugRendering(enabled)](./server.hytopia.simulation.enabledebugrendering.md)
 
 
 </td><td>
@@ -169,7 +169,7 @@ Casts a ray through the simulation.
 
 </td><td>
 
-Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.
+Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.
 
 
 </td></tr>

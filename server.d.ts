@@ -2299,7 +2299,7 @@ export declare class Simulation {
 
 
     /** Whether the simulation has debug rendering enabled. */
-    get isDebugEnabled(): boolean;
+    get isDebugRenderingEnabled(): boolean;
     /** The gravity vector for the simulation. */
     get gravity(): RAPIER.Vector3;
     /** The fixed timestep for the simulation. */
@@ -2319,12 +2319,12 @@ export declare class Simulation {
 
     /**
      * Enables or disables debug rendering for the simulation.
-     * When enabled, all colliders and rigid bodies will be rendered
-     * in the world. Do not enable this in production. In large
-     * worlds this can cause noticable lag and RTT spikes.
+     * When enabled, all colliders, rigid body and raycast outlines
+     * will be rendered in the world. Do not enable this in production.
+     * In large worlds enabling this can cause noticable lag and RTT spikes.
      * @param enabled - Whether to enable debug rendering.
      */
-    enableDebug(enabled: boolean): void;
+    enableDebugRendering(enabled: boolean): void;
 
 
 

@@ -28116,12 +28116,12 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.Simulation#enableDebug:member(1)",
-                  "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
+                  "canonicalReference": "server!HYTOPIA.Simulation#enableDebugRendering:member(1)",
+                  "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "enableDebug(enabled: "
+                      "text": "enableDebugRendering(enabled: "
                     },
                     {
                       "kind": "Content",
@@ -28160,7 +28160,7 @@
                   ],
                   "isOptional": false,
                   "isAbstract": false,
-                  "name": "enableDebug"
+                  "name": "enableDebugRendering"
                 },
                 {
                   "kind": "Property",
@@ -28195,12 +28195,12 @@
                 },
                 {
                   "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.Simulation#isDebugEnabled:member",
+                  "canonicalReference": "server!HYTOPIA.Simulation#isDebugRenderingEnabled:member",
                   "docComment": "/**\n * Whether the simulation has debug rendering enabled.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "get isDebugEnabled(): "
+                      "text": "get isDebugRenderingEnabled(): "
                     },
                     {
                       "kind": "Content",
@@ -28214,7 +28214,7 @@
                   "isReadonly": true,
                   "isOptional": false,
                   "releaseTag": "Public",
-                  "name": "isDebugEnabled",
+                  "name": "isDebugRenderingEnabled",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -34853,12 +34853,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!Simulation#enableDebug:member(1)",
-              "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid bodies will be rendered in the world. Do not enable this in production. In large worlds this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
+              "canonicalReference": "server!Simulation#enableDebugRendering:member(1)",
+              "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "enableDebug(enabled: "
+                  "text": "enableDebugRendering(enabled: "
                 },
                 {
                   "kind": "Content",
@@ -34897,7 +34897,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "enableDebug"
+              "name": "enableDebugRendering"
             },
             {
               "kind": "Property",
@@ -34932,12 +34932,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Simulation#isDebugEnabled:member",
+              "canonicalReference": "server!Simulation#isDebugRenderingEnabled:member",
               "docComment": "/**\n * Whether the simulation has debug rendering enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get isDebugEnabled(): "
+                  "text": "get isDebugRenderingEnabled(): "
                 },
                 {
                   "kind": "Content",
@@ -34951,7 +34951,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "isDebugEnabled",
+              "name": "isDebugRenderingEnabled",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

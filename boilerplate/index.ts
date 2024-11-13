@@ -42,15 +42,15 @@ import worldMap from './assets/map.json';
 
 startServer(world => {
   /**
-   * Enable debugging of the physics simulation.
+   * Enable debug rendering of the physics simulation.
    * This will overlay lines in-game representing colliders,
    * rigid bodies, and raycasts. This is useful for debugging
-   * physics-related issues and is very frequently used.
+   * physics-related issues in a development environment.
    * For larger worlds, enabling this can cause performance
    * issues, which will be noticed as dropped frame rates
    * and higher RTT times.
    */
-  world.simulation.enableDebug(true);
+  world.simulation.enableDebugRendering(true);
 
   /**
    * Load our map.
