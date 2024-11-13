@@ -421,17 +421,6 @@ The types a RigidBody can be.
 
 
 </td></tr>
-<tr><td>
-
-[WebServerEventType](./server.webservereventtype.md)
-
-
-</td><td>
-
-Event types a WebServer instance can emit.
-
-
-</td></tr>
 </tbody></table>
 
 ## Functions
@@ -725,17 +714,6 @@ Payloads for events emitted by a GameServer instance.
 </td><td>
 
 Payloads for events a Player can emit.
-
-
-</td></tr>
-<tr><td>
-
-[WebServerEventPayload](./server.webservereventpayload.md)
-
-
-</td><td>
-
-Payloads for events a WebServer instance can emit.
 
 
 </td></tr>

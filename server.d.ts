@@ -1617,8 +1617,6 @@ declare namespace HYTOPIA {
         RigidBodyOptions,
         Simulation,
         WebServer,
-        WebServerEventType,
-        WebServerEventPayload,
         World,
         WorldMap,
         WorldOptions,
@@ -2403,30 +2401,6 @@ export declare class WebServer implements Readyable {
 
 
 
-}
-
-/** Payloads for events a WebServer instance can emit. @public */
-export declare namespace WebServerEventPayload {
-    export interface Ready {
-    }
-    export interface Stopped {
-    }
-    export interface Error {
-        error: globalThis.Error;
-    }
-    export interface Upgrade {
-        req: http.IncomingMessage;
-        socket: Socket_2;
-        head: Buffer;
-    }
-}
-
-/** Event types a WebServer instance can emit. @public */
-export declare enum WebServerEventType {
-    READY = "WEBSERVER.READY",
-    STOPPED = "WEBSERVER.STOPPED",
-    ERROR = "WEBSERVER.ERROR",
-    UPGRADE = "WEBSERVER.UPGRADE"
 }
 
 /**
