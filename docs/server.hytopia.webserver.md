@@ -47,7 +47,7 @@ Description
 
 </td><td>
 
-Closes the existing http server and creates a new HTTPS server. This is intended for local development without a reverse proxy. (IE, don't use it when using NGROK) Usage of this method will be ignored in production.
+Closes the existing http server and creates a new HTTPS server. This is intended for local development without a reverse proxy. (IE, don't use it when using NGROK) Usage of this method will be ignored in production. Must be called in init function of [startServer()](./server.startserver.md)<!-- -->.
 
 
 </td></tr>
