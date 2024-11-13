@@ -1528,7 +1528,8 @@ export declare class GameServer {
     /** The player manager for the game server. */
     get playerManager(): PlayerManager;
 
-
+    /** The web server for the game server. */
+    get webServer(): WebServer;
     /** The worlds managed by the game server. */
     get worlds(): {
         [id: string]: World;

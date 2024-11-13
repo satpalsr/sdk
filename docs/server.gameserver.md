@@ -87,6 +87,27 @@ The player manager for the game server.
 </td></tr>
 <tr><td>
 
+[webServer](./server.gameserver.webserver.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[WebServer](./server.webserver.md)
+
+
+</td><td>
+
+The web server for the game server.
+
+
+</td></tr>
+<tr><td>
+
 [worlds](./server.gameserver.worlds.md)
 
 

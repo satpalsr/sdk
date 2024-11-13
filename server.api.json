@@ -11286,6 +11286,37 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!GameServer#webServer:member",
+              "docComment": "/**\n * The web server for the game server.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get webServer(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WebServer",
+                  "canonicalReference": "server!WebServer:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "webServer",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!GameServer#worlds:member",
               "docComment": "/**\n * The worlds managed by the game server.\n */\n",
               "excerptTokens": [
@@ -22603,6 +22634,37 @@
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "playerManager",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.GameServer#webServer:member",
+                  "docComment": "/**\n * The web server for the game server.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get webServer(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WebServer",
+                      "canonicalReference": "server!WebServer:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "webServer",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
