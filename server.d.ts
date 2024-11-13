@@ -2370,6 +2370,39 @@ export declare interface Vector3Boolean {
 }
 
 /**
+ * Manages the internal HTTP server for the game server.
+ *
+ * @remarks
+ * This class is used as a singleton and should be
+ * accessed via the GameServer.webServer property.
+ *
+ * @public
+ */
+declare class WebServer implements Readyable {
+
+
+
+
+
+
+
+
+
+    /**
+     * Closes the existing http server and creates a new HTTPS server.
+     * This is intended for local development without a reverse proxy.
+     * Usage of this method will be ignored in production.
+     */
+    enableLocalSSL(): void;
+
+
+
+
+
+
+}
+
+/**
  * Represents a world in the game server.
  *
  * @remarks
