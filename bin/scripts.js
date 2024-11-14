@@ -21,6 +21,7 @@ const path = require('path');
     const destDir = process.cwd();
  
     // Initialize project
+    console.log('🔧 Initializing project');
     execSync('bun init --yes');
     execSync('bun add hytopia');
 
