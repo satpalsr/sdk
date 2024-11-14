@@ -1809,7 +1809,7 @@ export declare type PlayerOrientationState = {
  *
  * @public
  */
-export declare const PORT: string | number;
+export declare const PORT: string | 8080;
 
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;

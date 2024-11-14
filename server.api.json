@@ -24009,7 +24009,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "string | number"
+                  "text": "string | 8080"
                 }
               ],
               "fileUrlPath": "src/networking/WebServer.ts",
@@ -30833,7 +30833,7 @@
             },
             {
               "kind": "Content",
-              "text": "string | number"
+              "text": "string | 8080"
             }
           ],
           "fileUrlPath": "src/networking/WebServer.ts",
