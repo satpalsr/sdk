@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const mkcert = require('mkcert');
 
 (async () => {
   const command = process.argv[2];
@@ -10,35 +10,23 @@ const mkcert = require('mkcert');
   /**
    * Init command
    * 
-   * Initializes a new HYTOPIA project.
+   * Initializes a new HYTOPIA project. Accepting an optional
+   * project name as an argument.
+   * 
+   * @example
+   * `bunx hytopia init my-project-name`
    */
   if (command === 'init') {
     const srcDir = path.join(__dirname, '..', 'boilerplate');
     const destDir = process.cwd();
-  
+ 
+    // Initialize project
+    execSync('bun init --yes');
+    execSync('bun add hytopia');
+
     // Copy boilerplate
     console.log(`🖨️ Copying boilerplate to ${destDir}`);
     fs.cpSync(srcDir, destDir, { recursive: true });
-  
-    // Generate SSL cert and allow mkcert to auto handle CA/Cert setup
-    console.log(`🔒 Generating SSL cert for local development`);
-    const validity = 3650; // 10 years
-    const ca = await mkcert.createCA({
-      organization: 'HYTOPIA',
-      countryCode: 'US',
-      state: 'Washington',
-      locality: 'Seattle',
-      validity,
-    });
-
-    const cert = await mkcert.createCert({
-      ca: { key: ca.key, cert: ca.cert },
-      domains: ['localhost', '127.0.0.1'],
-      validity,
-    });
-
-    fs.writeFileSync(path.join(destDir, 'assets', 'certs', 'localhost.crt'), cert.cert);
-    fs.writeFileSync(path.join(destDir, 'assets', 'certs', 'localhost.key'), cert.key);
 
     // Done, lfg!
     console.log('🚀 Hytopia project initialized successfully!');
