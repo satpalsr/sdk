@@ -1801,7 +1801,12 @@ export declare type PlayerOrientationState = {
     yaw: number;
 };
 
-/** The port the server will listen on. You can override this in your .env by setting PORT. */
+/**
+ * The port the server will run on. You can override
+ * this in your .env by setting PORT. When deployed in
+ * production to HYTOPIA servers, any .env value will
+ * be ignored and 8080 will be used.
+ */
 export declare const PORT: string | number;
 
 /** A raw set of collision groups represented as a 32-bit number. @public */

@@ -4,7 +4,7 @@
 
 ## PORT variable
 
-The port the server will listen on. You can override this in your .env by setting PORT.
+The port the server will run on. You can override this in your .env by setting PORT. When deployed in production to HYTOPIA servers, any .env value will be ignored and 8080 will be used.
 
 **Signature:**
 
