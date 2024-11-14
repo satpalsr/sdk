@@ -523,6 +523,8 @@ function onTickPlayerMovement(this: DefaultCharacterController, inputState: Play
     const entity = this.entity;
     const direction = getDirectionFromOrientation(orientationState);
 
+    this.entity.startModelOneshotAnimations([ 'shoot' ]);
+
     const bullet = spawnBullet(world, entity.getTranslation(), direction);
     setTimeout(() => bullet.isSpawned && bullet.despawn(), 2000);
   }
