@@ -745,6 +745,17 @@ The input keys included in the PlayerInputState.
 
 
 </td></tr>
+<tr><td>
+
+[WEB\_SERVER\_PORT](./server.hytopia.web_server_port.md)
+
+
+</td><td>
+
+The port the server will listen on. You can override this in your .env by setting WEB\_SERVER\_PORT.
+
+
+</td></tr>
 </tbody></table>
 
 ## Type Aliases

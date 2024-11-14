@@ -1618,6 +1618,7 @@ declare namespace HYTOPIA {
         RigidBodyOptions,
         Simulation,
         WebServer,
+        WEB_SERVER_PORT,
         World,
         WorldMap,
         WorldOptions,
@@ -2370,6 +2371,9 @@ export declare interface Vector3Boolean {
     y: boolean;
     z: boolean;
 }
+
+/** The port the server will listen on. You can override this in your .env by setting WEB_SERVER_PORT. */
+export declare const WEB_SERVER_PORT: string | number;
 
 /**
  * Manages the internal HTTP server for the game server.
