@@ -6,14 +6,18 @@ import {
   DefaultCharacterController,
   Entity,
   EventRouter,
+  GameServer,
   PlayerEntity,
-  PlayerInputState,
-  PlayerOrientationState,
   RigidBodyType,
-  Rotation,
-  Vector3,
   World,
   startServer,
+} from 'hytopia';
+
+import type {
+  PlayerInputState,
+  PlayerOrientationState,
+  Rotation,
+  Vector3,
 } from 'hytopia';
 
 import worldJson from './assets/map.json';
@@ -72,6 +76,9 @@ EventRouter.serverInstance.logAllEvents = false;
 // Run
 void startServer(world => {
   const chatManager = world.chatManager;
+
+  // Enable local ssl
+  GameServer.instance.webServer.enableLocalSSL();
 
   // Load Map
   world.loadMap(worldJson);
