@@ -24001,7 +24001,7 @@
             {
               "kind": "Variable",
               "canonicalReference": "server!HYTOPIA.PORT:var",
-              "docComment": "/**\n * The port the server will run on. You can override this in your .env by setting PORT. When deployed in production to HYTOPIA servers, any .env value will be ignored and 8080 will be used.\n */\n",
+              "docComment": "/**\n * The port the server will run on. You can override this in your .env by setting PORT. When deployed in production to HYTOPIA servers, any .env value will be ignored and 8080 will be used.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28468,7 +28468,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "string[]"
+                  "text": "readonly [\"w\", \"a\", \"s\", \"d\", \"sp\", \"sh\", \"tb\", \"ml\", \"mr\", \"q\", \"e\", \"r\", \"f\", \"z\", \"x\", \"c\", \"v\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"0\"]"
                 }
               ],
               "fileUrlPath": "src/networking/players/Player.ts",
@@ -30825,7 +30825,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "server!PORT:var",
-          "docComment": "/**\n * The port the server will run on. You can override this in your .env by setting PORT. When deployed in production to HYTOPIA servers, any .env value will be ignored and 8080 will be used.\n */\n",
+          "docComment": "/**\n * The port the server will run on. You can override this in your .env by setting PORT. When deployed in production to HYTOPIA servers, any .env value will be ignored and 8080 will be used.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -35292,7 +35292,7 @@
             },
             {
               "kind": "Content",
-              "text": "string[]"
+              "text": "readonly [\"w\", \"a\", \"s\", \"d\", \"sp\", \"sh\", \"tb\", \"ml\", \"mr\", \"q\", \"e\", \"r\", \"f\", \"z\", \"x\", \"c\", \"v\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"0\"]"
             }
           ],
           "fileUrlPath": "src/networking/players/Player.ts",
