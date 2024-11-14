@@ -23999,6 +23999,29 @@
               }
             },
             {
+              "kind": "Variable",
+              "canonicalReference": "server!HYTOPIA.PORT:var",
+              "docComment": "/**\n * The port the server will listen on. You can override this in your .env by setting PORT.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PORT: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | number"
+                }
+              ],
+              "fileUrlPath": "src/networking/WebServer.ts",
+              "isReadonly": true,
+              "releaseTag": "Public",
+              "name": "PORT",
+              "variableTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.RawCollisionGroups:type",
               "docComment": "/**\n * A raw set of collision groups represented as a 32-bit number.\n *\n * @public\n */\n",
@@ -28656,29 +28679,6 @@
               "extendsTokenRanges": []
             },
             {
-              "kind": "Variable",
-              "canonicalReference": "server!HYTOPIA.WEB_SERVER_PORT:var",
-              "docComment": "/**\n * The port the server will listen on. You can override this in your .env by setting WEB_SERVER_PORT.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "WEB_SERVER_PORT: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string | number"
-                }
-              ],
-              "fileUrlPath": "src/networking/WebServer.ts",
-              "isReadonly": true,
-              "releaseTag": "Public",
-              "name": "WEB_SERVER_PORT",
-              "variableTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.WebServer:class",
               "docComment": "/**\n * Manages the internal HTTP server for the game server.\n *\n * @remarks\n *\n * This class is used as a singleton and should be accessed via the GameServer.webServer property.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WebServer` class.\n *\n * @public\n */\n",
@@ -30818,6 +30818,29 @@
           "releaseTag": "Public",
           "name": "PlayerOrientationState",
           "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "server!PORT:var",
+          "docComment": "/**\n * The port the server will listen on. You can override this in your .env by setting PORT.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "PORT: "
+            },
+            {
+              "kind": "Content",
+              "text": "string | number"
+            }
+          ],
+          "fileUrlPath": "src/networking/WebServer.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "PORT",
+          "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
           }
@@ -35478,29 +35501,6 @@
             }
           ],
           "extendsTokenRanges": []
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "server!WEB_SERVER_PORT:var",
-          "docComment": "/**\n * The port the server will listen on. You can override this in your .env by setting WEB_SERVER_PORT.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "WEB_SERVER_PORT: "
-            },
-            {
-              "kind": "Content",
-              "text": "string | number"
-            }
-          ],
-          "fileUrlPath": "src/networking/WebServer.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "WEB_SERVER_PORT",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
         },
         {
           "kind": "Class",

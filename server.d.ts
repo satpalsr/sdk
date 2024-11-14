@@ -1618,7 +1618,7 @@ declare namespace HYTOPIA {
         RigidBodyOptions,
         Simulation,
         WebServer,
-        WEB_SERVER_PORT,
+        PORT,
         World,
         WorldMap,
         WorldOptions,
@@ -1800,6 +1800,9 @@ export declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
 };
+
+/** The port the server will listen on. You can override this in your .env by setting PORT. */
+export declare const PORT: string | number;
 
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
@@ -2371,9 +2374,6 @@ export declare interface Vector3Boolean {
     y: boolean;
     z: boolean;
 }
-
-/** The port the server will listen on. You can override this in your .env by setting WEB_SERVER_PORT. */
-export declare const WEB_SERVER_PORT: string | number;
 
 /**
  * Manages the internal HTTP server for the game server.
