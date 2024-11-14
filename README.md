@@ -29,7 +29,7 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 ## Quickstart
 
-1. Install a compatible JavaScript runtime. We recommend [Bun (recommended)](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) are also supported. All examples will be given using Bun.
+1. Install a compatible JavaScript runtime. We recommend you use [Bun](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) can work with additional configuration. All examples will be given using Bun.
 
 2. If you're starting a new project, initialize it.
 ```bash
