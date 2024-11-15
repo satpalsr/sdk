@@ -6,6 +6,14 @@ const path = require('path');
 
 (async () => {
   const command = process.argv[2];
+  const flags = {};
+  for (let i = 3; i < process.argv.length; i += 2) {
+    if (i % 2 === 1) { // Odd indices are flags
+      const flag = process.argv[i].replace('--', '');
+      const value = process.argv[i + 1];
+      flags[flag] = value;
+    }
+  }
 
   /**
    * Init command
@@ -17,17 +25,27 @@ const path = require('path');
    * `bunx hytopia init my-project-name`
    */
   if (command === 'init') {
-    const srcDir = path.join(__dirname, '..', 'boilerplate');
     const destDir = process.cwd();
- 
-    // Initialize project
-    console.log('🔧 Initializing project');
-    execSync('bun init --yes');
-    execSync('bun add hytopia');
 
-    // Copy boilerplate
-    console.log(`🖨️ Copying boilerplate to ${destDir}`);
-    fs.cpSync(srcDir, destDir, { recursive: true });
+    if (flags.template) {
+      console.log(`🔧 Initializing project with examples template ${flags.template}`);
+
+      const templateDir = path.join(__dirname, '..', 'examples', flags.template);
+
+      if (!fs.existsSync(templateDir)) {
+        console.error(`Examples template ${flags.template} does not exist in the examples directory, could not initialize project!`);
+        return;
+      }
+
+      fs.cpSync(templateDir, destDir, { recursive: true });
+      execSync('bun install');
+    } else {
+      console.log('🔧 Initializing project');
+      execSync('bun init --yes');
+      execSync('bun add hytopia');
+
+      fs.cpSync(srcDir, destDir, { recursive: true });  
+    }
 
     // Done, lfg!
     console.log('🚀 Hytopia project initialized successfully!');
