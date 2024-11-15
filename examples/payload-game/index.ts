@@ -1,5 +1,19 @@
 /**
+ * payload-game is a simple game that encompasses a number of core HYTOPIA SDK systems.
+ * This example utilizes entities, spawning, rigid body, colliders and sensors, 
+ * collision groups, audio, character controller hooks, and more.
  * 
+ * This example is a quick and dirty implementation of an overwatch style push the payload
+ * in a multiplayer PvE style. Players start the game around the payload and must stay near it
+ * for it to move towards the next waypoint. Enemies spawn near the next arget waypoint of 
+ * the payload and swarm towards the players. Players can left click to shoot spiders with
+ * bullets.
+ * 
+ * This example is not meant to be a polished game, but rather a demonstration of how to use
+ * the SDK to build your own games. 
+ * 
+ * In a polished implementation, we'd be using multiple files and not just index.ts to
+ * break out and properly organize game behavior and mechanics.
  */
 
 import {
