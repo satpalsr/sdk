@@ -1,7 +1,7 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: SDK Bug [BUG]
+about: Create an SDK specific bug report. Use this for unexpected behaviors or clear bugs that we can reproduce to resolve it in the SDK, or clarify the fix for your code.
+title: <Concise title for this bug> [BUG]
 labels: bug
 assignees: iamarkdev
 
