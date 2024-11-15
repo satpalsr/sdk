@@ -5,10 +5,10 @@
 
 ## What is HYTOPIA?
 
-![HYTOPIA Banner](./readme/assets/banner.png)
+![HYTOPIA Demo](./readme/assets/demo.gif)
 HYTOPIA is a modern games platform inspired by Minecraft, Roblox, and Rec Room.
 
-HYTOPIA allows you to create your own highly-sharable, immersive, massively multiplayer games in a voxel-like style. All playable in a web browser on any device!
+HYTOPIA allows you to create your own highly-sharable, immersive, massively multiplayer games in a voxel-like style by writing TypeScript or JavaScript. All playable in a web browser on any device!
 
 ## What is this SDK?
 
@@ -52,7 +52,7 @@ bun --watch index.ts
 
 4. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the hostname of the local server you started in the previous step.
 
-**Note: If you'd prefer to use JavaScript instead of TypeScript, simply change the file extension of index.ts to index.js - Your editor will highlight the TypeScript syntax errors, simple delete the type annotations and everything should work the same without and TypeScript usage.**
+**Note: If you'd prefer to use JavaScript instead of TypeScript, simply change the file extension of index.ts to index.js - Your editor will highlight the TypeScript syntax errors, simple delete the type annotations and everything should work the same without any TypeScript usage.**
 
 Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
