@@ -52,6 +52,8 @@ bun --watch index.ts
 
 4. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the hostname of the local server you started in the previous step.
 
+**Note: If you'd prefer to use JavaScript instead of TypeScript, simply change the file extension of index.ts to index.js - Your editor will highlight the TypeScript syntax errors, simple delete the type annotations and everything should work the same without and TypeScript usage.**
+
 Once you're up and running, here's some other resources to go further:
 - [Game Examples](./examples)
 - [API Reference](./docs/server.md)
