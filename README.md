@@ -1,7 +1,7 @@
 # HYTOPIA SDK
 
 ## Quick Links
-[Quickstart](#quickstart) • [API Reference](./docs/server.md) • [Examples](./examples) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
+[Quickstart](#quickstart) • [API Reference](./docs/server.md) • [Examples](./examples) • [Join Our Developer Discord](https://discord.gg/hytopia-developers) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
 
 ## What is HYTOPIA?
 
