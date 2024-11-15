@@ -36,9 +36,14 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 mkdir my-project-directory && cd my-project-directory
 ```
 
-3. Initialize a hytopia project. Sets up package.json and all dependencies, copies assets and an index.ts game script into your project.
+3. Initialize a boilerplate hytopia project. Sets up package.json and all dependencies, copies assets and an index.ts game script into your project.
 ```bash
 bunx hytopia init
+```
+
+OR you can initialize a project from any of the examples in the examples directory like so:
+```bash
+bunx hytopia init --template payload-game
 ```
 
 3. Start the server, use --watch for hot reloads as you make changes.

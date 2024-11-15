@@ -1,3 +1,7 @@
+/**
+ * 
+ */
+
 import {
   Audio,
   BlockType,
@@ -5,7 +9,6 @@ import {
   CollisionGroup,
   DefaultCharacterController,
   Entity,
-  EventRouter,
   GameServer,
   PlayerEntity,
   RigidBodyType,
@@ -20,7 +23,7 @@ import type {
   Vector3,
 } from 'hytopia';
 
-import worldJson from './assets/map.json';
+import map from './assets/map.json';
 
 // Constants
 const BULLET_SPEED = 50;
@@ -57,35 +60,32 @@ const PAYLOAD_WAYPOINT_ENEMY_SPAWNS = [
   ],
 ];
 
-// Globals, yuck
-const enemyHealth: Record<number, number> = {};
-const enemyPathfindAccumulators: Record<number, number> = {};
-const enemyPathfindingTargets: Record<number, Vector3> = {};
-const playerEntityHealth: Record<number, number> = {};
-let started = false;
-let payloadEntity: Entity | null = null;
-let payloadPlayerEntityCount = 0;
-let playerCount = 0;
-let targetWaypointCoordinateIndex = 0;
-
-// Configure Global Event Router
-EventRouter.serverInstance.logIgnoreEvents = [ 'CONNECTION.PACKET_SENT' ];
-EventRouter.serverInstance.logIgnoreEventPrefixes = [ 'CONNECTION.PACKET_SENT:' ];
-EventRouter.serverInstance.logAllEvents = false;
+// Simple game state tracking via globals.
+const enemyHealth: Record<number, number> = {}; // Entity id -> health
+const enemyPathfindAccumulators: Record<number, number> = {}; // Entity id -> accumulator, so we don't pathfind each tick
+const enemyPathfindingTargets: Record<number, Vector3> = {}; // Entity id -> target coordinate
+const playerEntityHealth: Record<number, number> = {}; // Player entity id -> health
+let started = false; // Game started flag
+let payloadEntity: Entity | null = null; // Payload entity
+let payloadPlayerEntityCount = 0; // Number of player entities within the payload sensor, minus number of enemies
+let playerCount = 0; // Number of players in the game
+let targetWaypointCoordinateIndex = 0; // Current waypoint coordinate index for the payload
 
 // Run
-void startServer(world => {
+startServer(world => { // Perform our game setup logic in the startServer init callback here.
   const chatManager = world.chatManager;
 
-  // Enable local ssl
+  // Enable local ssl, so we can connect to https://localhost:8080 from play.hytopia.com for testing
+  // If using NGROK or a reverse proxy that handles SSL, you need to comment this out to be able to
+  // connect to the server from the client using the reverse proxy URL.
   GameServer.instance.webServer.enableLocalSSL();
 
   // Load Map
-  world.loadMap(worldJson);
+  world.loadMap(map);
 
   // Setup Player Join & Spawn Controlled Entity
   world.onPlayerJoin = player => {
-    const playerEntity = new PlayerEntity({
+    const playerEntity = new PlayerEntity({ // Create an entity our newly joined player controls
       player,
       name: 'Player',
       modelUri: 'models/player-with-gun.gltf',
@@ -93,21 +93,30 @@ void startServer(world => {
       modelScale: 0.5,
     });
 
+    // Spawn the player entity at a random coordinate
     const randomSpawnCoordinate = PLAYER_SPAWN_COORDINATES[Math.floor(Math.random() * PLAYER_SPAWN_COORDINATES.length)];
     playerEntity.spawn(world, randomSpawnCoordinate);
 
+    // We need to do some custom logic for player inputs, so let's assign custom onTick handler to the default player controller.
     playerEntity.characterController!.onTickPlayerMovement = onTickPlayerMovement;
 
+    // Set custom collision groups for the player entity, this is so we can reference the PLAYER collision group
+    // specifically in enemy collision sensors.
     playerEntity.setCollisionGroupsForSolidColliders({
       belongsTo: [ CollisionGroup.ENTITY, CollisionGroup.PLAYER ],
       collidesWith: [ CollisionGroup.ALL ],
     });
 
+    // Initialize player health
     playerEntityHealth[playerEntity.id!] = 20;
+
+    // Increment player count
     playerCount++;
 
+    // Send a message to all players informing them that a new player has joined
     chatManager.sendBroadcastMessage(`Player ${player.username} has joined the game!`, 'FFFFFF');
 
+    // If the game hasn't started yet, send a message to all players to start the game
     if (!started) {
       chatManager.sendBroadcastMessage('Enter command /start to start the game!', 'FFFFFF');
     }
@@ -115,9 +124,13 @@ void startServer(world => {
 
   // Setup Player Leave & Despawn Controlled Entity
   world.onPlayerLeave = player => {
+    // Despawn all player entities for the player that left
+    // We apply a translation prior to despawn because of a bug in the RAPIER
+    // physics engine we use where entities despawned to not trigger a collision
+    // event for leaving a sensor. This is a workaround till a better solution is found.
     world.entityManager.getAllPlayerEntities(player).forEach(entity => {
       entity.setTranslation({ x: 0, y: 100, z: 0 });
-      setTimeout(() => entity.despawn(), 50);
+      setTimeout(() => entity.despawn(), 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     });
 
     playerCount--;
@@ -127,7 +140,6 @@ void startServer(world => {
 
   // Spawn Payload
   spawnPayloadEntity(world);
-
 
   // Start spawning enemies
   startEnemySpawnLoop(world);
@@ -143,7 +155,7 @@ void startServer(world => {
     started = false;
   });
 
-  // Start Ambient Music
+  // Start ambient music for all players
   (new Audio({
     uri: 'audio/music/game.mp3',
     loop: true,
@@ -155,7 +167,7 @@ void startServer(world => {
 function startEnemySpawnLoop(world: World) {
   let spawnInterval;
 
-  const spawn = () => {
+  const spawn = () => { // Simple spawn loop that spawns enemies relative to the payload's current waypoint
     const possibleSpawnCoordinate = PAYLOAD_WAYPOINT_ENEMY_SPAWNS[targetWaypointCoordinateIndex];
     
     if (!possibleSpawnCoordinate) {
@@ -177,18 +189,19 @@ function startEnemySpawnLoop(world: World) {
 }
 
 function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
+  // Spawn a bullet when the player shoots.
   const bullet = new Entity({
     name: 'Bullet',
     modelUri: 'models/bullet.gltf',
     modelScale: 0.3,
     rigidBodyOptions: {
-      type: RigidBodyType.KINEMATIC_VELOCITY,
+      type: RigidBodyType.KINEMATIC_VELOCITY, // Kinematic means entity's rigid body will not be affected by physics. KINEMATIC_VELOCITY means the entity is moved by setting velocity.
       linearVelocity: {
         x: direction.x * BULLET_SPEED,
         y: direction.y * BULLET_SPEED,
         z: direction.z * BULLET_SPEED,
       },
-      rotation: getRotationFromDirection(direction),
+      rotation: getRotationFromDirection(direction), // Get the rotation from the direction vector so it's facing the right way we shot it
       colliders: [
         {
           shape: ColliderShape.BALL,
@@ -203,19 +216,22 @@ function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
     },
   });
 
-  bullet.onBlockCollision = (block: BlockType, started: boolean) => {
+  bullet.onBlockCollision = (block: BlockType, started: boolean) => { // If the bullet hits a block, despawn it
     if (started) {
       bullet.despawn();
     }
   };
 
-  bullet.onEntityCollision = (entity: Entity, started: boolean) => {
-    if (!started || ![ 'Spider', 'Zombie' ].includes(entity.name)) {
+  bullet.onEntityCollision = (entity: Entity, started: boolean) => { // If the bullet hits an enemy, deal damage if it is a Spider
+    if (!started || entity.name !== 'Spider') {
       return;
     }
     
     enemyHealth[entity.id!]--;
 
+    // Apply knockback, the knockback effect is less if the spider is larger, and more if it is smaller
+    // because of how the physics simulation applies forces relative to automatically calculated mass from the spider's
+    // size
     const bulletDirection = bullet.getDirectionFromRotation();
     const mass = entity.getMass();
     const knockback = 14 * mass;
@@ -227,9 +243,9 @@ function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
     });
 
     if (enemyHealth[entity.id!] <= 0) {
-      // have to YEET the spider to register it leaving the sensor
+      // YEET the spider before despawning it so it registers leaving the sensor
       entity.setTranslation({ x: 0, y: 100, z: 0 });
-      setTimeout(() => { entity.despawn(); }, 50);
+      setTimeout(() => { entity.despawn(); }, 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     }
 
     bullet.despawn();
@@ -237,6 +253,7 @@ function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
 
   bullet.spawn(world, coordinate);
 
+  // Play a bullet noise that follows the bullet spatially
   (new Audio({
     uri: 'audio/sfx/shoot.mp3',
     playbackRate: 2,
@@ -263,21 +280,23 @@ function spawnPayloadEntity(world: World) {
       colliders: [
         {
           shape: ColliderShape.BLOCK,
-          halfExtents: { x: 0.9, y: 1.6, z: 2.5 },
+          halfExtents: { x: 0.9, y: 1.6, z: 2.5 }, // Note: We manually set the collider size, the SDK currently does not support automatic sizing of colliders to a model.
           collisionGroups: {
             belongsTo: [ CollisionGroup.ALL ],
             collidesWith: [ CollisionGroup.ENTITY, CollisionGroup.ENTITY_SENSOR, CollisionGroup.PLAYER ],
           },
         },
         {
-          shape: ColliderShape.BLOCK,
+          shape: ColliderShape.BLOCK, // Create a proximity sensor for movement when players are near.
           halfExtents: { x: 3.75, y: 2, z: 6 },
           isSensor: true,
           collisionGroups: {
             belongsTo: [ CollisionGroup.ENTITY_SENSOR ],
             collidesWith: [ CollisionGroup.PLAYER, CollisionGroup.ENTITY ],
           },
-          onCollision: (other: BlockType | Entity, started: boolean) => {
+          // We use a onCollision handler specific to this sensor, and 
+          // not the whole entity, so we can track the number of players in the payload sensor.
+          onCollision: (other: BlockType | Entity, started: boolean) => { 
             if (other instanceof PlayerEntity) {
               started ? payloadPlayerEntityCount++ : payloadPlayerEntityCount--;
             } else if (other instanceof Entity) {
@@ -289,22 +308,23 @@ function spawnPayloadEntity(world: World) {
     },
   });
 
-  payloadEntity.onTick = onTickPathfindPayload;
-  payloadEntity.spawn(world, PAYLOAD_SPAWN_COORDINATE);
+  payloadEntity.onTick = onTickPathfindPayload; // Use our own basic pathfinding function each tick of the game for the payload.
+  payloadEntity.spawn(world, PAYLOAD_SPAWN_COORDINATE); // Spawn the payload at the designated spawn coordinate
 
-  (new Audio({
+  (new Audio({ // Play a looped idle sound that follows the payload spatially
     uri: 'audio/sfx/payload-idle.mp3',
     loop: true,
     attachedToEntity: payloadEntity,
     volume: 0.25,
-    referenceDistance: 5,
+    referenceDistance: 5, // Reference distance affects how loud the audio is relative to a player's proximity to the entity
   })).play(world);
 } 
 
 function spawnSpider(world: World, coordinate: Vector3) {
   const baseScale = 0.5;
   const baseSpeed = 3;
-  const randomScaleMultiplier = Math.random() * 2 + 1; // Random value between 1 and 3
+  const randomScaleMultiplier = Math.random() * 2 + 1; // Random value between 1 and 3 // Random scale multiplier to make each spider a different size
+  const targetPlayers = new Set<PlayerEntity>();
 
   const spider = new Entity({
     name: 'Spider',
@@ -320,7 +340,7 @@ function spawnSpider(world: World, coordinate: Vector3) {
           borderRadius: 0.1 * randomScaleMultiplier,
           halfHeight: 0.225 * randomScaleMultiplier,
           radius: 0.5 * randomScaleMultiplier,
-          tag: 'body',
+          tag: 'body', // Note we use tags here, they don't really serve a purpose in this example other than showing that they can be used.
           collisionGroups: {
             belongsTo: [ CollisionGroup.ENTITY ],
             collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY_SENSOR, CollisionGroup.PLAYER ],
@@ -336,7 +356,7 @@ function spawnSpider(world: World, coordinate: Vector3) {
             belongsTo: [ CollisionGroup.ENTITY_SENSOR ],
             collidesWith: [ CollisionGroup.PLAYER ],
           },
-          onCollision: (other: BlockType | Entity, started: boolean) => {
+          onCollision: (other: BlockType | Entity, started: boolean) => { // If a player enters or exits the aggro sensor, add or remove them from the target players set
             if (other instanceof PlayerEntity) {
               started ? targetPlayers.add(other) : targetPlayers.delete(other);
             }
@@ -346,16 +366,14 @@ function spawnSpider(world: World, coordinate: Vector3) {
     },
   });
 
-  const targetPlayers = new Set<PlayerEntity>();
-
-  spider.onTick = (tickDeltaMs: number) => onTickPathfindEnemy(
+  spider.onTick = (tickDeltaMs: number) => onTickPathfindEnemy( // Use our own basic pathfinding function each tick of the game for the enemy
     spider,
     targetPlayers,
     baseSpeed * randomScaleMultiplier,
     tickDeltaMs,
   );
 
-  spider.onEntityCollision = (entity: Entity, started: boolean) => {
+  spider.onEntityCollision = (entity: Entity, started: boolean) => { // If the spider hits a player, deal damage and apply knockback
     if (started && entity instanceof PlayerEntity && entity.isSpawned) {
       const spiderDirection = spider.getDirectionFromRotation();
       const knockback = 4 * randomScaleMultiplier;
@@ -379,15 +397,16 @@ function spawnSpider(world: World, coordinate: Vector3) {
 
   spider.spawn(world, coordinate);
 
+  // Give the spider a health value relative to its size, bigger = more health
   enemyHealth[spider.id!] = 2 * Math.round(randomScaleMultiplier);
 }
 
-function onTickPathfindPayload(this: Entity, tickDeltaMs: number) {
-  const speed = started
+function onTickPathfindPayload(this: Entity, tickDeltaMs: number) { // Movement logic for the payload
+  const speed = started // Set the payload speed relative to the number of players in the payload sensor
     ? Math.max(Math.min(PAYLOAD_PER_PLAYER_SPEED * payloadPlayerEntityCount, PAYLOAD_MAX_SPEED), 0)
     : 0;
 
-  if (!speed) {
+  if (!speed) { // Play animations based on if its moving or not
     this.stopModelAnimations(Array.from(this.modelLoopedAnimations).filter(v => v !== 'idle'));
     this.startModelLoopedAnimations([ 'idle' ]);
   } else {
@@ -395,7 +414,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) {
     this.startModelLoopedAnimations([ 'walk' ]);
   }
 
-  // Calculate direction to target
+  // Calculate direction to target waypoint
   const targetWaypointCoordinate = PAYLOAD_WAYPOINT_COORDINATES[targetWaypointCoordinateIndex];
   const currentPosition = this.getTranslation();
   const deltaX = targetWaypointCoordinate.x - currentPosition.x;
@@ -406,7 +425,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) {
     z: Math.abs(deltaZ) > 0.1 ? Math.sign(deltaZ) : 0,
   };
 
-  // Apply rotation to face direction if necessary
+  // Apply rotation to face direction if necessary based on the current target waypoint
   const rotation = this.getRotation();
   const currentAngle = 2 * Math.atan2(rotation.y, rotation.w);
   const targetAngle = Math.atan2(direction.x, direction.z) + Math.PI; // Add PI to face forward
@@ -452,7 +471,7 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
   if (!entity.isSpawned || !payloadEntity) return;
   
   const entityId = entity.id!;
-  enemyPathfindAccumulators[entityId] ??= 0;
+  enemyPathfindAccumulators[entityId] ??= 0; // Initialize the accumulator for this enemy if it isn't initialized yet
 
   // Handle pathfinding
   if (!enemyPathfindingTargets[entityId] || enemyPathfindAccumulators[entityId] >= PATHFIND_ACCUMULATOR_THRESHOLD) {
@@ -542,7 +561,7 @@ function damagePlayer(playerEntity: PlayerEntity) {
   );
 
   if (playerEntityHealth[playerEntity.id!] <= 0) {
-    chatManager.sendPlayerMessage(
+    chatManager.sendPlayerMessage( // Alert the player they've been damaged, since we don't have UI support yet, we just use chat
       playerEntity.player,
       'You have died!',
       'FF0000',
