@@ -25,6 +25,7 @@
 
 import {
   startServer,
+  Audio,
   GameServer,
   PlayerEntity,
 } from 'hytopia';
@@ -112,4 +113,15 @@ startServer(world => {
       entity.applyImpulse({ x: 0, y: 20, z: 0 });
     });
   });
+
+  /**
+   * Play some peaceful ambient music to
+   * set the mood!
+   */
+  
+  new Audio({
+    uri: 'audio/music/overworld.mp3',
+    loop: true,
+    volume: 0.1,
+  }).play(world);
 });
