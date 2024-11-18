@@ -47,7 +47,7 @@ Description
 
 </td><td>
 
-Enables SSL for local development. The server will be available at https://localhost:8080. This is intended for local development without a reverse proxy. Don't use it when using tunnels like ngrok.com that already handle SSL. Usage of this method will be ignored in production. Must be called in init function of [startServer()](./server.startserver.md)<!-- -->.
+Enables SSL for local development. The server will be available at https://localhost:8080. This is intended for local development. Usage of this method will be ignored in production. Must be called in init function of [startServer()](./server.startserver.md)<!-- -->.
 
 
 </td></tr>

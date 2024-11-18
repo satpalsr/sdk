@@ -45,11 +45,8 @@ startServer(world => {
   /**
    * Enable SSL for local development. This allows you to
    * connect to your local game server from https://play.hytopia.com
-   * without having to manually set up SSL.
-   * 
-   * If you are using a reverse proxy like ngrok (IE, `ngrok http 8080`)
-   * so others can connect to your local game server via the ngrok
-   * provided URL, make sure to remove this or comment it out.
+   * without having to manually set up SSL. Your server will run on
+   * https://localhost:8080 instead of http.
    */
   GameServer.instance.webServer.enableLocalSSL();
 

@@ -90,8 +90,6 @@ startServer(world => { // Perform our game setup logic in the startServer init c
   const chatManager = world.chatManager;
 
   // Enable local ssl, so we can connect to https://localhost:8080 from play.hytopia.com for testing
-  // If using NGROK or a reverse proxy that handles SSL, you need to comment this out to be able to
-  // connect to the server from the client using the reverse proxy URL.
   GameServer.instance.webServer.enableLocalSSL();
 
   // Load Map
