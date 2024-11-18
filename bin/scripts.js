@@ -42,7 +42,7 @@ const path = require('path');
     } else {
       console.log('🔧 Initializing project');
       execSync('bun init --yes');
-      execSync('bun add hytopia');
+      execSync('bun add hytopia@latest');
       
       const srcDir = path.join(__dirname, '..', 'boilerplate');
       fs.cpSync(srcDir, destDir, { recursive: true });  

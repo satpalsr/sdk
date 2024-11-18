@@ -9,6 +9,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "hytopia": "^0.1.15"
+    "hytopia": "latest"
   }
 }
