@@ -43,14 +43,6 @@ import worldMap from './assets/map.json';
 
 startServer(world => {
   /**
-   * Enable SSL for local development. This allows you to
-   * connect to your local game server from https://play.hytopia.com
-   * without having to manually set up SSL. Your server will run on
-   * https://localhost:8080 instead of http.
-   */
-  GameServer.instance.webServer.enableLocalSSL();
-
-  /**
    * Enable debug rendering of the physics simulation.
    * This will overlay lines in-game representing colliders,
    * rigid bodies, and raycasts. This is useful for debugging

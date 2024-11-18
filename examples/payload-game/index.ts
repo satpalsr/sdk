@@ -89,9 +89,6 @@ let targetWaypointCoordinateIndex = 0; // Current waypoint coordinate index for 
 startServer(world => { // Perform our game setup logic in the startServer init callback here.
   const chatManager = world.chatManager;
 
-  // Enable local ssl, so we can connect to https://localhost:8080 from play.hytopia.com for testing
-  GameServer.instance.webServer.enableLocalSSL();
-
   // Load Map
   world.loadMap(map);
 

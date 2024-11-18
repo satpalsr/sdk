@@ -19,36 +19,3 @@ This class is used as a singleton and should be accessed via the GameServer.webS
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WebServer` class.
 
-## Methods
-
-<table><thead><tr><th>
-
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[enableLocalSSL()](./server.hytopia.webserver.enablelocalssl.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Enables SSL for local development. The server will be available at https://localhost:8080. This is intended for local development. Usage of this method will be ignored in production. Must be called in init function of [startServer()](./server.startserver.md)<!-- -->.
-
-
-</td></tr>
-</tbody></table>

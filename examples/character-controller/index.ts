@@ -9,7 +9,6 @@ import MyCharacterController from './MyCharacterController';
 import worldMap from './assets/map.json';
 
 startServer(world => {
-  GameServer.instance.webServer.enableLocalSSL();
   world.simulation.enableDebugRendering(true);
   world.loadMap(worldMap);
 

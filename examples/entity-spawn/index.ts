@@ -68,8 +68,6 @@ startServer(world => {
  * Boilerplate setup for our example
  */
 function setup(world: World) {
-  GameServer.instance.webServer.enableLocalSSL();
-
   world.simulation.enableDebugRendering(true);
   world.loadMap(worldMap);
 
