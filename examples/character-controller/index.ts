@@ -1,6 +1,5 @@
 import {
   startServer,
-  GameServer,
   PlayerEntity,
 } from 'hytopia';
 
@@ -29,7 +28,7 @@ startServer(world => {
       console.log('Creating custom player entity character controller...');
 
       return new MyCharacterController(playerEntity);
-    }
+    };
 
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
     console.log('Spawned player entity!');

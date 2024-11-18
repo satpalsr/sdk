@@ -2,7 +2,6 @@ import {
   startServer,
   ColliderShape,
   Entity,
-  GameServer,
   PlayerEntity,
   RigidBodyType,
   World,
@@ -50,7 +49,7 @@ startServer(world => {
           onCollision: (otherEntity, started) => {
             console.log('spider aggro-sensor colliding with', otherEntity.name, started);
           },
-        }
+        },
       ],
       rotation: { x: 0, y: 0.4, z: 0, w: 0.6 }, // rotations are provided as a quaternion
     },
