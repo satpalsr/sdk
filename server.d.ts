@@ -1497,6 +1497,34 @@ export declare class EventRouter {
 }
 
 /**
+ * A callback function called when the entity associated with the
+ * SimpleCharacterController updates its rotation as it is
+ * attempting to face a target coordinate.
+ * @param currentRotation - The current rotation of the entity.
+ * @param targetRotation - The target rotation of the entity.
+ * @public
+ */
+export declare type FaceCallback = (currentRotation: Rotation, targetRotation: Rotation) => void;
+
+/**
+ * A callback function called when the entity associated with the
+ * SimpleCharacterController finishes rotating and is now facing
+ * a target coordinate.
+ * @param endRotation - The rotation of the entity after it has finished rotating.
+ * @public
+ */
+export declare type FaceCompleteCallback = (endRotation: Rotation) => void;
+
+/**
+ * Options for the {@link SimpleCharacterController.face} method.
+ * @public
+ */
+export declare type FaceOptions = {
+    faceCallback?: FaceCallback;
+    faceCompleteCallback?: FaceCompleteCallback;
+};
+
+/**
  * Manages the game and associated worlds and systems.
  *
  * @remarks
@@ -1606,6 +1634,12 @@ declare namespace HYTOPIA {
         RigidBodyAdditionalMassProperties,
         RigidBodyOptions,
         SimpleCharacterController,
+        FaceCallback,
+        FaceCompleteCallback,
+        FaceOptions,
+        MoveCallback,
+        MoveCompleteCallback,
+        MoveOptions,
         Simulation,
         WebServer,
         PORT,
@@ -1618,6 +1652,33 @@ declare namespace HYTOPIA {
     }
 }
 export default HYTOPIA;
+
+/**
+ * A callback function called when the entity associated with the
+ * SimpleCharacterController updates its translation as it is
+ * attempting to move to a target coordinate.
+ * @param currentTranslation - The current translation of the entity.
+ * @param targetTranslation - The target translation of the entity.
+ * @public
+ */
+export declare type MoveCallback = (currentTranslation: Vector3, targetTranslation: Vector3) => void;
+
+/**
+ * A callback function called when the entity associated with the
+ * SimpleCharacterController reaches the target coordinate.
+ * @param endTranslation - The translation of the entity after it has finished moving.
+ * @public
+ */
+export declare type MoveCompleteCallback = (endTranslation: Vector3) => void;
+
+/**
+ * Options for the {@link SimpleCharacterController.move} method.
+ * @public
+ */
+export declare type MoveOptions = {
+    moveCallback?: MoveCallback;
+    moveCompleteCallback?: MoveCompleteCallback;
+};
 
 /**
  * A player in the game.
@@ -2327,6 +2388,12 @@ export declare class SimpleCharacterController extends BaseCharacterController {
 
     /**
      * Rotates the entity at a given speed to face a target coordinate.
+     *
+     * @remarks
+     * If this method is called while the entity is already attempting
+     * to face another target, the previous target will be ignored and
+     * the entity will start attempting to face the new target.
+     *
      * @param target - The target coordinate to face.
      * @param speed - The speed at which to rotate to the target coordinate.
      * @param options - Additional options for the face operation, such as callbacks.
@@ -2334,6 +2401,12 @@ export declare class SimpleCharacterController extends BaseCharacterController {
     face(target: Vector3, speed: number, options?: FaceOptions): void;
     /**
      * Moves the entity at a given speed in a straight line to a target coordinate.
+     *
+     * @remarks
+     * If this method is called while the entity is already attempting
+     * to move to another target, the previous target will be ignored and
+     * the entity will start attempting to move to the new target.
+     *
      * @param target - The target coordinate to move to.
      * @param speed - The speed at which to move to the target coordinate.
      * @param options - Additional options for the move operation, such as callbacks.

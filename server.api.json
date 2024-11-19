@@ -11116,6 +11116,129 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!FaceCallback:type",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its rotation as it is attempting to face a target coordinate.\n *\n * @param currentRotation - The current rotation of the entity.\n *\n * @param targetRotation - The target rotation of the entity.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type FaceCallback = "
+            },
+            {
+              "kind": "Content",
+              "text": "(currentRotation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Rotation",
+              "canonicalReference": "server!Rotation:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", targetRotation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Rotation",
+              "canonicalReference": "server!Rotation:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "FaceCallback",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!FaceCompleteCallback:type",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController finishes rotating and is now facing a target coordinate.\n *\n * @param endRotation - The rotation of the entity after it has finished rotating.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type FaceCompleteCallback = "
+            },
+            {
+              "kind": "Content",
+              "text": "(endRotation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Rotation",
+              "canonicalReference": "server!Rotation:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "FaceCompleteCallback",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!FaceOptions:type",
+          "docComment": "/**\n * Options for the {@link SimpleCharacterController.face} method.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type FaceOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    faceCallback?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "FaceCallback",
+              "canonicalReference": "server!FaceCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    faceCompleteCallback?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "FaceCompleteCallback",
+              "canonicalReference": "server!FaceCompleteCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "FaceOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!GameServer:class",
           "docComment": "/**\n * Manages the game and associated worlds and systems.\n *\n * @remarks\n *\n * This class is used as a singleton and should be accessed via the `instance` property\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `GameServer` class.\n *\n * @public\n */\n",
@@ -22383,6 +22506,129 @@
               "implementsTokenRanges": []
             },
             {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.FaceCallback:type",
+              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its rotation as it is attempting to face a target coordinate.\n *\n * @param currentRotation - The current rotation of the entity.\n *\n * @param targetRotation - The target rotation of the entity.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type FaceCallback = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(currentRotation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Rotation",
+                  "canonicalReference": "server!Rotation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", targetRotation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Rotation",
+                  "canonicalReference": "server!Rotation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "FaceCallback",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.FaceCompleteCallback:type",
+              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController finishes rotating and is now facing a target coordinate.\n *\n * @param endRotation - The rotation of the entity after it has finished rotating.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type FaceCompleteCallback = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(endRotation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Rotation",
+                  "canonicalReference": "server!Rotation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "FaceCompleteCallback",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.FaceOptions:type",
+              "docComment": "/**\n * Options for the {@link SimpleCharacterController.face} method.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type FaceOptions = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n    faceCallback?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FaceCallback",
+                  "canonicalReference": "server!FaceCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    faceCompleteCallback?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FaceCompleteCallback",
+                  "canonicalReference": "server!FaceCompleteCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n}"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "FaceOptions",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 6
+              }
+            },
+            {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.GameServer:class",
               "docComment": "/**\n * Manages the game and associated worlds and systems.\n *\n * @remarks\n *\n * This class is used as a singleton and should be accessed via the `instance` property\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `GameServer` class.\n *\n * @public\n */\n",
@@ -22696,6 +22942,129 @@
                   "name": "STOP"
                 }
               ]
+            },
+            {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.MoveCallback:type",
+              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.\n *\n * @param currentTranslation - The current translation of the entity.\n *\n * @param targetTranslation - The target translation of the entity.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type MoveCallback = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(currentTranslation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", targetTranslation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "MoveCallback",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.MoveCompleteCallback:type",
+              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type MoveCompleteCallback = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(endTranslation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "MoveCompleteCallback",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "TypeAlias",
+              "canonicalReference": "server!HYTOPIA.MoveOptions:type",
+              "docComment": "/**\n * Options for the {@link SimpleCharacterController.move} method.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export type MoveOptions = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n    moveCallback?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MoveCallback",
+                  "canonicalReference": "server!MoveCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    moveCompleteCallback?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MoveCompleteCallback",
+                  "canonicalReference": "server!MoveCompleteCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n}"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+              "releaseTag": "Public",
+              "name": "MoveOptions",
+              "typeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 6
+              }
             },
             {
               "kind": "Class",
@@ -27916,7 +28285,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.SimpleCharacterController#face:member(1)",
-                  "docComment": "/**\n * Rotates the entity at a given speed to face a target coordinate.\n *\n * @param target - The target coordinate to face.\n *\n * @param speed - The speed at which to rotate to the target coordinate.\n *\n * @param options - Additional options for the face operation, such as callbacks.\n */\n",
+                  "docComment": "/**\n * Rotates the entity at a given speed to face a target coordinate.\n *\n * @remarks\n *\n * If this method is called while the entity is already attempting to face another target, the previous target will be ignored and the entity will start attempting to face the new target.\n *\n * @param target - The target coordinate to face.\n *\n * @param speed - The speed at which to rotate to the target coordinate.\n *\n * @param options - Additional options for the face operation, such as callbacks.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -27942,7 +28311,7 @@
                     {
                       "kind": "Reference",
                       "text": "FaceOptions",
-                      "canonicalReference": "server!~FaceOptions:type"
+                      "canonicalReference": "server!FaceOptions:type"
                     },
                     {
                       "kind": "Content",
@@ -27998,7 +28367,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.SimpleCharacterController#move:member(1)",
-                  "docComment": "/**\n * Moves the entity at a given speed in a straight line to a target coordinate.\n *\n * @param target - The target coordinate to move to.\n *\n * @param speed - The speed at which to move to the target coordinate.\n *\n * @param options - Additional options for the move operation, such as callbacks.\n */\n",
+                  "docComment": "/**\n * Moves the entity at a given speed in a straight line to a target coordinate.\n *\n * @remarks\n *\n * If this method is called while the entity is already attempting to move to another target, the previous target will be ignored and the entity will start attempting to move to the new target.\n *\n * @param target - The target coordinate to move to.\n *\n * @param speed - The speed at which to move to the target coordinate.\n *\n * @param options - Additional options for the move operation, such as callbacks.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -28024,7 +28393,7 @@
                     {
                       "kind": "Reference",
                       "text": "MoveOptions",
-                      "canonicalReference": "server!~MoveOptions:type"
+                      "canonicalReference": "server!MoveOptions:type"
                     },
                     {
                       "kind": "Content",
@@ -30130,6 +30499,129 @@
               "extendsTokenRanges": []
             }
           ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!MoveCallback:type",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.\n *\n * @param currentTranslation - The current translation of the entity.\n *\n * @param targetTranslation - The target translation of the entity.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MoveCallback = "
+            },
+            {
+              "kind": "Content",
+              "text": "(currentTranslation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3",
+              "canonicalReference": "server!Vector3:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", targetTranslation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3",
+              "canonicalReference": "server!Vector3:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "MoveCallback",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!MoveCompleteCallback:type",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MoveCompleteCallback = "
+            },
+            {
+              "kind": "Content",
+              "text": "(endTranslation: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3",
+              "canonicalReference": "server!Vector3:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "MoveCompleteCallback",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!MoveOptions:type",
+          "docComment": "/**\n * Options for the {@link SimpleCharacterController.move} method.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MoveOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    moveCallback?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MoveCallback",
+              "canonicalReference": "server!MoveCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    moveCompleteCallback?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MoveCompleteCallback",
+              "canonicalReference": "server!MoveCompleteCallback:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/controllers/SimpleCharacterController.ts",
+          "releaseTag": "Public",
+          "name": "MoveOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
         },
         {
           "kind": "Class",
@@ -35350,7 +35842,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!SimpleCharacterController#face:member(1)",
-              "docComment": "/**\n * Rotates the entity at a given speed to face a target coordinate.\n *\n * @param target - The target coordinate to face.\n *\n * @param speed - The speed at which to rotate to the target coordinate.\n *\n * @param options - Additional options for the face operation, such as callbacks.\n */\n",
+              "docComment": "/**\n * Rotates the entity at a given speed to face a target coordinate.\n *\n * @remarks\n *\n * If this method is called while the entity is already attempting to face another target, the previous target will be ignored and the entity will start attempting to face the new target.\n *\n * @param target - The target coordinate to face.\n *\n * @param speed - The speed at which to rotate to the target coordinate.\n *\n * @param options - Additional options for the face operation, such as callbacks.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35376,7 +35868,7 @@
                 {
                   "kind": "Reference",
                   "text": "FaceOptions",
-                  "canonicalReference": "server!~FaceOptions:type"
+                  "canonicalReference": "server!FaceOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -35432,7 +35924,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!SimpleCharacterController#move:member(1)",
-              "docComment": "/**\n * Moves the entity at a given speed in a straight line to a target coordinate.\n *\n * @param target - The target coordinate to move to.\n *\n * @param speed - The speed at which to move to the target coordinate.\n *\n * @param options - Additional options for the move operation, such as callbacks.\n */\n",
+              "docComment": "/**\n * Moves the entity at a given speed in a straight line to a target coordinate.\n *\n * @remarks\n *\n * If this method is called while the entity is already attempting to move to another target, the previous target will be ignored and the entity will start attempting to move to the new target.\n *\n * @param target - The target coordinate to move to.\n *\n * @param speed - The speed at which to move to the target coordinate.\n *\n * @param options - Additional options for the move operation, such as callbacks.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35458,7 +35950,7 @@
                 {
                   "kind": "Reference",
                   "text": "MoveOptions",
-                  "canonicalReference": "server!~MoveOptions:type"
+                  "canonicalReference": "server!MoveOptions:type"
                 },
                 {
                   "kind": "Content",

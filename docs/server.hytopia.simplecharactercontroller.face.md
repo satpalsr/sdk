@@ -69,7 +69,7 @@ options
 
 </td><td>
 
-FaceOptions
+[FaceOptions](./server.faceoptions.md)
 
 
 </td><td>
@@ -82,4 +82,8 @@ _(Optional)_ Additional options for the face operation, such as callbacks.
 **Returns:**
 
 void
+
+## Remarks
+
+If this method is called while the entity is already attempting to face another target, the previous target will be ignored and the entity will start attempting to face the new target.
 

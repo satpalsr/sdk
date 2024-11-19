@@ -850,6 +850,72 @@ A decoded set of collision groups represented as their string equivalents.
 </td></tr>
 <tr><td>
 
+[FaceCallback](./server.hytopia.facecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the SimpleCharacterController updates its rotation as it is attempting to face a target coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[FaceCompleteCallback](./server.hytopia.facecompletecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the SimpleCharacterController finishes rotating and is now facing a target coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[FaceOptions](./server.hytopia.faceoptions.md)
+
+
+</td><td>
+
+Options for the [SimpleCharacterController.face()](./server.simplecharactercontroller.face.md) method.
+
+
+</td></tr>
+<tr><td>
+
+[MoveCallback](./server.hytopia.movecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[MoveCompleteCallback](./server.hytopia.movecompletecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[MoveOptions](./server.hytopia.moveoptions.md)
+
+
+</td><td>
+
+Options for the [SimpleCharacterController.move()](./server.simplecharactercontroller.move.md) method.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerInputState](./server.hytopia.playerinputstate.md)
 
 
