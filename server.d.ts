@@ -291,6 +291,11 @@ export declare abstract class BaseCharacterController {
     /** The entity the controller is for. */
     readonly entity: Entity;
     /**
+     * A callback function for when the controller ticks.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
+    onTick?: (deltaTimeMs: number) => void;
+    /**
      * A callback function for when the controller ticks
      * player movement.
      * @param inputState - The current input state of the player.
@@ -298,13 +303,6 @@ export declare abstract class BaseCharacterController {
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
     onTickPlayerMovement?: (inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) => void;
-    /**
-     * A callback function for when the controller ticks
-     * pathfinding movement.
-     * @param destination - The destination to move to.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
-     */
-    onTickPathfindingMovement?: (destination: Vector3, deltaTimeMs: number) => void;
     /**
      * @param entity - The entity the controller is for.
      * @param _options - Arbitrary options you may provide or omit for your controller implementation.
@@ -325,13 +323,11 @@ export declare abstract class BaseCharacterController {
      */
     tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
     /**
-     * Override this method to implement pathfinding
-     * movement logic for your character controller.
-     * NOTE: This method is not fully supported yet.
-     * @param destination - The destination target to move to.
+     * Override this method to handle entity movements
+     * based on your character controller.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickPathfindingMovement(destination: Vector3, deltaTimeMs: number): void;
+    tick(deltaTimeMs: number): void;
 }
 
 /**
@@ -1148,13 +1144,6 @@ export declare class DefaultCharacterController extends BaseCharacterController 
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
     tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
-    /**
-     * Ticks the pathfinding movement for the character controller,
-     * overriding the default implementation.
-     * @param destination - The destination to move to.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
-     */
-    tickPathfindingMovement(destination: Vector3, deltaTimeMs: number): void;
 }
 
 /** Options for creating a DefaultCharacterController instance. @public */
@@ -1616,6 +1605,7 @@ declare namespace HYTOPIA {
         RigidBodyType,
         RigidBodyAdditionalMassProperties,
         RigidBodyOptions,
+        SimpleCharacterController,
         Simulation,
         WebServer,
         PORT,
@@ -2292,6 +2282,64 @@ export declare interface Rotation {
     y: number;
     z: number;
     w: number;
+}
+
+/**
+ * A simple character controller with basic movement functions.
+ *
+ * @remarks
+ * This class implements simple movement methods that serve
+ * as a way to add realistic movement and rotational facing
+ * functionality to an entity. This is also a great base to
+ * extend for your own more complex character controller
+ * that implements things like pathfinding.
+ *
+ * @example
+ * ```typescript
+ * // Create a custom character controller for myEntity, prior to spawning it.
+ * myEntity.createCustomCharacterController = () => {
+ *   return new SimpleCharacterController(myEntity);
+ * };
+ *
+ * // Spawn the entity in the world.
+ * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
+ *
+ * // Move the entity at a speed of 4 blocks
+ * // per second to the coordinate (10, 10, 10).
+ * // console.log when we reach the target.
+ * myEntity.move({ x: 10, y: 10, z: 10 }, 4, {
+ *   moveCompleteCallback: endPosition => {
+ *     console.log('Finished moving to', endPosition);
+ *   },
+ * });
+ * ```
+ *
+ * @public
+ */
+export declare class SimpleCharacterController extends BaseCharacterController {
+
+
+
+
+
+
+
+
+    /**
+     * Rotates the entity at a given speed to face a target coordinate.
+     * @param target - The target coordinate to face.
+     * @param speed - The speed at which to rotate to the target coordinate.
+     * @param options - Additional options for the face operation, such as callbacks.
+     */
+    face(target: Vector3, speed: number, options?: FaceOptions): void;
+    /**
+     * Moves the entity at a given speed in a straight line to a target coordinate.
+     * @param target - The target coordinate to move to.
+     * @param speed - The speed at which to move to the target coordinate.
+     * @param options - Additional options for the move operation, such as callbacks.
+     */
+    move(target: Vector3, speed: number, options?: MoveOptions): void;
+
 }
 
 /**

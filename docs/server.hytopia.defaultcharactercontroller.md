@@ -304,20 +304,6 @@ Creates the sensor colliders for the character controller, overriding the defaul
 </td></tr>
 <tr><td>
 
-[tickPathfindingMovement(destination, deltaTimeMs)](./server.hytopia.defaultcharactercontroller.tickpathfindingmovement.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Ticks the pathfinding movement for the character controller, overriding the default implementation.
-
-
-</td></tr>
-<tr><td>
-
 [tickPlayerMovement(inputState, orientationState, deltaTimeMs)](./server.hytopia.defaultcharactercontroller.tickplayermovement.md)
 
 

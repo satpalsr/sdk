@@ -228,6 +228,17 @@ Represents a rigid body in a world's physics simulation.
 </td></tr>
 <tr><td>
 
+[SimpleCharacterController](./server.hytopia.simplecharactercontroller.md)
+
+
+</td><td>
+
+A simple character controller with basic movement functions.
+
+
+</td></tr>
+<tr><td>
+
 [Simulation](./server.hytopia.simulation.md)
 
 

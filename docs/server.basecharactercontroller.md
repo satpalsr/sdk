@@ -96,7 +96,7 @@ The entity the controller is for.
 </td></tr>
 <tr><td>
 
-[onTickPathfindingMovement?](./server.basecharactercontroller.ontickpathfindingmovement.md)
+[onTick?](./server.basecharactercontroller.ontick.md)
 
 
 </td><td>
@@ -104,12 +104,12 @@ The entity the controller is for.
 
 </td><td>
 
-(destination: [Vector3](./server.vector3.md)<!-- -->, deltaTimeMs: number) =&gt; void
+(deltaTimeMs: number) =&gt; void
 
 
 </td><td>
 
-_(Optional)_ A callback function for when the controller ticks pathfinding movement.
+_(Optional)_ A callback function for when the controller ticks.
 
 
 </td></tr>
@@ -168,7 +168,7 @@ Override this method to create sensor colliders to be attached to the controlled
 </td></tr>
 <tr><td>
 
-[tickPathfindingMovement(destination, deltaTimeMs)](./server.basecharactercontroller.tickpathfindingmovement.md)
+[tick(deltaTimeMs)](./server.basecharactercontroller.tick.md)
 
 
 </td><td>
@@ -176,7 +176,7 @@ Override this method to create sensor colliders to be attached to the controlled
 
 </td><td>
 
-Override this method to implement pathfinding movement logic for your character controller. NOTE: This method is not fully supported yet.
+Override this method to handle entity movements based on your character controller.
 
 
 </td></tr>
