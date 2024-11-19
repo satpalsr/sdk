@@ -1,7 +1,7 @@
 # HYTOPIA SDK
 
 ## Quick Links
-[Quickstart](#quickstart) • [API Reference](./docs/server.md) • [Examples](./examples) • [Join Our Developer Discord](https://discord.gg/hytopia-developers) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
+[Quickstart](#quickstart) • [Developer Docs](https://dev.hytopia.com/) [API Reference](./docs/server.md) • [Examples](./examples) • [Join Our Developer Discord](https://discord.gg/hytopia-developers) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
 
 ## What is HYTOPIA?
 
@@ -56,6 +56,7 @@ bun --watch index.ts
 **Note: If you'd prefer to use JavaScript instead of TypeScript, simply change the file extension of index.ts to index.js - Your editor will highlight the TypeScript syntax errors, simple delete the type annotations and everything should work the same without any TypeScript usage.**
 
 Once you're up and running, here's some other resources to go further:
+- [Developer Docs](https://dev.hytopia.com/)
 - [Game Examples](./examples)
 - [API Reference](./docs/server.md)
 
