@@ -1622,7 +1622,9 @@ declare namespace HYTOPIA {
         World,
         WorldMap,
         WorldOptions,
-        WorldLoop
+        WorldLoop,
+        WorldLoopEventType,
+        WorldLoopEventPayload
     }
 }
 export default HYTOPIA;
@@ -2539,6 +2541,37 @@ export declare class WorldLoop {
 
 
 
+}
+
+/** Payloads for events emitted by a WorldLoop instance. @public */
+export declare namespace WorldLoopEventPayload {
+    export interface Start {
+        worldLoop: WorldLoop;
+    }
+    export interface Stop {
+        worldLoop: WorldLoop;
+    }
+    export interface TickStart {
+        worldLoop: WorldLoop;
+        tickDeltaMs: number;
+    }
+    export interface TickEnd {
+        worldLoop: WorldLoop;
+        tickDurationMs: number;
+    }
+    export interface TickError {
+        worldLoop: WorldLoop;
+        error: Error;
+    }
+}
+
+/** Event types a WorldLoop instance can emit. @public */
+export declare enum WorldLoopEventType {
+    START = "WORLD_LOOP.START",
+    STOP = "WORLD_LOOP.STOP",
+    TICK_START = "WORLD_LOOP.TICK_START",
+    TICK_END = "WORLD_LOOP.TICK_END",
+    TICK_ERROR = "WORLD_LOOP.TICK_ERROR"
 }
 
 /** A map representation for a world. @public */

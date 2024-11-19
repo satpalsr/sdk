@@ -421,6 +421,17 @@ The types a RigidBody can be.
 
 
 </td></tr>
+<tr><td>
+
+[WorldLoopEventType](./server.worldloopeventtype.md)
+
+
+</td><td>
+
+Event types a WorldLoop instance can emit.
+
+
+</td></tr>
 </tbody></table>
 
 ## Functions
@@ -714,6 +725,17 @@ Payloads for events emitted by a GameServer instance.
 </td><td>
 
 Payloads for events a Player can emit.
+
+
+</td></tr>
+<tr><td>
+
+[WorldLoopEventPayload](./server.worldloopeventpayload.md)
+
+
+</td><td>
+
+Payloads for events emitted by a WorldLoop instance.
 
 
 </td></tr>

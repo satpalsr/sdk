@@ -29444,6 +29444,452 @@
               "implementsTokenRanges": []
             },
             {
+              "kind": "Namespace",
+              "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload:namespace",
+              "docComment": "/**\n * Payloads for events emitted by a WorldLoop instance.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export declare namespace WorldLoopEventPayload "
+                }
+              ],
+              "fileUrlPath": "src/world/WorldLoop.ts",
+              "releaseTag": "Public",
+              "name": "WorldLoopEventPayload",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.Start:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface Start "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "Start",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.Start#worldLoop:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "worldLoop: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "WorldLoop",
+                          "canonicalReference": "server!WorldLoop:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "worldLoop",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.Stop:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface Stop "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "Stop",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.Stop#worldLoop:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "worldLoop: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "WorldLoop",
+                          "canonicalReference": "server!WorldLoop:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "worldLoop",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickEnd:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface TickEnd "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "TickEnd",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickEnd#tickDurationMs:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "tickDurationMs: "
+                        },
+                        {
+                          "kind": "Content",
+                          "text": "number"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "tickDurationMs",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickEnd#worldLoop:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "worldLoop: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "WorldLoop",
+                          "canonicalReference": "server!WorldLoop:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "worldLoop",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickError:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface TickError "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "TickError",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickError#error:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "error: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "Error",
+                          "canonicalReference": "!Error:interface"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "error",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickError#worldLoop:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "worldLoop: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "WorldLoop",
+                          "canonicalReference": "server!WorldLoop:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "worldLoop",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickStart:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface TickStart "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "TickStart",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickStart#tickDeltaMs:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "tickDeltaMs: "
+                        },
+                        {
+                          "kind": "Content",
+                          "text": "number"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "tickDeltaMs",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.WorldLoopEventPayload.TickStart#worldLoop:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "worldLoop: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "WorldLoop",
+                          "canonicalReference": "server!WorldLoop:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "worldLoop",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                }
+              ]
+            },
+            {
+              "kind": "Enum",
+              "canonicalReference": "server!HYTOPIA.WorldLoopEventType:enum",
+              "docComment": "/**\n * Event types a WorldLoop instance can emit.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export declare enum WorldLoopEventType "
+                }
+              ],
+              "fileUrlPath": "src/world/WorldLoop.ts",
+              "releaseTag": "Public",
+              "name": "WorldLoopEventType",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventType.START:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "START = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"WORLD_LOOP.START\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "START"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventType.STOP:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "STOP = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"WORLD_LOOP.STOP\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "STOP"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventType.TICK_END:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "TICK_END = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"WORLD_LOOP.TICK_END\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "TICK_END"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventType.TICK_ERROR:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "TICK_ERROR = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"WORLD_LOOP.TICK_ERROR\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "TICK_ERROR"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.WorldLoopEventType.TICK_START:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "TICK_START = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"WORLD_LOOP.TICK_START\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "TICK_START"
+                }
+              ]
+            },
+            {
               "kind": "Interface",
               "canonicalReference": "server!HYTOPIA.WorldMap:interface",
               "docComment": "/**\n * A map representation for a world.\n *\n * @public\n */\n",
@@ -36234,6 +36680,452 @@
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Namespace",
+          "canonicalReference": "server!WorldLoopEventPayload:namespace",
+          "docComment": "/**\n * Payloads for events emitted by a WorldLoop instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare namespace WorldLoopEventPayload "
+            }
+          ],
+          "fileUrlPath": "src/world/WorldLoop.ts",
+          "releaseTag": "Public",
+          "name": "WorldLoopEventPayload",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!WorldLoopEventPayload.Start:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface Start "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Start",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.Start#worldLoop:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "worldLoop: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WorldLoop",
+                      "canonicalReference": "server!WorldLoop:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "worldLoop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!WorldLoopEventPayload.Stop:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface Stop "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Stop",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.Stop#worldLoop:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "worldLoop: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WorldLoop",
+                      "canonicalReference": "server!WorldLoop:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "worldLoop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!WorldLoopEventPayload.TickEnd:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface TickEnd "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "TickEnd",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickEnd#tickDurationMs:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tickDurationMs: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "tickDurationMs",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickEnd#worldLoop:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "worldLoop: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WorldLoop",
+                      "canonicalReference": "server!WorldLoop:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "worldLoop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!WorldLoopEventPayload.TickError:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface TickError "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "TickError",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickError#error:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "error: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Error",
+                      "canonicalReference": "!Error:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "error",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickError#worldLoop:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "worldLoop: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WorldLoop",
+                      "canonicalReference": "server!WorldLoop:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "worldLoop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!WorldLoopEventPayload.TickStart:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface TickStart "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "TickStart",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickStart#tickDeltaMs:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tickDeltaMs: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "tickDeltaMs",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!WorldLoopEventPayload.TickStart#worldLoop:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "worldLoop: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "WorldLoop",
+                      "canonicalReference": "server!WorldLoop:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "worldLoop",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "server!WorldLoopEventType:enum",
+          "docComment": "/**\n * Event types a WorldLoop instance can emit.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum WorldLoopEventType "
+            }
+          ],
+          "fileUrlPath": "src/world/WorldLoop.ts",
+          "releaseTag": "Public",
+          "name": "WorldLoopEventType",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldLoopEventType.START:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "START = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_LOOP.START\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "START"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldLoopEventType.STOP:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "STOP = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_LOOP.STOP\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "STOP"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldLoopEventType.TICK_END:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "TICK_END = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_LOOP.TICK_END\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "TICK_END"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldLoopEventType.TICK_ERROR:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "TICK_ERROR = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_LOOP.TICK_ERROR\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "TICK_ERROR"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldLoopEventType.TICK_START:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "TICK_START = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_LOOP.TICK_START\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "TICK_START"
+            }
+          ]
         },
         {
           "kind": "Interface",
