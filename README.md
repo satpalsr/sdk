@@ -30,7 +30,7 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 ## Quickstart (Start Here)
 
-Follow the [Initial Setup guide, here](https://dev.hytopia.com/getting-started/initial-setup).
+**Follow the [Initial Setup guide, here](https://dev.hytopia.com/getting-started/initial-setup).**
 
 Once you're up and running, here's some other resources to go further:
 - [Developer Docs](https://dev.hytopia.com/)
