@@ -27,28 +27,31 @@ const path = require('path');
   if (command === 'init') {
     const destDir = process.cwd();
 
+    // Initialize project with latest HYTOPIA SDK
+    console.log('🔧 Initializing project with latest HYTOPIA SDK...');
+    execSync('bun init --yes');
+    execSync('bun add hytopia@latest');
+    
     if (flags.template) {
       // Init from example template
-      console.log(`🔧 Initializing project with examples template ${flags.template}`);
+      console.log(`🖨️ Initializing project with examples template "${flags.template}"...`);
 
-      const templateDir = path.join(__dirname, '..', 'examples', flags.template);
+      const templateDir = path.join(destDir, 'node_modules', 'hytopia', 'examples', flags.template);
 
       if (!fs.existsSync(templateDir)) {
-        console.error(`Examples template ${flags.template} does not exist in the examples directory, could not initialize project!`);
+        console.error(`Examples template ${flags.template} does not exist in the examples directory, could not initialize project! Tried directory: ${templateDir}`);
         return;
       }
 
       fs.cpSync(templateDir, destDir, { recursive: true });
     } else {
       // Init from boilerplate
+      console.log('🧑‍💻 Initializing project with boilerplate...');
+
       const srcDir = path.join(__dirname, '..', 'boilerplate');
+      
       fs.cpSync(srcDir, destDir, { recursive: true });  
     }
-
-    // Initialize project
-    console.log('✨ Finalizing setup...');
-    execSync('bun init --yes');
-    execSync('bun add hytopia@latest');
 
     // Done, lfg!
     console.log('--------------------------------');
