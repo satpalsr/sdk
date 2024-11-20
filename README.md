@@ -1,7 +1,7 @@
 # HYTOPIA SDK
 
 ## Quick Links
-[Quickstart](#quickstart) • [Developer Docs](https://dev.hytopia.com/) • [API Reference](./docs/server.md) • [Examples](./examples) • [Join Our Developer Discord](https://discord.gg/hytopia-developers) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
+[Quickstart (Start Here)](#quickstart) • [Developer Docs](https://dev.hytopia.com/) • [API Reference](./docs/server.md) • [Examples](./examples) • [Join Our Developer Discord](https://discord.gg/hytopia-developers) • [Report Bugs or Request Features](https://github.com/hytopiagg/sdk/issues)
 
 ## What is HYTOPIA?
 
@@ -28,42 +28,9 @@ Available as a simple NPM package, this SDK provides everything you need to get 
 
 With these resources, you can quickly build and share immersive, voxel-style multiplayer games on HYTOPIA.
 
-## Quickstart
+## Quickstart (Start Here)
 
-1. Install a compatible JavaScript runtime. We recommend you use [Bun](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) can work with additional configuration. All examples will be given using Bun.
-
-**Mac or Linux - Run the following command to install Bun:**
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
-**Windows - Run the following to install Bun:**
-```bash
-powershell -c "irm bun.sh/install.ps1 | iex"
-```
-
-2. Create a new project directory somewhere on your machine and navigate into it.
-```bash
-mkdir my-project-directory && cd my-project-directory
-```
-
-3. Initialize a hytopia project from boilerplate or an existing example. Sets up package.json and all dependencies, copies assets and an index.ts game script into your project.
-```bash
-# Option 1: Initialize a boilerplate project
-bunx hytopia init
-
-# Option 2: Initialize a project from any of the examples in the examples directory like so:
-bunx hytopia init --template payload-game
-```
-
-3. Start the server, use --watch for hot reloads as you make changes.
-```bash
-bun --watch index.ts
-```
-
-4. Visit https://play.hytopia.com - when prompted, enter `localhost:8080` - this is the hostname of the local server you started in the previous step.
-
-**Note: If you'd prefer to use JavaScript instead of TypeScript, simply change the file extension of index.ts to index.js - Your editor will highlight the TypeScript syntax errors, simple delete the type annotations and everything should work the same without any TypeScript usage.**
+Follow the [Initial Setup guide, here](https://dev.hytopia.com/getting-started/initial-setup).
 
 Once you're up and running, here's some other resources to go further:
 - [Developer Docs](https://dev.hytopia.com/)
