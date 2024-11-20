@@ -23,7 +23,6 @@ import {
   CollisionGroup,
   DefaultCharacterController,
   Entity,
-  GameServer,
   PlayerEntity,
   RigidBodyType,
   World,
