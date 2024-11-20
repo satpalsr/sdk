@@ -12,6 +12,11 @@ Options for the [SimpleCharacterController.move()](./server.simplecharactercontr
 export type MoveOptions = {
     moveCallback?: MoveCallback;
     moveCompleteCallback?: MoveCompleteCallback;
+    moveIgnoreAxes?: {
+        x?: boolean;
+        y?: boolean;
+        z?: boolean;
+    };
 };
 ```
 **References:** [MoveCallback](./server.movecallback.md)<!-- -->, [MoveCompleteCallback](./server.movecompletecallback.md)

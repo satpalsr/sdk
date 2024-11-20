@@ -25,6 +25,7 @@ import {
   Entity,
   PlayerEntity,
   RigidBodyType,
+  SimpleCharacterController,
   World,
   startServer,
 } from 'hytopia';
@@ -46,9 +47,9 @@ const PAYLOAD_SPAWN_COORDINATE = { x: 1.5, y: 2.6, z: 69.5 };
 const PAYLOAD_PER_PLAYER_SPEED = 1;
 const PAYLOAD_MAX_SPEED = 5;
 const PAYLOAD_WAYPOINT_COORDINATES = [
-  { x: 1.5, z: 1.5 },
-  { x: 60.5, z: 1.5 },
-  { x: 60.5, z: -62.5 },
+  { x: 1.5, y: 0, z: 1.5 },
+  { x: 60.5, y: 0, z: 1.5 },
+  { x: 60.5, y: 0, z: -62.5 },
 ];
 const PLAYER_SPAWN_COORDINATES = [
   { x: 4, y: 3, z: 71 },
@@ -87,6 +88,9 @@ let targetWaypointCoordinateIndex = 0; // Current waypoint coordinate index for 
 // Run
 startServer(world => { // Perform our game setup logic in the startServer init callback here.
   const chatManager = world.chatManager;
+
+  // Enable debug rendering
+  world.simulation.enableDebugRendering(true);
 
   // Load Map
   world.loadMap(map);
@@ -279,12 +283,13 @@ function spawnPayloadEntity(world: World) {
   }
 
   payloadEntity = new Entity({
+    createCustomCharacterController: (entity: Entity) => new SimpleCharacterController(entity),
     name: 'Payload',
     modelUri: 'models/payload.gltf',
     modelScale: 0.7,
     modelLoopedAnimations: [ 'idle' ],
     rigidBodyOptions: {
-      type: RigidBodyType.KINEMATIC_VELOCITY,
+      type: RigidBodyType.KINEMATIC_POSITION,
       colliders: [
         {
           shape: ColliderShape.BLOCK,
@@ -310,6 +315,7 @@ function spawnPayloadEntity(world: World) {
             } else if (other instanceof Entity) {
               started ? payloadPlayerEntityCount-- : payloadPlayerEntityCount++;
             }
+            console.log(payloadPlayerEntityCount);
           },
         },
       ],
@@ -335,6 +341,7 @@ function spawnSpider(world: World, coordinate: Vector3) {
   const targetPlayers = new Set<PlayerEntity>();
 
   const spider = new Entity({
+    createCustomCharacterController: (entity: Entity) => new SimpleCharacterController(entity),
     name: 'Spider',
     modelUri: 'models/spider.gltf',
     modelLoopedAnimations: [ 'walk' ],
@@ -409,7 +416,7 @@ function spawnSpider(world: World, coordinate: Vector3) {
   enemyHealth[spider.id!] = 2 * Math.round(randomScaleMultiplier);
 }
 
-function onTickPathfindPayload(entity: Entity, tickDeltaMs: number) { // Movement logic for the payload
+function onTickPathfindPayload(entity: Entity) { // Movement logic for the payload
   const speed = started // Set the payload speed relative to the number of players in the payload sensor
     ? Math.max(Math.min(PAYLOAD_PER_PLAYER_SPEED * payloadPlayerEntityCount, PAYLOAD_MAX_SPEED), 0)
     : 0;
@@ -422,57 +429,22 @@ function onTickPathfindPayload(entity: Entity, tickDeltaMs: number) { // Movemen
     entity.startModelLoopedAnimations([ 'walk' ]);
   }
 
-  // Calculate direction to target waypoint
   const targetWaypointCoordinate = PAYLOAD_WAYPOINT_COORDINATES[targetWaypointCoordinateIndex];
-  const currentPosition = entity.getTranslation();
-  const deltaX = targetWaypointCoordinate.x - currentPosition.x;
-  const deltaZ = targetWaypointCoordinate.z - currentPosition.z;
 
-  const direction = {
-    x: Math.abs(deltaX) > 0.1 ? Math.sign(deltaX) : 0,
-    z: Math.abs(deltaZ) > 0.1 ? Math.sign(deltaZ) : 0,
-  };
-
-  // Apply rotation to face direction if necessary based on the current target waypoint
-  const rotation = entity.getRotation();
-  const currentAngle = 2 * Math.atan2(rotation.y, rotation.w);
-  const targetAngle = Math.atan2(direction.x, direction.z) + Math.PI; // Add PI to face forward
-
-  let angleDiff = targetAngle - currentAngle;
-  while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
-  while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
-
-  if (Math.abs(angleDiff) > 0.01) {
-    const rotationStep = (Math.PI / 2) * (tickDeltaMs / 1000) * Math.sign(angleDiff);
-    const actualRotation = Math.abs(rotationStep) > Math.abs(angleDiff) ? angleDiff : rotationStep;
-    const newAngle = currentAngle + actualRotation;
-
-    entity.setRotation({
-      x: 0,
-      y: Math.sin(newAngle / 2),
-      z: 0,
-      w: Math.cos(newAngle / 2),
-    });
+  if (!targetWaypointCoordinate) {
+    return console.warn('Payload destination reached!! Game won!!');
   }
 
-  // Apply velocity to move towards target
-  entity.setLinearVelocity({
-    x: direction.x * speed,
-    y: 0,
-    z: direction.z * speed,
+  if (!(entity.characterController instanceof SimpleCharacterController)) { // type guard
+    return console.warn('Payload entity does not have a SimpleCharacterController!');
+  }
+
+  entity.characterController.move(targetWaypointCoordinate, speed, {
+    moveCompleteCallback: () => targetWaypointCoordinateIndex++,
+    moveIgnoreAxes: { y: true },
   });
 
-  // Check if we're within 3 blocks of the target waypoint, if so move to next waypoint
-  const distanceX = Math.abs(currentPosition.x - targetWaypointCoordinate.x);
-  const distanceZ = Math.abs(currentPosition.z - targetWaypointCoordinate.z);
-  
-  if (distanceX <= 2 && distanceZ <= 2) {
-    if (targetWaypointCoordinateIndex + 1 < PAYLOAD_WAYPOINT_COORDINATES.length) {
-      targetWaypointCoordinateIndex++;
-    } else {
-      console.log('GAME WON!');
-    }
-  }
+  entity.characterController.face(targetWaypointCoordinate, speed / 2);
 }
 
 function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, speed: number, _tickDeltaMs: number) {
@@ -481,7 +453,6 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
   const entityId = entity.id!;
   enemyPathfindAccumulators[entityId] ??= 0; // Initialize the accumulator for this enemy if it isn't initialized yet
 
-  // Handle pathfinding
   if (!enemyPathfindingTargets[entityId] || enemyPathfindAccumulators[entityId] >= PATHFIND_ACCUMULATOR_THRESHOLD) {
     const targetPlayer = targetPlayers.values().next().value as PlayerEntity | undefined;
 
@@ -491,6 +462,7 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
 
     enemyPathfindAccumulators[entityId] -= PATHFIND_ACCUMULATOR_THRESHOLD;
 
+    // Make the spider jump if its close to the target player
     const currentPosition = entity.getTranslation();
     const dx = enemyPathfindingTargets[entityId].x - currentPosition.x;
     const dz = enemyPathfindingTargets[entityId].z - currentPosition.z;
@@ -500,46 +472,18 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
       const mass = entity.getMass();
       entity.applyImpulse({ x: 0, y: (10 * Math.random() + 5) * mass, z: 0 });
     }
+
+    // Handle Movement
+    if (!(entity.characterController instanceof SimpleCharacterController)) {
+      return console.warn('Enemy entity does not have a SimpleCharacterController!');
+    }
+  
+    const targetPosition = enemyPathfindingTargets[entityId];
+    entity.characterController.move(targetPosition, speed, { moveIgnoreAxes: { y: true } });
+    entity.characterController.face(targetPosition, speed / 2);
   }
 
   enemyPathfindAccumulators[entityId]++;
-
-  // Handle movement to target
-  const currentPosition = entity.getTranslation();
-  const targetPosition = enemyPathfindingTargets[entityId];
-  const direction = {
-    x: targetPosition.x - currentPosition.x,
-    y: 0, // We only want rotation around Y axis, so ignore vertical difference
-    z: targetPosition.z - currentPosition.z,
-  };
-
-  // Normalize the direction vector
-  const length = Math.sqrt(direction.x * direction.x + direction.z * direction.z);
-  if (length > 0) {
-    direction.x /= length;
-    direction.z /= length;
-  }
-
-  // Calculate facing rotation
-  const angle = Math.atan2(direction.x, direction.z);
-  const adjustedAngle = angle + Math.PI;
-  const sinHalfAngle = Math.sin(adjustedAngle * 0.5);
-  const cosHalfAngle = Math.cos(adjustedAngle * 0.5);
-
-  entity.setRotation({ x: 0, y: sinHalfAngle, z: 0, w: cosHalfAngle });
-
-  // Calculate movement
-  const currentVelocity = entity.getLinearVelocity();
-
-  if (Math.abs(currentVelocity.x) < speed && Math.abs(currentVelocity.z) < speed) {
-    const movement = {
-      x: direction.x * speed,
-      y: currentVelocity.y,
-      z: direction.z * speed,
-    };
-
-    entity.setLinearVelocity(movement);
-  }
 }
 
 function onTickPlayerMovement(this: DefaultCharacterController, inputState: PlayerInputState, orientationState: PlayerOrientationState, _deltaTimeMs: number) {

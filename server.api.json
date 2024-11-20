@@ -23133,7 +23133,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ";\n}"
+                  "text": ";\n    moveIgnoreAxes?: {\n        x?: boolean;\n        y?: boolean;\n        z?: boolean;\n    };\n}"
                 },
                 {
                   "kind": "Content",
@@ -30690,7 +30690,7 @@
             },
             {
               "kind": "Content",
-              "text": ";\n}"
+              "text": ";\n    moveIgnoreAxes?: {\n        x?: boolean;\n        y?: boolean;\n        z?: boolean;\n    };\n}"
             },
             {
               "kind": "Content",

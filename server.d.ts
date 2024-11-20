@@ -1685,8 +1685,16 @@ export declare type MoveCompleteCallback = (endTranslation: Vector3) => void;
  * @public
  */
 export declare type MoveOptions = {
+    /** Callback called each tick movement of the character controller's entity. */
     moveCallback?: MoveCallback;
+    /** Callback called when the character controller's entity has finished moving. */
     moveCompleteCallback?: MoveCompleteCallback;
+    /** Axes to ignore when moving the character controller's entity. Also ignored for determining completion. */
+    moveIgnoreAxes?: {
+        x?: boolean;
+        y?: boolean;
+        z?: boolean;
+    };
 };
 
 /**
@@ -2388,6 +2396,7 @@ export declare interface Rotation {
  * @public
  */
 export declare class SimpleCharacterController extends BaseCharacterController {
+
 
 
 
