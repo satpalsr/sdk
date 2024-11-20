@@ -28,6 +28,7 @@ const path = require('path');
     const destDir = process.cwd();
 
     if (flags.template) {
+      // Init from example template
       console.log(`🔧 Initializing project with examples template ${flags.template}`);
 
       const templateDir = path.join(__dirname, '..', 'examples', flags.template);
@@ -38,17 +39,19 @@ const path = require('path');
       }
 
       fs.cpSync(templateDir, destDir, { recursive: true });
-      execSync('bun install');
     } else {
-      console.log('🔧 Initializing project');
-      execSync('bun init --yes');
-      execSync('bun add hytopia@latest');
-      
+      // Init from boilerplate
       const srcDir = path.join(__dirname, '..', 'boilerplate');
       fs.cpSync(srcDir, destDir, { recursive: true });  
     }
 
+    // Initialize project
+    console.log('✨ Finalizing setup...');
+    execSync('bun init --yes');
+    execSync('bun add hytopia@latest');
+
     // Done, lfg!
+    console.log('--------------------------------');
     console.log('🚀 Hytopia project initialized successfully!');
     console.log('💡 Start your development server with `bun --watch index.ts`!');
     console.log('🎮 After you start your development server, play by opening your browser and visiting: https://play.hytopia.com/?join=localhost:8080')
