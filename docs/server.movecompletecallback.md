@@ -4,7 +4,7 @@
 
 ## MoveCompleteCallback type
 
-A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.
+A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.
 
 **Signature:**
 

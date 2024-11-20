@@ -30,9 +30,9 @@ myEntity.createCustomCharacterController = () => {
 myEntity.spawn(world, { x: 53, y: 10, z: 23 });
 
 // Move the entity at a speed of 4 blocks
-// per second to the coordinate (10, 10, 10).
+// per second to the coordinate (10, 1, 10).
 // console.log when we reach the target.
-myEntity.move({ x: 10, y: 10, z: 10 }, 4, {
+myEntity.move({ x: 10, y: 1, z: 10 }, 4, {
   moveCompleteCallback: endPosition => {
     console.log('Finished moving to', endPosition);
   },

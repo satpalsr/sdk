@@ -22990,7 +22990,7 @@
             {
               "kind": "TypeAlias",
               "canonicalReference": "server!HYTOPIA.MoveCompleteCallback:type",
-              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
+              "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28260,7 +28260,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.SimpleCharacterController:class",
-              "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 10, 10).\n * // console.log when we reach the target.\n * myEntity.move({ x: 10, y: 10, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -30547,7 +30547,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!MoveCompleteCallback:type",
-          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -35817,7 +35817,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!SimpleCharacterController:class",
-          "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 10, 10).\n * // console.log when we reach the target.\n * myEntity.move({ x: 10, y: 10, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
