@@ -32,6 +32,16 @@ With these resources, you can quickly build and share immersive, voxel-style mul
 
 1. Install a compatible JavaScript runtime. We recommend you use [Bun](https://bun.sh/), but [Node.js](https://nodejs.org/) and [Deno](https://deno.com/) can work with additional configuration. All examples will be given using Bun.
 
+**Mac or Linux - Run the following command to install Bun:**
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+**Windows - Run the following to install Bun:**
+```bash
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
 2. Create a new project directory somewhere on your machine and navigate into it.
 ```bash
 mkdir my-project-directory && cd my-project-directory
