@@ -133,12 +133,12 @@ The character controller for the entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
 
 
 </td><td>
 
-_(Optional)_ A function that creates a custom character controller for the entity.
+_(Optional)_ A function that creates a custom character controller for the entity when it spawns.
 
 
 </td></tr>
@@ -278,7 +278,7 @@ The name of the entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -297,7 +297,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>
@@ -316,7 +316,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -335,7 +335,7 @@ _(Optional)_ A function that is called when the entity is despawned.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -354,7 +354,7 @@ _(Optional)_ A function that is called when the entity collides with another ent
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>
@@ -373,7 +373,7 @@ _(Optional)_ A function that is called when the entity contacts another entity.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -392,7 +392,7 @@ _(Optional)_ A function that is called when the entity is spawned.
 
 </td><td>
 
-(this: [Entity](./server.entity.md)<!-- -->, tickDeltaMs: number) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, tickDeltaMs: number) =&gt; void
 
 
 </td><td>

@@ -9,5 +9,5 @@ A function that is called when the entity collides with another entity.
 **Signature:**
 
 ```typescript
-onEntityCollision?: (this: Entity, entity: Entity, started: boolean) => void;
+onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
 ```

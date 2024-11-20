@@ -15,7 +15,7 @@ export default class SimpleCharacterController extends BaseCharacterController
 
 ## Remarks
 
-This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.
+This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding. Compatible with entities that have kinematic or dynamic rigid body types.
 
 ## Example
 

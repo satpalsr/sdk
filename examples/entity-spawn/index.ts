@@ -56,7 +56,7 @@ startServer(world => {
   });
 
   // A simple collision callback that logs when the spider collides with another Entity.
-  spider.onEntityCollision = (otherEntity, started) => {
+  spider.onEntityCollision = (spider, otherEntity, started) => {
     console.log('spider colliding with', otherEntity.name, started);
   };
 

@@ -9,5 +9,5 @@ A function allowing custom logic to determine if the entity can run.
 **Signature:**
 
 ```typescript
-canRun: (this: DefaultCharacterController) => boolean;
+canRun: (defaultCharacterController: DefaultCharacterController) => boolean;
 ```

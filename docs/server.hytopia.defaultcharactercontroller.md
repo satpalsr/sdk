@@ -101,7 +101,7 @@ Description
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(defaultCharacterController: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>
@@ -120,7 +120,7 @@ A function allowing custom logic to determine if the entity can jump.
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(defaultCharacterController: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>
@@ -139,7 +139,7 @@ A function allowing custom logic to determine if the entity can run.
 
 </td><td>
 
-(this: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
+(defaultCharacterController: [DefaultCharacterController](./server.defaultcharactercontroller.md)<!-- -->) =&gt; boolean
 
 
 </td><td>

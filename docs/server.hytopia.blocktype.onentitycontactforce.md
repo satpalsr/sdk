@@ -9,5 +9,5 @@ A callback function that is invoked when an entity contacts a block of this type
 **Signature:**
 
 ```typescript
-onEntityContactForce?: (this: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
+onEntityContactForce?: (blockType: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
 ```

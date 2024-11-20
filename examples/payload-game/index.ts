@@ -224,36 +224,36 @@ function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
     },
   });
 
-  bullet.onBlockCollision = (block: BlockType, started: boolean) => { // If the bullet hits a block, despawn it
+  bullet.onBlockCollision = (bullet: Entity, block: BlockType, started: boolean) => { // If the bullet hits a block, despawn it
     if (started) {
       bullet.despawn();
     }
   };
 
-  bullet.onEntityCollision = (entity: Entity, started: boolean) => { // If the bullet hits an enemy, deal damage if it is a Spider
-    if (!started || entity.name !== 'Spider') {
+  bullet.onEntityCollision = (bullet: Entity, otherEntity: Entity, started: boolean) => { // If the bullet hits an enemy, deal damage if it is a Spider
+    if (!started || otherEntity.name !== 'Spider') {
       return;
     }
     
-    enemyHealth[entity.id!]--;
+    enemyHealth[otherEntity.id!]--;
 
     // Apply knockback, the knockback effect is less if the spider is larger, and more if it is smaller
     // because of how the physics simulation applies forces relative to automatically calculated mass from the spider's
     // size
     const bulletDirection = bullet.getDirectionFromRotation();
-    const mass = entity.getMass();
+    const mass = otherEntity.getMass();
     const knockback = 14 * mass;
 
-    entity.applyImpulse({
+    otherEntity.applyImpulse({
       x: -bulletDirection.x * knockback,
       y: 0,
       z: -bulletDirection.z * knockback,
     });
 
-    if (enemyHealth[entity.id!] <= 0) {
+    if (enemyHealth[otherEntity.id!] <= 0) {
       // YEET the spider before despawning it so it registers leaving the sensor
-      entity.setTranslation({ x: 0, y: 100, z: 0 });
-      setTimeout(() => { entity.despawn(); }, 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
+      otherEntity.setTranslation({ x: 0, y: 100, z: 0 });
+      setTimeout(() => { otherEntity.despawn(); }, 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     }
 
     bullet.despawn();
@@ -374,14 +374,14 @@ function spawnSpider(world: World, coordinate: Vector3) {
     },
   });
 
-  spider.onTick = (tickDeltaMs: number) => onTickPathfindEnemy( // Use our own basic pathfinding function each tick of the game for the enemy
-    spider,
+  spider.onTick = (entity: Entity, tickDeltaMs: number) => onTickPathfindEnemy( // Use our own basic pathfinding function each tick of the game for the enemy
+    entity,
     targetPlayers,
     baseSpeed * randomScaleMultiplier,
     tickDeltaMs,
   );
 
-  spider.onEntityCollision = (entity: Entity, started: boolean) => { // If the spider hits a player, deal damage and apply knockback
+  spider.onEntityCollision = (spider: Entity, entity: Entity, started: boolean) => { // If the spider hits a player, deal damage and apply knockback
     if (started && entity instanceof PlayerEntity && entity.isSpawned) {
       const spiderDirection = spider.getDirectionFromRotation();
       const knockback = 4 * randomScaleMultiplier;
@@ -409,22 +409,22 @@ function spawnSpider(world: World, coordinate: Vector3) {
   enemyHealth[spider.id!] = 2 * Math.round(randomScaleMultiplier);
 }
 
-function onTickPathfindPayload(this: Entity, tickDeltaMs: number) { // Movement logic for the payload
+function onTickPathfindPayload(entity: Entity, tickDeltaMs: number) { // Movement logic for the payload
   const speed = started // Set the payload speed relative to the number of players in the payload sensor
     ? Math.max(Math.min(PAYLOAD_PER_PLAYER_SPEED * payloadPlayerEntityCount, PAYLOAD_MAX_SPEED), 0)
     : 0;
 
   if (!speed) { // Play animations based on if its moving or not
-    this.stopModelAnimations(Array.from(this.modelLoopedAnimations).filter(v => v !== 'idle'));
-    this.startModelLoopedAnimations([ 'idle' ]);
+    entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => v !== 'idle'));
+    entity.startModelLoopedAnimations([ 'idle' ]);
   } else {
-    this.stopModelAnimations(Array.from(this.modelLoopedAnimations).filter(v => v !== 'walk'));
-    this.startModelLoopedAnimations([ 'walk' ]);
+    entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => v !== 'walk'));
+    entity.startModelLoopedAnimations([ 'walk' ]);
   }
 
   // Calculate direction to target waypoint
   const targetWaypointCoordinate = PAYLOAD_WAYPOINT_COORDINATES[targetWaypointCoordinateIndex];
-  const currentPosition = this.getTranslation();
+  const currentPosition = entity.getTranslation();
   const deltaX = targetWaypointCoordinate.x - currentPosition.x;
   const deltaZ = targetWaypointCoordinate.z - currentPosition.z;
 
@@ -434,7 +434,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) { // Movement 
   };
 
   // Apply rotation to face direction if necessary based on the current target waypoint
-  const rotation = this.getRotation();
+  const rotation = entity.getRotation();
   const currentAngle = 2 * Math.atan2(rotation.y, rotation.w);
   const targetAngle = Math.atan2(direction.x, direction.z) + Math.PI; // Add PI to face forward
 
@@ -447,7 +447,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) { // Movement 
     const actualRotation = Math.abs(rotationStep) > Math.abs(angleDiff) ? angleDiff : rotationStep;
     const newAngle = currentAngle + actualRotation;
 
-    this.setRotation({
+    entity.setRotation({
       x: 0,
       y: Math.sin(newAngle / 2),
       z: 0,
@@ -456,7 +456,7 @@ function onTickPathfindPayload(this: Entity, tickDeltaMs: number) { // Movement 
   }
 
   // Apply velocity to move towards target
-  this.setLinearVelocity({
+  entity.setLinearVelocity({
     x: direction.x * speed,
     y: 0,
     z: direction.z * speed,

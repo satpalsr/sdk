@@ -9,5 +9,5 @@ A function that is called when the entity is despawned.
 **Signature:**
 
 ```typescript
-onDespawn?: (this: Entity) => void;
+onDespawn?: (entity: Entity) => void;
 ```

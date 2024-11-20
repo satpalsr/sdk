@@ -9,5 +9,5 @@ A function that is called when the entity is spawned.
 **Signature:**
 
 ```typescript
-onSpawn?: (this: Entity) => void;
+onSpawn?: (entity: Entity) => void;
 ```

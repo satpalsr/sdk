@@ -183,7 +183,7 @@ The name of the block type.
 
 </td><td>
 
-(this: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -202,7 +202,7 @@ _(Optional)_ A callback function that is invoked when an entity collides with bl
 
 </td><td>
 
-(this: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>

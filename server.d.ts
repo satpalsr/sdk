@@ -378,16 +378,18 @@ export declare class Block {
 export declare class BlockType implements protocol.Serializable {
     /**
      * A callback function that is invoked when an entity collides with blocks of this type.
-     * @param entity - The entity that collided with the block.
+     * @param blockType - The block type the collision is for.
+     * @param entity - The entity that collided with the block type.
      * @param started - Whether the collision started.
      */
-    onEntityCollision?: (this: BlockType, entity: Entity, started: boolean) => void;
+    onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
     /**
      * A callback function that is invoked when an entity contacts a block of this type.
-     * @param entity - The entity that contacted the block.
+     * @param blockType - The block type the contact is for.
+     * @param entity - The entity that contacted the block type.
      * @param contactForceData - The contact force data.
      */
-    onEntityContactForce?: (this: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
+    onEntityContactForce?: (blockType: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
 
 
 
@@ -1100,22 +1102,22 @@ export declare class DefaultCharacterController extends BaseCharacterController 
     walkVelocity: number;
     /**
      * A function allowing custom logic to determine if the entity can walk.
-     * @param this - The character controller instance.
-     * @returns Whether the entity can walk.
+     * @param defaultCharacterController - The character controller instance.
+     * @returns Whether the entity of the character controller can walk.
      */
-    canWalk: (this: DefaultCharacterController) => boolean;
+    canWalk: (defaultCharacterController: DefaultCharacterController) => boolean;
     /**
      * A function allowing custom logic to determine if the entity can run.
-     * @param this - The character controller instance.
-     * @returns Whether the entity can run.
+     * @param defaultCharacterController - The character controller instance.
+     * @returns Whether the entity of the character controller can run.
      */
-    canRun: (this: DefaultCharacterController) => boolean;
+    canRun: (defaultCharacterController: DefaultCharacterController) => boolean;
     /**
      * A function allowing custom logic to determine if the entity can jump.
-     * @param this - The character controller instance.
-     * @returns Whether the entity can jump.
+     * @param defaultCharacterController - The character controller instance.
+     * @returns Whether the entity of the character controller can jump.
      */
-    canJump: (this: DefaultCharacterController) => boolean;
+    canJump: (defaultCharacterController: DefaultCharacterController) => boolean;
 
 
 
@@ -1199,55 +1201,55 @@ export declare interface DefaultCharacterControllerOptions {
  */
 export declare class Entity extends RigidBody implements protocol.Serializable {
     /**
-     * A function that creates a custom character controller for the entity.
-     * @param this - The Entity instance.
+     * A function that creates a custom character controller for the entity when it spawns.
+     * @param entity - The Entity instance the character controller is created for.
      * @returns A character controller that extends {@link BaseCharacterController}.
      */
-    createCustomCharacterController?: (this: Entity) => BaseCharacterController;
+    createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /**
      * A function that is called when the entity collides with a block.
-     * @param this - The Entity instance.
+     * @param entity - The Entity instance the collision is for.
      * @param block - The block that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onBlockCollision?: (this: Entity, block: BlockType, started: boolean) => void;
+    onBlockCollision?: (entity: Entity, block: BlockType, started: boolean) => void;
     /**
      * A function that is called when the entity collides with a block.
-     * @param this - The Entity instance.
+     * @param entity - The Entity instance the collision is for.
      * @param block - The block that the entity collided with.
      * @param contactForceData - The contact force data.
      */
-    onBlockContactForce?: (this: Entity, block: BlockType, contactForceData: ContactForceData) => void;
+    onBlockContactForce?: (entity: Entity, block: BlockType, contactForceData: ContactForceData) => void;
     /**
      * A function that is called when the entity collides with another entity.
-     * @param this - The Entity instance.
-     * @param entity - The entity that the entity collided with.
+     * @param entity - The Entity instance the collision is for.
+     * @param otherEntity - The other entity that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onEntityCollision?: (this: Entity, entity: Entity, started: boolean) => void;
+    onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
     /**
      * A function that is called when the entity contacts another entity.
-     * @param this - The Entity instance.
-     * @param entity - The entity that the entity collided with.
+     * @param entity - The Entity instance the collision is for.
+     * @param otherEntity - The other entity that the entity collided with.
      * @param contactForceData - The contact force data.
      */
-    onEntityContactForce?: (this: Entity, entity: Entity, contactForceData: ContactForceData) => void;
+    onEntityContactForce?: (entity: Entity, otherEntity: Entity, contactForceData: ContactForceData) => void;
     /**
      * A function that is called when the entity is spawned.
-     * @param this - The Entity instance.
+     * @param entity - The Entity instance that spawned.
      */
-    onSpawn?: (this: Entity) => void;
+    onSpawn?: (entity: Entity) => void;
     /**
      * A function that is called when the entity is despawned.
-     * @param this - The Entity instance.
+     * @param entity - The Entity instance that despawned.
      */
-    onDespawn?: (this: Entity) => void;
+    onDespawn?: (entity: Entity) => void;
     /**
      * A function that is called every tick.
-     * @param this - The Entity instance.
+     * @param entity - The Entity instance that ticked.
      * @param tickDeltaMs - The delta time in milliseconds since the last tick.
      */
-    onTick?: (this: Entity, tickDeltaMs: number) => void;
+    onTick?: (entity: Entity, tickDeltaMs: number) => void;
 
 
 
@@ -1410,6 +1412,12 @@ export declare class EntityManager {
 
 /** Options for creating an Entity instance. @public */
 export declare interface EntityOptions {
+    /**
+     * A function that creates a custom character controller for the entity when it spawns.
+     * @param entity - The Entity instance.
+     * @returns A character controller that extends {@link BaseCharacterController}.
+     */
+    createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
     /** The looped animations to start when the entity is spawned. */
@@ -2354,7 +2362,8 @@ export declare interface Rotation {
  * as a way to add realistic movement and rotational facing
  * functionality to an entity. This is also a great base to
  * extend for your own more complex character controller
- * that implements things like pathfinding.
+ * that implements things like pathfinding. Compatible with
+ * entities that have kinematic or dynamic rigid body types.
  *
  * @example
  * ```typescript

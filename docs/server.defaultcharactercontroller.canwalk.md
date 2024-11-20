@@ -9,5 +9,5 @@ A function allowing custom logic to determine if the entity can walk.
 **Signature:**
 
 ```typescript
-canWalk: (this: DefaultCharacterController) => boolean;
+canWalk: (defaultCharacterController: DefaultCharacterController) => boolean;
 ```

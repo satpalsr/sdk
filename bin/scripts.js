@@ -51,6 +51,7 @@ const path = require('path');
     // Done, lfg!
     console.log('🚀 Hytopia project initialized successfully!');
     console.log('💡 Start your development server with `bun --watch index.ts`!');
+    console.log('🎮 After you start your development server, play by opening your browser and visiting: https://play.hytopia.com/?join=localhost:8080')
     return;
   }
   

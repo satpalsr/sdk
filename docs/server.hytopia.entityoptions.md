@@ -37,6 +37,25 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[createCustomCharacterController?](./server.hytopia.entityoptions.createcustomcharactercontroller.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
+
+
+</td><td>
+
+_(Optional)_ A function that creates a custom character controller for the entity when it spawns.
+
+
+</td></tr>
+<tr><td>
+
 [modelLoopedAnimations?](./server.hytopia.entityoptions.modelloopedanimations.md)
 
 

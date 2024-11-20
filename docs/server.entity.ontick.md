@@ -9,5 +9,5 @@ A function that is called every tick.
 **Signature:**
 
 ```typescript
-onTick?: (this: Entity, tickDeltaMs: number) => void;
+onTick?: (entity: Entity, tickDeltaMs: number) => void;
 ```

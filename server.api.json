@@ -3227,7 +3227,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityCollision:member",
-              "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param entity - The entity that collided with the block.\n *\n * @param started - Whether the collision started.\n */\n",
+              "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3235,7 +3235,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(blockType: "
                 },
                 {
                   "kind": "Reference",
@@ -3275,7 +3275,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityContactForce:member",
-              "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param entity - The entity that contacted the block.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3283,7 +3283,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(blockType: "
                 },
                 {
                   "kind": "Reference",
@@ -7919,7 +7919,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canJump:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can jump.\n */\n",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can jump.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7927,7 +7927,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(defaultCharacterController: "
                 },
                 {
                   "kind": "Reference",
@@ -7958,7 +7958,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canRun:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can run.\n */\n",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can run.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7966,7 +7966,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(defaultCharacterController: "
                 },
                 {
                   "kind": "Reference",
@@ -7997,7 +7997,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!DefaultCharacterController#canWalk:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can walk.\n */\n",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can walk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8005,7 +8005,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(defaultCharacterController: "
                 },
                 {
                   "kind": "Reference",
@@ -8628,7 +8628,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#createCustomCharacterController:member",
-              "docComment": "/**\n * A function that creates a custom character controller for the entity.\n *\n * @param this - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
+              "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance the character controller is created for.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8636,7 +8636,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -8888,7 +8888,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockCollision:member",
-              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8896,7 +8896,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -8936,7 +8936,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockContactForce:member",
-              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8944,7 +8944,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -8993,7 +8993,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onDespawn:member",
-              "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param this - The Entity instance.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param entity - The Entity instance that despawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9001,7 +9001,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9032,7 +9032,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityCollision:member",
-              "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9040,7 +9040,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9049,7 +9049,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", entity: "
+                  "text": ", otherEntity: "
                 },
                 {
                   "kind": "Reference",
@@ -9080,7 +9080,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityContactForce:member",
-              "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9088,7 +9088,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9097,7 +9097,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", entity: "
+                  "text": ", otherEntity: "
                 },
                 {
                   "kind": "Reference",
@@ -9137,7 +9137,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onSpawn:member",
-              "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param this - The Entity instance.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param entity - The Entity instance that spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9145,7 +9145,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9176,7 +9176,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onTick:member",
-              "docComment": "/**\n * A function that is called every tick.\n *\n * @param this - The Entity instance.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
+              "docComment": "/**\n * A function that is called every tick.\n *\n * @param entity - The Entity instance that ticked.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9184,7 +9184,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(this: "
+                  "text": "(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -10391,6 +10391,47 @@
           "name": "EntityOptions",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#createCustomCharacterController:member",
+              "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createCustomCharacterController?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BaseCharacterController",
+                  "canonicalReference": "server!BaseCharacterController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "createCustomCharacterController",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#modelLoopedAnimations:member",
@@ -14617,7 +14658,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityCollision:member",
-                  "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param entity - The entity that collided with the block.\n *\n * @param started - Whether the collision started.\n */\n",
+                  "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14625,7 +14666,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(blockType: "
                     },
                     {
                       "kind": "Reference",
@@ -14665,7 +14706,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityContactForce:member",
-                  "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param entity - The entity that contacted the block.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -14673,7 +14714,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(blockType: "
                     },
                     {
                       "kind": "Reference",
@@ -19309,7 +19350,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canJump:member",
-                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can jump.\n */\n",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can jump.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19317,7 +19358,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(defaultCharacterController: "
                     },
                     {
                       "kind": "Reference",
@@ -19348,7 +19389,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canRun:member",
-                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can run.\n */\n",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can run.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19356,7 +19397,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(defaultCharacterController: "
                     },
                     {
                       "kind": "Reference",
@@ -19387,7 +19428,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.DefaultCharacterController#canWalk:member",
-                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param this - The character controller instance.\n *\n * @returns Whether the entity can walk.\n */\n",
+                  "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param defaultCharacterController - The character controller instance.\n *\n * @returns Whether the entity of the character controller can walk.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -19395,7 +19436,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(defaultCharacterController: "
                     },
                     {
                       "kind": "Reference",
@@ -20018,7 +20059,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#createCustomCharacterController:member",
-                  "docComment": "/**\n * A function that creates a custom character controller for the entity.\n *\n * @param this - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
+                  "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance the character controller is created for.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20026,7 +20067,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20278,7 +20319,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockCollision:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param block - The block that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20286,7 +20327,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20326,7 +20367,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockContactForce:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param this - The Entity instance.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param block - The block that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20334,7 +20375,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20383,7 +20424,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onDespawn:member",
-                  "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param this - The Entity instance.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity is despawned.\n *\n * @param entity - The Entity instance that despawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20391,7 +20432,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20422,7 +20463,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityCollision:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20430,7 +20471,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20439,7 +20480,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", entity: "
+                      "text": ", otherEntity: "
                     },
                     {
                       "kind": "Reference",
@@ -20470,7 +20511,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityContactForce:member",
-                  "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param this - The Entity instance.\n *\n * @param entity - The entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20478,7 +20519,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20487,7 +20528,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", entity: "
+                      "text": ", otherEntity: "
                     },
                     {
                       "kind": "Reference",
@@ -20527,7 +20568,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onSpawn:member",
-                  "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param this - The Entity instance.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity is spawned.\n *\n * @param entity - The Entity instance that spawned.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20535,7 +20576,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -20566,7 +20607,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onTick:member",
-                  "docComment": "/**\n * A function that is called every tick.\n *\n * @param this - The Entity instance.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
+                  "docComment": "/**\n * A function that is called every tick.\n *\n * @param entity - The Entity instance that ticked.\n *\n * @param tickDeltaMs - The delta time in milliseconds since the last tick.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -20574,7 +20615,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(this: "
+                      "text": "(entity: "
                     },
                     {
                       "kind": "Reference",
@@ -21781,6 +21822,47 @@
               "name": "EntityOptions",
               "preserveMemberOrder": false,
               "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#createCustomCharacterController:member",
+                  "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "createCustomCharacterController?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "(entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ") => "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "BaseCharacterController",
+                      "canonicalReference": "server!BaseCharacterController:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "createCustomCharacterController",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  }
+                },
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#modelLoopedAnimations:member",
@@ -28260,7 +28342,7 @@
             {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.SimpleCharacterController:class",
-              "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.characterController.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+              "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding. Compatible with entities that have kinematic or dynamic rigid body types.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.characterController.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35817,7 +35899,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!SimpleCharacterController:class",
-          "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.characterController.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * A simple character controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex character controller that implements things like pathfinding. Compatible with entities that have kinematic or dynamic rigid body types.\n *\n * @example\n * ```typescript\n * // Create a custom character controller for myEntity, prior to spawning it.\n * myEntity.createCustomCharacterController = () => {\n *   return new SimpleCharacterController(myEntity);\n * };\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.characterController.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

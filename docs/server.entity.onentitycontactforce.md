@@ -9,5 +9,5 @@ A function that is called when the entity contacts another entity.
 **Signature:**
 
 ```typescript
-onEntityContactForce?: (this: Entity, entity: Entity, contactForceData: ContactForceData) => void;
+onEntityContactForce?: (entity: Entity, otherEntity: Entity, contactForceData: ContactForceData) => void;
 ```

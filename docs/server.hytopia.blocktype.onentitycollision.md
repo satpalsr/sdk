@@ -9,5 +9,5 @@ A callback function that is invoked when an entity collides with blocks of this 
 **Signature:**
 
 ```typescript
-onEntityCollision?: (this: BlockType, entity: Entity, started: boolean) => void;
+onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
 ```

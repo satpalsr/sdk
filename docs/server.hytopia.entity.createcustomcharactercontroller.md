@@ -4,10 +4,10 @@
 
 ## HYTOPIA.Entity.createCustomCharacterController property
 
-A function that creates a custom character controller for the entity.
+A function that creates a custom character controller for the entity when it spawns.
 
 **Signature:**
 
 ```typescript
-createCustomCharacterController?: (this: Entity) => BaseCharacterController;
+createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
 ```
