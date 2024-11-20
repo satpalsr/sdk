@@ -315,7 +315,6 @@ function spawnPayloadEntity(world: World) {
             } else if (other instanceof Entity) {
               started ? payloadPlayerEntityCount-- : payloadPlayerEntityCount++;
             }
-            console.log(payloadPlayerEntityCount);
           },
         },
       ],
