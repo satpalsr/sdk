@@ -108,7 +108,7 @@
     {
       "id": 22,
       "name": "water_still",
-      "textureUri": "textures/water_still.png"
+      "textureUri": "textures/water.png"
     }
   ],
   "blocks": {
