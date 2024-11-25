@@ -42,7 +42,7 @@ entity
 
 </td><td>
 
-The entity to track.
+The entity to track or undefined to stop tracking.
 
 
 </td></tr>

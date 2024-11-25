@@ -42,7 +42,7 @@ number
 
 </td><td>
 
-The zoom to set.
+The zoom to set, 0 to infinity.
 
 
 </td></tr>

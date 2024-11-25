@@ -42,7 +42,7 @@ position
 
 </td><td>
 
-The position to track.
+The position to track or undefined to stop tracking.
 
 
 </td></tr>

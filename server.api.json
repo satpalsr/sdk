@@ -24294,7 +24294,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.PlayerCamera#setTrackedEntity:member(1)",
-                  "docComment": "/**\n * Sets the entity the camera will constantly look at, even if the camera attached or tracked entity moves.\n *\n * @param entity - The entity to track.\n */\n",
+                  "docComment": "/**\n * Sets the entity the camera will constantly look at, even if the camera attached or tracked entity moves.\n *\n * @param entity - The entity to track or undefined to stop tracking.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24347,7 +24347,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.PlayerCamera#setTrackedPosition:member(1)",
-                  "docComment": "/**\n * Sets the position the camera will constantly look at, even if the camera attached entity moves.\n *\n * @param position - The position to track.\n */\n",
+                  "docComment": "/**\n * Sets the position the camera will constantly look at, even if the camera attached entity moves.\n *\n * @param position - The position to track or undefined to stop tracking.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -24400,7 +24400,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.PlayerCamera#setZoom:member(1)",
-                  "docComment": "/**\n * Sets the zoom of the camera.\n *\n * @param zoom - The zoom to set.\n */\n",
+                  "docComment": "/**\n * Sets the zoom of the camera.\n *\n * @param zoom - The zoom to set, 0 to infinity.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -34261,7 +34261,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!PlayerCamera#setTrackedEntity:member(1)",
-              "docComment": "/**\n * Sets the entity the camera will constantly look at, even if the camera attached or tracked entity moves.\n *\n * @param entity - The entity to track.\n */\n",
+              "docComment": "/**\n * Sets the entity the camera will constantly look at, even if the camera attached or tracked entity moves.\n *\n * @param entity - The entity to track or undefined to stop tracking.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34314,7 +34314,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!PlayerCamera#setTrackedPosition:member(1)",
-              "docComment": "/**\n * Sets the position the camera will constantly look at, even if the camera attached entity moves.\n *\n * @param position - The position to track.\n */\n",
+              "docComment": "/**\n * Sets the position the camera will constantly look at, even if the camera attached entity moves.\n *\n * @param position - The position to track or undefined to stop tracking.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34367,7 +34367,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!PlayerCamera#setZoom:member(1)",
-              "docComment": "/**\n * Sets the zoom of the camera.\n *\n * @param zoom - The zoom to set.\n */\n",
+              "docComment": "/**\n * Sets the zoom of the camera.\n *\n * @param zoom - The zoom to set, 0 to infinity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

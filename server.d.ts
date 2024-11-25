@@ -1870,18 +1870,18 @@ export declare class PlayerCamera implements protocol.Serializable {
     /**
      * Sets the entity the camera will constantly look at,
      * even if the camera attached or tracked entity moves.
-     * @param entity - The entity to track.
+     * @param entity - The entity to track or undefined to stop tracking.
      */
     setTrackedEntity(entity: Entity | undefined): void;
     /**
      * Sets the position the camera will constantly look at,
      * even if the camera attached entity moves.
-     * @param position - The position to track.
+     * @param position - The position to track or undefined to stop tracking.
      */
     setTrackedPosition(position: Vector3 | undefined): void;
     /**
      * Sets the zoom of the camera.
-     * @param zoom - The zoom to set.
+     * @param zoom - The zoom to set, 0 to infinity.
      */
     setZoom(zoom: number): void;
 
