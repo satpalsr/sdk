@@ -278,7 +278,7 @@ The name of the entity.
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
 
 
 </td><td>
@@ -297,7 +297,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, block: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
 
 
 </td><td>

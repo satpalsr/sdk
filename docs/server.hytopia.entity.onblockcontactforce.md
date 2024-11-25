@@ -9,5 +9,5 @@ A function that is called when the entity collides with a block.
 **Signature:**
 
 ```typescript
-onBlockContactForce?: (entity: Entity, block: BlockType, contactForceData: ContactForceData) => void;
+onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
 ```

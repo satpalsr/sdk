@@ -195,6 +195,17 @@ A player in the game.
 </td></tr>
 <tr><td>
 
+[PlayerCamera](./server.hytopia.playercamera.md)
+
+
+</td><td>
+
+The camera for a Player.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerEntity](./server.hytopia.playerentity.md)
 
 
@@ -407,6 +418,26 @@ Event types an Entity instance can emit.
 </td><td>
 
 Event types a GameServer instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerCameraEventType](./server.hytopia.playercameraeventtype.md)
+
+
+</td><td>
+
+Event types a PlayerCamera can emit.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerCameraMode](./server.hytopia.playercameramode.md)
+
+
+</td><td>
 
 
 </td></tr>
@@ -716,6 +747,17 @@ Payloads for events an Entity instance can emit.
 </td><td>
 
 Payloads for events emitted by a GameServer instance.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerCameraEventPayload](./server.hytopia.playercameraeventpayload.md)
+
+
+</td><td>
+
+Payloads for events a PlayerCamera can emit.
 
 
 </td></tr>

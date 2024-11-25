@@ -1209,17 +1209,17 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /**
      * A function that is called when the entity collides with a block.
      * @param entity - The Entity instance the collision is for.
-     * @param block - The block that the entity collided with.
+     * @param blockType - The block type that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onBlockCollision?: (entity: Entity, block: BlockType, started: boolean) => void;
+    onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
     /**
      * A function that is called when the entity collides with a block.
      * @param entity - The Entity instance the collision is for.
-     * @param block - The block that the entity collided with.
+     * @param blockType - The block type that the entity collided with.
      * @param contactForceData - The contact force data.
      */
-    onBlockContactForce?: (entity: Entity, block: BlockType, contactForceData: ContactForceData) => void;
+    onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
     /**
      * A function that is called when the entity collides with another entity.
      * @param entity - The Entity instance the collision is for.
@@ -1634,6 +1634,10 @@ declare namespace HYTOPIA {
         PlayerInputState,
         PlayerOrientationState,
         PlayerEventPayload,
+        PlayerCamera,
+        PlayerCameraMode,
+        PlayerCameraEventType,
+        PlayerCameraEventPayload,
         PlayerEntity,
         PlayerEntityOptions,
         PlayerManager,
@@ -1712,6 +1716,8 @@ export declare class Player {
     readonly id: number;
     /** The username for the player. */
     readonly username: string;
+    /** The camera for the player. */
+    readonly camera: PlayerCamera;
 
 
 
@@ -1746,6 +1752,218 @@ export declare class Player {
 
 
 
+}
+
+/**
+ * The camera for a Player.
+ *
+ * @remarks
+ * The camera is used to render the player's view of the
+ * world. The player's camera exposes functionality to
+ * control the camera of a player. All player objects
+ * have a camera, accessible via {@link Player.camera}.
+ *
+ * @example
+ * ```typescript
+ * player.camera.setMode(PlayerCameraMode.FIRST_PERSON);
+ * ```
+ *
+ * @public
+ */
+export declare class PlayerCamera implements protocol.Serializable {
+    /** The player that the camera belongs to. @readonly */
+    readonly player: Player;
+
+
+
+
+
+
+
+
+
+
+
+
+    /** The entity the camera is attached to. */
+    get attachedToEntity(): Entity | undefined;
+    /** The position the camera is attached to. */
+    get attachedToPosition(): Vector3 | undefined;
+    /** The film offset of the camera. A positive value shifts the camera right, a negative value shifts it left. */
+    get filmOffset(): number;
+    /** Only used in first-person mode. The forward offset of the camera. A positive number shifts the camera forward, a negative number shifts it backward. */
+    get forwardOffset(): number;
+    /** The field of view of the camera. */
+    get fov(): number;
+    /** The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching. */
+    get hiddenModelNodes(): Set<string>;
+    /** The mode of the camera. */
+    get mode(): PlayerCameraMode;
+    /** The relative offset of the camera from the entity or position it is attached to. */
+    get offset(): Vector3;
+    /** The entity the camera will constantly look at, even if the camera attached or tracked entity moves. */
+    get trackedEntity(): Entity | undefined;
+    /** The position the camera will constantly look at, even if the camera attached entity moves. */
+    get trackedPosition(): Vector3 | undefined;
+    /** The zoom of the camera. */
+    get zoom(): number;
+    /**
+     * Makes the camera look at an entity. If the camera was
+     * previously tracking an entity or position, it will
+     * stop tracking.
+     * @param entity - The entity to look at.
+     */
+    lookAtEntity(entity: Entity): void;
+    /**
+     * Makes the camera look at a position. If the camera was
+     * previously tracking an entity or position, it will
+     * stop tracking.
+     * @param position - The position to look at.
+     */
+    lookAtPosition(position: Vector3): void;
+    /**
+     * Sets the entity the camera is attached to.
+     * @param entity - The entity to attach the camera to.
+     */
+    setAttachedToEntity(entity: Entity): void;
+    /**
+     * Sets the position the camera is attached to.
+     * @param position - The position to attach the camera to.
+     */
+    setAttachedToPosition(position: Vector3): void;
+    /**
+     * Sets the film offset of the camera. A positive value
+     * shifts the camera right, a negative value shifts it left.
+     * @param filmOffset - The film offset to set.
+     */
+    setFilmOffset(filmOffset: number): void;
+    /**
+     * Only used in first-person mode. Sets the forward offset
+     * of the camera. A positive value shifts the camera forward,
+     * a negative value shifts it backward.
+     * @param forwardOffset - The forward offset to set.
+     */
+    setForwardOffset(forwardOffset: number): void;
+    /**
+     * Sets the field of view of the camera.
+     * @param fov - The field of view to set.
+     */
+    setFov(fov: number): void;
+    /**
+     * Sets the nodes of the model the camera is attached to
+     * that will not be rendered for the player. Uses case
+     * insensitive substring matching.
+     * @param hiddenModelNodes - Determines nodes to hide that match these case insensitive substrings.
+     */
+    setHiddenModelNodes(hiddenModelNodes: string[]): void;
+    /**
+     * Sets the mode of the camera.
+     * @param mode - The mode to set.
+     */
+    setMode(mode: PlayerCameraMode): void;
+    /**
+     * Sets the relative offset of the camera from the
+     * entity or position it is attached to.
+     * @param offset - The offset to set.
+     */
+    setOffset(offset: Vector3): void;
+    /**
+     * Sets the entity the camera will constantly look at,
+     * even if the camera attached or tracked entity moves.
+     * @param entity - The entity to track.
+     */
+    setTrackedEntity(entity: Entity | undefined): void;
+    /**
+     * Sets the position the camera will constantly look at,
+     * even if the camera attached entity moves.
+     * @param position - The position to track.
+     */
+    setTrackedPosition(position: Vector3 | undefined): void;
+    /**
+     * Sets the zoom of the camera.
+     * @param zoom - The zoom to set.
+     */
+    setZoom(zoom: number): void;
+
+
+}
+
+/** Payloads for events a PlayerCamera can emit. @public */
+export declare namespace PlayerCameraEventPayload {
+    export interface LookAtEntity {
+        playerCamera: PlayerCamera;
+        entity: Entity;
+    }
+    export interface LookAtPosition {
+        playerCamera: PlayerCamera;
+        position: Vector3;
+    }
+    export interface SetAttachedToEntity {
+        playerCamera: PlayerCamera;
+        entity: Entity;
+    }
+    export interface SetAttachedToPosition {
+        playerCamera: PlayerCamera;
+        position: Vector3;
+    }
+    export interface SetFilmOffset {
+        playerCamera: PlayerCamera;
+        filmOffset: number;
+    }
+    export interface SetForwardOffset {
+        playerCamera: PlayerCamera;
+        forwardOffset: number;
+    }
+    export interface SetFov {
+        playerCamera: PlayerCamera;
+        fov: number;
+    }
+    export interface SetHiddenModelNodes {
+        playerCamera: PlayerCamera;
+        hiddenModelNodes: string[];
+    }
+    export interface SetMode {
+        playerCamera: PlayerCamera;
+        mode: PlayerCameraMode;
+    }
+    export interface SetOffset {
+        playerCamera: PlayerCamera;
+        offset: Vector3;
+    }
+    export interface SetTrackedEntity {
+        playerCamera: PlayerCamera;
+        entity: Entity | undefined;
+    }
+    export interface SetTrackedPosition {
+        playerCamera: PlayerCamera;
+        position: Vector3 | undefined;
+    }
+    export interface SetZoom {
+        playerCamera: PlayerCamera;
+        zoom: number;
+    }
+}
+
+/** Event types a PlayerCamera can emit. @public */
+export declare enum PlayerCameraEventType {
+    LOOK_AT_ENTITY = "PLAYER_CAMERA.LOOK_AT_ENTITY",
+    LOOK_AT_POSITION = "PLAYER_CAMERA.LOOK_AT_POSITION",
+    SET_ATTACHED_TO_ENTITY = "PLAYER_CAMERA.SET_ATTACHED_TO_ENTITY",
+    SET_ATTACHED_TO_POSITION = "PLAYER_CAMERA.SET_ATTACHED_TO_POSITION",
+    SET_FILM_OFFSET = "PLAYER_CAMERA.SET_FILM_OFFSET",
+    SET_FORWARD_OFFSET = "PLAYER_CAMERA.SET_FORWARD_OFFSET",
+    SET_FOV = "PLAYER_CAMERA.SET_FOV",
+    SET_HIDDEN_MODEL_NODES = "PLAYER_CAMERA.SET_HIDDEN_MODEL_NODES",
+    SET_MODE = "PLAYER_CAMERA.SET_MODE",
+    SET_OFFSET = "PLAYER_CAMERA.SET_OFFSET",
+    SET_TRACKED_ENTITY = "PLAYER_CAMERA.SET_TRACKED_ENTITY",
+    SET_TRACKED_POSITION = "PLAYER_CAMERA.SET_TRACKED_POSITION",
+    SET_ZOOM = "PLAYER_CAMERA.SET_ZOOM"
+}
+
+export declare enum PlayerCameraMode {
+    FIRST_PERSON = 0,
+    THIRD_PERSON = 1
 }
 
 /**

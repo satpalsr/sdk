@@ -90,7 +90,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
   const chatManager = world.chatManager;
 
   // Enable debug rendering
-  world.simulation.enableDebugRendering(true);
+//  world.simulation.enableDebugRendering(true);
 
   // Load Map
   world.loadMap(map);

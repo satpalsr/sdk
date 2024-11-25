@@ -43,6 +43,27 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[camera](./server.hytopia.player.camera.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[PlayerCamera](./server.playercamera.md)
+
+
+</td><td>
+
+The camera for the player.
+
+
+</td></tr>
+<tr><td>
+
 [id](./server.hytopia.player.id.md)
 
 
