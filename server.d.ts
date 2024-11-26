@@ -1439,7 +1439,7 @@ export declare class EntityManager {
 
 /** Options for creating an Entity instance. @public */
 export declare interface EntityOptions {
-    /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added. */
+    /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created. */
     blockHalfExtents?: Vector3;
     /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
     blockTextureUri?: string;

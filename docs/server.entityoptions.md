@@ -50,7 +50,7 @@ Description
 
 </td><td>
 
-_(Optional)_ The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added.
+_(Optional)_ The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created.
 
 
 </td></tr>
