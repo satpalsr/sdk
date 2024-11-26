@@ -19,6 +19,7 @@
 import {
   Audio,
   BlockType,
+  PlayerCameraMode,
   ColliderShape,
   CollisionGroup,
   DefaultCharacterController,
@@ -104,6 +105,12 @@ startServer(world => { // Perform our game setup logic in the startServer init c
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
+
+    // Setup a first person camera for the player
+    player.camera.setMode(PlayerCameraMode.FIRST_PERSON); // set first person mode
+    player.camera.setOffset({ x: 0, y: 0.4, z: 0 }); // shift camrea up on Y axis so we see from "head" perspective.
+    player.camera.setHiddenModelNodes([ 'head', 'neck' ]); // hide the head node from the model so we don't see it in the camera, this is just hidden for the controlling player.
+    player.camera.setForwardOffset(0.3); // Shift the camera forward so we are looking slightly in front of where the player is looking.
 
     // Spawn the player entity at a random coordinate
     const randomSpawnCoordinate = PLAYER_SPAWN_COORDINATES[Math.floor(Math.random() * PLAYER_SPAWN_COORDINATES.length)];

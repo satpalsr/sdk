@@ -367,27 +367,6 @@ The raw RAPIER rigid body instance.
 
 
 </td></tr>
-<tr><td>
-
-[tag](./server.rigidbody.tag.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-string \| undefined
-
-
-</td><td>
-
-An arbitrary identifier tag of the rigid body. Useful for your own logic.
-
-
-</td></tr>
 </tbody></table>
 
 ## Methods
@@ -1231,20 +1210,6 @@ Sets whether the rigid body is sleeping.
 </td><td>
 
 Sets the soft ccd prediction of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[setTag(tag)](./server.rigidbody.settag.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Sets the tag of the rigid body.
 
 
 </td></tr>

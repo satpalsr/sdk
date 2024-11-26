@@ -201,6 +201,27 @@ The raw collider object from the Rapier physics engine.
 </td></tr>
 <tr><td>
 
+[shape](./server.collider.shape.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[ColliderShape](./server.collidershape.md)
+
+
+</td><td>
+
+The shape of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [tag](./server.collider.tag.md)
 
 

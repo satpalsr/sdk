@@ -1,6 +1,6 @@
 {
   "name": "hytopia",
-  "version": "0.1.33",
+  "version": "0.1.34",
   "description": "The HYTOPIA SDK makes it easy for developers to create multiplayer games on the HYTOPIA platform using JavaScript or TypeScript.",
   "main": "server.js",
   "bin": {

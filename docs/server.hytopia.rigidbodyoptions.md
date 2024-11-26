@@ -379,25 +379,6 @@ _(Optional)_ The soft continuous collision detection prediction of the rigid bod
 </td></tr>
 <tr><td>
 
-[tag?](./server.hytopia.rigidbodyoptions.tag.md)
-
-
-</td><td>
-
-
-</td><td>
-
-string
-
-
-</td><td>
-
-_(Optional)_ The tag of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
 [translation?](./server.hytopia.rigidbodyoptions.translation.md)
 
 

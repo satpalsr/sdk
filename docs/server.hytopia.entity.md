@@ -104,6 +104,48 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[blockHalfExtents](./server.hytopia.entity.blockhalfextents.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3](./server.vector3.md) \| undefined
+
+
+</td><td>
+
+The half extends of the visual size of the block entity when blockTextureUri is set.
+
+
+</td></tr>
+<tr><td>
+
+[blockTextureUri](./server.hytopia.entity.blocktextureuri.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+The URI or path to the texture to be used, if this is set, the entity is a block entity.
+
+
+</td></tr>
+<tr><td>
+
 [characterController](./server.hytopia.entity.charactercontroller.md)
 
 
@@ -398,6 +440,27 @@ _(Optional)_ A function that is called when the entity is spawned.
 </td><td>
 
 _(Optional)_ A function that is called every tick.
+
+
+</td></tr>
+<tr><td>
+
+[tag](./server.hytopia.entity.tag.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+An arbitrary identifier tag of the entity. Useful for your own logic.
 
 
 </td></tr>

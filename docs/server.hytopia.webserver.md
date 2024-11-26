@@ -9,9 +9,8 @@ Manages the internal HTTP server for the game server.
 **Signature:**
 
 ```typescript
-export default class WebServer implements Readyable 
+export default class WebServer 
 ```
-**Implements:** Readyable
 
 ## Remarks
 

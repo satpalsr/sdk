@@ -6669,6 +6669,37 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Collider#shape:member",
+              "docComment": "/**\n * The shape of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get shape(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape",
+                  "canonicalReference": "server!ColliderShape:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Collider#tag:member",
               "docComment": "/**\n * An arbitrary identifier tag of the collider. Useful for your own logic.\n */\n",
               "excerptTokens": [
@@ -7819,8 +7850,32 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "server!DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS:var",
+          "docComment": "/**\n * The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RigidBodyOptions",
+              "canonicalReference": "server!RigidBodyOptions:interface"
+            }
+          ],
+          "fileUrlPath": "src/world/entities/Entity.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "server!DEFAULT_ENTITY_RIGID_BODY_OPTIONS:var",
-          "docComment": "/**\n * The default rigid body options when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -8589,6 +8644,71 @@
                   "isOptional": false
                 }
               ]
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#blockHalfExtents:member",
+              "docComment": "/**\n * The half extends of the visual size of the block entity when blockTextureUri is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get blockHalfExtents(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "blockHalfExtents",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#blockTextureUri:member",
+              "docComment": "/**\n * The URI or path to the texture to be used, if this is set, the entity is a block entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get blockTextureUri(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "blockTextureUri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -9473,6 +9593,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get tag(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#world:member",
               "docComment": "/**\n * The world the entity is in.\n */\n",
               "excerptTokens": [
@@ -10274,6 +10424,112 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!EntityManager#getEntitiesByTag:member(1)",
+              "docComment": "/**\n * Gets all spawned entities in the world with a specific tag.\n *\n * @param tag - The tag to get the entities for.\n *\n * @returns All spawned entities in the world with the provided tag.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getEntitiesByTag(tag: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "tag",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getEntitiesByTag"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EntityManager#getEntitiesByTagSubstring:member(1)",
+              "docComment": "/**\n * Gets all spawned entities in the world with a tag that includes a specific substring.\n *\n * @param tagSubstring - The tag substring to get the entities for.\n *\n * @returns All spawned entities in the world with a tag that includes the provided substring.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getEntitiesByTagSubstring(tagSubstring: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "tagSubstring",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getEntitiesByTagSubstring"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!EntityManager#getEntity:member(1)",
               "docComment": "/**\n * Gets a spawned entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The spawned entity with the provided id, or undefined if no entity is found.\n */\n",
               "excerptTokens": [
@@ -10391,6 +10647,61 @@
           "name": "EntityOptions",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#blockHalfExtents:member",
+              "docComment": "/**\n * The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blockHalfExtents?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "blockHalfExtents",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#blockTextureUri:member",
+              "docComment": "/**\n * The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blockTextureUri?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "blockTextureUri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityOptions#createCustomCharacterController:member",
@@ -10563,6 +10874,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "rigidBodyOptions",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tag?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tag",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -18100,6 +18438,37 @@
                 },
                 {
                   "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Collider#shape:member",
+                  "docComment": "/**\n * The shape of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get shape(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "ColliderShape",
+                      "canonicalReference": "server!ColliderShape:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "shape",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Collider#tag:member",
                   "docComment": "/**\n * An arbitrary identifier tag of the collider. Useful for your own logic.\n */\n",
                   "excerptTokens": [
@@ -19250,8 +19619,32 @@
             },
             {
               "kind": "Variable",
+              "canonicalReference": "server!HYTOPIA.DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS:var",
+              "docComment": "/**\n * The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyOptions",
+                  "canonicalReference": "server!RigidBodyOptions:interface"
+                }
+              ],
+              "fileUrlPath": "src/world/entities/Entity.ts",
+              "isReadonly": true,
+              "releaseTag": "Public",
+              "name": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS",
+              "variableTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "Variable",
               "canonicalReference": "server!HYTOPIA.DEFAULT_ENTITY_RIGID_BODY_OPTIONS:var",
-              "docComment": "/**\n * The default rigid body options when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
+              "docComment": "/**\n * The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -20020,6 +20413,71 @@
                       "isOptional": false
                     }
                   ]
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#blockHalfExtents:member",
+                  "docComment": "/**\n * The half extends of the visual size of the block entity when blockTextureUri is set.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get blockHalfExtents(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "blockHalfExtents",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#blockTextureUri:member",
+                  "docComment": "/**\n * The URI or path to the texture to be used, if this is set, the entity is a block entity.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get blockTextureUri(): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "blockTextureUri",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
                 },
                 {
                   "kind": "Property",
@@ -20904,6 +21362,36 @@
                 },
                 {
                   "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#tag:member",
+                  "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get tag(): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "tag",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#world:member",
                   "docComment": "/**\n * The world the entity is in.\n */\n",
                   "excerptTokens": [
@@ -21705,6 +22193,112 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.EntityManager#getEntitiesByTag:member(1)",
+                  "docComment": "/**\n * Gets all spawned entities in the world with a specific tag.\n *\n * @param tag - The tag to get the entities for.\n *\n * @returns All spawned entities in the world with the provided tag.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getEntitiesByTag(tag: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "tag",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getEntitiesByTag"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.EntityManager#getEntitiesByTagSubstring:member(1)",
+                  "docComment": "/**\n * Gets all spawned entities in the world with a tag that includes a specific substring.\n *\n * @param tagSubstring - The tag substring to get the entities for.\n *\n * @returns All spawned entities in the world with a tag that includes the provided substring.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getEntitiesByTagSubstring(tagSubstring: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "tagSubstring",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getEntitiesByTagSubstring"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.EntityManager#getEntity:member(1)",
                   "docComment": "/**\n * Gets a spawned entity in the world by its id.\n *\n * @param id - The id of the entity to get.\n *\n * @returns The spawned entity with the provided id, or undefined if no entity is found.\n */\n",
                   "excerptTokens": [
@@ -21822,6 +22416,61 @@
               "name": "EntityOptions",
               "preserveMemberOrder": false,
               "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#blockHalfExtents:member",
+                  "docComment": "/**\n * The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "blockHalfExtents?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "blockHalfExtents",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#blockTextureUri:member",
+                  "docComment": "/**\n * The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "blockTextureUri?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "blockTextureUri",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.EntityOptions#createCustomCharacterController:member",
@@ -21994,6 +22643,33 @@
                   "isOptional": true,
                   "releaseTag": "Public",
                   "name": "rigidBodyOptions",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#tag:member",
+                  "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tag?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "tag",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -29631,54 +30307,6 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#setTag:member(1)",
-                  "docComment": "/**\n * Sets the tag of the rigid body.\n *\n * @param tag - The tag of the rigid body.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "setTag(tag: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "tag",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "setTag"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.RigidBody#setTranslation:member(1)",
                   "docComment": "/**\n * Sets the translation of the rigid body.\n *\n * @param translation - The translation of the rigid body.\n */\n",
                   "excerptTokens": [
@@ -29805,36 +30433,6 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "sleep"
-                },
-                {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.RigidBody#tag:member",
-                  "docComment": "/**\n * An arbitrary identifier tag of the rigid body. Useful for your own logic.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get tag(): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string | undefined"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "tag",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
                 },
                 {
                   "kind": "Method",
@@ -30431,33 +31029,6 @@
                   "isOptional": true,
                   "releaseTag": "Public",
                   "name": "softCcdPrediction",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!HYTOPIA.RigidBodyOptions#tag:member",
-                  "docComment": "/**\n * The tag of the rigid body.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "tag?: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": true,
-                  "releaseTag": "Public",
-                  "name": "tag",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -31560,16 +32131,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "export default class WebServer implements "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Readyable",
-                  "canonicalReference": "server!~Readyable:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " "
+                  "text": "export default class WebServer "
                 }
               ],
               "fileUrlPath": "src/networking/WebServer.ts",
@@ -31578,12 +32140,7 @@
               "name": "WebServer",
               "preserveMemberOrder": false,
               "members": [],
-              "implementsTokenRanges": [
-                {
-                  "startIndex": 1,
-                  "endIndex": 2
-                }
-              ]
+              "implementsTokenRanges": []
             },
             {
               "kind": "Class",
@@ -39598,54 +40155,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#setTag:member(1)",
-              "docComment": "/**\n * Sets the tag of the rigid body.\n *\n * @param tag - The tag of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setTag(tag: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "tag",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setTag"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!RigidBody#setTranslation:member(1)",
               "docComment": "/**\n * Sets the translation of the rigid body.\n *\n * @param translation - The translation of the rigid body.\n */\n",
               "excerptTokens": [
@@ -39772,36 +40281,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "sleep"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!RigidBody#tag:member",
-              "docComment": "/**\n * An arbitrary identifier tag of the rigid body. Useful for your own logic.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get tag(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "tag",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
             },
             {
               "kind": "Method",
@@ -40398,33 +40877,6 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "softCcdPrediction",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#tag:member",
-              "docComment": "/**\n * The tag of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tag?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "tag",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -41527,16 +41979,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class WebServer implements "
-            },
-            {
-              "kind": "Reference",
-              "text": "Readyable",
-              "canonicalReference": "server!~Readyable:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class WebServer "
             }
           ],
           "fileUrlPath": "src/networking/WebServer.ts",
@@ -41545,12 +41988,7 @@
           "name": "WebServer",
           "preserveMemberOrder": false,
           "members": [],
-          "implementsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
+          "implementsTokenRanges": []
         },
         {
           "kind": "Class",

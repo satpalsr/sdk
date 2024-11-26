@@ -769,6 +769,7 @@ export declare class Collider {
 
 
 
+
     /**
      * @param colliderOptions - The options for the collider instance.
      */
@@ -785,6 +786,8 @@ export declare class Collider {
     get parentRigidBody(): RigidBody | undefined;
     /** The raw collider object from the Rapier physics engine. */
     get rawCollider(): RAPIER.Collider | undefined;
+    /** The shape of the collider. */
+    get shape(): ColliderShape;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     get tag(): string | undefined;
     /**
@@ -1062,7 +1065,10 @@ export declare type DecodedCollisionGroups = {
     collidesWith: string[];
 };
 
-/** The default rigid body options when EntityOptions.rigidBodyOptions is not provided. @public */
+/** The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided. @public */
+export declare const DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
+
+/** The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided. @public */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
@@ -1260,12 +1266,21 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
+
+
     /**
      * @param options - The options for the entity.
      */
     constructor(options: EntityOptions);
     /** The unique identifier for the entity. */
     get id(): number | undefined;
+    /** The character controller for the entity. */
+    get characterController(): BaseCharacterController | undefined;
+    /** The half extends of the visual size of the block entity when blockTextureUri is set. */
+    get blockHalfExtents(): Vector3 | undefined;
+    /** The URI or path to the texture to be used, if this is set, the entity is a block entity. */
+    get blockTextureUri(): string | undefined;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     get modelUri(): string | undefined;
     /** The looped animations to start when the entity is spawned. */
@@ -1274,8 +1289,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get modelScale(): number | undefined;
     /** The name of the entity. */
     get name(): string;
-    /** The character controller for the entity. */
-    get characterController(): BaseCharacterController | undefined;
+    /** An arbitrary identifier tag of the entity. Useful for your own logic. */
+    get tag(): string | undefined;
     /** Whether the entity is spawned. */
     get isSpawned(): boolean;
     /** The world the entity is in. */
@@ -1406,12 +1421,28 @@ export declare class EntityManager {
      * @returns The spawned entity with the provided id, or undefined if no entity is found.
      */
     getEntity<T extends Entity>(id: number): T | undefined;
+    /**
+     * Gets all spawned entities in the world with a specific tag.
+     * @param tag - The tag to get the entities for.
+     * @returns All spawned entities in the world with the provided tag.
+     */
+    getEntitiesByTag(tag: string): Entity[];
+    /**
+     * Gets all spawned entities in the world with a tag that includes a specific substring.
+     * @param tagSubstring - The tag substring to get the entities for.
+     * @returns All spawned entities in the world with a tag that includes the provided substring.
+     */
+    getEntitiesByTagSubstring(tagSubstring: string): Entity[];
 
 
 }
 
 /** Options for creating an Entity instance. @public */
 export declare interface EntityOptions {
+    /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added. */
+    blockHalfExtents?: Vector3;
+    /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
+    blockTextureUri?: string;
     /**
      * A function that creates a custom character controller for the entity when it spawns.
      * @param entity - The Entity instance.
@@ -1428,6 +1459,8 @@ export declare interface EntityOptions {
     name?: string;
     /** The rigid body options for the entity. */
     rigidBodyOptions?: RigidBodyOptions;
+    /** An arbitrary identifier tag of the entity. Useful for your own logic. */
+    tag?: string;
 }
 
 /** An EventRouter event. @public */
@@ -1614,6 +1647,7 @@ declare namespace HYTOPIA {
         DefaultCharacterControllerOptions,
         Entity,
         EntityEventType,
+        DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS,
         DEFAULT_ENTITY_RIGID_BODY_OPTIONS,
         EntityOptions,
         EntityEventPayload,
@@ -2138,7 +2172,6 @@ export declare class RigidBody {
 
 
 
-
     /**
      * @param options - The options for the rigid body instance.
      */
@@ -2171,8 +2204,6 @@ export declare class RigidBody {
     get numColliders(): number;
     /** The raw RAPIER rigid body instance. */
     get rawRigidBody(): RAPIER.RigidBody | undefined;
-    /** An arbitrary identifier tag of the rigid body. Useful for your own logic. */
-    get tag(): string | undefined;
     /**
      * Gets the additional mass of the rigid body.
      * @returns The additional mass of the rigid body.
@@ -2410,11 +2441,6 @@ export declare class RigidBody {
      */
     setCollisionGroupsForSolidColliders(collisionGroups: CollisionGroups): void;
     /**
-     * Sets the tag of the rigid body.
-     * @param tag - The tag of the rigid body.
-     */
-    setTag(tag: string): void;
-    /**
      * Sets the translation of the rigid body.
      * @param translation - The translation of the rigid body.
      */
@@ -2558,8 +2584,6 @@ export declare interface RigidBodyOptions {
     sleeping?: boolean;
     /** The soft continuous collision detection prediction of the rigid body. */
     softCcdPrediction?: number;
-    /** The tag of the rigid body. */
-    tag?: string;
     /** The translation of the rigid body. */
     translation?: Vector3;
 }
@@ -2751,10 +2775,7 @@ export declare interface Vector3Boolean {
  *
  * @public
  */
-export declare class WebServer implements Readyable {
-
-
-
+export declare class WebServer {
 
 
 

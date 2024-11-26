@@ -121,6 +121,34 @@ Gets all spawned entities in the world assigned to a player.
 </td></tr>
 <tr><td>
 
+[getEntitiesByTag(tag)](./server.entitymanager.getentitiesbytag.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets all spawned entities in the world with a specific tag.
+
+
+</td></tr>
+<tr><td>
+
+[getEntitiesByTagSubstring(tagSubstring)](./server.entitymanager.getentitiesbytagsubstring.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets all spawned entities in the world with a tag that includes a specific substring.
+
+
+</td></tr>
+<tr><td>
+
 [getEntity(id)](./server.entitymanager.getentity.md)
 
 

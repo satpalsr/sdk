@@ -37,6 +37,44 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[blockHalfExtents?](./server.hytopia.entityoptions.blockhalfextents.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Vector3](./server.vector3.md)
+
+
+</td><td>
+
+_(Optional)_ The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a collider with this shape will be added.
+
+
+</td></tr>
+<tr><td>
+
+[blockTextureUri?](./server.hytopia.entityoptions.blocktextureuri.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape \[0\] must be a block
+
+
+</td></tr>
+<tr><td>
+
 [createCustomCharacterController?](./server.hytopia.entityoptions.createcustomcharactercontroller.md)
 
 
@@ -146,6 +184,25 @@ _(Optional)_ The name of the entity.
 </td><td>
 
 _(Optional)_ The rigid body options for the entity.
+
+
+</td></tr>
+<tr><td>
+
+[tag?](./server.hytopia.entityoptions.tag.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ An arbitrary identifier tag of the entity. Useful for your own logic.
 
 
 </td></tr>
