@@ -827,7 +827,7 @@ The port the server will run on. You can override this in your .env by setting P
 
 </td><td>
 
-The input keys included in the PlayerInputState.
+The input keys that can be included in the PlayerInputState.
 
 
 </td></tr>

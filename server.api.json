@@ -31335,7 +31335,7 @@
             {
               "kind": "Variable",
               "canonicalReference": "server!HYTOPIA.SUPPORTED_INPUT_KEYS:var",
-              "docComment": "/**\n * The input keys included in the PlayerInputState.\n *\n * @public\n */\n",
+              "docComment": "/**\n * The input keys that can be included in the PlayerInputState.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -41302,7 +41302,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "server!SUPPORTED_INPUT_KEYS:var",
-          "docComment": "/**\n * The input keys included in the PlayerInputState.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The input keys that can be included in the PlayerInputState.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

@@ -2725,7 +2725,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  */
 export declare function startServer(init: (world: World) => void): void;
 
-/** The input keys included in the PlayerInputState. @public */
+/** The input keys that can be included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 /** A 3-dimensional vector. @public */
