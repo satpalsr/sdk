@@ -1,0 +1,14 @@
+{
+  "name": "block-entity",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "hytopia": "^0.1.33"
+  }
+}
