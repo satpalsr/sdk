@@ -740,9 +740,9 @@ export declare class ChunkLattice {
     hasChunk(originCoordinate: Vector3): boolean;
     /**
      * Set the block at a global coordinate by block type id, automatically
-     * creating a chunk if it doesn't exist.
+     * creating a chunk if it doesn't exist. Use block type id 0 for air.
      * @param globalCoordinate - The global coordinate of the block to set.
-     * @param blockTypeId - The block type id to set.
+     * @param blockTypeId - The block type id to set. Use 0 to remove the block and replace with air.
      */
     setBlock(globalCoordinate: Vector3, blockTypeId: number): void;
 

@@ -120,7 +120,7 @@ Check if a chunk exists by its origin coordinate.
 
 </td><td>
 
-Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.
+Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist. Use block type id 0 for air.
 
 
 </td></tr>

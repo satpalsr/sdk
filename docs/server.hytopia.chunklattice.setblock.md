@@ -4,7 +4,7 @@
 
 ## HYTOPIA.ChunkLattice.setBlock() method
 
-Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.
+Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist. Use block type id 0 for air.
 
 **Signature:**
 
@@ -58,7 +58,7 @@ number
 
 </td><td>
 
-The block type id to set.
+The block type id to set. Use 0 to remove the block and replace with air.
 
 
 </td></tr>

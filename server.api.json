@@ -5524,7 +5524,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChunkLattice#setBlock:member(1)",
-              "docComment": "/**\n * Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.\n *\n * @param globalCoordinate - The global coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set.\n */\n",
+              "docComment": "/**\n * Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist. Use block type id 0 for air.\n *\n * @param globalCoordinate - The global coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set. Use 0 to remove the block and replace with air.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -17293,7 +17293,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.ChunkLattice#setBlock:member(1)",
-                  "docComment": "/**\n * Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist.\n *\n * @param globalCoordinate - The global coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set.\n */\n",
+                  "docComment": "/**\n * Set the block at a global coordinate by block type id, automatically creating a chunk if it doesn't exist. Use block type id 0 for air.\n *\n * @param globalCoordinate - The global coordinate of the block to set.\n *\n * @param blockTypeId - The block type id to set. Use 0 to remove the block and replace with air.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
