@@ -664,6 +664,12 @@ export declare class Chunk implements protocol.Serializable {
      */
     despawn(): void;
     /**
+     * Get the block type id at a specific local coordinate.
+     * @param localCoordinate - The local coordinate of the block to get.
+     * @returns The block type id.
+     */
+    getBlock(localCoordinate: Vector3): number;
+    /**
      * Check if a block exists at a specific local coordinate.
      * @param localCoordinate - The local coordinate of the block to check.
      * @returns Whether a block exists.
@@ -726,6 +732,12 @@ export declare class ChunkLattice {
     constructor(world: World);
 
 
+    /**
+     * Get the block type id at a specific global coordinate.
+     * @param globalCoordinate - The global coordinate of the block to get.
+     * @returns The block type id, 0 if no block is set.
+     */
+    getBlock(globalCoordinate: Vector3): number;
     /**
      * Get a chunk by its origin coordinate.
      * @param originCoordinate - The origin coordinate of the chunk to get.

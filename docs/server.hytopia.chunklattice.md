@@ -84,6 +84,20 @@ Get all chunks in the lattice.
 </td></tr>
 <tr><td>
 
+[getBlock(globalCoordinate)](./server.hytopia.chunklattice.getblock.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the block type id at a specific global coordinate.
+
+
+</td></tr>
+<tr><td>
+
 [getChunk(originCoordinate)](./server.hytopia.chunklattice.getchunk.md)
 
 

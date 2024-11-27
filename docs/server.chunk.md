@@ -247,6 +247,20 @@ Despawn the chunk from the world.
 </td></tr>
 <tr><td>
 
+[getBlock(localCoordinate)](./server.chunk.getblock.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the block type id at a specific local coordinate.
+
+
+</td></tr>
+<tr><td>
+
 [globalCoordinateToLocalCoordinate(globalCoordinate)](./server.chunk.globalcoordinatetolocalcoordinate.md)
 
 

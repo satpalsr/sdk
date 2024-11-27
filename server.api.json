@@ -4586,6 +4586,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Chunk#getBlock:member(1)",
+              "docComment": "/**\n * Get the block type id at a specific local coordinate.\n *\n * @param localCoordinate - The local coordinate of the block to get.\n *\n * @returns The block type id.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBlock(localCoordinate: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "localCoordinate",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getBlock"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Chunk.globalCoordinateToLocalCoordinate:member(1)",
               "docComment": "/**\n * Convert a global coordinate to a local coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The local coordinate.\n */\n",
               "excerptTokens": [
@@ -5450,6 +5499,55 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getAllChunks"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ChunkLattice#getBlock:member(1)",
+              "docComment": "/**\n * Get the block type id at a specific global coordinate.\n *\n * @param globalCoordinate - The global coordinate of the block to get.\n *\n * @returns The block type id, 0 if no block is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBlock(globalCoordinate: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "globalCoordinate",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getBlock"
             },
             {
               "kind": "Method",
@@ -16437,6 +16535,55 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Chunk#getBlock:member(1)",
+                  "docComment": "/**\n * Get the block type id at a specific local coordinate.\n *\n * @param localCoordinate - The local coordinate of the block to get.\n *\n * @returns The block type id.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getBlock(localCoordinate: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "localCoordinate",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getBlock"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Chunk.globalCoordinateToLocalCoordinate:member(1)",
                   "docComment": "/**\n * Convert a global coordinate to a local coordinate.\n *\n * @param globalCoordinate - The global coordinate to convert.\n *\n * @returns The local coordinate.\n */\n",
                   "excerptTokens": [
@@ -17301,6 +17448,55 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "getAllChunks"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.ChunkLattice#getBlock:member(1)",
+                  "docComment": "/**\n * Get the block type id at a specific global coordinate.\n *\n * @param globalCoordinate - The global coordinate of the block to get.\n *\n * @returns The block type id, 0 if no block is set.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getBlock(globalCoordinate: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3",
+                      "canonicalReference": "server!Vector3:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "globalCoordinate",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getBlock"
                 },
                 {
                   "kind": "Method",
