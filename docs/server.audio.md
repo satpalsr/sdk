@@ -22,7 +22,7 @@ Audio instances are created directly as instances. They support a variety of con
 
 ```typescript
 (new Audio({
-  uri: 'assets/music/song.mp3',
+  uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3
   loop: true,
   volume: 0.5,
 })).play(world);

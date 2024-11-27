@@ -261,17 +261,6 @@ Represents the physics simulation for a world.
 </td></tr>
 <tr><td>
 
-[WebServer](./server.webserver.md)
-
-
-</td><td>
-
-Manages the internal HTTP server for the game server.
-
-
-</td></tr>
-<tr><td>
-
 [World](./server.world.md)
 
 

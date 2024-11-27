@@ -279,6 +279,20 @@ Convert a global coordinate to an origin coordinate.
 </td></tr>
 <tr><td>
 
+[hasBlock(localCoordinate)](./server.hytopia.chunk.hasblock.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Check if a block exists at a specific local coordinate.
+
+
+</td></tr>
+<tr><td>
+
 [isValidOriginCoordinate(coordinate)](./server.hytopia.chunk.isvalidorigincoordinate.md)
 
 

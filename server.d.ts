@@ -23,7 +23,7 @@ import { WebSocket as WebSocket_2 } from 'ws';
  * @example
  * ```typescript
  * (new Audio({
- *   uri: 'assets/music/song.mp3',
+ *   uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3
  *   loop: true,
  *   volume: 0.5,
  * })).play(world);
@@ -365,7 +365,7 @@ export declare class Block {
  * const stoneBlockTypeId = 10;
  * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({
  *   id: stoneBlockTypeId,
- *   textureUri: 'assets/textures/stone.png',
+ *   textureUri: 'textures/stone.png',
  *   name: 'Stone',
  * }));
  *
@@ -435,7 +435,7 @@ export declare interface BlockTypeOptions {
  * ```typescript
  * world.blockTypeRegistry.registerGenericBlockType({
  *   id: 15,
- *   textureUri: 'assets/textures/dirt.png',
+ *   textureUri: 'textures/dirt.png',
  *   name: 'Dirt',
  * });
  * ```
@@ -467,10 +467,9 @@ export declare class BlockTypeRegistry implements protocol.Serializable {
     registerGenericBlockType(blockTypeOptions: BlockTypeOptions): BlockType;
     /**
      * Register a block type.
-     * @param id - The id of the block type to register.
-     * @param blockTypeReference - The block type to register.
+     * @param blockType - The block type to register.
      */
-    registerBlockType(id: number, blockTypeReference: BlockType): void;
+    registerBlockType(blockType: BlockType): void;
 
 }
 
@@ -665,6 +664,12 @@ export declare class Chunk implements protocol.Serializable {
      */
     despawn(): void;
     /**
+     * Check if a block exists at a specific local coordinate.
+     * @param localCoordinate - The local coordinate of the block to check.
+     * @returns Whether a block exists.
+     */
+    hasBlock(localCoordinate: Vector3): boolean;
+    /**
      * Set the block at a specific local coordinate by block type id.
      * @param localCoordinate - The local coordinate of the block to set.
      * @param blockTypeId - The block type id to set.
@@ -732,6 +737,12 @@ export declare class ChunkLattice {
      * @returns An array of all chunks in the lattice.
      */
     getAllChunks(): Chunk[];
+    /**
+     * Check if a block exists at a specific global coordinate.
+     * @param globalCoordinate - The global coordinate of the block to check.
+     * @returns Whether a block exists.
+     */
+    hasBlock(globalCoordinate: Vector3): boolean;
     /**
      * Check if a chunk exists by its origin coordinate.
      * @param originCoordinate - The origin coordinate of the chunk to check.
@@ -1687,7 +1698,6 @@ declare namespace HYTOPIA {
         MoveCompleteCallback,
         MoveOptions,
         Simulation,
-        WebServer,
         PORT,
         World,
         WorldMap,
@@ -2724,6 +2734,11 @@ export declare class Simulation {
     enableDebugRendering(enabled: boolean): void;
 
 
+    /**
+     * Sets the gravity vector for the simulation.
+     * @param gravity - The gravity vector.
+     */
+    setGravity(gravity: RAPIER.Vector3): void;
 
 
 
@@ -2764,30 +2779,6 @@ export declare interface Vector3Boolean {
     x: boolean;
     y: boolean;
     z: boolean;
-}
-
-/**
- * Manages the internal HTTP server for the game server.
- *
- * @remarks
- * This class is used as a singleton and should be
- * accessed via the GameServer.webServer property.
- *
- * @public
- */
-export declare class WebServer {
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 /**

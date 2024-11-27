@@ -9,7 +9,7 @@ Register a block type.
 **Signature:**
 
 ```typescript
-registerBlockType(id: number, blockTypeReference: BlockType): void;
+registerBlockType(blockType: BlockType): void;
 ```
 
 ## Parameters
@@ -32,23 +32,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-id
-
-
-</td><td>
-
-number
-
-
-</td><td>
-
-The id of the block type to register.
-
-
-</td></tr>
-<tr><td>
-
-blockTypeReference
+blockType
 
 
 </td><td>

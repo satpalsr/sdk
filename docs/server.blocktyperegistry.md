@@ -25,7 +25,7 @@ The constructor for this class is marked as internal. Third-party code should no
 ```typescript
 world.blockTypeRegistry.registerGenericBlockType({
   id: 15,
-  textureUri: 'assets/textures/dirt.png',
+  textureUri: 'textures/dirt.png',
   name: 'Dirt',
 });
 ```
@@ -124,7 +124,7 @@ Get a registered block type by its id.
 </td></tr>
 <tr><td>
 
-[registerBlockType(id, blockTypeReference)](./server.blocktyperegistry.registerblocktype.md)
+[registerBlockType(blockType)](./server.blocktyperegistry.registerblocktype.md)
 
 
 </td><td>

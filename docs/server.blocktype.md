@@ -24,7 +24,7 @@ Block types are created directly as instances. They support a variety of configu
 const stoneBlockTypeId = 10;
 world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({
   id: stoneBlockTypeId,
-  textureUri: 'assets/textures/stone.png',
+  textureUri: 'textures/stone.png',
   name: 'Stone',
 }));
 

@@ -98,6 +98,20 @@ Get a chunk by its origin coordinate.
 </td></tr>
 <tr><td>
 
+[hasBlock(globalCoordinate)](./server.hytopia.chunklattice.hasblock.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Check if a block exists at a specific global coordinate.
+
+
+</td></tr>
+<tr><td>
+
 [hasChunk(originCoordinate)](./server.hytopia.chunklattice.haschunk.md)
 
 

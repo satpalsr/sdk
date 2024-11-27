@@ -173,4 +173,18 @@ Enables or disables debug rendering for the simulation. When enabled, all collid
 
 
 </td></tr>
+<tr><td>
+
+[setGravity(gravity)](./server.simulation.setgravity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the gravity vector for the simulation.
+
+
+</td></tr>
 </tbody></table>

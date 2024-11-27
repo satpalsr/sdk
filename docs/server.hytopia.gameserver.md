@@ -97,7 +97,7 @@ The player manager for the game server.
 
 </td><td>
 
-[WebServer](./server.webserver.md)
+WebServer
 
 
 </td><td>
