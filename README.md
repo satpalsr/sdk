@@ -9,7 +9,7 @@
 
 HYTOPIA is a modern games platform inspired by Minecraft, Roblox, and Rec Room.
 
-HYTOPIA allows you to create your own highly-sharable, immersive, massively multiplayer games in a voxel-like style by writing TypeScript or JavaScript. All playable in a web browser on any device!
+HYTOPIA allows you to create your own highly-sharable, immersive, massively multiplayer games in a voxel-like style by writing TypeScript or JavaScript. All playable in a web browser on any device! No need to deal with hosting or complex server infrastructure either, simply upload your game to HYTOPIA and we'll handle the scaling, server costs, and more!
 
 ## What is this SDK?
 
