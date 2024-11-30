@@ -216,7 +216,7 @@ _(Optional)_ An arbitrary identifier tag of the entity. Useful for your own logi
 
 </td><td>
 
-RgbColor
+[RgbColor](./server.rgbcolor.md)
 
 
 </td><td>

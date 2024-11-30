@@ -1696,6 +1696,7 @@ declare namespace HYTOPIA {
         GameServerEventType,
         startServer,
         GameServerEventPayload,
+        RgbColor,
         Rotation,
         SpdMatrix3,
         Vector3,
@@ -2190,7 +2191,7 @@ declare type RayCastOptions = {
 };
 
 /** A RGB color. @public */
-declare interface RgbColor {
+export declare interface RgbColor {
     r: number;
     g: number;
     b: number;

@@ -37,7 +37,7 @@ tintColor
 
 </td><td>
 
-RgbColor \| undefined
+[RgbColor](./server.rgbcolor.md) \| undefined
 
 
 </td><td>

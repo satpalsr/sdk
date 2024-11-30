@@ -583,6 +583,17 @@ Options for creating a PlayerEntity instance.
 </td></tr>
 <tr><td>
 
+[RgbColor](./server.rgbcolor.md)
+
+
+</td><td>
+
+A RGB color.
+
+
+</td></tr>
+<tr><td>
+
 [RigidBodyOptions](./server.rigidbodyoptions.md)
 
 

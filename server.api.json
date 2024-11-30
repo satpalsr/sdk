@@ -9573,7 +9573,7 @@
                 {
                   "kind": "Reference",
                   "text": "RgbColor",
-                  "canonicalReference": "server!~RgbColor:interface"
+                  "canonicalReference": "server!RgbColor:interface"
                 },
                 {
                   "kind": "Content",
@@ -9866,7 +9866,7 @@
                 {
                   "kind": "Reference",
                   "text": "RgbColor",
-                  "canonicalReference": "server!~RgbColor:interface"
+                  "canonicalReference": "server!RgbColor:interface"
                 },
                 {
                   "kind": "Content",
@@ -10050,7 +10050,7 @@
                     {
                       "kind": "Reference",
                       "text": "RgbColor",
-                      "canonicalReference": "server!~RgbColor:interface"
+                      "canonicalReference": "server!RgbColor:interface"
                     },
                     {
                       "kind": "Content",
@@ -11284,7 +11284,7 @@
                 {
                   "kind": "Reference",
                   "text": "RgbColor",
-                  "canonicalReference": "server!~RgbColor:interface"
+                  "canonicalReference": "server!RgbColor:interface"
                 },
                 {
                   "kind": "Content",
@@ -21736,7 +21736,7 @@
                     {
                       "kind": "Reference",
                       "text": "RgbColor",
-                      "canonicalReference": "server!~RgbColor:interface"
+                      "canonicalReference": "server!RgbColor:interface"
                     },
                     {
                       "kind": "Content",
@@ -22029,7 +22029,7 @@
                     {
                       "kind": "Reference",
                       "text": "RgbColor",
-                      "canonicalReference": "server!~RgbColor:interface"
+                      "canonicalReference": "server!RgbColor:interface"
                     },
                     {
                       "kind": "Content",
@@ -22213,7 +22213,7 @@
                         {
                           "kind": "Reference",
                           "text": "RgbColor",
-                          "canonicalReference": "server!~RgbColor:interface"
+                          "canonicalReference": "server!RgbColor:interface"
                         },
                         {
                           "kind": "Content",
@@ -23447,7 +23447,7 @@
                     {
                       "kind": "Reference",
                       "text": "RgbColor",
-                      "canonicalReference": "server!~RgbColor:interface"
+                      "canonicalReference": "server!RgbColor:interface"
                     },
                     {
                       "kind": "Content",
@@ -28190,6 +28190,105 @@
                 "startIndex": 1,
                 "endIndex": 2
               }
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!HYTOPIA.RgbColor:interface",
+              "docComment": "/**\n * A RGB color.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface RgbColor "
+                }
+              ],
+              "fileUrlPath": "src/shared/types/RgbColor.ts",
+              "releaseTag": "Public",
+              "name": "RgbColor",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.RgbColor#b:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "b: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "b",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.RgbColor#g:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "g: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "g",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.RgbColor#r:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "r: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "r",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
             },
             {
               "kind": "Class",
@@ -38074,6 +38173,105 @@
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!RgbColor:interface",
+          "docComment": "/**\n * A RGB color.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "interface RgbColor "
+            }
+          ],
+          "fileUrlPath": "src/shared/types/RgbColor.ts",
+          "releaseTag": "Public",
+          "name": "RgbColor",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RgbColor#b:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "b: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "b",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RgbColor#g:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "g: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "g",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RgbColor#r:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "r: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "r",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Class",

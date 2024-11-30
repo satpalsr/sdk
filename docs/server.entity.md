@@ -476,7 +476,7 @@ An arbitrary identifier tag of the entity. Useful for your own logic.
 
 </td><td>
 
-RgbColor \| undefined
+[RgbColor](./server.rgbcolor.md) \| undefined
 
 
 </td><td>
