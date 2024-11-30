@@ -46,6 +46,20 @@ DESPAWN
 </td></tr>
 <tr><td>
 
+SET\_TINT\_COLOR
+
+
+</td><td>
+
+`"ENTITY.SET_TINT_COLOR"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SPAWN
 
 
@@ -65,7 +79,7 @@ START\_MODEL\_LOOPED\_ANIMATIONS
 
 </td><td>
 
-`"ENTITY.UPDATE_MODEL_LOOPED_ANIMATIONS"`
+`"ENTITY.START_MODEL_LOOPED_ANIMATIONS"`
 
 
 </td><td>

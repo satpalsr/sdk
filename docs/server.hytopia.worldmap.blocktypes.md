@@ -9,9 +9,5 @@ The block types in the map.
 **Signature:**
 
 ```typescript
-blockTypes: {
-        id: number;
-        name: string;
-        textureUri: string;
-    }[];
+blockTypes: BlockTypeOptions[];
 ```

@@ -1292,6 +1292,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1314,6 +1315,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get name(): string;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
     get tag(): string | undefined;
+    /** The tint color of the entity. */
+    get tintColor(): RgbColor | undefined;
     /** Whether the entity is spawned. */
     get isSpawned(): boolean;
     /** The world the entity is in. */
@@ -1333,6 +1336,11 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param characterController - The character controller to set.
      */
     setCharacterController(characterController: BaseCharacterController): void;
+    /**
+     * Sets the tint color of the entity.
+     * @param tintColor - The tint color of the entity.
+     */
+    setTintColor(tintColor: RgbColor | undefined): void;
     /**
      * Starts looped animations for the entity, blending with
      * other animations currently playing.
@@ -1364,6 +1372,10 @@ export declare namespace EntityEventPayload {
     export interface Despawn {
         entity: Entity;
     }
+    export interface SetTintColor {
+        entity: Entity;
+        tintColor: RgbColor | undefined;
+    }
     export interface Spawn {
         entity: Entity;
     }
@@ -1392,8 +1404,9 @@ export declare namespace EntityEventPayload {
 /** Event types an Entity instance can emit. @public */
 export declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
+    SET_TINT_COLOR = "ENTITY.SET_TINT_COLOR",
     SPAWN = "ENTITY.SPAWN",
-    START_MODEL_LOOPED_ANIMATIONS = "ENTITY.UPDATE_MODEL_LOOPED_ANIMATIONS",
+    START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
     START_MODEL_ONESHOT_ANIMATIONS = "ENTITY.START_MODEL_ONESHOT_ANIMATIONS",
     STOP_MODEL_ANIMATIONS = "ENTITY.STOP_MODEL_ANIMATIONS",
     UPDATE_ROTATION = "ENTITY.UPDATE_ROTATION",
@@ -1484,6 +1497,8 @@ export declare interface EntityOptions {
     rigidBodyOptions?: RigidBodyOptions;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
     tag?: string;
+    /** The tint color of the entity as a hex code. */
+    tintColor?: RgbColor;
 }
 
 /** An EventRouter event. @public */
@@ -2173,6 +2188,13 @@ declare type RayCastOptions = {
     /** The predicate to filter by. */
     filterPredicate?: (collider: RAPIER.Collider) => boolean;
 };
+
+/** A RGB color. @public */
+declare interface RgbColor {
+    r: number;
+    g: number;
+    b: number;
+}
 
 /**
  * Represents a rigid body in a world's physics simulation.
@@ -2959,14 +2981,7 @@ export declare enum WorldLoopEventType {
 /** A map representation for a world. @public */
 export declare interface WorldMap {
     /** The block types in the map. */
-    blockTypes: {
-        /** The ID of the block type. */
-        id: number;
-        /** The name of the block type. */
-        name: string;
-        /** The URI of the texture for the block type. */
-        textureUri: string;
-    }[];
+    blockTypes: BlockTypeOptions[];
     /** The blocks in the map */
     blocks: {
         /** The global coordinate to block type id mapping. */

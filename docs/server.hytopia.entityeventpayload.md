@@ -36,6 +36,15 @@ Description
 </td></tr>
 <tr><td>
 
+[SetTintColor](./server.hytopia.entityeventpayload.settintcolor.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [Spawn](./server.hytopia.entityeventpayload.spawn.md)
 
 

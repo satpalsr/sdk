@@ -64,7 +64,7 @@ The blocks in the map
 
 </td><td>
 
-{ id: number; name: string; textureUri: string; }\[\]
+[BlockTypeOptions](./server.blocktypeoptions.md)<!-- -->\[\]
 
 
 </td><td>

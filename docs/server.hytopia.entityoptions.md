@@ -206,4 +206,23 @@ _(Optional)_ An arbitrary identifier tag of the entity. Useful for your own logi
 
 
 </td></tr>
+<tr><td>
+
+[tintColor?](./server.hytopia.entityoptions.tintcolor.md)
+
+
+</td><td>
+
+
+</td><td>
+
+RgbColor
+
+
+</td><td>
+
+_(Optional)_ The tint color of the entity as a hex code.
+
+
+</td></tr>
 </tbody></table>

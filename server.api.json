@@ -9563,6 +9563,59 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Entity#setTintColor:member(1)",
+              "docComment": "/**\n * Sets the tint color of the entity.\n *\n * @param tintColor - The tint color of the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setTintColor(tintColor: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!~RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "tintColor",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setTintColor"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Entity#spawn:member(1)",
               "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param coordinate - The coordinate to spawn the entity at.\n */\n",
               "excerptTokens": [
@@ -9803,6 +9856,41 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#tintColor:member",
+              "docComment": "/**\n * The tint color of the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get tintColor(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!~RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "tintColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#world:member",
               "docComment": "/**\n * The world the entity is in.\n */\n",
               "excerptTokens": [
@@ -9903,6 +9991,83 @@
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.SetTintColor:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetTintColor "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetTintColor",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetTintColor#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetTintColor#tintColor:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tintColor: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RgbColor",
+                      "canonicalReference": "server!~RgbColor:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "tintColor",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
                   }
                 }
               ],
@@ -10370,6 +10535,27 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.SET_TINT_COLOR:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_TINT_COLOR = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.SET_TINT_COLOR\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_TINT_COLOR"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!EntityEventType.SPAWN:member",
               "docComment": "",
               "excerptTokens": [
@@ -10400,7 +10586,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"ENTITY.UPDATE_MODEL_LOOPED_ANIMATIONS\""
+                  "text": "\"ENTITY.START_MODEL_LOOPED_ANIMATIONS\""
                 }
               ],
               "initializerTokenRange": {
@@ -11081,6 +11267,34 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#tintColor:member",
+              "docComment": "/**\n * The tint color of the entity as a hex code.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tintColor?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!~RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tintColor",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -21512,6 +21726,59 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Entity#setTintColor:member(1)",
+                  "docComment": "/**\n * Sets the tint color of the entity.\n *\n * @param tintColor - The tint color of the entity.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "setTintColor(tintColor: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RgbColor",
+                      "canonicalReference": "server!~RgbColor:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "tintColor",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 3
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "setTintColor"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#spawn:member(1)",
                   "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param coordinate - The coordinate to spawn the entity at.\n */\n",
                   "excerptTokens": [
@@ -21752,6 +22019,41 @@
                 },
                 {
                   "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#tintColor:member",
+                  "docComment": "/**\n * The tint color of the entity.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get tintColor(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RgbColor",
+                      "canonicalReference": "server!~RgbColor:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "tintColor",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#world:member",
                   "docComment": "/**\n * The world the entity is in.\n */\n",
                   "excerptTokens": [
@@ -21852,6 +22154,83 @@
                       "propertyTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetTintColor:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface SetTintColor "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "SetTintColor",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetTintColor#entity:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "entity: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "Entity",
+                          "canonicalReference": "server!Entity:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "entity",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetTintColor#tintColor:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "tintColor: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "RgbColor",
+                          "canonicalReference": "server!~RgbColor:interface"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": " | undefined"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "tintColor",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 3
                       }
                     }
                   ],
@@ -22319,6 +22698,27 @@
                 },
                 {
                   "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.EntityEventType.SET_TINT_COLOR:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "SET_TINT_COLOR = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"ENTITY.SET_TINT_COLOR\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "SET_TINT_COLOR"
+                },
+                {
+                  "kind": "EnumMember",
                   "canonicalReference": "server!HYTOPIA.EntityEventType.SPAWN:member",
                   "docComment": "",
                   "excerptTokens": [
@@ -22349,7 +22749,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "\"ENTITY.UPDATE_MODEL_LOOPED_ANIMATIONS\""
+                      "text": "\"ENTITY.START_MODEL_LOOPED_ANIMATIONS\""
                     }
                   ],
                   "initializerTokenRange": {
@@ -23030,6 +23430,34 @@
                   "isOptional": true,
                   "releaseTag": "Public",
                   "name": "tag",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#tintColor:member",
+                  "docComment": "/**\n * The tint color of the entity as a hex code.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "tintColor?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RgbColor",
+                      "canonicalReference": "server!~RgbColor:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "tintColor",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -33764,8 +34192,13 @@
                       "text": "blockTypes: "
                     },
                     {
+                      "kind": "Reference",
+                      "text": "BlockTypeOptions",
+                      "canonicalReference": "server!BlockTypeOptions:interface"
+                    },
+                    {
                       "kind": "Content",
-                      "text": "{\n        id: number;\n        name: string;\n        textureUri: string;\n    }[]"
+                      "text": "[]"
                     },
                     {
                       "kind": "Content",
@@ -33778,7 +34211,7 @@
                   "name": "blockTypes",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 2
+                    "endIndex": 3
                   }
                 }
               ],
@@ -43643,8 +44076,13 @@
                   "text": "blockTypes: "
                 },
                 {
+                  "kind": "Reference",
+                  "text": "BlockTypeOptions",
+                  "canonicalReference": "server!BlockTypeOptions:interface"
+                },
+                {
                   "kind": "Content",
-                  "text": "{\n        id: number;\n        name: string;\n        textureUri: string;\n    }[]"
+                  "text": "[]"
                 },
                 {
                   "kind": "Content",
@@ -43657,7 +44095,7 @@
               "name": "blockTypes",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 2
+                "endIndex": 3
               }
             }
           ],

@@ -466,6 +466,27 @@ An arbitrary identifier tag of the entity. Useful for your own logic.
 </td></tr>
 <tr><td>
 
+[tintColor](./server.entity.tintcolor.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+RgbColor \| undefined
+
+
+</td><td>
+
+The tint color of the entity.
+
+
+</td></tr>
+<tr><td>
+
 [world](./server.entity.world.md)
 
 
@@ -530,6 +551,20 @@ Despawns the entity from the world.
 </td><td>
 
 Sets the character controller for the entity.
+
+
+</td></tr>
+<tr><td>
+
+[setTintColor(tintColor)](./server.entity.settintcolor.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the tint color of the entity.
 
 
 </td></tr>
