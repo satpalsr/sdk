@@ -9,7 +9,7 @@ Sets the next kinematic rotation of the rigid body.
 **Signature:**
 
 ```typescript
-setNextKinematicRotation(nextKinematicRotation: Rotation): void;
+setNextKinematicRotation(nextKinematicRotation: QuaternionLike): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ nextKinematicRotation
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 
 </td><td>

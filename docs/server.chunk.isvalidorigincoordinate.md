@@ -9,7 +9,7 @@ Check if an origin coordinate is valid.
 **Signature:**
 
 ```typescript
-static isValidOriginCoordinate(coordinate: Vector3): boolean;
+static isValidOriginCoordinate(coordinate: Vector3Like): boolean;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ coordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

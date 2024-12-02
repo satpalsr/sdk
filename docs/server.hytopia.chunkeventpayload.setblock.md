@@ -77,7 +77,7 @@ number
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -94,7 +94,7 @@ number
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

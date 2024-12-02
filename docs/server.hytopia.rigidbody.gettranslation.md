@@ -9,11 +9,11 @@ Gets the translation of the rigid body.
 **Signature:**
 
 ```typescript
-getTranslation(): Vector3;
+getTranslation(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The translation of the rigid body.
 

@@ -328,7 +328,7 @@ The playback rate of the audio if explicitly set.
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 
 </td><td>

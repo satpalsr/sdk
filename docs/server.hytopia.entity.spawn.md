@@ -9,7 +9,7 @@ Spawns the entity in the world.
 **Signature:**
 
 ```typescript
-spawn(world: World, coordinate: Vector3): void;
+spawn(world: World, coordinate: Vector3Like): void;
 ```
 
 ## Parameters
@@ -53,7 +53,7 @@ coordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

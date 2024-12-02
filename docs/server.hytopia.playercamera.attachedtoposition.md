@@ -9,5 +9,5 @@ The position the camera is attached to.
 **Signature:**
 
 ```typescript
-get attachedToPosition(): Vector3 | undefined;
+get attachedToPosition(): Vector3Like | undefined;
 ```

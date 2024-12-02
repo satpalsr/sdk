@@ -9,11 +9,11 @@ Gets the effective inverse mass of the rigid body.
 **Signature:**
 
 ```typescript
-getEffectiveInverseMass(): Vector3 | undefined;
+getEffectiveInverseMass(): Vector3Like | undefined;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 The effective inverse mass of the rigid body.
 

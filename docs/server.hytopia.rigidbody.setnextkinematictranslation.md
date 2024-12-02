@@ -9,7 +9,7 @@ Sets the next kinematic translation of the rigid body.
 **Signature:**
 
 ```typescript
-setNextKinematicTranslation(nextKinematicTranslation: Vector): void;
+setNextKinematicTranslation(nextKinematicTranslation: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ nextKinematicTranslation
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

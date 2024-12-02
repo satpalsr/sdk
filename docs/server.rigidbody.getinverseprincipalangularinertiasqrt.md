@@ -9,11 +9,11 @@ Gets the inverse principal angular inertia square root of the rigid body.
 **Signature:**
 
 ```typescript
-getInversePrincipalAngularInertiaSqrt(): Vector3 | undefined;
+getInversePrincipalAngularInertiaSqrt(): Vector3Like | undefined;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 The inverse principal angular inertia square root of the rigid body.
 

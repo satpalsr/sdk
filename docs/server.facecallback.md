@@ -9,7 +9,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 **Signature:**
 
 ```typescript
-export type FaceCallback = (currentRotation: Rotation, targetRotation: Rotation) => void;
+export type FaceCallback = (currentRotation: QuaternionLike, targetRotation: QuaternionLike) => void;
 ```
-**References:** [Rotation](./server.rotation.md)
+**References:** [QuaternionLike](./server.quaternionlike.md)
 

@@ -9,5 +9,5 @@ The global coordinate of the block.
 **Signature:**
 
 ```typescript
-readonly globalCoordinate: Vector3;
+readonly globalCoordinate: Vector3Like;
 ```

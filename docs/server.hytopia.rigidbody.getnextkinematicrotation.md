@@ -9,11 +9,11 @@ Gets the next kinematic rotation of the rigid body.
 **Signature:**
 
 ```typescript
-getNextKinematicRotation(): Rotation;
+getNextKinematicRotation(): QuaternionLike;
 ```
 **Returns:**
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 The next kinematic rotation of the rigid body.
 

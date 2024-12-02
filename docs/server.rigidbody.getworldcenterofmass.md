@@ -9,11 +9,11 @@ Gets the world center of mass of the rigid body.
 **Signature:**
 
 ```typescript
-getWorldCenterOfMass(): Vector3 | undefined;
+getWorldCenterOfMass(): Vector3Like | undefined;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 The world center of mass of the rigid body.
 

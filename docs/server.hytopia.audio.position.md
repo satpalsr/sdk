@@ -9,5 +9,5 @@ The position of the audio in the world if explicitly set.
 **Signature:**
 
 ```typescript
-get position(): Vector3 | undefined;
+get position(): Vector3Like | undefined;
 ```

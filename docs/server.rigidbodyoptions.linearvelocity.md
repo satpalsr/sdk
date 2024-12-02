@@ -9,5 +9,5 @@ The linear velocity of the rigid body.
 **Signature:**
 
 ```typescript
-linearVelocity?: Vector3;
+linearVelocity?: Vector3Like;
 ```

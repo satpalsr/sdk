@@ -9,11 +9,11 @@ Gets the rotation of the rigid body.
 **Signature:**
 
 ```typescript
-getRotation(): Rotation;
+getRotation(): QuaternionLike;
 ```
 **Returns:**
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 The rotation of the rigid body.
 

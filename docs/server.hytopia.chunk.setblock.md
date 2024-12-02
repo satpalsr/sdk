@@ -9,7 +9,7 @@ Set the block at a specific local coordinate by block type id.
 **Signature:**
 
 ```typescript
-setBlock(localCoordinate: Vector3, blockTypeId: number): void;
+setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ localCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

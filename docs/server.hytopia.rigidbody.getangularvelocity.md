@@ -9,11 +9,11 @@ Gets the angular velocity of the rigid body.
 **Signature:**
 
 ```typescript
-getAngularVelocity(): Vector3;
+getAngularVelocity(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The angular velocity of the rigid body.
 

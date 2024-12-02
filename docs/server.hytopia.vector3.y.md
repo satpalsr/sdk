@@ -4,8 +4,12 @@
 
 ## HYTOPIA.Vector3.y property
 
+The y-component of the vector.
+
 **Signature:**
 
 ```typescript
-y: number;
+get y(): number;
+
+set y(value: number);
 ```

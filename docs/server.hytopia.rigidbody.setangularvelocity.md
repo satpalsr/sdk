@@ -9,7 +9,7 @@ Sets the angular velocity of the rigid body.
 **Signature:**
 
 ```typescript
-setAngularVelocity(angularVelocity: Vector): void;
+setAngularVelocity(angularVelocity: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ angularVelocity
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

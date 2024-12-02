@@ -9,7 +9,7 @@ Convert a global coordinate to an origin coordinate.
 **Signature:**
 
 ```typescript
-static globalCoordinateToOriginCoordinate(globalCoordinate: Vector3): Vector3;
+static globalCoordinateToOriginCoordinate(globalCoordinate: Vector3Like): Vector3Like;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ globalCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -49,7 +49,7 @@ The global coordinate to convert.
 </tbody></table>
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The origin coordinate.
 

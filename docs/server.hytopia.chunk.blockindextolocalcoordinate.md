@@ -9,7 +9,7 @@ Convert a block index to a local coordinate.
 **Signature:**
 
 ```typescript
-static blockIndexToLocalCoordinate(index: number): Vector3;
+static blockIndexToLocalCoordinate(index: number): Vector3Like;
 ```
 
 ## Parameters
@@ -49,7 +49,7 @@ The index of the block to convert.
 </tbody></table>
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The local coordinate of the block.
 

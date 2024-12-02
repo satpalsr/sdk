@@ -9,7 +9,7 @@ Sets the relative rotation of the collider.
 **Signature:**
 
 ```typescript
-setRelativeRotation(rotation: Rotation): void;
+setRelativeRotation(rotation: QuaternionLike): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ rotation
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 
 </td><td>

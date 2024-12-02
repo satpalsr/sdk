@@ -9,7 +9,7 @@ Get the block type id at a specific global coordinate.
 **Signature:**
 
 ```typescript
-getBlock(globalCoordinate: Vector3): number;
+getBlock(globalCoordinate: Vector3Like): number;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ globalCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

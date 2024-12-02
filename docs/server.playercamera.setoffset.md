@@ -9,7 +9,7 @@ Sets the relative offset of the camera from the entity or position it is attache
 **Signature:**
 
 ```typescript
-setOffset(offset: Vector3): void;
+setOffset(offset: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ offset
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

@@ -9,7 +9,7 @@ Sets the relative translation of the collider to its parent rigid body.
 **Signature:**
 
 ```typescript
-setRelativeTranslation(translation: Vector3): void;
+setRelativeTranslation(translation: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ translation
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

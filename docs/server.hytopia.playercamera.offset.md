@@ -9,5 +9,5 @@ The relative offset of the camera from the entity or position it is attached to.
 **Signature:**
 
 ```typescript
-get offset(): Vector3;
+get offset(): Vector3Like;
 ```

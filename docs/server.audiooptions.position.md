@@ -9,5 +9,5 @@ The position in the world where the audio is played.
 **Signature:**
 
 ```typescript
-position?: Vector3;
+position?: Vector3Like;
 ```

@@ -11,10 +11,10 @@ Additional mass properties for a RigidBody.
 ```typescript
 export type RigidBodyAdditionalMassProperties = {
     additionalMass: number;
-    centerOfMass: Vector3;
-    principalAngularInertia: Vector3;
-    principalAngularInertiaLocalFrame: Rotation;
+    centerOfMass: Vector3Like;
+    principalAngularInertia: Vector3Like;
+    principalAngularInertiaLocalFrame: QuaternionLike;
 };
 ```
-**References:** [Vector3](./server.vector3.md)<!-- -->, [Rotation](./server.rotation.md)
+**References:** [Vector3Like](./server.vector3like.md)<!-- -->, [QuaternionLike](./server.quaternionlike.md)
 

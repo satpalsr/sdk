@@ -165,7 +165,7 @@ Whether the chunk has been spawned.
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 
 </td><td>

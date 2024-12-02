@@ -82,7 +82,7 @@ The entity the camera is attached to.
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 
 </td><td>
@@ -208,7 +208,7 @@ The mode of the camera.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -271,7 +271,7 @@ The entity the camera will constantly look at, even if the camera attached or tr
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 
 </td><td>

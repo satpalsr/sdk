@@ -9,7 +9,7 @@ Sets the position the camera is attached to.
 **Signature:**
 
 ```typescript
-setAttachedToPosition(position: Vector3): void;
+setAttachedToPosition(position: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ position
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

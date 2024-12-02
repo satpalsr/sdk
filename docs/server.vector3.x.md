@@ -4,8 +4,12 @@
 
 ## Vector3.x property
 
+The x-component of the vector.
+
 **Signature:**
 
 ```typescript
-x: number;
+get x(): number;
+
+set x(value: number);
 ```

@@ -9,5 +9,5 @@ The half extends of the visual size of the block entity when blockTextureUri is 
 **Signature:**
 
 ```typescript
-get blockHalfExtents(): Vector3 | undefined;
+get blockHalfExtents(): Vector3Like | undefined;
 ```

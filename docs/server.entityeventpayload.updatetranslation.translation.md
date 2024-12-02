@@ -7,5 +7,5 @@
 **Signature:**
 
 ```typescript
-translation: Vector3;
+translation: Vector3Like;
 ```

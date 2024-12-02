@@ -9,5 +9,5 @@ The angular velocity of the rigid body.
 **Signature:**
 
 ```typescript
-angularVelocity?: Vector3;
+angularVelocity?: Vector3Like;
 ```

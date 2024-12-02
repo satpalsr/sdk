@@ -9,11 +9,11 @@ Gets the local center of mass of the rigid body.
 **Signature:**
 
 ```typescript
-getLocalCenterOfMass(): Vector3;
+getLocalCenterOfMass(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The local center of mass of the rigid body.
 

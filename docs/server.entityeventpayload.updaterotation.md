@@ -60,7 +60,7 @@ Description
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 
 </td><td>

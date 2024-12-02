@@ -7,5 +7,5 @@
 **Signature:**
 
 ```typescript
-position: Vector3 | undefined;
+position: Vector3Like | undefined;
 ```

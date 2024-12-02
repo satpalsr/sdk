@@ -7,5 +7,5 @@
 **Signature:**
 
 ```typescript
-globalCoordinate: Vector3;
+globalCoordinate: Vector3Like;
 ```

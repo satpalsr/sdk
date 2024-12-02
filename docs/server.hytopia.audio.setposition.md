@@ -9,7 +9,7 @@ Sets the position of the audio. Will detach from entity if attached.
 **Signature:**
 
 ```typescript
-setPosition(position: Vector3): void;
+setPosition(position: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ position
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

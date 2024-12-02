@@ -9,11 +9,11 @@ Gets the relative translation of the collider to its parent rigid body.
 **Signature:**
 
 ```typescript
-getRelativeTranslation(): Vector3;
+getRelativeTranslation(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The relative translation of the collider.
 

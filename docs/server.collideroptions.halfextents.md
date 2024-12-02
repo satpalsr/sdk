@@ -9,5 +9,5 @@ The half extents of the collider if the shape is a block.
 **Signature:**
 
 ```typescript
-halfExtents?: Vector3;
+halfExtents?: Vector3Like;
 ```

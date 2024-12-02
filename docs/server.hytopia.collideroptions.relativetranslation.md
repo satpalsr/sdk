@@ -9,5 +9,5 @@ The relative translation of the collider. Relative to parent rigid body.
 **Signature:**
 
 ```typescript
-relativeTranslation?: Vector3;
+relativeTranslation?: Vector3Like;
 ```

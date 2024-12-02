@@ -9,7 +9,7 @@ Rotates the entity at a given speed to face a target coordinate.
 **Signature:**
 
 ```typescript
-face(target: Vector3, speed: number, options?: FaceOptions): void;
+face(target: Vector3Like, speed: number, options?: FaceOptions): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ target
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

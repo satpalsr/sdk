@@ -9,7 +9,7 @@ Applies a torque impulse to the rigid body.
 **Signature:**
 
 ```typescript
-applyTorqueImpulse(impulse: Vector): void;
+applyTorqueImpulse(impulse: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ impulse
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

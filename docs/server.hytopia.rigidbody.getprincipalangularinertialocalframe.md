@@ -9,11 +9,11 @@ Gets the principal angular inertia local frame of the rigid body.
 **Signature:**
 
 ```typescript
-getPrincipalAngularInertiaLocalFrame(): Rotation | undefined;
+getPrincipalAngularInertiaLocalFrame(): QuaternionLike | undefined;
 ```
 **Returns:**
 
-[Rotation](./server.rotation.md) \| undefined
+[QuaternionLike](./server.quaternionlike.md) \| undefined
 
 The principal angular inertia local frame of the rigid body.
 

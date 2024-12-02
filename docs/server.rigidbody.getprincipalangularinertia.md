@@ -9,11 +9,11 @@ Gets the principal angular inertia of the rigid body.
 **Signature:**
 
 ```typescript
-getPrincipalAngularInertia(): Vector3;
+getPrincipalAngularInertia(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The principal angular inertia of the rigid body.
 

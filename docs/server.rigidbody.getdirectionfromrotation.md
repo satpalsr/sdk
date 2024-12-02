@@ -9,11 +9,11 @@ Gets the direction from the rotation of the rigid body.
 **Signature:**
 
 ```typescript
-getDirectionFromRotation(): Vector3;
+getDirectionFromRotation(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The direction from the rotation of the rigid body.
 

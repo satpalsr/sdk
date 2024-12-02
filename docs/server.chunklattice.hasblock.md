@@ -9,7 +9,7 @@ Check if a block exists at a specific global coordinate.
 **Signature:**
 
 ```typescript
-hasBlock(globalCoordinate: Vector3): boolean;
+hasBlock(globalCoordinate: Vector3Like): boolean;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ globalCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

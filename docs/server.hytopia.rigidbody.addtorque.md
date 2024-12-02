@@ -9,7 +9,7 @@ Adds a torque to the rigid body.
 **Signature:**
 
 ```typescript
-addTorque(torque: Vector): void;
+addTorque(torque: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ torque
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

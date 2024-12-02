@@ -2,15 +2,56 @@
 
 [Home](./index.md) &gt; [server](./server.md) &gt; [HYTOPIA](./server.hytopia.md) &gt; [Vector3](./server.hytopia.vector3.md)
 
-## HYTOPIA.Vector3 interface
+## HYTOPIA.Vector3 class
 
-A 3-dimensional vector.
+Represents a 3-dimensional vector.
 
 **Signature:**
 
 ```typescript
-interface Vector3 
+export default class Vector3 extends Float32Array implements Vector3Like 
 ```
+**Extends:** Float32Array
+
+**Implements:** [Vector3Like](./server.vector3like.md)
+
+## Remarks
+
+All vector methods result in mutation of the vector instance. This class extends `Float32Array` to provide an efficient way to create and manipulate a 3-dimensional vector. Various convenience methods are provided for common vector operations.
+
+## Constructors
+
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(x, y, z)](./server.hytopia.vector3._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Vector3` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
@@ -37,6 +78,48 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[magnitude](./server.hytopia.vector3.magnitude.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The magnitude of the vector. Also known as the length.
+
+
+</td></tr>
+<tr><td>
+
+[squaredMagnitude](./server.hytopia.vector3.squaredmagnitude.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The squared magnitude of the vector. Also known as the squared length.
+
+
+</td></tr>
+<tr><td>
+
 [x](./server.hytopia.vector3.x.md)
 
 
@@ -49,6 +132,8 @@ number
 
 
 </td><td>
+
+The x-component of the vector.
 
 
 </td></tr>
@@ -67,6 +152,8 @@ number
 
 </td><td>
 
+The y-component of the vector.
+
 
 </td></tr>
 <tr><td>
@@ -83,6 +170,380 @@ number
 
 
 </td><td>
+
+The z-component of the vector.
+
+
+</td></tr>
+</tbody></table>
+
+## Methods
+
+<table><thead><tr><th>
+
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[add(vector3)](./server.hytopia.vector3.add.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Adds a vector to the current vector.
+
+
+</td></tr>
+<tr><td>
+
+[ceil()](./server.hytopia.vector3.ceil.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rounds each component of the vector up to the nearest integer.
+
+
+</td></tr>
+<tr><td>
+
+[clone()](./server.hytopia.vector3.clone.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Returns a new vector with the same components as the current vector.
+
+
+</td></tr>
+<tr><td>
+
+[copy(vector3)](./server.hytopia.vector3.copy.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Copies the components of a vector to the current vector.
+
+
+</td></tr>
+<tr><td>
+
+[cross(vector3)](./server.hytopia.vector3.cross.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Calculates the cross product of the current vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
+[distance(vector3)](./server.hytopia.vector3.distance.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Calculates the distance between the current vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
+[divide(vector3)](./server.hytopia.vector3.divide.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Divides each component of the current vector by the corresponding component of another vector.
+
+
+</td></tr>
+<tr><td>
+
+[equals(vector3)](./server.hytopia.vector3.equals.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Checks if the current vector is approximately equal to another vector.
+
+
+</td></tr>
+<tr><td>
+
+[exactEquals(vector3)](./server.hytopia.vector3.exactequals.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Checks if the current vector is exactly equal to another vector.
+
+
+</td></tr>
+<tr><td>
+
+[floor()](./server.hytopia.vector3.floor.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rounds each component of the vector down to the nearest integer.
+
+
+</td></tr>
+<tr><td>
+
+[fromVector3Like(vector3Like)](./server.hytopia.vector3.fromvector3like.md)
+
+
+</td><td>
+
+`static`
+
+
+</td><td>
+
+Creates a new `Vector3` instance from a `Vector3Like` object.
+
+
+</td></tr>
+<tr><td>
+
+[invert()](./server.hytopia.vector3.invert.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Inverts each component of the vector.
+
+
+</td></tr>
+<tr><td>
+
+[lerp(vector3, t)](./server.hytopia.vector3.lerp.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Linearly interpolates between the current vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
+[max(vector3)](./server.hytopia.vector3.max.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets each component of the vector to the maximum of the current vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
+[min(vector3)](./server.hytopia.vector3.min.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets each component of the vector to the minimum of the current vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
+[multiply(vector3)](./server.hytopia.vector3.multiply.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Multiplies each component of the current vector by the corresponding component of another vector.
+
+
+</td></tr>
+<tr><td>
+
+[negate()](./server.hytopia.vector3.negate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Negates each component of the vector.
+
+
+</td></tr>
+<tr><td>
+
+[normalize()](./server.hytopia.vector3.normalize.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Normalizes the vector.
+
+
+</td></tr>
+<tr><td>
+
+[rotateX(vector3, angle)](./server.hytopia.vector3.rotatex.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rotates the vector around the x-axis.
+
+
+</td></tr>
+<tr><td>
+
+[rotateY(vector3, angle)](./server.hytopia.vector3.rotatey.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rotates the vector around the y-axis.
+
+
+</td></tr>
+<tr><td>
+
+[rotateZ(vector3, angle)](./server.hytopia.vector3.rotatez.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rotates the vector around the z-axis.
+
+
+</td></tr>
+<tr><td>
+
+[round()](./server.hytopia.vector3.round.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rounds each component of the vector to the nearest integer.
+
+
+</td></tr>
+<tr><td>
+
+[scale(scale)](./server.hytopia.vector3.scale.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Scales each component of the vector by a scalar value.
+
+
+</td></tr>
+<tr><td>
+
+[subtract(vector3)](./server.hytopia.vector3.subtract.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Subtracts a vector from the current vector.
+
+
+</td></tr>
+<tr><td>
+
+[toString()](./server.hytopia.vector3.tostring.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Returns a string representation of the vector in x,y,z format.
 
 
 </td></tr>

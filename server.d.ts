@@ -9,7 +9,6 @@ import protocol from '@hytopia.com/server-protocol';
 import RAPIER from '@dimforge/rapier3d-compat';
 import { SdpMatrix3 } from '@dimforge/rapier3d-compat';
 import type { Socket as Socket_2 } from 'net';
-import { Vector } from '@dimforge/rapier3d-compat';
 import { WebSocket as WebSocket_2 } from 'ws';
 
 /**
@@ -72,7 +71,7 @@ export declare class Audio implements protocol.Serializable {
     /** Whether the audio is positional (Entity or position attached). */
     get isPositional(): boolean;
     /** The position of the audio in the world if explicitly set. */
-    get position(): Vector3 | undefined;
+    get position(): Vector3Like | undefined;
     /** The playback rate of the audio if explicitly set. */
     get playbackRate(): number | undefined;
     /** The reference distance of the audio if explicitly set. */
@@ -119,7 +118,7 @@ export declare class Audio implements protocol.Serializable {
      *
      * @param position - The position in the world.
      */
-    setPosition(position: Vector3): void;
+    setPosition(position: Vector3Like): void;
     /**
      * Sets the playback rate of the audio.
      *
@@ -167,7 +166,7 @@ export declare namespace AudioEventPayload {
     }
     export interface SetPosition {
         audio: Audio;
-        position: Vector3;
+        position: Vector3Like;
     }
     export interface SetPlaybackRate {
         audio: Audio;
@@ -266,7 +265,7 @@ export declare interface AudioOptions {
     /** The offset time in seconds from which the audio should start playing. */
     offset?: number;
     /** The position in the world where the audio is played. */
-    position?: Vector3;
+    position?: Vector3Like;
     /** The playback speed of the audio. Defaults to 1. */
     playbackRate?: number;
     /** The reference distance for reducing volume as the audio source moves away from the listener. */
@@ -342,7 +341,7 @@ export declare abstract class BaseCharacterController {
  */
 export declare class Block {
     /** The global coordinate of the block. */
-    readonly globalCoordinate: Vector3;
+    readonly globalCoordinate: Vector3Like;
     /** The block type of the block. */
     readonly blockType: BlockType;
 
@@ -626,7 +625,7 @@ export declare class Chunk implements protocol.Serializable {
     /** Whether the chunk has been spawned. */
     get isSpawned(): boolean;
     /** The origin coordinate of the chunk. */
-    get originCoordinate(): Vector3 | undefined;
+    get originCoordinate(): Vector3Like | undefined;
     /** The world the chunk belongs to. */
     get world(): World | undefined;
     /**
@@ -634,31 +633,31 @@ export declare class Chunk implements protocol.Serializable {
      * @param index - The index of the block to convert.
      * @returns The local coordinate of the block.
      */
-    static blockIndexToLocalCoordinate(index: number): Vector3;
+    static blockIndexToLocalCoordinate(index: number): Vector3Like;
     /**
      * Convert a global coordinate to a local coordinate.
      * @param globalCoordinate - The global coordinate to convert.
      * @returns The local coordinate.
      */
-    static globalCoordinateToLocalCoordinate(globalCoordinate: Vector3): Vector3;
+    static globalCoordinateToLocalCoordinate(globalCoordinate: Vector3Like): Vector3Like;
     /**
      * Convert a global coordinate to an origin coordinate.
      * @param globalCoordinate - The global coordinate to convert.
      * @returns The origin coordinate.
      */
-    static globalCoordinateToOriginCoordinate(globalCoordinate: Vector3): Vector3;
+    static globalCoordinateToOriginCoordinate(globalCoordinate: Vector3Like): Vector3Like;
     /**
      * Check if an origin coordinate is valid.
      * @param coordinate - The coordinate to check.
      * @returns Whether the coordinate is valid.
      */
-    static isValidOriginCoordinate(coordinate: Vector3): boolean;
+    static isValidOriginCoordinate(coordinate: Vector3Like): boolean;
     /**
      * Spawn the chunk in the world.
      * @param world - The world to spawn the chunk in.
      * @param originCoordinate - The origin coordinate of the chunk.
      */
-    spawn(world: World, originCoordinate: Vector3): void;
+    spawn(world: World, originCoordinate: Vector3Like): void;
     /**
      * Despawn the chunk from the world.
      */
@@ -668,19 +667,19 @@ export declare class Chunk implements protocol.Serializable {
      * @param localCoordinate - The local coordinate of the block to get.
      * @returns The block type id.
      */
-    getBlock(localCoordinate: Vector3): number;
+    getBlock(localCoordinate: Vector3Like): number;
     /**
      * Check if a block exists at a specific local coordinate.
      * @param localCoordinate - The local coordinate of the block to check.
      * @returns Whether a block exists.
      */
-    hasBlock(localCoordinate: Vector3): boolean;
+    hasBlock(localCoordinate: Vector3Like): boolean;
     /**
      * Set the block at a specific local coordinate by block type id.
      * @param localCoordinate - The local coordinate of the block to set.
      * @param blockTypeId - The block type id to set.
      */
-    setBlock(localCoordinate: Vector3, blockTypeId: number): void;
+    setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 
 
 
@@ -697,8 +696,8 @@ export declare namespace ChunkEventPayload {
     }
     export interface SetBlock {
         chunk: Chunk;
-        globalCoordinate: Vector3;
-        localCoordinate: Vector3;
+        globalCoordinate: Vector3Like;
+        localCoordinate: Vector3Like;
         blockTypeId: number;
     }
     export interface Spawn {
@@ -737,13 +736,13 @@ export declare class ChunkLattice {
      * @param globalCoordinate - The global coordinate of the block to get.
      * @returns The block type id, 0 if no block is set.
      */
-    getBlock(globalCoordinate: Vector3): number;
+    getBlock(globalCoordinate: Vector3Like): number;
     /**
      * Get a chunk by its origin coordinate.
      * @param originCoordinate - The origin coordinate of the chunk to get.
      * @returns The chunk at the given origin coordinate or undefined if not found.
      */
-    getChunk(originCoordinate: Vector3): Chunk | undefined;
+    getChunk(originCoordinate: Vector3Like): Chunk | undefined;
     /**
      * Get all chunks in the lattice.
      * @returns An array of all chunks in the lattice.
@@ -754,20 +753,20 @@ export declare class ChunkLattice {
      * @param globalCoordinate - The global coordinate of the block to check.
      * @returns Whether a block exists.
      */
-    hasBlock(globalCoordinate: Vector3): boolean;
+    hasBlock(globalCoordinate: Vector3Like): boolean;
     /**
      * Check if a chunk exists by its origin coordinate.
      * @param originCoordinate - The origin coordinate of the chunk to check.
      * @returns Whether the chunk exists.
      */
-    hasChunk(originCoordinate: Vector3): boolean;
+    hasChunk(originCoordinate: Vector3Like): boolean;
     /**
      * Set the block at a global coordinate by block type id, automatically
      * creating a chunk if it doesn't exist. Use block type id 0 for air.
      * @param globalCoordinate - The global coordinate of the block to set.
      * @param blockTypeId - The block type id to set. Use 0 to remove the block and replace with air.
      */
-    setBlock(globalCoordinate: Vector3, blockTypeId: number): void;
+    setBlock(globalCoordinate: Vector3Like, blockTypeId: number): void;
 
 
 }
@@ -832,12 +831,12 @@ export declare class Collider {
      * Gets the relative rotation of the collider.
      * @returns The relative rotation of the collider.
      */
-    getRelativeRotation(): Rotation;
+    getRelativeRotation(): QuaternionLike;
     /**
      * Gets the relative translation of the collider to its parent rigid body.
      * @returns The relative translation of the collider.
      */
-    getRelativeTranslation(): Vector3;
+    getRelativeTranslation(): Vector3Like;
     /**
      * Sets the bounciness of the collider.
      * @param bounciness - The bounciness of the collider.
@@ -872,12 +871,12 @@ export declare class Collider {
      * Sets the relative rotation of the collider.
      * @param rotation - The relative rotation of the collider.
      */
-    setRelativeRotation(rotation: Rotation): void;
+    setRelativeRotation(rotation: QuaternionLike): void;
     /**
      * Sets the relative translation of the collider to its parent rigid body.
      * @param translation - The relative translation of the collider.
      */
-    setRelativeTranslation(translation: Vector3): void;
+    setRelativeTranslation(translation: Vector3Like): void;
     /**
      * Sets whether the collider is a sensor.
      * @param sensor - Whether the collider is a sensor.
@@ -932,7 +931,7 @@ export declare interface ColliderOptions {
     /** The friction of the collider. */
     friction?: number;
     /** The half extents of the collider if the shape is a block. */
-    halfExtents?: Vector3;
+    halfExtents?: Vector3Like;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
     /** Whether the collider is a sensor. */
@@ -946,9 +945,9 @@ export declare interface ColliderOptions {
     /** The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder. */
     radius?: number;
     /** The relative rotation of the collider. Relative to parent rigid body. */
-    relativeRotation?: Rotation;
+    relativeRotation?: QuaternionLike;
     /** The relative translation of the collider. Relative to parent rigid body. */
-    relativeTranslation?: Vector3;
+    relativeTranslation?: Vector3Like;
     /** The simulation the collider is in, if provided the collider will automatically be added to the simulation. */
     simulation?: Simulation;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
@@ -1302,7 +1301,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /** The character controller for the entity. */
     get characterController(): BaseCharacterController | undefined;
     /** The half extends of the visual size of the block entity when blockTextureUri is set. */
-    get blockHalfExtents(): Vector3 | undefined;
+    get blockHalfExtents(): Vector3Like | undefined;
     /** The URI or path to the texture to be used, if this is set, the entity is a block entity. */
     get blockTextureUri(): string | undefined;
     /** The URI or path to the .gltf model asset to be used for the entity. */
@@ -1326,7 +1325,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param world - The world to spawn the entity in.
      * @param coordinate - The coordinate to spawn the entity at.
      */
-    spawn(world: World, coordinate: Vector3): void;
+    spawn(world: World, coordinate: Vector3Like): void;
     /**
      * Despawns the entity from the world.
      */
@@ -1393,11 +1392,11 @@ export declare namespace EntityEventPayload {
     }
     export interface UpdateRotation {
         entity: Entity;
-        rotation: Rotation;
+        rotation: QuaternionLike;
     }
     export interface UpdateTranslation {
         entity: Entity;
-        translation: Vector3;
+        translation: Vector3Like;
     }
 }
 
@@ -1476,7 +1475,7 @@ export declare class EntityManager {
 /** Options for creating an Entity instance. @public */
 export declare interface EntityOptions {
     /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created. */
-    blockHalfExtents?: Vector3;
+    blockHalfExtents?: Vector3Like;
     /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
     blockTextureUri?: string;
     /**
@@ -1583,7 +1582,7 @@ export declare class EventRouter {
  * @param targetRotation - The target rotation of the entity.
  * @public
  */
-export declare type FaceCallback = (currentRotation: Rotation, targetRotation: Rotation) => void;
+export declare type FaceCallback = (currentRotation: QuaternionLike, targetRotation: QuaternionLike) => void;
 
 /**
  * A callback function called when the entity associated with the
@@ -1592,7 +1591,7 @@ export declare type FaceCallback = (currentRotation: Rotation, targetRotation: R
  * @param endRotation - The rotation of the entity after it has finished rotating.
  * @public
  */
-export declare type FaceCompleteCallback = (endRotation: Rotation) => void;
+export declare type FaceCompleteCallback = (endRotation: QuaternionLike) => void;
 
 /**
  * Options for the {@link SimpleCharacterController.face} method.
@@ -1697,9 +1696,11 @@ declare namespace HYTOPIA {
         startServer,
         GameServerEventPayload,
         RgbColor,
-        Rotation,
-        SpdMatrix3,
+        Quaternion,
         Vector3,
+        QuaternionLike,
+        SpdMatrix3,
+        Vector3Like,
         Vector3Boolean,
         Player,
         PlayerEventType,
@@ -1745,7 +1746,7 @@ export default HYTOPIA;
  * @param targetTranslation - The target translation of the entity.
  * @public
  */
-export declare type MoveCallback = (currentTranslation: Vector3, targetTranslation: Vector3) => void;
+export declare type MoveCallback = (currentTranslation: Vector3Like, targetTranslation: Vector3Like) => void;
 
 /**
  * A callback function called when the entity associated with the
@@ -1754,7 +1755,7 @@ export declare type MoveCallback = (currentTranslation: Vector3, targetTranslati
  * @param endTranslation - The translation of the entity after it has finished moving.
  * @public
  */
-export declare type MoveCompleteCallback = (endTranslation: Vector3) => void;
+export declare type MoveCompleteCallback = (endTranslation: Vector3Like) => void;
 
 /**
  * Options for the {@link SimpleCharacterController.move} method.
@@ -1860,7 +1861,7 @@ export declare class PlayerCamera implements protocol.Serializable {
     /** The entity the camera is attached to. */
     get attachedToEntity(): Entity | undefined;
     /** The position the camera is attached to. */
-    get attachedToPosition(): Vector3 | undefined;
+    get attachedToPosition(): Vector3Like | undefined;
     /** The film offset of the camera. A positive value shifts the camera right, a negative value shifts it left. */
     get filmOffset(): number;
     /** Only used in first-person mode. The forward offset of the camera. A positive number shifts the camera forward, a negative number shifts it backward. */
@@ -1872,11 +1873,11 @@ export declare class PlayerCamera implements protocol.Serializable {
     /** The mode of the camera. */
     get mode(): PlayerCameraMode;
     /** The relative offset of the camera from the entity or position it is attached to. */
-    get offset(): Vector3;
+    get offset(): Vector3Like;
     /** The entity the camera will constantly look at, even if the camera attached or tracked entity moves. */
     get trackedEntity(): Entity | undefined;
     /** The position the camera will constantly look at, even if the camera attached entity moves. */
-    get trackedPosition(): Vector3 | undefined;
+    get trackedPosition(): Vector3Like | undefined;
     /** The zoom of the camera. */
     get zoom(): number;
     /**
@@ -1892,7 +1893,7 @@ export declare class PlayerCamera implements protocol.Serializable {
      * stop tracking.
      * @param position - The position to look at.
      */
-    lookAtPosition(position: Vector3): void;
+    lookAtPosition(position: Vector3Like): void;
     /**
      * Sets the entity the camera is attached to.
      * @param entity - The entity to attach the camera to.
@@ -1902,7 +1903,7 @@ export declare class PlayerCamera implements protocol.Serializable {
      * Sets the position the camera is attached to.
      * @param position - The position to attach the camera to.
      */
-    setAttachedToPosition(position: Vector3): void;
+    setAttachedToPosition(position: Vector3Like): void;
     /**
      * Sets the film offset of the camera. A positive value
      * shifts the camera right, a negative value shifts it left.
@@ -1938,7 +1939,7 @@ export declare class PlayerCamera implements protocol.Serializable {
      * entity or position it is attached to.
      * @param offset - The offset to set.
      */
-    setOffset(offset: Vector3): void;
+    setOffset(offset: Vector3Like): void;
     /**
      * Sets the entity the camera will constantly look at,
      * even if the camera attached or tracked entity moves.
@@ -1950,7 +1951,7 @@ export declare class PlayerCamera implements protocol.Serializable {
      * even if the camera attached entity moves.
      * @param position - The position to track or undefined to stop tracking.
      */
-    setTrackedPosition(position: Vector3 | undefined): void;
+    setTrackedPosition(position: Vector3Like | undefined): void;
     /**
      * Sets the zoom of the camera.
      * @param zoom - The zoom to set, 0 to infinity.
@@ -1968,7 +1969,7 @@ export declare namespace PlayerCameraEventPayload {
     }
     export interface LookAtPosition {
         playerCamera: PlayerCamera;
-        position: Vector3;
+        position: Vector3Like;
     }
     export interface SetAttachedToEntity {
         playerCamera: PlayerCamera;
@@ -1976,7 +1977,7 @@ export declare namespace PlayerCameraEventPayload {
     }
     export interface SetAttachedToPosition {
         playerCamera: PlayerCamera;
-        position: Vector3;
+        position: Vector3Like;
     }
     export interface SetFilmOffset {
         playerCamera: PlayerCamera;
@@ -2000,7 +2001,7 @@ export declare namespace PlayerCameraEventPayload {
     }
     export interface SetOffset {
         playerCamera: PlayerCamera;
-        offset: Vector3;
+        offset: Vector3Like;
     }
     export interface SetTrackedEntity {
         playerCamera: PlayerCamera;
@@ -2008,7 +2009,7 @@ export declare namespace PlayerCameraEventPayload {
     }
     export interface SetTrackedPosition {
         playerCamera: PlayerCamera;
-        position: Vector3 | undefined;
+        position: Vector3Like | undefined;
     }
     export interface SetZoom {
         playerCamera: PlayerCamera;
@@ -2171,6 +2172,181 @@ export declare type PlayerOrientationState = {
  */
 export declare const PORT: string | 8080;
 
+/**
+ * Represents a quaternion.
+ *
+ * @remarks
+ * All quaternion methods result in mutation of the quaternion instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a quaternion. Various convenience methods are
+ * provided for common quaternion operations.
+ *
+ * @public
+ */
+export declare class Quaternion extends Float32Array implements QuaternionLike {
+    constructor(x: number, y: number, z: number, w: number);
+    /** The magnitude of the quaternion. Also known as the length. */
+    get magnitude(): number;
+    /** The squared magnitude of the quaternion. Also known as the squared length. */
+    get squaredMagnitude(): number;
+    /** The x-component of the quaternion. */
+    get x(): number;
+    set x(value: number);
+    /** The y-component of the quaternion. */
+    get y(): number;
+    set y(value: number);
+    /** The z-component of the quaternion. */
+    get z(): number;
+    set z(value: number);
+    /** The w-component of the quaternion. */
+    get w(): number;
+    set w(value: number);
+    /**
+     * Creates a quaternion from Euler angles.
+     *
+     * @param x - The x-component of the Euler angles in degrees.
+     * @param y - The y-component of the Euler angles in degrees.
+     * @param z - The z-component of the Euler angles in degrees.
+     */
+    static fromEuler(x: number, y: number, z: number): Quaternion;
+    /**
+     * Creates a quaternion from a `QuaternionLike` object.
+     *
+     * @param quaternionLike - The `QuaternionLike` object to create the quaternion from.
+     */
+    static fromQuaternionLike(quaternionLike: QuaternionLike): Quaternion;
+    /**
+     * Creates a clone of the current quaternion.
+     *
+     * @returns A new `Quaternion` instance.
+     */
+    clone(): Quaternion;
+    /**
+     * Conjugates the current quaternion.
+     *
+     * @returns The current quaternion.
+     */
+    conjugate(): Quaternion;
+    /**
+     * Copies the components of a `QuaternionLike` object to the current quaternion.
+     *
+     * @param quaternionLike - The `QuaternionLike` object to copy the components from.
+     * @returns The current quaternion.
+     */
+    copy(quaternion: Quaternion): Quaternion;
+    /**
+     * Calculates the dot product of the current quaternion and another quaternion.
+     *
+     * @param quaternionLike - The quaternion to calculate the dot product with.
+     * @returns The dot product.
+     */
+    dot(quaternion: Quaternion): number;
+    /**
+     * Calculates and sets the current quaternion to its exponential.
+     *
+     * @returns The current quaternion.
+     */
+    exponential(): Quaternion;
+    /**
+     * Checks if the current quaternion is approximately equal to another quaternion.
+     *
+     * @param quaternionLike - The quaternion to check against.
+     * @returns `true` if the quaternions are approximately equal, `false` otherwise.
+     */
+    equals(quaternion: Quaternion): boolean;
+    /**
+     * Checks if the current quaternion is exactly equal to another quaternion.
+     *
+     * @param quaternionLike - The quaternion to check against.
+     * @returns `true` if the quaternions are exactly equal, `false` otherwise.
+     */
+    exactEquals(quaternion: Quaternion): boolean;
+    /**
+     * Calculates and returns the angle between the current quaternion and another quaternion.
+     *
+     * @param quaternionLike - The quaternion to calculate the angle with.
+     * @returns The angle in degrees.
+     */
+    getAngle(quaternion: Quaternion): number;
+    /**
+     * Inverts each component of the quaternion.
+     *
+     * @returns The current quaternion.
+     */
+    invert(): Quaternion;
+    /**
+     * Linearly interpolates between the current quaternion and another quaternion.
+     *
+     * @param quaternionLike - The quaternion to interpolate with.
+     * @param t - The interpolation factor.
+     * @returns The current quaternion.
+     */
+    lerp(quaternion: Quaternion, t: number): Quaternion;
+    /**
+     * Multiplies the quaternion by another quaternion.
+     *
+     * @param quaternionLike - The quaternion to multiply by.
+     * @returns The current quaternion.
+     */
+    multiply(quaternion: Quaternion): Quaternion;
+    /**
+     * Normalizes the quaternion.
+     *
+     * @returns The current quaternion.
+     */
+    normalize(): Quaternion;
+    /**
+     * Rotates the quaternion around the x-axis.
+     *
+     * @param angle - The angle to rotate in degrees.
+     * @returns The current quaternion.
+     */
+    rotateX(angle: number): Quaternion;
+    /**
+     * Rotates the quaternion around the y-axis.
+     *
+     * @param angle - The angle to rotate in degrees.
+     * @returns The current quaternion.
+     */
+    rotateY(angle: number): Quaternion;
+    /**
+     * Rotates the quaternion around the z-axis.
+     *
+     * @param angle - The angle to rotate in degrees.
+     * @returns The current quaternion.
+     */
+    rotateZ(angle: number): Quaternion;
+    /**
+     * Scales the quaternion by a scalar value.
+     *
+     * @param scale - The scalar value to scale the quaternion by.
+     * @returns The current quaternion.
+     */
+    scale(scale: number): Quaternion;
+    /**
+     * Spherically interpolates between the current quaternion and another quaternion.
+     *
+     * @param quaternion - The quaternion to interpolate with.
+     * @param t - The interpolation factor.
+     * @returns The current quaternion.
+     */
+    slerp(quaternion: Quaternion, t: number): Quaternion;
+    /**
+     * Returns a string representation of the quaternion in x,y,z,w format.
+     *
+     * @returns A string representation of the quaternion in the format x,y,z,w.
+     */
+    toString(): string;
+}
+
+/** A quaternion. @public */
+export declare interface QuaternionLike {
+    x: number;
+    y: number;
+    z: number;
+    w: number;
+}
+
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
@@ -2268,7 +2444,7 @@ export declare class RigidBody {
      * Gets the angular velocity of the rigid body.
      * @returns The angular velocity of the rigid body.
      */
-    getAngularVelocity(): Vector3;
+    getAngularVelocity(): Vector3Like;
     /**
      * Gets the colliders of the rigid body by tag.
      * @param tag - The tag to filter by.
@@ -2284,7 +2460,7 @@ export declare class RigidBody {
      * Gets the direction from the rotation of the rigid body.
      * @returns The direction from the rotation of the rigid body.
      */
-    getDirectionFromRotation(): Vector3;
+    getDirectionFromRotation(): Vector3Like;
     /**
      * Gets the effective angular inertia of the rigid body.
      * @returns The effective angular inertia of the rigid body.
@@ -2294,7 +2470,7 @@ export declare class RigidBody {
      * Gets the effective inverse mass of the rigid body.
      * @returns The effective inverse mass of the rigid body.
      */
-    getEffectiveInverseMass(): Vector3 | undefined;
+    getEffectiveInverseMass(): Vector3Like | undefined;
     /**
      * Gets the effective world inverse principal angular inertia square root of the rigid body.
      * @returns The effective world inverse principal angular inertia square root of the rigid body.
@@ -2324,7 +2500,7 @@ export declare class RigidBody {
      * Gets the inverse principal angular inertia square root of the rigid body.
      * @returns The inverse principal angular inertia square root of the rigid body.
      */
-    getInversePrincipalAngularInertiaSqrt(): Vector3 | undefined;
+    getInversePrincipalAngularInertiaSqrt(): Vector3Like | undefined;
     /**
      * Gets the linear damping of the rigid body.
      * @returns The linear damping of the rigid body.
@@ -2334,12 +2510,12 @@ export declare class RigidBody {
      * Gets the linear velocity of the rigid body.
      * @returns The linear velocity of the rigid body.
      */
-    getLinearVelocity(): Vector3;
+    getLinearVelocity(): Vector3Like;
     /**
      * Gets the local center of mass of the rigid body.
      * @returns The local center of mass of the rigid body.
      */
-    getLocalCenterOfMass(): Vector3;
+    getLocalCenterOfMass(): Vector3Like;
     /**
      * Gets the mass of the rigid body.
      * @returns The mass of the rigid body.
@@ -2349,27 +2525,27 @@ export declare class RigidBody {
      * Gets the next kinematic rotation of the rigid body.
      * @returns The next kinematic rotation of the rigid body.
      */
-    getNextKinematicRotation(): Rotation;
+    getNextKinematicRotation(): QuaternionLike;
     /**
      * Gets the next kinematic translation of the rigid body.
      * @returns The next kinematic translation of the rigid body.
      */
-    getNextKinematicTranslation(): Vector3;
+    getNextKinematicTranslation(): Vector3Like;
     /**
      * Gets the principal angular inertia of the rigid body.
      * @returns The principal angular inertia of the rigid body.
      */
-    getPrincipalAngularInertia(): Vector3;
+    getPrincipalAngularInertia(): Vector3Like;
     /**
      * Gets the principal angular inertia local frame of the rigid body.
      * @returns The principal angular inertia local frame of the rigid body.
      */
-    getPrincipalAngularInertiaLocalFrame(): Rotation | undefined;
+    getPrincipalAngularInertiaLocalFrame(): QuaternionLike | undefined;
     /**
      * Gets the rotation of the rigid body.
      * @returns The rotation of the rigid body.
      */
-    getRotation(): Rotation;
+    getRotation(): QuaternionLike;
     /**
      * Gets the soft ccd prediction of the rigid body.
      * @returns The soft ccd prediction of the rigid body.
@@ -2379,7 +2555,7 @@ export declare class RigidBody {
      * Gets the translation of the rigid body.
      * @returns The translation of the rigid body.
      */
-    getTranslation(): Vector3;
+    getTranslation(): Vector3Like;
     /**
      * Gets the type of the rigid body.
      * @returns The type of the rigid body.
@@ -2389,7 +2565,7 @@ export declare class RigidBody {
      * Gets the world center of mass of the rigid body.
      * @returns The world center of mass of the rigid body.
      */
-    getWorldCenterOfMass(): Vector3 | undefined;
+    getWorldCenterOfMass(): Vector3Like | undefined;
     /**
      * Sets the additional mass of the rigid body.
      * @param additionalMass - The additional mass of the rigid body.
@@ -2414,7 +2590,7 @@ export declare class RigidBody {
      * Sets the angular velocity of the rigid body.
      * @param angularVelocity - The angular velocity of the rigid body.
      */
-    setAngularVelocity(angularVelocity: Vector): void;
+    setAngularVelocity(angularVelocity: Vector3Like): void;
     /**
      * Sets whether the rigid body has continuous collision detection enabled.
      * @param ccdEnabled - Whether the rigid body has continuous collision detection enabled.
@@ -2454,22 +2630,22 @@ export declare class RigidBody {
      * Sets the linear velocity of the rigid body.
      * @param linearVelocity - The linear velocity of the rigid body.
      */
-    setLinearVelocity(linearVelocity: Vector): void;
+    setLinearVelocity(linearVelocity: Vector3Like): void;
     /**
      * Sets the next kinematic rotation of the rigid body.
      * @param nextKinematicRotation - The next kinematic rotation of the rigid body.
      */
-    setNextKinematicRotation(nextKinematicRotation: Rotation): void;
+    setNextKinematicRotation(nextKinematicRotation: QuaternionLike): void;
     /**
      * Sets the next kinematic translation of the rigid body.
      * @param nextKinematicTranslation - The next kinematic translation of the rigid body.
      */
-    setNextKinematicTranslation(nextKinematicTranslation: Vector): void;
+    setNextKinematicTranslation(nextKinematicTranslation: Vector3Like): void;
     /**
      * Sets the rotation of the rigid body.
      * @param rotation - The rotation of the rigid body.
      */
-    setRotation(rotation: Rotation): void;
+    setRotation(rotation: QuaternionLike): void;
     /**
      * Sets whether the rigid body is sleeping.
      * @param sleeping - Whether the rigid body is sleeping.
@@ -2489,7 +2665,7 @@ export declare class RigidBody {
      * Sets the translation of the rigid body.
      * @param translation - The translation of the rigid body.
      */
-    setTranslation(translation: Vector): void;
+    setTranslation(translation: Vector3Like): void;
     /**
      * Sets the type of the rigid body.
      * @param type - The type of the rigid body.
@@ -2499,12 +2675,12 @@ export declare class RigidBody {
      * Adds a force to the rigid body.
      * @param force - The force to add to the rigid body.
      */
-    addForce(force: Vector): void;
+    addForce(force: Vector3Like): void;
     /**
      * Adds a torque to the rigid body.
      * @param torque - The torque to add to the rigid body.
      */
-    addTorque(torque: Vector): void;
+    addTorque(torque: Vector3Like): void;
     /**
      * Adds an unsimulated child collider to the rigid body for the simulation it belongs to.
      * @param collider - The child collider to add to the rigid body for the simulation it belongs to.
@@ -2519,18 +2695,18 @@ export declare class RigidBody {
      * Applies an impulse to the rigid body.
      * @param impulse - The impulse to apply to the rigid body.
      */
-    applyImpulse(impulse: Vector): void;
+    applyImpulse(impulse: Vector3Like): void;
     /**
      * Applies an impulse to the rigid body at a point.
      * @param impulse - The impulse to apply to the rigid body.
      * @param point - The point at which to apply the impulse.
      */
-    applyImpulseAtPoint(impulse: Vector, point: Vector): void;
+    applyImpulseAtPoint(impulse: Vector3Like, point: Vector3Like): void;
     /**
      * Applies a torque impulse to the rigid body.
      * @param impulse - The torque impulse to apply to the rigid body.
      */
-    applyTorqueImpulse(impulse: Vector): void;
+    applyTorqueImpulse(impulse: Vector3Like): void;
     /**
      * Creates and adds a child collider to the rigid body for the simulation it belongs to.
      * @param colliderOptions - The options for the child collider to add.
@@ -2584,9 +2760,9 @@ export declare class RigidBody {
 /** Additional mass properties for a RigidBody. @public */
 export declare type RigidBodyAdditionalMassProperties = {
     additionalMass: number;
-    centerOfMass: Vector3;
-    principalAngularInertia: Vector3;
-    principalAngularInertiaLocalFrame: Rotation;
+    centerOfMass: Vector3Like;
+    principalAngularInertia: Vector3Like;
+    principalAngularInertiaLocalFrame: QuaternionLike;
 };
 
 /** Options for creating a RigidBody instance. @public */
@@ -2602,7 +2778,7 @@ export declare interface RigidBodyOptions {
     /** The angular damping of the rigid body. */
     angularDamping?: number;
     /** The angular velocity of the rigid body. */
-    angularVelocity?: Vector3;
+    angularVelocity?: Vector3Like;
     /** Whether the rigid body has continuous collision detection enabled. */
     ccdEnabled?: boolean;
     /** The colliders of the rigid body, provided as {@link ColliderOptions}. */
@@ -2620,9 +2796,9 @@ export declare interface RigidBodyOptions {
     /** The linear damping of the rigid body. */
     linearDamping?: number;
     /** The linear velocity of the rigid body. */
-    linearVelocity?: Vector3;
+    linearVelocity?: Vector3Like;
     /** The rotation of the rigid body. */
-    rotation?: Rotation;
+    rotation?: QuaternionLike;
     /** The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation. */
     simulation?: Simulation;
     /** Whether the rigid body is sleeping. */
@@ -2630,7 +2806,7 @@ export declare interface RigidBodyOptions {
     /** The soft continuous collision detection prediction of the rigid body. */
     softCcdPrediction?: number;
     /** The translation of the rigid body. */
-    translation?: Vector3;
+    translation?: Vector3Like;
 }
 
 /** The types a RigidBody can be. @public */
@@ -2639,14 +2815,6 @@ export declare enum RigidBodyType {
     FIXED = "fixed",
     KINEMATIC_POSITION = "kinematic_position",
     KINEMATIC_VELOCITY = "kinematic_velocity"
-}
-
-/** A rotation in quaternion form. @public */
-export declare interface Rotation {
-    x: number;
-    y: number;
-    z: number;
-    w: number;
 }
 
 /**
@@ -2704,7 +2872,7 @@ export declare class SimpleCharacterController extends BaseCharacterController {
      * @param speed - The speed at which to rotate to the target coordinate.
      * @param options - Additional options for the face operation, such as callbacks.
      */
-    face(target: Vector3, speed: number, options?: FaceOptions): void;
+    face(target: Vector3Like, speed: number, options?: FaceOptions): void;
     /**
      * Moves the entity at a given speed in a straight line to a target coordinate.
      *
@@ -2717,7 +2885,7 @@ export declare class SimpleCharacterController extends BaseCharacterController {
      * @param speed - The speed at which to move to the target coordinate.
      * @param options - Additional options for the move operation, such as callbacks.
      */
-    move(target: Vector3, speed: number, options?: MoveOptions): void;
+    move(target: Vector3Like, speed: number, options?: MoveOptions): void;
 
 }
 
@@ -2802,11 +2970,203 @@ export declare function startServer(init: (world: World) => void): void;
 /** The input keys that can be included in the PlayerInputState. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-/** A 3-dimensional vector. @public */
-export declare interface Vector3 {
-    x: number;
-    y: number;
-    z: number;
+/**
+ * Represents a 3-dimensional vector.
+ *
+ * @remarks
+ * All vector methods result in mutation of the vector instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a 3-dimensional vector. Various convenience
+ * methods are provided for common vector operations.
+ *
+ * @public
+ */
+export declare class Vector3 extends Float32Array implements Vector3Like {
+    constructor(x: number, y: number, z: number);
+    /** The magnitude of the vector. Also known as the length. */
+    get magnitude(): number;
+    /** The squared magnitude of the vector. Also known as the squared length. */
+    get squaredMagnitude(): number;
+    /** The x-component of the vector. */
+    get x(): number;
+    set x(value: number);
+    /** The y-component of the vector. */
+    get y(): number;
+    set y(value: number);
+    /** The z-component of the vector. */
+    get z(): number;
+    set z(value: number);
+    /**
+     * Creates a new `Vector3` instance from a `Vector3Like` object.
+     *
+     * @param vector3Like - The `Vector3Like` object to create the `Vector3` instance from.
+     * @returns A new `Vector3` instance.
+     */
+    static fromVector3Like(vector3Like: Vector3Like): Vector3;
+    /**
+     * Adds a vector to the current vector.
+     *
+     * @param vector3 - The vector to add to the current vector.
+     * @returns The current vector.
+     */
+    add(vector3: Vector3): Vector3;
+    /**
+     * Rounds each component of the vector up to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    ceil(): Vector3;
+    /**
+     * Returns a new vector with the same components as the current vector.
+     *
+     * @returns A new vector.
+     */
+    clone(): Vector3;
+    /**
+     * Copies the components of a vector to the current vector.
+     *
+     * @param vector3 - The vector to copy the components from.
+     * @returns The current vector.
+     */
+    copy(vector3: Vector3): Vector3;
+    /**
+     * Calculates the cross product of the current vector and another vector.
+     *
+     * @param vector3 - The vector to calculate the cross product with.
+     * @returns The current vector.
+     */
+    cross(vector3: Vector3): Vector3;
+    /**
+     * Calculates the distance between the current vector and another vector.
+     *
+     * @param vector3 - The vector to calculate the distance to.
+     * @returns The distance between the two vectors.
+     */
+    distance(vector3: Vector3): number;
+    /**
+     * Divides each component of the current vector by the corresponding component of another vector.
+     *
+     * @param vector3 - The vector to divide the current vector by.
+     * @returns The current vector.
+     */
+    divide(vector3: Vector3): Vector3;
+    /**
+     * Checks if the current vector is approximately equal to another vector.
+     *
+     * @param vector3 - The vector to compare to.
+     * @returns A boolean indicating whether the two vectors are approximately equal.
+     */
+    equals(vector3: Vector3): boolean;
+    /**
+     * Checks if the current vector is exactly equal to another vector.
+     *
+     * @param vector3 - The vector to compare to.
+     * @returns A boolean indicating whether the two vectors are exactly equal.
+     */
+    exactEquals(vector3: Vector3): boolean;
+    /**
+     * Rounds each component of the vector down to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    floor(): Vector3;
+    /**
+     * Inverts each component of the vector.
+     *
+     * @returns The current vector.
+     */
+    invert(): Vector3;
+    /**
+     * Linearly interpolates between the current vector and another vector.
+     *
+     * @param vector3 - The vector to interpolate to.
+     * @param t - The interpolation factor. A value between 0 and 1.
+     * @returns The current vector.
+     */
+    lerp(vector3: Vector3, t: number): Vector3;
+    /**
+     * Sets each component of the vector to the maximum of the current vector and another vector.
+     *
+     * @param vector3 - The vector to compare to.
+     * @returns The current vector.
+     */
+    max(vector3: Vector3): Vector3;
+    /**
+     * Sets each component of the vector to the minimum of the current vector and another vector.
+     *
+     * @param vector3 - The vector to compare to.
+     * @returns The current vector.
+     */
+    min(vector3: Vector3): Vector3;
+    /**
+     * Multiplies each component of the current vector by the corresponding component of another vector.
+     *
+     * @param vector3 - The vector to multiply the current vector by.
+     * @returns The current vector.
+     */
+    multiply(vector3: Vector3): Vector3;
+    /**
+     * Negates each component of the vector.
+     *
+     * @returns The current vector.
+     */
+    negate(): Vector3;
+    /**
+     * Normalizes the vector.
+     *
+     * @returns The current vector.
+     */
+    normalize(): Vector3;
+    /**
+     * Rotates the vector around the x-axis.
+     *
+     * @param vector3 - The origin vector to rotate around.
+     * @param angle - The angle to rotate the vector by.
+     * @returns The current vector.
+     */
+    rotateX(vector3: Vector3, angle: number): Vector3;
+    /**
+     * Rotates the vector around the y-axis.
+     *
+     * @param vector3 - The origin vector to rotate around.
+     * @param angle - The angle to rotate the vector by.
+     * @returns The current vector.
+     */
+    rotateY(vector3: Vector3, angle: number): Vector3;
+    /**
+     * Rotates the vector around the z-axis.
+     *
+     * @param vector3 - The origin vector to rotate around.
+     * @param angle - The angle to rotate the vector by.
+     * @returns The current vector.
+     */
+    rotateZ(vector3: Vector3, angle: number): Vector3;
+    /**
+     * Rounds each component of the vector to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    round(): Vector3;
+    /**
+     * Scales each component of the vector by a scalar value.
+     *
+     * @param scale - The scalar value to scale the vector by.
+     * @returns The current vector.
+     */
+    scale(scale: number): Vector3;
+    /**
+     * Subtracts a vector from the current vector.
+     *
+     * @param vector3 - The vector to subtract from the current vector.
+     * @returns The current vector.
+     */
+    subtract(vector3: Vector3): Vector3;
+    /**
+     * Returns a string representation of the vector in x,y,z format.
+     *
+     * @returns A string representation of the vector in the format x,y,z.
+     */
+    toString(): string;
 }
 
 /** A 3-dimensional vector of boolean values. @public */
@@ -2814,6 +3174,13 @@ export declare interface Vector3Boolean {
     x: boolean;
     y: boolean;
     z: boolean;
+}
+
+/** A 3-dimensional vector. @public */
+export declare interface Vector3Like {
+    x: number;
+    y: number;
+    z: number;
 }
 
 /**
@@ -3001,7 +3368,7 @@ export declare interface WorldOptions {
     /** The tick rate for the world. */
     tickRate?: number;
     /** The gravity vector for the world. */
-    gravity?: Vector3;
+    gravity?: Vector3Like;
 }
 
 export { }

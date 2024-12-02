@@ -9,7 +9,7 @@ Makes the camera look at a position. If the camera was previously tracking an en
 **Signature:**
 
 ```typescript
-lookAtPosition(position: Vector3): void;
+lookAtPosition(position: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ position
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

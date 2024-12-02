@@ -9,11 +9,11 @@ Gets the linear velocity of the rigid body.
 **Signature:**
 
 ```typescript
-getLinearVelocity(): Vector3;
+getLinearVelocity(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The linear velocity of the rigid body.
 

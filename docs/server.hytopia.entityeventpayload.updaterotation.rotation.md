@@ -7,5 +7,5 @@
 **Signature:**
 
 ```typescript
-rotation: Rotation;
+rotation: QuaternionLike;
 ```

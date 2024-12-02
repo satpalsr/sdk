@@ -9,7 +9,7 @@ Spawn the chunk in the world.
 **Signature:**
 
 ```typescript
-spawn(world: World, originCoordinate: Vector3): void;
+spawn(world: World, originCoordinate: Vector3Like): void;
 ```
 
 ## Parameters
@@ -53,7 +53,7 @@ originCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

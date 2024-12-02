@@ -9,7 +9,7 @@ Set the block at a global coordinate by block type id, automatically creating a 
 **Signature:**
 
 ```typescript
-setBlock(globalCoordinate: Vector3, blockTypeId: number): void;
+setBlock(globalCoordinate: Vector3Like, blockTypeId: number): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ globalCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

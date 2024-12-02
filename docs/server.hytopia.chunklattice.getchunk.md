@@ -9,7 +9,7 @@ Get a chunk by its origin coordinate.
 **Signature:**
 
 ```typescript
-getChunk(originCoordinate: Vector3): Chunk | undefined;
+getChunk(originCoordinate: Vector3Like): Chunk | undefined;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ originCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

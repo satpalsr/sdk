@@ -9,7 +9,7 @@ Sets the translation of the rigid body.
 **Signature:**
 
 ```typescript
-setTranslation(translation: Vector): void;
+setTranslation(translation: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ translation
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

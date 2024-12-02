@@ -178,7 +178,7 @@ _(Optional)_ The playback speed of the audio. Defaults to 1.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

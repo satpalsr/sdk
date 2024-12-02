@@ -9,5 +9,5 @@ The rotation of the rigid body.
 **Signature:**
 
 ```typescript
-rotation?: Rotation;
+rotation?: QuaternionLike;
 ```

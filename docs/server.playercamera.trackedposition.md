@@ -9,5 +9,5 @@ The position the camera will constantly look at, even if the camera attached ent
 **Signature:**
 
 ```typescript
-get trackedPosition(): Vector3 | undefined;
+get trackedPosition(): Vector3Like | undefined;
 ```

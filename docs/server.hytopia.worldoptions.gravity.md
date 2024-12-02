@@ -9,5 +9,5 @@ The gravity vector for the world.
 **Signature:**
 
 ```typescript
-gravity?: Vector3;
+gravity?: Vector3Like;
 ```

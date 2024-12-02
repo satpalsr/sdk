@@ -121,7 +121,7 @@ _(Optional)_ The angular damping of the rigid body.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -292,7 +292,7 @@ _(Optional)_ The linear damping of the rigid body.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -311,7 +311,7 @@ _(Optional)_ The linear velocity of the rigid body.
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 
 </td><td>
@@ -387,7 +387,7 @@ _(Optional)_ The soft continuous collision detection prediction of the rigid bod
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

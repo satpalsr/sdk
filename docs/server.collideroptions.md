@@ -140,7 +140,7 @@ _(Optional)_ The friction of the collider.
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -273,7 +273,7 @@ _(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, c
 
 </td><td>
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 
 </td><td>
@@ -292,7 +292,7 @@ _(Optional)_ The relative rotation of the collider. Relative to parent rigid bod
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

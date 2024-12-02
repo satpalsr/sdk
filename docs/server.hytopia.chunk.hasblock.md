@@ -9,7 +9,7 @@ Check if a block exists at a specific local coordinate.
 **Signature:**
 
 ```typescript
-hasBlock(localCoordinate: Vector3): boolean;
+hasBlock(localCoordinate: Vector3Like): boolean;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ localCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

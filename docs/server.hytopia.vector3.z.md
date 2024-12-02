@@ -4,8 +4,12 @@
 
 ## HYTOPIA.Vector3.z property
 
+The z-component of the vector.
+
 **Signature:**
 
 ```typescript
-z: number;
+get z(): number;
+
+set z(value: number);
 ```

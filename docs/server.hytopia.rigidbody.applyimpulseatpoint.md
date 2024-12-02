@@ -9,7 +9,7 @@ Applies an impulse to the rigid body at a point.
 **Signature:**
 
 ```typescript
-applyImpulseAtPoint(impulse: Vector, point: Vector): void;
+applyImpulseAtPoint(impulse: Vector3Like, point: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ impulse
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>
@@ -53,7 +53,7 @@ point
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

@@ -9,7 +9,7 @@ Moves the entity at a given speed in a straight line to a target coordinate.
 **Signature:**
 
 ```typescript
-move(target: Vector3, speed: number, options?: MoveOptions): void;
+move(target: Vector3Like, speed: number, options?: MoveOptions): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ target
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

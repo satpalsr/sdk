@@ -9,7 +9,7 @@ Adds a force to the rigid body.
 **Signature:**
 
 ```typescript
-addForce(force: Vector): void;
+addForce(force: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ force
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

@@ -9,7 +9,7 @@ Sets the position the camera will constantly look at, even if the camera attache
 **Signature:**
 
 ```typescript
-setTrackedPosition(position: Vector3 | undefined): void;
+setTrackedPosition(position: Vector3Like | undefined): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ position
 
 </td><td>
 
-[Vector3](./server.vector3.md) \| undefined
+[Vector3Like](./server.vector3like.md) \| undefined
 
 
 </td><td>

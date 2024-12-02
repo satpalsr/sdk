@@ -9,7 +9,7 @@ Check if a chunk exists by its origin coordinate.
 **Signature:**
 
 ```typescript
-hasChunk(originCoordinate: Vector3): boolean;
+hasChunk(originCoordinate: Vector3Like): boolean;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ originCoordinate
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

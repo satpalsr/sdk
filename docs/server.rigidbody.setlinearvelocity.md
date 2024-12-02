@@ -9,7 +9,7 @@ Sets the linear velocity of the rigid body.
 **Signature:**
 
 ```typescript
-setLinearVelocity(linearVelocity: Vector): void;
+setLinearVelocity(linearVelocity: Vector3Like): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ linearVelocity
 
 </td><td>
 
-Vector
+[Vector3Like](./server.vector3like.md)
 
 
 </td><td>

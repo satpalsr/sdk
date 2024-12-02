@@ -9,11 +9,11 @@ Gets the next kinematic translation of the rigid body.
 **Signature:**
 
 ```typescript
-getNextKinematicTranslation(): Vector3;
+getNextKinematicTranslation(): Vector3Like;
 ```
 **Returns:**
 
-[Vector3](./server.vector3.md)
+[Vector3Like](./server.vector3like.md)
 
 The next kinematic translation of the rigid body.
 

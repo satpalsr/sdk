@@ -9,11 +9,11 @@ Gets the relative rotation of the collider.
 **Signature:**
 
 ```typescript
-getRelativeRotation(): Rotation;
+getRelativeRotation(): QuaternionLike;
 ```
 **Returns:**
 
-[Rotation](./server.rotation.md)
+[QuaternionLike](./server.quaternionlike.md)
 
 The relative rotation of the collider.
 

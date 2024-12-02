@@ -228,6 +228,17 @@ Manages all connected players in a game server.
 </td></tr>
 <tr><td>
 
+[Quaternion](./server.quaternion.md)
+
+
+</td><td>
+
+Represents a quaternion.
+
+
+</td></tr>
+<tr><td>
+
 [RigidBody](./server.rigidbody.md)
 
 
@@ -256,6 +267,17 @@ A simple character controller with basic movement functions.
 </td><td>
 
 Represents the physics simulation for a world.
+
+
+</td></tr>
+<tr><td>
+
+[Vector3](./server.vector3.md)
+
+
+</td><td>
+
+Represents a 3-dimensional vector.
 
 
 </td></tr>
@@ -583,6 +605,17 @@ Options for creating a PlayerEntity instance.
 </td></tr>
 <tr><td>
 
+[QuaternionLike](./server.quaternionlike.md)
+
+
+</td><td>
+
+A quaternion.
+
+
+</td></tr>
+<tr><td>
+
 [RgbColor](./server.rgbcolor.md)
 
 
@@ -605,17 +638,6 @@ Options for creating a RigidBody instance.
 </td></tr>
 <tr><td>
 
-[Rotation](./server.rotation.md)
-
-
-</td><td>
-
-A rotation in quaternion form.
-
-
-</td></tr>
-<tr><td>
-
 [SpdMatrix3](./server.spdmatrix3.md)
 
 
@@ -627,23 +649,23 @@ A 3x3 symmetric positive-definite matrix for spatial dynamics.
 </td></tr>
 <tr><td>
 
-[Vector3](./server.vector3.md)
-
-
-</td><td>
-
-A 3-dimensional vector.
-
-
-</td></tr>
-<tr><td>
-
 [Vector3Boolean](./server.vector3boolean.md)
 
 
 </td><td>
 
 A 3-dimensional vector of boolean values.
+
+
+</td></tr>
+<tr><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+A 3-dimensional vector.
 
 
 </td></tr>
