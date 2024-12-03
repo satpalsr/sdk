@@ -90,7 +90,7 @@ Description
 </td></tr>
 <tr><td>
 
-[SetHiddenModelNodes](./server.playercameraeventpayload.sethiddenmodelnodes.md)
+[SetMode](./server.playercameraeventpayload.setmode.md)
 
 
 </td><td>
@@ -99,7 +99,7 @@ Description
 </td></tr>
 <tr><td>
 
-[SetMode](./server.playercameraeventpayload.setmode.md)
+[SetModelHiddenNodes](./server.playercameraeventpayload.setmodelhiddennodes.md)
 
 
 </td><td>

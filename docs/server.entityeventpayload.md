@@ -36,6 +36,15 @@ Description
 </td></tr>
 <tr><td>
 
+[SetModelHiddenNodes](./server.entityeventpayload.setmodelhiddennodes.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [SetTintColor](./server.entityeventpayload.settintcolor.md)
 
 

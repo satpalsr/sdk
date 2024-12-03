@@ -90,7 +90,7 @@ Description
 </td></tr>
 <tr><td>
 
-[SetHiddenModelNodes](./server.hytopia.playercameraeventpayload.sethiddenmodelnodes.md)
+[SetMode](./server.hytopia.playercameraeventpayload.setmode.md)
 
 
 </td><td>
@@ -99,7 +99,7 @@ Description
 </td></tr>
 <tr><td>
 
-[SetMode](./server.hytopia.playercameraeventpayload.setmode.md)
+[SetModelHiddenNodes](./server.hytopia.playercameraeventpayload.setmodelhiddennodes.md)
 
 
 </td><td>

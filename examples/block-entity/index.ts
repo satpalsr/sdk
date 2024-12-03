@@ -66,7 +66,7 @@ startServer(world => {
     rigidBodyOptions: {
       type: RigidBodyType.KINEMATIC_VELOCITY,
       angularVelocity: { x: 1, y: 1, z: 1 },
-    }
+    },
   });
 
   spinningBlock.spawn(world, { x: 0, y: 10, z: -6 });
@@ -88,7 +88,7 @@ startServer(world => {
     if (started) {
       world.chatManager.sendBroadcastMessage('The sand block was pushed!');
     }
-  }
+  };
 
   movableBlock.spawn(world, { x: -4, y: 10, z: -6 });
 
@@ -103,7 +103,7 @@ startServer(world => {
       type: RigidBodyType.DYNAMIC,
       additionalMass: 10,
       enabledRotations: { x: false, y: false, z: false },
-    }
+    },
   });
 
   heavyBlock.spawn(world, { x: -4, y: 10, z: -1 });
@@ -122,10 +122,10 @@ startServer(world => {
         {
           shape: ColliderShape.BLOCK,
           halfExtents: { x: 0.5, y: 0.5, z: 0.5 },
-          bounciness: 2
-        }
-      ]
-    }
+          bounciness: 2,
+        },
+      ],
+    },
   });
 
   bouncingBlock.spawn(world, { x: 0, y: 10, z: -3 });

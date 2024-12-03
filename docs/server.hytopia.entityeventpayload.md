@@ -36,6 +36,15 @@ Description
 </td></tr>
 <tr><td>
 
+[SetModelHiddenNodes](./server.hytopia.entityeventpayload.setmodelhiddennodes.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [SetTintColor](./server.hytopia.entityeventpayload.settintcolor.md)
 
 

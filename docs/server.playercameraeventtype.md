@@ -130,12 +130,12 @@ SET\_FOV
 </td></tr>
 <tr><td>
 
-SET\_HIDDEN\_MODEL\_NODES
+SET\_MODE
 
 
 </td><td>
 
-`"PLAYER_CAMERA.SET_HIDDEN_MODEL_NODES"`
+`"PLAYER_CAMERA.SET_MODE"`
 
 
 </td><td>
@@ -144,12 +144,12 @@ SET\_HIDDEN\_MODEL\_NODES
 </td></tr>
 <tr><td>
 
-SET\_MODE
+SET\_MODEL\_HIDDEN\_NODES
 
 
 </td><td>
 
-`"PLAYER_CAMERA.SET_MODE"`
+`"PLAYER_CAMERA.SET_MODEL_HIDDEN_NODES"`
 
 
 </td><td>

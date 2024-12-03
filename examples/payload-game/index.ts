@@ -34,8 +34,8 @@ import {
 import type {
   PlayerInputState,
   PlayerOrientationState,
-  Rotation,
-  Vector3,
+  QuaternionLike,
+  Vector3Like,
 } from 'hytopia';
 
 import map from './assets/map.json';
@@ -78,7 +78,7 @@ const PAYLOAD_WAYPOINT_ENEMY_SPAWNS = [
 // Simple game state tracking via globals.
 const enemyHealth: Record<number, number> = {}; // Entity id -> health
 const enemyPathfindAccumulators: Record<number, number> = {}; // Entity id -> accumulator, so we don't pathfind each tick
-const enemyPathfindingTargets: Record<number, Vector3> = {}; // Entity id -> target coordinate
+const enemyPathfindingTargets: Record<number, Vector3Like> = {}; // Entity id -> target coordinate
 const playerEntityHealth: Record<number, number> = {}; // Player entity id -> health
 let started = false; // Game started flag
 let payloadEntity: Entity | null = null; // Payload entity
@@ -91,7 +91,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
   const chatManager = world.chatManager;
 
   // Enable debug rendering
-//  world.simulation.enableDebugRendering(true);
+  //  world.simulation.enableDebugRendering(true);
 
   // Load Map
   world.loadMap(map);
@@ -109,7 +109,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     // Setup a first person camera for the player
     player.camera.setMode(PlayerCameraMode.FIRST_PERSON); // set first person mode
     player.camera.setOffset({ x: 0, y: 0.4, z: 0 }); // shift camrea up on Y axis so we see from "head" perspective.
-    player.camera.setHiddenModelNodes([ 'head', 'neck' ]); // hide the head node from the model so we don't see it in the camera, this is just hidden for the controlling player.
+    player.camera.setModelHiddenNodes([ 'head', 'neck' ]); // hide the head node from the model so we don't see it in the camera, this is just hidden for the controlling player.
     player.camera.setForwardOffset(0.3); // Shift the camera forward so we are looking slightly in front of where the player is looking.
 
     // Spawn the player entity at a random coordinate
@@ -207,7 +207,7 @@ function startEnemySpawnLoop(world: World) {
   spawn();
 }
 
-function spawnBullet(world: World, coordinate: Vector3, direction: Vector3) {
+function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Like) {
   // Spawn a bullet when the player shoots.
   const bullet = new Entity({
     name: 'Bullet',
@@ -340,7 +340,7 @@ function spawnPayloadEntity(world: World) {
   })).play(world);
 } 
 
-function spawnSpider(world: World, coordinate: Vector3) {
+function spawnSpider(world: World, coordinate: Vector3Like) {
   const baseScale = 0.5;
   const baseSpeed = 3;
   const randomScaleMultiplier = Math.random() * 2 + 1; // Random value between 1 and 3 // Random scale multiplier to make each spider a different size
@@ -529,7 +529,7 @@ function damagePlayer(playerEntity: PlayerEntity) {
   }
 }
 
-function getDirectionFromOrientation(orientationState: PlayerOrientationState): Vector3 {
+function getDirectionFromOrientation(orientationState: PlayerOrientationState): Vector3Like {
   const { yaw, pitch } = orientationState;
   const cosPitch = Math.cos(pitch);
   
@@ -540,7 +540,7 @@ function getDirectionFromOrientation(orientationState: PlayerOrientationState): 
   };
 }
 
-function getRotationFromDirection(direction: Vector3): Rotation {
+function getRotationFromDirection(direction: Vector3Like): QuaternionLike {
   // Calculate yaw (rotation around Y-axis)
   const yaw = Math.atan2(-direction.x, -direction.z);
   

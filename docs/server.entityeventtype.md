@@ -46,6 +46,20 @@ DESPAWN
 </td></tr>
 <tr><td>
 
+SET\_MODEL\_HIDDEN\_NODES
+
+
+</td><td>
+
+`"ENTITY.SET_MODEL_HIDDEN_NODES"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SET\_TINT\_COLOR
 
 

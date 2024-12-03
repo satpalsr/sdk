@@ -1292,6 +1292,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1306,6 +1307,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get blockTextureUri(): string | undefined;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     get modelUri(): string | undefined;
+    /** The nodes to hide on the entity's model. */
+    get modelHiddenNodes(): ReadonlySet<string>;
     /** The looped animations to start when the entity is spawned. */
     get modelLoopedAnimations(): ReadonlySet<string>;
     /** The scale of the entity's model. */
@@ -1335,6 +1338,13 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param characterController - The character controller to set.
      */
     setCharacterController(characterController: BaseCharacterController): void;
+    /**
+     * Sets the nodes to hide on the entity's model. Matched nodes
+     * will be hidden for all players. Uses case insensitive
+     * substring matching.
+     * @param modelHiddenNodes - The nodes to hide on the entity's model.
+     */
+    setModelHiddenNodes(modelHiddenNodes: string[]): void;
     /**
      * Sets the tint color of the entity.
      * @param tintColor - The tint color of the entity.
@@ -1371,6 +1381,10 @@ export declare namespace EntityEventPayload {
     export interface Despawn {
         entity: Entity;
     }
+    export interface SetModelHiddenNodes {
+        entity: Entity;
+        modelHiddenNodes: Set<string>;
+    }
     export interface SetTintColor {
         entity: Entity;
         tintColor: RgbColor | undefined;
@@ -1403,6 +1417,7 @@ export declare namespace EntityEventPayload {
 /** Event types an Entity instance can emit. @public */
 export declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
+    SET_MODEL_HIDDEN_NODES = "ENTITY.SET_MODEL_HIDDEN_NODES",
     SET_TINT_COLOR = "ENTITY.SET_TINT_COLOR",
     SPAWN = "ENTITY.SPAWN",
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
@@ -1486,6 +1501,8 @@ export declare interface EntityOptions {
     createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
+    /** The nodes to hide on the entity's model. */
+    modelHiddenNodes?: string[];
     /** The looped animations to start when the entity is spawned. */
     modelLoopedAnimations?: string[];
     /** The scale of the entity's model. */
@@ -1869,7 +1886,7 @@ export declare class PlayerCamera implements protocol.Serializable {
     /** The field of view of the camera. */
     get fov(): number;
     /** The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching. */
-    get hiddenModelNodes(): Set<string>;
+    get modelHiddenNodes(): Set<string>;
     /** The mode of the camera. */
     get mode(): PlayerCameraMode;
     /** The relative offset of the camera from the entity or position it is attached to. */
@@ -1926,9 +1943,9 @@ export declare class PlayerCamera implements protocol.Serializable {
      * Sets the nodes of the model the camera is attached to
      * that will not be rendered for the player. Uses case
      * insensitive substring matching.
-     * @param hiddenModelNodes - Determines nodes to hide that match these case insensitive substrings.
+     * @param modelHiddenNodes - Determines nodes to hide that match these case insensitive substrings.
      */
-    setHiddenModelNodes(hiddenModelNodes: string[]): void;
+    setModelHiddenNodes(modelHiddenNodes: string[]): void;
     /**
      * Sets the mode of the camera.
      * @param mode - The mode to set.
@@ -1991,9 +2008,9 @@ export declare namespace PlayerCameraEventPayload {
         playerCamera: PlayerCamera;
         fov: number;
     }
-    export interface SetHiddenModelNodes {
+    export interface SetModelHiddenNodes {
         playerCamera: PlayerCamera;
-        hiddenModelNodes: string[];
+        modelHiddenNodes: Set<string>;
     }
     export interface SetMode {
         playerCamera: PlayerCamera;
@@ -2026,7 +2043,7 @@ export declare enum PlayerCameraEventType {
     SET_FILM_OFFSET = "PLAYER_CAMERA.SET_FILM_OFFSET",
     SET_FORWARD_OFFSET = "PLAYER_CAMERA.SET_FORWARD_OFFSET",
     SET_FOV = "PLAYER_CAMERA.SET_FOV",
-    SET_HIDDEN_MODEL_NODES = "PLAYER_CAMERA.SET_HIDDEN_MODEL_NODES",
+    SET_MODEL_HIDDEN_NODES = "PLAYER_CAMERA.SET_MODEL_HIDDEN_NODES",
     SET_MODE = "PLAYER_CAMERA.SET_MODE",
     SET_OFFSET = "PLAYER_CAMERA.SET_OFFSET",
     SET_TRACKED_ENTITY = "PLAYER_CAMERA.SET_TRACKED_ENTITY",

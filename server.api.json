@@ -9062,6 +9062,41 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#modelHiddenNodes:member",
+              "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get modelHiddenNodes(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlySet",
+                  "canonicalReference": "!ReadonlySet:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "modelHiddenNodes",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#modelLoopedAnimations:member",
               "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
               "excerptTokens": [
@@ -9563,6 +9598,54 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Entity#setModelHiddenNodes:member(1)",
+              "docComment": "/**\n * Sets the nodes to hide on the entity's model. Matched nodes will be hidden for all players. Uses case insensitive substring matching.\n *\n * @param modelHiddenNodes - The nodes to hide on the entity's model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setModelHiddenNodes(modelHiddenNodes: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelHiddenNodes",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setModelHiddenNodes"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Entity#setTintColor:member(1)",
               "docComment": "/**\n * Sets the tint color of the entity.\n *\n * @param tintColor - The tint color of the entity.\n */\n",
               "excerptTokens": [
@@ -9991,6 +10074,83 @@
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.SetModelHiddenNodes:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetModelHiddenNodes "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetModelHiddenNodes",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetModelHiddenNodes#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetModelHiddenNodes#modelHiddenNodes:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "modelHiddenNodes: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Set",
+                      "canonicalReference": "!Set:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "<string>"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "modelHiddenNodes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
                   }
                 }
               ],
@@ -10532,6 +10692,27 @@
               },
               "releaseTag": "Public",
               "name": "DESPAWN"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.SET_MODEL_HIDDEN_NODES:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_MODEL_HIDDEN_NODES = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.SET_MODEL_HIDDEN_NODES\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_MODEL_HIDDEN_NODES"
             },
             {
               "kind": "EnumMember",
@@ -11107,6 +11288,33 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#modelHiddenNodes:member",
+              "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelHiddenNodes?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelHiddenNodes",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
@@ -21225,6 +21433,41 @@
                 },
                 {
                   "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#modelHiddenNodes:member",
+                  "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get modelHiddenNodes(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "ReadonlySet",
+                      "canonicalReference": "!ReadonlySet:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "<string>"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "modelHiddenNodes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#modelLoopedAnimations:member",
                   "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
                   "excerptTokens": [
@@ -21726,6 +21969,54 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Entity#setModelHiddenNodes:member(1)",
+                  "docComment": "/**\n * Sets the nodes to hide on the entity's model. Matched nodes will be hidden for all players. Uses case insensitive substring matching.\n *\n * @param modelHiddenNodes - The nodes to hide on the entity's model.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "setModelHiddenNodes(modelHiddenNodes: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "modelHiddenNodes",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "setModelHiddenNodes"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#setTintColor:member(1)",
                   "docComment": "/**\n * Sets the tint color of the entity.\n *\n * @param tintColor - The tint color of the entity.\n */\n",
                   "excerptTokens": [
@@ -22154,6 +22445,83 @@
                       "propertyTypeTokenRange": {
                         "startIndex": 1,
                         "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetModelHiddenNodes:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface SetModelHiddenNodes "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "SetModelHiddenNodes",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetModelHiddenNodes#entity:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "entity: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "Entity",
+                          "canonicalReference": "server!Entity:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "entity",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.EntityEventPayload.SetModelHiddenNodes#modelHiddenNodes:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "modelHiddenNodes: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "Set",
+                          "canonicalReference": "!Set:interface"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": "<string>"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "modelHiddenNodes",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 3
                       }
                     }
                   ],
@@ -22695,6 +23063,27 @@
                   },
                   "releaseTag": "Public",
                   "name": "DESPAWN"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.EntityEventType.SET_MODEL_HIDDEN_NODES:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "SET_MODEL_HIDDEN_NODES = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"ENTITY.SET_MODEL_HIDDEN_NODES\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "SET_MODEL_HIDDEN_NODES"
                 },
                 {
                   "kind": "EnumMember",
@@ -23270,6 +23659,33 @@
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 5
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.EntityOptions#modelHiddenNodes:member",
+                  "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "modelHiddenNodes?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "modelHiddenNodes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
@@ -25142,41 +25558,6 @@
                   "isAbstract": false
                 },
                 {
-                  "kind": "Property",
-                  "canonicalReference": "server!HYTOPIA.PlayerCamera#hiddenModelNodes:member",
-                  "docComment": "/**\n * The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "get hiddenModelNodes(): "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Set",
-                      "canonicalReference": "!Set:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "<string>"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": true,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "hiddenModelNodes",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 3
-                  },
-                  "isStatic": false,
-                  "isProtected": false,
-                  "isAbstract": false
-                },
-                {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.PlayerCamera#lookAtEntity:member(1)",
                   "docComment": "/**\n * Makes the camera look at an entity. If the camera was previously tracking an entity or position, it will stop tracking.\n *\n * @param entity - The entity to look at.\n */\n",
@@ -25300,6 +25681,41 @@
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.PlayerCamera#modelHiddenNodes:member",
+                  "docComment": "/**\n * The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get modelHiddenNodes(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Set",
+                      "canonicalReference": "!Set:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "<string>"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "modelHiddenNodes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
                   },
                   "isStatic": false,
                   "isProtected": false,
@@ -25611,54 +26027,6 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.PlayerCamera#setHiddenModelNodes:member(1)",
-                  "docComment": "/**\n * Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n *\n * @param hiddenModelNodes - Determines nodes to hide that match these case insensitive substrings.\n */\n",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "setHiddenModelNodes(hiddenModelNodes: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string[]"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "): "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "void"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isStatic": false,
-                  "returnTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "releaseTag": "Public",
-                  "isProtected": false,
-                  "overloadIndex": 1,
-                  "parameters": [
-                    {
-                      "parameterName": "hiddenModelNodes",
-                      "parameterTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      },
-                      "isOptional": false
-                    }
-                  ],
-                  "isOptional": false,
-                  "isAbstract": false,
-                  "name": "setHiddenModelNodes"
-                },
-                {
-                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.PlayerCamera#setMode:member(1)",
                   "docComment": "/**\n * Sets the mode of the camera.\n *\n * @param mode - The mode to set.\n */\n",
                   "excerptTokens": [
@@ -25705,6 +26073,54 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "setMode"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.PlayerCamera#setModelHiddenNodes:member(1)",
+                  "docComment": "/**\n * Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n *\n * @param modelHiddenNodes - Determines nodes to hide that match these case insensitive substrings.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "setModelHiddenNodes(modelHiddenNodes: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "modelHiddenNodes",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "setModelHiddenNodes"
                 },
                 {
                   "kind": "Method",
@@ -26542,78 +26958,6 @@
                 },
                 {
                   "kind": "Interface",
-                  "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetHiddenModelNodes:interface",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "interface SetHiddenModelNodes "
-                    }
-                  ],
-                  "releaseTag": "Public",
-                  "name": "SetHiddenModelNodes",
-                  "preserveMemberOrder": false,
-                  "members": [
-                    {
-                      "kind": "PropertySignature",
-                      "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetHiddenModelNodes#hiddenModelNodes:member",
-                      "docComment": "",
-                      "excerptTokens": [
-                        {
-                          "kind": "Content",
-                          "text": "hiddenModelNodes: "
-                        },
-                        {
-                          "kind": "Content",
-                          "text": "string[]"
-                        },
-                        {
-                          "kind": "Content",
-                          "text": ";"
-                        }
-                      ],
-                      "isReadonly": false,
-                      "isOptional": false,
-                      "releaseTag": "Public",
-                      "name": "hiddenModelNodes",
-                      "propertyTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      }
-                    },
-                    {
-                      "kind": "PropertySignature",
-                      "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetHiddenModelNodes#playerCamera:member",
-                      "docComment": "",
-                      "excerptTokens": [
-                        {
-                          "kind": "Content",
-                          "text": "playerCamera: "
-                        },
-                        {
-                          "kind": "Reference",
-                          "text": "PlayerCamera",
-                          "canonicalReference": "server!PlayerCamera:class"
-                        },
-                        {
-                          "kind": "Content",
-                          "text": ";"
-                        }
-                      ],
-                      "isReadonly": false,
-                      "isOptional": false,
-                      "releaseTag": "Public",
-                      "name": "playerCamera",
-                      "propertyTypeTokenRange": {
-                        "startIndex": 1,
-                        "endIndex": 2
-                      }
-                    }
-                  ],
-                  "extendsTokenRanges": []
-                },
-                {
-                  "kind": "Interface",
                   "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetMode:interface",
                   "docComment": "",
                   "excerptTokens": [
@@ -26657,6 +27001,83 @@
                     {
                       "kind": "PropertySignature",
                       "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetMode#playerCamera:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "playerCamera: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "PlayerCamera",
+                          "canonicalReference": "server!PlayerCamera:class"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "playerCamera",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      }
+                    }
+                  ],
+                  "extendsTokenRanges": []
+                },
+                {
+                  "kind": "Interface",
+                  "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetModelHiddenNodes:interface",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "interface SetModelHiddenNodes "
+                    }
+                  ],
+                  "releaseTag": "Public",
+                  "name": "SetModelHiddenNodes",
+                  "preserveMemberOrder": false,
+                  "members": [
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetModelHiddenNodes#modelHiddenNodes:member",
+                      "docComment": "",
+                      "excerptTokens": [
+                        {
+                          "kind": "Content",
+                          "text": "modelHiddenNodes: "
+                        },
+                        {
+                          "kind": "Reference",
+                          "text": "Set",
+                          "canonicalReference": "!Set:interface"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": "<string>"
+                        },
+                        {
+                          "kind": "Content",
+                          "text": ";"
+                        }
+                      ],
+                      "isReadonly": false,
+                      "isOptional": false,
+                      "releaseTag": "Public",
+                      "name": "modelHiddenNodes",
+                      "propertyTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 3
+                      }
+                    },
+                    {
+                      "kind": "PropertySignature",
+                      "canonicalReference": "server!HYTOPIA.PlayerCameraEventPayload.SetModelHiddenNodes#playerCamera:member",
                       "docComment": "",
                       "excerptTokens": [
                         {
@@ -27150,27 +27571,6 @@
                 },
                 {
                   "kind": "EnumMember",
-                  "canonicalReference": "server!HYTOPIA.PlayerCameraEventType.SET_HIDDEN_MODEL_NODES:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "SET_HIDDEN_MODEL_NODES = "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "\"PLAYER_CAMERA.SET_HIDDEN_MODEL_NODES\""
-                    }
-                  ],
-                  "initializerTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "releaseTag": "Public",
-                  "name": "SET_HIDDEN_MODEL_NODES"
-                },
-                {
-                  "kind": "EnumMember",
                   "canonicalReference": "server!HYTOPIA.PlayerCameraEventType.SET_MODE:member",
                   "docComment": "",
                   "excerptTokens": [
@@ -27189,6 +27589,27 @@
                   },
                   "releaseTag": "Public",
                   "name": "SET_MODE"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.PlayerCameraEventType.SET_MODEL_HIDDEN_NODES:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "SET_MODEL_HIDDEN_NODES = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"PLAYER_CAMERA.SET_MODEL_HIDDEN_NODES\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "SET_MODEL_HIDDEN_NODES"
                 },
                 {
                   "kind": "EnumMember",
@@ -37802,41 +38223,6 @@
               "isAbstract": false
             },
             {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerCamera#hiddenModelNodes:member",
-              "docComment": "/**\n * The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get hiddenModelNodes(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Set",
-                  "canonicalReference": "!Set:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<string>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "hiddenModelNodes",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!PlayerCamera#lookAtEntity:member(1)",
               "docComment": "/**\n * Makes the camera look at an entity. If the camera was previously tracking an entity or position, it will stop tracking.\n *\n * @param entity - The entity to look at.\n */\n",
@@ -37960,6 +38346,41 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerCamera#modelHiddenNodes:member",
+              "docComment": "/**\n * The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get modelHiddenNodes(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Set",
+                  "canonicalReference": "!Set:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "modelHiddenNodes",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
               },
               "isStatic": false,
               "isProtected": false,
@@ -38271,54 +38692,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!PlayerCamera#setHiddenModelNodes:member(1)",
-              "docComment": "/**\n * Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n *\n * @param hiddenModelNodes - Determines nodes to hide that match these case insensitive substrings.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setHiddenModelNodes(hiddenModelNodes: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "hiddenModelNodes",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setHiddenModelNodes"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!PlayerCamera#setMode:member(1)",
               "docComment": "/**\n * Sets the mode of the camera.\n *\n * @param mode - The mode to set.\n */\n",
               "excerptTokens": [
@@ -38365,6 +38738,54 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "setMode"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerCamera#setModelHiddenNodes:member(1)",
+              "docComment": "/**\n * Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.\n *\n * @param modelHiddenNodes - Determines nodes to hide that match these case insensitive substrings.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setModelHiddenNodes(modelHiddenNodes: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelHiddenNodes",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setModelHiddenNodes"
             },
             {
               "kind": "Method",
@@ -39202,78 +39623,6 @@
             },
             {
               "kind": "Interface",
-              "canonicalReference": "server!PlayerCameraEventPayload.SetHiddenModelNodes:interface",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interface SetHiddenModelNodes "
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "SetHiddenModelNodes",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!PlayerCameraEventPayload.SetHiddenModelNodes#hiddenModelNodes:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "hiddenModelNodes: "
-                    },
-                    {
-                      "kind": "Content",
-                      "text": "string[]"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "hiddenModelNodes",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!PlayerCameraEventPayload.SetHiddenModelNodes#playerCamera:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "playerCamera: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "PlayerCamera",
-                      "canonicalReference": "server!PlayerCamera:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "playerCamera",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
-            },
-            {
-              "kind": "Interface",
               "canonicalReference": "server!PlayerCameraEventPayload.SetMode:interface",
               "docComment": "",
               "excerptTokens": [
@@ -39317,6 +39666,83 @@
                 {
                   "kind": "PropertySignature",
                   "canonicalReference": "server!PlayerCameraEventPayload.SetMode#playerCamera:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "playerCamera: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "PlayerCamera",
+                      "canonicalReference": "server!PlayerCamera:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "playerCamera",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!PlayerCameraEventPayload.SetModelHiddenNodes:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetModelHiddenNodes "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetModelHiddenNodes",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!PlayerCameraEventPayload.SetModelHiddenNodes#modelHiddenNodes:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "modelHiddenNodes: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Set",
+                      "canonicalReference": "!Set:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "<string>"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "modelHiddenNodes",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!PlayerCameraEventPayload.SetModelHiddenNodes#playerCamera:member",
                   "docComment": "",
                   "excerptTokens": [
                     {
@@ -39810,27 +40236,6 @@
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "server!PlayerCameraEventType.SET_HIDDEN_MODEL_NODES:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "SET_HIDDEN_MODEL_NODES = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"PLAYER_CAMERA.SET_HIDDEN_MODEL_NODES\""
-                }
-              ],
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "SET_HIDDEN_MODEL_NODES"
-            },
-            {
-              "kind": "EnumMember",
               "canonicalReference": "server!PlayerCameraEventType.SET_MODE:member",
               "docComment": "",
               "excerptTokens": [
@@ -39849,6 +40254,27 @@
               },
               "releaseTag": "Public",
               "name": "SET_MODE"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!PlayerCameraEventType.SET_MODEL_HIDDEN_NODES:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_MODEL_HIDDEN_NODES = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_CAMERA.SET_MODEL_HIDDEN_NODES\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_MODEL_HIDDEN_NODES"
             },
             {
               "kind": "EnumMember",

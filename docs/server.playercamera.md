@@ -156,27 +156,6 @@ The field of view of the camera.
 </td></tr>
 <tr><td>
 
-[hiddenModelNodes](./server.playercamera.hiddenmodelnodes.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-Set&lt;string&gt;
-
-
-</td><td>
-
-The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.
-
-
-</td></tr>
-<tr><td>
-
 [mode](./server.playercamera.mode.md)
 
 
@@ -193,6 +172,27 @@ The nodes of the model the camera is attached to that will not be rendered for t
 </td><td>
 
 The mode of the camera.
+
+
+</td></tr>
+<tr><td>
+
+[modelHiddenNodes](./server.playercamera.modelhiddennodes.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+Set&lt;string&gt;
+
+
+</td><td>
+
+The nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.
 
 
 </td></tr>
@@ -421,20 +421,6 @@ Sets the field of view of the camera.
 </td></tr>
 <tr><td>
 
-[setHiddenModelNodes(hiddenModelNodes)](./server.playercamera.sethiddenmodelnodes.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.
-
-
-</td></tr>
-<tr><td>
-
 [setMode(mode)](./server.playercamera.setmode.md)
 
 
@@ -444,6 +430,20 @@ Sets the nodes of the model the camera is attached to that will not be rendered 
 </td><td>
 
 Sets the mode of the camera.
+
+
+</td></tr>
+<tr><td>
+
+[setModelHiddenNodes(modelHiddenNodes)](./server.playercamera.setmodelhiddennodes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the nodes of the model the camera is attached to that will not be rendered for the player. Uses case insensitive substring matching.
 
 
 </td></tr>

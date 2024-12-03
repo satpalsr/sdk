@@ -228,6 +228,27 @@ Whether the entity is spawned.
 </td></tr>
 <tr><td>
 
+[modelHiddenNodes](./server.hytopia.entity.modelhiddennodes.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+ReadonlySet&lt;string&gt;
+
+
+</td><td>
+
+The nodes to hide on the entity's model.
+
+
+</td></tr>
+<tr><td>
+
 [modelLoopedAnimations](./server.hytopia.entity.modelloopedanimations.md)
 
 
@@ -551,6 +572,20 @@ Despawns the entity from the world.
 </td><td>
 
 Sets the character controller for the entity.
+
+
+</td></tr>
+<tr><td>
+
+[setModelHiddenNodes(modelHiddenNodes)](./server.hytopia.entity.setmodelhiddennodes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the nodes to hide on the entity's model. Matched nodes will be hidden for all players. Uses case insensitive substring matching.
 
 
 </td></tr>

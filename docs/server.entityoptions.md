@@ -94,6 +94,25 @@ _(Optional)_ A function that creates a custom character controller for the entit
 </td></tr>
 <tr><td>
 
+[modelHiddenNodes?](./server.entityoptions.modelhiddennodes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ The nodes to hide on the entity's model.
+
+
+</td></tr>
+<tr><td>
+
 [modelLoopedAnimations?](./server.entityoptions.modelloopedanimations.md)
 
 
