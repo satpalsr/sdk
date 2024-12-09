@@ -207,6 +207,48 @@ The unique identifier for the entity.
 </td></tr>
 <tr><td>
 
+[isBlockEntity](./server.entity.isblockentity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity is a block entity.
+
+
+</td></tr>
+<tr><td>
+
+[isModelEntity](./server.entity.ismodelentity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity is a model entity.
+
+
+</td></tr>
+<tr><td>
+
 [isSpawned](./server.entity.isspawned.md)
 
 

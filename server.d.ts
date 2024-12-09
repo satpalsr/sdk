@@ -682,7 +682,7 @@ export declare class Chunk implements protocol.Serializable {
     setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 
 
-
+    private _meshColliders;
 
 
 
@@ -934,6 +934,8 @@ export declare interface ColliderOptions {
     halfExtents?: Vector3Like;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
+    /** The indices of the collider if the shape is a trimesh. */
+    indices?: Uint32Array;
     /** Whether the collider is a sensor. */
     isSensor?: boolean;
     /** The mass of the collider. */
@@ -952,6 +954,8 @@ export declare interface ColliderOptions {
     simulation?: Simulation;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     tag?: string;
+    /** The vertices of the collider if the shape is a trimesh. */
+    vertices?: Float32Array;
 }
 
 /** The shapes a collider can be. @public */
@@ -961,7 +965,8 @@ export declare enum ColliderShape {
     CAPSULE = "capsule",
     CONE = "cone",
     CYLINDER = "cylinder",
-    ROUND_CYLINDER = "round-cylinder"
+    ROUND_CYLINDER = "round-cylinder",
+    TRIMESH = "trimesh"
 }
 
 /**
@@ -1319,6 +1324,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get tag(): string | undefined;
     /** The tint color of the entity. */
     get tintColor(): RgbColor | undefined;
+    /** Whether the entity is a block entity. */
+    get isBlockEntity(): boolean;
+    /** Whether the entity is a model entity. */
+    get isModelEntity(): boolean;
     /** Whether the entity is spawned. */
     get isSpawned(): boolean;
     /** The world the entity is in. */
@@ -1353,21 +1362,35 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /**
      * Starts looped animations for the entity, blending with
      * other animations currently playing.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to start.
      */
     startModelLoopedAnimations(animations: string[]): void;
     /**
      * Starts a oneshot animation for the entity, blending with
      * other animations currently playing.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to start.
      */
     startModelOneshotAnimations(animations: string[]): void;
     /**
      * Stops the provided model animations for the entity.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to stop.
      */
     stopModelAnimations(animations: string[]): void;
-
 
 
 

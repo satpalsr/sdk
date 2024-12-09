@@ -90,8 +90,8 @@ let targetWaypointCoordinateIndex = 0; // Current waypoint coordinate index for 
 startServer(world => { // Perform our game setup logic in the startServer init callback here.
   const chatManager = world.chatManager;
 
-  // Enable debug rendering
-  //  world.simulation.enableDebugRendering(true);
+  // Uncomment this to visualize physics vertices, will cause noticable lag.
+  // world.simulation.enableDebugRendering(true);
 
   // Load Map
   world.loadMap(map);

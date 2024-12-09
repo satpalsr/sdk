@@ -12,7 +12,10 @@ import worldMap from './assets/map.json';
 
 startServer(world => {
   // Boilerplate
-  world.simulation.enableDebugRendering(true);
+  
+  // Uncomment this to visualize physics vertices, will cause noticable lag.
+  // world.simulation.enableDebugRendering(true);
+  
   world.loadMap(worldMap);
   world.onPlayerJoin = player => {
     const playerEntity = new PlayerEntity({

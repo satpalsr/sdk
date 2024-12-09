@@ -170,6 +170,25 @@ _(Optional)_ The half height of the collider if the shape is a capsule, cone, cy
 </td></tr>
 <tr><td>
 
+[indices?](./server.hytopia.collideroptions.indices.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Uint32Array
+
+
+</td><td>
+
+_(Optional)_ The indices of the collider if the shape is a trimesh.
+
+
+</td></tr>
+<tr><td>
+
 [isSensor?](./server.hytopia.collideroptions.issensor.md)
 
 
@@ -355,6 +374,25 @@ string
 </td><td>
 
 _(Optional)_ An arbitrary identifier tag of the collider. Useful for your own logic.
+
+
+</td></tr>
+<tr><td>
+
+[vertices?](./server.hytopia.collideroptions.vertices.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Float32Array
+
+
+</td><td>
+
+_(Optional)_ The vertices of the collider if the shape is a trimesh.
 
 
 </td></tr>

@@ -7119,6 +7119,34 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#indices:member",
+              "docComment": "/**\n * The indices of the collider if the shape is a trimesh.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "indices?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Uint32Array",
+                  "canonicalReference": "!Uint32Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "indices",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#isSensor:member",
               "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
               "excerptTokens": [
@@ -7392,6 +7420,34 @@
                 "startIndex": 1,
                 "endIndex": 2
               }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#vertices:member",
+              "docComment": "/**\n * The vertices of the collider if the shape is a trimesh.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "vertices?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Float32Array",
+                  "canonicalReference": "!Float32Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "vertices",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
             }
           ],
           "extendsTokenRanges": []
@@ -7536,6 +7592,27 @@
               },
               "releaseTag": "Public",
               "name": "ROUND_CYLINDER"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!ColliderShape.TRIMESH:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "TRIMESH = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"trimesh\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "TRIMESH"
             }
           ]
         },
@@ -9032,6 +9109,66 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#isBlockEntity:member",
+              "docComment": "/**\n * Whether the entity is a block entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isBlockEntity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isBlockEntity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#isModelEntity:member",
+              "docComment": "/**\n * Whether the entity is a model entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isModelEntity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isModelEntity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#isSpawned:member",
               "docComment": "/**\n * Whether the entity is spawned.\n */\n",
               "excerptTokens": [
@@ -9766,7 +9903,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#startModelLoopedAnimations:member(1)",
-              "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
+              "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to start.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9814,7 +9951,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#startModelOneshotAnimations:member(1)",
-              "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
+              "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to start.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9862,7 +9999,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#stopModelAnimations:member(1)",
-              "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @param animations - The animations to stop.\n */\n",
+              "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to stop.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -19490,6 +19627,34 @@
                 },
                 {
                   "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.ColliderOptions#indices:member",
+                  "docComment": "/**\n * The indices of the collider if the shape is a trimesh.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "indices?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Uint32Array",
+                      "canonicalReference": "!Uint32Array:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "indices",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#isSensor:member",
                   "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
                   "excerptTokens": [
@@ -19763,6 +19928,34 @@
                     "startIndex": 1,
                     "endIndex": 2
                   }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.ColliderOptions#vertices:member",
+                  "docComment": "/**\n * The vertices of the collider if the shape is a trimesh.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "vertices?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Float32Array",
+                      "canonicalReference": "!Float32Array:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "vertices",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
                 }
               ],
               "extendsTokenRanges": []
@@ -19907,6 +20100,27 @@
                   },
                   "releaseTag": "Public",
                   "name": "ROUND_CYLINDER"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.ColliderShape.TRIMESH:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "TRIMESH = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "\"trimesh\""
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "TRIMESH"
                 }
               ]
             },
@@ -21403,6 +21617,66 @@
                 },
                 {
                   "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#isBlockEntity:member",
+                  "docComment": "/**\n * Whether the entity is a block entity.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get isBlockEntity(): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "isBlockEntity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
+                  "canonicalReference": "server!HYTOPIA.Entity#isModelEntity:member",
+                  "docComment": "/**\n * Whether the entity is a model entity.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "get isModelEntity(): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": true,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "isModelEntity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isStatic": false,
+                  "isProtected": false,
+                  "isAbstract": false
+                },
+                {
+                  "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#isSpawned:member",
                   "docComment": "/**\n * Whether the entity is spawned.\n */\n",
                   "excerptTokens": [
@@ -22137,7 +22411,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#startModelLoopedAnimations:member(1)",
-                  "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
+                  "docComment": "/**\n * Starts looped animations for the entity, blending with other animations currently playing.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to start.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22185,7 +22459,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#startModelOneshotAnimations:member(1)",
-                  "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @param animations - The animations to start.\n */\n",
+                  "docComment": "/**\n * Starts a oneshot animation for the entity, blending with other animations currently playing.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to start.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22233,7 +22507,7 @@
                 {
                   "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Entity#stopModelAnimations:member(1)",
-                  "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @param animations - The animations to stop.\n */\n",
+                  "docComment": "/**\n * Stops the provided model animations for the entity.\n *\n * @remarks\n *\n * This method will be ignored and do nothing if the entity is a block entity.\n *\n * @param animations - The animations to stop.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",

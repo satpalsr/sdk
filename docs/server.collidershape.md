@@ -114,4 +114,18 @@ ROUND\_CYLINDER
 
 
 </td></tr>
+<tr><td>
+
+TRIMESH
+
+
+</td><td>
+
+`"trimesh"`
+
+
+</td><td>
+
+
+</td></tr>
 </tbody></table>
