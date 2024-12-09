@@ -67,7 +67,9 @@ startServer(world => {
  * Boilerplate setup for our example
  */
 function setup(world: World) {
-  world.simulation.enableDebugRendering(true);
+  // Uncomment this to visualize physics vertices, will cause noticable lag.
+  // world.simulation.enableDebugRendering(true);
+  
   world.loadMap(worldMap);
 
   // Spawn a player entity when a player joins the game.
