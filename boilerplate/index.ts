@@ -48,11 +48,13 @@ startServer(world => {
    * This will overlay lines in-game representing colliders,
    * rigid bodies, and raycasts. This is useful for debugging
    * physics-related issues in a development environment.
-   * For larger worlds, enabling this can cause performance
-   * issues, which will be noticed as dropped frame rates
-   * and higher RTT times.
+   * Enabling this can cause performance issues, which will
+   * be noticed as dropped frame rates and higher RTT times.
+   * It is intended for development environments only and
+   * debugging physics.
    */
-  world.simulation.enableDebugRendering(true);
+  
+  // world.simulation.enableDebugRendering(true);
 
   /**
    * Load our map.
