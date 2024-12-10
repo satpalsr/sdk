@@ -5,7 +5,7 @@
 
 ## What is HYTOPIA?
 
-![HYTOPIA Banner](./readme/assets/banner-2.jpeg)
+![HYTOPIA Banner](./readme/assets/banner.jpeg)
 
 HYTOPIA is a modern games platform inspired by Minecraft, Roblox, and Rec Room.
 
