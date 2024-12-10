@@ -785,15 +785,6 @@ Payloads for events emitted by a GameServer instance.
 </td></tr>
 <tr><td>
 
-[HYTOPIA](./server.hytopia.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [PlayerCameraEventPayload](./server.playercameraeventpayload.md)
 
 
