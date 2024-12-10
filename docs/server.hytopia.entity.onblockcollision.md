@@ -9,7 +9,7 @@ A function that is called when the entity collides with a block.
 **Signature:**
 
 ```typescript
-onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
+onBlockCollision?: ((entity: Entity, blockType: BlockType, started: boolean) => void) | ((entity: Entity, blockType: BlockType, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 ```
 
 ## Remarks

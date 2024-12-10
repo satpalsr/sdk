@@ -175,6 +175,20 @@ Enables or disables debug rendering for the simulation. When enabled, all collid
 </td></tr>
 <tr><td>
 
+[getContactManifolds(colliderHandleA, colliderHandleB)](./server.simulation.getcontactmanifolds.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets the contact manifolds for a pair of colliders.
+
+
+</td></tr>
+<tr><td>
+
 [setGravity(gravity)](./server.simulation.setgravity.md)
 
 

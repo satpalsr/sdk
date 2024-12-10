@@ -75,6 +75,25 @@ _(Optional)_ The bounciness of the collider.
 </td></tr>
 <tr><td>
 
+[bouncinessCombineRule?](./server.collideroptions.bouncinesscombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+_(Optional)_ The bounciness combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [collisionGroups?](./server.collideroptions.collisiongroups.md)
 
 
@@ -127,6 +146,25 @@ number
 </td><td>
 
 _(Optional)_ The friction of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[frictionCombineRule?](./server.collideroptions.frictioncombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+_(Optional)_ The friction combine rule of the collider.
 
 
 </td></tr>

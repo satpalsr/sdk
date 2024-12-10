@@ -308,11 +308,11 @@ export declare abstract class BaseCharacterController {
      */
     constructor(entity: Entity, _options?: Record<string, unknown>);
     /**
-     * Override this method to create sensor colliders
+     * Override this method to create controller specific colliders
      * to be attached to the controlled entity when it spawns.
      * @returns An array of colliders.
      */
-    createSensorColliders(): Collider[];
+    createColliders(): Collider[];
     /**
      * Override this method to handle entity movements
      * based on player input for your character controller.
@@ -387,7 +387,7 @@ export declare class BlockType implements protocol.Serializable {
      * @param entity - The entity that collided with the block type.
      * @param started - Whether the collision started.
      */
-    onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
+    onEntityCollision?: ((blockType: BlockType, entity: Entity, started: boolean) => void) | ((blockType: BlockType, entity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A callback function that is invoked when an entity contacts a block of this type.
      *
@@ -783,6 +783,14 @@ export declare class ChunkLattice {
 
 }
 
+/** The coefficient for friction or bounciness combine rule. @public */
+export declare enum CoefficientCombineRule {
+    Average = 0,
+    Min = 1,
+    Multiply = 2,
+    Max = 3
+}
+
 /**
  * Represents a collider in a world's physics simulation.
  *
@@ -830,6 +838,11 @@ export declare class Collider {
      */
     getBounciness(): number;
     /**
+     * Gets the bounciness combine rule of the collider.
+     * @returns The bounciness combine rule of the collider.
+     */
+    getBouncinessCombineRule(): CoefficientCombineRule;
+    /**
      * Gets the collision groups the collider belongs to.
      * @returns The collision groups the collider belongs to.
      */
@@ -839,6 +852,11 @@ export declare class Collider {
      * @returns The friction of the collider.
      */
     getFriction(): number;
+    /**
+     * Gets the friction combine rule of the collider.
+     * @returns The friction combine rule of the collider.
+     */
+    getFrictionCombineRule(): CoefficientCombineRule;
     /**
      * Gets the relative rotation of the collider.
      * @returns The relative rotation of the collider.
@@ -855,10 +873,10 @@ export declare class Collider {
      */
     setBounciness(bounciness: number): void;
     /**
-     * Sets the on collision callback for the collider.
-     * @param callback - The on collision callback for the collider.
+     * Sets the bounciness combine rule of the collider.
+     * @param bouncinessCombineRule - The bounciness combine rule of the collider.
      */
-    setOnCollision(callback: CollisionCallback | undefined): void;
+    setBouncinessCombineRule(bouncinessCombineRule: CoefficientCombineRule): void;
     /**
      * Sets the collision groups of the collider.
      * @param collisionGroups - The collision groups of the collider.
@@ -875,10 +893,20 @@ export declare class Collider {
      */
     setFriction(friction: number): void;
     /**
+     * Sets the friction combine rule of the collider.
+     * @param frictionCombineRule - The friction combine rule of the collider.
+     */
+    setFrictionCombineRule(frictionCombineRule: CoefficientCombineRule): void;
+    /**
      * Sets the mass of the collider.
      * @param mass - The mass of the collider.
      */
     setMass(mass: number): void;
+    /**
+     * Sets the on collision callback for the collider.
+     * @param callback - The on collision callback for the collider.
+     */
+    setOnCollision(callback: CollisionCallback | undefined): void;
     /**
      * Sets the relative rotation of the collider.
      * @param rotation - The relative rotation of the collider.
@@ -936,12 +964,16 @@ export declare interface ColliderOptions {
     borderRadius?: number;
     /** The bounciness of the collider. */
     bounciness?: number;
+    /** The bounciness combine rule of the collider. */
+    bouncinessCombineRule?: CoefficientCombineRule;
     /** The collision groups the collider belongs to. */
     collisionGroups?: CollisionGroups;
     /** Whether the collider is enabled. */
     enabled?: boolean;
     /** The friction of the collider. */
     friction?: number;
+    /** The friction combine rule of the collider. */
+    frictionCombineRule?: CoefficientCombineRule;
     /** The half extents of the collider if the shape is a block. */
     halfExtents?: Vector3Like;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
@@ -987,7 +1019,7 @@ export declare enum ColliderShape {
  * @param started - Whether the collision has started or ended.
  * @public
  */
-export declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
+export declare type CollisionCallback = ((other: BlockType | Entity, started: boolean) => void) | ((other: BlockType | Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 
 /**
  * The default collision groups.
@@ -1098,6 +1130,16 @@ declare type ContactForceData = {
     maxForceMagnitude: number;
 };
 
+/** A contact manifold. @public */
+declare type ContactManifold = {
+    /** The local normal vector of the first collider. */
+    localNormalA: Vector3Like;
+    /** The local normal vector of the second collider. */
+    localNormalB: Vector3Like;
+    /** The normal vector of the contact. */
+    normal: Vector3Like;
+};
+
 /** A decoded set of collision groups represented as their string equivalents. @public */
 export declare type DecodedCollisionGroups = {
     belongsTo: string[];
@@ -1178,11 +1220,11 @@ export declare class DefaultCharacterController extends BaseCharacterController 
     /** The platform the entity is on, if any. */
     get platform(): Entity | undefined;
     /**
-     * Creates the sensor colliders for the character controller,
+     * Creates the colliders for the character controller,
      * overriding the default implementation.
      * @returns An array of colliders.
      */
-    createSensorColliders(): Collider[];
+    createColliders(): Collider[];
     /**
      * Ticks the player movement for the character controller,
      * overriding the default implementation.
@@ -1261,7 +1303,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param blockType - The block type that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
+    onBlockCollision?: ((entity: Entity, blockType: BlockType, started: boolean) => void) | ((entity: Entity, blockType: BlockType, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A function that is called when the entity collides with a block.
      *
@@ -1283,7 +1325,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param otherEntity - The other entity that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
+    onEntityCollision?: ((entity: Entity, otherEntity: Entity, started: boolean) => void) | ((entity: Entity, otherEntity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A function that is called when the entity contacts another entity.
      *
@@ -1740,6 +1782,7 @@ declare namespace HYTOPIA {
         ChunkEventPayload,
         ChunkLattice,
         Collider,
+        CoefficientCombineRule,
         ColliderShape,
         ColliderOptions,
         CollisionCallback,
@@ -3003,6 +3046,18 @@ export declare class Simulation {
      * @param enabled - Whether to enable debug rendering.
      */
     enableDebugRendering(enabled: boolean): void;
+    /**
+     * Gets the contact manifolds for a pair of colliders.
+     *
+     * @remarks
+     * Contact manifolds will not be returned for contacts that
+     * involve sensors.
+     *
+     * @param colliderHandleA - The handle of the first collider.
+     * @param colliderHandleB - The handle of the second collider.
+     * @returns The contact manifolds, or an empty array if no contact.
+     */
+    getContactManifolds(colliderHandleA: RAPIER.ColliderHandle, colliderHandleB: RAPIER.ColliderHandle): ContactManifold[];
 
 
     /**

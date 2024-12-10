@@ -5,6 +5,7 @@ import {
   Collider,
   Entity,
   ColliderShape,
+  CoefficientCombineRule,
   BlockType,
 } from 'hytopia';
 
@@ -47,14 +48,14 @@ export default class MyCharacterController extends BaseCharacterController {
   public get platform(): Entity | undefined { return this._platform; }
 
   /**
-   * Create the sensor colliders for the character controller.
+   * Create the colliders for the character controller.
    */
-  public createSensorColliders(): Collider[] {
+  public createColliders(): Collider[] {
     if (!this.entity.isSpawned) {
       throw new Error('CharacterController.createSensorColliders(): Entity is not spawned!');
     }
 
-    const sensorColliders: Collider[] = [];
+    const colliders: Collider[] = [];
 
     /**
      * Our ground sensor detects when we're on the ground.
@@ -63,7 +64,7 @@ export default class MyCharacterController extends BaseCharacterController {
      * by the DEFAULT_ENTITY_RIGID_BODY_OPTIONS constant of
      * the hytopia package.
      */
-    sensorColliders.push(new Collider({
+    colliders.push(new Collider({
       shape: ColliderShape.CYLINDER,
       radius: 0.30,
       halfHeight: 0.125,
@@ -95,7 +96,26 @@ export default class MyCharacterController extends BaseCharacterController {
       },
     }));
 
-    return sensorColliders;
+    /**
+     * A wall collider slightly larger than our player hitbox with
+     * a collision group that only collides with blocks. This prevent
+     * sticking and friction to blocks as a player moves, creating
+     * a smooth slide effect on walls that we jump into, etc.
+     */
+    colliders.push(new Collider({
+      shape: ColliderShape.CAPSULE,
+      halfHeight: 0.30,
+      radius: 0.37,
+      collisionGroups: {
+        belongsTo: [ CollisionGroup.ENTITY_SENSOR ],
+        collidesWith: [ CollisionGroup.BLOCK ],
+      },
+      friction: 0,
+      frictionCombineRule: CoefficientCombineRule.Min,
+      tag: 'wallCollider',
+    }));
+
+    return colliders;
   }
 
   /**

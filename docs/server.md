@@ -390,6 +390,17 @@ Event types a Chunk instance can emit.
 </td></tr>
 <tr><td>
 
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+The coefficient for friction or bounciness combine rule.
+
+
+</td></tr>
+<tr><td>
+
 [ColliderShape](./server.collidershape.md)
 
 

@@ -2688,12 +2688,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!BaseCharacterController#createSensorColliders:member(1)",
-              "docComment": "/**\n * Override this method to create sensor colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
+              "canonicalReference": "server!BaseCharacterController#createColliders:member(1)",
+              "docComment": "/**\n * Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "createSensorColliders(): "
+                  "text": "createColliders(): "
                 },
                 {
                   "kind": "Reference",
@@ -2720,7 +2720,7 @@
               "parameters": [],
               "isOptional": false,
               "isAbstract": false,
-              "name": "createSensorColliders"
+              "name": "createColliders"
             },
             {
               "kind": "Property",
@@ -3235,7 +3235,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(blockType: "
+                  "text": "((blockType: "
                 },
                 {
                   "kind": "Reference",
@@ -3253,7 +3253,25 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", started: boolean) => void"
+                  "text": ", started: boolean) => void) | ((blockType: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BlockType",
+                  "canonicalReference": "server!BlockType:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                 },
                 {
                   "kind": "Content",
@@ -3266,7 +3284,7 @@
               "name": "onEntityCollision",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 6
+                "endIndex": 10
               },
               "isStatic": false,
               "isProtected": false,
@@ -5770,6 +5788,107 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "Enum",
+          "canonicalReference": "server!CoefficientCombineRule:enum",
+          "docComment": "/**\n * The coefficient for friction or bounciness combine rule.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum CoefficientCombineRule "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "CoefficientCombineRule",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CoefficientCombineRule.Average:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Average = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "0"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Average"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CoefficientCombineRule.Max:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Max = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "3"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Max"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CoefficientCombineRule.Min:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Min = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Min"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CoefficientCombineRule.Multiply:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Multiply = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Multiply"
+            }
+          ]
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!Collider:class",
           "docComment": "/**\n * Represents a collider in a world's physics simulation.\n *\n * @remarks\n *\n * Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing {@link ColliderOptions} to a {@link RigidBody} or an entity's {@link EntityOptions}.\n *\n * @public\n */\n",
@@ -6013,6 +6132,38 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Collider#getBouncinessCombineRule:member(1)",
+              "docComment": "/**\n * Gets the bounciness combine rule of the collider.\n *\n * @returns The bounciness combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBouncinessCombineRule(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getBouncinessCombineRule"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Collider#getCollisionGroups:member(1)",
               "docComment": "/**\n * Gets the collision groups the collider belongs to.\n *\n * @returns The collision groups the collider belongs to.\n */\n",
               "excerptTokens": [
@@ -6073,6 +6224,38 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getFriction"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Collider#getFrictionCombineRule:member(1)",
+              "docComment": "/**\n * Gets the friction combine rule of the collider.\n *\n * @returns The friction combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getFrictionCombineRule(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getFrictionCombineRule"
             },
             {
               "kind": "Method",
@@ -6409,6 +6592,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Collider#setBouncinessCombineRule:member(1)",
+              "docComment": "/**\n * Sets the bounciness combine rule of the collider.\n *\n * @param bouncinessCombineRule - The bounciness combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setBouncinessCombineRule(bouncinessCombineRule: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "bouncinessCombineRule",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setBouncinessCombineRule"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Collider#setCollisionGroups:member(1)",
               "docComment": "/**\n * Sets the collision groups of the collider.\n *\n * @param collisionGroups - The collision groups of the collider.\n */\n",
               "excerptTokens": [
@@ -6551,6 +6783,55 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "setFriction"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Collider#setFrictionCombineRule:member(1)",
+              "docComment": "/**\n * Sets the friction combine rule of the collider.\n *\n * @param frictionCombineRule - The friction combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setFrictionCombineRule(frictionCombineRule: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "frictionCombineRule",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setFrictionCombineRule"
             },
             {
               "kind": "Method",
@@ -6982,6 +7263,34 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#bouncinessCombineRule:member",
+              "docComment": "/**\n * The bounciness combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "bouncinessCombineRule?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "bouncinessCombineRule",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#collisionGroups:member",
               "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
               "excerptTokens": [
@@ -7057,6 +7366,34 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "friction",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#frictionCombineRule:member",
+              "docComment": "/**\n * The friction combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "frictionCombineRule?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "frictionCombineRule",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -7627,7 +7964,7 @@
             },
             {
               "kind": "Content",
-              "text": "(other: "
+              "text": "((other: "
             },
             {
               "kind": "Reference",
@@ -7645,7 +7982,25 @@
             },
             {
               "kind": "Content",
-              "text": ", started: boolean) => void"
+              "text": ", started: boolean) => void) | ((other: "
+            },
+            {
+              "kind": "Reference",
+              "text": "BlockType",
+              "canonicalReference": "server!BlockType:class"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Entity",
+              "canonicalReference": "server!Entity:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
             },
             {
               "kind": "Content",
@@ -7657,7 +8012,7 @@
           "name": "CollisionCallback",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 6
+            "endIndex": 10
           }
         },
         {
@@ -8347,12 +8702,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!DefaultCharacterController#createSensorColliders:member(1)",
-              "docComment": "/**\n * Creates the sensor colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
+              "canonicalReference": "server!DefaultCharacterController#createColliders:member(1)",
+              "docComment": "/**\n * Creates the colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "createSensorColliders(): "
+                  "text": "createColliders(): "
                 },
                 {
                   "kind": "Reference",
@@ -8379,7 +8734,7 @@
               "parameters": [],
               "isOptional": false,
               "isAbstract": false,
-              "name": "createSensorColliders"
+              "name": "createColliders"
             },
             {
               "kind": "Property",
@@ -9368,7 +9723,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(entity: "
+                  "text": "((entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9386,7 +9741,25 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", started: boolean) => void"
+                  "text": ", started: boolean) => void) | ((entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", blockType: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BlockType",
+                  "canonicalReference": "server!BlockType:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                 },
                 {
                   "kind": "Content",
@@ -9399,7 +9772,7 @@
               "name": "onBlockCollision",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 6
+                "endIndex": 10
               },
               "isStatic": false,
               "isProtected": false,
@@ -9512,7 +9885,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(entity: "
+                  "text": "((entity: "
                 },
                 {
                   "kind": "Reference",
@@ -9530,7 +9903,25 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", started: boolean) => void"
+                  "text": ", started: boolean) => void) | ((entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", otherEntity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                 },
                 {
                   "kind": "Content",
@@ -9543,7 +9934,7 @@
               "name": "onEntityCollision",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 6
+                "endIndex": 10
               },
               "isStatic": false,
               "isProtected": false,
@@ -15196,12 +15587,12 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.BaseCharacterController#createSensorColliders:member(1)",
-                  "docComment": "/**\n * Override this method to create sensor colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
+                  "canonicalReference": "server!HYTOPIA.BaseCharacterController#createColliders:member(1)",
+                  "docComment": "/**\n * Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "createSensorColliders(): "
+                      "text": "createColliders(): "
                     },
                     {
                       "kind": "Reference",
@@ -15228,7 +15619,7 @@
                   "parameters": [],
                   "isOptional": false,
                   "isAbstract": false,
-                  "name": "createSensorColliders"
+                  "name": "createColliders"
                 },
                 {
                   "kind": "Property",
@@ -15743,7 +16134,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(blockType: "
+                      "text": "((blockType: "
                     },
                     {
                       "kind": "Reference",
@@ -15761,7 +16152,25 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", started: boolean) => void"
+                      "text": ", started: boolean) => void) | ((blockType: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "BlockType",
+                      "canonicalReference": "server!BlockType:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                     },
                     {
                       "kind": "Content",
@@ -15774,7 +16183,7 @@
                   "name": "onEntityCollision",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 6
+                    "endIndex": 10
                   },
                   "isStatic": false,
                   "isProtected": false,
@@ -18278,6 +18687,107 @@
               "implementsTokenRanges": []
             },
             {
+              "kind": "Enum",
+              "canonicalReference": "server!HYTOPIA.CoefficientCombineRule:enum",
+              "docComment": "/**\n * The coefficient for friction or bounciness combine rule.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "export declare enum CoefficientCombineRule "
+                }
+              ],
+              "fileUrlPath": "src/world/physics/Collider.ts",
+              "releaseTag": "Public",
+              "name": "CoefficientCombineRule",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.CoefficientCombineRule.Average:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "Average = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "0"
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "Average"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.CoefficientCombineRule.Max:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "Max = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "3"
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "Max"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.CoefficientCombineRule.Min:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "Min = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "1"
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "Min"
+                },
+                {
+                  "kind": "EnumMember",
+                  "canonicalReference": "server!HYTOPIA.CoefficientCombineRule.Multiply:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "Multiply = "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "2"
+                    }
+                  ],
+                  "initializerTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "name": "Multiply"
+                }
+              ]
+            },
+            {
               "kind": "Class",
               "canonicalReference": "server!HYTOPIA.Collider:class",
               "docComment": "/**\n * Represents a collider in a world's physics simulation.\n *\n * @remarks\n *\n * Colliders make up the foundation of the physical interactions in a world. They are highly configurable and have many aspects that can be adjusted both before simulation and while simulated. Colliders will most often be used through passing {@link ColliderOptions} to a {@link RigidBody} or an entity's {@link EntityOptions}.\n *\n * @public\n */\n",
@@ -18521,6 +19031,38 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Collider#getBouncinessCombineRule:member(1)",
+                  "docComment": "/**\n * Gets the bounciness combine rule of the collider.\n *\n * @returns The bounciness combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getBouncinessCombineRule(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getBouncinessCombineRule"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Collider#getCollisionGroups:member(1)",
                   "docComment": "/**\n * Gets the collision groups the collider belongs to.\n *\n * @returns The collision groups the collider belongs to.\n */\n",
                   "excerptTokens": [
@@ -18581,6 +19123,38 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "getFriction"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Collider#getFrictionCombineRule:member(1)",
+                  "docComment": "/**\n * Gets the friction combine rule of the collider.\n *\n * @returns The friction combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getFrictionCombineRule(): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getFrictionCombineRule"
                 },
                 {
                   "kind": "Method",
@@ -18917,6 +19491,55 @@
                 },
                 {
                   "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Collider#setBouncinessCombineRule:member(1)",
+                  "docComment": "/**\n * Sets the bounciness combine rule of the collider.\n *\n * @param bouncinessCombineRule - The bounciness combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "setBouncinessCombineRule(bouncinessCombineRule: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "bouncinessCombineRule",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "setBouncinessCombineRule"
+                },
+                {
+                  "kind": "Method",
                   "canonicalReference": "server!HYTOPIA.Collider#setCollisionGroups:member(1)",
                   "docComment": "/**\n * Sets the collision groups of the collider.\n *\n * @param collisionGroups - The collision groups of the collider.\n */\n",
                   "excerptTokens": [
@@ -19059,6 +19682,55 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "setFriction"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Collider#setFrictionCombineRule:member(1)",
+                  "docComment": "/**\n * Sets the friction combine rule of the collider.\n *\n * @param frictionCombineRule - The friction combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "setFrictionCombineRule(frictionCombineRule: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "void"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "frictionCombineRule",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "setFrictionCombineRule"
                 },
                 {
                   "kind": "Method",
@@ -19490,6 +20162,34 @@
                 },
                 {
                   "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.ColliderOptions#bouncinessCombineRule:member",
+                  "docComment": "/**\n * The bounciness combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "bouncinessCombineRule?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "bouncinessCombineRule",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
                   "canonicalReference": "server!HYTOPIA.ColliderOptions#collisionGroups:member",
                   "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
                   "excerptTokens": [
@@ -19565,6 +20265,34 @@
                   "isOptional": true,
                   "releaseTag": "Public",
                   "name": "friction",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!HYTOPIA.ColliderOptions#frictionCombineRule:member",
+                  "docComment": "/**\n * The friction combine rule of the collider.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "frictionCombineRule?: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "CoefficientCombineRule",
+                      "canonicalReference": "server!CoefficientCombineRule:enum"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "frictionCombineRule",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -20135,7 +20863,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(other: "
+                  "text": "((other: "
                 },
                 {
                   "kind": "Reference",
@@ -20153,7 +20881,25 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", started: boolean) => void"
+                  "text": ", started: boolean) => void) | ((other: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BlockType",
+                  "canonicalReference": "server!BlockType:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                 },
                 {
                   "kind": "Content",
@@ -20165,7 +20911,7 @@
               "name": "CollisionCallback",
               "typeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 6
+                "endIndex": 10
               }
             },
             {
@@ -20855,12 +21601,12 @@
                 },
                 {
                   "kind": "Method",
-                  "canonicalReference": "server!HYTOPIA.DefaultCharacterController#createSensorColliders:member(1)",
-                  "docComment": "/**\n * Creates the sensor colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
+                  "canonicalReference": "server!HYTOPIA.DefaultCharacterController#createColliders:member(1)",
+                  "docComment": "/**\n * Creates the colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
-                      "text": "createSensorColliders(): "
+                      "text": "createColliders(): "
                     },
                     {
                       "kind": "Reference",
@@ -20887,7 +21633,7 @@
                   "parameters": [],
                   "isOptional": false,
                   "isAbstract": false,
-                  "name": "createSensorColliders"
+                  "name": "createColliders"
                 },
                 {
                   "kind": "Property",
@@ -21876,7 +22622,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(entity: "
+                      "text": "((entity: "
                     },
                     {
                       "kind": "Reference",
@@ -21894,7 +22640,25 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", started: boolean) => void"
+                      "text": ", started: boolean) => void) | ((entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", blockType: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "BlockType",
+                      "canonicalReference": "server!BlockType:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                     },
                     {
                       "kind": "Content",
@@ -21907,7 +22671,7 @@
                   "name": "onBlockCollision",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 6
+                    "endIndex": 10
                   },
                   "isStatic": false,
                   "isProtected": false,
@@ -22020,7 +22784,7 @@
                     },
                     {
                       "kind": "Content",
-                      "text": "(entity: "
+                      "text": "((entity: "
                     },
                     {
                       "kind": "Reference",
@@ -22038,7 +22802,25 @@
                     },
                     {
                       "kind": "Content",
-                      "text": ", started: boolean) => void"
+                      "text": ", started: boolean) => void) | ((entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", otherEntity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", started: boolean, colliderHandleA: number, colliderHandleB: number) => void)"
                     },
                     {
                       "kind": "Content",
@@ -22051,7 +22833,7 @@
                   "name": "onEntityCollision",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 6
+                    "endIndex": 10
                   },
                   "isStatic": false,
                   "isProtected": false,
@@ -34526,6 +35308,77 @@
                   "isOptional": false,
                   "isAbstract": false,
                   "name": "enableDebugRendering"
+                },
+                {
+                  "kind": "Method",
+                  "canonicalReference": "server!HYTOPIA.Simulation#getContactManifolds:member(1)",
+                  "docComment": "/**\n * Gets the contact manifolds for a pair of colliders.\n *\n * @remarks\n *\n * Contact manifolds will not be returned for contacts that involve sensors.\n *\n * @param colliderHandleA - The handle of the first collider.\n *\n * @param colliderHandleB - The handle of the second collider.\n *\n * @returns The contact manifolds, or an empty array if no contact.\n */\n",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "getContactManifolds(colliderHandleA: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RAPIER.ColliderHandle",
+                      "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ", colliderHandleB: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "RAPIER.ColliderHandle",
+                      "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "): "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "ContactManifold",
+                      "canonicalReference": "server!~ContactManifold:type"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "[]"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isStatic": false,
+                  "returnTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 7
+                  },
+                  "releaseTag": "Public",
+                  "isProtected": false,
+                  "overloadIndex": 1,
+                  "parameters": [
+                    {
+                      "parameterName": "colliderHandleA",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                      },
+                      "isOptional": false
+                    },
+                    {
+                      "parameterName": "colliderHandleB",
+                      "parameterTypeTokenRange": {
+                        "startIndex": 3,
+                        "endIndex": 4
+                      },
+                      "isOptional": false
+                    }
+                  ],
+                  "isOptional": false,
+                  "isAbstract": false,
+                  "name": "getContactManifolds"
                 },
                 {
                   "kind": "Property",
@@ -47191,6 +48044,77 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "enableDebugRendering"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Simulation#getContactManifolds:member(1)",
+              "docComment": "/**\n * Gets the contact manifolds for a pair of colliders.\n *\n * @remarks\n *\n * Contact manifolds will not be returned for contacts that involve sensors.\n *\n * @param colliderHandleA - The handle of the first collider.\n *\n * @param colliderHandleB - The handle of the second collider.\n *\n * @returns The contact manifolds, or an empty array if no contact.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getContactManifolds(colliderHandleA: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RAPIER.ColliderHandle",
+                  "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", colliderHandleB: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RAPIER.ColliderHandle",
+                  "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ContactManifold",
+                  "canonicalReference": "server!~ContactManifold:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "colliderHandleA",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "colliderHandleB",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getContactManifolds"
             },
             {
               "kind": "Property",

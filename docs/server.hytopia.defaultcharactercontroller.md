@@ -290,7 +290,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[createSensorColliders()](./server.hytopia.defaultcharactercontroller.createsensorcolliders.md)
+[createColliders()](./server.hytopia.defaultcharactercontroller.createcolliders.md)
 
 
 </td><td>
@@ -298,7 +298,7 @@ Description
 
 </td><td>
 
-Creates the sensor colliders for the character controller, overriding the default implementation.
+Creates the colliders for the character controller, overriding the default implementation.
 
 
 </td></tr>

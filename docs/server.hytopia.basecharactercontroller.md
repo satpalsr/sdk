@@ -154,7 +154,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[createSensorColliders()](./server.hytopia.basecharactercontroller.createsensorcolliders.md)
+[createColliders()](./server.hytopia.basecharactercontroller.createcolliders.md)
 
 
 </td><td>
@@ -162,7 +162,7 @@ Description
 
 </td><td>
 
-Override this method to create sensor colliders to be attached to the controlled entity when it spawns.
+Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.
 
 
 </td></tr>

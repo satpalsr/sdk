@@ -9,7 +9,7 @@ A callback function that is called when a collision occurs.
 **Signature:**
 
 ```typescript
-export type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
+export type CollisionCallback = ((other: BlockType | Entity, started: boolean) => void) | ((other: BlockType | Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 ```
 **References:** [BlockType](./server.blocktype.md)<!-- -->, [Entity](./server.entity.md)
 
