@@ -377,6 +377,12 @@ export declare class Block {
 export declare class BlockType implements protocol.Serializable {
     /**
      * A callback function that is invoked when an entity collides with blocks of this type.
+     *
+     * @remarks
+     * This must be set before a block of this type is created.
+     * If it is set after a block is created, only future created
+     * blocks of this type will have the callback set.
+     *
      * @param blockType - The block type the collision is for.
      * @param entity - The entity that collided with the block type.
      * @param started - Whether the collision started.
@@ -384,6 +390,12 @@ export declare class BlockType implements protocol.Serializable {
     onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
     /**
      * A callback function that is invoked when an entity contacts a block of this type.
+     *
+     * @remarks
+     * This must be set before a block of this type is created.
+     * If it is set after a block is created, only future created
+     * blocks of this type will have the callback set.
+     *
      * @param blockType - The block type the contact is for.
      * @param entity - The entity that contacted the block type.
      * @param contactForceData - The contact force data.
@@ -1241,6 +1253,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /**
      * A function that is called when the entity collides with a block.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param blockType - The block type that the entity collided with.
      * @param started - Whether the collision started or ended.
@@ -1248,6 +1264,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
     /**
      * A function that is called when the entity collides with a block.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param blockType - The block type that the entity collided with.
      * @param contactForceData - The contact force data.
@@ -1255,6 +1275,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
     /**
      * A function that is called when the entity collides with another entity.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param otherEntity - The other entity that the entity collided with.
      * @param started - Whether the collision started or ended.
@@ -1262,6 +1286,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
     /**
      * A function that is called when the entity contacts another entity.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param otherEntity - The other entity that the entity collided with.
      * @param contactForceData - The contact force data.

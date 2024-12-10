@@ -11,3 +11,8 @@ A callback function that is invoked when an entity collides with blocks of this 
 ```typescript
 onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
 ```
+
+## Remarks
+
+This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.
+

@@ -11,3 +11,8 @@ A function that is called when the entity contacts another entity.
 ```typescript
 onEntityContactForce?: (entity: Entity, otherEntity: Entity, contactForceData: ContactForceData) => void;
 ```
+
+## Remarks
+
+This must be set before the entity is spawned.
+

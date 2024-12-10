@@ -11,3 +11,8 @@ A function that is called when the entity collides with a block.
 ```typescript
 onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
 ```
+
+## Remarks
+
+This must be set before the entity is spawned.
+

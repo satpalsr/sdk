@@ -11,3 +11,8 @@ A function that is called when the entity collides with another entity.
 ```typescript
 onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
 ```
+
+## Remarks
+
+This must be set before the entity is spawned.
+

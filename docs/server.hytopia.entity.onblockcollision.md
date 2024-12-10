@@ -11,3 +11,8 @@ A function that is called when the entity collides with a block.
 ```typescript
 onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
 ```
+
+## Remarks
+
+This must be set before the entity is spawned.
+

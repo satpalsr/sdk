@@ -11,3 +11,8 @@ A callback function that is invoked when an entity contacts a block of this type
 ```typescript
 onEntityContactForce?: (blockType: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
 ```
+
+## Remarks
+
+This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.
+

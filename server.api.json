@@ -3227,7 +3227,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityCollision:member",
-              "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
+              "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @remarks\n *\n * This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3275,7 +3275,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BlockType#onEntityContactForce:member",
-              "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @remarks\n *\n * This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9360,7 +9360,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockCollision:member",
-              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9408,7 +9408,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onBlockContactForce:member",
-              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9504,7 +9504,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityCollision:member",
-              "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9552,7 +9552,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Entity#onEntityContactForce:member",
-              "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+              "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15735,7 +15735,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityCollision:member",
-                  "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
+                  "docComment": "/**\n * A callback function that is invoked when an entity collides with blocks of this type.\n *\n * @remarks\n *\n * This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.\n *\n * @param blockType - The block type the collision is for.\n *\n * @param entity - The entity that collided with the block type.\n *\n * @param started - Whether the collision started.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -15783,7 +15783,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.BlockType#onEntityContactForce:member",
-                  "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A callback function that is invoked when an entity contacts a block of this type.\n *\n * @remarks\n *\n * This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.\n *\n * @param blockType - The block type the contact is for.\n *\n * @param entity - The entity that contacted the block type.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21868,7 +21868,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockCollision:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -21916,7 +21916,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onBlockContactForce:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with a block.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param blockType - The block type that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22012,7 +22012,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityCollision:member",
-                  "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity collides with another entity.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param started - Whether the collision started or ended.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
@@ -22060,7 +22060,7 @@
                 {
                   "kind": "Property",
                   "canonicalReference": "server!HYTOPIA.Entity#onEntityContactForce:member",
-                  "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
+                  "docComment": "/**\n * A function that is called when the entity contacts another entity.\n *\n * @remarks\n *\n * This must be set before the entity is spawned.\n *\n * @param entity - The Entity instance the collision is for.\n *\n * @param otherEntity - The other entity that the entity collided with.\n *\n * @param contactForceData - The contact force data.\n */\n",
                   "excerptTokens": [
                     {
                       "kind": "Content",
