@@ -57,7 +57,7 @@ const path = require('path');
 
     // Copy assets into project, not overwriting existing files
     fs.cpSync(
-      path.join(__dirname, 'node_modules', '@hytopia.com', 'assets'),
+      path.join(destDir, 'node_modules', '@hytopia.com', 'assets'),
       path.join(destDir, 'assets'),
       { recursive: true, force: false }
     );
