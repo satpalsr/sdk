@@ -29,9 +29,11 @@ const path = require('path');
 
     // Initialize project with latest HYTOPIA SDK
     console.log('🔧 Initializing project with latest HYTOPIA SDK...');
+   
     execSync('bun init --yes');
     execSync('bun add hytopia@latest');
-    
+    execSync('bun add @hytopia.com/assets');
+
     if (flags.template) {
       // Init from example template
       console.log(`🖨️ Initializing project with examples template "${flags.template}"...`);
@@ -52,6 +54,13 @@ const path = require('path');
       
       fs.cpSync(srcDir, destDir, { recursive: true });  
     }
+
+    // Copy assets into project, not overwriting existing files
+    fs.cpSync(
+      path.join(__dirname, 'node_modules', '@hytopia.com', 'assets'),
+      path.join(destDir, 'assets'),
+      { recursive: true, force: false }
+    );
 
     // Done, lfg!
     console.log('--------------------------------');
