@@ -127,6 +127,27 @@ The current [PlayerOrientationState](./server.playerorientationstate.md) of the 
 </td></tr>
 <tr><td>
 
+[ui](./server.player.ui.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[PlayerUI](./server.playerui.md)
+
+
+</td><td>
+
+The UI for the player.
+
+
+</td></tr>
+<tr><td>
+
 [username](./server.player.username.md)
 
 

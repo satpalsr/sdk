@@ -1813,6 +1813,8 @@ export declare class Player {
     /** The camera for the player. */
     readonly camera: PlayerCamera;
 
+    /** The UI for the player. */
+    readonly ui: PlayerUI;
 
 
 
@@ -1842,6 +1844,7 @@ export declare class Player {
      * Disconnects the player from the game server.
      */
     disconnect(): void;
+
 
 
 
@@ -2182,6 +2185,63 @@ export declare type PlayerOrientationState = {
     pitch: number;
     yaw: number;
 };
+
+/**
+ * The UI for a player.
+ *
+ * @remarks
+ * UI allows control of all in-game overlays a player
+ * sees. UI is controlled by HTML, CSS and JavaScript
+ * files you provide in your `assets` folder.
+ *
+ * @public
+ */
+export declare class PlayerUI {
+    /** The player that the UI belongs to. @readonly */
+    readonly player: Player;
+    /**
+     * A function that is called when the player's client UI
+     * sends data to the server.
+     *
+     * @remarks
+     * Data sent is an object of any shape defined by you
+     * and controlled with invocations of  `hytopia.ui.sendData()`
+     * from your loaded client UI files.
+     *
+     * @param playerUI - The PlayerUI instance that the data is from.
+     * @param data - The data sent from the client UI.
+     */
+    onData?: (playerUI: PlayerUI, data: object) => void;
+
+    /**
+     * Loads client UI for the player.
+     * @param htmlUri - The ui html uri to load.
+     */
+    load(htmlUri: string): void;
+    /**
+     * Sends data to the player's client UI.
+     * @param data - The data to send to the client UI.
+     */
+    sendData(data: object): void;
+}
+
+/** Payloads for events a PlayerUI instance can emit. @public */
+export declare namespace PlayerUIEventPayload {
+    export interface Load {
+        playerUI: PlayerUI;
+        htmlUri: string;
+    }
+    export interface SendData {
+        playerUI: PlayerUI;
+        data: object;
+    }
+}
+
+/** Event types a  */
+export declare enum PlayerUIEventType {
+    LOAD = "PLAYER_UI.LOAD",
+    SEND_DATA = "PLAYER_UI.SEND_DATA"
+}
 
 /**
  * The port the server will run on. You can override
