@@ -137,7 +137,7 @@ The current [PlayerOrientationState](./server.playerorientationstate.md) of the 
 
 </td><td>
 
-[PlayerUI](./server.playerui.md)
+PlayerUI
 
 
 </td><td>

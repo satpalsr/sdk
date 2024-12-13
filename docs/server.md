@@ -228,17 +228,6 @@ Manages all connected players in a game server.
 </td></tr>
 <tr><td>
 
-[PlayerUI](./server.playerui.md)
-
-
-</td><td>
-
-The UI for a player.
-
-
-</td></tr>
-<tr><td>
-
 [Quaternion](./server.quaternion.md)
 
 
@@ -482,17 +471,6 @@ Event types a PlayerCamera can emit.
 </td><td>
 
 Event types a Player can emit.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerUIEventType](./server.playeruieventtype.md)
-
-
-</td><td>
-
-Event types a
 
 
 </td></tr>
@@ -824,17 +802,6 @@ Payloads for events a PlayerCamera can emit.
 </td><td>
 
 Payloads for events a Player can emit.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerUIEventPayload](./server.playeruieventpayload.md)
-
-
-</td><td>
-
-Payloads for events a PlayerUI instance can emit.
 
 
 </td></tr>
