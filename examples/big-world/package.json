@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@hytopia.com/assets": "^0.1.5"
+    "@hytopia.com/assets": "^0.1.6"
   }
 }
