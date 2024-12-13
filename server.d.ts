@@ -296,12 +296,13 @@ export declare abstract class BaseCharacterController {
     onTick?: (deltaTimeMs: number) => void;
     /**
      * A callback function for when the controller ticks
-     * player movement.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * player movement. This is called every tick by a
+     * PlayerEntity with a character controller.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    onTickPlayerMovement?: (inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) => void;
+    onTickWithPlayerInput?: (input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
     /**
      * @param entity - The entity the controller is for.
      * @param _options - Arbitrary options you may provide or omit for your controller implementation.
@@ -316,11 +317,11 @@ export declare abstract class BaseCharacterController {
     /**
      * Override this method to handle entity movements
      * based on player input for your character controller.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
     /**
      * Override this method to handle entity movements
      * based on your character controller.
@@ -1228,11 +1229,11 @@ export declare class DefaultCharacterController extends BaseCharacterController 
     /**
      * Ticks the player movement for the character controller,
      * overriding the default implementation.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
 }
 
 /** Options for creating a DefaultCharacterController instance. @public */
@@ -1819,10 +1820,10 @@ export declare class Player {
 
 
 
-    /** The current {@link PlayerInputState} of the player. */
-    get inputState(): Readonly<PlayerInputState>;
-    /** The current {@link PlayerOrientationState} of the player. */
-    get orientationState(): Readonly<PlayerOrientationState>;
+    /** The current {@link PlayerInput} of the player. */
+    get input(): Readonly<PlayerInput>;
+    /** The current {@link PlayerCameraOrientation} of the player. */
+    get cameraOrientation(): Readonly<PlayerCameraOrientation>;
     /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
@@ -2063,6 +2064,12 @@ export declare enum PlayerCameraMode {
     THIRD_PERSON = 1
 }
 
+/** The camera orientation state of a Player. @public */
+export declare type PlayerCameraOrientation = {
+    pitch: number;
+    yaw: number;
+};
+
 /**
  * Represents an entity controlled by a player in a world.
  *
@@ -2138,7 +2145,7 @@ export declare enum PlayerEventType {
 }
 
 /** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
-export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
+export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
 
 /**
  * Manages all connected players in a game server.
@@ -2179,12 +2186,6 @@ export declare class PlayerManager {
 
 
 }
-
-/** The camera orientation state of a Player. @public */
-export declare type PlayerOrientationState = {
-    pitch: number;
-    yaw: number;
-};
 
 /**
  * The UI for a player.
@@ -2989,6 +2990,9 @@ export declare class Simulation {
 
 
 
+
+    /** Whether the simulation has debug raycasting enabled */
+    get isDebugRaycastingEnabled(): boolean;
     /** Whether the simulation has debug rendering enabled. */
     get isDebugRenderingEnabled(): boolean;
     /** The gravity vector for the simulation. */
@@ -3009,8 +3013,15 @@ export declare class Simulation {
 
 
     /**
+     * Enables or disables debug raycasting for the simulation.
+     * This will render lines for the raycast that disappear
+     * after a few seconds.
+     * @param enabled - Whether to enable debug raycasting.
+     */
+    enableDebugRaycasting(enabled: boolean): void;
+    /**
      * Enables or disables debug rendering for the simulation.
-     * When enabled, all colliders, rigid body and raycast outlines
+     * When enabled, all colliders and rigid body outlines
      * will be rendered in the world. Do not enable this in production.
      * In large worlds enabling this can cause noticable lag and RTT spikes.
      * @param enabled - Whether to enable debug rendering.
@@ -3060,7 +3071,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  */
 export declare function startServer(init: (world: World) => void): void;
 
-/** The input keys that can be included in the PlayerInputState. @public */
+/** The input keys that are included in the PlayerInput. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 /**

@@ -2785,30 +2785,30 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!BaseCharacterController#onTickPlayerMovement:member",
-              "docComment": "/**\n * A callback function for when the controller ticks player movement.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "canonicalReference": "server!BaseCharacterController#onTickWithPlayerInput:member",
+              "docComment": "/**\n * A callback function for when the controller ticks player movement. This is called every tick by a PlayerEntity with a character controller.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "onTickPlayerMovement?: "
+                  "text": "onTickWithPlayerInput?: "
                 },
                 {
                   "kind": "Content",
-                  "text": "(inputState: "
+                  "text": "(input: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerInputState",
-                  "canonicalReference": "server!PlayerInputState:type"
+                  "text": "PlayerInput",
+                  "canonicalReference": "server!PlayerInput:type"
                 },
                 {
                   "kind": "Content",
-                  "text": ", orientationState: "
+                  "text": ", cameraOrientation: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerOrientationState",
-                  "canonicalReference": "server!PlayerOrientationState:type"
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
                 },
                 {
                   "kind": "Content",
@@ -2822,7 +2822,7 @@
               "isReadonly": false,
               "isOptional": true,
               "releaseTag": "Public",
-              "name": "onTickPlayerMovement",
+              "name": "onTickWithPlayerInput",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 6
@@ -2881,26 +2881,26 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!BaseCharacterController#tickPlayerMovement:member(1)",
-              "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "canonicalReference": "server!BaseCharacterController#tickWithPlayerInput:member(1)",
+              "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "tickPlayerMovement(inputState: "
+                  "text": "tickWithPlayerInput(input: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerInputState",
-                  "canonicalReference": "server!PlayerInputState:type"
+                  "text": "PlayerInput",
+                  "canonicalReference": "server!PlayerInput:type"
                 },
                 {
                   "kind": "Content",
-                  "text": ", orientationState: "
+                  "text": ", cameraOrientation: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerOrientationState",
-                  "canonicalReference": "server!PlayerOrientationState:type"
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
                 },
                 {
                   "kind": "Content",
@@ -2933,7 +2933,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "inputState",
+                  "parameterName": "input",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -2941,7 +2941,7 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "orientationState",
+                  "parameterName": "cameraOrientation",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
@@ -2959,7 +2959,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "tickPlayerMovement"
+              "name": "tickWithPlayerInput"
             }
           ],
           "implementsTokenRanges": []
@@ -8893,26 +8893,26 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!DefaultCharacterController#tickPlayerMovement:member(1)",
-              "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param inputState - The current input state of the player.\n *\n * @param orientationState - The current orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "canonicalReference": "server!DefaultCharacterController#tickWithPlayerInput:member(1)",
+              "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "tickPlayerMovement(inputState: "
+                  "text": "tickWithPlayerInput(input: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerInputState",
-                  "canonicalReference": "server!PlayerInputState:type"
+                  "text": "PlayerInput",
+                  "canonicalReference": "server!PlayerInput:type"
                 },
                 {
                   "kind": "Content",
-                  "text": ", orientationState: "
+                  "text": ", cameraOrientation: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerOrientationState",
-                  "canonicalReference": "server!PlayerOrientationState:type"
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
                 },
                 {
                   "kind": "Content",
@@ -8945,7 +8945,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "inputState",
+                  "parameterName": "input",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -8953,7 +8953,7 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "orientationState",
+                  "parameterName": "cameraOrientation",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
@@ -8971,7 +8971,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "tickPlayerMovement"
+              "name": "tickWithPlayerInput"
             },
             {
               "kind": "Property",
@@ -13233,6 +13233,50 @@
               "isAbstract": false
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!Player#cameraOrientation:member",
+              "docComment": "/**\n * The current {@link PlayerCameraOrientation} of the player.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get cameraOrientation(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Readonly",
+                  "canonicalReference": "!Readonly:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "cameraOrientation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!Player#disconnect:member(1)",
               "docComment": "/**\n * Disconnects the player from the game server.\n */\n",
@@ -13295,12 +13339,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Player#inputState:member",
-              "docComment": "/**\n * The current {@link PlayerInputState} of the player.\n */\n",
+              "canonicalReference": "server!Player#input:member",
+              "docComment": "/**\n * The current {@link PlayerInput} of the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get inputState(): "
+                  "text": "get input(): "
                 },
                 {
                   "kind": "Reference",
@@ -13313,8 +13357,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PlayerInputState",
-                  "canonicalReference": "server!PlayerInputState:type"
+                  "text": "PlayerInput",
+                  "canonicalReference": "server!PlayerInput:type"
                 },
                 {
                   "kind": "Content",
@@ -13328,7 +13372,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "inputState",
+              "name": "input",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 5
@@ -13416,50 +13460,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "leaveWorld"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Player#orientationState:member",
-              "docComment": "/**\n * The current {@link PlayerOrientationState} of the player.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get orientationState(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Readonly",
-                  "canonicalReference": "!Readonly:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerOrientationState",
-                  "canonicalReference": "server!PlayerOrientationState:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "orientationState",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 5
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -15945,6 +15945,32 @@
           ]
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!PlayerCameraOrientation:type",
+          "docComment": "/**\n * The camera orientation state of a Player.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PlayerCameraOrientation = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    pitch: number;\n    yaw: number;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/networking/players/Player.ts",
+          "releaseTag": "Public",
+          "name": "PlayerCameraOrientation",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!PlayerEntity:class",
           "docComment": "/**\n * Represents an entity controlled by a player in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/player-with-gun.gltf',\n *     modelLoopedAnimations: [ 'idle' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
@@ -16538,12 +16564,12 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "server!PlayerInputState:type",
+          "canonicalReference": "server!PlayerInput:type",
           "docComment": "/**\n * The input state of a Player; keys from SUPPORTED_INPUT_KEYS.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type PlayerInputState = "
+              "text": "export type PlayerInput = "
             },
             {
               "kind": "Reference",
@@ -16579,7 +16605,7 @@
           ],
           "fileUrlPath": "src/networking/players/Player.ts",
           "releaseTag": "Public",
-          "name": "PlayerInputState",
+          "name": "PlayerInput",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 7
@@ -16723,32 +16749,6 @@
             }
           ],
           "implementsTokenRanges": []
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "server!PlayerOrientationState:type",
-          "docComment": "/**\n * The camera orientation state of a Player.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type PlayerOrientationState = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    pitch: number;\n    yaw: number;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/networking/players/Player.ts",
-          "releaseTag": "Public",
-          "name": "PlayerOrientationState",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
         },
         {
           "kind": "Class",
@@ -22800,8 +22800,56 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Simulation#enableDebugRaycasting:member(1)",
+              "docComment": "/**\n * Enables or disables debug raycasting for the simulation. This will render lines for the raycast that disappear after a few seconds.\n *\n * @param enabled - Whether to enable debug raycasting.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enableDebugRaycasting(enabled: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "enabled",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "enableDebugRaycasting"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Simulation#enableDebugRendering:member(1)",
-              "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
+              "docComment": "/**\n * Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid body outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.\n *\n * @param enabled - Whether to enable debug rendering.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -22940,6 +22988,36 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "gravity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Simulation#isDebugRaycastingEnabled:member",
+              "docComment": "/**\n * Whether the simulation has debug raycasting enabled\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isDebugRaycastingEnabled(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isDebugRaycastingEnabled",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -23179,7 +23257,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "server!SUPPORTED_INPUT_KEYS:var",
-          "docComment": "/**\n * The input keys that can be included in the PlayerInputState.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The input keys that are included in the PlayerInput.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

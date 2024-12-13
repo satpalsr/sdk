@@ -32,8 +32,8 @@ import {
 } from 'hytopia';
 
 import type {
-  PlayerInputState,
-  PlayerOrientationState,
+  PlayerInput,
+  PlayerCameraOrientation,
   QuaternionLike,
   Vector3Like,
 } from 'hytopia';
@@ -117,7 +117,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     playerEntity.spawn(world, randomSpawnCoordinate);
 
     // We need to do some custom logic for player inputs, so let's assign custom onTick handler to the default player controller.
-    playerEntity.characterController!.onTickPlayerMovement = onTickPlayerMovement;
+    playerEntity.characterController!.onTickWithPlayerInput = onTickWithPlayerInput;
 
     // Set custom collision groups for the player entity, this is so we can reference the PLAYER collision group
     // specifically in enemy collision sensors.
@@ -492,13 +492,13 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
   enemyPathfindAccumulators[entityId]++;
 }
 
-function onTickPlayerMovement(this: DefaultCharacterController, inputState: PlayerInputState, orientationState: PlayerOrientationState, _deltaTimeMs: number) {
+function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
   if (!this.entity.world) return;
 
-  if (inputState.ml) {
+  if (input.ml) {
     const world = this.entity.world;
     const entity = this.entity;
-    const direction = getDirectionFromOrientation(orientationState);
+    const direction = getDirectionFromOrientation(cameraOrientation);
 
     this.entity.startModelOneshotAnimations([ 'shoot' ]);
 
@@ -529,8 +529,8 @@ function damagePlayer(playerEntity: PlayerEntity) {
   }
 }
 
-function getDirectionFromOrientation(orientationState: PlayerOrientationState): Vector3Like {
-  const { yaw, pitch } = orientationState;
+function getDirectionFromOrientation(cameraOrientation: PlayerCameraOrientation): Vector3Like {
+  const { yaw, pitch } = cameraOrientation;
   const cosPitch = Math.cos(pitch);
   
   return {

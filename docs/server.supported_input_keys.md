@@ -4,7 +4,7 @@
 
 ## SUPPORTED\_INPUT\_KEYS variable
 
-The input keys that can be included in the PlayerInputState.
+The input keys that are included in the PlayerInput.
 
 **Signature:**
 

@@ -304,7 +304,7 @@ Creates the colliders for the character controller, overriding the default imple
 </td></tr>
 <tr><td>
 
-[tickPlayerMovement(inputState, orientationState, deltaTimeMs)](./server.defaultcharactercontroller.tickplayermovement.md)
+[tickWithPlayerInput(input, cameraOrientation, deltaTimeMs)](./server.defaultcharactercontroller.tickwithplayerinput.md)
 
 
 </td><td>

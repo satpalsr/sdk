@@ -904,7 +904,7 @@ The port the server will run on. You can override this in your .env by setting P
 
 </td><td>
 
-The input keys that can be included in the PlayerInputState.
+The input keys that are included in the PlayerInput.
 
 
 </td></tr>
@@ -1035,23 +1035,23 @@ Options for the [SimpleCharacterController.move()](./server.simplecharactercontr
 </td></tr>
 <tr><td>
 
-[PlayerInputState](./server.playerinputstate.md)
-
-
-</td><td>
-
-The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerOrientationState](./server.playerorientationstate.md)
+[PlayerCameraOrientation](./server.playercameraorientation.md)
 
 
 </td><td>
 
 The camera orientation state of a Player.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerInput](./server.playerinput.md)
+
+
+</td><td>
+
+The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
 
 
 </td></tr>
