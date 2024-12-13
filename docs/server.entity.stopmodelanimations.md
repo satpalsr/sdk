@@ -51,3 +51,7 @@ The animations to stop.
 
 void
 
+## Remarks
+
+This method will be ignored and do nothing if the entity is a block entity.
+

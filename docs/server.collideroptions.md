@@ -75,6 +75,25 @@ _(Optional)_ The bounciness of the collider.
 </td></tr>
 <tr><td>
 
+[bouncinessCombineRule?](./server.collideroptions.bouncinesscombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+_(Optional)_ The bounciness combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [collisionGroups?](./server.collideroptions.collisiongroups.md)
 
 
@@ -132,6 +151,25 @@ _(Optional)_ The friction of the collider.
 </td></tr>
 <tr><td>
 
+[frictionCombineRule?](./server.collideroptions.frictioncombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+_(Optional)_ The friction combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [halfExtents?](./server.collideroptions.halfextents.md)
 
 
@@ -165,6 +203,25 @@ number
 </td><td>
 
 _(Optional)_ The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder.
+
+
+</td></tr>
+<tr><td>
+
+[indices?](./server.collideroptions.indices.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Uint32Array
+
+
+</td><td>
+
+_(Optional)_ The indices of the collider if the shape is a trimesh.
 
 
 </td></tr>
@@ -355,6 +412,25 @@ string
 </td><td>
 
 _(Optional)_ An arbitrary identifier tag of the collider. Useful for your own logic.
+
+
+</td></tr>
+<tr><td>
+
+[vertices?](./server.collideroptions.vertices.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Float32Array
+
+
+</td><td>
+
+_(Optional)_ The vertices of the collider if the shape is a trimesh.
 
 
 </td></tr>

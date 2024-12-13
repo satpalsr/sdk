@@ -4,7 +4,7 @@
 
 ## Simulation.enableDebugRendering() method
 
-Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.
+Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid body outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.
 
 **Signature:**
 

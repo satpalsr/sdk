@@ -9,5 +9,10 @@ A callback function that is invoked when an entity collides with blocks of this 
 **Signature:**
 
 ```typescript
-onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
+onEntityCollision?: ((blockType: BlockType, entity: Entity, started: boolean) => void) | ((blockType: BlockType, entity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 ```
+
+## Remarks
+
+This must be set before a block of this type is created. If it is set after a block is created, only future created blocks of this type will have the callback set.
+

@@ -115,7 +115,7 @@ _(Optional)_ A callback function for when the controller ticks.
 </td></tr>
 <tr><td>
 
-[onTickPlayerMovement?](./server.basecharactercontroller.ontickplayermovement.md)
+[onTickWithPlayerInput?](./server.basecharactercontroller.ontickwithplayerinput.md)
 
 
 </td><td>
@@ -123,12 +123,12 @@ _(Optional)_ A callback function for when the controller ticks.
 
 </td><td>
 
-(inputState: [PlayerInputState](./server.playerinputstate.md)<!-- -->, orientationState: [PlayerOrientationState](./server.playerorientationstate.md)<!-- -->, deltaTimeMs: number) =&gt; void
+(input: [PlayerInput](./server.playerinput.md)<!-- -->, cameraOrientation: [PlayerCameraOrientation](./server.playercameraorientation.md)<!-- -->, deltaTimeMs: number) =&gt; void
 
 
 </td><td>
 
-_(Optional)_ A callback function for when the controller ticks player movement.
+_(Optional)_ A callback function for when the controller ticks player movement. This is called every tick by a PlayerEntity with a character controller.
 
 
 </td></tr>
@@ -154,7 +154,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[createSensorColliders()](./server.basecharactercontroller.createsensorcolliders.md)
+[createColliders()](./server.basecharactercontroller.createcolliders.md)
 
 
 </td><td>
@@ -162,7 +162,7 @@ Description
 
 </td><td>
 
-Override this method to create sensor colliders to be attached to the controlled entity when it spawns.
+Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.
 
 
 </td></tr>
@@ -182,7 +182,7 @@ Override this method to handle entity movements based on your character controll
 </td></tr>
 <tr><td>
 
-[tickPlayerMovement(inputState, orientationState, deltaTimeMs)](./server.basecharactercontroller.tickplayermovement.md)
+[tickWithPlayerInput(input, cameraOrientation, deltaTimeMs)](./server.basecharactercontroller.tickwithplayerinput.md)
 
 
 </td><td>

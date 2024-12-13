@@ -319,6 +319,20 @@ Gets the bounciness of the collider.
 </td></tr>
 <tr><td>
 
+[getBouncinessCombineRule()](./server.collider.getbouncinesscombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets the bounciness combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [getCollisionGroups()](./server.collider.getcollisiongroups.md)
 
 
@@ -342,6 +356,20 @@ Gets the collision groups the collider belongs to.
 </td><td>
 
 Gets the friction of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[getFrictionCombineRule()](./server.collider.getfrictioncombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets the friction combine rule of the collider.
 
 
 </td></tr>
@@ -403,6 +431,20 @@ Sets the bounciness of the collider.
 </td></tr>
 <tr><td>
 
+[setBouncinessCombineRule(bouncinessCombineRule)](./server.collider.setbouncinesscombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the bounciness combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [setCollisionGroups(collisionGroups)](./server.collider.setcollisiongroups.md)
 
 
@@ -440,6 +482,20 @@ Sets whether the collider is enabled.
 </td><td>
 
 Sets the friction of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[setFrictionCombineRule(frictionCombineRule)](./server.collider.setfrictioncombinerule.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the friction combine rule of the collider.
 
 
 </td></tr>

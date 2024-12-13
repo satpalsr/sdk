@@ -183,7 +183,7 @@ The name of the block type.
 
 </td><td>
 
-(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+((blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void) \| ((blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean, colliderHandleA: number, colliderHandleB: number) =&gt; void)
 
 
 </td><td>

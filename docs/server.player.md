@@ -64,6 +64,27 @@ The camera for the player.
 </td></tr>
 <tr><td>
 
+[cameraOrientation](./server.player.cameraorientation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+Readonly&lt;[PlayerCameraOrientation](./server.playercameraorientation.md)<!-- -->&gt;
+
+
+</td><td>
+
+The current [PlayerCameraOrientation](./server.playercameraorientation.md) of the player.
+
+
+</td></tr>
+<tr><td>
+
 [id](./server.player.id.md)
 
 
@@ -85,7 +106,7 @@ The unique identifier for the player.
 </td></tr>
 <tr><td>
 
-[inputState](./server.player.inputstate.md)
+[input](./server.player.input.md)
 
 
 </td><td>
@@ -95,18 +116,18 @@ The unique identifier for the player.
 
 </td><td>
 
-Readonly&lt;[PlayerInputState](./server.playerinputstate.md)<!-- -->&gt;
+Readonly&lt;[PlayerInput](./server.playerinput.md)<!-- -->&gt;
 
 
 </td><td>
 
-The current [PlayerInputState](./server.playerinputstate.md) of the player.
+The current [PlayerInput](./server.playerinput.md) of the player.
 
 
 </td></tr>
 <tr><td>
 
-[orientationState](./server.player.orientationstate.md)
+[ui](./server.player.ui.md)
 
 
 </td><td>
@@ -116,12 +137,12 @@ The current [PlayerInputState](./server.playerinputstate.md) of the player.
 
 </td><td>
 
-Readonly&lt;[PlayerOrientationState](./server.playerorientationstate.md)<!-- -->&gt;
+[PlayerUI](./server.playerui.md)
 
 
 </td><td>
 
-The current [PlayerOrientationState](./server.playerorientationstate.md) of the player.
+The UI for the player.
 
 
 </td></tr>

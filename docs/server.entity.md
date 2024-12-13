@@ -207,6 +207,48 @@ The unique identifier for the entity.
 </td></tr>
 <tr><td>
 
+[isBlockEntity](./server.entity.isblockentity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity is a block entity.
+
+
+</td></tr>
+<tr><td>
+
+[isModelEntity](./server.entity.ismodelentity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity is a model entity.
+
+
+</td></tr>
+<tr><td>
+
 [isSpawned](./server.entity.isspawned.md)
 
 
@@ -341,7 +383,7 @@ The name of the entity.
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void
+((entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, started: boolean) =&gt; void) \| ((entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, started: boolean, colliderHandleA: number, colliderHandleB: number) =&gt; void)
 
 
 </td><td>
@@ -398,7 +440,7 @@ _(Optional)_ A function that is called when the entity is despawned.
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void
+((entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void) \| ((entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, started: boolean, colliderHandleA: number, colliderHandleB: number) =&gt; void)
 
 
 </td><td>

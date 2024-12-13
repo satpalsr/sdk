@@ -9,8 +9,8 @@ import {
 } from 'hytopia';
 
 import type {
-  PlayerInputState,
-  PlayerOrientationState,
+  PlayerInput,
+  PlayerCameraOrientation,
   Vector3,
 } from 'hytopia';
 
@@ -103,13 +103,13 @@ export default class MyCharacterController extends BaseCharacterController {
    * each tick. tickPlayerMovement is called internally if the entity
    * is of the PlayerEntity class.
    */
-  public tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) {
+  public tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) {
     if (!this.entity.isSpawned || !this.entity.world) return; // type guard.
 
-    super.tickPlayerMovement(inputState, orientationState, deltaTimeMs);
+    super.tickWithPlayerInput(input, cameraOrientation, deltaTimeMs);
 
-    const { w, a, s, d, sp, sh, ml, mr } = inputState; // See PlayerInputState type for all possible inputs.
-    const { yaw } = orientationState; // Camera/perspectie orientation of player.
+    const { w, a, s, d, sp, sh, ml, mr } = input; // See PlayerInput type for all possible inputs.
+    const { yaw } = cameraOrientation; // Camera/perspectie orientation of player.
     const currentVelocity = this.entity.getLinearVelocity();
     const targetVelocities = { x: 0, y: 0, z: 0 };
     const isRunning = sh;
@@ -139,13 +139,13 @@ export default class MyCharacterController extends BaseCharacterController {
     // Play a simple interact animation on left mouse click then clear the input.
     if (ml) {
       this.entity.startModelOneshotAnimations([ 'simple_interact' ]);
-      inputState['ml'] = false;
+      input.ml = false;
     }
 
     // Rocket the player up on mouse right click.
     if (mr) {
       targetVelocities.y = 20;
-      inputState['mr'] = false;
+      input.mr = false;
     }
 
     // Calculate target horizontal velocities (run/walk)

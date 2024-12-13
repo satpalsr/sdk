@@ -296,31 +296,32 @@ export declare abstract class BaseCharacterController {
     onTick?: (deltaTimeMs: number) => void;
     /**
      * A callback function for when the controller ticks
-     * player movement.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * player movement. This is called every tick by a
+     * PlayerEntity with a character controller.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    onTickPlayerMovement?: (inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number) => void;
+    onTickWithPlayerInput?: (input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
     /**
      * @param entity - The entity the controller is for.
      * @param _options - Arbitrary options you may provide or omit for your controller implementation.
      */
     constructor(entity: Entity, _options?: Record<string, unknown>);
     /**
-     * Override this method to create sensor colliders
+     * Override this method to create controller specific colliders
      * to be attached to the controlled entity when it spawns.
      * @returns An array of colliders.
      */
-    createSensorColliders(): Collider[];
+    createColliders(): Collider[];
     /**
      * Override this method to handle entity movements
      * based on player input for your character controller.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
     /**
      * Override this method to handle entity movements
      * based on your character controller.
@@ -377,13 +378,25 @@ export declare class Block {
 export declare class BlockType implements protocol.Serializable {
     /**
      * A callback function that is invoked when an entity collides with blocks of this type.
+     *
+     * @remarks
+     * This must be set before a block of this type is created.
+     * If it is set after a block is created, only future created
+     * blocks of this type will have the callback set.
+     *
      * @param blockType - The block type the collision is for.
      * @param entity - The entity that collided with the block type.
      * @param started - Whether the collision started.
      */
-    onEntityCollision?: (blockType: BlockType, entity: Entity, started: boolean) => void;
+    onEntityCollision?: ((blockType: BlockType, entity: Entity, started: boolean) => void) | ((blockType: BlockType, entity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A callback function that is invoked when an entity contacts a block of this type.
+     *
+     * @remarks
+     * This must be set before a block of this type is created.
+     * If it is set after a block is created, only future created
+     * blocks of this type will have the callback set.
+     *
      * @param blockType - The block type the contact is for.
      * @param entity - The entity that contacted the block type.
      * @param contactForceData - The contact force data.
@@ -682,7 +695,7 @@ export declare class Chunk implements protocol.Serializable {
     setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 
 
-
+    private _meshColliders;
 
 
 
@@ -771,6 +784,14 @@ export declare class ChunkLattice {
 
 }
 
+/** The coefficient for friction or bounciness combine rule. @public */
+export declare enum CoefficientCombineRule {
+    Average = 0,
+    Min = 1,
+    Multiply = 2,
+    Max = 3
+}
+
 /**
  * Represents a collider in a world's physics simulation.
  *
@@ -818,6 +839,11 @@ export declare class Collider {
      */
     getBounciness(): number;
     /**
+     * Gets the bounciness combine rule of the collider.
+     * @returns The bounciness combine rule of the collider.
+     */
+    getBouncinessCombineRule(): CoefficientCombineRule;
+    /**
      * Gets the collision groups the collider belongs to.
      * @returns The collision groups the collider belongs to.
      */
@@ -827,6 +853,11 @@ export declare class Collider {
      * @returns The friction of the collider.
      */
     getFriction(): number;
+    /**
+     * Gets the friction combine rule of the collider.
+     * @returns The friction combine rule of the collider.
+     */
+    getFrictionCombineRule(): CoefficientCombineRule;
     /**
      * Gets the relative rotation of the collider.
      * @returns The relative rotation of the collider.
@@ -843,10 +874,10 @@ export declare class Collider {
      */
     setBounciness(bounciness: number): void;
     /**
-     * Sets the on collision callback for the collider.
-     * @param callback - The on collision callback for the collider.
+     * Sets the bounciness combine rule of the collider.
+     * @param bouncinessCombineRule - The bounciness combine rule of the collider.
      */
-    setOnCollision(callback: CollisionCallback | undefined): void;
+    setBouncinessCombineRule(bouncinessCombineRule: CoefficientCombineRule): void;
     /**
      * Sets the collision groups of the collider.
      * @param collisionGroups - The collision groups of the collider.
@@ -863,10 +894,20 @@ export declare class Collider {
      */
     setFriction(friction: number): void;
     /**
+     * Sets the friction combine rule of the collider.
+     * @param frictionCombineRule - The friction combine rule of the collider.
+     */
+    setFrictionCombineRule(frictionCombineRule: CoefficientCombineRule): void;
+    /**
      * Sets the mass of the collider.
      * @param mass - The mass of the collider.
      */
     setMass(mass: number): void;
+    /**
+     * Sets the on collision callback for the collider.
+     * @param callback - The on collision callback for the collider.
+     */
+    setOnCollision(callback: CollisionCallback | undefined): void;
     /**
      * Sets the relative rotation of the collider.
      * @param rotation - The relative rotation of the collider.
@@ -924,16 +965,22 @@ export declare interface ColliderOptions {
     borderRadius?: number;
     /** The bounciness of the collider. */
     bounciness?: number;
+    /** The bounciness combine rule of the collider. */
+    bouncinessCombineRule?: CoefficientCombineRule;
     /** The collision groups the collider belongs to. */
     collisionGroups?: CollisionGroups;
     /** Whether the collider is enabled. */
     enabled?: boolean;
     /** The friction of the collider. */
     friction?: number;
+    /** The friction combine rule of the collider. */
+    frictionCombineRule?: CoefficientCombineRule;
     /** The half extents of the collider if the shape is a block. */
     halfExtents?: Vector3Like;
     /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
     halfHeight?: number;
+    /** The indices of the collider if the shape is a trimesh. */
+    indices?: Uint32Array;
     /** Whether the collider is a sensor. */
     isSensor?: boolean;
     /** The mass of the collider. */
@@ -952,6 +999,8 @@ export declare interface ColliderOptions {
     simulation?: Simulation;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     tag?: string;
+    /** The vertices of the collider if the shape is a trimesh. */
+    vertices?: Float32Array;
 }
 
 /** The shapes a collider can be. @public */
@@ -961,7 +1010,8 @@ export declare enum ColliderShape {
     CAPSULE = "capsule",
     CONE = "cone",
     CYLINDER = "cylinder",
-    ROUND_CYLINDER = "round-cylinder"
+    ROUND_CYLINDER = "round-cylinder",
+    TRIMESH = "trimesh"
 }
 
 /**
@@ -970,7 +1020,7 @@ export declare enum ColliderShape {
  * @param started - Whether the collision has started or ended.
  * @public
  */
-export declare type CollisionCallback = (other: BlockType | Entity, started: boolean) => void;
+export declare type CollisionCallback = ((other: BlockType | Entity, started: boolean) => void) | ((other: BlockType | Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 
 /**
  * The default collision groups.
@@ -1081,6 +1131,16 @@ declare type ContactForceData = {
     maxForceMagnitude: number;
 };
 
+/** A contact manifold. @public */
+declare type ContactManifold = {
+    /** The local normal vector of the first collider. */
+    localNormalA: Vector3Like;
+    /** The local normal vector of the second collider. */
+    localNormalB: Vector3Like;
+    /** The normal vector of the contact. */
+    normal: Vector3Like;
+};
+
 /** A decoded set of collision groups represented as their string equivalents. @public */
 export declare type DecodedCollisionGroups = {
     belongsTo: string[];
@@ -1161,19 +1221,19 @@ export declare class DefaultCharacterController extends BaseCharacterController 
     /** The platform the entity is on, if any. */
     get platform(): Entity | undefined;
     /**
-     * Creates the sensor colliders for the character controller,
+     * Creates the colliders for the character controller,
      * overriding the default implementation.
      * @returns An array of colliders.
      */
-    createSensorColliders(): Collider[];
+    createColliders(): Collider[];
     /**
      * Ticks the player movement for the character controller,
      * overriding the default implementation.
-     * @param inputState - The current input state of the player.
-     * @param orientationState - The current orientation state of the player.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickPlayerMovement(inputState: PlayerInputState, orientationState: PlayerOrientationState, deltaTimeMs: number): void;
+    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
 }
 
 /** Options for creating a DefaultCharacterController instance. @public */
@@ -1236,13 +1296,21 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /**
      * A function that is called when the entity collides with a block.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param blockType - The block type that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onBlockCollision?: (entity: Entity, blockType: BlockType, started: boolean) => void;
+    onBlockCollision?: ((entity: Entity, blockType: BlockType, started: boolean) => void) | ((entity: Entity, blockType: BlockType, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A function that is called when the entity collides with a block.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param blockType - The block type that the entity collided with.
      * @param contactForceData - The contact force data.
@@ -1250,13 +1318,21 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
     /**
      * A function that is called when the entity collides with another entity.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param otherEntity - The other entity that the entity collided with.
      * @param started - Whether the collision started or ended.
      */
-    onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
+    onEntityCollision?: ((entity: Entity, otherEntity: Entity, started: boolean) => void) | ((entity: Entity, otherEntity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
     /**
      * A function that is called when the entity contacts another entity.
+     *
+     * @remarks
+     * This must be set before the entity is spawned.
+     *
      * @param entity - The Entity instance the collision is for.
      * @param otherEntity - The other entity that the entity collided with.
      * @param contactForceData - The contact force data.
@@ -1319,6 +1395,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get tag(): string | undefined;
     /** The tint color of the entity. */
     get tintColor(): RgbColor | undefined;
+    /** Whether the entity is a block entity. */
+    get isBlockEntity(): boolean;
+    /** Whether the entity is a model entity. */
+    get isModelEntity(): boolean;
     /** Whether the entity is spawned. */
     get isSpawned(): boolean;
     /** The world the entity is in. */
@@ -1353,21 +1433,35 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /**
      * Starts looped animations for the entity, blending with
      * other animations currently playing.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to start.
      */
     startModelLoopedAnimations(animations: string[]): void;
     /**
      * Starts a oneshot animation for the entity, blending with
      * other animations currently playing.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to start.
      */
     startModelOneshotAnimations(animations: string[]): void;
     /**
      * Stops the provided model animations for the entity.
+     *
+     * @remarks
+     * This method will be ignored and do nothing if the entity
+     * is a block entity.
+     *
      * @param animations - The animations to stop.
      */
     stopModelAnimations(animations: string[]): void;
-
 
 
 
@@ -1666,95 +1760,6 @@ export declare enum GameServerEventType {
     STOP = "GAMESERVER.STOP"
 }
 
-declare namespace HYTOPIA {
-    export {
-        Audio,
-        AudioEventType,
-        AudioOptions,
-        AudioEventPayload,
-        AudioManager,
-        BaseCharacterController,
-        Block,
-        BlockType,
-        BlockTypeOptions,
-        BlockTypeRegistry,
-        BlockTypeRegistryEventType,
-        BlockTypeRegistryEventPayload,
-        ChatManager,
-        ChatEventType,
-        CommandCallback,
-        ChatEventPayload,
-        Chunk,
-        ChunkEventType,
-        ChunkEventPayload,
-        ChunkLattice,
-        Collider,
-        ColliderShape,
-        ColliderOptions,
-        CollisionCallback,
-        CollisionGroupsBuilder,
-        CollisionGroup,
-        CollisionGroups,
-        DecodedCollisionGroups,
-        RawCollisionGroups,
-        DefaultCharacterController,
-        DefaultCharacterControllerOptions,
-        Entity,
-        EntityEventType,
-        DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS,
-        DEFAULT_ENTITY_RIGID_BODY_OPTIONS,
-        EntityOptions,
-        EntityEventPayload,
-        EntityManager,
-        EventRouter,
-        Event_2 as Event,
-        GameServer,
-        GameServerEventType,
-        startServer,
-        GameServerEventPayload,
-        RgbColor,
-        Quaternion,
-        Vector3,
-        QuaternionLike,
-        SpdMatrix3,
-        Vector3Like,
-        Vector3Boolean,
-        Player,
-        PlayerEventType,
-        SUPPORTED_INPUT_KEYS,
-        PlayerInputState,
-        PlayerOrientationState,
-        PlayerEventPayload,
-        PlayerCamera,
-        PlayerCameraMode,
-        PlayerCameraEventType,
-        PlayerCameraEventPayload,
-        PlayerEntity,
-        PlayerEntityOptions,
-        PlayerManager,
-        RigidBody,
-        RigidBodyType,
-        RigidBodyAdditionalMassProperties,
-        RigidBodyOptions,
-        SimpleCharacterController,
-        FaceCallback,
-        FaceCompleteCallback,
-        FaceOptions,
-        MoveCallback,
-        MoveCompleteCallback,
-        MoveOptions,
-        Simulation,
-        PORT,
-        World,
-        WorldMap,
-        WorldOptions,
-        WorldLoop,
-        WorldLoopEventType,
-        WorldLoopEventPayload
-    }
-}
-export default HYTOPIA;
-
 /**
  * A callback function called when the entity associated with the
  * SimpleCharacterController updates its translation as it is
@@ -1809,14 +1814,16 @@ export declare class Player {
     /** The camera for the player. */
     readonly camera: PlayerCamera;
 
+    /** The UI for the player. */
+    readonly ui: PlayerUI;
 
 
 
 
-    /** The current {@link PlayerInputState} of the player. */
-    get inputState(): Readonly<PlayerInputState>;
-    /** The current {@link PlayerOrientationState} of the player. */
-    get orientationState(): Readonly<PlayerOrientationState>;
+    /** The current {@link PlayerInput} of the player. */
+    get input(): Readonly<PlayerInput>;
+    /** The current {@link PlayerCameraOrientation} of the player. */
+    get cameraOrientation(): Readonly<PlayerCameraOrientation>;
     /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
@@ -1838,6 +1845,7 @@ export declare class Player {
      * Disconnects the player from the game server.
      */
     disconnect(): void;
+
 
 
 
@@ -2056,6 +2064,12 @@ export declare enum PlayerCameraMode {
     THIRD_PERSON = 1
 }
 
+/** The camera orientation state of a Player. @public */
+export declare type PlayerCameraOrientation = {
+    pitch: number;
+    yaw: number;
+};
+
 /**
  * Represents an entity controlled by a player in a world.
  *
@@ -2131,7 +2145,7 @@ export declare enum PlayerEventType {
 }
 
 /** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
-export declare type PlayerInputState = Partial<Record<keyof InputSchema, boolean>>;
+export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
 
 /**
  * Manages all connected players in a game server.
@@ -2173,11 +2187,62 @@ export declare class PlayerManager {
 
 }
 
-/** The camera orientation state of a Player. @public */
-export declare type PlayerOrientationState = {
-    pitch: number;
-    yaw: number;
-};
+/**
+ * The UI for a player.
+ *
+ * @remarks
+ * UI allows control of all in-game overlays a player
+ * sees. UI is controlled by HTML, CSS and JavaScript
+ * files you provide in your `assets` folder.
+ *
+ * @public
+ */
+export declare class PlayerUI {
+    /** The player that the UI belongs to. @readonly */
+    readonly player: Player;
+    /**
+     * A function that is called when the player's client UI
+     * sends data to the server.
+     *
+     * @remarks
+     * Data sent is an object of any shape defined by you
+     * and controlled with invocations of  `hytopia.ui.sendData()`
+     * from your loaded client UI files.
+     *
+     * @param playerUI - The PlayerUI instance that the data is from.
+     * @param data - The data sent from the client UI.
+     */
+    onData?: (playerUI: PlayerUI, data: object) => void;
+
+    /**
+     * Loads client UI for the player.
+     * @param htmlUri - The ui html uri to load.
+     */
+    load(htmlUri: string): void;
+    /**
+     * Sends data to the player's client UI.
+     * @param data - The data to send to the client UI.
+     */
+    sendData(data: object): void;
+}
+
+/** Payloads for events a PlayerUI instance can emit. @public */
+export declare namespace PlayerUIEventPayload {
+    export interface Load {
+        playerUI: PlayerUI;
+        htmlUri: string;
+    }
+    export interface SendData {
+        playerUI: PlayerUI;
+        data: object;
+    }
+}
+
+/** Event types a  */
+export declare enum PlayerUIEventType {
+    LOAD = "PLAYER_UI.LOAD",
+    SEND_DATA = "PLAYER_UI.SEND_DATA"
+}
 
 /**
  * The port the server will run on. You can override
@@ -2925,6 +2990,9 @@ export declare class Simulation {
 
 
 
+
+    /** Whether the simulation has debug raycasting enabled */
+    get isDebugRaycastingEnabled(): boolean;
     /** Whether the simulation has debug rendering enabled. */
     get isDebugRenderingEnabled(): boolean;
     /** The gravity vector for the simulation. */
@@ -2945,13 +3013,32 @@ export declare class Simulation {
 
 
     /**
+     * Enables or disables debug raycasting for the simulation.
+     * This will render lines for the raycast that disappear
+     * after a few seconds.
+     * @param enabled - Whether to enable debug raycasting.
+     */
+    enableDebugRaycasting(enabled: boolean): void;
+    /**
      * Enables or disables debug rendering for the simulation.
-     * When enabled, all colliders, rigid body and raycast outlines
+     * When enabled, all colliders and rigid body outlines
      * will be rendered in the world. Do not enable this in production.
      * In large worlds enabling this can cause noticable lag and RTT spikes.
      * @param enabled - Whether to enable debug rendering.
      */
     enableDebugRendering(enabled: boolean): void;
+    /**
+     * Gets the contact manifolds for a pair of colliders.
+     *
+     * @remarks
+     * Contact manifolds will not be returned for contacts that
+     * involve sensors.
+     *
+     * @param colliderHandleA - The handle of the first collider.
+     * @param colliderHandleB - The handle of the second collider.
+     * @returns The contact manifolds, or an empty array if no contact.
+     */
+    getContactManifolds(colliderHandleA: RAPIER.ColliderHandle, colliderHandleB: RAPIER.ColliderHandle): ContactManifold[];
 
 
     /**
@@ -2984,7 +3071,7 @@ export declare interface SpdMatrix3 extends SdpMatrix3 {
  */
 export declare function startServer(init: (world: World) => void): void;
 
-/** The input keys that can be included in the PlayerInputState. @public */
+/** The input keys that are included in the PlayerInput. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 /**

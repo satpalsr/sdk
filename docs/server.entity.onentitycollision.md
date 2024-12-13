@@ -9,5 +9,10 @@ A function that is called when the entity collides with another entity.
 **Signature:**
 
 ```typescript
-onEntityCollision?: (entity: Entity, otherEntity: Entity, started: boolean) => void;
+onEntityCollision?: ((entity: Entity, otherEntity: Entity, started: boolean) => void) | ((entity: Entity, otherEntity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
 ```
+
+## Remarks
+
+This must be set before the entity is spawned.
+

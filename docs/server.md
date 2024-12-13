@@ -228,6 +228,17 @@ Manages all connected players in a game server.
 </td></tr>
 <tr><td>
 
+[PlayerUI](./server.playerui.md)
+
+
+</td><td>
+
+The UI for a player.
+
+
+</td></tr>
+<tr><td>
+
 [Quaternion](./server.quaternion.md)
 
 
@@ -390,6 +401,17 @@ Event types a Chunk instance can emit.
 </td></tr>
 <tr><td>
 
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+The coefficient for friction or bounciness combine rule.
+
+
+</td></tr>
+<tr><td>
+
 [ColliderShape](./server.collidershape.md)
 
 
@@ -460,6 +482,17 @@ Event types a PlayerCamera can emit.
 </td><td>
 
 Event types a Player can emit.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerUIEventType](./server.playeruieventtype.md)
+
+
+</td><td>
+
+Event types a
 
 
 </td></tr>
@@ -774,15 +807,6 @@ Payloads for events emitted by a GameServer instance.
 </td></tr>
 <tr><td>
 
-[HYTOPIA](./server.hytopia.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [PlayerCameraEventPayload](./server.playercameraeventpayload.md)
 
 
@@ -800,6 +824,17 @@ Payloads for events a PlayerCamera can emit.
 </td><td>
 
 Payloads for events a Player can emit.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerUIEventPayload](./server.playeruieventpayload.md)
+
+
+</td><td>
+
+Payloads for events a PlayerUI instance can emit.
 
 
 </td></tr>
@@ -869,7 +904,7 @@ The port the server will run on. You can override this in your .env by setting P
 
 </td><td>
 
-The input keys that can be included in the PlayerInputState.
+The input keys that are included in the PlayerInput.
 
 
 </td></tr>
@@ -1000,23 +1035,23 @@ Options for the [SimpleCharacterController.move()](./server.simplecharactercontr
 </td></tr>
 <tr><td>
 
-[PlayerInputState](./server.playerinputstate.md)
-
-
-</td><td>
-
-The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerOrientationState](./server.playerorientationstate.md)
+[PlayerCameraOrientation](./server.playercameraorientation.md)
 
 
 </td><td>
 
 The camera orientation state of a Player.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerInput](./server.playerinput.md)
+
+
+</td><td>
+
+The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
 
 
 </td></tr>
