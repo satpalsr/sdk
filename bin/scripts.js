@@ -45,7 +45,7 @@ const path = require('path');
         return;
       }
 
-      fs.cpSync(templateDir, destDir, { recursive: true });
+      fs.cpSync(templateDir, destDir, { recursive: true, force: false });
     } else {
       // Init from boilerplate
       console.log('🧑‍💻 Initializing project with boilerplate...');

@@ -27,6 +27,7 @@ import {
   PlayerEntity,
   RigidBodyType,
   SimpleCharacterController,
+  Vector3,
   World,
   startServer,
 } from 'hytopia';
@@ -105,6 +106,8 @@ startServer(world => { // Perform our game setup logic in the startServer init c
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
+
+    player.ui.load('ui/index.html');
 
     // Setup a first person camera for the player
     player.camera.setMode(PlayerCameraMode.FIRST_PERSON); // set first person mode
@@ -498,11 +501,25 @@ function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerIn
   if (input.ml) {
     const world = this.entity.world;
     const entity = this.entity;
-    const direction = getDirectionFromOrientation(cameraOrientation);
+    const direction = Vector3.fromVector3Like(entity.getDirectionFromRotation());
+
+    direction.y = Math.sin(cameraOrientation.pitch);
+
+    // Adjust horizontal components based on pitch
+    const cosP = Math.cos(cameraOrientation.pitch);
+    direction.x = -direction.x * cosP;
+    direction.z = -direction.z * cosP;
+
+    // Normalize the direction vector to unit length
+    direction.normalize();
 
     this.entity.startModelOneshotAnimations([ 'shoot' ]);
 
-    const bullet = spawnBullet(world, entity.getTranslation(), direction);
+    // Adjust bullet origin roughly for camera offset so crosshair is accurate
+    const bulletOrigin = entity.getTranslation();
+    bulletOrigin.y += 0.65;
+
+    const bullet = spawnBullet(world, bulletOrigin, direction);
     setTimeout(() => bullet.isSpawned && bullet.despawn(), 2000);
   }
 }
@@ -527,17 +544,6 @@ function damagePlayer(playerEntity: PlayerEntity) {
 
     playerEntity.despawn();
   }
-}
-
-function getDirectionFromOrientation(cameraOrientation: PlayerCameraOrientation): Vector3Like {
-  const { yaw, pitch } = cameraOrientation;
-  const cosPitch = Math.cos(pitch);
-  
-  return {
-    x: -Math.sin(yaw) * cosPitch,
-    y: Math.sin(pitch),
-    z: -Math.cos(yaw) * cosPitch,
-  };
 }
 
 function getRotationFromDirection(direction: Vector3Like): QuaternionLike {
