@@ -2196,7 +2196,7 @@ export declare type PlayerOrientationState = {
  *
  * @public
  */
-declare class PlayerUI {
+export declare class PlayerUI {
     /** The player that the UI belongs to. @readonly */
     readonly player: Player;
     /**
@@ -2223,6 +2223,24 @@ declare class PlayerUI {
      * @param data - The data to send to the client UI.
      */
     sendData(data: object): void;
+}
+
+/** Payloads for events a PlayerUI instance can emit. @public */
+export declare namespace PlayerUIEventPayload {
+    export interface Load {
+        playerUI: PlayerUI;
+        htmlUri: string;
+    }
+    export interface SendData {
+        playerUI: PlayerUI;
+        data: object;
+    }
+}
+
+/** Event types a  */
+export declare enum PlayerUIEventType {
+    LOAD = "PLAYER_UI.LOAD",
+    SEND_DATA = "PLAYER_UI.SEND_DATA"
 }
 
 /**
@@ -2971,9 +2989,6 @@ export declare class Simulation {
 
 
 
-
-    /** Whether the simulation has debug raycasting enabled */
-    get isDebugRaycastingEnabled(): boolean;
     /** Whether the simulation has debug rendering enabled. */
     get isDebugRenderingEnabled(): boolean;
     /** The gravity vector for the simulation. */
@@ -2994,15 +3009,8 @@ export declare class Simulation {
 
 
     /**
-     * Enables or disables debug raycasting for the simulation.
-     * This will render lines for the raycast that disappear
-     * after a few seconds.
-     * @param enabled - Whether to enable debug raycasting.
-     */
-    enableDebugRaycasting(enabled: boolean): void;
-    /**
      * Enables or disables debug rendering for the simulation.
-     * When enabled, all colliders and rigid body outlines
+     * When enabled, all colliders, rigid body and raycast outlines
      * will be rendered in the world. Do not enable this in production.
      * In large worlds enabling this can cause noticable lag and RTT spikes.
      * @param enabled - Whether to enable debug rendering.

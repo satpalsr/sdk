@@ -64,27 +64,6 @@ The gravity vector for the simulation.
 </td></tr>
 <tr><td>
 
-[isDebugRaycastingEnabled](./server.simulation.isdebugraycastingenabled.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
-
-Whether the simulation has debug raycasting enabled
-
-
-</td></tr>
-<tr><td>
-
 [isDebugRenderingEnabled](./server.simulation.isdebugrenderingenabled.md)
 
 
@@ -182,20 +161,6 @@ Casts a ray through the simulation.
 </td></tr>
 <tr><td>
 
-[enableDebugRaycasting(enabled)](./server.simulation.enabledebugraycasting.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Enables or disables debug raycasting for the simulation. This will render lines for the raycast that disappear after a few seconds.
-
-
-</td></tr>
-<tr><td>
-
 [enableDebugRendering(enabled)](./server.simulation.enabledebugrendering.md)
 
 
@@ -204,7 +169,7 @@ Enables or disables debug raycasting for the simulation. This will render lines 
 
 </td><td>
 
-Enables or disables debug rendering for the simulation. When enabled, all colliders and rigid body outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.
+Enables or disables debug rendering for the simulation. When enabled, all colliders, rigid body and raycast outlines will be rendered in the world. Do not enable this in production. In large worlds enabling this can cause noticable lag and RTT spikes.
 
 
 </td></tr>
