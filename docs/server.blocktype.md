@@ -202,7 +202,7 @@ _(Optional)_ A callback function that is invoked when an entity collides with bl
 
 </td><td>
 
-(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: [ContactForceData](./server.contactforcedata.md)<!-- -->) =&gt; void
 
 
 </td><td>

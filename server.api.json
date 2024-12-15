@@ -3324,7 +3324,7 @@
                 {
                   "kind": "Reference",
                   "text": "ContactForceData",
-                  "canonicalReference": "server!~ContactForceData:type"
+                  "canonicalReference": "server!ContactForceData:type"
                 },
                 {
                   "kind": "Content",
@@ -8436,6 +8436,103 @@
         },
         {
           "kind": "TypeAlias",
+          "canonicalReference": "server!ContactForceData:type",
+          "docComment": "/**\n * Data for contact forces.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ContactForceData = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    totalForce: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.Vector",
+              "canonicalReference": "@dimforge/rapier3d-compat!Vector:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    totalForceMagnitude: number;\n    maxForceDirection: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.Vector",
+              "canonicalReference": "@dimforge/rapier3d-compat!Vector:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    maxForceMagnitude: number;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "releaseTag": "Public",
+          "name": "ContactForceData",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!ContactManifold:type",
+          "docComment": "/**\n * A contact manifold.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ContactManifold = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    localNormalA: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    localNormalB: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    normal: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "releaseTag": "Public",
+          "name": "ContactManifold",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "TypeAlias",
           "canonicalReference": "server!DecodedCollisionGroups:type",
           "docComment": "/**\n * A decoded set of collision groups represented as their string equivalents.\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -9812,7 +9909,7 @@
                 {
                   "kind": "Reference",
                   "text": "ContactForceData",
-                  "canonicalReference": "server!~ContactForceData:type"
+                  "canonicalReference": "server!ContactForceData:type"
                 },
                 {
                   "kind": "Content",
@@ -9974,7 +10071,7 @@
                 {
                   "kind": "Reference",
                   "text": "ContactForceData",
-                  "canonicalReference": "server!~ContactForceData:type"
+                  "canonicalReference": "server!ContactForceData:type"
                 },
                 {
                   "kind": "Content",
@@ -18584,6 +18681,121 @@
           }
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!RaycastHit:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RaycastHit = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    hitObject: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Block",
+              "canonicalReference": "server!Block:class"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Entity",
+              "canonicalReference": "server!Entity:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    hitPoint: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    hitDistance: number;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "releaseTag": "Public",
+          "name": "RaycastHit",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!RaycastOptions:type",
+          "docComment": "/**\n * Options for raycasting.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RaycastOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    ignoresSensors?: boolean;\n    filterFlags?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.QueryFilterFlags",
+              "canonicalReference": "@dimforge/rapier3d-compat!QueryFilterFlags:enum"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    filterGroups?: number;\n    filterExcludeCollider?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.Collider",
+              "canonicalReference": "@dimforge/rapier3d-compat!Collider:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    filterExcludeRigidBody?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.RigidBody",
+              "canonicalReference": "@dimforge/rapier3d-compat!RigidBody:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    filterPredicate?: (collider: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RAPIER.Collider",
+              "canonicalReference": "@dimforge/rapier3d-compat!Collider:class"
+            },
+            {
+              "kind": "Content",
+              "text": ") => boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "releaseTag": "Public",
+          "name": "RaycastOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 10
+          }
+        },
+        {
           "kind": "Interface",
           "canonicalReference": "server!RgbColor:interface",
           "docComment": "/**\n * A RGB color.\n *\n * @public\n */\n",
@@ -22811,7 +23023,7 @@
                 {
                   "kind": "Reference",
                   "text": "ContactManifold",
-                  "canonicalReference": "server!~ContactManifold:type"
+                  "canonicalReference": "server!ContactManifold:type"
                 },
                 {
                   "kind": "Content",
@@ -22981,7 +23193,7 @@
                 {
                   "kind": "Reference",
                   "text": "RaycastOptions",
-                  "canonicalReference": "server!~RaycastOptions:type"
+                  "canonicalReference": "server!RaycastOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -22990,7 +23202,7 @@
                 {
                   "kind": "Reference",
                   "text": "RaycastHit",
-                  "canonicalReference": "server!~RaycastHit:type"
+                  "canonicalReference": "server!RaycastHit:type"
                 },
                 {
                   "kind": "Content",

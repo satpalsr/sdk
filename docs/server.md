@@ -958,6 +958,28 @@ A callback function for a chat command.
 </td></tr>
 <tr><td>
 
+[ContactForceData](./server.contactforcedata.md)
+
+
+</td><td>
+
+Data for contact forces.
+
+
+</td></tr>
+<tr><td>
+
+[ContactManifold](./server.contactmanifold.md)
+
+
+</td><td>
+
+A contact manifold.
+
+
+</td></tr>
+<tr><td>
+
 [DecodedCollisionGroups](./server.decodedcollisiongroups.md)
 
 
@@ -1063,6 +1085,26 @@ The input state of a Player; keys from SUPPORTED\_INPUT\_KEYS.
 </td><td>
 
 A raw set of collision groups represented as a 32-bit number.
+
+
+</td></tr>
+<tr><td>
+
+[RaycastHit](./server.raycasthit.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[RaycastOptions](./server.raycastoptions.md)
+
+
+</td><td>
+
+Options for raycasting.
 
 
 </td></tr>

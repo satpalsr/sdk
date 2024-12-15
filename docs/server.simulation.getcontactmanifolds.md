@@ -65,7 +65,7 @@ The handle of the second collider.
 </tbody></table>
 **Returns:**
 
-ContactManifold\[\]
+[ContactManifold](./server.contactmanifold.md)<!-- -->\[\]
 
 The contact manifolds, or an empty array if no contact.
 

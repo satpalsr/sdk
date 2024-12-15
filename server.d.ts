@@ -1121,7 +1121,7 @@ export declare class CollisionGroupsBuilder {
 export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
 /** Data for contact forces. @public */
-declare type ContactForceData = {
+export declare type ContactForceData = {
     /** The total force vector. */
     totalForce: RAPIER.Vector;
     /** The magnitude of the total force. */
@@ -1133,7 +1133,7 @@ declare type ContactForceData = {
 };
 
 /** A contact manifold. @public */
-declare type ContactManifold = {
+export declare type ContactManifold = {
     /** The local normal vector of the first collider. */
     localNormalA: Vector3Like;
     /** The local normal vector of the second collider. */
@@ -2433,7 +2433,7 @@ export declare interface QuaternionLike {
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
-declare type RaycastHit = {
+export declare type RaycastHit = {
     /** The block or entity the raycast hit. */
     hitObject: Block | Entity;
     /** The point in global coordinate space the raycast hit the object. */
@@ -2443,7 +2443,7 @@ declare type RaycastHit = {
 };
 
 /** Options for raycasting. @public */
-declare type RaycastOptions = {
+export declare type RaycastOptions = {
     /** Whether to ignore sensor colliders. */
     ignoresSensors?: boolean;
     /** The query filter flags. */

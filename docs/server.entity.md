@@ -402,7 +402,7 @@ _(Optional)_ A function that is called when the entity collides with a block.
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, blockType: [BlockType](./server.blocktype.md)<!-- -->, contactForceData: [ContactForceData](./server.contactforcedata.md)<!-- -->) =&gt; void
 
 
 </td><td>
@@ -459,7 +459,7 @@ _(Optional)_ A function that is called when the entity collides with another ent
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, contactForceData: ContactForceData) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, otherEntity: [Entity](./server.entity.md)<!-- -->, contactForceData: [ContactForceData](./server.contactforcedata.md)<!-- -->) =&gt; void
 
 
 </td><td>

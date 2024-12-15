@@ -85,7 +85,7 @@ options
 
 </td><td>
 
-RaycastOptions
+[RaycastOptions](./server.raycastoptions.md)
 
 
 </td><td>
@@ -97,7 +97,7 @@ _(Optional)_ The options for the raycast.
 </tbody></table>
 **Returns:**
 
-RaycastHit \| null
+[RaycastHit](./server.raycasthit.md) \| null
 
 A RaycastHit object containing the first block or entity hit by the ray, or null if no hit.
 
