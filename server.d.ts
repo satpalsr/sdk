@@ -296,8 +296,7 @@ export declare abstract class BaseCharacterController {
     onTick?: (deltaTimeMs: number) => void;
     /**
      * A callback function for when the controller ticks
-     * player movement. This is called every tick by a
-     * PlayerEntity with a character controller.
+     * player movement.
      * @param input - The current input state of the player.
      * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
@@ -317,6 +316,8 @@ export declare abstract class BaseCharacterController {
     /**
      * Override this method to handle entity movements
      * based on player input for your character controller.
+     * This is called every tick by a PlayerEntity with a
+     * character controller.
      * @param input - The current input state of the player.
      * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
@@ -2432,8 +2433,17 @@ export declare interface QuaternionLike {
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
+declare type RaycastHit = {
+    /** The block or entity the raycast hit. */
+    hitObject: Block | Entity;
+    /** The point in global coordinate space the raycast hit the object. */
+    hitPoint: Vector3Like;
+    /** The distance from origin where the raycast hit. */
+    hitDistance: number;
+};
+
 /** Options for raycasting. @public */
-declare type RayCastOptions = {
+declare type RaycastOptions = {
     /** Whether to ignore sensor colliders. */
     ignoresSensors?: boolean;
     /** The query filter flags. */
@@ -3003,13 +3013,18 @@ export declare class Simulation {
     get world(): World;
     /**
      * Casts a ray through the simulation.
+     *
+     * @remarks
+     * The cast ray will stop at the the first block or
+     * entity hit within the length of the ray.
+     *
      * @param origin - The origin of the ray.
      * @param direction - The direction of the ray.
      * @param length - The length of the ray.
      * @param options - The options for the raycast.
-     * @returns The first block or entity hit by the ray, or null if no hit.
+     * @returns A RaycastHit object containing the first block or entity hit by the ray, or null if no hit.
      */
-    castRay(origin: RAPIER.Vector3, direction: RAPIER.Vector3, length: number, options?: RayCastOptions): Block | Entity | null;
+    raycast(origin: RAPIER.Vector3, direction: RAPIER.Vector3, length: number, options?: RaycastOptions): RaycastHit | null;
 
 
     /**

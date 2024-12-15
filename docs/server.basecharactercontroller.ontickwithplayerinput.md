@@ -4,7 +4,7 @@
 
 ## BaseCharacterController.onTickWithPlayerInput property
 
-A callback function for when the controller ticks player movement. This is called every tick by a PlayerEntity with a character controller.
+A callback function for when the controller ticks player movement.
 
 **Signature:**
 

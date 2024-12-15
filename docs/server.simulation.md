@@ -168,20 +168,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[castRay(origin, direction, length, options)](./server.simulation.castray.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Casts a ray through the simulation.
-
-
-</td></tr>
-<tr><td>
-
 [enableDebugRaycasting(enabled)](./server.simulation.enabledebugraycasting.md)
 
 
@@ -219,6 +205,20 @@ Enables or disables debug rendering for the simulation. When enabled, all collid
 </td><td>
 
 Gets the contact manifolds for a pair of colliders.
+
+
+</td></tr>
+<tr><td>
+
+[raycast(origin, direction, length, options)](./server.simulation.raycast.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Casts a ray through the simulation.
 
 
 </td></tr>

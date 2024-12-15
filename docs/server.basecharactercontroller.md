@@ -128,7 +128,7 @@ _(Optional)_ A callback function for when the controller ticks.
 
 </td><td>
 
-_(Optional)_ A callback function for when the controller ticks player movement. This is called every tick by a PlayerEntity with a character controller.
+_(Optional)_ A callback function for when the controller ticks player movement.
 
 
 </td></tr>
@@ -190,7 +190,7 @@ Override this method to handle entity movements based on your character controll
 
 </td><td>
 
-Override this method to handle entity movements based on player input for your character controller.
+Override this method to handle entity movements based on player input for your character controller. This is called every tick by a PlayerEntity with a character controller.
 
 
 </td></tr>

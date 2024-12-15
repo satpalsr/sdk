@@ -4,7 +4,7 @@
 
 ## BaseCharacterController.tickWithPlayerInput() method
 
-Override this method to handle entity movements based on player input for your character controller.
+Override this method to handle entity movements based on player input for your character controller. This is called every tick by a PlayerEntity with a character controller.
 
 **Signature:**
 
