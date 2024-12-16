@@ -84,3 +84,37 @@ The global coordinate of the block.
 
 </td></tr>
 </tbody></table>
+
+## Methods
+
+<table><thead><tr><th>
+
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getNeighborGlobalCoordinateFromHitPoint(hitPoint)](./server.block.getneighborglobalcoordinatefromhitpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets the most adjacent neighbor global coordinate of this block based on a relative hit point, typically from a raycast.
+
+
+</td></tr>
+</tbody></table>

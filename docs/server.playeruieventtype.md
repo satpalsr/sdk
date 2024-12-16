@@ -4,7 +4,7 @@
 
 ## PlayerUIEventType enum
 
-Event types a
+Event types a PlayerUI can emit.
 
 **Signature:**
 

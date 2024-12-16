@@ -4,11 +4,14 @@
 
 ## RaycastHit type
 
+A hit result from a raycast.
+
 **Signature:**
 
 ```typescript
 export type RaycastHit = {
-    hitObject: Block | Entity;
+    hitBlock?: Block;
+    hitEntity?: Entity;
     hitPoint: Vector3Like;
     hitDistance: number;
 };

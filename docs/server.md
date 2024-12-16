@@ -472,6 +472,8 @@ Event types a PlayerCamera can emit.
 
 </td><td>
 
+The mode of the camera.
+
 
 </td></tr>
 <tr><td>
@@ -492,7 +494,7 @@ Event types a Player can emit.
 
 </td><td>
 
-Event types a
+Event types a PlayerUI can emit.
 
 
 </td></tr>
@@ -1094,6 +1096,8 @@ A raw set of collision groups represented as a 32-bit number.
 
 
 </td><td>
+
+A hit result from a raycast.
 
 
 </td></tr>

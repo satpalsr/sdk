@@ -64,27 +64,6 @@ The camera for the player.
 </td></tr>
 <tr><td>
 
-[cameraOrientation](./server.player.cameraorientation.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-Readonly&lt;[PlayerCameraOrientation](./server.playercameraorientation.md)<!-- -->&gt;
-
-
-</td><td>
-
-The current [PlayerCameraOrientation](./server.playercameraorientation.md) of the player.
-
-
-</td></tr>
-<tr><td>
-
 [id](./server.player.id.md)
 
 

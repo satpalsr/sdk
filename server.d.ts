@@ -348,6 +348,14 @@ export declare class Block {
     readonly blockType: BlockType;
 
 
+    /**
+     * Gets the most adjacent neighbor global coordinate of this block
+     * based on a relative hit point, typically from a raycast.
+     *
+     * @param hitPoint - The hit point on this block to get the neighbor coordinate from.
+     * @returns A neighbor global coordinate of this block based on the hit point.
+     */
+    getNeighborGlobalCoordinateFromHitPoint(hitPoint: Vector3Like): Vector3Like;
 }
 
 /**
@@ -1820,11 +1828,8 @@ export declare class Player {
 
 
 
-
     /** The current {@link PlayerInput} of the player. */
     get input(): Readonly<PlayerInput>;
-    /** The current {@link PlayerCameraOrientation} of the player. */
-    get cameraOrientation(): Readonly<PlayerCameraOrientation>;
     /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
@@ -1884,10 +1889,13 @@ export declare class PlayerCamera implements protocol.Serializable {
 
 
 
+
     /** The entity the camera is attached to. */
     get attachedToEntity(): Entity | undefined;
     /** The position the camera is attached to. */
     get attachedToPosition(): Vector3Like | undefined;
+    /** The facing direction vector of the camera based on its current orientation. */
+    get facingDirection(): Vector3Like;
     /** The film offset of the camera. A positive value shifts the camera right, a negative value shifts it left. */
     get filmOffset(): number;
     /** Only used in first-person mode. The forward offset of the camera. A positive number shifts the camera forward, a negative number shifts it backward. */
@@ -1900,6 +1908,8 @@ export declare class PlayerCamera implements protocol.Serializable {
     get mode(): PlayerCameraMode;
     /** The relative offset of the camera from the entity or position it is attached to. */
     get offset(): Vector3Like;
+    /** The current orientation of the camera. */
+    get orientation(): PlayerCameraOrientation;
     /** The entity the camera will constantly look at, even if the camera attached or tracked entity moves. */
     get trackedEntity(): Entity | undefined;
     /** The position the camera will constantly look at, even if the camera attached entity moves. */
@@ -1966,6 +1976,8 @@ export declare class PlayerCamera implements protocol.Serializable {
      * @param offset - The offset to set.
      */
     setOffset(offset: Vector3Like): void;
+
+
     /**
      * Sets the entity the camera will constantly look at,
      * even if the camera attached or tracked entity moves.
@@ -2060,6 +2072,7 @@ export declare enum PlayerCameraEventType {
     SET_ZOOM = "PLAYER_CAMERA.SET_ZOOM"
 }
 
+/** The mode of the camera. @public */
 export declare enum PlayerCameraMode {
     FIRST_PERSON = 0,
     THIRD_PERSON = 1
@@ -2239,7 +2252,7 @@ export declare namespace PlayerUIEventPayload {
     }
 }
 
-/** Event types a  */
+/** Event types a PlayerUI can emit. @public */
 export declare enum PlayerUIEventType {
     LOAD = "PLAYER_UI.LOAD",
     SEND_DATA = "PLAYER_UI.SEND_DATA"
@@ -2433,9 +2446,12 @@ export declare interface QuaternionLike {
 /** A raw set of collision groups represented as a 32-bit number. @public */
 export declare type RawCollisionGroups = RAPIER.InteractionGroups;
 
+/** A hit result from a raycast. @public */
 export declare type RaycastHit = {
-    /** The block or entity the raycast hit. */
-    hitObject: Block | Entity;
+    /** The block the raycast hit. */
+    hitBlock?: Block;
+    /** The entity the raycast hit */
+    hitEntity?: Entity;
     /** The point in global coordinate space the raycast hit the object. */
     hitPoint: Vector3Like;
     /** The distance from origin where the raycast hit. */

@@ -3012,6 +3012,56 @@
               "isAbstract": false
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Block#getNeighborGlobalCoordinateFromHitPoint:member(1)",
+              "docComment": "/**\n * Gets the most adjacent neighbor global coordinate of this block based on a relative hit point, typically from a raycast.\n *\n * @param hitPoint - The hit point on this block to get the neighbor coordinate from.\n *\n * @returns A neighbor global coordinate of this block based on the hit point.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getNeighborGlobalCoordinateFromHitPoint(hitPoint: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "hitPoint",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getNeighborGlobalCoordinateFromHitPoint"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Block#globalCoordinate:member",
               "docComment": "/**\n * The global coordinate of the block.\n */\n",
@@ -13330,50 +13380,6 @@
               "isAbstract": false
             },
             {
-              "kind": "Property",
-              "canonicalReference": "server!Player#cameraOrientation:member",
-              "docComment": "/**\n * The current {@link PlayerCameraOrientation} of the player.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get cameraOrientation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Readonly",
-                  "canonicalReference": "!Readonly:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerCameraOrientation",
-                  "canonicalReference": "server!PlayerCameraOrientation:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "cameraOrientation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 5
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
               "kind": "Method",
               "canonicalReference": "server!Player#disconnect:member(1)",
               "docComment": "/**\n * Disconnects the player from the game server.\n */\n",
@@ -13754,6 +13760,37 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!PlayerCamera#facingDirection:member",
+              "docComment": "/**\n * The facing direction vector of the camera based on its current orientation.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get facingDirection(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "facingDirection",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!PlayerCamera#filmOffset:member",
               "docComment": "/**\n * The film offset of the camera. A positive value shifts the camera right, a negative value shifts it left.\n */\n",
               "excerptTokens": [
@@ -14029,6 +14066,37 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "offset",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerCamera#orientation:member",
+              "docComment": "/**\n * The current orientation of the camera.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get orientation(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "orientation",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -15985,7 +16053,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerCameraMode:enum",
-          "docComment": "",
+          "docComment": "/**\n * The mode of the camera.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -16059,7 +16127,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/networking/players/Player.ts",
+          "fileUrlPath": "src/networking/players/PlayerCamera.ts",
           "releaseTag": "Public",
           "name": "PlayerCameraOrientation",
           "typeTokenRange": {
@@ -17196,7 +17264,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerUIEventType:enum",
-          "docComment": "/**\n * Event types a\n */\n",
+          "docComment": "/**\n * Event types a PlayerUI can emit.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -18683,7 +18751,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!RaycastHit:type",
-          "docComment": "",
+          "docComment": "/**\n * A hit result from a raycast.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -18691,7 +18759,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    hitObject: "
+              "text": "{\n    hitBlock?: "
             },
             {
               "kind": "Reference",
@@ -18700,7 +18768,7 @@
             },
             {
               "kind": "Content",
-              "text": " | "
+              "text": ";\n    hitEntity?: "
             },
             {
               "kind": "Reference",

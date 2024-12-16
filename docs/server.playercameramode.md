@@ -4,6 +4,8 @@
 
 ## PlayerCameraMode enum
 
+The mode of the camera.
+
 **Signature:**
 
 ```typescript

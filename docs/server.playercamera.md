@@ -93,6 +93,27 @@ The position the camera is attached to.
 </td></tr>
 <tr><td>
 
+[facingDirection](./server.playercamera.facingdirection.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The facing direction vector of the camera based on its current orientation.
+
+
+</td></tr>
+<tr><td>
+
 [filmOffset](./server.playercamera.filmoffset.md)
 
 
@@ -214,6 +235,27 @@ The nodes of the model the camera is attached to that will not be rendered for t
 </td><td>
 
 The relative offset of the camera from the entity or position it is attached to.
+
+
+</td></tr>
+<tr><td>
+
+[orientation](./server.playercamera.orientation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[PlayerCameraOrientation](./server.playercameraorientation.md)
+
+
+</td><td>
+
+The current orientation of the camera.
 
 
 </td></tr>
