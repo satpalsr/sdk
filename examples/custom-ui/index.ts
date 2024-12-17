@@ -75,7 +75,7 @@ function updatePlayerList() {
     // For each player, return their username and current position
     return {
       username: player.username,
-      position: entity.getTranslation(), // Gets x,y,z coordinate
+      position: entity.position, // Gets x,y,z coordinate
     };
   });
 

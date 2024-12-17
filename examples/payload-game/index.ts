@@ -151,7 +151,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     // physics engine we use where entities despawned to not trigger a collision
     // event for leaving a sensor. This is a workaround till a better solution is found.
     world.entityManager.getAllPlayerEntities(player).forEach(entity => {
-      entity.setTranslation({ x: 0, y: 100, z: 0 });
+      entity.setPosition({ x: 0, y: 100, z: 0 });
       setTimeout(() => entity.despawn(), 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     });
 
@@ -254,8 +254,8 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
     // Apply knockback, the knockback effect is less if the spider is larger, and more if it is smaller
     // because of how the physics simulation applies forces relative to automatically calculated mass from the spider's
     // size
-    const bulletDirection = bullet.getDirectionFromRotation();
-    const mass = otherEntity.getMass();
+    const bulletDirection = bullet.directionFromRotation;
+    const mass = otherEntity.mass;
     const knockback = 14 * mass;
 
     otherEntity.applyImpulse({
@@ -266,7 +266,7 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
 
     if (enemyHealth[otherEntity.id!] <= 0) {
       // YEET the spider before despawning it so it registers leaving the sensor
-      otherEntity.setTranslation({ x: 0, y: 100, z: 0 });
+      otherEntity.setPosition({ x: 0, y: 100, z: 0 });
       setTimeout(() => { otherEntity.despawn(); }, 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     }
 
@@ -399,7 +399,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
 
   spider.onEntityCollision = (spider: Entity, entity: Entity, started: boolean) => { // If the spider hits a player, deal damage and apply knockback
     if (started && entity instanceof PlayerEntity && entity.isSpawned) {
-      const spiderDirection = spider.getDirectionFromRotation();
+      const spiderDirection = spider.directionFromRotation;
       const knockback = 4 * randomScaleMultiplier;
 
       entity.applyImpulse({
@@ -466,19 +466,19 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
     const targetPlayer = targetPlayers.values().next().value as PlayerEntity | undefined;
 
     enemyPathfindingTargets[entityId] = targetPlayer?.isSpawned
-      ? targetPlayer.getTranslation()
-      : payloadEntity.getTranslation();
+      ? targetPlayer.position
+      : payloadEntity.position;
 
     enemyPathfindAccumulators[entityId] -= PATHFIND_ACCUMULATOR_THRESHOLD;
 
     // Make the spider jump if its close to the target player
-    const currentPosition = entity.getTranslation();
+    const currentPosition = entity.position;
     const dx = enemyPathfindingTargets[entityId].x - currentPosition.x;
     const dz = enemyPathfindingTargets[entityId].z - currentPosition.z;
     const distance = Math.sqrt(dx * dx + dz * dz);
     
     if (distance < 10) {
-      const mass = entity.getMass();
+      const mass = entity.mass;
       entity.applyImpulse({ x: 0, y: (10 * Math.random() + 5) * mass, z: 0 });
     }
 
@@ -501,7 +501,7 @@ function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerIn
   if (input.ml) {
     const world = this.entity.world;
     const entity = this.entity;
-    const direction = Vector3.fromVector3Like(entity.getDirectionFromRotation());
+    const direction = Vector3.fromVector3Like(entity.directionFromRotation);
 
     direction.y = Math.sin(cameraOrientation.pitch);
 
@@ -516,7 +516,7 @@ function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerIn
     this.entity.startModelOneshotAnimations([ 'shoot' ]);
 
     // Adjust bullet origin roughly for camera offset so crosshair is accurate
-    const bulletOrigin = entity.getTranslation();
+    const bulletOrigin = entity.position;
     bulletOrigin.y += 0.65;
 
     const bullet = spawnBullet(world, bulletOrigin, direction);

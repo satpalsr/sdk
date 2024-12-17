@@ -47,7 +47,7 @@ startServer(world => {
 
   // Clamp the z range the platform moves back and forth between
   blockPlatform.onTick = blockPlatform => { 
-    const position = blockPlatform.getTranslation();
+    const position = blockPlatform.position;
 
     if (position.z < -9) {
       blockPlatform.setLinearVelocity({ x: 0, y: 0, z: 3 });
@@ -168,7 +168,7 @@ startServer(world => {
 
       // pathfind to the player's entity
       const blockPetCharacterController = blockPet.characterController as SimpleCharacterController;
-      const targetPosition = targetPlayerEntity.getTranslation();
+      const targetPosition = targetPlayerEntity.position;
       blockPetCharacterController.move(targetPosition, 3);
       blockPetCharacterController.face(targetPosition, 1);
     }
