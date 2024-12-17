@@ -4,7 +4,7 @@
 
 ## FaceCompleteCallback type
 
-A callback function called when the entity associated with the SimpleCharacterController finishes rotating and is now facing a target coordinate.
+A callback function called when the entity associated with the SimpleEntityController finishes rotating and is now facing a target coordinate.
 
 **Signature:**
 

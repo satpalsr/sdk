@@ -15,7 +15,7 @@ export default class PlayerEntity extends Entity
 
 ## Remarks
 
-Player entities extend the [Entity](./server.entity.md) class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated character controller of the entity, calling the character controller's onTickPlayerMovement method when player input has changed.
+Player entities extend the [Entity](./server.entity.md) class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated entity controller of the entity, calling the entity controller's onTickPlayerMovement method when player input has changed.
 
 ## Example
 

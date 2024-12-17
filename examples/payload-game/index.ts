@@ -1,7 +1,7 @@
 /**
  * payload-game is a simple game that encompasses a number of core HYTOPIA SDK systems.
  * This example utilizes entities, spawning, rigid body, colliders and sensors, 
- * collision groups, audio, character controller hooks, and more.
+ * collision groups, audio, entity controller hooks, and more.
  * 
  * This example is a quick and dirty implementation of an overwatch style push the payload
  * in a multiplayer PvE style. Players start the game around the payload and must stay near it
@@ -22,11 +22,11 @@ import {
   PlayerCameraMode,
   ColliderShape,
   CollisionGroup,
-  DefaultCharacterController,
+  PlayerEntityController,
   Entity,
   PlayerEntity,
   RigidBodyType,
-  SimpleCharacterController,
+  SimpleEntityController,
   Vector3,
   World,
   startServer,
@@ -120,7 +120,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     playerEntity.spawn(world, randomSpawnCoordinate);
 
     // We need to do some custom logic for player inputs, so let's assign custom onTick handler to the default player controller.
-    playerEntity.characterController!.onTickWithPlayerInput = onTickWithPlayerInput;
+    playerEntity.controller!.onTickWithPlayerInput = onTickWithPlayerInput;
 
     // Set custom collision groups for the player entity, this is so we can reference the PLAYER collision group
     // specifically in enemy collision sensors.
@@ -293,7 +293,7 @@ function spawnPayloadEntity(world: World) {
   }
 
   payloadEntity = new Entity({
-    characterController: new SimpleCharacterController(),
+    controller: new SimpleEntityController(),
     name: 'Payload',
     modelUri: 'models/payload.gltf',
     modelScale: 0.7,
@@ -350,7 +350,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   const targetPlayers = new Set<PlayerEntity>();
 
   const spider = new Entity({
-    characterController: new SimpleCharacterController(),
+    controller: new SimpleEntityController(),
     name: 'Spider',
     modelUri: 'models/spider.gltf',
     modelLoopedAnimations: [ 'walk' ],
@@ -444,16 +444,16 @@ function onTickPathfindPayload(entity: Entity) { // Movement logic for the paylo
     return console.warn('Payload destination reached!! Game won!!');
   }
 
-  if (!(entity.characterController instanceof SimpleCharacterController)) { // type guard
-    return console.warn('Payload entity does not have a SimpleCharacterController!');
+  if (!(entity.controller instanceof SimpleEntityController)) { // type guard
+    return console.warn('Payload entity does not have a SimpleEntityController!');
   }
 
-  entity.characterController.move(targetWaypointCoordinate, speed, {
+  entity.controller.move(targetWaypointCoordinate, speed, {
     moveCompleteCallback: () => targetWaypointCoordinateIndex++,
     moveIgnoreAxes: { y: true },
   });
 
-  entity.characterController.face(targetWaypointCoordinate, speed / 2);
+  entity.controller.face(targetWaypointCoordinate, speed / 2);
 }
 
 function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, speed: number, _tickDeltaMs: number) {
@@ -483,19 +483,19 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
     }
 
     // Handle Movement
-    if (!(entity.characterController instanceof SimpleCharacterController)) {
-      return console.warn('Enemy entity does not have a SimpleCharacterController!');
+    if (!(entity.controller instanceof SimpleEntityController)) {
+      return console.warn('Enemy entity does not have a SimpleEntityController!');
     }
   
     const targetPosition = enemyPathfindingTargets[entityId];
-    entity.characterController.move(targetPosition, speed, { moveIgnoreAxes: { y: true } });
-    entity.characterController.face(targetPosition, speed / 2);
+    entity.controller.move(targetPosition, speed, { moveIgnoreAxes: { y: true } });
+    entity.controller.face(targetPosition, speed / 2);
   }
 
   enemyPathfindAccumulators[entityId]++;
 }
 
-function onTickWithPlayerInput(this: DefaultCharacterController, entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
+function onTickWithPlayerInput(this: PlayerEntityController, entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
   if (!entity.world) return;
 
   if (input.ml) {

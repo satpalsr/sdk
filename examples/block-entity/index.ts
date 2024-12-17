@@ -5,7 +5,7 @@ import {
   Entity,
   RigidBodyType,
   GameServer,
-  SimpleCharacterController,
+  SimpleEntityController,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -140,9 +140,9 @@ startServer(world => {
   const blockPet = new Entity({
     blockTextureUri: 'textures/bricks.png',
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 },
-    // attach a simple character controller so we can pathfind,
-    // the character controller will be created and associated when we spawn the entity
-    characterController: new SimpleCharacterController(), 
+    // attach a simple entity controller so we can pathfind,
+    // the entity controller will be created and associated when we spawn the entity
+    controller: new SimpleEntityController(), 
   });
 
   blockPet.spawn(world, { x: 0, y: 10, z: -6 });
@@ -167,10 +167,10 @@ startServer(world => {
       if (!targetPlayerEntity) { return; } // if the player doesn't have an entity, don't pathfind.
 
       // pathfind to the player's entity
-      const blockPetCharacterController = blockPet.characterController as SimpleCharacterController;
+      const blockPetEntityController = blockPet.controller as SimpleEntityController;
       const targetPosition = targetPlayerEntity.position;
-      blockPetCharacterController.move(targetPosition, 3);
-      blockPetCharacterController.face(targetPosition, 1);
+      blockPetEntityController.move(targetPosition, 3);
+      blockPetEntityController.face(targetPosition, 1);
     }
   };
 });

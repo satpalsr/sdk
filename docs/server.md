@@ -129,17 +129,6 @@ A helper class for building and decoding collision groups.
 </td></tr>
 <tr><td>
 
-[DefaultCharacterController](./server.defaultcharactercontroller.md)
-
-
-</td><td>
-
-The default character controller implementation.
-
-
-</td></tr>
-<tr><td>
-
 [Entity](./server.entity.md)
 
 
@@ -217,6 +206,17 @@ Represents an entity controlled by a player in a world.
 </td></tr>
 <tr><td>
 
+[PlayerEntityController](./server.playerentitycontroller.md)
+
+
+</td><td>
+
+The player entity controller implementation.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerManager](./server.playermanager.md)
 
 
@@ -261,12 +261,12 @@ Represents a rigid body in a world's physics simulation.
 </td></tr>
 <tr><td>
 
-[SimpleCharacterController](./server.simplecharactercontroller.md)
+[SimpleEntityController](./server.simpleentitycontroller.md)
 
 
 </td><td>
 
-A simple character controller with basic movement functions.
+A simple entity controller with basic movement functions.
 
 
 </td></tr>
@@ -331,12 +331,12 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md)
+[BaseEntityController](./server.baseentitycontroller.md)
 
 
 </td><td>
 
-A base class for character controller implementations.
+A base class for entity controller implementations.
 
 
 </td></tr>
@@ -596,17 +596,6 @@ Options for creating a Collider instance.
 </td></tr>
 <tr><td>
 
-[DefaultCharacterControllerOptions](./server.defaultcharactercontrolleroptions.md)
-
-
-</td><td>
-
-Options for creating a DefaultCharacterController instance.
-
-
-</td></tr>
-<tr><td>
-
 [EntityOptions](./server.entityoptions.md)
 
 
@@ -624,6 +613,17 @@ Options for creating an Entity instance.
 </td><td>
 
 An EventRouter event.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerEntityControllerOptions](./server.playerentitycontrolleroptions.md)
+
+
+</td><td>
+
+Options for creating a PlayerEntityController instance.
 
 
 </td></tr>
@@ -998,7 +998,7 @@ A decoded set of collision groups represented as their string equivalents.
 
 </td><td>
 
-A callback function called when the entity associated with the SimpleCharacterController updates its rotation as it is attempting to face a target coordinate.
+A callback function called when the entity associated with the SimpleEntityController updates its rotation as it is attempting to face a target coordinate.
 
 
 </td></tr>
@@ -1009,7 +1009,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 
 </td><td>
 
-A callback function called when the entity associated with the SimpleCharacterController finishes rotating and is now facing a target coordinate.
+A callback function called when the entity associated with the SimpleEntityController finishes rotating and is now facing a target coordinate.
 
 
 </td></tr>
@@ -1020,7 +1020,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 
 </td><td>
 
-Options for the [SimpleCharacterController.face()](./server.simplecharactercontroller.face.md) method.
+Options for the [SimpleEntityController.face()](./server.simpleentitycontroller.face.md) method.
 
 
 </td></tr>
@@ -1031,7 +1031,7 @@ Options for the [SimpleCharacterController.face()](./server.simplecharactercontr
 
 </td><td>
 
-A callback function called when the entity associated with the SimpleCharacterController updates its position as it is attempting to move to a target coordinate.
+A callback function called when the entity associated with the SimpleEntityController updates its position as it is attempting to move to a target coordinate.
 
 
 </td></tr>
@@ -1042,7 +1042,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 
 </td><td>
 
-A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.
+A callback function called when the entity associated with the SimpleEntityController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.
 
 
 </td></tr>
@@ -1053,7 +1053,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 
 </td><td>
 
-Options for the [SimpleCharacterController.move()](./server.simplecharactercontroller.move.md) method.
+Options for the [SimpleEntityController.move()](./server.simpleentitycontroller.move.md) method.
 
 
 </td></tr>

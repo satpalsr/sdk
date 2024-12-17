@@ -4,7 +4,7 @@
 
 ## MoveOptions type
 
-Options for the [SimpleCharacterController.move()](./server.simplecharactercontroller.move.md) method.
+Options for the [SimpleEntityController.move()](./server.simpleentitycontroller.move.md) method.
 
 **Signature:**
 

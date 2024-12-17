@@ -146,7 +146,7 @@ The URI or path to the texture to be used, if this is set, the entity is a block
 </td></tr>
 <tr><td>
 
-[characterController](./server.entity.charactercontroller.md)
+[controller](./server.entity.controller.md)
 
 
 </td><td>
@@ -156,12 +156,12 @@ The URI or path to the texture to be used, if this is set, the entity is a block
 
 </td><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md) \| undefined
+[BaseEntityController](./server.baseentitycontroller.md) \| undefined
 
 
 </td><td>
 
-The character controller for the entity.
+The controller for the entity.
 
 
 </td></tr>
@@ -586,7 +586,7 @@ Despawns the entity from the world.
 </td></tr>
 <tr><td>
 
-[setCharacterController(characterController)](./server.entity.setcharactercontroller.md)
+[setController(controller)](./server.entity.setcontroller.md)
 
 
 </td><td>
@@ -594,7 +594,7 @@ Despawns the entity from the world.
 
 </td><td>
 
-Sets the character controller for the entity.
+Sets the controller for the entity.
 
 
 </td></tr>

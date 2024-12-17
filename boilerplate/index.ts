@@ -70,7 +70,7 @@ startServer(world => {
    * the game. From here, we create a basic player
    * entity instance which automatically handles mapping
    * their inputs to control their in-game entity and
-   * internally uses our default character controller.
+   * internally uses our player entity controller.
    */
   world.onPlayerJoin = player => {
     const playerEntity = new PlayerEntity({

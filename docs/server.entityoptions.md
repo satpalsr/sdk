@@ -75,7 +75,7 @@ _(Optional)_ The texture uri of a entity if the entity is a block entity, if set
 </td></tr>
 <tr><td>
 
-[characterController?](./server.entityoptions.charactercontroller.md)
+[controller?](./server.entityoptions.controller.md)
 
 
 </td><td>
@@ -83,12 +83,12 @@ _(Optional)_ The texture uri of a entity if the entity is a block entity, if set
 
 </td><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md)
+[BaseEntityController](./server.baseentitycontroller.md)
 
 
 </td><td>
 
-_(Optional)_ The character controller to use for the entity.
+_(Optional)_ The entity controller to use for the entity.
 
 
 </td></tr>

@@ -277,12 +277,12 @@ export declare interface AudioOptions {
 }
 
 /**
- * A base class for character controller implementations.
+ * A base class for entity controller implementations.
  *
  * @remarks
- * The BaseCharacterController should be extended
- * by a more specific character controller that you or a
- * plugin implements. Character controllers are intended to
+ * The BaseEntityController should be extended
+ * by a more specific entity controller that you or a
+ * plugin implements. Entity controllers are intended to
  * be used as one controller instance per entity, but
  * are flexible enough for edge cases such as if you want to create
  * niche behavior of one controller for many entities that
@@ -290,71 +290,71 @@ export declare interface AudioOptions {
  *
  * @public
  */
-export declare abstract class BaseCharacterController {
+export declare abstract class BaseEntityController {
     /**
      * A function that is called every tick. Useful for implementing
-     * tick logic without writing a new character controller class.
+     * tick logic without writing a new entity controller class.
      */
     onTick?: (entity: Entity, deltaTimeMs: number) => void;
     /**
      * A function that is called every tick with player input by a
      * PlayerEntity with this controller attached. Useful for implementing
-     * tick logic without writing a new character controller class.
+     * tick logic without writing a new entity controller class.
      */
     onTickWithPlayerInput?: (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
     /**
      * A function that is called when the controller is attached to an entity.
      * Useful for implementing attach logic without writing a
-     * new character controller class.
+     * new entity controller class.
      */
     onAttach?: (entity: Entity) => void;
     /**
      * A function that is called when the controlled entity is despawned.
      * Useful for implementing despawn logic without writing a
-     * new character controller class.
+     * new entity controller class.
      */
     onDespawn?: (entity: Entity) => void;
     /**
      * A function that is called when the controller is detached from an entity.
      * Useful for implementing detach logic without writing a
-     * new character controller class.
+     * new entity controller class.
      */
     onDetach?: (entity: Entity) => void;
     /**
      * A function that is called when the controlled entity is spawned.
      * Useful for implementing spawn logic without writing a
-     * new character controller class.
+     * new entity controller class.
      */
     onSpawn?: (entity: Entity) => void;
     /**
      * Override this method to handle the attachment of an entity
-     * to your character controller.
+     * to your entity controller.
      * @param entity - The entity to attach the controller to.
      */
     attach(entity: Entity): void;
     /**
      * Override this method to handle the despawn of an entity
-     * from your character controller.
+     * from your entity controller.
      * @param entity - The entity to despawn.
      */
     despawn(entity: Entity): void;
     /**
      * Override this method to handle the detachment of an entity
-     * from your character controller.
+     * from your entity controller.
      * @param entity - The entity to detach.
      */
     detach(entity: Entity): void;
     /**
      * Override this method to handle the spawning of an entity
-     * to your character controller.
+     * to your entity controller.
      * @param entity - The entity to spawn.
      */
     spawn(entity: Entity): void;
     /**
      * Override this method to handle entity movements
-     * based on player input for your character controller.
+     * based on player input for your entity controller.
      * This is called every tick by a PlayerEntity with a
-     * character controller.
+     * entity controller.
      * @param entity - The entity to tick.
      * @param input - The current input state of the player.
      * @param cameraOrientation - The current camera orientation state of the player.
@@ -363,7 +363,7 @@ export declare abstract class BaseCharacterController {
     tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
     /**
      * Override this method to handle entity movements
-     * based on your character controller.
+     * based on your entity controller.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
     tick(entity: Entity, deltaTimeMs: number): void;
@@ -1180,112 +1180,6 @@ export declare const DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /**
- * The default character controller implementation.
- *
- * @remarks
- * This class extends {@link BaseCharacterController}
- * and implements the default movement logic for a
- * character entity. This is used as the default for
- * players when they join your game. This class may be extended
- * if you'd like to implement additional logic on top of the
- * DefaultCharacterController implementation.
- *
- * @example
- * ```typescript
- * // Create a custom character controller for myEntity, prior to spawning it.
- * myEntity.createCustomCharacterController = () => {
- *   return new DefaultCharacterController(myEntity, {
- *     jumpVelocity: 10,
- *     runVelocity: 8,
- *     walkVelocity: 4,
- *   });
- * };
- *
- * // Spawn the entity in the world.
- * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
- * ```
- *
- * @public
- */
-export declare class DefaultCharacterController extends BaseCharacterController {
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity: number;
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity: number;
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity: number;
-    /**
-     * A function allowing custom logic to determine if the entity can walk.
-     * @param defaultCharacterController - The character controller instance.
-     * @returns Whether the entity of the character controller can walk.
-     */
-    canWalk: (defaultCharacterController: DefaultCharacterController) => boolean;
-    /**
-     * A function allowing custom logic to determine if the entity can run.
-     * @param defaultCharacterController - The character controller instance.
-     * @returns Whether the entity of the character controller can run.
-     */
-    canRun: (defaultCharacterController: DefaultCharacterController) => boolean;
-    /**
-     * A function allowing custom logic to determine if the entity can jump.
-     * @param defaultCharacterController - The character controller instance.
-     * @returns Whether the entity of the character controller can jump.
-     */
-    canJump: (defaultCharacterController: DefaultCharacterController) => boolean;
-
-
-
-    /**
-     * @param options - Options for the controller.
-     */
-    constructor(options?: DefaultCharacterControllerOptions);
-    /** Whether the entity is grounded. */
-    get isGrounded(): boolean;
-    /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
-    get isOnPlatform(): boolean;
-    /** The platform the entity is on, if any. */
-    get platform(): Entity | undefined;
-    /**
-     * Called when the controller is attached to an entity.
-     * @param entity - The entity to attach the controller to.
-     */
-    attach(entity: Entity): void;
-    /**
-     * Called when the controlled entity is spawned.
-     * In DefaultCharacterController, this function is used to create
-     * the colliders for the entity for wall and ground detection.
-     * @param entity - The entity that is spawned.
-     */
-    spawn(entity: Entity): void;
-    /**
-     * Ticks the player movement for the character controller,
-     * overriding the default implementation.
-     *
-     * @param entity - The entity to tick.
-     * @param input - The current input state of the player.
-     * @param cameraOrientation - The current camera orientation state of the player.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
-     */
-    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
-}
-
-/** Options for creating a DefaultCharacterController instance. @public */
-export declare interface DefaultCharacterControllerOptions {
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity?: number;
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity?: number;
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity?: number;
-    /** A function allowing custom logic to determine if the entity can jump. */
-    canJump?: () => boolean;
-    /** A function allowing custom logic to determine if the entity can walk. */
-    canWalk?: () => boolean;
-    /** A function allowing custom logic to determine if the entity can run. */
-    canRun?: () => boolean;
-}
-
-/**
  * Represents an entity in a world.
  *
  * @remarks
@@ -1402,12 +1296,12 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     constructor(options: EntityOptions);
     /** The unique identifier for the entity. */
     get id(): number | undefined;
-    /** The character controller for the entity. */
-    get characterController(): BaseCharacterController | undefined;
     /** The half extends of the visual size of the block entity when blockTextureUri is set. */
     get blockHalfExtents(): Vector3Like | undefined;
     /** The URI or path to the texture to be used, if this is set, the entity is a block entity. */
     get blockTextureUri(): string | undefined;
+    /** The controller for the entity. */
+    get controller(): BaseEntityController | undefined;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     get modelUri(): string | undefined;
     /** The nodes to hide on the entity's model. */
@@ -1441,10 +1335,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      */
     despawn(): void;
     /**
-     * Sets the character controller for the entity.
-     * @param characterController - The character controller to set.
+     * Sets the controller for the entity.
+     * @param controller - The controller to set.
      */
-    setCharacterController(characterController: BaseCharacterController | undefined): void;
+    setController(controller: BaseEntityController | undefined): void;
     /**
      * Sets the nodes to hide on the entity's model. Matched nodes
      * will be hidden for all players. Uses case insensitive
@@ -1614,8 +1508,8 @@ export declare interface EntityOptions {
     blockHalfExtents?: Vector3Like;
     /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
     blockTextureUri?: string;
-    /** The character controller to use for the entity. */
-    characterController?: BaseCharacterController;
+    /** The entity controller to use for the entity. */
+    controller?: BaseEntityController;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
     /** The nodes to hide on the entity's model. */
@@ -1710,7 +1604,7 @@ export declare class EventRouter {
 
 /**
  * A callback function called when the entity associated with the
- * SimpleCharacterController updates its rotation as it is
+ * SimpleEntityController updates its rotation as it is
  * attempting to face a target coordinate.
  * @param currentRotation - The current rotation of the entity.
  * @param targetRotation - The target rotation of the entity.
@@ -1720,7 +1614,7 @@ export declare type FaceCallback = (currentRotation: QuaternionLike, targetRotat
 
 /**
  * A callback function called when the entity associated with the
- * SimpleCharacterController finishes rotating and is now facing
+ * SimpleEntityController finishes rotating and is now facing
  * a target coordinate.
  * @param endRotation - The rotation of the entity after it has finished rotating.
  * @public
@@ -1728,7 +1622,7 @@ export declare type FaceCallback = (currentRotation: QuaternionLike, targetRotat
 export declare type FaceCompleteCallback = (endRotation: QuaternionLike) => void;
 
 /**
- * Options for the {@link SimpleCharacterController.face} method.
+ * Options for the {@link SimpleEntityController.face} method.
  * @public
  */
 export declare type FaceOptions = {
@@ -1785,7 +1679,7 @@ export declare enum GameServerEventType {
 
 /**
  * A callback function called when the entity associated with the
- * SimpleCharacterController updates its position as it is
+ * SimpleEntityController updates its position as it is
  * attempting to move to a target coordinate.
  * @param currentPosition - The current position of the entity.
  * @param targetPosition - The target position of the entity.
@@ -1795,7 +1689,7 @@ export declare type MoveCallback = (currentPosition: Vector3Like, targetPosition
 
 /**
  * A callback function called when the entity associated with the
- * SimpleCharacterController reaches the target coordinate. An entity
+ * SimpleEntityController reaches the target coordinate. An entity
  * must reach the x,y,z coordinate for the callback to be called.
  * @param endPosition - The position of the entity after it has finished moving.
  * @public
@@ -1803,15 +1697,15 @@ export declare type MoveCallback = (currentPosition: Vector3Like, targetPosition
 export declare type MoveCompleteCallback = (endPosition: Vector3Like) => void;
 
 /**
- * Options for the {@link SimpleCharacterController.move} method.
+ * Options for the {@link SimpleEntityController.move} method.
  * @public
  */
 export declare type MoveOptions = {
-    /** Callback called each tick movement of the character controller's entity. */
+    /** Callback called each tick movement of the entity controller's entity. */
     moveCallback?: MoveCallback;
-    /** Callback called when the character controller's entity has finished moving. */
+    /** Callback called when the entity controller's entity has finished moving. */
     moveCompleteCallback?: MoveCompleteCallback;
-    /** Axes to ignore when moving the character controller's entity. Also ignored for determining completion. */
+    /** Axes to ignore when moving the entity controller's entity. Also ignored for determining completion. */
     moveIgnoreAxes?: {
         x?: boolean;
         y?: boolean;
@@ -2106,8 +2000,8 @@ export declare type PlayerCameraOrientation = {
  * They can be created and assigned to a player when
  * a player joins a world. PlayerEntity automatically
  * handles mapping player inputs to the associated
- * character controller of the entity, calling the
- * character controller's onTickPlayerMovement method
+ * entity controller of the entity, calling the
+ * entity controller's onTickPlayerMovement method
  * when player input has changed.
  *
  * @example
@@ -2135,6 +2029,110 @@ export declare class PlayerEntity extends Entity {
      */
     constructor(options: PlayerEntityOptions);
 
+}
+
+/**
+ * The player entity controller implementation.
+ *
+ * @remarks
+ * This class extends {@link BaseEntityController}
+ * and implements the default movement logic for a
+ * entity. This is used as the default for
+ * players when they join your game. This class may be extended
+ * if you'd like to implement additional logic on top of the
+ * PlayerEntityController implementation.
+ *
+ * @example
+ * ```typescript
+ * // Create a custom entity controller for myEntity, prior to spawning it.
+ * myEntity.setController(new PlayerEntityController(myEntity, {
+ *   jumpVelocity: 10,
+ *   runVelocity: 8,
+ *   walkVelocity: 4,
+ * }));
+ *
+ * // Spawn the entity in the world.
+ * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
+ * ```
+ *
+ * @public
+ */
+export declare class PlayerEntityController extends BaseEntityController {
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity: number;
+    /**
+     * A function allowing custom logic to determine if the entity can walk.
+     * @param playerEntityController - The entity controller instance.
+     * @returns Whether the entity of the entity controller can walk.
+     */
+    canWalk: (playerEntityController: PlayerEntityController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can run.
+     * @param playerEntityController - The entity controller instance.
+     * @returns Whether the entity of the entity controller can run.
+     */
+    canRun: (playerEntityController: PlayerEntityController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can jump.
+     * @param playerEntityController - The entity controller instance.
+     * @returns Whether the entity of the entity controller can jump.
+     */
+    canJump: (playerEntityController: PlayerEntityController) => boolean;
+
+
+
+    /**
+     * @param options - Options for the controller.
+     */
+    constructor(options?: PlayerEntityControllerOptions);
+    /** Whether the entity is grounded. */
+    get isGrounded(): boolean;
+    /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
+    get isOnPlatform(): boolean;
+    /** The platform the entity is on, if any. */
+    get platform(): Entity | undefined;
+    /**
+     * Called when the controller is attached to an entity.
+     * @param entity - The entity to attach the controller to.
+     */
+    attach(entity: Entity): void;
+    /**
+     * Called when the controlled entity is spawned.
+     * In PlayerEntityController, this function is used to create
+     * the colliders for the entity for wall and ground detection.
+     * @param entity - The entity that is spawned.
+     */
+    spawn(entity: Entity): void;
+    /**
+     * Ticks the player movement for the entity controller,
+     * overriding the default implementation.
+     *
+     * @param entity - The entity to tick.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
+    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
+}
+
+/** Options for creating a PlayerEntityController instance. @public */
+export declare interface PlayerEntityControllerOptions {
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity?: number;
+    /** A function allowing custom logic to determine if the entity can jump. */
+    canJump?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can walk. */
+    canWalk?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can run. */
+    canRun?: () => boolean;
 }
 
 /** Options for creating a PlayerEntity instance. @public */
@@ -2859,22 +2857,20 @@ export declare enum RigidBodyType {
 }
 
 /**
- * A simple character controller with basic movement functions.
+ * A simple entity controller with basic movement functions.
  *
  * @remarks
  * This class implements simple movement methods that serve
  * as a way to add realistic movement and rotational facing
  * functionality to an entity. This is also a great base to
- * extend for your own more complex character controller
+ * extend for your own more complex entity controller
  * that implements things like pathfinding. Compatible with
  * entities that have kinematic or dynamic rigid body types.
  *
  * @example
  * ```typescript
- * // Create a custom character controller for myEntity, prior to spawning it.
- * myEntity.createCustomCharacterController = () => {
- *   return new SimpleCharacterController(myEntity);
- * };
+ * // Create a custom entity controller for myEntity, prior to spawning it.
+ * myEntity.setController(new SimpleEntityController());
  *
  * // Spawn the entity in the world.
  * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
@@ -2882,7 +2878,7 @@ export declare enum RigidBodyType {
  * // Move the entity at a speed of 4 blocks
  * // per second to the coordinate (10, 1, 10).
  * // console.log when we reach the target.
- * myEntity.characterController.move({ x: 10, y: 1, z: 10 }, 4, {
+ * myEntity.controller.move({ x: 10, y: 1, z: 10 }, 4, {
  *   moveCompleteCallback: endPosition => {
  *     console.log('Finished moving to', endPosition);
  *   },
@@ -2891,7 +2887,7 @@ export declare enum RigidBodyType {
  *
  * @public
  */
-export declare class SimpleCharacterController extends BaseCharacterController {
+export declare class SimpleEntityController extends BaseEntityController {
 
 
 

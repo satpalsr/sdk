@@ -4,7 +4,7 @@
 
 ## FaceOptions type
 
-Options for the [SimpleCharacterController.face()](./server.simplecharactercontroller.face.md) method.
+Options for the [SimpleEntityController.face()](./server.simpleentitycontroller.face.md) method.
 
 **Signature:**
 

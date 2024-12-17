@@ -4,7 +4,7 @@
 
 ## MoveCallback type
 
-A callback function called when the entity associated with the SimpleCharacterController updates its position as it is attempting to move to a target coordinate.
+A callback function called when the entity associated with the SimpleEntityController updates its position as it is attempting to move to a target coordinate.
 
 **Signature:**
 
