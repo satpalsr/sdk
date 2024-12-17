@@ -46,6 +46,20 @@ LOAD
 </td></tr>
 <tr><td>
 
+LOCK\_POINTER
+
+
+</td><td>
+
+`"PLAYER_UI.LOCK_POINTER"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SEND\_DATA
 
 

@@ -17463,6 +17463,54 @@
               "name": "load"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerUI#lockPointer:member(1)",
+              "docComment": "/**\n * Locks or unlocks the player's mouse pointer.\n *\n * @param lock - Set true to lock the pointer, false to unlock it.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "lockPointer(lock: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "lock",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "lockPointer"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!PlayerUI#onData:member",
               "docComment": "/**\n * A function that is called when the player's client UI sends data to the server.\n *\n * @remarks\n *\n * Data sent is an object of any shape defined by you and controlled with invocations of `hytopia.ui.sendData()` from your loaded client UI files.\n *\n * @param playerUI - The PlayerUI instance that the data is from.\n *\n * @param data - The data sent from the client UI.\n */\n",
@@ -17672,6 +17720,78 @@
             },
             {
               "kind": "Interface",
+              "canonicalReference": "server!PlayerUIEventPayload.LockPointer:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface LockPointer "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LockPointer",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!PlayerUIEventPayload.LockPointer#lock:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "lock: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "boolean"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "lock",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!PlayerUIEventPayload.LockPointer#playerUI:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "playerUI: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "PlayerUI",
+                      "canonicalReference": "server!PlayerUI:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "playerUI",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
               "canonicalReference": "server!PlayerUIEventPayload.SendData:interface",
               "docComment": "",
               "excerptTokens": [
@@ -17779,6 +17899,27 @@
               },
               "releaseTag": "Public",
               "name": "LOAD"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!PlayerUIEventType.LOCK_POINTER:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "LOCK_POINTER = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_UI.LOCK_POINTER\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "LOCK_POINTER"
             },
             {
               "kind": "EnumMember",

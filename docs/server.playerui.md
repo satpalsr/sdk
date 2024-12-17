@@ -117,6 +117,20 @@ Loads client UI for the player.
 </td></tr>
 <tr><td>
 
+[lockPointer(lock)](./server.playerui.lockpointer.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Locks or unlocks the player's mouse pointer.
+
+
+</td></tr>
+<tr><td>
+
 [sendData(data)](./server.playerui.senddata.md)
 
 

@@ -36,6 +36,15 @@ Description
 </td></tr>
 <tr><td>
 
+[LockPointer](./server.playeruieventpayload.lockpointer.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [SendData](./server.playeruieventpayload.senddata.md)
 
 

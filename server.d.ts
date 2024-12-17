@@ -2267,6 +2267,11 @@ export declare class PlayerUI {
      */
     load(htmlUri: string): void;
     /**
+     * Locks or unlocks the player's mouse pointer.
+     * @param lock - Set true to lock the pointer, false to unlock it.
+     */
+    lockPointer(lock: boolean): void;
+    /**
      * Sends data to the player's client UI.
      * @param data - The data to send to the client UI.
      */
@@ -2279,6 +2284,10 @@ export declare namespace PlayerUIEventPayload {
         playerUI: PlayerUI;
         htmlUri: string;
     }
+    export interface LockPointer {
+        playerUI: PlayerUI;
+        lock: boolean;
+    }
     export interface SendData {
         playerUI: PlayerUI;
         data: object;
@@ -2288,6 +2297,7 @@ export declare namespace PlayerUIEventPayload {
 /** Event types a PlayerUI can emit. @public */
 export declare enum PlayerUIEventType {
     LOAD = "PLAYER_UI.LOAD",
+    LOCK_POINTER = "PLAYER_UI.LOCK_POINTER",
     SEND_DATA = "PLAYER_UI.SEND_DATA"
 }
 
