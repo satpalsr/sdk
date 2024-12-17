@@ -2619,7 +2619,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BaseCharacterController:class",
-          "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A base class for character controller implementations.\n *\n * @remarks\n *\n * The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements. Character controllers are intended to be used as one controller instance per entity, but are flexible enough for edge cases such as if you want to create niche behavior of one controller for many entities that behave in unison.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

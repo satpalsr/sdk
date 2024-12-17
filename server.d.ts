@@ -282,7 +282,11 @@ export declare interface AudioOptions {
  * @remarks
  * The BaseCharacterController should be extended
  * by a more specific character controller that you or a
- * plugin implements.
+ * plugin implements. Character controllers are intended to
+ * be used as one controller instance per entity, but
+ * are flexible enough for edge cases such as if you want to create
+ * niche behavior of one controller for many entities that
+ * behave in unison.
  *
  * @public
  */
