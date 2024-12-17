@@ -826,6 +826,16 @@ export declare class Collider {
      * @param colliderOptions - The options for the collider instance.
      */
     constructor(colliderOptions: ColliderOptions);
+    /** The bounciness of the collider. */
+    get bounciness(): number;
+    /** The bounciness combine rule of the collider. */
+    get bouncinessCombineRule(): CoefficientCombineRule;
+    /** The collision groups the collider belongs to. */
+    get collisionGroups(): CollisionGroups;
+    /** The friction of the collider. */
+    get friction(): number;
+    /** The friction combine rule of the collider. */
+    get frictionCombineRule(): CoefficientCombineRule;
     /** Whether the collider is enabled. */
     get isEnabled(): boolean;
     /** Whether the collider has been removed from the simulation. */
@@ -838,45 +848,14 @@ export declare class Collider {
     get parentRigidBody(): RigidBody | undefined;
     /** The raw collider object from the Rapier physics engine. */
     get rawCollider(): RAPIER.Collider | undefined;
+    /** The relative position of the collider to its parent rigid body. */
+    get relativePosition(): Vector3Like;
+    /** The relative rotation of the collider. */
+    get relativeRotation(): QuaternionLike;
     /** The shape of the collider. */
     get shape(): ColliderShape;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
     get tag(): string | undefined;
-    /**
-     * Gets the bounciness of the collider.
-     * @returns The bounciness of the collider.
-     */
-    getBounciness(): number;
-    /**
-     * Gets the bounciness combine rule of the collider.
-     * @returns The bounciness combine rule of the collider.
-     */
-    getBouncinessCombineRule(): CoefficientCombineRule;
-    /**
-     * Gets the collision groups the collider belongs to.
-     * @returns The collision groups the collider belongs to.
-     */
-    getCollisionGroups(): CollisionGroups;
-    /**
-     * Gets the friction of the collider.
-     * @returns The friction of the collider.
-     */
-    getFriction(): number;
-    /**
-     * Gets the friction combine rule of the collider.
-     * @returns The friction combine rule of the collider.
-     */
-    getFrictionCombineRule(): CoefficientCombineRule;
-    /**
-     * Gets the relative rotation of the collider.
-     * @returns The relative rotation of the collider.
-     */
-    getRelativeRotation(): QuaternionLike;
-    /**
-     * Gets the relative translation of the collider to its parent rigid body.
-     * @returns The relative translation of the collider.
-     */
-    getRelativeTranslation(): Vector3Like;
     /**
      * Sets the bounciness of the collider.
      * @param bounciness - The bounciness of the collider.
@@ -923,10 +902,10 @@ export declare class Collider {
      */
     setRelativeRotation(rotation: QuaternionLike): void;
     /**
-     * Sets the relative translation of the collider to its parent rigid body.
-     * @param translation - The relative translation of the collider.
+     * Sets the relative position of the collider to its parent rigid body.
+     * @param position - The relative position of the collider.
      */
-    setRelativeTranslation(translation: Vector3Like): void;
+    setRelativePosition(position: Vector3Like): void;
     /**
      * Sets whether the collider is a sensor.
      * @param sensor - Whether the collider is a sensor.
@@ -1000,10 +979,10 @@ export declare interface ColliderOptions {
     parentRigidBody?: RigidBody;
     /** The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder. */
     radius?: number;
+    /** The relative position of the collider. Relative to parent rigid body. */
+    relativePosition?: Vector3Like;
     /** The relative rotation of the collider. Relative to parent rigid body. */
     relativeRotation?: QuaternionLike;
-    /** The relative translation of the collider. Relative to parent rigid body. */
-    relativeTranslation?: Vector3Like;
     /** The simulation the collider is in, if provided the collider will automatically be added to the simulation. */
     simulation?: Simulation;
     /** An arbitrary identifier tag of the collider. Useful for your own logic. */
@@ -1507,13 +1486,13 @@ export declare namespace EntityEventPayload {
         entity: Entity;
         animations: Set<string>;
     }
+    export interface UpdatePosition {
+        entity: Entity;
+        position: Vector3Like;
+    }
     export interface UpdateRotation {
         entity: Entity;
         rotation: QuaternionLike;
-    }
-    export interface UpdateTranslation {
-        entity: Entity;
-        translation: Vector3Like;
     }
 }
 
@@ -1526,8 +1505,8 @@ export declare enum EntityEventType {
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
     START_MODEL_ONESHOT_ANIMATIONS = "ENTITY.START_MODEL_ONESHOT_ANIMATIONS",
     STOP_MODEL_ANIMATIONS = "ENTITY.STOP_MODEL_ANIMATIONS",
-    UPDATE_ROTATION = "ENTITY.UPDATE_ROTATION",
-    UPDATE_TRANSLATION = "ENTITY.UPDATE_TRANSLATION"
+    UPDATE_POSITION = "ENTITY.UPDATE_POSITION",
+    UPDATE_ROTATION = "ENTITY.UPDATE_ROTATION"
 }
 
 /**
@@ -1771,22 +1750,22 @@ export declare enum GameServerEventType {
 
 /**
  * A callback function called when the entity associated with the
- * SimpleCharacterController updates its translation as it is
+ * SimpleCharacterController updates its position as it is
  * attempting to move to a target coordinate.
- * @param currentTranslation - The current translation of the entity.
- * @param targetTranslation - The target translation of the entity.
+ * @param currentPosition - The current position of the entity.
+ * @param targetPosition - The target position of the entity.
  * @public
  */
-export declare type MoveCallback = (currentTranslation: Vector3Like, targetTranslation: Vector3Like) => void;
+export declare type MoveCallback = (currentPosition: Vector3Like, targetPosition: Vector3Like) => void;
 
 /**
  * A callback function called when the entity associated with the
  * SimpleCharacterController reaches the target coordinate. An entity
  * must reach the x,y,z coordinate for the callback to be called.
- * @param endTranslation - The translation of the entity after it has finished moving.
+ * @param endPosition - The position of the entity after it has finished moving.
  * @public
  */
-export declare type MoveCompleteCallback = (endTranslation: Vector3Like) => void;
+export declare type MoveCompleteCallback = (endPosition: Vector3Like) => void;
 
 /**
  * Options for the {@link SimpleCharacterController.move} method.
@@ -2505,8 +2484,36 @@ export declare class RigidBody {
      * @param options - The options for the rigid body instance.
      */
     constructor(options: RigidBodyOptions);
+    /** The additional mass of the rigid body. */
+    get additionalMass(): number;
+    /** The additional solver iterations of the rigid body. */
+    get additionalSolverIterations(): number;
+    /** The angular damping of the rigid body. */
+    get angularDamping(): number;
+    /** The angular velocity of the rigid body. */
+    get angularVelocity(): Vector3Like;
     /** The colliders of the rigid body. */
     get colliders(): Set<Collider>;
+    /** The dominance group of the rigid body. */
+    get dominanceGroup(): number;
+    /** The direction from the rotation of the rigid body. */
+    get directionFromRotation(): Vector3Like;
+    /** The effective angular inertia of the rigid body. */
+    get effectiveAngularInertia(): SpdMatrix3 | undefined;
+    /** The effective inverse mass of the rigid body. */
+    get effectiveInverseMass(): Vector3Like | undefined;
+    /** The effective world inverse principal angular inertia square root of the rigid body. */
+    get effectiveWorldInversePrincipalAngularInertiaSqrt(): SpdMatrix3 | undefined;
+    /** The enabled axes of rotational movement of the rigid body. */
+    get enabledRotations(): Vector3Boolean;
+    /** The enabled axes of positional movement of the rigid body. */
+    get enabledPositions(): Vector3Boolean;
+    /** The gravity scale of the rigid body. */
+    get gravityScale(): number;
+    /** The inverse mass of the rigid body. */
+    get inverseMass(): number | undefined;
+    /** The inverse principal angular inertia square root of the rigid body. */
+    get inversePrincipalAngularInertiaSqrt(): Vector3Like | undefined;
     /** Whether the rigid body has continuous collision detection enabled. */
     get isCcdEnabled(): boolean;
     /** Whether the rigid body is dynamic. */
@@ -2529,151 +2536,36 @@ export declare class RigidBody {
     get isSimulated(): boolean;
     /** Whether the rigid body is sleeping. */
     get isSleeping(): boolean;
+    /** The linear damping of the rigid body. */
+    get linearDamping(): number;
+    /** The linear velocity of the rigid body. */
+    get linearVelocity(): Vector3Like;
+    /** The local center of mass of the rigid body. */
+    get localCenterOfMass(): Vector3Like;
+    /** The mass of the rigid body. */
+    get mass(): number;
+    /** The next kinematic rotation of the rigid body. */
+    get nextKinematicRotation(): QuaternionLike;
+    /** The next kinematic position of the rigid body. */
+    get nextKinematicPosition(): Vector3Like;
     /** The number of colliders in the rigid body. */
     get numColliders(): number;
+    /** The principal angular inertia of the rigid body. */
+    get principalAngularInertia(): Vector3Like;
+    /** The principal angular inertia local frame of the rigid body. */
+    get principalAngularInertiaLocalFrame(): QuaternionLike | undefined;
+    /** The position of the rigid body. */
+    get position(): Vector3Like;
     /** The raw RAPIER rigid body instance. */
     get rawRigidBody(): RAPIER.RigidBody | undefined;
-    /**
-     * Gets the additional mass of the rigid body.
-     * @returns The additional mass of the rigid body.
-     */
-    getAdditionalMass(): number;
-    /**
-     * Gets the additional solver iterations of the rigid body.
-     * @returns The additional solver iterations of the rigid body.
-     */
-    getAdditionalSolverIterations(): number;
-    /**
-     * Gets the angular damping of the rigid body.
-     * @returns The angular damping of the rigid body.
-     */
-    getAngularDamping(): number;
-    /**
-     * Gets the angular velocity of the rigid body.
-     * @returns The angular velocity of the rigid body.
-     */
-    getAngularVelocity(): Vector3Like;
-    /**
-     * Gets the colliders of the rigid body by tag.
-     * @param tag - The tag to filter by.
-     * @returns The colliders of the rigid body with the given tag.
-     */
-    getCollidersByTag(tag: string): Collider[];
-    /**
-     * Gets the dominance group of the rigid body.
-     * @returns The dominance group of the rigid body.
-     */
-    getDominanceGroup(): number;
-    /**
-     * Gets the direction from the rotation of the rigid body.
-     * @returns The direction from the rotation of the rigid body.
-     */
-    getDirectionFromRotation(): Vector3Like;
-    /**
-     * Gets the effective angular inertia of the rigid body.
-     * @returns The effective angular inertia of the rigid body.
-     */
-    getEffectiveAngularInertia(): SpdMatrix3 | undefined;
-    /**
-     * Gets the effective inverse mass of the rigid body.
-     * @returns The effective inverse mass of the rigid body.
-     */
-    getEffectiveInverseMass(): Vector3Like | undefined;
-    /**
-     * Gets the effective world inverse principal angular inertia square root of the rigid body.
-     * @returns The effective world inverse principal angular inertia square root of the rigid body.
-     */
-    getEffectiveWorldInversePrincipalAngularInertiaSqrt(): SpdMatrix3 | undefined;
-    /**
-     * Gets the enabled rotations of the rigid body.
-     * @returns The enabled rotations of the rigid body.
-     */
-    getEnabledRotations(): Vector3Boolean;
-    /**
-     * Gets the enabled translations of the rigid body.
-     * @returns The enabled translations of the rigid body.
-     */
-    getEnabledTranslations(): Vector3Boolean;
-    /**
-     * Gets the gravity scale of the rigid body.
-     * @returns The gravity scale of the rigid body.
-     */
-    getGravityScale(): number;
-    /**
-     * Gets the inverse mass of the rigid body.
-     * @returns The inverse mass of the rigid body.
-     */
-    getInverseMass(): number | undefined;
-    /**
-     * Gets the inverse principal angular inertia square root of the rigid body.
-     * @returns The inverse principal angular inertia square root of the rigid body.
-     */
-    getInversePrincipalAngularInertiaSqrt(): Vector3Like | undefined;
-    /**
-     * Gets the linear damping of the rigid body.
-     * @returns The linear damping of the rigid body.
-     */
-    getLinearDamping(): number;
-    /**
-     * Gets the linear velocity of the rigid body.
-     * @returns The linear velocity of the rigid body.
-     */
-    getLinearVelocity(): Vector3Like;
-    /**
-     * Gets the local center of mass of the rigid body.
-     * @returns The local center of mass of the rigid body.
-     */
-    getLocalCenterOfMass(): Vector3Like;
-    /**
-     * Gets the mass of the rigid body.
-     * @returns The mass of the rigid body.
-     */
-    getMass(): number;
-    /**
-     * Gets the next kinematic rotation of the rigid body.
-     * @returns The next kinematic rotation of the rigid body.
-     */
-    getNextKinematicRotation(): QuaternionLike;
-    /**
-     * Gets the next kinematic translation of the rigid body.
-     * @returns The next kinematic translation of the rigid body.
-     */
-    getNextKinematicTranslation(): Vector3Like;
-    /**
-     * Gets the principal angular inertia of the rigid body.
-     * @returns The principal angular inertia of the rigid body.
-     */
-    getPrincipalAngularInertia(): Vector3Like;
-    /**
-     * Gets the principal angular inertia local frame of the rigid body.
-     * @returns The principal angular inertia local frame of the rigid body.
-     */
-    getPrincipalAngularInertiaLocalFrame(): QuaternionLike | undefined;
-    /**
-     * Gets the rotation of the rigid body.
-     * @returns The rotation of the rigid body.
-     */
-    getRotation(): QuaternionLike;
-    /**
-     * Gets the soft ccd prediction of the rigid body.
-     * @returns The soft ccd prediction of the rigid body.
-     */
-    getSoftCcdPrediction(): number;
-    /**
-     * Gets the translation of the rigid body.
-     * @returns The translation of the rigid body.
-     */
-    getTranslation(): Vector3Like;
-    /**
-     * Gets the type of the rigid body.
-     * @returns The type of the rigid body.
-     */
-    getType(): RigidBodyType;
-    /**
-     * Gets the world center of mass of the rigid body.
-     * @returns The world center of mass of the rigid body.
-     */
-    getWorldCenterOfMass(): Vector3Like | undefined;
+    /** The rotation of the rigid body. */
+    get rotation(): QuaternionLike;
+    /** The soft continuous collision detection prediction of the rigid body. */
+    get softCcdPrediction(): number;
+    /** The type of the rigid body. */
+    get type(): RigidBodyType;
+    /** The world center of mass of the rigid body. */
+    get worldCenterOfMass(): Vector3Like | undefined;
     /**
      * Sets the additional mass of the rigid body.
      * @param additionalMass - The additional mass of the rigid body.
@@ -2715,15 +2607,15 @@ export declare class RigidBody {
      */
     setEnabled(enabled: boolean): void;
     /**
+     * Sets whether the rigid body has enabled positional movement.
+     * @param enabledPositions - Whether the rigid body has enabled positional movement.
+     */
+    setEnabledPositions(enabledPositions: Vector3Boolean): void;
+    /**
      * Sets whether the rigid body has enabled rotations.
      * @param enabledRotations - Whether the rigid body has enabled rotations.
      */
     setEnabledRotations(enabledRotations: Vector3Boolean): void;
-    /**
-     * Sets whether the rigid body has enabled translations.
-     * @param enabledTranslations - Whether the rigid body has enabled translations.
-     */
-    setEnabledTranslations(enabledTranslations: Vector3Boolean): void;
     /**
      * Sets the gravity scale of the rigid body.
      * @param gravityScale - The gravity scale of the rigid body.
@@ -2745,10 +2637,15 @@ export declare class RigidBody {
      */
     setNextKinematicRotation(nextKinematicRotation: QuaternionLike): void;
     /**
-     * Sets the next kinematic translation of the rigid body.
-     * @param nextKinematicTranslation - The next kinematic translation of the rigid body.
+     * Sets the next kinematic position of the rigid body.
+     * @param nextKinematicPosition - The next kinematic position of the rigid body.
      */
-    setNextKinematicTranslation(nextKinematicTranslation: Vector3Like): void;
+    setNextKinematicPosition(nextKinematicPosition: Vector3Like): void;
+    /**
+     * Sets the position of the rigid body.
+     * @param position - The position of the rigid body.
+     */
+    setPosition(position: Vector3Like): void;
     /**
      * Sets the rotation of the rigid body.
      * @param rotation - The rotation of the rigid body.
@@ -2769,11 +2666,6 @@ export declare class RigidBody {
      * @param collisionGroups - The collision groups for solid colliders of the rigid body.
      */
     setCollisionGroupsForSolidColliders(collisionGroups: CollisionGroups): void;
-    /**
-     * Sets the translation of the rigid body.
-     * @param translation - The translation of the rigid body.
-     */
-    setTranslation(translation: Vector3Like): void;
     /**
      * Sets the type of the rigid body.
      * @param type - The type of the rigid body.
@@ -2827,15 +2719,21 @@ export declare class RigidBody {
      * @returns The child colliders that were added to the rigid body.
      */
     createAndAddChildCollidersToSimulation(colliderOptions: ColliderOptions[]): Collider[];
+    /**
+     * Gets the colliders of the rigid body by tag.
+     * @param tag - The tag to filter by.
+     * @returns The colliders of the rigid body with the given tag.
+     */
+    getCollidersByTag(tag: string): Collider[];
 
     /**
      * Locks all rotations of the rigid body.
      */
     lockAllRotations(): void;
     /**
-     * Locks all translations of the rigid body.
+     * Locks all positional movement of the rigid body.
      */
-    lockAllTranslations(): void;
+    lockAllPositions(): void;
     /**
      * Removes the rigid body from the simulation it belongs to.
      */
@@ -2895,16 +2793,18 @@ export declare interface RigidBodyOptions {
     dominanceGroup?: number;
     /** Whether the rigid body is enabled. */
     enabled?: boolean;
+    /** The enabled axes of positional movement of the rigid body. */
+    enabledPositions?: Vector3Boolean;
     /** The enabled rotations of the rigid body. */
     enabledRotations?: Vector3Boolean;
-    /** The enabled translations of the rigid body. */
-    enabledTranslations?: Vector3Boolean;
     /** The gravity scale of the rigid body. */
     gravityScale?: number;
     /** The linear damping of the rigid body. */
     linearDamping?: number;
     /** The linear velocity of the rigid body. */
     linearVelocity?: Vector3Like;
+    /** The position of the rigid body. */
+    position?: Vector3Like;
     /** The rotation of the rigid body. */
     rotation?: QuaternionLike;
     /** The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation. */
@@ -2913,8 +2813,6 @@ export declare interface RigidBodyOptions {
     sleeping?: boolean;
     /** The soft continuous collision detection prediction of the rigid body. */
     softCcdPrediction?: number;
-    /** The translation of the rigid body. */
-    translation?: Vector3Like;
 }
 
 /** The types a RigidBody can be. @public */

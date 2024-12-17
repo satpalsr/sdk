@@ -322,6 +322,25 @@ _(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, c
 </td></tr>
 <tr><td>
 
+[relativePosition?](./server.collideroptions.relativeposition.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+_(Optional)_ The relative position of the collider. Relative to parent rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [relativeRotation?](./server.collideroptions.relativerotation.md)
 
 
@@ -336,25 +355,6 @@ _(Optional)_ The radius of the collider if the shape is a ball, capsule, cone, c
 </td><td>
 
 _(Optional)_ The relative rotation of the collider. Relative to parent rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[relativeTranslation?](./server.collideroptions.relativetranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-[Vector3Like](./server.vector3like.md)
-
-
-</td><td>
-
-_(Optional)_ The relative translation of the collider. Relative to parent rigid body.
 
 
 </td></tr>

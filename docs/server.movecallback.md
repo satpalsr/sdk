@@ -4,12 +4,12 @@
 
 ## MoveCallback type
 
-A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.
+A callback function called when the entity associated with the SimpleCharacterController updates its position as it is attempting to move to a target coordinate.
 
 **Signature:**
 
 ```typescript
-export type MoveCallback = (currentTranslation: Vector3Like, targetTranslation: Vector3Like) => void;
+export type MoveCallback = (currentPosition: Vector3Like, targetPosition: Vector3Like) => void;
 ```
 **References:** [Vector3Like](./server.vector3like.md)
 

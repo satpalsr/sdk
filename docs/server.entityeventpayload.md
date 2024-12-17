@@ -90,7 +90,7 @@ Description
 </td></tr>
 <tr><td>
 
-[UpdateRotation](./server.entityeventpayload.updaterotation.md)
+[UpdatePosition](./server.entityeventpayload.updateposition.md)
 
 
 </td><td>
@@ -99,7 +99,7 @@ Description
 </td></tr>
 <tr><td>
 
-[UpdateTranslation](./server.entityeventpayload.updatetranslation.md)
+[UpdateRotation](./server.entityeventpayload.updaterotation.md)
 
 
 </td><td>

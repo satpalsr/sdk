@@ -9,7 +9,7 @@ A callback function called when the entity associated with the SimpleCharacterCo
 **Signature:**
 
 ```typescript
-export type MoveCompleteCallback = (endTranslation: Vector3Like) => void;
+export type MoveCompleteCallback = (endPosition: Vector3Like) => void;
 ```
 **References:** [Vector3Like](./server.vector3like.md)
 

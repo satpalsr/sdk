@@ -75,6 +75,90 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[additionalMass](./server.rigidbody.additionalmass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The additional mass of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[additionalSolverIterations](./server.rigidbody.additionalsolveriterations.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The additional solver iterations of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[angularDamping](./server.rigidbody.angulardamping.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The angular damping of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[angularVelocity](./server.rigidbody.angularvelocity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The angular velocity of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [colliders](./server.rigidbody.colliders.md)
 
 
@@ -91,6 +175,216 @@ Set&lt;[Collider](./server.collider.md)<!-- -->&gt;
 </td><td>
 
 The colliders of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[directionFromRotation](./server.rigidbody.directionfromrotation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The direction from the rotation of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[dominanceGroup](./server.rigidbody.dominancegroup.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The dominance group of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[effectiveAngularInertia](./server.rigidbody.effectiveangularinertia.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[SpdMatrix3](./server.spdmatrix3.md) \| undefined
+
+
+</td><td>
+
+The effective angular inertia of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[effectiveInverseMass](./server.rigidbody.effectiveinversemass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md) \| undefined
+
+
+</td><td>
+
+The effective inverse mass of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[effectiveWorldInversePrincipalAngularInertiaSqrt](./server.rigidbody.effectiveworldinverseprincipalangularinertiasqrt.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[SpdMatrix3](./server.spdmatrix3.md) \| undefined
+
+
+</td><td>
+
+The effective world inverse principal angular inertia square root of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[enabledPositions](./server.rigidbody.enabledpositions.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Boolean](./server.vector3boolean.md)
+
+
+</td><td>
+
+The enabled axes of positional movement of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[enabledRotations](./server.rigidbody.enabledrotations.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Boolean](./server.vector3boolean.md)
+
+
+</td><td>
+
+The enabled axes of rotational movement of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[gravityScale](./server.rigidbody.gravityscale.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The gravity scale of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[inverseMass](./server.rigidbody.inversemass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number \| undefined
+
+
+</td><td>
+
+The inverse mass of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[inversePrincipalAngularInertiaSqrt](./server.rigidbody.inverseprincipalangularinertiasqrt.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md) \| undefined
+
+
+</td><td>
+
+The inverse principal angular inertia square root of the rigid body.
 
 
 </td></tr>
@@ -327,6 +621,132 @@ Whether the rigid body is sleeping.
 </td></tr>
 <tr><td>
 
+[linearDamping](./server.rigidbody.lineardamping.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The linear damping of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[linearVelocity](./server.rigidbody.linearvelocity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The linear velocity of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[localCenterOfMass](./server.rigidbody.localcenterofmass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The local center of mass of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[mass](./server.rigidbody.mass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The mass of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[nextKinematicPosition](./server.rigidbody.nextkinematicposition.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The next kinematic position of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[nextKinematicRotation](./server.rigidbody.nextkinematicrotation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[QuaternionLike](./server.quaternionlike.md)
+
+
+</td><td>
+
+The next kinematic rotation of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [numColliders](./server.rigidbody.numcolliders.md)
 
 
@@ -348,6 +768,69 @@ The number of colliders in the rigid body.
 </td></tr>
 <tr><td>
 
+[position](./server.rigidbody.position.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The position of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[principalAngularInertia](./server.rigidbody.principalangularinertia.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The principal angular inertia of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[principalAngularInertiaLocalFrame](./server.rigidbody.principalangularinertialocalframe.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[QuaternionLike](./server.quaternionlike.md) \| undefined
+
+
+</td><td>
+
+The principal angular inertia local frame of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [rawRigidBody](./server.rigidbody.rawrigidbody.md)
 
 
@@ -364,6 +847,90 @@ RAPIER.RigidBody \| undefined
 </td><td>
 
 The raw RAPIER rigid body instance.
+
+
+</td></tr>
+<tr><td>
+
+[rotation](./server.rigidbody.rotation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[QuaternionLike](./server.quaternionlike.md)
+
+
+</td><td>
+
+The rotation of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[softCcdPrediction](./server.rigidbody.softccdprediction.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The soft continuous collision detection prediction of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[type](./server.rigidbody.type.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[RigidBodyType](./server.rigidbodytype.md)
+
+
+</td><td>
+
+The type of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[worldCenterOfMass](./server.rigidbody.worldcenterofmass.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md) \| undefined
+
+
+</td><td>
+
+The world center of mass of the rigid body.
 
 
 </td></tr>
@@ -515,62 +1082,6 @@ Creates and adds a child collider to the rigid body for the simulation it belong
 </td></tr>
 <tr><td>
 
-[getAdditionalMass()](./server.rigidbody.getadditionalmass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the additional mass of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getAdditionalSolverIterations()](./server.rigidbody.getadditionalsolveriterations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the additional solver iterations of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getAngularDamping()](./server.rigidbody.getangulardamping.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the angular damping of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getAngularVelocity()](./server.rigidbody.getangularvelocity.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the angular velocity of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
 [getCollidersByTag(tag)](./server.rigidbody.getcollidersbytag.md)
 
 
@@ -585,7 +1096,7 @@ Gets the colliders of the rigid body by tag.
 </td></tr>
 <tr><td>
 
-[getDirectionFromRotation()](./server.rigidbody.getdirectionfromrotation.md)
+[lockAllPositions()](./server.rigidbody.lockallpositions.md)
 
 
 </td><td>
@@ -593,315 +1104,7 @@ Gets the colliders of the rigid body by tag.
 
 </td><td>
 
-Gets the direction from the rotation of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getDominanceGroup()](./server.rigidbody.getdominancegroup.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the dominance group of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getEffectiveAngularInertia()](./server.rigidbody.geteffectiveangularinertia.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the effective angular inertia of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getEffectiveInverseMass()](./server.rigidbody.geteffectiveinversemass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the effective inverse mass of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getEffectiveWorldInversePrincipalAngularInertiaSqrt()](./server.rigidbody.geteffectiveworldinverseprincipalangularinertiasqrt.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the effective world inverse principal angular inertia square root of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getEnabledRotations()](./server.rigidbody.getenabledrotations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the enabled rotations of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getEnabledTranslations()](./server.rigidbody.getenabledtranslations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the enabled translations of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getGravityScale()](./server.rigidbody.getgravityscale.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the gravity scale of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getInverseMass()](./server.rigidbody.getinversemass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the inverse mass of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getInversePrincipalAngularInertiaSqrt()](./server.rigidbody.getinverseprincipalangularinertiasqrt.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the inverse principal angular inertia square root of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getLinearDamping()](./server.rigidbody.getlineardamping.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the linear damping of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getLinearVelocity()](./server.rigidbody.getlinearvelocity.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the linear velocity of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getLocalCenterOfMass()](./server.rigidbody.getlocalcenterofmass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the local center of mass of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getMass()](./server.rigidbody.getmass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the mass of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getNextKinematicRotation()](./server.rigidbody.getnextkinematicrotation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the next kinematic rotation of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getNextKinematicTranslation()](./server.rigidbody.getnextkinematictranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the next kinematic translation of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getPrincipalAngularInertia()](./server.rigidbody.getprincipalangularinertia.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the principal angular inertia of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getPrincipalAngularInertiaLocalFrame()](./server.rigidbody.getprincipalangularinertialocalframe.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the principal angular inertia local frame of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getRotation()](./server.rigidbody.getrotation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the rotation of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getSoftCcdPrediction()](./server.rigidbody.getsoftccdprediction.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the soft ccd prediction of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getTranslation()](./server.rigidbody.gettranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the translation of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getType()](./server.rigidbody.gettype.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the type of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[getWorldCenterOfMass()](./server.rigidbody.getworldcenterofmass.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the world center of mass of the rigid body.
+Locks all positional movement of the rigid body.
 
 
 </td></tr>
@@ -916,20 +1119,6 @@ Gets the world center of mass of the rigid body.
 </td><td>
 
 Locks all rotations of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[lockAllTranslations()](./server.rigidbody.lockalltranslations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Locks all translations of the rigid body.
 
 
 </td></tr>
@@ -1075,6 +1264,20 @@ Sets whether the rigid body is enabled.
 </td></tr>
 <tr><td>
 
+[setEnabledPositions(enabledPositions)](./server.rigidbody.setenabledpositions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets whether the rigid body has enabled positional movement.
+
+
+</td></tr>
+<tr><td>
+
 [setEnabledRotations(enabledRotations)](./server.rigidbody.setenabledrotations.md)
 
 
@@ -1084,20 +1287,6 @@ Sets whether the rigid body is enabled.
 </td><td>
 
 Sets whether the rigid body has enabled rotations.
-
-
-</td></tr>
-<tr><td>
-
-[setEnabledTranslations(enabledTranslations)](./server.rigidbody.setenabledtranslations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Sets whether the rigid body has enabled translations.
 
 
 </td></tr>
@@ -1145,6 +1334,20 @@ Sets the linear velocity of the rigid body.
 </td></tr>
 <tr><td>
 
+[setNextKinematicPosition(nextKinematicPosition)](./server.rigidbody.setnextkinematicposition.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the next kinematic position of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [setNextKinematicRotation(nextKinematicRotation)](./server.rigidbody.setnextkinematicrotation.md)
 
 
@@ -1159,7 +1362,7 @@ Sets the next kinematic rotation of the rigid body.
 </td></tr>
 <tr><td>
 
-[setNextKinematicTranslation(nextKinematicTranslation)](./server.rigidbody.setnextkinematictranslation.md)
+[setPosition(position)](./server.rigidbody.setposition.md)
 
 
 </td><td>
@@ -1167,7 +1370,7 @@ Sets the next kinematic rotation of the rigid body.
 
 </td><td>
 
-Sets the next kinematic translation of the rigid body.
+Sets the position of the rigid body.
 
 
 </td></tr>
@@ -1210,20 +1413,6 @@ Sets whether the rigid body is sleeping.
 </td><td>
 
 Sets the soft ccd prediction of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[setTranslation(translation)](./server.rigidbody.settranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Sets the translation of the rigid body.
 
 
 </td></tr>

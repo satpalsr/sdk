@@ -6054,6 +6054,98 @@
               "name": "addToSimulation"
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!Collider#bounciness:member",
+              "docComment": "/**\n * The bounciness of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get bounciness(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "bounciness",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Collider#bouncinessCombineRule:member",
+              "docComment": "/**\n * The bounciness combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get bouncinessCombineRule(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "bouncinessCombineRule",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Collider#collisionGroups:member",
+              "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get collisionGroups(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CollisionGroups",
+                  "canonicalReference": "server!CollisionGroups:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "collisionGroups",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!Collider#enableCollisionEvents:member(1)",
               "docComment": "/**\n * Enables or disables collision events for the collider. This is automatically enabled if an on collision callback is set.\n *\n * @param enabled - Whether collision events are enabled.\n */\n",
@@ -6150,13 +6242,13 @@
               "name": "enableContactForceEvents"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getBounciness:member(1)",
-              "docComment": "/**\n * Gets the bounciness of the collider.\n *\n * @returns The bounciness of the collider.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!Collider#friction:member",
+              "docComment": "/**\n * The friction of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getBounciness(): "
+                  "text": "get friction(): "
                 },
                 {
                   "kind": "Content",
@@ -6167,27 +6259,26 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "friction",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
+              "isStatic": false,
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getBounciness"
+              "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getBouncinessCombineRule:member(1)",
-              "docComment": "/**\n * Gets the bounciness combine rule of the collider.\n *\n * @returns The bounciness combine rule of the collider.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!Collider#frictionCombineRule:member",
+              "docComment": "/**\n * The friction combine rule of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getBouncinessCombineRule(): "
+                  "text": "get frictionCombineRule(): "
                 },
                 {
                   "kind": "Reference",
@@ -6199,177 +6290,17 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "frictionCombineRule",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getBouncinessCombineRule"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getCollisionGroups:member(1)",
-              "docComment": "/**\n * Gets the collision groups the collider belongs to.\n *\n * @returns The collision groups the collider belongs to.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getCollisionGroups(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CollisionGroups",
-                  "canonicalReference": "server!CollisionGroups:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
               "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getCollisionGroups"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getFriction:member(1)",
-              "docComment": "/**\n * Gets the friction of the collider.\n *\n * @returns The friction of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getFriction(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getFriction"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getFrictionCombineRule:member(1)",
-              "docComment": "/**\n * Gets the friction combine rule of the collider.\n *\n * @returns The friction combine rule of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getFrictionCombineRule(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CoefficientCombineRule",
-                  "canonicalReference": "server!CoefficientCombineRule:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getFrictionCombineRule"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getRelativeRotation:member(1)",
-              "docComment": "/**\n * Gets the relative rotation of the collider.\n *\n * @returns The relative rotation of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getRelativeRotation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getRelativeRotation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#getRelativeTranslation:member(1)",
-              "docComment": "/**\n * Gets the relative translation of the collider to its parent rigid body.\n *\n * @returns The relative translation of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getRelativeTranslation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getRelativeTranslation"
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -6556,6 +6487,68 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Collider#relativePosition:member",
+              "docComment": "/**\n * The relative position of the collider to its parent rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get relativePosition(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "relativePosition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Collider#relativeRotation:member",
+              "docComment": "/**\n * The relative rotation of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get relativeRotation(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "relativeRotation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false,
               "isProtected": false,
@@ -6986,6 +6979,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Collider#setRelativePosition:member(1)",
+              "docComment": "/**\n * Sets the relative position of the collider to its parent rigid body.\n *\n * @param position - The relative position of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setRelativePosition(position: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setRelativePosition"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Collider#setRelativeRotation:member(1)",
               "docComment": "/**\n * Sets the relative rotation of the collider.\n *\n * @param rotation - The relative rotation of the collider.\n */\n",
               "excerptTokens": [
@@ -7032,55 +7074,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "setRelativeRotation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#setRelativeTranslation:member(1)",
-              "docComment": "/**\n * Sets the relative translation of the collider to its parent rigid body.\n *\n * @param translation - The relative translation of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setRelativeTranslation(translation: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "translation",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setRelativeTranslation"
             },
             {
               "kind": "Method",
@@ -7671,6 +7664,34 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#relativePosition:member",
+              "docComment": "/**\n * The relative position of the collider. Relative to parent rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "relativePosition?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "relativePosition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#relativeRotation:member",
               "docComment": "/**\n * The relative rotation of the collider. Relative to parent rigid body.\n */\n",
               "excerptTokens": [
@@ -7692,34 +7713,6 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "relativeRotation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#relativeTranslation:member",
-              "docComment": "/**\n * The relative translation of the collider. Relative to parent rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "relativeTranslation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "relativeTranslation",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -11186,6 +11179,79 @@
             },
             {
               "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.UpdatePosition:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface UpdatePosition "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "UpdatePosition",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.UpdatePosition#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.UpdatePosition#position:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "position: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Vector3Like",
+                      "canonicalReference": "server!Vector3Like:interface"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "position",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
               "canonicalReference": "server!EntityEventPayload.UpdateRotation:interface",
               "docComment": "",
               "excerptTokens": [
@@ -11249,79 +11315,6 @@
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "rotation",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                }
-              ],
-              "extendsTokenRanges": []
-            },
-            {
-              "kind": "Interface",
-              "canonicalReference": "server!EntityEventPayload.UpdateTranslation:interface",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interface UpdateTranslation "
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "UpdateTranslation",
-              "preserveMemberOrder": false,
-              "members": [
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!EntityEventPayload.UpdateTranslation#entity:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "entity: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Entity",
-                      "canonicalReference": "server!Entity:class"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "entity",
-                  "propertyTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  }
-                },
-                {
-                  "kind": "PropertySignature",
-                  "canonicalReference": "server!EntityEventPayload.UpdateTranslation#translation:member",
-                  "docComment": "",
-                  "excerptTokens": [
-                    {
-                      "kind": "Content",
-                      "text": "translation: "
-                    },
-                    {
-                      "kind": "Reference",
-                      "text": "Vector3Like",
-                      "canonicalReference": "server!Vector3Like:interface"
-                    },
-                    {
-                      "kind": "Content",
-                      "text": ";"
-                    }
-                  ],
-                  "isReadonly": false,
-                  "isOptional": false,
-                  "releaseTag": "Public",
-                  "name": "translation",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -11496,6 +11489,27 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.UPDATE_POSITION:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "UPDATE_POSITION = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.UPDATE_POSITION\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "UPDATE_POSITION"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!EntityEventType.UPDATE_ROTATION:member",
               "docComment": "",
               "excerptTokens": [
@@ -11514,27 +11528,6 @@
               },
               "releaseTag": "Public",
               "name": "UPDATE_ROTATION"
-            },
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "server!EntityEventType.UPDATE_TRANSLATION:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "UPDATE_TRANSLATION = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"ENTITY.UPDATE_TRANSLATION\""
-                }
-              ],
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "UPDATE_TRANSLATION"
             }
           ]
         },
@@ -13212,7 +13205,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!MoveCallback:type",
-          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.\n *\n * @param currentTranslation - The current translation of the entity.\n *\n * @param targetTranslation - The target translation of the entity.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController updates its position as it is attempting to move to a target coordinate.\n *\n * @param currentPosition - The current position of the entity.\n *\n * @param targetPosition - The target position of the entity.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -13220,7 +13213,7 @@
             },
             {
               "kind": "Content",
-              "text": "(currentTranslation: "
+              "text": "(currentPosition: "
             },
             {
               "kind": "Reference",
@@ -13229,7 +13222,7 @@
             },
             {
               "kind": "Content",
-              "text": ", targetTranslation: "
+              "text": ", targetPosition: "
             },
             {
               "kind": "Reference",
@@ -13256,7 +13249,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "server!MoveCompleteCallback:type",
-          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.\n *\n * @param endTranslation - The translation of the entity after it has finished moving.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A callback function called when the entity associated with the SimpleCharacterController reaches the target coordinate. An entity must reach the x,y,z coordinate for the callback to be called.\n *\n * @param endPosition - The position of the entity after it has finished moving.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -13264,7 +13257,7 @@
             },
             {
               "kind": "Content",
-              "text": "(endTranslation: "
+              "text": "(endPosition: "
             },
             {
               "kind": "Reference",
@@ -19110,6 +19103,66 @@
               "name": "addForce"
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#additionalMass:member",
+              "docComment": "/**\n * The additional mass of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get additionalMass(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "additionalMass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#additionalSolverIterations:member",
+              "docComment": "/**\n * The additional solver iterations of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get additionalSolverIterations(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "additionalSolverIterations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#addTorque:member(1)",
               "docComment": "/**\n * Adds a torque to the rigid body.\n *\n * @param torque - The torque to add to the rigid body.\n */\n",
@@ -19206,6 +19259,67 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "addToSimulation"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#angularDamping:member",
+              "docComment": "/**\n * The angular damping of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get angularDamping(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "angularDamping",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#angularVelocity:member",
+              "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get angularVelocity(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "angularVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Method",
@@ -19524,106 +19638,13 @@
               "name": "createAndAddChildColliderToSimulation"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getAdditionalMass:member(1)",
-              "docComment": "/**\n * Gets the additional mass of the rigid body.\n *\n * @returns The additional mass of the rigid body.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#directionFromRotation:member",
+              "docComment": "/**\n * The direction from the rotation of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getAdditionalMass(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getAdditionalMass"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getAdditionalSolverIterations:member(1)",
-              "docComment": "/**\n * Gets the additional solver iterations of the rigid body.\n *\n * @returns The additional solver iterations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getAdditionalSolverIterations(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getAdditionalSolverIterations"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getAngularDamping:member(1)",
-              "docComment": "/**\n * Gets the angular damping of the rigid body.\n *\n * @returns The angular damping of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getAngularDamping(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getAngularDamping"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getAngularVelocity:member(1)",
-              "docComment": "/**\n * Gets the angular velocity of the rigid body.\n *\n * @returns The angular velocity of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getAngularVelocity(): "
+                  "text": "get directionFromRotation(): "
                 },
                 {
                   "kind": "Reference",
@@ -19635,18 +19656,214 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "directionFromRotation",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
+              "isStatic": false,
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#dominanceGroup:member",
+              "docComment": "/**\n * The dominance group of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get dominanceGroup(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
               "isOptional": false,
-              "isAbstract": false,
-              "name": "getAngularVelocity"
+              "releaseTag": "Public",
+              "name": "dominanceGroup",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#effectiveAngularInertia:member",
+              "docComment": "/**\n * The effective angular inertia of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get effectiveAngularInertia(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SpdMatrix3",
+                  "canonicalReference": "server!SpdMatrix3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "effectiveAngularInertia",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#effectiveInverseMass:member",
+              "docComment": "/**\n * The effective inverse mass of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get effectiveInverseMass(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "effectiveInverseMass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#effectiveWorldInversePrincipalAngularInertiaSqrt:member",
+              "docComment": "/**\n * The effective world inverse principal angular inertia square root of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get effectiveWorldInversePrincipalAngularInertiaSqrt(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SpdMatrix3",
+                  "canonicalReference": "server!SpdMatrix3:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "effectiveWorldInversePrincipalAngularInertiaSqrt",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#enabledPositions:member",
+              "docComment": "/**\n * The enabled axes of positional movement of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get enabledPositions(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "enabledPositions",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#enabledRotations:member",
+              "docComment": "/**\n * The enabled axes of rotational movement of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get enabledRotations(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "enabledRotations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Method",
@@ -19702,45 +19919,13 @@
               "name": "getCollidersByTag"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getDirectionFromRotation:member(1)",
-              "docComment": "/**\n * Gets the direction from the rotation of the rigid body.\n *\n * @returns The direction from the rotation of the rigid body.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#gravityScale:member",
+              "docComment": "/**\n * The gravity scale of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getDirectionFromRotation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getDirectionFromRotation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getDominanceGroup:member(1)",
-              "docComment": "/**\n * Gets the dominance group of the rigid body.\n *\n * @returns The dominance group of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getDominanceGroup(): "
+                  "text": "get gravityScale(): "
                 },
                 {
                   "kind": "Content",
@@ -19751,230 +19936,26 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "gravityScale",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getDominanceGroup"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getEffectiveAngularInertia:member(1)",
-              "docComment": "/**\n * Gets the effective angular inertia of the rigid body.\n *\n * @returns The effective angular inertia of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getEffectiveAngularInertia(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SpdMatrix3",
-                  "canonicalReference": "server!SpdMatrix3:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
               "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getEffectiveAngularInertia"
+              "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getEffectiveInverseMass:member(1)",
-              "docComment": "/**\n * Gets the effective inverse mass of the rigid body.\n *\n * @returns The effective inverse mass of the rigid body.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#inverseMass:member",
+              "docComment": "/**\n * The inverse mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getEffectiveInverseMass(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getEffectiveInverseMass"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getEffectiveWorldInversePrincipalAngularInertiaSqrt:member(1)",
-              "docComment": "/**\n * Gets the effective world inverse principal angular inertia square root of the rigid body.\n *\n * @returns The effective world inverse principal angular inertia square root of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getEffectiveWorldInversePrincipalAngularInertiaSqrt(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SpdMatrix3",
-                  "canonicalReference": "server!SpdMatrix3:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getEffectiveWorldInversePrincipalAngularInertiaSqrt"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getEnabledRotations:member(1)",
-              "docComment": "/**\n * Gets the enabled rotations of the rigid body.\n *\n * @returns The enabled rotations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getEnabledRotations(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getEnabledRotations"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getEnabledTranslations:member(1)",
-              "docComment": "/**\n * Gets the enabled translations of the rigid body.\n *\n * @returns The enabled translations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getEnabledTranslations(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getEnabledTranslations"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getGravityScale:member(1)",
-              "docComment": "/**\n * Gets the gravity scale of the rigid body.\n *\n * @returns The gravity scale of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getGravityScale(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getGravityScale"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getInverseMass:member(1)",
-              "docComment": "/**\n * Gets the inverse mass of the rigid body.\n *\n * @returns The inverse mass of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getInverseMass(): "
+                  "text": "get inverseMass(): "
                 },
                 {
                   "kind": "Content",
@@ -19985,27 +19966,26 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "inverseMass",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
+              "isStatic": false,
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getInverseMass"
+              "isAbstract": false
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getInversePrincipalAngularInertiaSqrt:member(1)",
-              "docComment": "/**\n * Gets the inverse principal angular inertia square root of the rigid body.\n *\n * @returns The inverse principal angular inertia square root of the rigid body.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#inversePrincipalAngularInertiaSqrt:member",
+              "docComment": "/**\n * The inverse principal angular inertia square root of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getInversePrincipalAngularInertiaSqrt(): "
+                  "text": "get inversePrincipalAngularInertiaSqrt(): "
                 },
                 {
                   "kind": "Reference",
@@ -20021,439 +20001,17 @@
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "inversePrincipalAngularInertiaSqrt",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
               },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getInversePrincipalAngularInertiaSqrt"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getLinearDamping:member(1)",
-              "docComment": "/**\n * Gets the linear damping of the rigid body.\n *\n * @returns The linear damping of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getLinearDamping(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
               "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getLinearDamping"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getLinearVelocity:member(1)",
-              "docComment": "/**\n * Gets the linear velocity of the rigid body.\n *\n * @returns The linear velocity of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getLinearVelocity(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getLinearVelocity"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getLocalCenterOfMass:member(1)",
-              "docComment": "/**\n * Gets the local center of mass of the rigid body.\n *\n * @returns The local center of mass of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getLocalCenterOfMass(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getLocalCenterOfMass"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getMass:member(1)",
-              "docComment": "/**\n * Gets the mass of the rigid body.\n *\n * @returns The mass of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getMass(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getMass"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getNextKinematicRotation:member(1)",
-              "docComment": "/**\n * Gets the next kinematic rotation of the rigid body.\n *\n * @returns The next kinematic rotation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getNextKinematicRotation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getNextKinematicRotation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getNextKinematicTranslation:member(1)",
-              "docComment": "/**\n * Gets the next kinematic translation of the rigid body.\n *\n * @returns The next kinematic translation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getNextKinematicTranslation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getNextKinematicTranslation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getPrincipalAngularInertia:member(1)",
-              "docComment": "/**\n * Gets the principal angular inertia of the rigid body.\n *\n * @returns The principal angular inertia of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getPrincipalAngularInertia(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getPrincipalAngularInertia"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getPrincipalAngularInertiaLocalFrame:member(1)",
-              "docComment": "/**\n * Gets the principal angular inertia local frame of the rigid body.\n *\n * @returns The principal angular inertia local frame of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getPrincipalAngularInertiaLocalFrame(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getPrincipalAngularInertiaLocalFrame"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getRotation:member(1)",
-              "docComment": "/**\n * Gets the rotation of the rigid body.\n *\n * @returns The rotation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getRotation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getRotation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getSoftCcdPrediction:member(1)",
-              "docComment": "/**\n * Gets the soft ccd prediction of the rigid body.\n *\n * @returns The soft ccd prediction of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getSoftCcdPrediction(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getSoftCcdPrediction"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getTranslation:member(1)",
-              "docComment": "/**\n * Gets the translation of the rigid body.\n *\n * @returns The translation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getTranslation(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getTranslation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getType:member(1)",
-              "docComment": "/**\n * Gets the type of the rigid body.\n *\n * @returns The type of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getType(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RigidBodyType",
-                  "canonicalReference": "server!RigidBodyType:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getType"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#getWorldCenterOfMass:member(1)",
-              "docComment": "/**\n * Gets the world center of mass of the rigid body.\n *\n * @returns The world center of mass of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getWorldCenterOfMass(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "getWorldCenterOfMass"
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -20786,6 +20344,129 @@
               "isAbstract": false
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#linearDamping:member",
+              "docComment": "/**\n * The linear damping of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get linearDamping(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "linearDamping",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#linearVelocity:member",
+              "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get linearVelocity(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "linearVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#localCenterOfMass:member",
+              "docComment": "/**\n * The local center of mass of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get localCenterOfMass(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "localCenterOfMass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!RigidBody#lockAllPositions:member(1)",
+              "docComment": "/**\n * Locks all positional movement of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "lockAllPositions(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "lockAllPositions"
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#lockAllRotations:member(1)",
               "docComment": "/**\n * Locks all rotations of the rigid body.\n */\n",
@@ -20817,35 +20498,96 @@
               "name": "lockAllRotations"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#lockAllTranslations:member(1)",
-              "docComment": "/**\n * Locks all translations of the rigid body.\n */\n",
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#mass:member",
+              "docComment": "/**\n * The mass of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "lockAllTranslations(): "
+                  "text": "get mass(): "
                 },
                 {
                   "kind": "Content",
-                  "text": "void"
+                  "text": "number"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "mass",
+              "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "releaseTag": "Public",
+              "isStatic": false,
               "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#nextKinematicPosition:member",
+              "docComment": "/**\n * The next kinematic position of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get nextKinematicPosition(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
               "isOptional": false,
-              "isAbstract": false,
-              "name": "lockAllTranslations"
+              "releaseTag": "Public",
+              "name": "nextKinematicPosition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#nextKinematicRotation:member",
+              "docComment": "/**\n * The next kinematic rotation of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get nextKinematicRotation(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "nextKinematicRotation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -20872,6 +20614,103 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#position:member",
+              "docComment": "/**\n * The position of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get position(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "position",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#principalAngularInertia:member",
+              "docComment": "/**\n * The principal angular inertia of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get principalAngularInertia(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "principalAngularInertia",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#principalAngularInertiaLocalFrame:member",
+              "docComment": "/**\n * The principal angular inertia local frame of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get principalAngularInertiaLocalFrame(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "principalAngularInertiaLocalFrame",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
               },
               "isStatic": false,
               "isProtected": false,
@@ -20942,6 +20781,37 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "removeFromSimulation"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#rotation:member",
+              "docComment": "/**\n * The rotation of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get rotation(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "rotation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Method",
@@ -21380,6 +21250,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!RigidBody#setEnabledPositions:member(1)",
+              "docComment": "/**\n * Sets whether the rigid body has enabled positional movement.\n *\n * @param enabledPositions - Whether the rigid body has enabled positional movement.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setEnabledPositions(enabledPositions: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "enabledPositions",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setEnabledPositions"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!RigidBody#setEnabledRotations:member(1)",
               "docComment": "/**\n * Sets whether the rigid body has enabled rotations.\n *\n * @param enabledRotations - Whether the rigid body has enabled rotations.\n */\n",
               "excerptTokens": [
@@ -21426,55 +21345,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "setEnabledRotations"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#setEnabledTranslations:member(1)",
-              "docComment": "/**\n * Sets whether the rigid body has enabled translations.\n *\n * @param enabledTranslations - Whether the rigid body has enabled translations.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setEnabledTranslations(enabledTranslations: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "enabledTranslations",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setEnabledTranslations"
             },
             {
               "kind": "Method",
@@ -21623,6 +21493,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!RigidBody#setNextKinematicPosition:member(1)",
+              "docComment": "/**\n * Sets the next kinematic position of the rigid body.\n *\n * @param nextKinematicPosition - The next kinematic position of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setNextKinematicPosition(nextKinematicPosition: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "nextKinematicPosition",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setNextKinematicPosition"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!RigidBody#setNextKinematicRotation:member(1)",
               "docComment": "/**\n * Sets the next kinematic rotation of the rigid body.\n *\n * @param nextKinematicRotation - The next kinematic rotation of the rigid body.\n */\n",
               "excerptTokens": [
@@ -21672,12 +21591,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#setNextKinematicTranslation:member(1)",
-              "docComment": "/**\n * Sets the next kinematic translation of the rigid body.\n *\n * @param nextKinematicTranslation - The next kinematic translation of the rigid body.\n */\n",
+              "canonicalReference": "server!RigidBody#setPosition:member(1)",
+              "docComment": "/**\n * Sets the position of the rigid body.\n *\n * @param position - The position of the rigid body.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "setNextKinematicTranslation(nextKinematicTranslation: "
+                  "text": "setPosition(position: "
                 },
                 {
                   "kind": "Reference",
@@ -21707,7 +21626,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "nextKinematicTranslation",
+                  "parameterName": "position",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -21717,7 +21636,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "setNextKinematicTranslation"
+              "name": "setPosition"
             },
             {
               "kind": "Method",
@@ -21866,55 +21785,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!RigidBody#setTranslation:member(1)",
-              "docComment": "/**\n * Sets the translation of the rigid body.\n *\n * @param translation - The translation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setTranslation(translation: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "translation",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setTranslation"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!RigidBody#setType:member(1)",
               "docComment": "/**\n * Sets the type of the rigid body.\n *\n * @param type - The type of the rigid body.\n */\n",
               "excerptTokens": [
@@ -21994,6 +21864,67 @@
               "name": "sleep"
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#softCcdPrediction:member",
+              "docComment": "/**\n * The soft continuous collision detection prediction of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get softCcdPrediction(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "softCcdPrediction",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#type:member",
+              "docComment": "/**\n * The type of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get type(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType",
+                  "canonicalReference": "server!RigidBodyType:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#wakeUp:member(1)",
               "docComment": "/**\n * Wakes up the rigid body. Physics otherwise optimizes waking it when necessary.\n */\n",
@@ -22023,6 +21954,41 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "wakeUp"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!RigidBody#worldCenterOfMass:member",
+              "docComment": "/**\n * The world center of mass of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get worldCenterOfMass(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "worldCenterOfMass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             }
           ],
           "implementsTokenRanges": []
@@ -22347,6 +22313,34 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!RigidBodyOptions#enabledPositions:member",
+              "docComment": "/**\n * The enabled axes of positional movement of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enabledPositions?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "enabledPositions",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!RigidBodyOptions#enabledRotations:member",
               "docComment": "/**\n * The enabled rotations of the rigid body.\n */\n",
               "excerptTokens": [
@@ -22368,34 +22362,6 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "enabledRotations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#enabledTranslations:member",
-              "docComment": "/**\n * The enabled translations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "enabledTranslations?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "enabledTranslations",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -22478,6 +22444,34 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "linearVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RigidBodyOptions#position:member",
+              "docComment": "/**\n * The position of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "position?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "position",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -22588,34 +22582,6 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "softCcdPrediction",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#translation:member",
-              "docComment": "/**\n * The translation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "translation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "translation",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

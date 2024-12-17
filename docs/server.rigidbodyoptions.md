@@ -208,6 +208,25 @@ _(Optional)_ Whether the rigid body is enabled.
 </td></tr>
 <tr><td>
 
+[enabledPositions?](./server.rigidbodyoptions.enabledpositions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Vector3Boolean](./server.vector3boolean.md)
+
+
+</td><td>
+
+_(Optional)_ The enabled axes of positional movement of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [enabledRotations?](./server.rigidbodyoptions.enabledrotations.md)
 
 
@@ -222,25 +241,6 @@ _(Optional)_ Whether the rigid body is enabled.
 </td><td>
 
 _(Optional)_ The enabled rotations of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[enabledTranslations?](./server.rigidbodyoptions.enabledtranslations.md)
-
-
-</td><td>
-
-
-</td><td>
-
-[Vector3Boolean](./server.vector3boolean.md)
-
-
-</td><td>
-
-_(Optional)_ The enabled translations of the rigid body.
 
 
 </td></tr>
@@ -298,6 +298,25 @@ _(Optional)_ The linear damping of the rigid body.
 </td><td>
 
 _(Optional)_ The linear velocity of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[position?](./server.rigidbodyoptions.position.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+_(Optional)_ The position of the rigid body.
 
 
 </td></tr>
@@ -374,25 +393,6 @@ number
 </td><td>
 
 _(Optional)_ The soft continuous collision detection prediction of the rigid body.
-
-
-</td></tr>
-<tr><td>
-
-[translation?](./server.rigidbodyoptions.translation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-[Vector3Like](./server.vector3like.md)
-
-
-</td><td>
-
-_(Optional)_ The translation of the rigid body.
 
 
 </td></tr>

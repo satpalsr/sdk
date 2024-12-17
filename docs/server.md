@@ -1031,7 +1031,7 @@ Options for the [SimpleCharacterController.face()](./server.simplecharactercontr
 
 </td><td>
 
-A callback function called when the entity associated with the SimpleCharacterController updates its translation as it is attempting to move to a target coordinate.
+A callback function called when the entity associated with the SimpleCharacterController updates its position as it is attempting to move to a target coordinate.
 
 
 </td></tr>

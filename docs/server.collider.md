@@ -75,6 +75,111 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[bounciness](./server.collider.bounciness.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The bounciness of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[bouncinessCombineRule](./server.collider.bouncinesscombinerule.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+The bounciness combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[collisionGroups](./server.collider.collisiongroups.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[CollisionGroups](./server.collisiongroups.md)
+
+
+</td><td>
+
+The collision groups the collider belongs to.
+
+
+</td></tr>
+<tr><td>
+
+[friction](./server.collider.friction.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The friction of the collider.
+
+
+</td></tr>
+<tr><td>
+
+[frictionCombineRule](./server.collider.frictioncombinerule.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[CoefficientCombineRule](./server.coefficientcombinerule.md)
+
+
+</td><td>
+
+The friction combine rule of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [isEnabled](./server.collider.isenabled.md)
 
 
@@ -201,6 +306,48 @@ The raw collider object from the Rapier physics engine.
 </td></tr>
 <tr><td>
 
+[relativePosition](./server.collider.relativeposition.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The relative position of the collider to its parent rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[relativeRotation](./server.collider.relativerotation.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[QuaternionLike](./server.quaternionlike.md)
+
+
+</td><td>
+
+The relative rotation of the collider.
+
+
+</td></tr>
+<tr><td>
+
 [shape](./server.collider.shape.md)
 
 
@@ -300,104 +447,6 @@ Enables or disables collision events for the collider. This is automatically ena
 </td><td>
 
 Enables or disables contact force events for the collider. This is automatically enabled if an on contact force callback is set.
-
-
-</td></tr>
-<tr><td>
-
-[getBounciness()](./server.collider.getbounciness.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the bounciness of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[getBouncinessCombineRule()](./server.collider.getbouncinesscombinerule.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the bounciness combine rule of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[getCollisionGroups()](./server.collider.getcollisiongroups.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the collision groups the collider belongs to.
-
-
-</td></tr>
-<tr><td>
-
-[getFriction()](./server.collider.getfriction.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the friction of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[getFrictionCombineRule()](./server.collider.getfrictioncombinerule.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the friction combine rule of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[getRelativeRotation()](./server.collider.getrelativerotation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the relative rotation of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[getRelativeTranslation()](./server.collider.getrelativetranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Gets the relative translation of the collider to its parent rigid body.
 
 
 </td></tr>
@@ -529,6 +578,20 @@ Sets the on collision callback for the collider.
 </td></tr>
 <tr><td>
 
+[setRelativePosition(position)](./server.collider.setrelativeposition.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the relative position of the collider to its parent rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [setRelativeRotation(rotation)](./server.collider.setrelativerotation.md)
 
 
@@ -538,20 +601,6 @@ Sets the on collision callback for the collider.
 </td><td>
 
 Sets the relative rotation of the collider.
-
-
-</td></tr>
-<tr><td>
-
-[setRelativeTranslation(translation)](./server.collider.setrelativetranslation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Sets the relative translation of the collider to its parent rigid body.
 
 
 </td></tr>
