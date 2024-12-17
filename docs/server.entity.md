@@ -251,6 +251,27 @@ Whether the entity is spawned.
 </td></tr>
 <tr><td>
 
+[modelAnimationsPlaybackRate](./server.entity.modelanimationsplaybackrate.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The playback rate of the entity's model animations.
+
+
+</td></tr>
+<tr><td>
+
 [modelHiddenNodes](./server.entity.modelhiddennodes.md)
 
 
@@ -595,6 +616,20 @@ Despawns the entity from the world.
 </td><td>
 
 Sets the controller for the entity.
+
+
+</td></tr>
+<tr><td>
+
+[setModelAnimationsPlaybackRate(playbackRate)](./server.entity.setmodelanimationsplaybackrate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the playback rate of all animations on the entity's model.
 
 
 </td></tr>

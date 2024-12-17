@@ -1290,6 +1290,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1302,14 +1303,16 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get blockTextureUri(): string | undefined;
     /** The controller for the entity. */
     get controller(): BaseEntityController | undefined;
-    /** The URI or path to the .gltf model asset to be used for the entity. */
-    get modelUri(): string | undefined;
+    /** The playback rate of the entity's model animations. */
+    get modelAnimationsPlaybackRate(): number;
     /** The nodes to hide on the entity's model. */
     get modelHiddenNodes(): ReadonlySet<string>;
     /** The looped animations to start when the entity is spawned. */
     get modelLoopedAnimations(): ReadonlySet<string>;
     /** The scale of the entity's model. */
     get modelScale(): number | undefined;
+    /** The URI or path to the .gltf model asset to be used for the entity. */
+    get modelUri(): string | undefined;
     /** The name of the entity. */
     get name(): string;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
@@ -1334,6 +1337,17 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * Despawns the entity from the world.
      */
     despawn(): void;
+    /**
+     * Sets the playback rate of all animations on the entity's model.
+     *
+     * @remarks
+     * Defaults to 1. A positive value will play the animation forward,
+     * a negative value will play the animation in reverse. Any value may be used.
+     * You can make animations play faster by using larger values.
+     *
+     * @param playbackRate - The playback rate of the entity's model animations.
+     */
+    setModelAnimationsPlaybackRate(playbackRate: number): void;
     /**
      * Sets the controller for the entity.
      * @param controller - The controller to set.
@@ -1396,6 +1410,10 @@ export declare namespace EntityEventPayload {
     export interface Despawn {
         entity: Entity;
     }
+    export interface SetModelAnimationsPlaybackRate {
+        entity: Entity;
+        playbackRate: number;
+    }
     export interface SetModelHiddenNodes {
         entity: Entity;
         modelHiddenNodes: Set<string>;
@@ -1432,6 +1450,7 @@ export declare namespace EntityEventPayload {
 /** Event types an Entity instance can emit. @public */
 export declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
+    SET_MODEL_ANIMATIONS_PLAYBACK_RATE = "ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE",
     SET_MODEL_HIDDEN_NODES = "ENTITY.SET_MODEL_HIDDEN_NODES",
     SET_TINT_COLOR = "ENTITY.SET_TINT_COLOR",
     SPAWN = "ENTITY.SPAWN",
@@ -1510,14 +1529,16 @@ export declare interface EntityOptions {
     blockTextureUri?: string;
     /** The entity controller to use for the entity. */
     controller?: BaseEntityController;
-    /** The URI or path to the .gltf model asset to be used for the entity. */
-    modelUri?: string;
+    /** The playback rate of the entity's model animations. */
+    modelAnimationsPlaybackRate?: number;
     /** The nodes to hide on the entity's model. */
     modelHiddenNodes?: string[];
     /** The looped animations to start when the entity is spawned. */
     modelLoopedAnimations?: string[];
     /** The scale of the entity's model. */
     modelScale?: number;
+    /** The URI or path to the .gltf model asset to be used for the entity. */
+    modelUri?: string;
     /** The name of the entity. */
     name?: string;
     /** The rigid body options for the entity. */

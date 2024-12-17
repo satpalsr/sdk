@@ -46,6 +46,20 @@ DESPAWN
 </td></tr>
 <tr><td>
 
+SET\_MODEL\_ANIMATIONS\_PLAYBACK\_RATE
+
+
+</td><td>
+
+`"ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SET\_MODEL\_HIDDEN\_NODES
 
 

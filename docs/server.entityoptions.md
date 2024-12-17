@@ -94,6 +94,25 @@ _(Optional)_ The entity controller to use for the entity.
 </td></tr>
 <tr><td>
 
+[modelAnimationsPlaybackRate?](./server.entityoptions.modelanimationsplaybackrate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The playback rate of the entity's model animations.
+
+
+</td></tr>
+<tr><td>
+
 [modelHiddenNodes?](./server.entityoptions.modelhiddennodes.md)
 
 

@@ -9251,6 +9251,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#modelAnimationsPlaybackRate:member",
+              "docComment": "/**\n * The playback rate of the entity's model animations.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get modelAnimationsPlaybackRate(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "modelAnimationsPlaybackRate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#modelHiddenNodes:member",
               "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
               "excerptTokens": [
@@ -9827,6 +9857,54 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Entity#setModelAnimationsPlaybackRate:member(1)",
+              "docComment": "/**\n * Sets the playback rate of all animations on the entity's model.\n *\n * @remarks\n *\n * Defaults to 1. A positive value will play the animation forward, a negative value will play the animation in reverse. Any value may be used. You can make animations play faster by using larger values.\n *\n * @param playbackRate - The playback rate of the entity's model animations.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setModelAnimationsPlaybackRate(playbackRate: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "playbackRate",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setModelAnimationsPlaybackRate"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Entity#setModelHiddenNodes:member(1)",
               "docComment": "/**\n * Sets the nodes to hide on the entity's model. Matched nodes will be hidden for all players. Uses case insensitive substring matching.\n *\n * @param modelHiddenNodes - The nodes to hide on the entity's model.\n */\n",
               "excerptTokens": [
@@ -10300,6 +10378,78 @@
                   "isOptional": false,
                   "releaseTag": "Public",
                   "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.SetModelAnimationsPlaybackRate:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetModelAnimationsPlaybackRate "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetModelAnimationsPlaybackRate",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetModelAnimationsPlaybackRate#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetModelAnimationsPlaybackRate#playbackRate:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "playbackRate: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "playbackRate",
                   "propertyTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -10924,6 +11074,27 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.SET_MODEL_ANIMATIONS_PLAYBACK_RATE:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_MODEL_ANIMATIONS_PLAYBACK_RATE = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_MODEL_ANIMATIONS_PLAYBACK_RATE"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!EntityEventType.SET_MODEL_HIDDEN_NODES:member",
               "docComment": "",
               "excerptTokens": [
@@ -11501,6 +11672,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "controller",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#modelAnimationsPlaybackRate:member",
+              "docComment": "/**\n * The playback rate of the entity's model animations.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelAnimationsPlaybackRate?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelAnimationsPlaybackRate",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
