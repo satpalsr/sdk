@@ -2633,13 +2633,13 @@
           "preserveMemberOrder": false,
           "members": [
             {
-              "kind": "Constructor",
-              "canonicalReference": "server!BaseCharacterController:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `BaseCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param _options - Arbitrary options you may provide or omit for your controller implementation.\n */\n",
+              "kind": "Method",
+              "canonicalReference": "server!BaseCharacterController#attach:member(1)",
+              "docComment": "/**\n * Override this method to handle the attachment of an entity to your character controller.\n *\n * @param entity - The entity to attach the controller to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(entity: "
+                  "text": "attach(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -2648,22 +2648,22 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", _options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Record",
-                  "canonicalReference": "!Record:type"
+                  "text": "): "
                 },
                 {
                   "kind": "Content",
-                  "text": "<string, unknown>"
+                  "text": "void"
                 },
                 {
                   "kind": "Content",
-                  "text": ");"
+                  "text": ";"
                 }
               ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
@@ -2675,61 +2675,20 @@
                     "endIndex": 2
                   },
                   "isOptional": false
-                },
-                {
-                  "parameterName": "_options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 5
-                  },
-                  "isOptional": true
                 }
-              ]
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "attach"
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!BaseCharacterController#createColliders:member(1)",
-              "docComment": "/**\n * Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.\n *\n * @returns An array of colliders.\n */\n",
+              "canonicalReference": "server!BaseCharacterController#despawn:member(1)",
+              "docComment": "/**\n * Override this method to handle the despawn of an entity from your character controller.\n *\n * @param entity - The entity to despawn.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "createColliders(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createColliders"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!BaseCharacterController#entity:member",
-              "docComment": "/**\n * The entity the controller is for.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "readonly entity: "
+                  "text": "despawn(entity: "
                 },
                 {
                   "kind": "Reference",
@@ -2738,16 +2697,239 @@
                 },
                 {
                   "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isReadonly": true,
-              "isOptional": false,
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
               "releaseTag": "Public",
-              "name": "entity",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "despawn"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!BaseCharacterController#detach:member(1)",
+              "docComment": "/**\n * Override this method to handle the detachment of an entity from your character controller.\n *\n * @param entity - The entity to detach.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "detach(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "detach"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!BaseCharacterController#onAttach:member",
+              "docComment": "/**\n * A function that is called when the controller is attached to an entity. Useful for implementing attach logic without writing a new character controller class.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onAttach?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onAttach",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 2
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!BaseCharacterController#onDespawn:member",
+              "docComment": "/**\n * A function that is called when the controlled entity is despawned. Useful for implementing despawn logic without writing a new character controller class.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onDespawn?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onDespawn",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!BaseCharacterController#onDetach:member",
+              "docComment": "/**\n * A function that is called when the controller is detached from an entity. Useful for implementing detach logic without writing a new character controller class.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onDetach?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onDetach",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!BaseCharacterController#onSpawn:member",
+              "docComment": "/**\n * A function that is called when the controlled entity is spawned. Useful for implementing spawn logic without writing a new character controller class.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onSpawn?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onSpawn",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
               },
               "isStatic": false,
               "isProtected": false,
@@ -2756,7 +2938,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BaseCharacterController#onTick:member",
-              "docComment": "/**\n * A callback function for when the controller ticks.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "docComment": "/**\n * A function that is called every tick. Useful for implementing tick logic without writing a new character controller class.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2764,7 +2946,16 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(deltaTimeMs: number) => void"
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", deltaTimeMs: number) => void"
                 },
                 {
                   "kind": "Content",
@@ -2777,7 +2968,7 @@
               "name": "onTick",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 2
+                "endIndex": 4
               },
               "isStatic": false,
               "isProtected": false,
@@ -2786,7 +2977,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!BaseCharacterController#onTickWithPlayerInput:member",
-              "docComment": "/**\n * A callback function for when the controller ticks player movement.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "docComment": "/**\n * A function that is called every tick with player input by a PlayerEntity with this controller attached. Useful for implementing tick logic without writing a new character controller class.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2794,7 +2985,16 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "(input: "
+                  "text": "(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEntity",
+                  "canonicalReference": "server!PlayerEntity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", input: "
                 },
                 {
                   "kind": "Reference",
@@ -2825,7 +3025,7 @@
               "name": "onTickWithPlayerInput",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 6
+                "endIndex": 8
               },
               "isStatic": false,
               "isProtected": false,
@@ -2833,16 +3033,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!BaseCharacterController#tick:member(1)",
-              "docComment": "/**\n * Override this method to handle entity movements based on your character controller.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "canonicalReference": "server!BaseCharacterController#spawn:member(1)",
+              "docComment": "/**\n * Override this method to handle the spawning of an entity to your character controller.\n *\n * @param entity - The entity to spawn.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "tick(deltaTimeMs: "
+                  "text": "spawn(entity: "
                 },
                 {
-                  "kind": "Content",
-                  "text": "number"
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
                 },
                 {
                   "kind": "Content",
@@ -2867,10 +3068,75 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "deltaTimeMs",
+                  "parameterName": "entity",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "spawn"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!BaseCharacterController#tick:member(1)",
+              "docComment": "/**\n * Override this method to handle entity movements based on your character controller.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tick(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", deltaTimeMs: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "deltaTimeMs",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
                   },
                   "isOptional": false
                 }
@@ -2882,11 +3148,20 @@
             {
               "kind": "Method",
               "canonicalReference": "server!BaseCharacterController#tickWithPlayerInput:member(1)",
-              "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller. This is called every tick by a PlayerEntity with a character controller.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "docComment": "/**\n * Override this method to handle entity movements based on player input for your character controller. This is called every tick by a PlayerEntity with a character controller.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "tickWithPlayerInput(input: "
+                  "text": "tickWithPlayerInput(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEntity",
+                  "canonicalReference": "server!PlayerEntity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", input: "
                 },
                 {
                   "kind": "Reference",
@@ -2925,15 +3200,15 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 9,
+                "endIndex": 10
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "input",
+                  "parameterName": "entity",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -2941,7 +3216,7 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "cameraOrientation",
+                  "parameterName": "input",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
@@ -2949,10 +3224,18 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "deltaTimeMs",
+                  "parameterName": "cameraOrientation",
                   "parameterTypeTokenRange": {
                     "startIndex": 5,
                     "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "deltaTimeMs",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
                   },
                   "isOptional": false
                 }
@@ -8676,20 +8959,11 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!DefaultCharacterController:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n *\n * @param entity - The entity the controller is for.\n *\n * @param options - Options for the controller.\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `DefaultCharacterController` class\n *\n * @param options - Options for the controller.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
+                  "text": "constructor(options?: "
                 },
                 {
                   "kind": "Reference",
@@ -8706,22 +8980,63 @@
               "overloadIndex": 1,
               "parameters": [
                 {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!DefaultCharacterController#attach:member(1)",
+              "docComment": "/**\n * Called when the controller is attached to an entity.\n *\n * @param entity - The entity to attach the controller to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "attach(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
                   "parameterName": "entity",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
                   },
                   "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
                 }
-              ]
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "attach"
             },
             {
               "kind": "Property",
@@ -8839,42 +9154,6 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!DefaultCharacterController#createColliders:member(1)",
-              "docComment": "/**\n * Creates the colliders for the character controller, overriding the default implementation.\n *\n * @returns An array of colliders.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createColliders(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createColliders"
             },
             {
               "kind": "Property",
@@ -9033,12 +9312,70 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!DefaultCharacterController#tickWithPlayerInput:member(1)",
-              "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "canonicalReference": "server!DefaultCharacterController#spawn:member(1)",
+              "docComment": "/**\n * Called when the controlled entity is spawned. In DefaultCharacterController, this function is used to create the colliders for the entity for wall and ground detection.\n *\n * @param entity - The entity that is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "tickWithPlayerInput(input: "
+                  "text": "spawn(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "spawn"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!DefaultCharacterController#tickWithPlayerInput:member(1)",
+              "docComment": "/**\n * Ticks the player movement for the character controller, overriding the default implementation.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tickWithPlayerInput(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEntity",
+                  "canonicalReference": "server!PlayerEntity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", input: "
                 },
                 {
                   "kind": "Reference",
@@ -9077,15 +9414,15 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 9,
+                "endIndex": 10
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "input",
+                  "parameterName": "entity",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -9093,7 +9430,7 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "cameraOrientation",
+                  "parameterName": "input",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
@@ -9101,10 +9438,18 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "deltaTimeMs",
+                  "parameterName": "cameraOrientation",
                   "parameterTypeTokenRange": {
                     "startIndex": 5,
                     "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "deltaTimeMs",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
                   },
                   "isOptional": false
                 }
@@ -9492,50 +9837,6 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!Entity#createCustomCharacterController:member",
-              "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance the character controller is created for.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createCustomCharacterController?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "BaseCharacterController",
-                  "canonicalReference": "server!BaseCharacterController:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "createCustomCharacterController",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 5
               },
               "isStatic": false,
               "isProtected": false,
@@ -10231,6 +10532,10 @@
                 },
                 {
                   "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
                   "text": "): "
                 },
                 {
@@ -10244,8 +10549,8 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 4,
+                "endIndex": 5
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -10255,7 +10560,7 @@
                   "parameterName": "characterController",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
-                    "endIndex": 2
+                    "endIndex": 3
                   },
                   "isOptional": false
                 }
@@ -11919,25 +12224,12 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#createCustomCharacterController:member",
-              "docComment": "/**\n * A function that creates a custom character controller for the entity when it spawns.\n *\n * @param entity - The Entity instance.\n *\n * @returns A character controller that extends {@link BaseCharacterController}.\n */\n",
+              "canonicalReference": "server!EntityOptions#characterController:member",
+              "docComment": "/**\n * The character controller to use for the entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "createCustomCharacterController?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => "
+                  "text": "characterController?: "
                 },
                 {
                   "kind": "Reference",
@@ -11952,10 +12244,10 @@
               "isReadonly": false,
               "isOptional": true,
               "releaseTag": "Public",
-              "name": "createCustomCharacterController",
+              "name": "characterController",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 5
+                "endIndex": 2
               }
             },
             {

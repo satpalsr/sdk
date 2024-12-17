@@ -11,6 +11,10 @@ startServer(world => {
   // Uncomment this to visualize physics vertices, will cause noticable lag.
   // world.simulation.enableDebugRendering(true);
   
+  // Visualize raycasts, like block breaking for our
+  // character controller.
+  world.simulation.enableDebugRaycasting(true);
+
   world.loadMap(worldMap);
 
   world.onPlayerJoin = player => {
@@ -20,17 +24,8 @@ startServer(world => {
       modelUri: 'models/player.gltf',
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
+      characterController: new MyCharacterController(), // attach our character controller
     });
-
-    // Assign a custom character controller factory to the player entity.
-    // This must be assigned before spawning the entity.
-    // createCustomCharacterController if set will be handled internally when
-    // .spawn() is called.
-    playerEntity.createCustomCharacterController = () => {
-      console.log('Creating custom player entity character controller...');
-
-      return new MyCharacterController(playerEntity);
-    };
 
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
     console.log('Spawned player entity!');

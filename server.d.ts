@@ -287,48 +287,82 @@ export declare interface AudioOptions {
  * @public
  */
 export declare abstract class BaseCharacterController {
-    /** The entity the controller is for. */
-    readonly entity: Entity;
     /**
-     * A callback function for when the controller ticks.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     * A function that is called every tick. Useful for implementing
+     * tick logic without writing a new character controller class.
      */
-    onTick?: (deltaTimeMs: number) => void;
+    onTick?: (entity: Entity, deltaTimeMs: number) => void;
     /**
-     * A callback function for when the controller ticks
-     * player movement.
-     * @param input - The current input state of the player.
-     * @param cameraOrientation - The current camera orientation state of the player.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     * A function that is called every tick with player input by a
+     * PlayerEntity with this controller attached. Useful for implementing
+     * tick logic without writing a new character controller class.
      */
-    onTickWithPlayerInput?: (input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
+    onTickWithPlayerInput?: (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
     /**
-     * @param entity - The entity the controller is for.
-     * @param _options - Arbitrary options you may provide or omit for your controller implementation.
+     * A function that is called when the controller is attached to an entity.
+     * Useful for implementing attach logic without writing a
+     * new character controller class.
      */
-    constructor(entity: Entity, _options?: Record<string, unknown>);
+    onAttach?: (entity: Entity) => void;
     /**
-     * Override this method to create controller specific colliders
-     * to be attached to the controlled entity when it spawns.
-     * @returns An array of colliders.
+     * A function that is called when the controlled entity is despawned.
+     * Useful for implementing despawn logic without writing a
+     * new character controller class.
      */
-    createColliders(): Collider[];
+    onDespawn?: (entity: Entity) => void;
+    /**
+     * A function that is called when the controller is detached from an entity.
+     * Useful for implementing detach logic without writing a
+     * new character controller class.
+     */
+    onDetach?: (entity: Entity) => void;
+    /**
+     * A function that is called when the controlled entity is spawned.
+     * Useful for implementing spawn logic without writing a
+     * new character controller class.
+     */
+    onSpawn?: (entity: Entity) => void;
+    /**
+     * Override this method to handle the attachment of an entity
+     * to your character controller.
+     * @param entity - The entity to attach the controller to.
+     */
+    attach(entity: Entity): void;
+    /**
+     * Override this method to handle the despawn of an entity
+     * from your character controller.
+     * @param entity - The entity to despawn.
+     */
+    despawn(entity: Entity): void;
+    /**
+     * Override this method to handle the detachment of an entity
+     * from your character controller.
+     * @param entity - The entity to detach.
+     */
+    detach(entity: Entity): void;
+    /**
+     * Override this method to handle the spawning of an entity
+     * to your character controller.
+     * @param entity - The entity to spawn.
+     */
+    spawn(entity: Entity): void;
     /**
      * Override this method to handle entity movements
      * based on player input for your character controller.
      * This is called every tick by a PlayerEntity with a
      * character controller.
+     * @param entity - The entity to tick.
      * @param input - The current input state of the player.
      * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
+    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
     /**
      * Override this method to handle entity movements
      * based on your character controller.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tick(deltaTimeMs: number): void;
+    tick(entity: Entity, deltaTimeMs: number): void;
 }
 
 /**
@@ -1198,10 +1232,9 @@ export declare class DefaultCharacterController extends BaseCharacterController 
 
 
     /**
-     * @param entity - The entity the controller is for.
      * @param options - Options for the controller.
      */
-    constructor(entity: Entity, options?: DefaultCharacterControllerOptions);
+    constructor(options?: DefaultCharacterControllerOptions);
     /** Whether the entity is grounded. */
     get isGrounded(): boolean;
     /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
@@ -1209,19 +1242,27 @@ export declare class DefaultCharacterController extends BaseCharacterController 
     /** The platform the entity is on, if any. */
     get platform(): Entity | undefined;
     /**
-     * Creates the colliders for the character controller,
-     * overriding the default implementation.
-     * @returns An array of colliders.
+     * Called when the controller is attached to an entity.
+     * @param entity - The entity to attach the controller to.
      */
-    createColliders(): Collider[];
+    attach(entity: Entity): void;
+    /**
+     * Called when the controlled entity is spawned.
+     * In DefaultCharacterController, this function is used to create
+     * the colliders for the entity for wall and ground detection.
+     * @param entity - The entity that is spawned.
+     */
+    spawn(entity: Entity): void;
     /**
      * Ticks the player movement for the character controller,
      * overriding the default implementation.
+     *
+     * @param entity - The entity to tick.
      * @param input - The current input state of the player.
      * @param cameraOrientation - The current camera orientation state of the player.
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
-    tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
+    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
 }
 
 /** Options for creating a DefaultCharacterController instance. @public */
@@ -1276,12 +1317,6 @@ export declare interface DefaultCharacterControllerOptions {
  * @public
  */
 export declare class Entity extends RigidBody implements protocol.Serializable {
-    /**
-     * A function that creates a custom character controller for the entity when it spawns.
-     * @param entity - The Entity instance the character controller is created for.
-     * @returns A character controller that extends {@link BaseCharacterController}.
-     */
-    createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
     /**
      * A function that is called when the entity collides with a block.
      *
@@ -1405,7 +1440,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * Sets the character controller for the entity.
      * @param characterController - The character controller to set.
      */
-    setCharacterController(characterController: BaseCharacterController): void;
+    setCharacterController(characterController: BaseCharacterController | undefined): void;
     /**
      * Sets the nodes to hide on the entity's model. Matched nodes
      * will be hidden for all players. Uses case insensitive
@@ -1575,12 +1610,8 @@ export declare interface EntityOptions {
     blockHalfExtents?: Vector3Like;
     /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
     blockTextureUri?: string;
-    /**
-     * A function that creates a custom character controller for the entity when it spawns.
-     * @param entity - The Entity instance.
-     * @returns A character controller that extends {@link BaseCharacterController}.
-     */
-    createCustomCharacterController?: (entity: Entity) => BaseCharacterController;
+    /** The character controller to use for the entity. */
+    characterController?: BaseCharacterController;
     /** The URI or path to the .gltf model asset to be used for the entity. */
     modelUri?: string;
     /** The nodes to hide on the entity's model. */

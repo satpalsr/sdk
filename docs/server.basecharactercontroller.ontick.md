@@ -4,10 +4,10 @@
 
 ## BaseCharacterController.onTick property
 
-A callback function for when the controller ticks.
+A function that is called every tick. Useful for implementing tick logic without writing a new character controller class.
 
 **Signature:**
 
 ```typescript
-onTick?: (deltaTimeMs: number) => void;
+onTick?: (entity: Entity, deltaTimeMs: number) => void;
 ```

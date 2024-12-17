@@ -167,25 +167,6 @@ The character controller for the entity.
 </td></tr>
 <tr><td>
 
-[createCustomCharacterController?](./server.entity.createcustomcharactercontroller.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(entity: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
-
-
-</td><td>
-
-_(Optional)_ A function that creates a custom character controller for the entity when it spawns.
-
-
-</td></tr>
-<tr><td>
-
 [id](./server.entity.id.md)
 
 

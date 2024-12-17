@@ -9,7 +9,7 @@ Override this method to handle entity movements based on your character controll
 **Signature:**
 
 ```typescript
-tick(deltaTimeMs: number): void;
+tick(entity: Entity, deltaTimeMs: number): void;
 ```
 
 ## Parameters
@@ -31,6 +31,20 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
+
+entity
+
+
+</td><td>
+
+[Entity](./server.entity.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
 
 deltaTimeMs
 

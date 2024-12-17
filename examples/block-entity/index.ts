@@ -142,7 +142,7 @@ startServer(world => {
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 },
     // attach a simple character controller so we can pathfind,
     // the character controller will be created and associated when we spawn the entity
-    createCustomCharacterController: entity => new SimpleCharacterController(entity), 
+    characterController: new SimpleCharacterController(), 
   });
 
   blockPet.spawn(world, { x: 0, y: 10, z: -6 });

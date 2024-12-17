@@ -4,10 +4,10 @@
 
 ## BaseCharacterController.onTickWithPlayerInput property
 
-A callback function for when the controller ticks player movement.
+A function that is called every tick with player input by a PlayerEntity with this controller attached. Useful for implementing tick logic without writing a new character controller class.
 
 **Signature:**
 
 ```typescript
-onTickWithPlayerInput?: (input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
+onTickWithPlayerInput?: (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
 ```

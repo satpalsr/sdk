@@ -293,7 +293,7 @@ function spawnPayloadEntity(world: World) {
   }
 
   payloadEntity = new Entity({
-    createCustomCharacterController: (entity: Entity) => new SimpleCharacterController(entity),
+    characterController: new SimpleCharacterController(),
     name: 'Payload',
     modelUri: 'models/payload.gltf',
     modelScale: 0.7,
@@ -350,7 +350,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   const targetPlayers = new Set<PlayerEntity>();
 
   const spider = new Entity({
-    createCustomCharacterController: (entity: Entity) => new SimpleCharacterController(entity),
+    characterController: new SimpleCharacterController(),
     name: 'Spider',
     modelUri: 'models/spider.gltf',
     modelLoopedAnimations: [ 'walk' ],
@@ -495,12 +495,11 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
   enemyPathfindAccumulators[entityId]++;
 }
 
-function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
-  if (!this.entity.world) return;
+function onTickWithPlayerInput(this: DefaultCharacterController, entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
+  if (!entity.world) return;
 
   if (input.ml) {
-    const world = this.entity.world;
-    const entity = this.entity;
+    const world = entity.world;
     const direction = Vector3.fromVector3Like(entity.directionFromRotation);
 
     direction.y = Math.sin(cameraOrientation.pitch);
@@ -513,7 +512,7 @@ function onTickWithPlayerInput(this: DefaultCharacterController, input: PlayerIn
     // Normalize the direction vector to unit length
     direction.normalize();
 
-    this.entity.startModelOneshotAnimations([ 'shoot' ]);
+    entity.startModelOneshotAnimations([ 'shoot' ]);
 
     // Adjust bullet origin roughly for camera offset so crosshair is accurate
     const bulletOrigin = entity.position;

@@ -54,7 +54,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[(constructor)(entity, options)](./server.defaultcharactercontroller._constructor_.md)
+[(constructor)(options)](./server.defaultcharactercontroller._constructor_.md)
 
 
 </td><td>
@@ -290,7 +290,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[createColliders()](./server.defaultcharactercontroller.createcolliders.md)
+[attach(entity)](./server.defaultcharactercontroller.attach.md)
 
 
 </td><td>
@@ -298,13 +298,27 @@ Description
 
 </td><td>
 
-Creates the colliders for the character controller, overriding the default implementation.
+Called when the controller is attached to an entity.
 
 
 </td></tr>
 <tr><td>
 
-[tickWithPlayerInput(input, cameraOrientation, deltaTimeMs)](./server.defaultcharactercontroller.tickwithplayerinput.md)
+[spawn(entity)](./server.defaultcharactercontroller.spawn.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Called when the controlled entity is spawned. In DefaultCharacterController, this function is used to create the colliders for the entity for wall and ground detection.
+
+
+</td></tr>
+<tr><td>
+
+[tickWithPlayerInput(entity, input, cameraOrientation, deltaTimeMs)](./server.defaultcharactercontroller.tickwithplayerinput.md)
 
 
 </td><td>

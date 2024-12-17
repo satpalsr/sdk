@@ -16,40 +16,6 @@ export default abstract class BaseCharacterController
 
 The BaseCharacterController should be extended by a more specific character controller that you or a plugin implements.
 
-## Constructors
-
-<table><thead><tr><th>
-
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(entity, \_options)](./server.basecharactercontroller._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `BaseCharacterController` class
-
-
-</td></tr>
-</tbody></table>
-
 ## Properties
 
 <table><thead><tr><th>
@@ -75,22 +41,77 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[entity](./server.basecharactercontroller.entity.md)
+[onAttach?](./server.basecharactercontroller.onattach.md)
 
 
 </td><td>
 
-`readonly`
+
+</td><td>
+
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
 
 
 </td><td>
 
-[Entity](./server.entity.md)
+_(Optional)_ A function that is called when the controller is attached to an entity. Useful for implementing attach logic without writing a new character controller class.
+
+
+</td></tr>
+<tr><td>
+
+[onDespawn?](./server.basecharactercontroller.ondespawn.md)
 
 
 </td><td>
 
-The entity the controller is for.
+
+</td><td>
+
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
+
+
+</td><td>
+
+_(Optional)_ A function that is called when the controlled entity is despawned. Useful for implementing despawn logic without writing a new character controller class.
+
+
+</td></tr>
+<tr><td>
+
+[onDetach?](./server.basecharactercontroller.ondetach.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
+
+
+</td><td>
+
+_(Optional)_ A function that is called when the controller is detached from an entity. Useful for implementing detach logic without writing a new character controller class.
+
+
+</td></tr>
+<tr><td>
+
+[onSpawn?](./server.basecharactercontroller.onspawn.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(entity: [Entity](./server.entity.md)<!-- -->) =&gt; void
+
+
+</td><td>
+
+_(Optional)_ A function that is called when the controlled entity is spawned. Useful for implementing spawn logic without writing a new character controller class.
 
 
 </td></tr>
@@ -104,12 +125,12 @@ The entity the controller is for.
 
 </td><td>
 
-(deltaTimeMs: number) =&gt; void
+(entity: [Entity](./server.entity.md)<!-- -->, deltaTimeMs: number) =&gt; void
 
 
 </td><td>
 
-_(Optional)_ A callback function for when the controller ticks.
+_(Optional)_ A function that is called every tick. Useful for implementing tick logic without writing a new character controller class.
 
 
 </td></tr>
@@ -123,12 +144,12 @@ _(Optional)_ A callback function for when the controller ticks.
 
 </td><td>
 
-(input: [PlayerInput](./server.playerinput.md)<!-- -->, cameraOrientation: [PlayerCameraOrientation](./server.playercameraorientation.md)<!-- -->, deltaTimeMs: number) =&gt; void
+(entity: [PlayerEntity](./server.playerentity.md)<!-- -->, input: [PlayerInput](./server.playerinput.md)<!-- -->, cameraOrientation: [PlayerCameraOrientation](./server.playercameraorientation.md)<!-- -->, deltaTimeMs: number) =&gt; void
 
 
 </td><td>
 
-_(Optional)_ A callback function for when the controller ticks player movement.
+_(Optional)_ A function that is called every tick with player input by a PlayerEntity with this controller attached. Useful for implementing tick logic without writing a new character controller class.
 
 
 </td></tr>
@@ -154,7 +175,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[createColliders()](./server.basecharactercontroller.createcolliders.md)
+[attach(entity)](./server.basecharactercontroller.attach.md)
 
 
 </td><td>
@@ -162,13 +183,55 @@ Description
 
 </td><td>
 
-Override this method to create controller specific colliders to be attached to the controlled entity when it spawns.
+Override this method to handle the attachment of an entity to your character controller.
 
 
 </td></tr>
 <tr><td>
 
-[tick(deltaTimeMs)](./server.basecharactercontroller.tick.md)
+[despawn(entity)](./server.basecharactercontroller.despawn.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Override this method to handle the despawn of an entity from your character controller.
+
+
+</td></tr>
+<tr><td>
+
+[detach(entity)](./server.basecharactercontroller.detach.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Override this method to handle the detachment of an entity from your character controller.
+
+
+</td></tr>
+<tr><td>
+
+[spawn(entity)](./server.basecharactercontroller.spawn.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Override this method to handle the spawning of an entity to your character controller.
+
+
+</td></tr>
+<tr><td>
+
+[tick(entity, deltaTimeMs)](./server.basecharactercontroller.tick.md)
 
 
 </td><td>
@@ -182,7 +245,7 @@ Override this method to handle entity movements based on your character controll
 </td></tr>
 <tr><td>
 
-[tickWithPlayerInput(input, cameraOrientation, deltaTimeMs)](./server.basecharactercontroller.tickwithplayerinput.md)
+[tickWithPlayerInput(entity, input, cameraOrientation, deltaTimeMs)](./server.basecharactercontroller.tickwithplayerinput.md)
 
 
 </td><td>

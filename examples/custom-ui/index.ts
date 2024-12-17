@@ -45,7 +45,7 @@ startServer(world => {
         const randomY = Math.random() * 13 + 2;  // Random between 2 and 15
         const randomZ = Math.random() * 40 - 20; // Random between -20 and 20
 
-        playerEntity.setTranslation({ x: randomX, y: randomY, z: randomZ });
+        playerEntity.setPosition({ x: randomX, y: randomY, z: randomZ });
       }
     };
   };

@@ -75,7 +75,7 @@ _(Optional)_ The texture uri of a entity if the entity is a block entity, if set
 </td></tr>
 <tr><td>
 
-[createCustomCharacterController?](./server.entityoptions.createcustomcharactercontroller.md)
+[characterController?](./server.entityoptions.charactercontroller.md)
 
 
 </td><td>
@@ -83,12 +83,12 @@ _(Optional)_ The texture uri of a entity if the entity is a block entity, if set
 
 </td><td>
 
-(entity: [Entity](./server.entity.md)<!-- -->) =&gt; [BaseCharacterController](./server.basecharactercontroller.md)
+[BaseCharacterController](./server.basecharactercontroller.md)
 
 
 </td><td>
 
-_(Optional)_ A function that creates a custom character controller for the entity when it spawns.
+_(Optional)_ The character controller to use for the entity.
 
 
 </td></tr>

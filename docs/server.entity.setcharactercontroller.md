@@ -9,7 +9,7 @@ Sets the character controller for the entity.
 **Signature:**
 
 ```typescript
-setCharacterController(characterController: BaseCharacterController): void;
+setCharacterController(characterController: BaseCharacterController | undefined): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ characterController
 
 </td><td>
 
-[BaseCharacterController](./server.basecharactercontroller.md)
+[BaseCharacterController](./server.basecharactercontroller.md) \| undefined
 
 
 </td><td>

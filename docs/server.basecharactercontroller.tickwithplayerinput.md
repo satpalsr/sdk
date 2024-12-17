@@ -9,7 +9,7 @@ Override this method to handle entity movements based on player input for your c
 **Signature:**
 
 ```typescript
-tickWithPlayerInput(input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
+tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
 ```
 
 ## Parameters
@@ -31,6 +31,22 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
+
+entity
+
+
+</td><td>
+
+[PlayerEntity](./server.playerentity.md)
+
+
+</td><td>
+
+The entity to tick.
+
+
+</td></tr>
+<tr><td>
 
 input
 

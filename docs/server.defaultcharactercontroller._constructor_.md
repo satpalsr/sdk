@@ -9,7 +9,7 @@ Constructs a new instance of the `DefaultCharacterController` class
 **Signature:**
 
 ```typescript
-constructor(entity: Entity, options?: DefaultCharacterControllerOptions);
+constructor(options?: DefaultCharacterControllerOptions);
 ```
 
 ## Parameters
@@ -31,22 +31,6 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
-
-entity
-
-
-</td><td>
-
-[Entity](./server.entity.md)
-
-
-</td><td>
-
-The entity the controller is for.
-
-
-</td></tr>
-<tr><td>
 
 options
 
