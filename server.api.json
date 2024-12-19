@@ -2266,6 +2266,104 @@
               "name": "getAllOneshotAudios"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!AudioManager#unregisterAudio:member(1)",
+              "docComment": "/**\n * Unregisters and stops an audio instance from the audio manager.\n *\n * @param audio - The audio instance to unregister.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unregisterAudio(audio: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Audio",
+                  "canonicalReference": "server!Audio:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "audio",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "unregisterAudio"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!AudioManager#unregisterEntityAttachedAudios:member(1)",
+              "docComment": "/**\n * Unregisters and stops all audio instances attached to a specific entity.\n *\n * @param entity - The entity to unregister audio instances for.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unregisterEntityAttachedAudios(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "unregisterEntityAttachedAudios"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!AudioManager#world:member",
               "docComment": "/**\n * The world the audio manager is for.\n */\n",
@@ -3499,6 +3597,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!BlockType#isLiquid:member",
+              "docComment": "/**\n * Whether the block type is a liquid.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isLiquid(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isLiquid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!BlockType#isMeshable:member",
               "docComment": "/**\n * Whether the block type is meshable.\n */\n",
               "excerptTokens": [
@@ -3783,6 +3911,33 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BlockTypeOptions#isLiquid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isLiquid?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "isLiquid",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -4937,12 +5092,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!Chunk#getBlock:member(1)",
+              "canonicalReference": "server!Chunk#getBlockId:member(1)",
               "docComment": "/**\n * Get the block type id at a specific local coordinate.\n *\n * @param localCoordinate - The local coordinate of the block to get.\n *\n * @returns The block type id.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getBlock(localCoordinate: "
+                  "text": "getBlockId(localCoordinate: "
                 },
                 {
                   "kind": "Reference",
@@ -4982,7 +5137,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "getBlock"
+              "name": "getBlockId"
             },
             {
               "kind": "Method",
@@ -5853,12 +6008,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!ChunkLattice#getBlock:member(1)",
+              "canonicalReference": "server!ChunkLattice#getBlockId:member(1)",
               "docComment": "/**\n * Get the block type id at a specific global coordinate.\n *\n * @param globalCoordinate - The global coordinate of the block to get.\n *\n * @returns The block type id, 0 if no block is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getBlock(globalCoordinate: "
+                  "text": "getBlockId(globalCoordinate: "
                 },
                 {
                   "kind": "Reference",
@@ -5898,7 +6053,61 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "getBlock"
+              "name": "getBlockId"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ChunkLattice#getBlockType:member(1)",
+              "docComment": "/**\n * Get the block type at a specific global coordinate.\n *\n * @param globalCoordinate - The global coordinate of the block to get.\n *\n * @returns The block type, null if no block is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBlockType(globalCoordinate: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BlockType",
+                  "canonicalReference": "server!BlockType:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "globalCoordinate",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getBlockType"
             },
             {
               "kind": "Method",

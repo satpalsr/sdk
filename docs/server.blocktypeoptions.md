@@ -73,6 +73,25 @@ number
 </td></tr>
 <tr><td>
 
+[isLiquid?](./server.blocktypeoptions.isliquid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+<tr><td>
+
 [name](./server.blocktypeoptions.name.md)
 
 

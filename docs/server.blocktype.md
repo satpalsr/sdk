@@ -133,6 +133,27 @@ The unique identifier for the block type.
 </td></tr>
 <tr><td>
 
+[isLiquid](./server.blocktype.isliquid.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the block type is a liquid.
+
+
+</td></tr>
+<tr><td>
+
 [isMeshable](./server.blocktype.ismeshable.md)
 
 

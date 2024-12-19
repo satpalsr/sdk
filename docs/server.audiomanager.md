@@ -147,4 +147,32 @@ Retrieves all oneshot (non-looped) audio instances for the world.
 
 
 </td></tr>
+<tr><td>
+
+[unregisterAudio(audio)](./server.audiomanager.unregisteraudio.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Unregisters and stops an audio instance from the audio manager.
+
+
+</td></tr>
+<tr><td>
+
+[unregisterEntityAttachedAudios(entity)](./server.audiomanager.unregisterentityattachedaudios.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Unregisters and stops all audio instances attached to a specific entity.
+
+
+</td></tr>
 </tbody></table>

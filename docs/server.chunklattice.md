@@ -84,7 +84,7 @@ Get all chunks in the lattice.
 </td></tr>
 <tr><td>
 
-[getBlock(globalCoordinate)](./server.chunklattice.getblock.md)
+[getBlockId(globalCoordinate)](./server.chunklattice.getblockid.md)
 
 
 </td><td>
@@ -93,6 +93,20 @@ Get all chunks in the lattice.
 </td><td>
 
 Get the block type id at a specific global coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[getBlockType(globalCoordinate)](./server.chunklattice.getblocktype.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the block type at a specific global coordinate.
 
 
 </td></tr>

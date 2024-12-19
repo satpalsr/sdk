@@ -221,8 +221,6 @@ export declare class AudioManager {
 
     /** The world the audio manager is for. */
     get world(): World;
-
-
     /**
      * Retrieves all loaded audio instances for the world.
      *
@@ -248,6 +246,19 @@ export declare class AudioManager {
      * @returns An array of audio instances.
      */
     getAllOneshotAudios(): Audio[];
+
+    /**
+     * Unregisters and stops an audio instance from the audio manager.
+     *
+     * @param audio - The audio instance to unregister.
+     */
+    unregisterAudio(audio: Audio): void;
+    /**
+     * Unregisters and stops all audio instances attached to a specific entity.
+     *
+     * @param entity - The entity to unregister audio instances for.
+     */
+    unregisterEntityAttachedAudios(entity: Entity): void;
 }
 
 /** Options for creating an Audio instance. @public */
@@ -453,6 +464,7 @@ export declare class BlockType implements protocol.Serializable {
 
 
 
+
     /**
      * Creates a new block type instance.
      * @param world - The world the block type is for.
@@ -463,12 +475,14 @@ export declare class BlockType implements protocol.Serializable {
     get id(): number;
     /** The collider options for the block type. */
     get colliderOptions(): ColliderOptions;
-    /** The URI of the texture for the block type. */
-    get textureUri(): string;
-    /** The name of the block type. */
-    get name(): string;
+    /** Whether the block type is a liquid. */
+    get isLiquid(): boolean;
     /** Whether the block type is meshable. */
     get isMeshable(): boolean;
+    /** The name of the block type. */
+    get name(): string;
+    /** The URI of the texture for the block type. */
+    get textureUri(): string;
 
 
 }
@@ -476,9 +490,10 @@ export declare class BlockType implements protocol.Serializable {
 /** Options for creating a block type instance. @public */
 export declare interface BlockTypeOptions {
     id: number;
-    textureUri: string;
-    name: string;
     customColliderOptions?: ColliderOptions;
+    isLiquid?: boolean;
+    name: string;
+    textureUri: string;
 }
 
 /**
@@ -727,7 +742,7 @@ export declare class Chunk implements protocol.Serializable {
      * @param localCoordinate - The local coordinate of the block to get.
      * @returns The block type id.
      */
-    getBlock(localCoordinate: Vector3Like): number;
+    getBlockId(localCoordinate: Vector3Like): number;
     /**
      * Check if a block exists at a specific local coordinate.
      * @param localCoordinate - The local coordinate of the block to check.
@@ -796,7 +811,13 @@ export declare class ChunkLattice {
      * @param globalCoordinate - The global coordinate of the block to get.
      * @returns The block type id, 0 if no block is set.
      */
-    getBlock(globalCoordinate: Vector3Like): number;
+    getBlockId(globalCoordinate: Vector3Like): number;
+    /**
+     * Get the block type at a specific global coordinate.
+     * @param globalCoordinate - The global coordinate of the block to get.
+     * @returns The block type, null if no block is set.
+     */
+    getBlockType(globalCoordinate: Vector3Like): BlockType | null;
     /**
      * Get a chunk by its origin coordinate.
      * @param originCoordinate - The origin coordinate of the chunk to get.
