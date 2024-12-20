@@ -42,7 +42,7 @@ entity
 
 </td><td>
 
-The entity to unregister audio instances for.
+The entity to pause and unregister audio instances for.
 
 
 </td></tr>

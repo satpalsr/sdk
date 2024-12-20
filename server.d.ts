@@ -47,7 +47,7 @@ export declare class Audio implements protocol.Serializable {
 
 
     /**
-     * @param audioData - The options for the audio instance.
+     * @param options - The options for the Audio instance.
      */
     constructor(options: AudioOptions);
     /** The unique identifier for the audio. */
@@ -98,7 +98,7 @@ export declare class Audio implements protocol.Serializable {
     /**
      * Sets the entity to which the audio is attached, following its position.
      *
-     * @param entity - The entity to attach the audio to.
+     * @param entity - The entity to attach the Audio to.
      */
     setAttachedToEntity(entity: Entity): void;
     /**
@@ -250,13 +250,13 @@ export declare class AudioManager {
     /**
      * Unregisters and stops an audio instance from the audio manager.
      *
-     * @param audio - The audio instance to unregister.
+     * @param audio - The audio instance to pause and unregister.
      */
     unregisterAudio(audio: Audio): void;
     /**
      * Unregisters and stops all audio instances attached to a specific entity.
      *
-     * @param entity - The entity to unregister audio instances for.
+     * @param entity - The entity to pause and unregister audio instances for.
      */
     unregisterEntityAttachedAudios(entity: Entity): void;
 }
@@ -2909,6 +2909,139 @@ export declare enum RigidBodyType {
 }
 
 /**
+ * UI rendered within the 3D space of a world's
+ * game scene.
+ *
+ * @remarks
+ * SceneUI instances are created directly as instances.
+ * They support a variety of configuration options through
+ * the {@link SceneUIOptions} constructor argument.
+ *
+ * @example
+ * ```typescript
+ * const sceneUI = new SceneUI({
+ *   templateId: 'player-health-bar',
+ *   attachedToEntity: playerEntity,
+ *   offset: { x: 0, y: 1, z: 0 },
+ * });
+ * ```
+ *
+ * @public
+ */
+export declare class SceneUI implements protocol.Serializable {
+
+
+
+
+
+
+
+    /**
+     * @param options - The options for the SceneUI instance.
+     */
+    constructor(options: SceneUIOptions);
+    get id(): number | undefined;
+    get attachedToEntity(): Entity | undefined;
+    get isLoaded(): boolean;
+    get offset(): Vector3Like | undefined;
+    get position(): Vector3Like | undefined;
+    get state(): Readonly<object>;
+    get templateId(): string;
+    get world(): World | undefined;
+    /**
+     * Loads the SceneUI into the world.
+     *
+     * @param world - The world to load the SceneUI into.
+     */
+    load(world: World): void;
+    /**
+     * Sets the entity to which the SceneUI is attached, following its position.
+     *
+     * @param entity - The entity to attach the SceneUI to.
+     */
+    setAttachedToEntity(entity: Entity): void;
+    /**
+     * Sets the spatial offset of the SceneUI relative to the attached entity or position.
+     *
+     * @param offset - The offset in the world.
+     */
+    setOffset(offset: Vector3Like): void;
+    /**
+     * Sets the position of the SceneUI. Will detach from entity if attached.
+     *
+     * @param position - The position in the world.
+     */
+    setPosition(position: Vector3Like): void;
+    /**
+     * Sets the state of the SceneUI by performing a shallow merge with existing state.
+     *
+     * @param state - The state to set.
+     */
+    setState(state: object): void;
+    /**
+     * Unloads the SceneUI from the world.
+     */
+    unload(): void;
+
+}
+
+/**
+ * Manages SceneUI instances in a world.
+ *
+ * @remarks
+ * The SceneUIManager is created internally as a singleton
+ * for each {@link World} instance in a game server.
+ * It allows retrieval of all loaded SceneUI instances,
+ * entity attached SceneUI instances, and more.
+ *
+ * @public
+ */
+export declare class SceneUIManager {
+
+
+
+
+    /** The world the SceneUIManager is for. */
+    get world(): World;
+    /**
+     * Retrieves all loaded SceneUI instances for the world.
+     *
+     * @returns An array of SceneUI instances.
+     */
+    getAllSceneUIs(): SceneUI[];
+    /**
+     * Retrieves all loaded SceneUI instances attached to a specific entity.
+     *
+     * @param entity - The entity to get attached SceneUI instances for.
+     * @returns An array of SceneUI instances.
+     */
+    getAllEntityAttachedSceneUIs(entity: Entity): SceneUI[];
+
+    /**
+     * Unloads and unregisters all SceneUI instances attached to a specific entity.
+     *
+     * @param entity - The entity to unload and unregister SceneUI instances for.
+     */
+    unloadEntityAttachedSceneUIs(entity: Entity): void;
+
+
+}
+
+/** Options for creating a SceneUI instance. @public */
+export declare interface SceneUIOptions {
+    /** If set, SceneUI will follow the entity's position */
+    attachedToEntity?: Entity;
+    /** The offset of the SceneUI from the attached entity or position */
+    offset?: Vector3Like;
+    /** If set, SceneUI will be attached at this position */
+    position?: Vector3Like;
+    /** The state of the SceneUI */
+    state?: object;
+    /** The template ID to use for this SceneUI */
+    templateId: string;
+}
+
+/**
  * A simple entity controller with basic movement functions.
  *
  * @remarks
@@ -3348,6 +3481,7 @@ export declare class World implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the world.
      */
@@ -3373,6 +3507,8 @@ export declare class World implements protocol.Serializable {
     /** The world loop for the world. */
     get loop(): WorldLoop;
 
+    /** The scene UI manager for the world. */
+    get sceneUIManager(): SceneUIManager;
     /** The simulation for the world. */
     get simulation(): Simulation;
     /**

@@ -201,7 +201,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "server!Audio:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `Audio` class\n *\n * @param audioData - The options for the audio instance.\n */\n",
+              "docComment": "/**\n * Constructs a new instance of the `Audio` class\n *\n * @param options - The options for the Audio instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -730,7 +730,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Audio#setAttachedToEntity:member(1)",
-              "docComment": "/**\n * Sets the entity to which the audio is attached, following its position.\n *\n * @param entity - The entity to attach the audio to.\n */\n",
+              "docComment": "/**\n * Sets the entity to which the audio is attached, following its position.\n *\n * @param entity - The entity to attach the Audio to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2268,7 +2268,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#unregisterAudio:member(1)",
-              "docComment": "/**\n * Unregisters and stops an audio instance from the audio manager.\n *\n * @param audio - The audio instance to unregister.\n */\n",
+              "docComment": "/**\n * Unregisters and stops an audio instance from the audio manager.\n *\n * @param audio - The audio instance to pause and unregister.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -2317,7 +2317,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!AudioManager#unregisterEntityAttachedAudios:member(1)",
-              "docComment": "/**\n * Unregisters and stops all audio instances attached to a specific entity.\n *\n * @param entity - The entity to unregister audio instances for.\n */\n",
+              "docComment": "/**\n * Unregisters and stops all audio instances attached to a specific entity.\n *\n * @param entity - The entity to pause and unregister audio instances for.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23561,6 +23561,957 @@
         },
         {
           "kind": "Class",
+          "canonicalReference": "server!SceneUI:class",
+          "docComment": "/**\n * UI rendered within the 3D space of a world's game scene.\n *\n * @remarks\n *\n * SceneUI instances are created directly as instances. They support a variety of configuration options through the {@link SceneUIOptions} constructor argument.\n *\n * @example\n * ```typescript\n * const sceneUI = new SceneUI({\n *   templateId: 'player-health-bar',\n *   attachedToEntity: playerEntity,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class SceneUI implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "protocol.Serializable",
+              "canonicalReference": "@hytopia.com/server-protocol!Serializable:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "SceneUI",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "server!SceneUI:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `SceneUI` class\n *\n * @param options - The options for the SceneUI instance.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUIOptions",
+                  "canonicalReference": "server!SceneUIOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#attachedToEntity:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get attachedToEntity(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "attachedToEntity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get id(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#isLoaded:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isLoaded(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isLoaded",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#load:member(1)",
+              "docComment": "/**\n * Loads the SceneUI into the world.\n *\n * @param world - The world to load the SceneUI into.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "load(world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "world",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "load"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#offset:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get offset(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "offset",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#position:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get position(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "position",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#setAttachedToEntity:member(1)",
+              "docComment": "/**\n * Sets the entity to which the SceneUI is attached, following its position.\n *\n * @param entity - The entity to attach the SceneUI to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setAttachedToEntity(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setAttachedToEntity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#setOffset:member(1)",
+              "docComment": "/**\n * Sets the spatial offset of the SceneUI relative to the attached entity or position.\n *\n * @param offset - The offset in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setOffset(offset: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "offset",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setOffset"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#setPosition:member(1)",
+              "docComment": "/**\n * Sets the position of the SceneUI. Will detach from entity if attached.\n *\n * @param position - The position in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setPosition(position: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setPosition"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#setState:member(1)",
+              "docComment": "/**\n * Sets the state of the SceneUI by performing a shallow merge with existing state.\n *\n * @param state - The state to set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setState(state: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "object"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "state",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setState"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#state:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get state(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Readonly",
+                  "canonicalReference": "!Readonly:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<object>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "state",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#templateId:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get templateId(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "templateId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#unload:member(1)",
+              "docComment": "/**\n * Unloads the SceneUI from the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unload(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "unload"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#world:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get world(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "world",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!SceneUIManager:class",
+          "docComment": "/**\n * Manages SceneUI instances in a world.\n *\n * @remarks\n *\n * The SceneUIManager is created internally as a singleton for each {@link World} instance in a game server. It allows retrieval of all loaded SceneUI instances, entity attached SceneUI instances, and more.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `SceneUIManager` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class SceneUIManager "
+            }
+          ],
+          "fileUrlPath": "src/world/ui/SceneUIManager.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "SceneUIManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUIManager#getAllEntityAttachedSceneUIs:member(1)",
+              "docComment": "/**\n * Retrieves all loaded SceneUI instances attached to a specific entity.\n *\n * @param entity - The entity to get attached SceneUI instances for.\n *\n * @returns An array of SceneUI instances.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAllEntityAttachedSceneUIs(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUI",
+                  "canonicalReference": "server!SceneUI:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getAllEntityAttachedSceneUIs"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUIManager#getAllSceneUIs:member(1)",
+              "docComment": "/**\n * Retrieves all loaded SceneUI instances for the world.\n *\n * @returns An array of SceneUI instances.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAllSceneUIs(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUI",
+                  "canonicalReference": "server!SceneUI:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getAllSceneUIs"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUIManager#unloadEntityAttachedSceneUIs:member(1)",
+              "docComment": "/**\n * Unloads and unregisters all SceneUI instances attached to a specific entity.\n *\n * @param entity - The entity to unload and unregister SceneUI instances for.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unloadEntityAttachedSceneUIs(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "unloadEntityAttachedSceneUIs"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUIManager#world:member",
+              "docComment": "/**\n * The world the SceneUIManager is for.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get world(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "world",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!SceneUIOptions:interface",
+          "docComment": "/**\n * Options for creating a SceneUI instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface SceneUIOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "releaseTag": "Public",
+          "name": "SceneUIOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#attachedToEntity:member",
+              "docComment": "/**\n * If set, SceneUI will follow the entity's position\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "attachedToEntity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "attachedToEntity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#offset:member",
+              "docComment": "/**\n * The offset of the SceneUI from the attached entity or position\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "offset?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "offset",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#position:member",
+              "docComment": "/**\n * If set, SceneUI will be attached at this position\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "position?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "position",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#state:member",
+              "docComment": "/**\n * The state of the SceneUI\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "state?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "object"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "state",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#templateId:member",
+              "docComment": "/**\n * The template ID to use for this SceneUI\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "templateId: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "templateId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
           "canonicalReference": "server!SimpleEntityController:class",
           "docComment": "/**\n * A simple entity controller with basic movement functions.\n *\n * @remarks\n *\n * This class implements simple movement methods that serve as a way to add realistic movement and rotational facing functionality to an entity. This is also a great base to extend for your own more complex entity controller that implements things like pathfinding. Compatible with entities that have kinematic or dynamic rigid body types.\n *\n * @example\n * ```typescript\n * // Create a custom entity controller for myEntity, prior to spawning it.\n * myEntity.setController(new SimpleEntityController());\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n *\n * // Move the entity at a speed of 4 blocks\n * // per second to the coordinate (10, 1, 10).\n * // console.log when we reach the target.\n * myEntity.controller.move({ x: 10, y: 1, z: 10 }, 4, {\n *   moveCompleteCallback: endPosition => {\n *     console.log('Finished moving to', endPosition);\n *   },\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -26434,6 +27385,37 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#sceneUIManager:member",
+              "docComment": "/**\n * The scene UI manager for the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get sceneUIManager(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUIManager",
+                  "canonicalReference": "server!SceneUIManager:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "sceneUIManager",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false,
               "isProtected": false,

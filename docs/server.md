@@ -261,6 +261,28 @@ Represents a rigid body in a world's physics simulation.
 </td></tr>
 <tr><td>
 
+[SceneUI](./server.sceneui.md)
+
+
+</td><td>
+
+UI rendered within the 3D space of a world's game scene.
+
+
+</td></tr>
+<tr><td>
+
+[SceneUIManager](./server.sceneuimanager.md)
+
+
+</td><td>
+
+Manages SceneUI instances in a world.
+
+
+</td></tr>
+<tr><td>
+
 [SimpleEntityController](./server.simpleentitycontroller.md)
 
 
@@ -668,6 +690,17 @@ A RGB color.
 </td><td>
 
 Options for creating a RigidBody instance.
+
+
+</td></tr>
+<tr><td>
+
+[SceneUIOptions](./server.sceneuioptions.md)
+
+
+</td><td>
+
+Options for creating a SceneUI instance.
 
 
 </td></tr>

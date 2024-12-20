@@ -314,6 +314,27 @@ _(Optional)_ A function that is called when a player leaves the world.
 </td></tr>
 <tr><td>
 
+[sceneUIManager](./server.world.sceneuimanager.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[SceneUIManager](./server.sceneuimanager.md)
+
+
+</td><td>
+
+The scene UI manager for the world.
+
+
+</td></tr>
+<tr><td>
+
 [simulation](./server.world.simulation.md)
 
 

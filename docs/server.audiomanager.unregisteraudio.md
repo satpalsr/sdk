@@ -42,7 +42,7 @@ audio
 
 </td><td>
 
-The audio instance to unregister.
+The audio instance to pause and unregister.
 
 
 </td></tr>
