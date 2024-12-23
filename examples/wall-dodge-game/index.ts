@@ -180,7 +180,13 @@ function startBlockSpawner(world: World) {
   
       blockEntity.onTick = () => {
         if (blockEntity.isSpawned && blockEntity.position.z > GAME_BLOCK_DESPAWN_Z) {
-          // TODO: drop it out of the world, despawn to fix platform collision bug
+          // Make it "fall" out of the world for a nice effect and prevent
+          // player collision platforming sensors from not getting their off
+          // event triggered because of despawning before uncontact.
+          blockEntity.setLinearVelocity({ x: 0, y: -5, z: 0 });
+        }
+
+        if (blockEntity.isSpawned && blockEntity.position.y < -5) {
           blockEntity.despawn();
         }
       };
@@ -259,8 +265,6 @@ function onPlayerJoin(world: World, player: Player) {
     modelLoopedAnimations: [ 'idle' ],
     modelScale: 0.5,
   });
-
-  (playerEntity.controller as PlayerEntityController).sticksToPlatforms = false;
 
   playerEntity.onTick = () => {
     if (playerEntity.position.y < -3) {
