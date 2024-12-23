@@ -27,6 +27,11 @@ const path = require('path');
   if (command === 'init') {
     const destDir = process.cwd();
 
+    // Grab the latest dependencies
+    execSync('bun init --yes');
+    execSync('bun add hytopia@latest');
+    execSync('bun add @hytopia.com/assets');
+
     // Initialize project with latest HYTOPIA SDK
     console.log('🔧 Initializing project with latest HYTOPIA SDK...');
    
@@ -45,10 +50,6 @@ const path = require('path');
 
       execSync('bun install');
     } else {
-      execSync('bun init --yes');
-      execSync('bun add hytopia@latest');
-      execSync('bun add @hytopia.com/assets');
-
       // Init from boilerplate
       console.log('🧑‍💻 Initializing project with boilerplate...');
 
