@@ -314,7 +314,7 @@ function getRandomSpawnCoordinate() {
 
 function updateTopScores() {
   const topScores = Array.from(PLAYER_TOP_SCORES.entries())
-    .sort((a, b) => a[1] - b[1])
+    .sort((a, b) => b[1] - a[1])
     .map(([ player, score ]) => ({ player, score }));
 
   // Get the top 10 highest scores
