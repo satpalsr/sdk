@@ -30,10 +30,6 @@ const path = require('path');
     // Initialize project with latest HYTOPIA SDK
     console.log('🔧 Initializing project with latest HYTOPIA SDK...');
    
-    execSync('bun init --yes');
-    execSync('bun add hytopia@latest');
-    execSync('bun add @hytopia.com/assets');
-
     if (flags.template) {
       // Init from example template
       console.log(`🖨️ Initializing project with examples template "${flags.template}"...`);
@@ -46,7 +42,13 @@ const path = require('path');
       }
 
       fs.cpSync(templateDir, destDir, { recursive: true });
+
+      execSync('bun install');
     } else {
+      execSync('bun init --yes');
+      execSync('bun add hytopia@latest');
+      execSync('bun add @hytopia.com/assets');
+
       // Init from boilerplate
       console.log('🧑‍💻 Initializing project with boilerplate...');
 
