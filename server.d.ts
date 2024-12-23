@@ -489,10 +489,15 @@ export declare class BlockType implements protocol.Serializable {
 
 /** Options for creating a block type instance. @public */
 export declare interface BlockTypeOptions {
+    /** The unique numeric identifier for the block type. */
     id: number;
+    /** The custom collider options for the block type. */
     customColliderOptions?: ColliderOptions;
+    /** Whether the block type is a liquid. */
     isLiquid?: boolean;
+    /** The name of the block type. */
     name: string;
+    /** The URI of the texture asset for the block type. */
     textureUri: string;
 }
 
@@ -1100,6 +1105,18 @@ export declare enum CollisionGroup {
     ENTITY = 2,
     ENTITY_SENSOR = 4,
     PLAYER = 8,
+    GROUP_1 = 16,
+    GROUP_2 = 32,
+    GROUP_3 = 64,
+    GROUP_4 = 128,
+    GROUP_5 = 256,
+    GROUP_6 = 512,
+    GROUP_7 = 1024,
+    GROUP_8 = 2048,
+    GROUP_9 = 4096,
+    GROUP_10 = 8192,
+    GROUP_11 = 16384,
+    GROUP_12 = 32768,
     ALL = 65535
 }
 
@@ -1312,6 +1329,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1336,6 +1354,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get modelUri(): string | undefined;
     /** The name of the entity. */
     get name(): string;
+    /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
+    get opacity(): number | undefined;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
     get tag(): string | undefined;
     /** The tint color of the entity. */
@@ -1381,6 +1401,11 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      * @param modelHiddenNodes - The nodes to hide on the entity's model.
      */
     setModelHiddenNodes(modelHiddenNodes: string[]): void;
+    /**
+     * Sets the opacity of the entity.
+     * @param opacity - The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.
+     */
+    setOpacity(opacity: number): void;
     /**
      * Sets the tint color of the entity.
      * @param tintColor - The tint color of the entity.
@@ -1439,6 +1464,10 @@ export declare namespace EntityEventPayload {
         entity: Entity;
         modelHiddenNodes: Set<string>;
     }
+    export interface SetOpacity {
+        entity: Entity;
+        opacity: number;
+    }
     export interface SetTintColor {
         entity: Entity;
         tintColor: RgbColor | undefined;
@@ -1473,6 +1502,7 @@ export declare enum EntityEventType {
     DESPAWN = "ENTITY.DESPAWN",
     SET_MODEL_ANIMATIONS_PLAYBACK_RATE = "ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE",
     SET_MODEL_HIDDEN_NODES = "ENTITY.SET_MODEL_HIDDEN_NODES",
+    SET_OPACITY = "ENTITY.SET_OPACITY",
     SET_TINT_COLOR = "ENTITY.SET_TINT_COLOR",
     SPAWN = "ENTITY.SPAWN",
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
@@ -1562,6 +1592,8 @@ export declare interface EntityOptions {
     modelUri?: string;
     /** The name of the entity. */
     name?: string;
+    /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
+    opacity?: number;
     /** The rigid body options for the entity. */
     rigidBodyOptions?: RigidBodyOptions;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
@@ -2100,12 +2132,6 @@ export declare class PlayerEntity extends Entity {
  * @public
  */
 export declare class PlayerEntityController extends BaseEntityController {
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity: number;
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity: number;
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity: number;
     /**
      * A function allowing custom logic to determine if the entity can walk.
      * @param playerEntityController - The entity controller instance.
@@ -2124,6 +2150,14 @@ export declare class PlayerEntityController extends BaseEntityController {
      * @returns Whether the entity of the entity controller can jump.
      */
     canJump: (playerEntityController: PlayerEntityController) => boolean;
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity: number;
+    /** Whether the entity sticks to platforms. */
+    sticksToPlatforms: boolean;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity: number;
 
 
 
@@ -2163,18 +2197,20 @@ export declare class PlayerEntityController extends BaseEntityController {
 
 /** Options for creating a PlayerEntityController instance. @public */
 export declare interface PlayerEntityControllerOptions {
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity?: number;
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity?: number;
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity?: number;
     /** A function allowing custom logic to determine if the entity can jump. */
     canJump?: () => boolean;
     /** A function allowing custom logic to determine if the entity can walk. */
     canWalk?: () => boolean;
     /** A function allowing custom logic to determine if the entity can run. */
     canRun?: () => boolean;
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity?: number;
+    /** Whether the entity sticks to platforms, defaults to true. */
+    sticksToPlatforms?: boolean;
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity?: number;
 }
 
 /** Options for creating a PlayerEntity instance. @public */

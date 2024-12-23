@@ -132,6 +132,25 @@ _(Optional)_ The normalized horizontal velocity applied to the entity when it ru
 </td></tr>
 <tr><td>
 
+[sticksToPlatforms?](./server.playerentitycontrolleroptions.stickstoplatforms.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_ Whether the entity sticks to platforms, defaults to true.
+
+
+</td></tr>
+<tr><td>
+
 [walkVelocity?](./server.playerentitycontrolleroptions.walkvelocity.md)
 
 

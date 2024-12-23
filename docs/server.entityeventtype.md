@@ -74,6 +74,20 @@ SET\_MODEL\_HIDDEN\_NODES
 </td></tr>
 <tr><td>
 
+SET\_OPACITY
+
+
+</td><td>
+
+`"ENTITY.SET_OPACITY"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SET\_TINT\_COLOR
 
 

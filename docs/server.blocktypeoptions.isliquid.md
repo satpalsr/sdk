@@ -4,6 +4,8 @@
 
 ## BlockTypeOptions.isLiquid property
 
+Whether the block type is a liquid.
+
 **Signature:**
 
 ```typescript

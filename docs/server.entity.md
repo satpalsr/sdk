@@ -510,6 +510,27 @@ _(Optional)_ A function that is called every tick.
 </td></tr>
 <tr><td>
 
+[opacity](./server.entity.opacity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number \| undefined
+
+
+</td><td>
+
+The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.
+
+
+</td></tr>
+<tr><td>
+
 [tag](./server.entity.tag.md)
 
 
@@ -644,6 +665,20 @@ Sets the playback rate of all animations on the entity's model.
 </td><td>
 
 Sets the nodes to hide on the entity's model. Matched nodes will be hidden for all players. Uses case insensitive substring matching.
+
+
+</td></tr>
+<tr><td>
+
+[setOpacity(opacity)](./server.entity.setopacity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the opacity of the entity.
 
 
 </td></tr>

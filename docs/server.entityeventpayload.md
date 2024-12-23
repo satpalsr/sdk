@@ -54,6 +54,15 @@ Description
 </td></tr>
 <tr><td>
 
+[SetOpacity](./server.entityeventpayload.setopacity.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [SetTintColor](./server.entityeventpayload.settintcolor.md)
 
 

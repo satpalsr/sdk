@@ -50,7 +50,7 @@ Description
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The custom collider options for the block type.
 
 
 </td></tr>
@@ -69,6 +69,8 @@ number
 
 </td><td>
 
+The unique numeric identifier for the block type.
+
 
 </td></tr>
 <tr><td>
@@ -86,7 +88,7 @@ boolean
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ Whether the block type is a liquid.
 
 
 </td></tr>
@@ -105,6 +107,8 @@ string
 
 </td><td>
 
+The name of the block type.
+
 
 </td></tr>
 <tr><td>
@@ -121,6 +125,8 @@ string
 
 
 </td><td>
+
+The URI of the texture asset for the block type.
 
 
 </td></tr>

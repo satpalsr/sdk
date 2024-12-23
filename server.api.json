@@ -3864,7 +3864,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeOptions#customColliderOptions:member",
-              "docComment": "",
+              "docComment": "/**\n * The custom collider options for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3892,7 +3892,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeOptions#id:member",
-              "docComment": "",
+              "docComment": "/**\n * The unique numeric identifier for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3919,7 +3919,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeOptions#isLiquid:member",
-              "docComment": "",
+              "docComment": "/**\n * Whether the block type is a liquid.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3946,7 +3946,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeOptions#name:member",
-              "docComment": "",
+              "docComment": "/**\n * The name of the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3973,7 +3973,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeOptions#textureUri:member",
-              "docComment": "",
+              "docComment": "/**\n * The URI of the texture asset for the block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8651,6 +8651,258 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_1:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_1 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "16"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_1"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_10:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_10 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "8192"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_10"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_11:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_11 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "16384"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_11"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_12:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_12 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "32768"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_12"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_2:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_2 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "32"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_2"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_3:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_3 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "64"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_3"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_4:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_4 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "128"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_4"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_5:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_5 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "256"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_5"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_6:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_6 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "512"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_6"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_7:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_7 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1024"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_7"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_8:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_8 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2048"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_8"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!CollisionGroup.GROUP_9:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "GROUP_9 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "4096"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "GROUP_9"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!CollisionGroup.PLAYER:member",
               "docComment": "",
               "excerptTokens": [
@@ -10012,6 +10264,36 @@
               "isAbstract": false
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#opacity:member",
+              "docComment": "/**\n * The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get opacity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "opacity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!Entity#setController:member(1)",
               "docComment": "/**\n * Sets the controller for the entity.\n *\n * @param controller - The controller to set.\n */\n",
@@ -10159,6 +10441,54 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "setModelHiddenNodes"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Entity#setOpacity:member(1)",
+              "docComment": "/**\n * Sets the opacity of the entity.\n *\n * @param opacity - The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setOpacity(opacity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "opacity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setOpacity"
             },
             {
               "kind": "Method",
@@ -10746,6 +11076,78 @@
             },
             {
               "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.SetOpacity:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetOpacity "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetOpacity",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetOpacity#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetOpacity#opacity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "opacity: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "number"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "opacity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
               "canonicalReference": "server!EntityEventPayload.SetTintColor:interface",
               "docComment": "",
               "excerptTokens": [
@@ -11322,6 +11724,27 @@
               },
               "releaseTag": "Public",
               "name": "SET_MODEL_HIDDEN_NODES"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.SET_OPACITY:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_OPACITY = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.SET_OPACITY\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_OPACITY"
             },
             {
               "kind": "EnumMember",
@@ -12043,6 +12466,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#opacity:member",
+              "docComment": "/**\n * The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "opacity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "opacity",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -16608,6 +17058,36 @@
               "name": "spawn"
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#sticksToPlatforms:member",
+              "docComment": "/**\n * Whether the entity sticks to platforms.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sticksToPlatforms: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!PlayerEntityController#tickWithPlayerInput:member(1)",
               "docComment": "/**\n * Ticks the player movement for the entity controller, overriding the default implementation.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
@@ -16888,6 +17368,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "runVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#sticksToPlatforms:member",
+              "docComment": "/**\n * Whether the entity sticks to platforms, defaults to true.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sticksToPlatforms?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "sticksToPlatforms",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

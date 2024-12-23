@@ -4,6 +4,8 @@
 
 ## BlockTypeOptions.id property
 
+The unique numeric identifier for the block type.
+
 **Signature:**
 
 ```typescript

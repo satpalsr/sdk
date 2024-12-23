@@ -4,6 +4,8 @@
 
 ## BlockTypeOptions.customColliderOptions property
 
+The custom collider options for the block type.
+
 **Signature:**
 
 ```typescript

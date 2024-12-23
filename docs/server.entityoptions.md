@@ -208,6 +208,25 @@ _(Optional)_ The name of the entity.
 </td></tr>
 <tr><td>
 
+[opacity?](./server.entityoptions.opacity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.
+
+
+</td></tr>
+<tr><td>
+
 [rigidBodyOptions?](./server.entityoptions.rigidbodyoptions.md)
 
 

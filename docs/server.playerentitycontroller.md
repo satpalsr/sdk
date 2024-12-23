@@ -249,6 +249,25 @@ The normalized horizontal velocity applied to the entity when it runs.
 </td></tr>
 <tr><td>
 
+[sticksToPlatforms](./server.playerentitycontroller.stickstoplatforms.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity sticks to platforms.
+
+
+</td></tr>
+<tr><td>
+
 [walkVelocity](./server.playerentitycontroller.walkvelocity.md)
 
 

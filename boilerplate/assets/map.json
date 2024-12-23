@@ -108,7 +108,8 @@
     {
       "id": 22,
       "name": "water_still",
-      "textureUri": "textures/water.png"
+      "textureUri": "textures/water.png",
+      "isLiquid": true
     }
   ],
   "blocks": {
