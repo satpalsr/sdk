@@ -225,17 +225,6 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
         z: direction.z * BULLET_SPEED,
       },
       rotation: getRotationFromDirection(direction), // Get the rotation from the direction vector so it's facing the right way we shot it
-      // colliders: [
-      //   {
-      //     shape: ColliderShape.BALL,
-      //     radius: 0.1,
-      //     isSensor: true,
-      //     collisionGroups: {
-      //       belongsTo: [ CollisionGroup.ENTITY_SENSOR ],
-      //       collidesWith: [ CollisionGroup.ENTITY, CollisionGroup.BLOCK ],
-      //     },
-      //   },
-      // ],
     },
   });
 
@@ -302,15 +291,8 @@ function spawnPayloadEntity(world: World) {
     rigidBodyOptions: {
       type: RigidBodyType.KINEMATIC_POSITION,
       colliders: [
+        // Get hitbox collider as collider options based on the model & scale.
         Collider.optionsFromModelUri('models/payload.gltf', 0.7),
-        // {
-        //   shape: ColliderShape.BLOCK,
-        //   halfExtents: { x: 0.9, y: 1.6, z: 2.5 }, // Note: We manually set the collider size, the SDK currently does not support automatic sizing of colliders to a model.
-        //   collisionGroups: {
-        //     belongsTo: [ CollisionGroup.ALL ],
-        //     collidesWith: [ CollisionGroup.ENTITY, CollisionGroup.ENTITY_SENSOR, CollisionGroup.PLAYER ],
-        //   },
-        // },
         {
           shape: ColliderShape.BLOCK, // Create a proximity sensor for movement when players are near.
           halfExtents: { x: 3.75, y: 2, z: 6 },
@@ -361,18 +343,8 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
       type: RigidBodyType.DYNAMIC,
       enabledRotations: { x: false, y: true, z: false },
       colliders: [
+        // Get hitbox collider as collider options based on the model & scale.
         Collider.optionsFromModelUri('models/spider.gltf', baseScale * randomScaleMultiplier),
-        // {
-        //   shape: ColliderShape.ROUND_CYLINDER,
-        //   borderRadius: 0.1 * randomScaleMultiplier,
-        //   halfHeight: 0.225 * randomScaleMultiplier,
-        //   radius: 0.5 * randomScaleMultiplier,
-        //   tag: 'body', // Note we use tags here, they don't really serve a purpose in this example other than showing that they can be used.
-        //   collisionGroups: {
-        //     belongsTo: [ CollisionGroup.ENTITY ],
-        //     collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY_SENSOR, CollisionGroup.PLAYER ],
-        //   },
-        // },
         {
           shape: ColliderShape.CYLINDER,
           radius: 20,

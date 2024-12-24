@@ -5,6 +5,7 @@ import {
   PlayerEntity,
   RigidBodyType,
   World,
+  Collider,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -30,16 +31,8 @@ startServer(world => {
       // set any colliders, the entity will not be affected by physics.
       // Learn more about collider options here: https://github.com/hytopiagg/sdk/blob/main/docs/server.collideroptions.md
       colliders: [
-        {
-          shape: ColliderShape.ROUND_CYLINDER,
-          // We manually set the collider sizings to match the model, 
-          // this gives the most control. There is currently no way 
-          // to automatically size colliders to a model.
-          radius: 3, 
-          halfHeight: 1.7,
-          borderRadius: 0.2,
-          tag: 'hitbox', // Tags can be useful for our own logic, they serve no other purpose.
-        },
+        // Get hitbox collider as collider options based on the model & scale.
+        Collider.optionsFromModelUri('models/spider.gltf', 3),
         {
           shape: ColliderShape.CYLINDER,
           halfHeight: 1.7,
