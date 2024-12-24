@@ -66,6 +66,27 @@ The singleton instance of the game server.
 </td></tr>
 <tr><td>
 
+[modelManager](./server.gameserver.modelmanager.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[ModelManager](./server.modelmanager.md)
+
+
+</td><td>
+
+The model manager for the game server.
+
+
+</td></tr>
+<tr><td>
+
 [playerManager](./server.gameserver.playermanager.md)
 
 

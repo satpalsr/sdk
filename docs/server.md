@@ -173,6 +173,17 @@ Manages the game and associated worlds and systems.
 </td></tr>
 <tr><td>
 
+[ModelManager](./server.modelmanager.md)
+
+
+</td><td>
+
+Manages model data for all known models of the game.
+
+
+</td></tr>
+<tr><td>
+
 [Player](./server.player.md)
 
 
@@ -900,17 +911,6 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
-
-[DEFAULT\_BLOCK\_ENTITY\_RIGID\_BODY\_OPTIONS](./server.default_block_entity_rigid_body_options.md)
-
-
-</td><td>
-
-The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided.
-
-
-</td></tr>
-<tr><td>
 
 [DEFAULT\_ENTITY\_RIGID\_BODY\_OPTIONS](./server.default_entity_rigid_body_options.md)
 

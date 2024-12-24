@@ -6915,6 +6915,121 @@
               "isAbstract": false
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Collider.optionsFromBlockHalfExtents:member(1)",
+              "docComment": "/**\n * Creates a collider options object from a block's half extents.\n *\n * @param halfExtents - The half extents of the block.\n *\n * @returns The collider options object.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static optionsFromBlockHalfExtents(halfExtents: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderOptions",
+                  "canonicalReference": "server!ColliderOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "halfExtents",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "optionsFromBlockHalfExtents"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Collider.optionsFromModelUri:member(1)",
+              "docComment": "/**\n * Creates a collider options object from a modelUri with best approximate shape and size.\n *\n * @param modelUri - The URI of the model.\n *\n * @returns The collider options object.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static optionsFromModelUri(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", scale?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderOptions",
+                  "canonicalReference": "server!ColliderOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "scale",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "optionsFromModelUri"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Collider#parentRigidBody:member",
               "docComment": "/**\n * The parent rigid body of the collider.\n */\n",
@@ -9340,30 +9455,6 @@
           "releaseTag": "Public",
           "name": "DecodedCollisionGroups",
           "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "server!DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS:var",
-          "docComment": "/**\n * The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: "
-            },
-            {
-              "kind": "Reference",
-              "text": "RigidBodyOptions",
-              "canonicalReference": "server!RigidBodyOptions:interface"
-            }
-          ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS",
-          "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
           }
@@ -13341,6 +13432,37 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!GameServer#modelManager:member",
+              "docComment": "/**\n * The model manager for the game server.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get modelManager(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ModelManager",
+                  "canonicalReference": "server!ModelManager:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "modelManager",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!GameServer#playerManager:member",
               "docComment": "/**\n * The player manager for the game server.\n */\n",
               "excerptTokens": [
@@ -13606,6 +13728,105 @@
               "name": "STOP"
             }
           ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!ModelManager:class",
+          "docComment": "/**\n * Manages model data for all known models of the game.\n *\n * @remarks\n *\n * The ModelManager is created internally as a global singletone accessible with the static property `ModelManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ModelManager` class.\n *\n * @example\n * ```typescript\n * import { ModelManager } from 'hytopia';\n *\n * const modelManager = ModelManager.instance;\n * const boundingBox = modelManager.getBoundingBox('models/player.gltf');\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class ModelManager "
+            }
+          ],
+          "fileUrlPath": "src/models/ModelManager.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "ModelManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ModelManager#getBoundingBox:member(1)",
+              "docComment": "/**\n * Retrieves the bounding box of a model.\n *\n * @param modelUri - The URI of the model to retrieve the bounding box for.\n *\n * @returns The bounding box of the model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBoundingBox(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ModelBoundingBox",
+                  "canonicalReference": "server!~ModelBoundingBox:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getBoundingBox"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!ModelManager.instance:member",
+              "docComment": "/**\n * The global PlayerManager instance as a singleton.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static readonly instance: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ModelManager",
+                  "canonicalReference": "server!ModelManager:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "instance",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": true,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": []
         },
         {
           "kind": "TypeAlias",
@@ -23941,7 +24162,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "type: "
+                  "text": "type?: "
                 },
                 {
                   "kind": "Reference",
@@ -23954,7 +24175,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "type",
               "propertyTypeTokenRange": {

@@ -890,6 +890,18 @@ export declare class Collider {
      * @param colliderOptions - The options for the collider instance.
      */
     constructor(colliderOptions: ColliderOptions);
+    /**
+     * Creates a collider options object from a block's half extents.
+     * @param halfExtents - The half extents of the block.
+     * @returns The collider options object.
+     */
+    static optionsFromBlockHalfExtents(halfExtents: Vector3Like): ColliderOptions;
+    /**
+     * Creates a collider options object from a modelUri with best approximate shape and size.
+     * @param modelUri - The URI of the model.
+     * @returns The collider options object.
+     */
+    static optionsFromModelUri(modelUri: string, scale?: number): ColliderOptions;
     /** The bounciness of the collider. */
     get bounciness(): number;
     /** The bounciness combine rule of the collider. */
@@ -1210,9 +1222,6 @@ export declare type DecodedCollisionGroups = {
     belongsTo: string[];
     collidesWith: string[];
 };
-
-/** The default rigid body options for a block entity when EntityOptions.rigidBodyOptions is not provided. @public */
-export declare const DEFAULT_BLOCK_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
 /** The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided. @public */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
@@ -1720,8 +1729,11 @@ export declare class GameServer {
 
 
 
+
     /** The singleton instance of the game server. */
     static get instance(): GameServer;
+    /** The model manager for the game server. */
+    get modelManager(): ModelManager;
     /** The player manager for the game server. */
     get playerManager(): PlayerManager;
 
@@ -1749,6 +1761,56 @@ export declare namespace GameServerEventPayload {
 export declare enum GameServerEventType {
     START = "GAMESERVER.START",
     STOP = "GAMESERVER.STOP"
+}
+
+/** A bounding box for a model. @public */
+declare type ModelBoundingBox = {
+    min: {
+        x: number;
+        y: number;
+        z: number;
+    };
+    max: {
+        x: number;
+        y: number;
+        z: number;
+    };
+};
+
+/**
+ * Manages model data for all known models of the game.
+ *
+ * @remarks
+ * The ModelManager is created internally as a global
+ * singletone accessible with the static property
+ * `ModelManager.instance`.
+ *
+ * @example
+ * ```typescript
+ * import { ModelManager } from 'hytopia';
+ *
+ * const modelManager = ModelManager.instance;
+ * const boundingBox = modelManager.getBoundingBox('models/player.gltf');
+ * ```
+ *
+ * @public
+ */
+export declare class ModelManager {
+    /** The global PlayerManager instance as a singleton. */
+    static readonly instance: ModelManager;
+
+
+
+
+    /**
+     * Retrieves the bounding box of a model.
+     *
+     * @param modelUri - The URI of the model to retrieve the bounding box for.
+     * @returns The bounding box of the model.
+     */
+    getBoundingBox(modelUri: string): ModelBoundingBox;
+
+
 }
 
 /**
@@ -2895,7 +2957,7 @@ export declare type RigidBodyAdditionalMassProperties = {
 /** Options for creating a RigidBody instance. @public */
 export declare interface RigidBodyOptions {
     /** The type of the rigid body. */
-    type: RigidBodyType;
+    type?: RigidBodyType;
     /** The additional mass of the rigid body. */
     additionalMass?: number;
     /** The additional mass properties of the rigid body. */

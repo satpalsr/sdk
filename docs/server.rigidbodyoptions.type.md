@@ -9,5 +9,5 @@ The type of the rigid body.
 **Signature:**
 
 ```typescript
-type: RigidBodyType;
+type?: RigidBodyType;
 ```

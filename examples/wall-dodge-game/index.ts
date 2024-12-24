@@ -11,6 +11,7 @@ import {
   RigidBodyType,
   SimpleEntityController,
   World,
+  Collider,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -74,12 +75,7 @@ function setupJoinNPC(world: World) {
       type: RigidBodyType.FIXED, // It won't ever move, so we can use a fixed body
       rotation: { x: 0, y: 1, z: 0, w: 0 }, // Rotate the NPC to face the player
       colliders: [
-        { // Hitbox/body collider
-          shape: ColliderShape.CYLINDER,
-          radius: 0.3,
-          halfHeight: 1.2,
-          tag: 'body',
-        },
+        Collider.optionsFromModelUri('models/mindflayer.gltf', 0.5), // Uses the model's bounding box to create the hitbox collider
         { // Create a sensor that teleports the player into the game
           shape: ColliderShape.BLOCK,
           halfExtents: { x: 1.5, y: 1, z: 1.5 }, // size it slightly smaller than the platform the join NPC is standing on

@@ -452,6 +452,38 @@ Enables or disables contact force events for the collider. This is automatically
 </td></tr>
 <tr><td>
 
+[optionsFromBlockHalfExtents(halfExtents)](./server.collider.optionsfromblockhalfextents.md)
+
+
+</td><td>
+
+`static`
+
+
+</td><td>
+
+Creates a collider options object from a block's half extents.
+
+
+</td></tr>
+<tr><td>
+
+[optionsFromModelUri(modelUri, scale)](./server.collider.optionsfrommodeluri.md)
+
+
+</td><td>
+
+`static`
+
+
+</td><td>
+
+Creates a collider options object from a modelUri with best approximate shape and size.
+
+
+</td></tr>
+<tr><td>
+
 [removeFromSimulation()](./server.collider.removefromsimulation.md)
 
 
