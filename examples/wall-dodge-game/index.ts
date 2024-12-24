@@ -8,7 +8,6 @@ import {
   startServer,
   Player,
   PlayerEntity,
-  PlayerEntityController,
   RigidBodyType,
   SimpleEntityController,
   World,
@@ -267,8 +266,8 @@ function onPlayerJoin(world: World, player: Player) {
   });
 
   playerEntity.onTick = () => {
-    if (playerEntity.position.y < -3) {
-      // Assume the player has fallen off the map in the game
+    if (playerEntity.position.y < -3 || playerEntity.position.y > 10) {
+      // Assume the player has fallen off the map or shot over the wall
       endGame(playerEntity);
     }
   };
