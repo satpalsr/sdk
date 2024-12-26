@@ -4,7 +4,7 @@
 
 ## WorldOptions.ambientLightIntensity property
 
-The intensity of the ambient light. 0 to 1+
+The intensity of the ambient light for the world. 0 to 1+
 
 **Signature:**
 

@@ -4,7 +4,7 @@
 
 ## WorldOptions.directionalLightColor property
 
-The color of the directional light.
+The color of the directional light for the world.
 
 **Signature:**
 

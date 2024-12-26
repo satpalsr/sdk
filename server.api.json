@@ -29462,7 +29462,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#ambientLightColor:member",
-              "docComment": "/**\n * The color of the ambient light.\n */\n",
+              "docComment": "/**\n * The color of the ambient light for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -29490,7 +29490,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#ambientLightIntensity:member",
-              "docComment": "/**\n * The intensity of the ambient light. 0 to 1+\n */\n",
+              "docComment": "/**\n * The intensity of the ambient light for the world. 0 to 1+\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -29517,7 +29517,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#directionalLightColor:member",
-              "docComment": "/**\n * The color of the directional light.\n */\n",
+              "docComment": "/**\n * The color of the directional light for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -29545,7 +29545,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#directionalLightIntensity:member",
-              "docComment": "/**\n * The intensity of the directional light. 0 to 1+\n */\n",
+              "docComment": "/**\n * The intensity of the directional light for the world. 0 to 1+\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -29572,7 +29572,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#directionalLightPosition:member",
-              "docComment": "/**\n * The position the directional light originates from.\n */\n",
+              "docComment": "/**\n * The position the directional light originates from for the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

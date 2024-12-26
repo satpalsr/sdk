@@ -3761,15 +3761,15 @@ export declare interface WorldMap {
 export declare interface WorldOptions {
     /** The unique ID of the world. */
     id: number;
-    /** The color of the ambient light. */
+    /** The color of the ambient light for the world. */
     ambientLightColor?: RgbColor;
-    /** The intensity of the ambient light. 0 to 1+ */
+    /** The intensity of the ambient light for the world. 0 to 1+ */
     ambientLightIntensity?: number;
-    /** The color of the directional light. */
+    /** The color of the directional light for the world. */
     directionalLightColor?: RgbColor;
-    /** The intensity of the directional light. 0 to 1+ */
+    /** The intensity of the directional light for the world. 0 to 1+ */
     directionalLightIntensity?: number;
-    /** The position the directional light originates from. */
+    /** The position the directional light originates from for the world. */
     directionalLightPosition?: Vector3Like;
     /** The name of the world. */
     name: string;

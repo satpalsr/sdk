@@ -4,7 +4,7 @@
 
 ## WorldOptions.ambientLightColor property
 
-The color of the ambient light.
+The color of the ambient light for the world.
 
 **Signature:**
 

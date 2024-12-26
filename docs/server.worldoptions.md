@@ -50,7 +50,7 @@ Description
 
 </td><td>
 
-_(Optional)_ The color of the ambient light.
+_(Optional)_ The color of the ambient light for the world.
 
 
 </td></tr>
@@ -69,7 +69,7 @@ number
 
 </td><td>
 
-_(Optional)_ The intensity of the ambient light. 0 to 1+
+_(Optional)_ The intensity of the ambient light for the world. 0 to 1+
 
 
 </td></tr>
@@ -88,7 +88,7 @@ _(Optional)_ The intensity of the ambient light. 0 to 1+
 
 </td><td>
 
-_(Optional)_ The color of the directional light.
+_(Optional)_ The color of the directional light for the world.
 
 
 </td></tr>
@@ -107,7 +107,7 @@ number
 
 </td><td>
 
-_(Optional)_ The intensity of the directional light. 0 to 1+
+_(Optional)_ The intensity of the directional light for the world. 0 to 1+
 
 
 </td></tr>
@@ -126,7 +126,7 @@ _(Optional)_ The intensity of the directional light. 0 to 1+
 
 </td><td>
 
-_(Optional)_ The position the directional light originates from.
+_(Optional)_ The position the directional light originates from for the world.
 
 
 </td></tr>

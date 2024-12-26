@@ -4,7 +4,7 @@
 
 ## WorldOptions.directionalLightIntensity property
 
-The intensity of the directional light. 0 to 1+
+The intensity of the directional light for the world. 0 to 1+
 
 **Signature:**
 

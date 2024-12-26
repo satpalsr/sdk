@@ -4,7 +4,7 @@
 
 ## WorldOptions.directionalLightPosition property
 
-The position the directional light originates from.
+The position the directional light originates from for the world.
 
 **Signature:**
 
