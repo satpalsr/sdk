@@ -524,7 +524,7 @@ Loads a map into the world.
 
 </td><td>
 
-Sets the color of the ambient light.
+Sets the color of the world's ambient light.
 
 
 </td></tr>
@@ -538,7 +538,7 @@ Sets the color of the ambient light.
 
 </td><td>
 
-Sets the intensity of the ambient light.
+Sets the intensity of the world's ambient light.
 
 
 </td></tr>
@@ -552,7 +552,7 @@ Sets the intensity of the ambient light.
 
 </td><td>
 
-Sets the color of the directional light.
+Sets the color of the world's directional light.
 
 
 </td></tr>
@@ -566,7 +566,7 @@ Sets the color of the directional light.
 
 </td><td>
 
-Sets the intensity of the directional light.
+Sets the intensity of the world's directional light.
 
 
 </td></tr>
@@ -580,7 +580,7 @@ Sets the intensity of the directional light.
 
 </td><td>
 
-Sets the position the directional light originates from.
+Sets the position the world's directional light originates from.
 
 
 </td></tr>

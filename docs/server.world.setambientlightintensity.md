@@ -4,7 +4,7 @@
 
 ## World.setAmbientLightIntensity() method
 
-Sets the intensity of the ambient light.
+Sets the intensity of the world's ambient light.
 
 **Signature:**
 

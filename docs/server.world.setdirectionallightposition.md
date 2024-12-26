@@ -4,7 +4,7 @@
 
 ## World.setDirectionalLightPosition() method
 
-Sets the position the directional light originates from.
+Sets the position the world's directional light originates from.
 
 **Signature:**
 

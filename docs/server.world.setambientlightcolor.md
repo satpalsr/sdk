@@ -4,7 +4,7 @@
 
 ## World.setAmbientLightColor() method
 
-Sets the color of the ambient light.
+Sets the color of the world's ambient light.
 
 **Signature:**
 

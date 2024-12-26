@@ -3640,27 +3640,27 @@ export declare class World implements protocol.Serializable {
      */
     loadMap(map: WorldMap): void;
     /**
-     * Sets the color of the ambient light.
+     * Sets the color of the world's ambient light.
      * @param color - The color of the light.
      */
     setAmbientLightColor(color: RgbColor): void;
     /**
-     * Sets the intensity of the ambient light.
+     * Sets the intensity of the world's ambient light.
      * @param intensity - The intensity.
      */
     setAmbientLightIntensity(intensity: number): void;
     /**
-     * Sets the color of the directional light.
+     * Sets the color of the world's directional light.
      * @param color - The color of the light.
      */
     setDirectionalLightColor(color: RgbColor): void;
     /**
-     * Sets the intensity of the directional light.
+     * Sets the intensity of the world's directional light.
      * @param intensity - The intensity.
      */
     setDirectionalLightIntensity(intensity: number): void;
     /**
-     * Sets the position the directional light originates from.
+     * Sets the position the world's directional light originates from.
      * @param position - The position in the world.
      */
     setDirectionalLightPosition(position: Vector3Like): void;

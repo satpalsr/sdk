@@ -4,7 +4,7 @@
 
 ## World.setDirectionalLightIntensity() method
 
-Sets the intensity of the directional light.
+Sets the intensity of the world's directional light.
 
 **Signature:**
 

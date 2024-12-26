@@ -4,7 +4,7 @@
 
 ## World.setDirectionalLightColor() method
 
-Sets the color of the directional light.
+Sets the color of the world's directional light.
 
 **Signature:**
 

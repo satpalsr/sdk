@@ -28410,7 +28410,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#setAmbientLightColor:member(1)",
-              "docComment": "/**\n * Sets the color of the ambient light.\n *\n * @param color - The color of the light.\n */\n",
+              "docComment": "/**\n * Sets the color of the world's ambient light.\n *\n * @param color - The color of the light.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28459,7 +28459,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#setAmbientLightIntensity:member(1)",
-              "docComment": "/**\n * Sets the intensity of the ambient light.\n *\n * @param intensity - The intensity.\n */\n",
+              "docComment": "/**\n * Sets the intensity of the world's ambient light.\n *\n * @param intensity - The intensity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28507,7 +28507,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#setDirectionalLightColor:member(1)",
-              "docComment": "/**\n * Sets the color of the directional light.\n *\n * @param color - The color of the light.\n */\n",
+              "docComment": "/**\n * Sets the color of the world's directional light.\n *\n * @param color - The color of the light.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28556,7 +28556,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#setDirectionalLightIntensity:member(1)",
-              "docComment": "/**\n * Sets the intensity of the directional light.\n *\n * @param intensity - The intensity.\n */\n",
+              "docComment": "/**\n * Sets the intensity of the world's directional light.\n *\n * @param intensity - The intensity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28604,7 +28604,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#setDirectionalLightPosition:member(1)",
-              "docComment": "/**\n * Sets the position the directional light originates from.\n *\n * @param position - The position in the world.\n */\n",
+              "docComment": "/**\n * Sets the position the world's directional light originates from.\n *\n * @param position - The position in the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
