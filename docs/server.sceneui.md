@@ -220,6 +220,25 @@ string
 </td></tr>
 <tr><td>
 
+[viewDistance](./server.sceneui.viewdistance.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number \| undefined
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [world](./server.sceneui.world.md)
 
 
@@ -324,6 +343,20 @@ Sets the position of the SceneUI. Will detach from entity if attached.
 </td><td>
 
 Sets the state of the SceneUI by performing a shallow merge with existing state.
+
+
+</td></tr>
+<tr><td>
+
+[setViewDistance(viewDistance)](./server.sceneui.setviewdistance.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the view distance of the SceneUI.
 
 
 </td></tr>

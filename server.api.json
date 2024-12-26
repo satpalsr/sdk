@@ -24755,6 +24755,54 @@
               "name": "setState"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUI#setViewDistance:member(1)",
+              "docComment": "/**\n * Sets the view distance of the SceneUI.\n *\n * @param viewDistance - The view distance in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setViewDistance(viewDistance: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "viewDistance",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setViewDistance"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!SceneUI#state:member",
               "docComment": "",
@@ -24849,6 +24897,36 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "unload"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!SceneUI#viewDistance:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get viewDistance(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "viewDistance",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -25230,6 +25308,33 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "templateId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!SceneUIOptions#viewDistance:member",
+              "docComment": "/**\n * The maximum view distance the SceneUI will be visible to the player\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "viewDistance?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "viewDistance",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

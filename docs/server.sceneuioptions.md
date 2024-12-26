@@ -130,4 +130,23 @@ The template ID to use for this SceneUI
 
 
 </td></tr>
+<tr><td>
+
+[viewDistance?](./server.sceneuioptions.viewdistance.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The maximum view distance the SceneUI will be visible to the player
+
+
+</td></tr>
 </tbody></table>

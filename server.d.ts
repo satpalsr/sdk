@@ -3034,6 +3034,7 @@ export declare class SceneUI implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the SceneUI instance.
      */
@@ -3045,6 +3046,7 @@ export declare class SceneUI implements protocol.Serializable {
     get position(): Vector3Like | undefined;
     get state(): Readonly<object>;
     get templateId(): string;
+    get viewDistance(): number | undefined;
     get world(): World | undefined;
     /**
      * Loads the SceneUI into the world.
@@ -3076,6 +3078,12 @@ export declare class SceneUI implements protocol.Serializable {
      * @param state - The state to set.
      */
     setState(state: object): void;
+    /**
+     * Sets the view distance of the SceneUI.
+     *
+     * @param viewDistance - The view distance in the world.
+     */
+    setViewDistance(viewDistance: number): void;
     /**
      * Unloads the SceneUI from the world.
      */
@@ -3137,6 +3145,8 @@ export declare interface SceneUIOptions {
     state?: object;
     /** The template ID to use for this SceneUI */
     templateId: string;
+    /** The maximum view distance the SceneUI will be visible to the player */
+    viewDistance?: number;
 }
 
 /**
