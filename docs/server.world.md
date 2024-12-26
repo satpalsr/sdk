@@ -87,6 +87,48 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[ambientLightColor](./server.world.ambientlightcolor.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[RgbColor](./server.rgbcolor.md)
+
+
+</td><td>
+
+The color of the ambient light.
+
+
+</td></tr>
+<tr><td>
+
+[ambientLightIntensity](./server.world.ambientlightintensity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The intensity of the ambient light.
+
+
+</td></tr>
+<tr><td>
+
 [audioManager](./server.world.audiomanager.md)
 
 
@@ -166,6 +208,69 @@ The chat manager for the world.
 </td><td>
 
 The chunk lattice for the world.
+
+
+</td></tr>
+<tr><td>
+
+[directionalLightColor](./server.world.directionallightcolor.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[RgbColor](./server.rgbcolor.md)
+
+
+</td><td>
+
+The color of the directional light.
+
+
+</td></tr>
+<tr><td>
+
+[directionalLightIntensity](./server.world.directionallightintensity.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The intensity of the directional light.
+
+
+</td></tr>
+<tr><td>
+
+[directionalLightPosition](./server.world.directionallightposition.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Vector3Like](./server.vector3like.md)
+
+
+</td><td>
+
+The position the directional light originates from.
 
 
 </td></tr>
@@ -406,6 +511,76 @@ Description
 </td><td>
 
 Loads a map into the world.
+
+
+</td></tr>
+<tr><td>
+
+[setAmbientLightColor(color)](./server.world.setambientlightcolor.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the color of the ambient light.
+
+
+</td></tr>
+<tr><td>
+
+[setAmbientLightIntensity(intensity)](./server.world.setambientlightintensity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the intensity of the ambient light.
+
+
+</td></tr>
+<tr><td>
+
+[setDirectionalLightColor(color)](./server.world.setdirectionallightcolor.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the color of the directional light.
+
+
+</td></tr>
+<tr><td>
+
+[setDirectionalLightIntensity(intensity)](./server.world.setdirectionallightintensity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the intensity of the directional light.
+
+
+</td></tr>
+<tr><td>
+
+[setDirectionalLightPosition(position)](./server.world.setdirectionallightposition.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the position the directional light originates from.
 
 
 </td></tr>

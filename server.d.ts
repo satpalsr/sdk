@@ -3590,12 +3590,27 @@ export declare class World implements protocol.Serializable {
 
 
 
+
+
+
+
+
     /**
      * @param options - The options for the world.
      */
     constructor(options: WorldOptions);
     /** The unique ID of the world. */
     get id(): number;
+    /** The color of the ambient light. */
+    get ambientLightColor(): RgbColor;
+    /** The intensity of the ambient light. */
+    get ambientLightIntensity(): number;
+    /** The color of the directional light. */
+    get directionalLightColor(): RgbColor;
+    /** The intensity of the directional light. */
+    get directionalLightIntensity(): number;
+    /** The position the directional light originates from. */
+    get directionalLightPosition(): Vector3Like;
     /** The name of the world. */
     get name(): string;
     /** The URI of the skybox cubemap for the world. */
@@ -3624,6 +3639,31 @@ export declare class World implements protocol.Serializable {
      * @param map - The map to load.
      */
     loadMap(map: WorldMap): void;
+    /**
+     * Sets the color of the ambient light.
+     * @param color - The color of the light.
+     */
+    setAmbientLightColor(color: RgbColor): void;
+    /**
+     * Sets the intensity of the ambient light.
+     * @param intensity - The intensity.
+     */
+    setAmbientLightIntensity(intensity: number): void;
+    /**
+     * Sets the color of the directional light.
+     * @param color - The color of the light.
+     */
+    setDirectionalLightColor(color: RgbColor): void;
+    /**
+     * Sets the intensity of the directional light.
+     * @param intensity - The intensity.
+     */
+    setDirectionalLightIntensity(intensity: number): void;
+    /**
+     * Sets the position the directional light originates from.
+     * @param position - The position in the world.
+     */
+    setDirectionalLightPosition(position: Vector3Like): void;
     /**
      * Starts the world loop, which begins ticking physics, entities, etc.
      */
@@ -3721,6 +3761,16 @@ export declare interface WorldMap {
 export declare interface WorldOptions {
     /** The unique ID of the world. */
     id: number;
+    /** The color of the ambient light. */
+    ambientLightColor?: RgbColor;
+    /** The intensity of the ambient light. 0 to 1+ */
+    ambientLightIntensity?: number;
+    /** The color of the directional light. */
+    directionalLightColor?: RgbColor;
+    /** The intensity of the directional light. 0 to 1+ */
+    directionalLightIntensity?: number;
+    /** The position the directional light originates from. */
+    directionalLightPosition?: Vector3Like;
     /** The name of the world. */
     name: string;
     /** The URI of the skybox cubemap for the world. */

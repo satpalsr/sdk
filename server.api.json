@@ -27821,6 +27821,67 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!World#ambientLightColor:member",
+              "docComment": "/**\n * The color of the ambient light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get ambientLightColor(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "ambientLightColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#ambientLightIntensity:member",
+              "docComment": "/**\n * The intensity of the ambient light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get ambientLightIntensity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "ambientLightIntensity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!World#audioManager:member",
               "docComment": "/**\n * The audio manager for the world.\n */\n",
               "excerptTokens": [
@@ -27935,6 +27996,98 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "chunkLattice",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#directionalLightColor:member",
+              "docComment": "/**\n * The color of the directional light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get directionalLightColor(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "directionalLightColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#directionalLightIntensity:member",
+              "docComment": "/**\n * The intensity of the directional light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get directionalLightIntensity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "directionalLightIntensity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#directionalLightPosition:member",
+              "docComment": "/**\n * The position the directional light originates from.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get directionalLightPosition(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "directionalLightPosition",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -28253,6 +28406,249 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!World#setAmbientLightColor:member(1)",
+              "docComment": "/**\n * Sets the color of the ambient light.\n *\n * @param color - The color of the light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setAmbientLightColor(color: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "color",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setAmbientLightColor"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!World#setAmbientLightIntensity:member(1)",
+              "docComment": "/**\n * Sets the intensity of the ambient light.\n *\n * @param intensity - The intensity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setAmbientLightIntensity(intensity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "intensity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setAmbientLightIntensity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!World#setDirectionalLightColor:member(1)",
+              "docComment": "/**\n * Sets the color of the directional light.\n *\n * @param color - The color of the light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setDirectionalLightColor(color: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "color",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setDirectionalLightColor"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!World#setDirectionalLightIntensity:member(1)",
+              "docComment": "/**\n * Sets the intensity of the directional light.\n *\n * @param intensity - The intensity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setDirectionalLightIntensity(intensity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "intensity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setDirectionalLightIntensity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!World#setDirectionalLightPosition:member(1)",
+              "docComment": "/**\n * Sets the position the directional light originates from.\n *\n * @param position - The position in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setDirectionalLightPosition(position: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setDirectionalLightPosition"
             },
             {
               "kind": "Property",
@@ -29063,6 +29459,144 @@
           "name": "WorldOptions",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#ambientLightColor:member",
+              "docComment": "/**\n * The color of the ambient light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ambientLightColor?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "ambientLightColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#ambientLightIntensity:member",
+              "docComment": "/**\n * The intensity of the ambient light. 0 to 1+\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ambientLightIntensity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "ambientLightIntensity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#directionalLightColor:member",
+              "docComment": "/**\n * The color of the directional light.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "directionalLightColor?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "directionalLightColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#directionalLightIntensity:member",
+              "docComment": "/**\n * The intensity of the directional light. 0 to 1+\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "directionalLightIntensity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "directionalLightIntensity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#directionalLightPosition:member",
+              "docComment": "/**\n * The position the directional light originates from.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "directionalLightPosition?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "directionalLightPosition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldOptions#gravity:member",
