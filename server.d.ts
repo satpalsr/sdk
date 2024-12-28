@@ -1780,6 +1780,8 @@ export declare enum GameServerEventType {
  *   intensity: 5,
  *   offset: { x: 0, y: 1, z: 0 },
  * });
+ *
+ * light.spawn(world);
  * ```
  *
  * @public

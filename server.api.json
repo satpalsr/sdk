@@ -13732,7 +13732,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Light:class",
-          "docComment": "/**\n * Represents a light in a world. Lights can be point lights or spotlights.\n *\n * @remarks\n *\n * Lights are created directly as instances. They support a variety of configuration options through the {@link LightOptions} constructor argument.\n *\n * @example\n * ```typescript\n * const light = new Light({\n *   attachedToEntity: playerEntity,\n *   color: { r: 255, g: 0, b: 0 },\n *   intensity: 5,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a light in a world. Lights can be point lights or spotlights.\n *\n * @remarks\n *\n * Lights are created directly as instances. They support a variety of configuration options through the {@link LightOptions} constructor argument.\n *\n * @example\n * ```typescript\n * const light = new Light({\n *   attachedToEntity: playerEntity,\n *   color: { r: 255, g: 0, b: 0 },\n *   intensity: 5,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n *\n * light.spawn(world);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
