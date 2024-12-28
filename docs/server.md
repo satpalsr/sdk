@@ -173,6 +173,28 @@ Manages the game and associated worlds and systems.
 </td></tr>
 <tr><td>
 
+[Light](./server.light.md)
+
+
+</td><td>
+
+Represents a light in a world. Lights can be point lights or spotlights.
+
+
+</td></tr>
+<tr><td>
+
+[LightManager](./server.lightmanager.md)
+
+
+</td><td>
+
+Manages Light instances in a world.
+
+
+</td></tr>
+<tr><td>
+
 [ModelManager](./server.modelmanager.md)
 
 
@@ -489,6 +511,28 @@ Event types a GameServer instance can emit.
 </td></tr>
 <tr><td>
 
+[LightEventType](./server.lighteventtype.md)
+
+
+</td><td>
+
+Event types a Light instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[LightType](./server.lighttype.md)
+
+
+</td><td>
+
+The types a Light can be.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerCameraEventType](./server.playercameraeventtype.md)
 
 
@@ -646,6 +690,17 @@ Options for creating an Entity instance.
 </td><td>
 
 An EventRouter event.
+
+
+</td></tr>
+<tr><td>
+
+[LightOptions](./server.lightoptions.md)
+
+
+</td><td>
+
+Options for creating a Light instance.
 
 
 </td></tr>
@@ -848,6 +903,17 @@ Payloads for events an Entity instance can emit.
 </td><td>
 
 Payloads for events emitted by a GameServer instance.
+
+
+</td></tr>
+<tr><td>
+
+[LightEventPayload](./server.lighteventpayload.md)
+
+
+</td><td>
+
+Payloads for events a Light instance can emit.
 
 
 </td></tr>

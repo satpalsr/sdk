@@ -4,6 +4,8 @@
 
 ## SceneUI.viewDistance property
 
+The maximum view distance the SceneUI will be visible to the player.
+
 **Signature:**
 
 ```typescript

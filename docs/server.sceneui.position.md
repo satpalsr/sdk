@@ -4,6 +4,8 @@
 
 ## SceneUI.position property
 
+The position of the SceneUI in the world if explicitly set.
+
 **Signature:**
 
 ```typescript

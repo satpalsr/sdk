@@ -4,6 +4,8 @@
 
 ## SceneUI.world property
 
+The world the SceneUI is loaded into.
+
 **Signature:**
 
 ```typescript

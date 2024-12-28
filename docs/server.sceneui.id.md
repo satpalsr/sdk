@@ -4,6 +4,8 @@
 
 ## SceneUI.id property
 
+The unique identifier for the SceneUI.
+
 **Signature:**
 
 ```typescript

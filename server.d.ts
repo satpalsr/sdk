@@ -1763,6 +1763,281 @@ export declare enum GameServerEventType {
     STOP = "GAMESERVER.STOP"
 }
 
+/**
+ * Represents a light in a world. Lights can be point lights
+ * or spotlights.
+ *
+ * @remarks
+ * Lights are created directly as instances. They support a
+ * variety of configuration options through the {@link LightOptions}
+ * constructor argument.
+ *
+ * @example
+ * ```typescript
+ * const light = new Light({
+ *   attachedToEntity: playerEntity,
+ *   color: { r: 255, g: 0, b: 0 },
+ *   intensity: 5,
+ *   offset: { x: 0, y: 1, z: 0 },
+ * });
+ * ```
+ *
+ * @public
+ */
+export declare class Light implements protocol.Serializable {
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @param options - The options for the Light instance.
+     */
+    constructor(options: LightOptions);
+    /** The unique identifier for the Light. */
+    get id(): number | undefined;
+    /** If type is spotlight, the angle of the spotlight. */
+    get angle(): number | undefined;
+    /** The entity to which the Light is attached if explicitly set. */
+    get attachedToEntity(): Entity | undefined;
+    /** The color of the light. */
+    get color(): RgbColor;
+    /** The maximum distance the light will illuminate. 0 does not limit distance. Defaults to 0. */
+    get distance(): number | undefined;
+    /** The intensity of the light in candela (cd). Defaults to 1 */
+    get intensity(): number;
+    /** Whether the Light is spawned into the world. */
+    get isSpawned(): boolean;
+    /** The offset of the light from the attached entity or position. */
+    get offset(): Vector3Like | undefined;
+    /** If type is spotlight, the penumbra of the spotlight. */
+    get penumbra(): number | undefined;
+    /** The position of the light in the world if explicitly set. */
+    get position(): Vector3Like | undefined;
+    /** If type is spotlight, the entity the spotlight will constantly point at. */
+    get trackedEntity(): Entity | undefined;
+    /** If type is spotlight, the position the spotlight will constantly point at. */
+    get trackedPosition(): Vector3Like | undefined;
+    /** The type of light. Defaults to point light. */
+    get type(): LightType;
+    /** The world the Light is spawned into. */
+    get world(): World | undefined;
+    /**
+     * Sets the angle of the spotlight if the light type is spotlight.
+     *
+     * @param angle - The angle of the spotlight.
+     */
+    setAngle(angle: number): void;
+    /**
+     * Sets the entity to which the Light is attached.
+     *
+     * @param entity - The entity to attach the Light to.
+     */
+    setAttachedToEntity(entity: Entity): void;
+    /**
+     * Sets the color of the light.
+     *
+     * @param color - The color of the light.
+     */
+    setColor(color: RgbColor): void;
+    /**
+     * Sets the maximum distance the light will illuminate.
+     *
+     * @param distance - The maximum distance the light will illuminate.
+     */
+    setDistance(distance: number): void;
+    /**
+     * Sets the intensity of the light.
+     *
+     * @param intensity - The intensity of the light.
+     */
+    setIntensity(intensity: number): void;
+    /**
+     * Sets the offset of the light from the attached entity or position.
+     *
+     * @param offset - The offset of the light.
+     */
+    setOffset(offset: Vector3Like): void;
+    /**
+     * Sets the penumbra of the spotlight if the light type is spotlight.
+     *
+     * @param penumbra - The penumbra of the spotlight.
+     */
+    setPenumbra(penumbra: number): void;
+    /**
+     * Sets the position of the light.
+     *
+     * @param position - The position of the light.
+     */
+    setPosition(position: Vector3Like): void;
+    /**
+     * Sets the entity the spotlight will constantly point at if the light type is spotlight.
+     *
+     * @param entity - The entity the spotlight will constantly point at.
+     */
+    setTrackedEntity(entity: Entity): void;
+    /**
+     * Sets the position the spotlight will constantly point at if the light type is spotlight.
+     *
+     * @param position - The position the spotlight will constantly point at.
+     */
+    setTrackedPosition(position: Vector3Like): void;
+    /**
+     * Despawns the Light from the world.
+     */
+    despawn(): void;
+    /**
+     * Spawns the Light into the world.
+     *
+     * @param world - The world to spawn the Light into.
+     */
+    spawn(world: World): void;
+
+}
+
+/** Payloads for events a Light instance can emit. @public */
+export declare namespace LightEventPayload {
+    export interface Despawn {
+        light: Light;
+    }
+    export interface SetAngle {
+        light: Light;
+        angle: number;
+    }
+    export interface SetAttachedToEntity {
+        light: Light;
+        entity: Entity;
+    }
+    export interface SetColor {
+        light: Light;
+        color: RgbColor;
+    }
+    export interface SetDistance {
+        light: Light;
+        distance: number;
+    }
+    export interface SetIntensity {
+        light: Light;
+        intensity: number;
+    }
+    export interface SetOffset {
+        light: Light;
+        offset: Vector3Like;
+    }
+    export interface SetPenumbra {
+        light: Light;
+        penumbra: number;
+    }
+    export interface SetPosition {
+        light: Light;
+        position: Vector3Like;
+    }
+    export interface SetTrackedEntity {
+        light: Light;
+        entity: Entity;
+    }
+    export interface SetTrackedPosition {
+        light: Light;
+        position: Vector3Like;
+    }
+    export interface Spawn {
+        light: Light;
+    }
+}
+
+/** Event types a Light instance can emit. @public */
+export declare enum LightEventType {
+    DESPAWN = "LIGHT.DESPAWN",
+    SET_ANGLE = "LIGHT.SET_ANGLE",
+    SET_ATTACHED_TO_ENTITY = "LIGHT.SET_ATTACHED_TO_ENTITY",
+    SET_COLOR = "LIGHT.SET_COLOR",
+    SET_DISTANCE = "LIGHT.SET_DISTANCE",
+    SET_INTENSITY = "LIGHT.SET_INTENSITY",
+    SET_OFFSET = "LIGHT.SET_OFFSET",
+    SET_PENUMBRA = "LIGHT.SET_PENUMBRA",
+    SET_POSITION = "LIGHT.SET_POSITION",
+    SET_TRACKED_ENTITY = "LIGHT.SET_TRACKED_ENTITY",
+    SET_TRACKED_POSITION = "LIGHT.SET_TRACKED_POSITION",
+    SET_TYPE = "LIGHT.SET_TYPE",
+    SPAWN = "LIGHT.SPAWN"
+}
+
+/**
+ * Manages Light instances in a world.
+ *
+ * @remarks
+ * The LightManager is created internally as a singleton
+ * for each {@link World} instance in a game server.
+ * It allows retrieval of all loaded Light instances,
+ * entity attached Light instances, and more.
+ *
+ * @public
+ */
+export declare class LightManager {
+
+
+
+
+    /** The world the LightManager is for. */
+    get world(): World;
+
+    /**
+     * Retrieves all spawned Light instances for the world.
+     *
+     * @returns An array of Light instances.
+     */
+    getAllLights(): Light[];
+    /**
+     * Retrieves all spawned Light instances attached to a specific entity.
+     *
+     * @param entity - The entity to get attached Light instances for.
+     * @returns An array of Light instances.
+     */
+    getAllEntityAttachedLights(entity: Entity): Light[];
+
+
+}
+
+/** Options for creating a Light instance. @public */
+export declare interface LightOptions {
+    /** If type is spotlight, the angle of the spotlight. */
+    angle?: number;
+    /** If set, the light will be attached to this entity. */
+    attachedToEntity?: Entity;
+    /** The color of the light. Defaults to white. */
+    color?: RgbColor;
+    /** The maximum distance the light will illuminate. 0 does not limit distance. Defaults to 0. */
+    distance?: number;
+    /** The intensity of the light in candela (cd). Defaults to 1 */
+    intensity?: number;
+    /** The offset of the light from the attached entity or position. */
+    offset?: Vector3Like;
+    /** If type is spotlight, the penumbra of the spotlight. Defaults to 0 */
+    penumbra?: number;
+    /** If set, the light will be attached at this position. */
+    position?: Vector3Like;
+    /** If type is spotlight, the entity the spotlight will constantly point at. */
+    trackedEntity?: Entity;
+    /** If type is spotlight, the position the spotlight will constantly point at. */
+    trackedPosition?: Vector3Like;
+    /** The type of light. Defaults to point light. */
+    type?: LightType;
+}
+
+/** The types a Light can be. @public */
+export declare enum LightType {
+    POINTLIGHT = 0,
+    SPOTLIGHT = 1
+}
+
 /** A bounding box for a model. @public */
 declare type ModelBoundingBox = {
     min: {
@@ -3039,14 +3314,23 @@ export declare class SceneUI implements protocol.Serializable {
      * @param options - The options for the SceneUI instance.
      */
     constructor(options: SceneUIOptions);
+    /** The unique identifier for the SceneUI. */
     get id(): number | undefined;
+    /** The entity to which the SceneUI is attached if explicitly set. */
     get attachedToEntity(): Entity | undefined;
+    /** Whether the SceneUI is loaded into the world. */
     get isLoaded(): boolean;
+    /** The offset of the SceneUI from the attached entity or position. */
     get offset(): Vector3Like | undefined;
+    /** The position of the SceneUI in the world if explicitly set. */
     get position(): Vector3Like | undefined;
+    /** The state of the SceneUI. */
     get state(): Readonly<object>;
+    /** The template ID of the SceneUI. */
     get templateId(): string;
+    /** The maximum view distance the SceneUI will be visible to the player. */
     get viewDistance(): number | undefined;
+    /** The world the SceneUI is loaded into. */
     get world(): World | undefined;
     /**
      * Loads the SceneUI into the world.
@@ -3129,7 +3413,6 @@ export declare class SceneUIManager {
      * @param entity - The entity to unload and unregister SceneUI instances for.
      */
     unloadEntityAttachedSceneUIs(entity: Entity): void;
-
 
 }
 
@@ -3595,6 +3878,7 @@ export declare class World implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the world.
      */
@@ -3627,6 +3911,8 @@ export declare class World implements protocol.Serializable {
     get entityManager(): EntityManager;
     /** The event router for the world. */
     get eventRouter(): EventRouter;
+    /** The light manager for the world. */
+    get lightManager(): LightManager;
     /** The world loop for the world. */
     get loop(): WorldLoop;
 

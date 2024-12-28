@@ -4,6 +4,8 @@
 
 ## SceneUI.offset property
 
+The offset of the SceneUI from the attached entity or position.
+
 **Signature:**
 
 ```typescript

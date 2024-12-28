@@ -102,6 +102,8 @@ Description
 
 </td><td>
 
+The entity to which the SceneUI is attached if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -120,6 +122,8 @@ number \| undefined
 
 
 </td><td>
+
+The unique identifier for the SceneUI.
 
 
 </td></tr>
@@ -140,6 +144,8 @@ boolean
 
 </td><td>
 
+Whether the SceneUI is loaded into the world.
+
 
 </td></tr>
 <tr><td>
@@ -158,6 +164,8 @@ boolean
 
 
 </td><td>
+
+The offset of the SceneUI from the attached entity or position.
 
 
 </td></tr>
@@ -178,6 +186,8 @@ boolean
 
 </td><td>
 
+The position of the SceneUI in the world if explicitly set.
+
 
 </td></tr>
 <tr><td>
@@ -196,6 +206,8 @@ Readonly&lt;object&gt;
 
 
 </td><td>
+
+The state of the SceneUI.
 
 
 </td></tr>
@@ -216,6 +228,8 @@ string
 
 </td><td>
 
+The template ID of the SceneUI.
+
 
 </td></tr>
 <tr><td>
@@ -235,6 +249,8 @@ number \| undefined
 
 </td><td>
 
+The maximum view distance the SceneUI will be visible to the player.
+
 
 </td></tr>
 <tr><td>
@@ -253,6 +269,8 @@ number \| undefined
 
 
 </td><td>
+
+The world the SceneUI is loaded into.
 
 
 </td></tr>

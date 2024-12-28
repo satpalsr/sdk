@@ -4,6 +4,8 @@
 
 ## SceneUI.attachedToEntity property
 
+The entity to which the SceneUI is attached if explicitly set.
+
 **Signature:**
 
 ```typescript

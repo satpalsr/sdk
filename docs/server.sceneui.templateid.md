@@ -4,6 +4,8 @@
 
 ## SceneUI.templateId property
 
+The template ID of the SceneUI.
+
 **Signature:**
 
 ```typescript

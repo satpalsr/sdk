@@ -4,6 +4,8 @@
 
 ## SceneUI.isLoaded property
 
+Whether the SceneUI is loaded into the world.
+
 **Signature:**
 
 ```typescript

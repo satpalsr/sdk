@@ -4,6 +4,8 @@
 
 ## SceneUI.state property
 
+The state of the SceneUI.
+
 **Signature:**
 
 ```typescript
