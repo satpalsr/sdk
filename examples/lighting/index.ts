@@ -36,21 +36,6 @@ startServer(world => {
     })).spawn(world);
   });
 
-  const yellowLightPositions = [
-    // { x: -8, y: 4, z: 12 },
-    // { x: -16, y: 1, z: 5 },
-    // { x: 1, y: 1, z: -10 },
-
-  ]
-
-  yellowLightPositions.forEach(position => {
-    (new Light({
-      color: { r: 255, g: 255, b: 0 },
-      intensity: 10,
-      position,
-    })).spawn(world);
-  });
-
   // large ceiling spotlight
   (new Light({
     type: LightType.SPOTLIGHT,
