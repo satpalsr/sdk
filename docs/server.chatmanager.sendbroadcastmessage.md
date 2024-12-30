@@ -4,7 +4,7 @@
 
 ## ChatManager.sendBroadcastMessage() method
 
-Send a broadcast message to all players in the world.
+Send a system broadcast message to all players in the world.
 
 **Signature:**
 

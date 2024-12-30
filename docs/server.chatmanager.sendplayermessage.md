@@ -4,7 +4,7 @@
 
 ## ChatManager.sendPlayerMessage() method
 
-Send a message to a specific player, only visible to them.
+Send a system message to a specific player, only visible to them.
 
 **Signature:**
 

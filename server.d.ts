@@ -614,6 +614,15 @@ export declare enum ChatEventType {
  * @public
  */
 export declare class ChatManager {
+    /**
+     * A function that is called when a broadcast (public) message is sent
+     * by a player or the server.
+     *
+     * @param player - The player that sent the message, or undefined if the message is a system message from the server.
+     * @param message - The message to send.
+     * @param color - The color of the message as a hex color code, excluding #.
+     */
+    onBroadcastMessage?: (player: Player | undefined, message: string, color?: string) => void;
 
 
 
@@ -629,7 +638,7 @@ export declare class ChatManager {
      */
     unregisterCommand(command: string): void;
     /**
-     * Send a broadcast message to all players in the world.
+     * Send a system broadcast message to all players in the world.
      * @param message - The message to send.
      * @param color - The color of the message as a hex color code, excluding #.
      *
@@ -640,7 +649,7 @@ export declare class ChatManager {
      */
     sendBroadcastMessage(message: string, color?: string): void;
     /**
-     * Send a message to a specific player, only visible to them.
+     * Send a system message to a specific player, only visible to them.
      * @param player - The player to send the message to.
      * @param message - The message to send.
      * @param color - The color of the message as a hex color code, excluding #.
@@ -651,6 +660,7 @@ export declare class ChatManager {
      * ```
      */
     sendPlayerMessage(player: Player, message: string, color?: string): void;
+
 
 
 }

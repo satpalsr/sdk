@@ -35,6 +35,50 @@ world.chatManager.registerCommand('/kick', (player, args, message) => {
 });
 ```
 
+## Properties
+
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[onBroadcastMessage?](./server.chatmanager.onbroadcastmessage.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(player: [Player](./server.player.md) \| undefined, message: string, color?: string) =&gt; void
+
+
+</td><td>
+
+_(Optional)_ A function that is called when a broadcast (public) message is sent by a player or the server.
+
+
+</td></tr>
+</tbody></table>
+
 ## Methods
 
 <table><thead><tr><th>
@@ -77,7 +121,7 @@ Register a command and its callback.
 
 </td><td>
 
-Send a broadcast message to all players in the world.
+Send a system broadcast message to all players in the world.
 
 
 </td></tr>
@@ -91,7 +135,7 @@ Send a broadcast message to all players in the world.
 
 </td><td>
 
-Send a message to a specific player, only visible to them.
+Send a system message to a specific player, only visible to them.
 
 
 </td></tr>

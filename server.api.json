@@ -4666,6 +4666,45 @@
           "preserveMemberOrder": false,
           "members": [
             {
+              "kind": "Property",
+              "canonicalReference": "server!ChatManager#onBroadcastMessage:member",
+              "docComment": "/**\n * A function that is called when a broadcast (public) message is sent by a player or the server.\n *\n * @param player - The player that sent the message, or undefined if the message is a system message from the server.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onBroadcastMessage?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(player: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined, message: string, color?: string) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onBroadcastMessage",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#registerCommand:member(1)",
               "docComment": "/**\n * Register a command and its callback.\n *\n * @param command - The command to register.\n *\n * @param callback - The callback function to execute when the command is used.\n */\n",
@@ -4733,7 +4772,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#sendBroadcastMessage:member(1)",
-              "docComment": "/**\n * Send a broadcast message to all players in the world.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');\n * ```\n *\n */\n",
+              "docComment": "/**\n * Send a system broadcast message to all players in the world.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendBroadcastMessage('Hello, world!', 'FF00AA');\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4797,7 +4836,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!ChatManager#sendPlayerMessage:member(1)",
-              "docComment": "/**\n * Send a message to a specific player, only visible to them.\n *\n * @param player - The player to send the message to.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');\n * ```\n *\n */\n",
+              "docComment": "/**\n * Send a system message to a specific player, only visible to them.\n *\n * @param player - The player to send the message to.\n *\n * @param message - The message to send.\n *\n * @param color - The color of the message as a hex color code, excluding #.\n *\n * @example\n * ```typescript\n * chatManager.sendPlayerMessage(player, 'Hello, player!', 'FF00AA');\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
