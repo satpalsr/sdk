@@ -28,11 +28,11 @@ enum GameWallDirection {
 
 const GAME_CONFIG = {
   LEVEL_DURATION: 10,
-  START_DELAY: 3,
+  START_DELAY: 30,
   WALL_COLLISION_GROUP: CollisionGroup.GROUP_1,
   WALL_DESPAWN_DISTANCE: 18,
   POSITIONS: {
-    START: { x: 1, y: 25, z: 1 },
+    START: { x: 1, y: 22, z: 1 },
     JOIN_NPC: { x: 1, y: 35, z: -7 },
     PLAYER_SPAWN: { x: 1, y: 35, z: 2 },
     WALLS: {
@@ -270,7 +270,7 @@ function killPlayer(playerEntity: PlayerEntity) {
   playerEntity.setPosition(GAME_CONFIG.POSITIONS.PLAYER_SPAWN);
   GAME_PLAYER_ENTITIES.delete(playerEntity);
 
-  if (GAME_PLAYER_ENTITIES.size < 1) {
+  if (GAME_PLAYER_ENTITIES.size <= 1) {
     endGame();
   }
 
