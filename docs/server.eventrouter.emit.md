@@ -9,7 +9,7 @@ Emit an event, invoking all registered listeners for the event type.
 **Signature:**
 
 ```typescript
-emit<TPayload>(event: Event<TPayload>): boolean;
+emit<TPayload>(eventType: string, payload: TPayload): boolean;
 ```
 
 ## Parameters
@@ -32,17 +32,33 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-event
+eventType
 
 
 </td><td>
 
-[Event](./server.event_2.md)<!-- -->&lt;TPayload&gt;
+string
 
 
 </td><td>
 
-The event to emit.
+The type of event to emit.
+
+
+</td></tr>
+<tr><td>
+
+payload
+
+
+</td><td>
+
+TPayload
+
+
+</td><td>
+
+The payload to emit.
 
 
 </td></tr>

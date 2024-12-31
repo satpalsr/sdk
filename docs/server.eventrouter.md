@@ -213,7 +213,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[emit(event)](./server.eventrouter.emit.md)
+[emit(eventType, payload)](./server.eventrouter.emit.md)
 
 
 </td><td>
@@ -264,6 +264,48 @@ Remove all listeners for a specific event type.
 </td><td>
 
 Register a listener for a specific event type.
+
+
+</td></tr>
+<tr><td>
+
+[once(eventType, listener)](./server.eventrouter.once.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Register a listener for a specific event type that will be invoked once.
+
+
+</td></tr>
+<tr><td>
+
+[prependOn(eventType, listener)](./server.eventrouter.prependon.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Register a listener for a specific event type that will be invoked before all other existing listeners.
+
+
+</td></tr>
+<tr><td>
+
+[prependOnce(eventType, listener)](./server.eventrouter.prependonce.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Register a listener for a specific event type that will be invoked once before all other existing listeners.
 
 
 </td></tr>

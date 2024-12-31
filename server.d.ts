@@ -1621,15 +1621,6 @@ export declare interface EntityOptions {
     tintColor?: RgbColor;
 }
 
-/** An EventRouter event. @public */
-declare interface Event_2<TPayload> {
-    /** The type of event */
-    type: string;
-    /** The payload of the event, passed to listeners */
-    payload: TPayload;
-}
-export { Event_2 as Event }
-
 /**
  * Manages event emission and assigned listener callbacks.
  *
@@ -1646,7 +1637,6 @@ export declare class EventRouter {
     /** The singleton instance for global server events. */
     static readonly serverInstance: EventRouter;
     private _emitter;
-    private _wrappedListenerMap;
     private _tag;
     /** Enable logging of all events. Default: false */
     logAllEvents: boolean;
@@ -1661,18 +1651,14 @@ export declare class EventRouter {
     /** @param tag - Tag for logging, used to identify EventRouter instances in logs. */
     constructor(tag: string);
     /**
-     * Register a listener for a specific event type.
+     * Emit an event, invoking all registered listeners for the event type.
      *
-     * @remarks
-     * When the same event router instance used to register a listener
-     * emits an event a listener was registered for, the listener will
-     * be invoked with the event payload. Listeners are called in the order
-     * they are registered.
+     * @param eventType - The type of event to emit.
+     * @param payload - The payload to emit.
      *
-     * @param eventType - The type of event to listen for.
-     * @param listener - The listener function to invoke when the event is emitted.
+     * @returns `true` if listeners were found and invoked, `false` otherwise.
      */
-    on<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    emit<TPayload>(eventType: string, payload: TPayload): boolean;
     /**
      * Remove a listener for a specific event type.
      *
@@ -1687,12 +1673,36 @@ export declare class EventRouter {
      */
     offAll(eventType: string): void;
     /**
-     * Emit an event, invoking all registered listeners for the event type.
+     * Register a listener for a specific event type.
      *
-     * @param event - The event to emit.
-     * @returns `true` if listeners were found and invoked, `false` otherwise.
+     * @remarks
+     * Listeners are invoked in the order they are registered.
+     *
+     * @param eventType - The type of event to listen for.
+     * @param listener - The listener function to invoke when the event is emitted.
      */
-    emit<TPayload>(event: Event_2<TPayload>): boolean;
+    on<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    /**
+     * Register a listener for a specific event type that will be invoked once.
+     *
+     * @param eventType - The type of event to listen for.
+     * @param listener - The listener function to invoke when the event is emitted.
+     */
+    once<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    /**
+     * Register a listener for a specific event type that will be invoked before all other existing listeners.
+     *
+     * @param eventType - The type of event to listen for.
+     * @param listener - The listener function to invoke when the event is emitted.
+     */
+    prependOn<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    /**
+     * Register a listener for a specific event type that will be invoked once before all other existing listeners.
+     *
+     * @param eventType - The type of event to listen for.
+     * @param listener - The listener function to invoke when the event is emitted.
+     */
+    prependOnce<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
 }
 
 /**

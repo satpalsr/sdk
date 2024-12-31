@@ -684,17 +684,6 @@ Options for creating an Entity instance.
 </td></tr>
 <tr><td>
 
-[Event\_2](./server.event_2.md)
-
-
-</td><td>
-
-An EventRouter event.
-
-
-</td></tr>
-<tr><td>
-
 [LightOptions](./server.lightoptions.md)
 
 
