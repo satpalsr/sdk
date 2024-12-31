@@ -25440,6 +25440,55 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!RigidBody#setCollisionGroupsForSensorColliders:member(1)",
+              "docComment": "/**\n * Sets the collision groups for sensor colliders of the rigid body.\n *\n * @param collisionGroups - The collision groups for sensor colliders of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setCollisionGroupsForSensorColliders(collisionGroups: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CollisionGroups",
+                  "canonicalReference": "server!CollisionGroups:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "collisionGroups",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setCollisionGroupsForSensorColliders"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!RigidBody#setCollisionGroupsForSolidColliders:member(1)",
               "docComment": "/**\n * Sets the collision groups for solid colliders (non-sensor) of the rigid body.\n *\n * @param collisionGroups - The collision groups for solid colliders of the rigid body.\n */\n",
               "excerptTokens": [

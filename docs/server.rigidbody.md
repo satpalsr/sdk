@@ -1222,6 +1222,20 @@ Sets whether the rigid body has continuous collision detection enabled.
 </td></tr>
 <tr><td>
 
+[setCollisionGroupsForSensorColliders(collisionGroups)](./server.rigidbody.setcollisiongroupsforsensorcolliders.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the collision groups for sensor colliders of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [setCollisionGroupsForSolidColliders(collisionGroups)](./server.rigidbody.setcollisiongroupsforsolidcolliders.md)
 
 

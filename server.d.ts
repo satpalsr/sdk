@@ -3137,6 +3137,11 @@ export declare class RigidBody {
      */
     setCollisionGroupsForSolidColliders(collisionGroups: CollisionGroups): void;
     /**
+     * Sets the collision groups for sensor colliders of the rigid body.
+     * @param collisionGroups - The collision groups for sensor colliders of the rigid body.
+     */
+    setCollisionGroupsForSensorColliders(collisionGroups: CollisionGroups): void;
+    /**
      * Sets the type of the rigid body.
      * @param type - The type of the rigid body.
      */
