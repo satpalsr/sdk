@@ -9,5 +9,5 @@ The current [PlayerInput](./server.playerinput.md) of the player.
 **Signature:**
 
 ```typescript
-get input(): Readonly<PlayerInput>;
+get input(): PlayerInput;
 ```

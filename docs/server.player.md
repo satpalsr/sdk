@@ -95,7 +95,7 @@ The unique identifier for the player.
 
 </td><td>
 
-Readonly&lt;[PlayerInput](./server.playerinput.md)<!-- -->&gt;
+[PlayerInput](./server.playerinput.md)
 
 
 </td><td>

@@ -135,7 +135,7 @@ export default class MyEntityController extends BaseEntityController {
     }
 
     // Ground sensor
-    entity.createAndAddChildColliderToSimulation({
+    entity.createAndAddChildCollider({
       shape: ColliderShape.CYLINDER,
       radius: 0.23,
       halfHeight: 0.125,
@@ -169,7 +169,7 @@ export default class MyEntityController extends BaseEntityController {
 
 
     // Wall collider
-    entity.createAndAddChildColliderToSimulation({
+    entity.createAndAddChildCollider({
       shape: ColliderShape.CAPSULE,
       halfHeight: 0.30,
       radius: 0.37,

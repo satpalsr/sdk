@@ -16994,21 +16994,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Readonly",
-                  "canonicalReference": "!Readonly:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
                   "text": "PlayerInput",
                   "canonicalReference": "server!PlayerInput:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
                 },
                 {
                   "kind": "Content",
@@ -17021,7 +17008,7 @@
               "name": "input",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 5
+                "endIndex": 2
               },
               "isStatic": false,
               "isProtected": false,
@@ -24023,6 +24010,56 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!RigidBody#createAndAddChildCollider:member(1)",
+              "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @remarks\n *\n * If the rigid body is not simulated, the collider will be added to the rigid body as a pending child collider and also simulated when the rigid body is simulated.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createAndAddChildCollider(colliderOptions: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderOptions",
+                  "canonicalReference": "server!ColliderOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Collider",
+                  "canonicalReference": "server!Collider:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "colliderOptions",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createAndAddChildCollider"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!RigidBody#createAndAddChildCollidersToSimulation:member(1)",
               "docComment": "/**\n * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child colliders to add to the rigid body.\n *\n * @returns The child colliders that were added to the rigid body.\n */\n",
               "excerptTokens": [
@@ -24078,56 +24115,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "createAndAddChildCollidersToSimulation"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!RigidBody#createAndAddChildColliderToSimulation:member(1)",
-              "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "createAndAddChildColliderToSimulation(colliderOptions: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Collider",
-                  "canonicalReference": "server!Collider:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "colliderOptions",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "createAndAddChildColliderToSimulation"
             },
             {
               "kind": "Property",

@@ -1054,6 +1054,20 @@ Applies a torque impulse to the rigid body.
 </td></tr>
 <tr><td>
 
+[createAndAddChildCollider(colliderOptions)](./server.rigidbody.createandaddchildcollider.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Creates and adds a child collider to the rigid body for the simulation it belongs to.
+
+
+</td></tr>
+<tr><td>
+
 [createAndAddChildCollidersToSimulation(colliderOptions)](./server.rigidbody.createandaddchildcolliderstosimulation.md)
 
 
@@ -1063,20 +1077,6 @@ Applies a torque impulse to the rigid body.
 </td><td>
 
 Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
-
-
-</td></tr>
-<tr><td>
-
-[createAndAddChildColliderToSimulation(colliderOptions)](./server.rigidbody.createandaddchildcollidertosimulation.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Creates and adds a child collider to the rigid body for the simulation it belongs to.
 
 
 </td></tr>

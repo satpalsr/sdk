@@ -2170,7 +2170,7 @@ export declare class Player {
 
 
     /** The current {@link PlayerInput} of the player. */
-    get input(): Readonly<PlayerInput>;
+    get input(): PlayerInput;
     /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
@@ -3194,10 +3194,15 @@ export declare class RigidBody {
     applyTorqueImpulse(impulse: Vector3Like): void;
     /**
      * Creates and adds a child collider to the rigid body for the simulation it belongs to.
+     *
+     * @remarks
+     * If the rigid body is not simulated, the collider will be added to the rigid body as a pending child collider
+     * and also simulated when the rigid body is simulated.
+     *
      * @param colliderOptions - The options for the child collider to add.
      * @returns The child collider that was added to the rigid body.
      */
-    createAndAddChildColliderToSimulation(colliderOptions: ColliderOptions): Collider;
+    createAndAddChildCollider(colliderOptions: ColliderOptions): Collider;
     /**
      * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
      * @param colliderOptions - The options for the child colliders to add to the rigid body.
