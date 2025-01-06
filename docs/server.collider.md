@@ -618,7 +618,7 @@ Sets the on collision callback for the collider.
 
 </td><td>
 
-Sets the relative position of the collider to its parent rigid body.
+Sets the position of the collider relative to its parent rigid body or the world origin.
 
 
 </td></tr>
@@ -632,7 +632,7 @@ Sets the relative position of the collider to its parent rigid body.
 
 </td><td>
 
-Sets the relative rotation of the collider.
+Sets the relative rotation of the collider to its parent rigid body or the world origin.
 
 
 </td></tr>

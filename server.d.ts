@@ -983,12 +983,22 @@ export declare class Collider {
      */
     setOnCollision(callback: CollisionCallback | undefined): void;
     /**
-     * Sets the relative rotation of the collider.
+     * Sets the relative rotation of the collider to its parent rigid body or the world origin.
+     *
+     * @remarks
+     * Colliders can be added as a child of a rigid body, or to the world directly. This rotation
+     * is relative to the parent rigid body or the world origin.
+     *
      * @param rotation - The relative rotation of the collider.
      */
     setRelativeRotation(rotation: QuaternionLike): void;
     /**
-     * Sets the relative position of the collider to its parent rigid body.
+     * Sets the position of the collider relative to its parent rigid body or the world origin.
+     *
+     * @remarks
+     * Colliders can be added as a child of a rigid body, or to the world directly. This position
+     * is relative to the parent rigid body or the world origin.
+     *
      * @param position - The relative position of the collider.
      */
     setRelativePosition(position: Vector3Like): void;

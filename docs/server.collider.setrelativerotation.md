@@ -4,7 +4,7 @@
 
 ## Collider.setRelativeRotation() method
 
-Sets the relative rotation of the collider.
+Sets the relative rotation of the collider to its parent rigid body or the world origin.
 
 **Signature:**
 
@@ -50,4 +50,8 @@ The relative rotation of the collider.
 **Returns:**
 
 void
+
+## Remarks
+
+Colliders can be added as a child of a rigid body, or to the world directly. This rotation is relative to the parent rigid body or the world origin.
 

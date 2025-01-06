@@ -7626,7 +7626,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Collider#setRelativePosition:member(1)",
-              "docComment": "/**\n * Sets the relative position of the collider to its parent rigid body.\n *\n * @param position - The relative position of the collider.\n */\n",
+              "docComment": "/**\n * Sets the position of the collider relative to its parent rigid body or the world origin.\n *\n * @remarks\n *\n * Colliders can be added as a child of a rigid body, or to the world directly. This position is relative to the parent rigid body or the world origin.\n *\n * @param position - The relative position of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -7675,7 +7675,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Collider#setRelativeRotation:member(1)",
-              "docComment": "/**\n * Sets the relative rotation of the collider.\n *\n * @param rotation - The relative rotation of the collider.\n */\n",
+              "docComment": "/**\n * Sets the relative rotation of the collider to its parent rigid body or the world origin.\n *\n * @remarks\n *\n * Colliders can be added as a child of a rigid body, or to the world directly. This rotation is relative to the parent rigid body or the world origin.\n *\n * @param rotation - The relative rotation of the collider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
