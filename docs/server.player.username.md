@@ -4,7 +4,7 @@
 
 ## Player.username property
 
-The username for the player.
+The unique HYTOPIA username for the player.
 
 **Signature:**
 

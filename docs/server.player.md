@@ -74,12 +74,12 @@ The camera for the player.
 
 </td><td>
 
-number
+string
 
 
 </td><td>
 
-The unique identifier for the player.
+The unique HYTOPIA UUID for the player.
 
 
 </td></tr>
@@ -142,7 +142,7 @@ string
 
 </td><td>
 
-The username for the player.
+The unique HYTOPIA username for the player.
 
 
 </td></tr>

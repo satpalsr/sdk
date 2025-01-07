@@ -2167,9 +2167,9 @@ export declare type MoveOptions = {
  * @public
  */
 export declare class Player {
-    /** The unique identifier for the player. */
-    readonly id: number;
-    /** The username for the player. */
+    /** The unique HYTOPIA UUID for the player. */
+    readonly id: string;
+    /** The unique HYTOPIA username for the player. */
     readonly username: string;
     /** The camera for the player. */
     readonly camera: PlayerCamera;

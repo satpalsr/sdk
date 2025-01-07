@@ -4,10 +4,10 @@
 
 ## Player.id property
 
-The unique identifier for the player.
+The unique HYTOPIA UUID for the player.
 
 **Signature:**
 
 ```typescript
-readonly id: number;
+readonly id: string;
 ```

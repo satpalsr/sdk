@@ -62,10 +62,11 @@
         const gameCountdownStartTime = data.gameCountdownStartTime;
         const countdownSeconds = data.countdown;
         
+        let timeLeft = countdownSeconds;
         const updateCountdown = () => {
           if (timeLeft > 0 && gameState === 'starting') {
             const now = Date.now();
-            const timeLeft = Math.max(0, Math.ceil((gameCountdownStartTime + (countdownSeconds * 1000) - now) / 1000));
+            timeLeft = Math.max(0, Math.ceil((gameCountdownStartTime + (countdownSeconds * 1000) - now) / 1000));
             updateGameStatus(`GAME STARTING IN ${timeLeft}...`);
             setTimeout(updateCountdown, 1000);
           }

@@ -16956,7 +16956,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Player#id:member",
-              "docComment": "/**\n * The unique identifier for the player.\n */\n",
+              "docComment": "/**\n * The unique HYTOPIA UUID for the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16964,7 +16964,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "number"
+                  "text": "string"
                 },
                 {
                   "kind": "Content",
@@ -17128,7 +17128,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Player#username:member",
-              "docComment": "/**\n * The username for the player.\n */\n",
+              "docComment": "/**\n * The unique HYTOPIA username for the player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

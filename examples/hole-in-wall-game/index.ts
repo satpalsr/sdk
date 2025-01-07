@@ -98,8 +98,8 @@ function onPlayerJoin(world: World, player: Player) {
   playerEntity.spawn(world, GAME_CONFIG.POSITIONS.PLAYER_SPAWN);
   
   playerEntity.setCollisionGroupsForSolidColliders({
-    belongsTo: [CollisionGroup.ENTITY, CollisionGroup.PLAYER],
-    collidesWith: [CollisionGroup.BLOCK, CollisionGroup.ENTITY_SENSOR, GAME_CONFIG.WALL_COLLISION_GROUP],
+    belongsTo: [CollisionGroup.PLAYER],
+    collidesWith: [CollisionGroup.BLOCK, CollisionGroup.ENTITY, CollisionGroup.ENTITY_SENSOR, GAME_CONFIG.WALL_COLLISION_GROUP],
   });
 
   playerEntity.setCollisionGroupsForSensorColliders({
