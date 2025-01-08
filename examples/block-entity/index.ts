@@ -41,7 +41,7 @@ startServer(world => {
     blockHalfExtents: { x: 1, y: 0.5, z: 1 },
     rigidBodyOptions: {
       type: RigidBodyType.KINEMATIC_VELOCITY, // Kinematic means platform won't be effected by external physics, including gravity
-      linearVelocity: { x: 0, y: 0, z: 3 }, // A starting velocity that won't change because it's kinematic
+      linearVelocity: { x: 0, y: 0, z: 3 }, // A starting velocity that won't change until we change it, because it's kinematic
     },
   });
 
