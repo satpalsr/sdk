@@ -112,6 +112,20 @@ Retrieves all loaded SceneUI instances for the world.
 </td></tr>
 <tr><td>
 
+[getSceneUIById(id)](./server.sceneuimanager.getsceneuibyid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Retrieves a SceneUI instance by its unique identifier (id).
+
+
+</td></tr>
+<tr><td>
+
 [unloadEntityAttachedSceneUIs(entity)](./server.sceneuimanager.unloadentityattachedsceneuis.md)
 
 

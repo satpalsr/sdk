@@ -277,7 +277,7 @@ function onPlayerJoin(world: World, player: Player) {
  * cleanup when they leave the game. 
  */
 function onPlayerLeave(world: World, player: Player) {
-  world.entityManager.getAllPlayerEntities(player).forEach(entity => {
+  world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
     endGame(entity); // explicitly end their game if they leave
     entity.despawn(); // despawn their entity
   });

@@ -122,4 +122,18 @@ Get all connected players.
 
 
 </td></tr>
+<tr><td>
+
+[getConnectedPlayersByWorld(world)](./server.playermanager.getconnectedplayersbyworld.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get all connected players in a specific world.
+
+
+</td></tr>
 </tbody></table>

@@ -30,7 +30,7 @@ startServer(world => {
   };
 
   world.onPlayerLeave = player => {
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => entity.despawn());
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
   };
 
   /**
@@ -162,7 +162,7 @@ startServer(world => {
       const targetPlayer = connectedPlayers[Math.floor(Math.random() * connectedPlayers.length)];
 
       // get the player's entity
-      const targetPlayerEntity = world.entityManager.getAllPlayerEntities(targetPlayer)[0];
+      const targetPlayerEntity = world.entityManager.getPlayerEntitiesByPlayer(targetPlayer)[0];
 
       if (!targetPlayerEntity) { return; } // if the player doesn't have an entity, don't pathfind.
 

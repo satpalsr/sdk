@@ -12080,20 +12080,11 @@
             {
               "kind": "Method",
               "canonicalReference": "server!EntityManager#getAllPlayerEntities:member(1)",
-              "docComment": "/**\n * Gets all spawned entities in the world assigned to a player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All spawned entities in the world assigned to the player.\n */\n",
+              "docComment": "/**\n * Gets all spawned player entities in the world.\n *\n * @returns All spawned player entities in the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "getAllPlayerEntities(player: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Player",
-                  "canonicalReference": "server!Player:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
+                  "text": "getAllPlayerEntities(): "
                 },
                 {
                   "kind": "Reference",
@@ -12111,22 +12102,13 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
               "isProtected": false,
               "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "player",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
+              "parameters": [],
               "isOptional": false,
               "isAbstract": false,
               "name": "getAllPlayerEntities"
@@ -12306,6 +12288,60 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getEntity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EntityManager#getPlayerEntitiesByPlayer:member(1)",
+              "docComment": "/**\n * Gets all spawned entities in the world assigned to the provided player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All spawned entities in the world assigned to the player.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getPlayerEntitiesByPlayer(player: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEntity",
+                  "canonicalReference": "server!PlayerEntity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "player",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getPlayerEntitiesByPlayer"
             },
             {
               "kind": "Property",
@@ -21213,6 +21249,60 @@
               "name": "getConnectedPlayers"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerManager#getConnectedPlayersByWorld:member(1)",
+              "docComment": "/**\n * Get all connected players in a specific world.\n *\n * @param world - The world to get connected players for.\n *\n * @returns An array of all connected players in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getConnectedPlayersByWorld(world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "world",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getConnectedPlayersByWorld"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!PlayerManager.instance:member",
               "docComment": "/**\n * The global PlayerManager instance as a singleton.\n */\n",
@@ -28036,6 +28126,59 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getAllSceneUIs"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!SceneUIManager#getSceneUIById:member(1)",
+              "docComment": "/**\n * Retrieves a SceneUI instance by its unique identifier (id).\n *\n * @param id - The unique identifier (id) of the SceneUI to retrieve.\n *\n * @returns The SceneUI instance if found, otherwise undefined.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getSceneUIById(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUI",
+                  "canonicalReference": "server!SceneUI:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getSceneUIById"
             },
             {
               "kind": "Method",

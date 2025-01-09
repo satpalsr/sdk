@@ -115,7 +115,7 @@ function onPlayerJoin(world: World, player: Player) {
 }
 
 function onPlayerLeave(world: World, player: Player) {
-  world.entityManager.getAllPlayerEntities(player).forEach(entity => {
+  world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
     removePlayerFromQueue(entity);
     killPlayer(entity);
     entity.despawn();

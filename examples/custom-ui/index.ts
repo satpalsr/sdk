@@ -51,7 +51,7 @@ startServer(world => {
   };
 
   world.onPlayerLeave = player => {
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => entity.despawn());
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
     // Remove the player entity from our map for our list.
     playerEntityMap.delete(player);
   };

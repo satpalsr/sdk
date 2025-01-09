@@ -1574,11 +1574,16 @@ export declare class EntityManager {
      */
     getAllEntities(): Entity[];
     /**
-     * Gets all spawned entities in the world assigned to a player.
+     * Gets all spawned player entities in the world.
+     * @returns All spawned player entities in the world.
+     */
+    getAllPlayerEntities(): PlayerEntity[];
+    /**
+     * Gets all spawned entities in the world assigned to the provided player.
      * @param player - The player to get the entities for.
      * @returns All spawned entities in the world assigned to the player.
      */
-    getAllPlayerEntities(player: Player): PlayerEntity[];
+    getPlayerEntitiesByPlayer(player: Player): PlayerEntity[];
     /**
      * Gets a spawned entity in the world by its id.
      * @param id - The id of the entity to get.
@@ -2651,6 +2656,12 @@ export declare class PlayerManager {
      */
     getConnectedPlayers(): Player[];
     /**
+     * Get all connected players in a specific world.
+     * @param world - The world to get connected players for.
+     * @returns An array of all connected players in the world.
+     */
+    getConnectedPlayersByWorld(world: World): Player[];
+    /**
      * Get a connected player by their username (case insensitive).
      * @param username - The username of the player to get.
      * @returns The connected player with the given username or undefined if not found.
@@ -3448,6 +3459,13 @@ export declare class SceneUIManager {
      * @returns An array of SceneUI instances.
      */
     getAllEntityAttachedSceneUIs(entity: Entity): SceneUI[];
+    /**
+     * Retrieves a SceneUI instance by its unique identifier (id).
+     *
+     * @param id - The unique identifier (id) of the SceneUI to retrieve.
+     * @returns The SceneUI instance if found, otherwise undefined.
+     */
+    getSceneUIById(id: number): SceneUI | undefined;
 
     /**
      * Unloads and unregisters all SceneUI instances attached to a specific entity.

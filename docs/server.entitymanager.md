@@ -107,7 +107,7 @@ Gets all spawned entities in the world.
 </td></tr>
 <tr><td>
 
-[getAllPlayerEntities(player)](./server.entitymanager.getallplayerentities.md)
+[getAllPlayerEntities()](./server.entitymanager.getallplayerentities.md)
 
 
 </td><td>
@@ -115,7 +115,7 @@ Gets all spawned entities in the world.
 
 </td><td>
 
-Gets all spawned entities in the world assigned to a player.
+Gets all spawned player entities in the world.
 
 
 </td></tr>
@@ -158,6 +158,20 @@ Gets all spawned entities in the world with a tag that includes a specific subst
 </td><td>
 
 Gets a spawned entity in the world by its id.
+
+
+</td></tr>
+<tr><td>
+
+[getPlayerEntitiesByPlayer(player)](./server.entitymanager.getplayerentitiesbyplayer.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets all spawned entities in the world assigned to the provided player.
 
 
 </td></tr>

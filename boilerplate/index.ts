@@ -103,7 +103,7 @@ startServer(world => {
    * instance.
    */
   world.onPlayerLeave = player => {
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => entity.despawn());
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
   };
 
   /**
@@ -111,7 +111,7 @@ startServer(world => {
    * "/rocket" in the game, they'll get launched into the air!
    */
   world.chatManager.registerCommand('/rocket', player => {
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => {
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
       entity.applyImpulse({ x: 0, y: 20, z: 0 });
     });
   });

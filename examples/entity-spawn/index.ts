@@ -80,6 +80,6 @@ function setup(world: World) {
 
   // Despawn all player entities when a player leaves the game.
   world.onPlayerLeave = player => {
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => entity.despawn());
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
   };
 }

@@ -151,7 +151,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     // We apply a translation prior to despawn because of a bug in the RAPIER
     // physics engine we use where entities despawned to not trigger a collision
     // event for leaving a sensor. This is a workaround till a better solution is found.
-    world.entityManager.getAllPlayerEntities(player).forEach(entity => {
+    world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
       entity.setPosition({ x: 0, y: 100, z: 0 });
       setTimeout(() => entity.despawn(), 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
     });
