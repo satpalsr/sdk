@@ -195,7 +195,7 @@ Manages Light instances in a world.
 </td></tr>
 <tr><td>
 
-[ModelManager](./server.modelmanager.md)
+[ModelRegistry](./server.modelregistry.md)
 
 
 </td><td>

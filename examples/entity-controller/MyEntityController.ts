@@ -144,7 +144,7 @@ export default class MyEntityController extends BaseEntityController {
         collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
       },
       isSensor: true,
-      relativePosition: { x: 0, y: -0.75, z: 0 },
+      position: { x: 0, y: -0.75, z: 0 },
       tag: 'groundSensor',
       onCollision: (_other: BlockType | Entity, started: boolean) => {
         // Ground contact

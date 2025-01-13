@@ -13664,17 +13664,17 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!GameServer#modelManager:member",
+              "canonicalReference": "server!GameServer#modelRegistry:member",
               "docComment": "/**\n * The model manager for the game server.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get modelManager(): "
+                  "text": "get modelRegistry(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ModelManager",
-                  "canonicalReference": "server!ModelManager:class"
+                  "text": "ModelRegistry",
+                  "canonicalReference": "server!ModelRegistry:class"
                 },
                 {
                   "kind": "Content",
@@ -13684,7 +13684,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "modelManager",
+              "name": "modelRegistry",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -16691,23 +16691,23 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "server!ModelManager:class",
-          "docComment": "/**\n * Manages model data for all known models of the game.\n *\n * @remarks\n *\n * The ModelManager is created internally as a global singletone accessible with the static property `ModelManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ModelManager` class.\n *\n * @example\n * ```typescript\n * import { ModelManager } from 'hytopia';\n *\n * const modelManager = ModelManager.instance;\n * const boundingBox = modelManager.getBoundingBox('models/player.gltf');\n * ```\n *\n * @public\n */\n",
+          "canonicalReference": "server!ModelRegistry:class",
+          "docComment": "/**\n * Manages model data for all known models of the game.\n *\n * @remarks\n *\n * The ModelRegistry is created internally as a global singletone accessible with the static property `ModelRegistry.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ModelRegistry` class.\n *\n * @example\n * ```typescript\n * import { ModelRegistry } from 'hytopia';\n *\n * const modelRegistry = ModelRegistry.instance;\n * const boundingBox = modelRegistry.getBoundingBox('models/player.gltf');\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class ModelManager "
+              "text": "export default class ModelRegistry "
             }
           ],
-          "fileUrlPath": "src/models/ModelManager.ts",
+          "fileUrlPath": "src/models/ModelRegistry.ts",
           "releaseTag": "Public",
           "isAbstract": false,
-          "name": "ModelManager",
+          "name": "ModelRegistry",
           "preserveMemberOrder": false,
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "server!ModelManager#getBoundingBox:member(1)",
+              "canonicalReference": "server!ModelRegistry#getBoundingBox:member(1)",
               "docComment": "/**\n * Retrieves the bounding box of a model.\n *\n * @param modelUri - The URI of the model to retrieve the bounding box for.\n *\n * @returns The bounding box of the model.\n */\n",
               "excerptTokens": [
                 {
@@ -16756,8 +16756,8 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!ModelManager.instance:member",
-              "docComment": "/**\n * The global PlayerManager instance as a singleton.\n */\n",
+              "canonicalReference": "server!ModelRegistry.instance:member",
+              "docComment": "/**\n * The global ModelRegistry instance as a singleton.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -16765,8 +16765,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ModelManager",
-                  "canonicalReference": "server!ModelManager:class"
+                  "text": "ModelRegistry",
+                  "canonicalReference": "server!ModelRegistry:class"
                 },
                 {
                   "kind": "Content",

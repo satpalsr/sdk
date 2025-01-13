@@ -1768,7 +1768,7 @@ export declare class GameServer {
     /** The singleton instance of the game server. */
     static get instance(): GameServer;
     /** The model manager for the game server. */
-    get modelManager(): ModelManager;
+    get modelRegistry(): ModelRegistry;
     /** The player manager for the game server. */
     get playerManager(): PlayerManager;
 
@@ -2077,39 +2077,31 @@ export declare enum LightType {
 
 /** A bounding box for a model. @public */
 declare type ModelBoundingBox = {
-    min: {
-        x: number;
-        y: number;
-        z: number;
-    };
-    max: {
-        x: number;
-        y: number;
-        z: number;
-    };
+    min: Vector3Like;
+    max: Vector3Like;
 };
 
 /**
  * Manages model data for all known models of the game.
  *
  * @remarks
- * The ModelManager is created internally as a global
+ * The ModelRegistry is created internally as a global
  * singletone accessible with the static property
- * `ModelManager.instance`.
+ * `ModelRegistry.instance`.
  *
  * @example
  * ```typescript
- * import { ModelManager } from 'hytopia';
+ * import { ModelRegistry } from 'hytopia';
  *
- * const modelManager = ModelManager.instance;
- * const boundingBox = modelManager.getBoundingBox('models/player.gltf');
+ * const modelRegistry = ModelRegistry.instance;
+ * const boundingBox = modelRegistry.getBoundingBox('models/player.gltf');
  * ```
  *
  * @public
  */
-export declare class ModelManager {
-    /** The global PlayerManager instance as a singleton. */
-    static readonly instance: ModelManager;
+export declare class ModelRegistry {
+    /** The global ModelRegistry instance as a singleton. */
+    static readonly instance: ModelRegistry;
 
 
 

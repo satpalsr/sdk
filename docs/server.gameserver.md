@@ -66,7 +66,7 @@ The singleton instance of the game server.
 </td></tr>
 <tr><td>
 
-[modelManager](./server.gameserver.modelmanager.md)
+[modelRegistry](./server.gameserver.modelregistry.md)
 
 
 </td><td>
@@ -76,7 +76,7 @@ The singleton instance of the game server.
 
 </td><td>
 
-[ModelManager](./server.modelmanager.md)
+[ModelRegistry](./server.modelregistry.md)
 
 
 </td><td>
