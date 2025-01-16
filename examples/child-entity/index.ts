@@ -2,6 +2,7 @@ import {
   startServer,
   Entity,
   PlayerEntity,
+  Quaternion,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -32,7 +33,7 @@ startServer(world => {
     swordChildEntity.spawn(
       world,
       { x: 0, y: 0.3, z: 0.5 }, // spawn with a position relative to the parent node
-      { x: -Math.PI / 3, y: 0, z: 0, w: 1 } // spawn with a rotation so it looks correct in the hand
+      Quaternion.fromEuler(-90, 0, 90), // spawn with a rotation so it looks correct in the hand
     );
   };
 
