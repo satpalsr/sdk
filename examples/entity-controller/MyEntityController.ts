@@ -144,7 +144,7 @@ export default class MyEntityController extends BaseEntityController {
         collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
       },
       isSensor: true,
-      position: { x: 0, y: -0.75, z: 0 },
+      relativePosition: { x: 0, y: -0.75, z: 0 },
       tag: 'groundSensor',
       onCollision: (_other: BlockType | Entity, started: boolean) => {
         // Ground contact
@@ -206,20 +206,23 @@ export default class MyEntityController extends BaseEntityController {
     // Temporary, animations
     if (this.isGrounded && (w || a || s || d)) {
       if (isRunning) {
-        entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => v !== 'run'));
-        entity.startModelLoopedAnimations([ 'run' ]);
-        this._stepAudio?.setPlaybackRate(0.83);
+        const runAnimations = [ 'run_upper', 'run_lower' ];
+        entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => !runAnimations.includes(v)));
+        entity.startModelLoopedAnimations(runAnimations);
+        this._stepAudio?.setPlaybackRate(0.81);
       } else {
-        entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => v !== 'walk'));
-        entity.startModelLoopedAnimations([ 'walk' ]);
-        this._stepAudio?.setPlaybackRate(0.5);
+        const walkAnimations = [ 'walk_upper', 'walk_lower' ];
+        entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => !walkAnimations.includes(v)));
+        entity.startModelLoopedAnimations(walkAnimations);
+        this._stepAudio?.setPlaybackRate(0.55);
       }
 
       this._stepAudio?.play(entity.world, !this._stepAudio?.isPlaying);
     } else {
       this._stepAudio?.pause();
-      entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => v !== 'idle'));
-      entity.startModelLoopedAnimations([ 'idle' ]);
+      const idleAnimations = [ 'idle_upper', 'idle_lower' ];
+      entity.stopModelAnimations(Array.from(entity.modelLoopedAnimations).filter(v => !idleAnimations.includes(v)));
+      entity.startModelLoopedAnimations(idleAnimations);
     }
 
     if (ml) {
