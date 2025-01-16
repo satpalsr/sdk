@@ -1359,6 +1359,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
+
     /**
      * @param options - The options for the entity.
      */
@@ -1385,6 +1387,10 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get name(): string;
     /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
     get opacity(): number | undefined;
+    /** The parent entity of the entity. */
+    get parent(): Entity | undefined;
+    /** The name of the parent's node (if parent is a model entity) this entity is attached to when spawned. */
+    get parentNodeName(): string | undefined;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
     get tag(): string | undefined;
     /** The tint color of the entity. */
@@ -1400,11 +1406,12 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /**
      * Spawns the entity in the world.
      * @param world - The world to spawn the entity in.
-     * @param coordinate - The coordinate to spawn the entity at.
+     * @param position - The position to spawn the entity at.
+     * @param rotation - The optional rotation to spawn the entity with.
      */
-    spawn(world: World, coordinate: Vector3Like): void;
+    spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void;
     /**
-     * Despawns the entity from the world.
+     * Despawns the entity and all children from the world.
      */
     despawn(): void;
     /**
@@ -1602,6 +1609,12 @@ export declare class EntityManager {
      * @returns All spawned entities in the world with a tag that includes the provided substring.
      */
     getEntitiesByTagSubstring(tagSubstring: string): Entity[];
+    /**
+     * Gets all child entities of an entity.
+     * @param entity - The entity to get the children for.
+     * @returns All child entities of the entity.
+     */
+    getEntityChildren(entity: Entity): Entity[];
 
 
 }
@@ -1628,6 +1641,10 @@ export declare interface EntityOptions {
     name?: string;
     /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
     opacity?: number;
+    /** The parent entity of the entity, entities with a parent will ignore creating their own colliders. */
+    parent?: Entity;
+    /** The name of the parent's node (if parent is a model entity) to attach the entity to. */
+    parentNodeName?: string;
     /** The rigid body options for the entity. */
     rigidBodyOptions?: RigidBodyOptions;
     /** An arbitrary identifier tag of the entity. Useful for your own logic. */
@@ -2106,6 +2123,7 @@ export declare class ModelRegistry {
 
 
 
+
     /**
      * Retrieves the bounding box of a model.
      *
@@ -2113,6 +2131,21 @@ export declare class ModelRegistry {
      * @returns The bounding box of the model.
      */
     getBoundingBox(modelUri: string): ModelBoundingBox;
+    /**
+     * Retrieves the names of all nodes in a model.
+     *
+     * @param modelUri - The URI of the model to retrieve the node names for.
+     * @returns The names of all nodes in the model.
+     */
+    getNodeNames(modelUri: string): string[];
+    /**
+     * Checks if a model has a node with the given name.
+     *
+     * @param modelUri - The URI of the model to check.
+     * @param nodeName - The name of the node to check for.
+     * @returns Whether the model has a node with the given name.
+     */
+    modelHasNode(modelUri: string, nodeName: string): boolean;
 
 
 }

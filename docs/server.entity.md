@@ -531,6 +531,48 @@ The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully op
 </td></tr>
 <tr><td>
 
+[parent](./server.entity.parent.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Entity](./server.entity.md) \| undefined
+
+
+</td><td>
+
+The parent entity of the entity.
+
+
+</td></tr>
+<tr><td>
+
+[parentNodeName](./server.entity.parentnodename.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+The name of the parent's node (if parent is a model entity) this entity is attached to when spawned.
+
+
+</td></tr>
+<tr><td>
+
 [tag](./server.entity.tag.md)
 
 
@@ -622,7 +664,7 @@ Description
 
 </td><td>
 
-Despawns the entity from the world.
+Despawns the entity and all children from the world.
 
 
 </td></tr>
@@ -698,7 +740,7 @@ Sets the tint color of the entity.
 </td></tr>
 <tr><td>
 
-[spawn(world, coordinate)](./server.entity.spawn.md)
+[spawn(world, position, rotation)](./server.entity.spawn.md)
 
 
 </td><td>

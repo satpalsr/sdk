@@ -227,6 +227,44 @@ _(Optional)_ The opacity of the entity between 0 and 1. 0 is fully transparent, 
 </td></tr>
 <tr><td>
 
+[parent?](./server.entityoptions.parent.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Entity](./server.entity.md)
+
+
+</td><td>
+
+_(Optional)_ The parent entity of the entity, entities with a parent will ignore creating their own colliders.
+
+
+</td></tr>
+<tr><td>
+
+[parentNodeName?](./server.entityoptions.parentnodename.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ The name of the parent's node (if parent is a model entity) to attach the entity to.
+
+
+</td></tr>
+<tr><td>
+
 [rigidBodyOptions?](./server.entityoptions.rigidbodyoptions.md)
 
 

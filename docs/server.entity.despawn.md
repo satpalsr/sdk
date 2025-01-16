@@ -4,7 +4,7 @@
 
 ## Entity.despawn() method
 
-Despawns the entity from the world.
+Despawns the entity and all children from the world.
 
 **Signature:**
 

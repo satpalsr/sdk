@@ -163,6 +163,20 @@ Gets a spawned entity in the world by its id.
 </td></tr>
 <tr><td>
 
+[getEntityChildren(entity)](./server.entitymanager.getentitychildren.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets all child entities of an entity.
+
+
+</td></tr>
+<tr><td>
+
 [getPlayerEntitiesByPlayer(player)](./server.entitymanager.getplayerentitiesbyplayer.md)
 
 

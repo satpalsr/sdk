@@ -9692,7 +9692,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#despawn:member(1)",
-              "docComment": "/**\n * Despawns the entity from the world.\n */\n",
+              "docComment": "/**\n * Despawns the entity and all children from the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10424,6 +10424,71 @@
               "isAbstract": false
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#parent:member",
+              "docComment": "/**\n * The parent entity of the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get parent(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "parent",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#parentNodeName:member",
+              "docComment": "/**\n * The name of the parent's node (if parent is a model entity) this entity is attached to when spawned.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get parentNodeName(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "parentNodeName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!Entity#setController:member(1)",
               "docComment": "/**\n * Sets the controller for the entity.\n *\n * @param controller - The controller to set.\n */\n",
@@ -10676,7 +10741,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Entity#spawn:member(1)",
-              "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param coordinate - The coordinate to spawn the entity at.\n */\n",
+              "docComment": "/**\n * Spawns the entity in the world.\n *\n * @param world - The world to spawn the entity in.\n *\n * @param position - The position to spawn the entity at.\n *\n * @param rotation - The optional rotation to spawn the entity with.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -10689,12 +10754,21 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", coordinate: "
+                  "text": ", position: "
                 },
                 {
                   "kind": "Reference",
                   "text": "Vector3Like",
                   "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", rotation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
                 },
                 {
                   "kind": "Content",
@@ -10711,8 +10785,8 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -10727,12 +10801,20 @@
                   "isOptional": false
                 },
                 {
-                  "parameterName": "coordinate",
+                  "parameterName": "position",
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
                   },
                   "isOptional": false
+                },
+                {
+                  "parameterName": "rotation",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
                 }
               ],
               "isOptional": false,
@@ -12291,6 +12373,60 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!EntityManager#getEntityChildren:member(1)",
+              "docComment": "/**\n * Gets all child entities of an entity.\n *\n * @param entity - The entity to get the children for.\n *\n * @returns All child entities of the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getEntityChildren(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getEntityChildren"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!EntityManager#getPlayerEntitiesByPlayer:member(1)",
               "docComment": "/**\n * Gets all spawned entities in the world assigned to the provided player.\n *\n * @param player - The player to get the entities for.\n *\n * @returns All spawned entities in the world assigned to the player.\n */\n",
               "excerptTokens": [
@@ -12659,6 +12795,61 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "opacity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#parent:member",
+              "docComment": "/**\n * The parent entity of the entity, entities with a parent will ignore creating their own colliders.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parent?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parent",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!EntityOptions#parentNodeName:member",
+              "docComment": "/**\n * The name of the parent's node (if parent is a model entity) to attach the entity to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parentNodeName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parentNodeName",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -16755,6 +16946,54 @@
               "name": "getBoundingBox"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!ModelRegistry#getNodeNames:member(1)",
+              "docComment": "/**\n * Retrieves the names of all nodes in a model.\n *\n * @param modelUri - The URI of the model to retrieve the node names for.\n *\n * @returns The names of all nodes in the model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getNodeNames(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getNodeNames"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!ModelRegistry.instance:member",
               "docComment": "/**\n * The global ModelRegistry instance as a singleton.\n */\n",
@@ -16784,6 +17023,70 @@
               "isStatic": true,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ModelRegistry#modelHasNode:member(1)",
+              "docComment": "/**\n * Checks if a model has a node with the given name.\n *\n * @param modelUri - The URI of the model to check.\n *\n * @param nodeName - The name of the node to check for.\n *\n * @returns Whether the model has a node with the given name.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelHasNode(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", nodeName: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "nodeName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "modelHasNode"
             }
           ],
           "implementsTokenRanges": []

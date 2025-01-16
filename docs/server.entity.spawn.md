@@ -9,7 +9,7 @@ Spawns the entity in the world.
 **Signature:**
 
 ```typescript
-spawn(world: World, coordinate: Vector3Like): void;
+spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void;
 ```
 
 ## Parameters
@@ -48,7 +48,7 @@ The world to spawn the entity in.
 </td></tr>
 <tr><td>
 
-coordinate
+position
 
 
 </td><td>
@@ -58,7 +58,23 @@ coordinate
 
 </td><td>
 
-The coordinate to spawn the entity at.
+The position to spawn the entity at.
+
+
+</td></tr>
+<tr><td>
+
+rotation
+
+
+</td><td>
+
+[QuaternionLike](./server.quaternionlike.md)
+
+
+</td><td>
+
+_(Optional)_ The optional rotation to spawn the entity with.
 
 
 </td></tr>

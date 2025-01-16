@@ -108,4 +108,32 @@ Retrieves the bounding box of a model.
 
 
 </td></tr>
+<tr><td>
+
+[getNodeNames(modelUri)](./server.modelregistry.getnodenames.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Retrieves the names of all nodes in a model.
+
+
+</td></tr>
+<tr><td>
+
+[modelHasNode(modelUri, nodeName)](./server.modelregistry.modelhasnode.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Checks if a model has a node with the given name.
+
+
+</td></tr>
 </tbody></table>
