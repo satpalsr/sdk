@@ -1229,6 +1229,8 @@ export declare type ContactForceData = {
 
 /** A contact manifold. @public */
 export declare type ContactManifold = {
+    /** The contact points as global coordinates. */
+    contactPoints: Vector3Like[];
     /** The local normal vector of the first collider. */
     localNormalA: Vector3Like;
     /** The local normal vector of the second collider. */

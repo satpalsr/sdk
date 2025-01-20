@@ -9430,7 +9430,16 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    localNormalA: "
+              "text": "{\n    contactPoints: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[];\n    localNormalA: "
             },
             {
               "kind": "Reference",
@@ -9469,7 +9478,7 @@
           "name": "ContactManifold",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 8
+            "endIndex": 10
           }
         },
         {

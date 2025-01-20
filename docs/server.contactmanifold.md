@@ -10,6 +10,7 @@ A contact manifold.
 
 ```typescript
 export type ContactManifold = {
+    contactPoints: Vector3Like[];
     localNormalA: Vector3Like;
     localNormalB: Vector3Like;
     normal: Vector3Like;
