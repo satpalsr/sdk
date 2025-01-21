@@ -336,7 +336,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   const spider = new Entity({
     controller: new SimpleEntityController(),
     name: 'Spider',
-    modelUri: 'models/spider.gltf',
+    modelUri: 'models/npcs/spider.gltf',
     modelLoopedAnimations: [ 'walk' ],
     modelScale: baseScale * randomScaleMultiplier,
     rigidBodyOptions: {
@@ -344,7 +344,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
       enabledRotations: { x: false, y: true, z: false },
       colliders: [
         // Get hitbox collider as collider options based on the model & scale.
-        Collider.optionsFromModelUri('models/spider.gltf', baseScale * randomScaleMultiplier),
+        Collider.optionsFromModelUri('models/npcs/spider.gltf', baseScale * randomScaleMultiplier),
         {
           shape: ColliderShape.CYLINDER,
           radius: 20,

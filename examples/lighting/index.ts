@@ -87,7 +87,7 @@ startServer(world => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/player.gltf',
+      modelUri: 'models/players/player.gltf',
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
@@ -114,7 +114,7 @@ startServer(world => {
 
   // Play some music on game start
   (new Audio({
-    uri: 'audio/music/cave.mp3',
+    uri: 'audio/music/cave-theme.mp3',
     loop: true,
   })).play(world);
 });
