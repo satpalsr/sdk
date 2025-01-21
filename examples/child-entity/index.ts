@@ -15,7 +15,7 @@ startServer(world => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/player.gltf',
+      modelUri: 'models/players/player.gltf',
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
@@ -25,7 +25,7 @@ startServer(world => {
     // Spawn a sword entity as a child of the player entity.
     const swordChildEntity = new Entity({
       name: 'sword',
-      modelUri: 'models/sword.gltf',
+      modelUri: 'models/items/sword.gltf',
       parent: playerEntity,
       parentNodeName: 'hand_right_anchor',
     });
