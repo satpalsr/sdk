@@ -122,7 +122,7 @@ startServer(world => {
    */
   
   new Audio({
-    uri: 'audio/music/overworld.mp3',
+    uri: 'audio/music/hytopia-main.mp3',
     loop: true,
     volume: 0.1,
   }).play(world);
