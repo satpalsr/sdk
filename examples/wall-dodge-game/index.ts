@@ -29,12 +29,12 @@ const GAME_BLOCK_SPAWN_RANGE = {
 };
 
 const GAME_BLOCK_RANDOM_TEXTURES = [
-  'textures/grass',
-  'textures/bricks.png',
-  'textures/glass.png',
-  'textures/gravel.png',
-  'textures/sand.png',
-  'textures/void_sand.png',
+  'blocks/grass',
+  'blocks/bricks.png',
+  'blocks/glass.png',
+  'blocks/gravel.png',
+  'blocks/sand.png',
+  'blocks/void-sand.png',
 ];
 
 const GAME_BLOCK_DESPAWN_Z = 12; // Blocks will despawn when block z position is > than this.
@@ -68,14 +68,14 @@ function setupJoinNPC(world: World) {
   const joinNPC = new Entity({
     controller: new SimpleEntityController(),
     name: 'Join NPC',
-    modelUri: 'models/mindflayer.gltf',
+    modelUri: 'models/npcs/mindflayer.gltf',
     modelLoopedAnimations: [ 'idle' ],
     modelScale: 0.5,
     rigidBodyOptions: {
       type: RigidBodyType.FIXED, // It won't ever move, so we can use a fixed body
       rotation: { x: 0, y: 1, z: 0, w: 0 }, // Rotate the NPC to face the player
       colliders: [
-        Collider.optionsFromModelUri('models/mindflayer.gltf', 0.5), // Uses the model's bounding box to create the hitbox collider
+        Collider.optionsFromModelUri('models/npcs/mindflayer.gltf', 0.5), // Uses the model's bounding box to create the hitbox collider
         { // Create a sensor that teleports the player into the game
           shape: ColliderShape.BLOCK,
           halfExtents: { x: 1.5, y: 1, z: 1.5 }, // size it slightly smaller than the platform the join NPC is standing on
@@ -256,7 +256,7 @@ function onPlayerJoin(world: World, player: Player) {
   const playerEntity = new PlayerEntity({
     player,
     name: 'Player',
-    modelUri: 'models/player.gltf',
+    modelUri: 'models/players/player.gltf',
     modelLoopedAnimations: [ 'idle' ],
     modelScale: 0.5,
   });
