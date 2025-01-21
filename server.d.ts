@@ -3930,7 +3930,7 @@ export declare interface Vector3Like {
  * const world = new World({
  *   id: 1,
  *   name: 'My World',
- *   skyboxUri: 'textures/skyboxes/default.png',
+ *   skyboxUri: 'skyboxes/partly-cloudy',
  * });
  * ```
  *
