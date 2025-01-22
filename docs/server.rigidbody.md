@@ -1138,6 +1138,62 @@ Removes the rigid body from the simulation it belongs to.
 </td></tr>
 <tr><td>
 
+[resetAngularVelocity()](./server.rigidbody.resetangularvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resets the angular velocity of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[resetForces()](./server.rigidbody.resetforces.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resets the forces actiong on the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[resetLinearVelocity()](./server.rigidbody.resetlinearvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resets the linear velocity of the rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[resetTorques()](./server.rigidbody.resettorques.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resets the torques acting on the rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [setAdditionalMass(additionalMass)](./server.rigidbody.setadditionalmass.md)
 
 

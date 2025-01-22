@@ -73,4 +73,23 @@ The block types in the map.
 
 
 </td></tr>
+<tr><td>
+
+[entities](./server.worldmap.entities.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ \[position: string\]: [EntityOptions](./server.entityoptions.md)<!-- -->; }
+
+
+</td><td>
+
+The entities in the map.
+
+
+</td></tr>
 </tbody></table>

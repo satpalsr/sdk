@@ -1363,6 +1363,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1445,6 +1446,23 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
      */
     setOpacity(opacity: number): void;
     /**
+     * Sets the parent of the entity and resets this entity's position and rotation.
+     *
+     * @remarks
+     * When setting the parent, all forces, torques and velocities of this entity are reset.
+     * Additionally, this entity's type will be set to `KINEMATIC_VELOCITY` if it is not already.
+     * All colliders of this entity will be disabled when parent is not undefined. If the provided parent
+     * is undefined, this entity will be removed from its parent and all colliders will be re-enabled.
+     * When setting an undefined parent to remove this entity from its parent, this entity's type
+     * will be set to the last type it was set to before being a child.
+     *
+     * @param parent - The parent entity to set, or undefined to remove from an existing parent.
+     * @param parentNodeName - The name of the parent's node (if parent is a model entity) this entity will attach to.
+     * @param position - The position to set for the entity. If parent is provided, this is relative to the parent's attachment point.
+     * @param rotation - The rotation to set for the entity. If parent is provided, this is relative to the parent's rotation.
+     */
+    setParent(parent: Entity | undefined, parentNodeName?: string, position?: Vector3Like, rotation?: QuaternionLike): void;
+    /**
      * Sets the tint color of the entity.
      * @param tintColor - The tint color of the entity.
      */
@@ -1506,6 +1524,11 @@ export declare namespace EntityEventPayload {
         entity: Entity;
         opacity: number;
     }
+    export interface SetParent {
+        entity: Entity;
+        parent: Entity | undefined;
+        parentNodeName: string | undefined;
+    }
     export interface SetTintColor {
         entity: Entity;
         tintColor: RgbColor | undefined;
@@ -1541,6 +1564,7 @@ export declare enum EntityEventType {
     SET_MODEL_ANIMATIONS_PLAYBACK_RATE = "ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE",
     SET_MODEL_HIDDEN_NODES = "ENTITY.SET_MODEL_HIDDEN_NODES",
     SET_OPACITY = "ENTITY.SET_OPACITY",
+    SET_PARENT = "ENTITY.SET_PARENT",
     SET_TINT_COLOR = "ENTITY.SET_TINT_COLOR",
     SPAWN = "ENTITY.SPAWN",
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
@@ -3278,6 +3302,22 @@ export declare class RigidBody {
     removeFromSimulation(): void;
 
     /**
+     * Resets the angular velocity of the rigid body.
+     */
+    resetAngularVelocity(): void;
+    /**
+     * Resets the forces actiong on the rigid body.
+     */
+    resetForces(): void;
+    /**
+     * Resets the linear velocity of the rigid body.
+     */
+    resetLinearVelocity(): void;
+    /**
+     * Resets the torques acting on the rigid body.
+     */
+    resetTorques(): void;
+    /**
      * Explicitly puts the rigid body to sleep. Physics otherwise optimizes sleeping.
      */
     sleep(): void;
@@ -4127,6 +4167,11 @@ export declare interface WorldMap {
     blocks: {
         /** The global coordinate to block type id mapping. */
         [coordinate: string]: number;
+    };
+    /** The entities in the map. */
+    entities: {
+        /** The position to entity as entity options mapping. */
+        [position: string]: EntityOptions;
     };
 }
 
