@@ -37,7 +37,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[blocks](./server.worldmap.blocks.md)
+[blocks?](./server.worldmap.blocks.md)
 
 
 </td><td>
@@ -50,13 +50,13 @@ Description
 
 </td><td>
 
-The blocks in the map
+_(Optional)_ The blocks in the map
 
 
 </td></tr>
 <tr><td>
 
-[blockTypes](./server.worldmap.blocktypes.md)
+[blockTypes?](./server.worldmap.blocktypes.md)
 
 
 </td><td>
@@ -69,13 +69,13 @@ The blocks in the map
 
 </td><td>
 
-The block types in the map.
+_(Optional)_ The block types in the map.
 
 
 </td></tr>
 <tr><td>
 
-[entities](./server.worldmap.entities.md)
+[entities?](./server.worldmap.entities.md)
 
 
 </td><td>
@@ -88,7 +88,7 @@ The block types in the map.
 
 </td><td>
 
-The entities in the map.
+_(Optional)_ The entities in the map.
 
 
 </td></tr>

@@ -9,7 +9,7 @@ The entities in the map.
 **Signature:**
 
 ```typescript
-entities: {
+entities?: {
         [position: string]: EntityOptions;
     };
 ```

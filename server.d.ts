@@ -4162,14 +4162,14 @@ export declare enum WorldLoopEventType {
 /** A map representation for a world. @public */
 export declare interface WorldMap {
     /** The block types in the map. */
-    blockTypes: BlockTypeOptions[];
+    blockTypes?: BlockTypeOptions[];
     /** The blocks in the map */
-    blocks: {
+    blocks?: {
         /** The global coordinate to block type id mapping. */
         [coordinate: string]: number;
     };
     /** The entities in the map. */
-    entities: {
+    entities?: {
         /** The position to entity as entity options mapping. */
         [position: string]: EntityOptions;
     };

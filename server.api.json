@@ -33187,7 +33187,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "blocks: "
+                  "text": "blocks?: "
                 },
                 {
                   "kind": "Content",
@@ -33199,7 +33199,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "blocks",
               "propertyTypeTokenRange": {
@@ -33214,7 +33214,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "blockTypes: "
+                  "text": "blockTypes?: "
                 },
                 {
                   "kind": "Reference",
@@ -33231,7 +33231,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "blockTypes",
               "propertyTypeTokenRange": {
@@ -33246,7 +33246,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "entities: "
+                  "text": "entities?: "
                 },
                 {
                   "kind": "Content",
@@ -33267,7 +33267,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "entities",
               "propertyTypeTokenRange": {
