@@ -63,13 +63,13 @@ let gameUiState: object = {};
 
 // Audio
 const gameActiveAudio = new Audio({
-  uri: 'audio/music.mp3',
+  uri: 'audio/music/hytopia-main.mp3',
   loop: true,
   volume: 0.2,
 });
 
 const gameInactiveAudio = new Audio({
-  uri: 'audio/music/overworld.mp3',
+  uri: 'audio/music/hytopia-main.mp3',
   loop: true,
   volume: 0.2,
 });
@@ -90,7 +90,7 @@ function onPlayerJoin(world: World, player: Player) {
   const playerEntity = new PlayerEntity({
     player,
     name: 'Player',
-    modelUri: 'models/player.gltf',
+    modelUri: 'models/players/player.gltf',
     modelLoopedAnimations: ['idle'],
     modelScale: 0.5,
   });
@@ -125,7 +125,7 @@ function onPlayerLeave(world: World, player: Player) {
 function spawnJoinNpc(world: World) {
   const joinNpc = new Entity({
     name: 'Join NPC',
-    modelUri: 'models/mindflayer.gltf',
+    modelUri: 'models/npcs/mindflayer.gltf',
     modelLoopedAnimations: ['idle'],
     modelScale: 0.4,
     rigidBodyOptions: {
@@ -133,7 +133,7 @@ function spawnJoinNpc(world: World) {
       enabledPositions: { x: false, y: true, z: false },
       enabledRotations: { x: false, y: true, z: false },
       colliders: [
-        Collider.optionsFromModelUri('models/mindflayer.gltf', 0.4),
+        Collider.optionsFromModelUri('models/npcs/mindflayer.gltf', 0.4),
         {
           shape: ColliderShape.CYLINDER,
           radius: 2,

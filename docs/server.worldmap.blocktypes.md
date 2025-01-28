@@ -9,5 +9,5 @@ The block types in the map.
 **Signature:**
 
 ```typescript
-blockTypes: BlockTypeOptions[];
+blockTypes?: BlockTypeOptions[];
 ```

@@ -63,6 +63,15 @@ Description
 </td></tr>
 <tr><td>
 
+[SetParent](./server.entityeventpayload.setparent.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [SetTintColor](./server.entityeventpayload.settintcolor.md)
 
 

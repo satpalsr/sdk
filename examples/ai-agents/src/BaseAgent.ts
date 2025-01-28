@@ -78,7 +78,7 @@ export class BaseAgent extends Entity {
 	constructor(options: { name?: string; systemPrompt: string }) {
 		super({
 			name: options.name || "BaseAgent",
-			modelUri: "models/player.gltf",
+			modelUri: "models/players/player.gltf",
 			modelLoopedAnimations: ["idle"],
 			modelScale: 0.5,
 			controller: new SimpleEntityController(),

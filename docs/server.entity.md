@@ -726,6 +726,20 @@ Sets the opacity of the entity.
 </td></tr>
 <tr><td>
 
+[setParent(parent, parentNodeName, position, rotation)](./server.entity.setparent.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the parent of the entity and resets this entity's position and rotation.
+
+
+</td></tr>
+<tr><td>
+
 [setTintColor(tintColor)](./server.entity.settintcolor.md)
 
 

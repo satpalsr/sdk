@@ -97,7 +97,7 @@ startServer((world) => {
 		const playerEntity = new PlayerEntity({
 			player,
 			name: "Player",
-			modelUri: "models/player.gltf",
+			modelUri: "models/players/player.gltf",
 			modelLoopedAnimations: ["idle"],
 			modelScale: 0.5,
 		});
@@ -151,7 +151,7 @@ startServer((world) => {
 	 */
 
 	new Audio({
-		uri: "audio/music/overworld.mp3",
+		uri: "audio/music/hytopia-main.mp3",
 		loop: true,
 		volume: 0.1,
 	}).play(world);

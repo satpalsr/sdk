@@ -88,6 +88,20 @@ SET\_OPACITY
 </td></tr>
 <tr><td>
 
+SET\_PARENT
+
+
+</td><td>
+
+`"ENTITY.SET_PARENT"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SET\_TINT\_COLOR
 
 

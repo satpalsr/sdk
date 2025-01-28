@@ -114,7 +114,7 @@ export default class MyEntityController extends BaseEntityController {
    */
   public attach(entity: Entity) {
     this._stepAudio = new Audio({
-      uri: 'audio/sfx/step.wav',
+      uri: 'audio/sfx/step/stone/stone-step-04.mp3',
       loop: true,
       volume: 0.1,
       attachedToEntity: entity,

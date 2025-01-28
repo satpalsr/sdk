@@ -21,7 +21,7 @@ startServer(world => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/player.gltf',
+      modelUri: 'models/players/player.gltf',
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
@@ -37,7 +37,7 @@ startServer(world => {
    * Spawn a block entity as a moving platform
    */
   const blockPlatform = new Entity({
-    blockTextureUri: 'textures/grass', // A texture URI without a file extension will use a folder and look for the textures for each face in the folder (-x.png, +x.png, -y.png, +y.png, -z.png, +z.png)
+    blockTextureUri: 'blocks/grass', // A texture URI without a file extension will use a folder and look for the textures for each face in the folder (-x.png, +x.png, -y.png, +y.png, -z.png, +z.png)
     blockHalfExtents: { x: 1, y: 0.5, z: 1 },
     rigidBodyOptions: {
       type: RigidBodyType.KINEMATIC_VELOCITY, // Kinematic means platform won't be effected by external physics, including gravity
@@ -64,7 +64,7 @@ startServer(world => {
    * Spawn a 2x2x2 block entity that spins in the air
    */
   const spinningBlock = new Entity({
-    blockTextureUri: 'textures/stone_bricks.png',
+    blockTextureUri: 'blocks/stone-bricks.png',
     blockHalfExtents: { x: 1, y: 1, z: 1 }, // half extents at the target size / 2.
     rigidBodyOptions: {
       type: RigidBodyType.KINEMATIC_VELOCITY,
@@ -78,7 +78,7 @@ startServer(world => {
    * Spawn a block entity that interacts with physics and can be pushed by players
    */
   const movableBlock = new Entity({ // Entity is dynamic by default, meaning it will interact with external forces, including gravity
-    blockTextureUri: 'textures/sand.png',
+    blockTextureUri: 'blocks/sand.png',
 
     // A block of 1x1x1 would be half extents of 0.5x0.5x0.5, 
     // if you do not explicitly create rigidBodyOptions.colliders 
@@ -100,7 +100,7 @@ startServer(world => {
    * Also, prevent it from rotating.
    */
   const heavyBlock = new Entity({
-    blockTextureUri: 'textures/stone_bricks.png',
+    blockTextureUri: 'blocks/stone-bricks.png',
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 },
     rigidBodyOptions: {
       type: RigidBodyType.DYNAMIC,
@@ -116,7 +116,7 @@ startServer(world => {
    * Also disable rotations so it doesn't spin around like a maniac
    */
   const bouncingBlock = new Entity({
-    blockTextureUri: 'textures/ice.png',
+    blockTextureUri: 'blocks/ice.png',
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 },
     rigidBodyOptions: {
       type: RigidBodyType.DYNAMIC,
@@ -138,7 +138,7 @@ startServer(world => {
    * Because, again why not?
    */
   const blockPet = new Entity({
-    blockTextureUri: 'textures/bricks.png',
+    blockTextureUri: 'blocks/bricks.png',
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 },
     // attach a simple entity controller so we can pathfind,
     // the entity controller will be created and associated when we spawn the entity

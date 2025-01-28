@@ -9430,7 +9430,16 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    localNormalA: "
+              "text": "{\n    contactPoints: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[];\n    localNormalA: "
             },
             {
               "kind": "Reference",
@@ -9469,7 +9478,7 @@
           "name": "ContactManifold",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 8
+            "endIndex": 10
           }
         },
         {
@@ -10687,6 +10696,109 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Entity#setParent:member(1)",
+              "docComment": "/**\n * Sets the parent of the entity and resets this entity's position and rotation.\n *\n * @remarks\n *\n * When setting the parent, all forces, torques and velocities of this entity are reset. Additionally, this entity's type will be set to `KINEMATIC_VELOCITY` if it is not already. All colliders of this entity will be disabled when parent is not undefined. If the provided parent is undefined, this entity will be removed from its parent and all colliders will be re-enabled. When setting an undefined parent to remove this entity from its parent, this entity's type will be set to the last type it was set to before being a child.\n *\n * @param parent - The parent entity to set, or undefined to remove from an existing parent.\n *\n * @param parentNodeName - The name of the parent's node (if parent is a model entity) this entity will attach to.\n *\n * @param position - The position to set for the entity. If parent is provided, this is relative to the parent's attachment point.\n *\n * @param rotation - The rotation to set for the entity. If parent is provided, this is relative to the parent's rotation.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setParent(parent: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", parentNodeName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", position?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", rotation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "parent",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "parentNodeName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "rotation",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 9
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setParent"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Entity#setTintColor:member(1)",
               "docComment": "/**\n * Sets the tint color of the entity.\n *\n * @param tintColor - The tint color of the entity.\n */\n",
               "excerptTokens": [
@@ -11360,6 +11472,110 @@
             },
             {
               "kind": "Interface",
+              "canonicalReference": "server!EntityEventPayload.SetParent:interface",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interface SetParent "
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SetParent",
+              "preserveMemberOrder": false,
+              "members": [
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetParent#entity:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "entity: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "entity",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetParent#parent:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "parent: "
+                    },
+                    {
+                      "kind": "Reference",
+                      "text": "Entity",
+                      "canonicalReference": "server!Entity:class"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": " | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "parent",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!EntityEventPayload.SetParent#parentNodeName:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "parentNodeName: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string | undefined"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": false,
+                  "releaseTag": "Public",
+                  "name": "parentNodeName",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "extendsTokenRanges": []
+            },
+            {
+              "kind": "Interface",
               "canonicalReference": "server!EntityEventPayload.SetTintColor:interface",
               "docComment": "",
               "excerptTokens": [
@@ -11957,6 +12173,27 @@
               },
               "releaseTag": "Public",
               "name": "SET_OPACITY"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!EntityEventType.SET_PARENT:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SET_PARENT = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"ENTITY.SET_PARENT\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SET_PARENT"
             },
             {
               "kind": "EnumMember",
@@ -25655,6 +25892,130 @@
               "name": "removeFromSimulation"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!RigidBody#resetAngularVelocity:member(1)",
+              "docComment": "/**\n * Resets the angular velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resetAngularVelocity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resetAngularVelocity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!RigidBody#resetForces:member(1)",
+              "docComment": "/**\n * Resets the forces actiong on the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resetForces(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resetForces"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!RigidBody#resetLinearVelocity:member(1)",
+              "docComment": "/**\n * Resets the linear velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resetLinearVelocity(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resetLinearVelocity"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!RigidBody#resetTorques:member(1)",
+              "docComment": "/**\n * Resets the torques acting on the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resetTorques(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resetTorques"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!RigidBody#rotation:member",
               "docComment": "/**\n * The rotation of the rigid body.\n */\n",
@@ -31170,7 +31531,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!World:class",
-          "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single automatically created default world is all you need, but this flexibility is available for more complex games.\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'textures/skyboxes/default.png',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single automatically created default world is all you need, but this flexibility is available for more complex games.\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'skyboxes/partly-cloudy',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -32826,7 +33187,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "blocks: "
+                  "text": "blocks?: "
                 },
                 {
                   "kind": "Content",
@@ -32838,7 +33199,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "blocks",
               "propertyTypeTokenRange": {
@@ -32853,7 +33214,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "blockTypes: "
+                  "text": "blockTypes?: "
                 },
                 {
                   "kind": "Reference",
@@ -32870,12 +33231,48 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "blockTypes",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldMap#entities:member",
+              "docComment": "/**\n * The entities in the map.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "entities?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [position: string]: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EntityOptions",
+                  "canonicalReference": "server!EntityOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "entities",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
               }
             }
           ],

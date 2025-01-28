@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hytopia": "latest",
-    "@hytopia.com/assets": "latest"
+    "@hytopia.com/assets": "^0.2.5",
+    "hytopia": "^0.1.86"
   }
 }

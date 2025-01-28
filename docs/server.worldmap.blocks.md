@@ -9,7 +9,7 @@ The blocks in the map
 **Signature:**
 
 ```typescript
-blocks: {
+blocks?: {
         [coordinate: string]: number;
     };
 ```

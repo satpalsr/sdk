@@ -24,7 +24,7 @@ Worlds are the primary container for game objects and interactions. A game can h
 const world = new World({
   id: 1,
   name: 'My World',
-  skyboxUri: 'textures/skyboxes/default.png',
+  skyboxUri: 'skyboxes/partly-cloudy',
 });
 ```
 

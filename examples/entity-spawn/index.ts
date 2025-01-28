@@ -18,7 +18,7 @@ startServer(world => {
   // Model uri's are relative to your project's assets folder.
   // Learn more about Entity here: https://github.com/hytopiagg/sdk/blob/main/docs/server.entity.md
   const spider = new Entity({ 
-    modelUri: 'models/spider.gltf',
+    modelUri: 'models/npcs/spider.gltf',
     modelScale: 3,
     // We can have the entity play any animations
     // at spawn we'd like, multiple animation will be blended.
@@ -32,7 +32,7 @@ startServer(world => {
       // Learn more about collider options here: https://github.com/hytopiagg/sdk/blob/main/docs/server.collideroptions.md
       colliders: [
         // Get hitbox collider as collider options based on the model & scale.
-        Collider.optionsFromModelUri('models/spider.gltf', 3),
+        Collider.optionsFromModelUri('models/npcs/spider.gltf', 3),
         {
           shape: ColliderShape.CYLINDER,
           halfHeight: 1.7,
@@ -70,7 +70,7 @@ function setup(world: World) {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/player.gltf',
+      modelUri: 'models/players/player.gltf',
       modelLoopedAnimations: [ 'idle' ],
       modelScale: 0.5,
     });
