@@ -94,6 +94,63 @@ _(Optional)_ A function allowing custom logic to determine if the entity can wal
 </td></tr>
 <tr><td>
 
+[idleLoopedAnimations?](./server.playerentitycontrolleroptions.idleloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ Overrides the animation(s) that will play when the entity is idle.
+
+
+</td></tr>
+<tr><td>
+
+[interactOneshotAnimations?](./server.playerentitycontrolleroptions.interactoneshotanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ Overrides the animation(s) that will play when the entity interacts (left click)
+
+
+</td></tr>
+<tr><td>
+
+[jumpOneshotAnimations?](./server.playerentitycontrolleroptions.jumponeshotanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ Overrides the animation(s) that will play when the entity is jumping.
+
+
+</td></tr>
+<tr><td>
+
 [jumpVelocity?](./server.playerentitycontrolleroptions.jumpvelocity.md)
 
 
@@ -108,6 +165,25 @@ number
 </td><td>
 
 _(Optional)_ The upward velocity applied to the entity when it jumps.
+
+
+</td></tr>
+<tr><td>
+
+[runLoopedAnimations?](./server.playerentitycontrolleroptions.runloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ Overrides the animation(s) that will play when the entity is running.
 
 
 </td></tr>
@@ -146,6 +222,25 @@ boolean
 </td><td>
 
 _(Optional)_ Whether the entity sticks to platforms, defaults to true.
+
+
+</td></tr>
+<tr><td>
+
+[walkLoopedAnimations?](./server.playerentitycontrolleroptions.walkloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+_(Optional)_ Overrides the animation(s) that will play when the entity is walking.
 
 
 </td></tr>
