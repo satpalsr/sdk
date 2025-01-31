@@ -148,6 +148,44 @@ A function allowing custom logic to determine if the entity can walk.
 </td></tr>
 <tr><td>
 
+[idleLoopedAnimations](./server.playerentitycontroller.idleloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The looped animation(s) that will play when the entity is idle.
+
+
+</td></tr>
+<tr><td>
+
+[interactOneshotAnimations](./server.playerentitycontroller.interactoneshotanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The oneshot animation(s) that will play when the entity interacts (left click)
+
+
+</td></tr>
+<tr><td>
+
 [isGrounded](./server.playerentitycontroller.isgrounded.md)
 
 
@@ -185,6 +223,25 @@ boolean
 </td><td>
 
 Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[jumpOneshotAnimations](./server.playerentitycontroller.jumponeshotanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The oneshot animation(s) that will play when the entity is jumping.
 
 
 </td></tr>
@@ -230,6 +287,25 @@ The platform the entity is on, if any.
 </td></tr>
 <tr><td>
 
+[runLoopedAnimations](./server.playerentitycontroller.runloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The looped animation(s) that will play when the entity is running.
+
+
+</td></tr>
+<tr><td>
+
 [runVelocity](./server.playerentitycontroller.runvelocity.md)
 
 
@@ -263,6 +339,25 @@ boolean
 </td><td>
 
 Whether the entity sticks to platforms.
+
+
+</td></tr>
+<tr><td>
+
+[walkLoopedAnimations](./server.playerentitycontroller.walkloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The looped animation(s) that will play when the entity is walking.
 
 
 </td></tr>

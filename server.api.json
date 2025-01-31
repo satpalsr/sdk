@@ -20563,6 +20563,66 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#idleLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is idle.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "idleLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "idleLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#interactOneshotAnimations:member",
+              "docComment": "/**\n * The oneshot animation(s) that will play when the entity interacts (left click)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interactOneshotAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "interactOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!PlayerEntityController#isGrounded:member",
               "docComment": "/**\n * Whether the entity is grounded.\n */\n",
               "excerptTokens": [
@@ -20613,6 +20673,36 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "isOnPlatform",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#jumpOneshotAnimations:member",
+              "docComment": "/**\n * The oneshot animation(s) that will play when the entity is jumping.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpOneshotAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "jumpOneshotAnimations",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -20681,6 +20771,36 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#runLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is running.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "runLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false,
               "isProtected": false,
@@ -20896,6 +21016,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!PlayerEntityController#walkLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is walking.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "walkLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!PlayerEntityController#walkVelocity:member",
               "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
               "excerptTokens": [
@@ -21029,6 +21179,87 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#idleLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is idle.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "idleLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "idleLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#interactOneshotAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity interacts (left click)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interactOneshotAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "interactOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#jumpOneshotAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is jumping.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpOneshotAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "jumpOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEntityControllerOptions#jumpVelocity:member",
               "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
               "excerptTokens": [
@@ -21049,6 +21280,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "jumpVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#runLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is running.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "runLoopedAnimations",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -21103,6 +21361,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEntityControllerOptions#walkLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is walking.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "walkLoopedAnimations",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

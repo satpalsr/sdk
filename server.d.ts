@@ -2575,12 +2575,22 @@ export declare class PlayerEntityController extends BaseEntityController {
      * @returns Whether the entity of the entity controller can jump.
      */
     canJump: (playerEntityController: PlayerEntityController) => boolean;
+    /** The looped animation(s) that will play when the entity is idle. */
+    idleLoopedAnimations: string[];
+    /** The oneshot animation(s) that will play when the entity interacts (left click) */
+    interactOneshotAnimations: string[];
+    /** The oneshot animation(s) that will play when the entity is jumping. */
+    jumpOneshotAnimations: string[];
     /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity: number;
+    /** The looped animation(s) that will play when the entity is running. */
+    runLoopedAnimations: string[];
     /** The normalized horizontal velocity applied to the entity when it runs. */
     runVelocity: number;
     /** Whether the entity sticks to platforms. */
     sticksToPlatforms: boolean;
+    /** The looped animation(s) that will play when the entity is walking. */
+    walkLoopedAnimations: string[];
     /** The normalized horizontal velocity applied to the entity when it walks. */
     walkVelocity: number;
 
@@ -2628,12 +2638,22 @@ export declare interface PlayerEntityControllerOptions {
     canWalk?: () => boolean;
     /** A function allowing custom logic to determine if the entity can run. */
     canRun?: () => boolean;
+    /** Overrides the animation(s) that will play when the entity is idle. */
+    idleLoopedAnimations?: string[];
+    /** Overrides the animation(s) that will play when the entity interacts (left click) */
+    interactOneshotAnimations?: string[];
+    /** Overrides the animation(s) that will play when the entity is jumping. */
+    jumpOneshotAnimations?: string[];
     /** The upward velocity applied to the entity when it jumps. */
     jumpVelocity?: number;
     /** The normalized horizontal velocity applied to the entity when it runs. */
     runVelocity?: number;
+    /** Overrides the animation(s) that will play when the entity is running. */
+    runLoopedAnimations?: string[];
     /** Whether the entity sticks to platforms, defaults to true. */
     sticksToPlatforms?: boolean;
+    /** Overrides the animation(s) that will play when the entity is walking. */
+    walkLoopedAnimations?: string[];
     /** The normalized horizontal velocity applied to the entity when it walks. */
     walkVelocity?: number;
 }
