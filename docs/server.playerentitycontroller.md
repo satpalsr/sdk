@@ -91,6 +91,25 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[autoCancelMouseLeftClick](./server.playerentitycontroller.autocancelmouseleftclick.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether to automatically cancel left click input after first processed tick, defaults to true.
+
+
+</td></tr>
+<tr><td>
+
 [canJump](./server.playerentitycontroller.canjump.md)
 
 

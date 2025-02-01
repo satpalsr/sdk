@@ -206,6 +206,17 @@ Manages model data for all known models of the game.
 </td></tr>
 <tr><td>
 
+[PathfindingEntityController](./server.pathfindingentitycontroller.md)
+
+
+</td><td>
+
+A pathfinding entity controller built on top of [SimpleEntityController](./server.simpleentitycontroller.md)<!-- -->.
+
+
+</td></tr>
+<tr><td>
+
 [Player](./server.player.md)
 
 
@@ -1147,6 +1158,39 @@ Options for the [SimpleEntityController.move()](./server.simpleentitycontroller.
 </td></tr>
 <tr><td>
 
+[PathfindAbortCallback](./server.pathfindabortcallback.md)
+
+
+</td><td>
+
+A callback function called when the pathfinding algorithm aborts.
+
+
+</td></tr>
+<tr><td>
+
+[PathfindCompleteCallback](./server.pathfindcompletecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the PathfindingEntityController finishes pathfinding and is now at the target coordinate.
+
+
+</td></tr>
+<tr><td>
+
+[PathfindingOptions](./server.pathfindingoptions.md)
+
+
+</td><td>
+
+Options for the [PathfindingEntityController.pathfind()](./server.pathfindingentitycontroller.pathfind.md) method.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerCameraOrientation](./server.playercameraorientation.md)
 
 
@@ -1208,6 +1252,28 @@ Options for raycasting.
 </td><td>
 
 Additional mass properties for a RigidBody.
+
+
+</td></tr>
+<tr><td>
+
+[WaypointMoveCompleteCallback](./server.waypointmovecompletecallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the PathfindingEntityController finishes moving to a calculate waypoint of its current path.
+
+
+</td></tr>
+<tr><td>
+
+[WaypointMoveSkippedCallback](./server.waypointmoveskippedcallback.md)
+
+
+</td><td>
+
+A callback function called when the entity associated with the PathfindingEntityController skips a waypoint because it took too long to reach.
 
 
 </td></tr>

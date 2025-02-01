@@ -71,6 +71,20 @@ Rotates the entity at a given speed to face a target coordinate.
 </td></tr>
 <tr><td>
 
+[jump(height)](./server.simpleentitycontroller.jump.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Applies an upwards impulse to the entity to simulate a jump, only supported for entities with dynamic rigid body types.
+
+
+</td></tr>
+<tr><td>
+
 [move(target, speed, options)](./server.simpleentitycontroller.move.md)
 
 

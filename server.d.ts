@@ -2213,6 +2213,111 @@ export declare type MoveOptions = {
 };
 
 /**
+ * A callback function called when the pathfinding algorithm aborts.
+ * @public
+ */
+export declare type PathfindAbortCallback = () => void;
+
+/**
+ * A callback function called when the entity associated with the
+ * PathfindingEntityController finishes pathfinding and is now at the
+ * target coordinate.
+ * @public
+ */
+export declare type PathfindCompleteCallback = () => void;
+
+/**
+ * A pathfinding entity controller built on top of {@link SimpleEntityController}.
+ *
+ * @remarks
+ * This class implements pathfinding using the A* algorithm. Pathfinding when frequently
+ * called can cause performance issues, use it sparingly. The .pathfind() method should only need to
+ * be called once in nearly all cases when attempting to move an entity to a target coordinate.
+ *
+ * @public
+ */
+export declare class PathfindingEntityController extends SimpleEntityController {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /** Whether to enable debug mode or not. When debug mode is enabled, the pathfinding algorithm will log debug information to the console. Defaults to false. */
+    get debug(): boolean;
+    /** The maximum fall distance the entity can fall. */
+    get maxFall(): number;
+    /** The maximum jump distance the entity can jump. */
+    get maxJump(): number;
+    /** The maximum number of open set iterations that can be processed before aborting pathfinding. Defaults to 200. */
+    get maxOpenSetIterations(): number;
+    /** The speed of the entity. */
+    get speed(): number;
+    /** The target coordinate to pathfind to. */
+    get target(): Vector3Like | undefined;
+    /** The vertical penalty for the pathfinding algorithm. A higher value will prefer paths with less vertical movement. */
+    get verticalPenalty(): number;
+    /** The current waypoints being followed. */
+    get waypoints(): Vector3Like[];
+    /** The index representing the next waypoint moving towards of the current set of waypoints being followed. */
+    get waypointNextIndex(): number;
+    /** The timeout in milliseconds for a waypoint to be considered reached. Defaults to 2000ms divided by the speed of the entity. */
+    get waypointTimeoutMs(): number;
+    /**
+     * Calculate a path and move to the target if a path is found. Returns true if a path is found, false if no path is found.
+     * @param target - The target coordinate to pathfind to.
+     * @param speed - The speed of the entity.
+     * @param options - The pathfinding options.
+     * @returns Whether the path was found.
+     */
+    pathfind(target: Vector3Like, speed: number, options?: PathfindingOptions): boolean;
+
+
+
+
+
+
+
+
+}
+
+/**
+ * Options for the {@link PathfindingEntityController.pathfind} method.
+ * @public
+ */
+export declare type PathfindingOptions = {
+    /** Whether to enable debug mode or not. When debug mode is enabled, the pathfinding algorithm will log debug information to the console. Defaults to false. */
+    debug?: boolean;
+    /** The maximum fall distance the entity can fall when considering a path. */
+    maxFall?: number;
+    /** The maximum height the entity will jump when considering a path. */
+    maxJump?: number;
+    /** The maximum number of open set iterations that can be processed before aborting pathfinding. Defaults to 200. */
+    maxOpenSetIterations?: number;
+    /** Callback called when the pathfinding algorithm aborts. */
+    pathfindAbortCallback?: PathfindAbortCallback;
+    /** Callback called when the entity associated with the PathfindingEntityController finishes pathfinding and is now at the target coordinate. */
+    pathfindCompleteCallback?: PathfindCompleteCallback;
+    /** The vertical penalty for the pathfinding algorithm. A higher value will prefer paths with less vertical movement. */
+    verticalPenalty?: number;
+    /** Callback called when the entity associated with the PathfindingEntityController finishes moving to a calculate waypoint of its current path. */
+    waypointMoveCompleteCallback?: WaypointMoveCompleteCallback;
+    /** Callback called when the entity associated with the PathfindingEntityController skips a waypoint because it took too long to reach. */
+    waypointMoveSkippedCallback?: WaypointMoveSkippedCallback;
+    /** The timeout in milliseconds for a waypoint to be considered reached. Defaults to 2000ms divided by the speed of the entity. */
+    waypointTimeoutMs?: number;
+};
+
+/**
  * A player in the game.
  *
  * @remarks
@@ -2557,6 +2662,8 @@ export declare class PlayerEntity extends Entity {
  * @public
  */
 export declare class PlayerEntityController extends BaseEntityController {
+    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
+    autoCancelMouseLeftClick: boolean;
     /**
      * A function allowing custom logic to determine if the entity can walk.
      * @param playerEntityController - The entity controller instance.
@@ -2632,6 +2739,8 @@ export declare class PlayerEntityController extends BaseEntityController {
 
 /** Options for creating a PlayerEntityController instance. @public */
 export declare interface PlayerEntityControllerOptions {
+    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
+    autoCancelMouseLeftClick?: boolean;
     /** A function allowing custom logic to determine if the entity can jump. */
     canJump?: () => boolean;
     /** A function allowing custom logic to determine if the entity can walk. */
@@ -3620,6 +3729,7 @@ export declare class SimpleEntityController extends BaseEntityController {
 
 
 
+
     /**
      * Rotates the entity at a given speed to face a target coordinate.
      *
@@ -3633,6 +3743,13 @@ export declare class SimpleEntityController extends BaseEntityController {
      * @param options - Additional options for the face operation, such as callbacks.
      */
     face(target: Vector3Like, speed: number, options?: FaceOptions): void;
+    /**
+     * Applies an upwards impulse to the entity to simulate a jump, only supported
+     * for entities with dynamic rigid body types.
+     *
+     * @param height - The height to jump to.
+     */
+    jump(height: number): void;
     /**
      * Moves the entity at a given speed in a straight line to a target coordinate.
      *
@@ -3969,6 +4086,25 @@ export declare interface Vector3Like {
     y: number;
     z: number;
 }
+
+/**
+ * A callback function called when the entity associated with the
+ * PathfindingEntityController finishes moving to a calculate waypoint
+ * of its current path.
+ * @param waypoint - The waypoint that the entity has finished moving to.
+ * @param waypointIndex - The index of the waypoint that the entity has finished moving to.
+ * @public
+ */
+export declare type WaypointMoveCompleteCallback = (waypoint: Vector3Like, waypointIndex: number) => void;
+
+/**
+ * A callback function called when the entity associated with the
+ * PathfindingEntityController skips a waypoint because it took too long to reach.
+ * @param waypoint - The waypoint that the entity skipped.
+ * @param waypointIndex - The index of the waypoint that the entity skipped.
+ * @public
+ */
+export declare type WaypointMoveSkippedCallback = (waypoint: Vector3Like, waypointIndex: number) => void;
 
 /**
  * Represents a world in the game server.
