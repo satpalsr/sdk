@@ -5,6 +5,23 @@ This demo codebase provides an example for building multi Agent AI systems in Hy
 - Chat bubbles for agent speech
 - Side bar UI for viewing Agent actions
 
+## Setup
+
+### Environment Variables
+This demo requires an OpenAI API key to function. Create a `.env` file in the ai-agents directory with the following variables:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+You can copy the `.env.example` file and fill in your API key:
+```bash
+cd examples/ai-agents
+cp .env.example .env
+```
+
+The OpenAI API key is used for agent inference - the agents use GPT-4o to make decisions and respond to interactions. Make sure your OpenAI account has access to GPT-4o API.
+
 ## How do Agents work in Hytopia?
 Game Agents are driven by a combination of game-specific action logic, world state representation, and Large Language Models.
 
