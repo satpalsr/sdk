@@ -10,6 +10,7 @@ import {
 } from 'hytopia';
 
 import BulletEntity from './guns/BulletEntity';
+import type GamePlayerEntity from './GamePlayerEntity';
 
 export type GunHand = 'left' | 'right' | 'both';
 
@@ -21,6 +22,7 @@ export interface GunEntityOptions extends EntityOptions {
   reloadTimeMs: number;   // Seconds to reload.
   shootAudioUri: string; // The audio played when shooting
   hand: GunHand;        // The hand the weapon is held in.
+  parent: GamePlayerEntity; // The parent player entity.
   iconImageUri: string; // The image uri of the weapon icon.
   maxAmmo: number;      // The amount of ammo the clip can hold.
 }
@@ -97,9 +99,8 @@ export default class GunEntity extends Entity {
       return;
     }
 
-    
-    const parentPlayerEntity = this.parent as PlayerEntity;
-    const bullet = new BulletEntity(this.damage, parentPlayerEntity.player.camera.facingDirection);
+    const parentPlayerEntity = this.parent as GamePlayerEntity;
+    const bullet = new BulletEntity(parentPlayerEntity, this.damage, parentPlayerEntity.player.camera.facingDirection);
     
     // Get bullet direction from player camera
     const direction = parentPlayerEntity.player.camera.facingDirection;

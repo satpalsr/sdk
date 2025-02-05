@@ -45,6 +45,6 @@ export default class GameManager {
       const randomIndex = Math.floor(Math.random() * spawnPositions.length);
       const spawnPosition = spawnPositions[randomIndex];
       zombie.spawn(world, { x: spawnPosition.x, y: 3, z: spawnPosition.z });
-    }, 1000);
+    }, 3000);
   }
 }

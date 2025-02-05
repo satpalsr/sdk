@@ -15,13 +15,16 @@ export interface EnemyEntityOptions extends EntityOptions {
   damage: number;
   health: number;
   jumpHeight?: number
+  reward: number;
   speed: number;
 }
 
 export default class EnemyEntity extends Entity {
   public damage: number;
   public health: number;
+  public maxHealth: number;
   public jumpHeight: number;
+  public reward: number;
   public speed: number;
 
   private _damageAudio: Audio | undefined;
@@ -33,8 +36,10 @@ export default class EnemyEntity extends Entity {
   public constructor(options: EnemyEntityOptions) {
     super(options);
     this.health = options.health;
+    this.maxHealth = options.health;
     this.damage = options.damage;
     this.jumpHeight = options.jumpHeight ?? 1;
+    this.reward = options.reward;
     this.speed = options.speed;
 
     if (options.damageAudioUri) {
@@ -52,7 +57,7 @@ export default class EnemyEntity extends Entity {
     this.setCcdEnabled(true);
   }
 
-  public takeDamage(damage: number) {
+  public takeDamage(damage: number, fromPlayer: GamePlayerEntity) {
     if (!this.world) {
       return;
     }
@@ -64,12 +69,16 @@ export default class EnemyEntity extends Entity {
     }
 
     if (this.health <= 0 && this.isSpawned) {
-      // Enemy is dead, despawn
+      // Enemy is dead, give half reward & despawn
+      fromPlayer.addMoney(Math.floor(this.reward / 2));
       this.despawn();
     } else {
       if (!this.isSpawned || !this.world) {
         return;
       }
+
+      // Give a % of reward based on damage
+      fromPlayer.addMoney(Math.floor(this.reward * (damage / this.maxHealth) * 0.5));
 
       // Apply red tint to indicate damage
       this.setTintColor({ r: 255, g: 0, b: 0 });

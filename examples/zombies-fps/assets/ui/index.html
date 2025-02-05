@@ -10,7 +10,11 @@
     <img src="" alt="Current Weapon" class="weapon-image">
   </div>
   
-  <div class="health-container">
+  <div class="info-container">
+    <div class="money-display">
+      <span class="money-symbol">$</span>
+      <span class="money-amount">0</span>
+    </div>
     <div class="health-bar">
       <div class="health-bar-fill"></div>
       <img src="{{CDN_ASSETS_URL}}/icons/heart.png" alt="Health Icon" class="health-icon">
@@ -55,6 +59,18 @@
     if (type === 'reload') {
       document.querySelector('.weapon-ammo').textContent = 'RELOADING...';
     }
+
+    if (type === 'money') {
+      const { money } = data;
+      const moneyAmount = Math.floor(money);
+      const moneyDisplay = document.querySelector('.money-display');
+      const moneyAmountEl = document.querySelector('.money-amount');
+      
+      moneyAmountEl.textContent = moneyAmount;
+      // Adjust width based on number of digits (min 2 digits, max 8 digits)
+      const digits = Math.max(2, Math.min(8, moneyAmount.toString().length));
+      moneyDisplay.style.width = `${10 + (digits * 10)}px`;
+    }
   });
 </script>
 
@@ -80,15 +96,35 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
-    background: radial-gradient(circle, transparent 30%, rgba(255, 0, 0, 0.8));
+    background: radial-gradient(circle, transparent 30%, rgba(255, 0, 0, 0.6));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 9;
   }
 
-  .health-container {
+  .info-container {
     display: flex;
     align-items: center;
+    gap: 10px;
+  }
+
+  .money-display {
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    width: 30px; /* Initial width for 2 digits */
+    transition: width 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .money-symbol {
+    color: #44ff44;
+    margin-right: 4px;
   }
 
   .health-bar {

@@ -1,4 +1,5 @@
 import { 
+  Audio,
   CollisionGroup,
   Player,
   PlayerCameraOrientation,
@@ -22,6 +23,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   public health: number;
   public maxHealth: number;
   public money: number;
+  private _damageAudio: Audio;
   private _gun: GunEntity | null = null;
 
   // Player entities always assign a PlayerController to the entity, so we can safely create a convenience getter
@@ -37,7 +39,6 @@ export default class GamePlayerEntity extends PlayerEntity {
       modelScale: 0.5,
     });
     
-
     // Prevent mouse left click from being cancelled, required
     // for auto-fire and semi-auto fire mechanics, etc.
     this.playerController.autoCancelMouseLeftClick = false;
@@ -62,6 +63,13 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.health = BASE_HEALTH;
     this.maxHealth = BASE_HEALTH;
     this.money = BASE_MONEY;
+
+    // Setup damage audio
+    this._damageAudio = new Audio({
+      uri: 'audio/sfx/player-hurt.mp3',
+      loop: false,
+      volume: 0.7,
+    });
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
@@ -78,8 +86,21 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._gun.spawn(world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
   }
 
+  public addMoney(amount: number) {
+    this.money += amount;
+    this.player.ui.sendData({ type: 'money', money: this.money });
+  }
+
   public takeDamage(damage: number) {
+    if (!this.isSpawned || !this.world) {
+      return;
+    }
+
     this.health -= damage;
+
+    // randomize the detune for variation each hit
+    this._damageAudio.setDetune(-200 + Math.random() * 800);
+    this._damageAudio.play(this.world, true);
 
     this.player.ui.sendData({
       type: 'health',

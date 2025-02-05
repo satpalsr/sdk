@@ -15,6 +15,7 @@ export default class ZombieEntity extends EnemyEntity {
       damageAudioUri: options.damageAudioUri ?? 'audio/sfx/entity/zombie/zombie-hurt.mp3',
       health: options.health ?? 7,
       jumpHeight: options.jumpHeight ?? 2,
+      reward: options.reward ?? 10,
       speed: options.speed ?? speed,
 
       controller: new PathfindingEntityController(),
