@@ -2288,6 +2288,8 @@ export declare class PathfindingEntityController extends SimpleEntityController 
 
 
 
+
+
 }
 
 /**
