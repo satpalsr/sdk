@@ -80,6 +80,12 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public takeDamage(damage: number) {
     this.health -= damage;
+
+    this.player.ui.sendData({
+      type: 'health',
+      health: this.health,
+      maxHealth: this.maxHealth,
+    });
   }
 
   private _onTickWithPlayerInput = (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => {

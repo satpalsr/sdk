@@ -131,6 +131,7 @@ export default class GunEntity extends Entity {
       return;
     }
 
+    this.ammo = 0; // set the ammo to 0 to prevent fire while reloading if clip wasn't empty.
     this._reloading = true;
     this._reloadAudio.play(this.parent.world, true);
     this._updatePlayerUIReload();

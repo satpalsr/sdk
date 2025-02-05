@@ -3,6 +3,10 @@ import PurchaseBarrierEntity from './PurchaseBarrierEntity';
 import { INVISIBLE_WALLS, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS } from '../gameConfig';
 import type { World } from 'hytopia';
 
+// temp
+import ZombieEntity from './enemies/ZombieEntity';
+
+
 export default class GameManager {
   public static readonly instance = new GameManager();
 
@@ -32,5 +36,15 @@ export default class GameManager {
 
       purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
     });
+
+
+    const spawnPositions = ENEMY_SPAWN_POINTS.start;
+
+    setInterval(() => {
+      const zombie = new ZombieEntity();
+      const randomIndex = Math.floor(Math.random() * spawnPositions.length);
+      const spawnPosition = spawnPositions[randomIndex];
+      zombie.spawn(world, { x: spawnPosition.x, y: 3, z: spawnPosition.z });
+    }, 1000);
   }
 }

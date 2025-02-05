@@ -5,6 +5,8 @@ import {
   PathfindingEntityController,
 } from 'hytopia';
 
+import GamePlayerEntity from './GamePlayerEntity';
+
 const RETARGET_ACCUMULATOR_THRESHOLD_MS = 5000;
 const PATHFIND_ACCUMULATOR_THRESHOLD_MS = 3000;
 
@@ -44,6 +46,7 @@ export default class EnemyEntity extends Entity {
       });
     }
 
+    this.onEntityCollision = this._onEntityCollision;
     this.onTick = this._onTick;
 
     this.setCcdEnabled(true);
@@ -72,6 +75,14 @@ export default class EnemyEntity extends Entity {
       this.setTintColor({ r: 255, g: 0, b: 0 });
       setTimeout(() => this.isSpawned ? this.setTintColor({ r: 255, g: 255, b: 255 }) : undefined, 75);
     }
+  }
+
+  private _onEntityCollision = (entity: Entity, otherEntity: Entity, started: boolean) => {
+    if (!started || !(otherEntity instanceof GamePlayerEntity)) {
+      return;
+    }
+
+    otherEntity.takeDamage(this.damage);
   }
 
   private _onTick = (entity: Entity, tickDeltaMs: number) => {

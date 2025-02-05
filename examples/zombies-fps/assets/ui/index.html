@@ -1,4 +1,5 @@
 <div class="crosshair"></div>
+<div class="vignette"></div>
 
 <div class="hud">
   <div class="weapon-info">
@@ -44,6 +45,11 @@
       const percentage = (health / maxHealth) * 100;
       document.querySelector('.health-bar-fill').style.width = `${percentage}%`;
       document.querySelector('.health-text').textContent = `${health}/${maxHealth}`;
+      
+      // Update vignette intensity based on health percentage
+      const vignette = document.querySelector('.vignette');
+      const vignetteOpacity = Math.max(0, (100 - percentage) / 100);
+      vignette.style.opacity = vignetteOpacity;
     }
 
     if (type === 'reload') {
@@ -59,11 +65,25 @@
     right: 20px;
     display: flex;
     flex-direction: column;
+    z-index: 99;
     gap: 10px;
     font-family: 'Arial', sans-serif;
     text-transform: uppercase;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 30%, rgba(255, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9;
   }
 
   .health-container {
