@@ -1,6 +1,7 @@
 import {
   ColliderOptions,
   ColliderShape,
+  CollisionGroup,
   Entity,
   RigidBodyType,
   QuaternionLike,
@@ -14,6 +15,10 @@ const WALL_COLLIDER_OPTIONS: ColliderOptions = {
     x: 0.5,
     y: 5,
     z: 0.5,
+  },
+  collisionGroups: {
+    belongsTo: [ CollisionGroup.BLOCK ],
+    collidesWith: [ CollisionGroup.PLAYER ],
   },
 };
 

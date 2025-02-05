@@ -13,11 +13,15 @@ export default class PistolEntity extends GunEntity {
       damage: options.damage ?? 3,
       fireRate: options.fireRate ?? 5,
       hand: options.hand ?? 'right',
+      iconImageUri: 'icons/pistol.png',
+      name: 'Pistol',
       maxAmmo: options.maxAmmo ?? 10,
       modelUri: 'models/items/pistol.glb',
       modelScale: 1.3,
       parent: options.parent,
-      reloadTime: options.reloadTime ?? 1,
+      reloadAudioUri: 'audio/sfx/pistol-reload.mp3',
+      reloadTimeMs: options.reloadTimeMs ?? 1250,
+      shootAudioUri: 'audio/sfx/pistol-shoot.mp3',
     });
   }
 
@@ -40,13 +44,6 @@ export default class PistolEntity extends GunEntity {
 
     // play shoot animation
     parentPlayerEntity.startModelOneshotAnimations([ 'shoot_gun_right' ]);
-
-    (new Audio({
-      position: parentPlayerEntity.position,
-      referenceDistance: 20,
-      uri: 'audio/sfx/pistol-shoot-1.mp3',
-      volume: 1,
-    })).play(parentPlayerEntity.world, true);
   }
 }
 

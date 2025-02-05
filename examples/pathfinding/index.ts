@@ -47,9 +47,9 @@ startServer(world => {
     // .pathfind() is synchronous and returns immediately soon as a path is found or not, but before the entity has reached the target.
     const succeeded = pathfindingController.pathfind(playerPosition, 3, { // all possible options for example
       debug: true, // Setting true will console log pathfinding result info
-      maxFall: 10, // The maximum fall distance (in blocks) the entity can fall when considering a path.
-      maxJump: 1,  // The maximum height (in blocks) the entity will jump when considering a path, the controller will apply the jumps automatically while pathfinding.
-      maxOpenSetIterations: 100, // A performance optimization value. A lower value will make pathfinding faster but may fail for longer paths, a higher value can make pathfinding take longer but will work better for longer paths.
+      maxFall: 5, // The maximum fall distance (in blocks) the entity can fall when considering a path.
+      maxJump: 2,  // The maximum height (in blocks) the entity will jump when considering a path, the controller will apply the jumps automatically while pathfinding.
+      maxOpenSetIterations: 400, // A performance optimization value. A lower value will make pathfinding faster but may fail for longer paths, a higher value can make pathfinding take longer but will work better for longer paths.
       verticalPenalty: -1, // A behavior control. The more negative the value, the more the entity will prefer taking a route that requires jumping and falling, even going out of its way to do so. A more positive value will prefer avoiding jumps and falls unless absolutely necessary.
       pathfindAbortCallback: () => { // Invoked when maxOpenSetIterations is reached and pathfinding aborts.
         console.log('Pathfinding aborted');
@@ -85,7 +85,7 @@ startServer(world => {
         },
       });
   
-      pathfindMarker.spawn(world, { x: waypoint.x, y: waypoint.y + 0.25, z: waypoint.z });
+      pathfindMarker.spawn(world, waypoint);
       
       pathfindMarkers.push(pathfindMarker);
     });

@@ -13,7 +13,7 @@ import {
 } from 'hytopia';
 
 import PistolEntity from './guns/PistolEntity';
-import type GunEntity from './guns/GunEntity';
+import type GunEntity from './GunEntity';
 
 const BASE_HEALTH = 100;
 const BASE_MONEY = 10;
@@ -78,9 +78,21 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._gun.spawn(world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
   }
 
+  public takeDamage(damage: number) {
+    this.health -= damage;
+  }
+
   private _onTickWithPlayerInput = (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => {
-    if (input.ml && this._gun) {
+    if (!this._gun) {
+      return;
+    }
+    
+    if (input.ml) {
       this._gun.shoot();
+    }
+
+    if (input.r) {
+      this._gun.reload();
     }
   }
 }

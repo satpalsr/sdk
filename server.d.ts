@@ -1376,6 +1376,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get blockTextureUri(): string | undefined;
     /** The controller for the entity. */
     get controller(): BaseEntityController | undefined;
+    /** The height of the entity's model or block entity's y*2 half extents. */
+    get height(): number;
     /** The playback rate of the entity's model animations. */
     get modelAnimationsPlaybackRate(): number;
     /** The nodes to hide on the entity's model. */
@@ -1389,7 +1391,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     /** The name of the entity. */
     get name(): string;
     /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
-    get opacity(): number | undefined;
+    get opacity(): number;
     /** The parent entity of the entity. */
     get parent(): Entity | undefined;
     /** The name of the parent's node (if parent is a model entity) this entity is attached to when spawned. */
@@ -2157,6 +2159,13 @@ export declare class ModelRegistry {
      * @returns The bounding box of the model.
      */
     getBoundingBox(modelUri: string): ModelBoundingBox;
+    /**
+     * Retrieves the Y-axis height of a model for a scale of 1.
+     *
+     * @param modelUri - The URI of the model to retrieve the height for.
+     * @returns The height of the model.
+     */
+    getHeight(modelUri: string): number;
     /**
      * Retrieves the names of all nodes in a model.
      *

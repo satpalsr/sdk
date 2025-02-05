@@ -9731,6 +9731,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Entity#height:member",
+              "docComment": "/**\n * The height of the entity's model or block entity's y*2 half extents.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get height(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "height",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Entity#id:member",
               "docComment": "/**\n * The unique identifier for the entity.\n */\n",
               "excerptTokens": [
@@ -10413,7 +10443,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "number | undefined"
+                  "text": "number"
                 },
                 {
                   "kind": "Content",
@@ -17181,6 +17211,54 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getBoundingBox"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ModelRegistry#getHeight:member(1)",
+              "docComment": "/**\n * Retrieves the Y-axis height of a model for a scale of 1.\n *\n * @param modelUri - The URI of the model to retrieve the height for.\n *\n * @returns The height of the model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getHeight(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getHeight"
             },
             {
               "kind": "Method",

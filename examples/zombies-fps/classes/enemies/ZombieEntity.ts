@@ -9,6 +9,7 @@ export default class ZombieEntity extends EnemyEntity {
   public constructor(options: Partial<EnemyEntityOptions>) {
     super({
       damage: options.damage ?? 5,
+      damageAudioUri: options.damageAudioUri ?? 'audio/sfx/entity/zombie/zombie-hurt.mp3',
       health: options.health ?? 100,
       jumpHeight: options.jumpHeight ?? 2,
       speed: options.speed ?? 5,

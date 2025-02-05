@@ -1,35 +1,174 @@
-<style>
-    .crosshair {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        pointer-events: none;
-        opacity: 0.7;
-    }
-
-    .crosshair::before,
-    .crosshair::after {
-        content: '';
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    .crosshair::before {
-        width: 2px;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .crosshair::after {
-        width: 100%;
-        height: 2px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-</style>
-
 <div class="crosshair"></div>
+
+<div class="hud">
+  <div class="weapon-info">
+    <div class="weapon-text">
+      <div class="weapon-name">Pistol</div>
+      <div class="weapon-ammo">Clip: 7/7</div>
+    </div>
+    <img src="" alt="Current Weapon" class="weapon-image">
+  </div>
+  
+  <div class="health-container">
+    <div class="health-bar">
+      <div class="health-bar-fill"></div>
+      <img src="{{CDN_ASSETS_URL}}/icons/heart.png" alt="Health Icon" class="health-icon">
+      <div class="health-text">100/100</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
+
+  hytopia.onData(data => {
+    const { type } = data;
+
+    if (!type) {
+      return console.warn('No type received for data', data);
+    }
+
+    if (type === 'weapon') {
+      const { name, iconImageUri } = data;
+      document.querySelector('.weapon-name').textContent = name;
+      document.querySelector('.weapon-image').src = `${CDN_ASSETS_URL}/${iconImageUri}`;
+    }
+
+    if (type === 'ammo') {
+      const { ammo, maxAmmo } = data;
+      document.querySelector('.weapon-ammo').textContent = `CLIP: ${ammo}/${maxAmmo}`;
+    }
+
+    if (type === 'health') {
+      const { health, maxHealth } = data;
+      const percentage = (health / maxHealth) * 100;
+      document.querySelector('.health-bar-fill').style.width = `${percentage}%`;
+      document.querySelector('.health-text').textContent = `${health}/${maxHealth}`;
+    }
+
+    if (type === 'reload') {
+      document.querySelector('.weapon-ammo').textContent = 'RELOADING...';
+    }
+  });
+</script>
+
+<style>
+  .hud {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .health-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .health-bar {
+    width: 200px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .health-bar-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff0000, #ff3333);
+    transition: width 0.3s ease;
+  }
+
+  .health-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 16px;
+    width: 16px;
+    z-index: 1;
+  }
+
+  .health-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+
+  .weapon-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .weapon-text {
+    text-align: right;
+  }
+
+  .weapon-name {
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .weapon-ammo {
+    font-size: 0.8em;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .weapon-image {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .crosshair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .crosshair::before,
+  .crosshair::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .crosshair::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .crosshair::after {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>

@@ -167,6 +167,27 @@ The controller for the entity.
 </td></tr>
 <tr><td>
 
+[height](./server.entity.height.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The height of the entity's model or block entity's y\*2 half extents.
+
+
+</td></tr>
+<tr><td>
+
 [id](./server.entity.id.md)
 
 
@@ -520,7 +541,7 @@ _(Optional)_ A function that is called every tick.
 
 </td><td>
 
-number \| undefined
+number
 
 
 </td><td>
