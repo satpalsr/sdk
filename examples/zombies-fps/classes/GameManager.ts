@@ -1,24 +1,42 @@
-import { Collider, ColliderShape, CollisionGroup } from 'hytopia';
+import { Collider, ColliderShape, CollisionGroup, GameServer } from 'hytopia';
 import PurchaseBarrierEntity from './PurchaseBarrierEntity';
-import { INVISIBLE_WALLS, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS } from '../gameConfig';
-import type { World } from 'hytopia';
+import { INVISIBLE_WALLS, INVISIBLE_WALL_COLLISION_GROUP, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS } from '../gameConfig';
+import type { World, Vector3Like } from 'hytopia';
 
 // temp
 import ZombieEntity from './enemies/ZombieEntity';
 
+const GAME_WAVE_INTERVAL_MS = 30 * 1000; // 30 seconds between waves
+const SLOWEST_SPAWN_INTERVAL_MS = 4000; // Starting spawn rate
+const FASTEST_SPAWN_INTERVAL_MS = 500; // Fastest spawn rate
+const WAVE_SPAWN_INTERVAL_REDUCTION_MS = 250; // Spawn rate reduction per wave
 
 export default class GameManager {
   public static readonly instance = new GameManager();
 
+  public waveNumber = 0;
+  public unlockedIds: Set<string> = new Set([ 'start' ]);
+  public world: World | undefined;
+
+  private _enemySpawnTimeout: NodeJS.Timeout | undefined;
+  private _startTime: number | undefined;
+  private _waveTimeout: NodeJS.Timeout | undefined;
+
+  public addUnlockedId(id: string) {
+    this.unlockedIds.add(id);
+  }
+
   public setupGame(world: World) {
+    this.world = world;
+
     // Setup invisible walls that only enemies can pass through
     INVISIBLE_WALLS.forEach(wall => {
       const wallCollider = new Collider({
         shape: ColliderShape.BLOCK,
         halfExtents: wall.halfExtents,
-        relativePosition: wall.position, // since this is not attached to a rigid body, relative position is realtive to the world global coordinate space.
+        relativePosition: wall.position, // since this is not attached to a rigid body, relative position is relative to the world global coordinate space.
         collisionGroups: {
-          belongsTo: [ CollisionGroup.BLOCK ],
+          belongsTo: [ INVISIBLE_WALL_COLLISION_GROUP ],
           collidesWith: [ CollisionGroup.PLAYER ],
         },
       });
@@ -31,20 +49,76 @@ export default class GameManager {
       const purchaseBarrier = new PurchaseBarrierEntity({
         name: barrier.name,
         removalPrice: barrier.removalPrice,
+        unlockIds: barrier.unlockIds,
         width: barrier.width,
       });
 
       purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
     });
 
+    world.chatManager.registerCommand('/start', () => this.startGame());
+  }
 
-    const spawnPositions = ENEMY_SPAWN_POINTS.start;
+  public startGame() {
+    if (!this.world) return; // type guard
 
-    setInterval(() => {
-      const zombie = new ZombieEntity();
-      const randomIndex = Math.floor(Math.random() * spawnPositions.length);
-      const spawnPosition = spawnPositions[randomIndex];
-      zombie.spawn(world, { x: spawnPosition.x, y: 3, z: spawnPosition.z });
-    }, 3000);
+    const playerCount = this.world.entityManager.getAllPlayerEntities().length;
+
+    this._startTime = Date.now();
+
+    GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
+      player.ui.sendData({
+        type: 'start',
+        playerCount,
+      });
+    });
+
+    this._spawnLoop();
+    this._waveLoop();
+  }
+
+  private _spawnLoop() {
+    if (!this.world) return; // type guard
+
+    clearTimeout(this._enemySpawnTimeout);
+
+    const spawnPoints: Vector3Like[] = [];
+
+    this.unlockedIds.forEach(id => {
+      const spawnPoint = ENEMY_SPAWN_POINTS[id];
+      if (spawnPoint) spawnPoints.push(...spawnPoint);
+    });
+    console.log(this.unlockedIds, spawnPoints.length);
+
+    const spawnPoint = spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
+    const zombie = new ZombieEntity();
+
+    zombie.spawn(this.world, spawnPoint);
+
+    const nextSpawn = Math.max(FASTEST_SPAWN_INTERVAL_MS, SLOWEST_SPAWN_INTERVAL_MS - (this.waveNumber * WAVE_SPAWN_INTERVAL_REDUCTION_MS));
+
+    this._enemySpawnTimeout = setTimeout(() => this._spawnLoop(), nextSpawn);
+  }
+
+  private _waveLoop() {
+    if (!this.world) return; // type guard
+
+    clearTimeout(this._waveTimeout);
+
+    this.waveNumber++;
+
+    GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
+      player.ui.sendData({
+        type: 'wave',
+        wave: this.waveNumber,
+      });
+    });
+
+    // Spawn a few zombies to start the wave
+    for (let i = 0; i < Math.min(12, this.waveNumber * 2); i++) {
+      this._spawnLoop();
+    }
+
+    this._waveTimeout = setTimeout(() => this._waveLoop(), GAME_WAVE_INTERVAL_MS);
   }
 }

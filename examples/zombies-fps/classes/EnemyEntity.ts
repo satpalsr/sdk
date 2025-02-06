@@ -80,7 +80,7 @@ export default class EnemyEntity extends Entity {
       // Give a % of reward based on damage
       fromPlayer.addMoney(Math.floor(this.reward * (damage / this.maxHealth) * 0.5));
 
-      // Apply red tint to indicate damage
+      // Apply red tint for 75ms to indicate damage
       this.setTintColor({ r: 255, g: 0, b: 0 });
       setTimeout(() => this.isSpawned ? this.setTintColor({ r: 255, g: 255, b: 255 }) : undefined, 75);
     }

@@ -1,5 +1,18 @@
+<!-- Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+<!-- UI-->
 <div class="crosshair"></div>
 <div class="vignette"></div>
+<div class="wave-announcement">Wave <span class="wave-number"></span></div>
+
+<div class="game-info">
+  <div class="timer">Time: 00:00</div>
+  <div class="wave">Wave: 1</div>
+  <div class="survivors">Survivors: 5</div>
+</div>
 
 <div class="hud">
   <div class="weapon-info">
@@ -23,14 +36,61 @@
   </div>
 </div>
 
+<template id="purchase-barrier-template">
+    <div class="purchase-barrier">
+      <div class="barrier-name"></div>
+      <div class="barrier-cost"></div>
+      <div class="barrier-prompt">Press "E" to unlock</div>
+      <div class="barrier-caret"></div>
+    </div>
+</template>
+
+<!-- UI Scripts-->
 <script>
   const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
+
+  hytopia.registerSceneUITemplate('purchase-barrier', (id, onState) => {
+    const template = document.getElementById('purchase-barrier-template');
+    const clone = template.content.cloneNode(true);
+    const barrierName = clone.querySelector('.barrier-name');
+    const barrierCost = clone.querySelector('.barrier-cost');
+
+    onState(state => {
+      barrierName.textContent = state.name;
+      barrierCost.textContent = `$${state.cost}`;
+    });
+
+    return clone;
+  });
 
   hytopia.onData(data => {
     const { type } = data;
 
     if (!type) {
       return console.warn('No type received for data', data);
+    }
+
+    if (type === 'start') {
+      const { playerCount } = data;
+      document.querySelector('.game-info').style.display = 'block';
+      document.querySelector('.game-info .timer').textContent = 'Time: 00:00';
+      document.querySelector('.game-info .wave').textContent = 'Wave: 1';
+      document.querySelector('.game-info .survivors').textContent = `Survivors: ${playerCount}`;
+
+      // Start game timer
+      const startTime = Date.now();
+      setInterval(() => {
+        const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+        const minutes = Math.floor(elapsedSeconds / 60).toString().padStart(2, '0');
+        const seconds = (elapsedSeconds % 60).toString().padStart(2, '0'); 
+        document.querySelector('.game-info .timer').textContent = `Time: ${minutes}:${seconds}`;
+      }, 1000);
+    }
+
+    if (type === 'wave') {
+      const { wave } = data;
+      document.querySelector('.game-info .wave').textContent = `Wave: ${wave}`;
+      showWaveAnnouncement(wave);
     }
 
     if (type === 'weapon') {
@@ -72,9 +132,38 @@
       moneyDisplay.style.width = `${10 + (digits * 10)}px`;
     }
   });
+
+  function showWaveAnnouncement(waveNumber) {
+    const announcement = document.querySelector('.wave-announcement');
+    const numberSpan = announcement.querySelector('.wave-number');
+    numberSpan.textContent = waveNumber;
+    announcement.classList.add('show');
+    setTimeout(() => {
+      announcement.classList.remove('show');
+    }, 3000);
+  }
 </script>
 
+<!-- UI Styles -->
 <style>
+  .game-info {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  .game-info div {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+
+
   .hud {
     position: fixed;
     bottom: 20px;
@@ -226,5 +315,94 @@
     height: 2px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .purchase-barrier {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    width: 220px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .barrier-name {
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+
+  .barrier-cost {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #44ff44;
+  }
+
+  .barrier-prompt {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .barrier-caret {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(0, 0, 0, 0.7);
+  }
+
+  .wave-announcement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: "Creepster", serif;
+    font-weight: 400;
+    font-style: normal;    font-size: 72px;
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .wave-announcement.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    animation: pulseAndFade 3s ease-out forwards;
+  }
+
+  @keyframes pulseAndFade {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    20% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 1;
+    }
+    40% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    80% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
   }
 </style>

@@ -14,16 +14,18 @@ import {
 } from 'hytopia';
 
 import PistolEntity from './guns/PistolEntity';
+import PurchaseBarrierEntity from './PurchaseBarrierEntity';
 import type GunEntity from './GunEntity';
+import { INVISIBLE_WALL_COLLISION_GROUP } from '../gameConfig';
 
 const BASE_HEALTH = 100;
-const BASE_MONEY = 10;
 
 export default class GamePlayerEntity extends PlayerEntity {
   public health: number;
   public maxHealth: number;
   public money: number;
   private _damageAudio: Audio;
+  private _purchaseAudio: Audio;
   private _gun: GunEntity | null = null;
 
   // Player entities always assign a PlayerController to the entity, so we can safely create a convenience getter
@@ -46,8 +48,8 @@ export default class GamePlayerEntity extends PlayerEntity {
     // Setup player animations
     this.playerController.idleLoopedAnimations = [ 'idle_gun_right' ];
     this.playerController.interactOneshotAnimations = [];
-    this.playerController.walkLoopedAnimations = [ 'idle_gun_right:additive', 'walk_lower' ];
-    this.playerController.runLoopedAnimations = [ 'idle_gun_right:additive', 'run_lower' ];
+    this.playerController.walkLoopedAnimations = [ 'idle_gun_right', 'walk_lower' ];
+    this.playerController.runLoopedAnimations = [ 'idle_gun_right', 'run_lower' ];
     this.playerController.onTickWithPlayerInput = this._onTickWithPlayerInput;
     
     // Setup UI
@@ -55,20 +57,28 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     // Setup first person camera
     this.player.camera.setMode(PlayerCameraMode.FIRST_PERSON);
-    this.player.camera.setModelHiddenNodes([ 'head', 'neck' ]);
+    this.player.camera.setModelHiddenNodes([ 'head', 'neck', 'torso', 'leg_right', 'leg_left' ]);
     this.player.camera.setOffset({ x: 0, y: 0.5, z: 0 });
-    this.player.camera.setForwardOffset(0.2);
   
     // Set base stats
     this.health = BASE_HEALTH;
     this.maxHealth = BASE_HEALTH;
-    this.money = BASE_MONEY;
+    this.money = 0;
 
     // Setup damage audio
     this._damageAudio = new Audio({
+      attachedToEntity: this,
       uri: 'audio/sfx/player-hurt.mp3',
       loop: false,
       volume: 0.7,
+    });
+
+    // Setup purchase audio
+    this._purchaseAudio = new Audio({
+      attachedToEntity: this,
+      uri: 'audio/sfx/purchase.mp3',
+      loop: false,
+      volume: 1,
     });
   }
 
@@ -78,7 +88,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     // Prevent players from colliding, setup appropriate collision groups for invisible walls, etc.
     this.setCollisionGroupsForSolidColliders({
       belongsTo: [ CollisionGroup.PLAYER ],
-      collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY, CollisionGroup.ENTITY_SENSOR ],
+      collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY, CollisionGroup.ENTITY_SENSOR, INVISIBLE_WALL_COLLISION_GROUP ],
     });
 
     // Give player a pistol.
@@ -88,7 +98,18 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public addMoney(amount: number) {
     this.money += amount;
-    this.player.ui.sendData({ type: 'money', money: this.money });
+    this._updatePlayerUIMoney();
+  }
+
+  public spendMoney(amount: number): boolean {
+    if (!this.world || this.money < amount) {
+      return false;
+    }
+
+    this.money -= amount;
+    this._updatePlayerUIMoney();
+    this._purchaseAudio.play(this.world, true);
+    return true;
   }
 
   public takeDamage(damage: number) {
@@ -98,15 +119,21 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     this.health -= damage;
 
-    // randomize the detune for variation each hit
-    this._damageAudio.setDetune(-200 + Math.random() * 800);
-    this._damageAudio.play(this.world, true);
-
     this.player.ui.sendData({
       type: 'health',
       health: this.health,
       maxHealth: this.maxHealth,
     });
+
+    // if player is dead, despawn, gg's, todo: make a 15s time for player to be revived.
+    if (this.health <= 0) {
+      this.despawn();
+      return;
+    }
+
+    // randomize the detune for variation each hit
+    this._damageAudio.setDetune(-200 + Math.random() * 800);
+    this._damageAudio.play(this.world, true);
   }
 
   private _onTickWithPlayerInput = (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => {
@@ -120,7 +147,46 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     if (input.r) {
       this._gun.reload();
+      input.r = false;
     }
+
+    if (input.e) {
+      this._interactRaycast();
+      input.e = false;
+    }
+  }
+
+  private _interactRaycast() {
+    if (!this.world) {
+      return;
+    }
+
+    // Get raycast direction from player camera
+    const origin = {
+      x: this.position.x,
+      y: this.position.y + this.player.camera.offset.y,
+      z: this.position.z,
+    };
+    const direction = this.player.camera.facingDirection;
+    const length = 4;
+
+    const raycastHit = this.world.simulation.raycast(origin, direction, length, {
+      filterExcludeRigidBody: this.rawRigidBody, // prevent raycast from hitting the player
+    });
+
+    const hitEntity = raycastHit?.hitEntity;
+
+    if (!hitEntity) {
+      return;
+    }
+
+    if (hitEntity instanceof PurchaseBarrierEntity) {
+      hitEntity.purchase(this);
+    }
+  }
+
+  private _updatePlayerUIMoney() {
+    this.player.ui.sendData({ type: 'money', money: this.money });
   }
 }
 

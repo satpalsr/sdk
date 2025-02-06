@@ -1,5 +1,7 @@
 import {
   Audio,
+  CollisionGroup,
+  CollisionGroupsBuilder,
   Entity,
   EntityOptions,
   PlayerEntity,
@@ -9,7 +11,7 @@ import {
   World,
 } from 'hytopia';
 
-import BulletEntity from './guns/BulletEntity';
+import EnemyEntity from './EnemyEntity';
 import type GamePlayerEntity from './GamePlayerEntity';
 
 export type GunHand = 'left' | 'right' | 'both';
@@ -22,7 +24,7 @@ export interface GunEntityOptions extends EntityOptions {
   reloadTimeMs: number;   // Seconds to reload.
   shootAudioUri: string; // The audio played when shooting
   hand: GunHand;        // The hand the weapon is held in.
-  parent: GamePlayerEntity; // The parent player entity.
+  parent?: GamePlayerEntity; // The parent player entity.
   iconImageUri: string; // The image uri of the weapon icon.
   maxAmmo: number;      // The amount of ammo the clip can hold.
 }
@@ -100,31 +102,45 @@ export default class GunEntity extends Entity {
     }
 
     const parentPlayerEntity = this.parent as GamePlayerEntity;
-    const bullet = new BulletEntity(parentPlayerEntity, this.damage, parentPlayerEntity.player.camera.facingDirection);
     
-    // Get bullet direction from player camera
-    const direction = parentPlayerEntity.player.camera.facingDirection;
-    const yaw = Math.atan2(-direction.x, -direction.z);
-    const pitch = Math.asin(direction.y);
-    const rotation = Quaternion.fromEuler(pitch * (180 / Math.PI), yaw * (180 / Math.PI), 0);
-    
-    // Calculate spawn position
-    const { x, y, z } = parentPlayerEntity.position;
-    const cameraYOffset = parentPlayerEntity.player.camera.offset.y;
-    const spawnPosition = {
-      x: x + (direction.x * 0.5),
-      y: y + (direction.y * 0.5) + cameraYOffset,
-      z: z + (direction.z * 0.5),
-    };
+    // Check for hit
+    this.checkHit();
     
     // Update player ammo
     this._updatePlayerUIAmmo();
     
-    // Spawn bullet
-    bullet.spawn(this.parent.world, spawnPosition, rotation);
-
     // Play shoot audio
     this._shootAudio.play(this.parent.world, true);
+  }
+
+  public checkHit() {
+    if (!this.parent || !this.parent.world) {
+      return;
+    }
+
+    const parentPlayerEntity = this.parent as GamePlayerEntity;
+
+    const { x, y, z } = parentPlayerEntity.position;
+    const cameraYOffset = parentPlayerEntity.player.camera.offset.y;    
+    const direction = parentPlayerEntity.player.camera.facingDirection;
+    const origin = {
+      x: x + (direction.x * 0.5),
+      y: y + (direction.y * 0.5) + cameraYOffset,
+      z: z + (direction.z * 0.5),
+    };
+
+    const raycastHit = this.parent.world.simulation.raycast(origin, direction, 50, {
+      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({ // filter group is the group the raycast belongs to.
+        belongsTo: [ CollisionGroup.ALL ],
+        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
+      }),
+    });
+
+    const hitEntity = raycastHit?.hitEntity;
+
+    if (hitEntity && hitEntity instanceof EnemyEntity) {
+      hitEntity.takeDamage(this.damage, parentPlayerEntity);
+    }
   }
 
   public reload() {

@@ -1,4 +1,7 @@
-import { Quaternion } from 'hytopia';
+import { CollisionGroup, Quaternion } from 'hytopia';
+import type { Vector3Like } from 'hytopia';
+
+export const INVISIBLE_WALL_COLLISION_GROUP = CollisionGroup.GROUP_1;
 
 export const INVISIBLE_WALLS = [
   { // Main entrance (south door)
@@ -53,71 +56,71 @@ export const INVISIBLE_WALLS = [
 
 export const PURCHASE_BARRIERS = [
   {
-    name: 'Unlock Theater Room (South)',
-    removalPrice: 100,
+    name: 'Theater Room (South)',
+    removalPrice: 500,
     position: { x: 2.5, y: 1.5, z: 15 },
     rotation: Quaternion.fromEuler(0, 0, 0),
     width: 5,
     unlockIds: [ 'theater' ],
   },
   {
-    name: 'Unlock Parlor (South)',
-    removalPrice: 25,
+    name: 'Parlor (South)',
+    removalPrice: 150,
     position: { x: -8, y: 1.5, z: 18.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 3,
     unlockIds: [ 'parlor' ],
   },
   {
-    name: 'Unlock Dining Hall (South)',
-    removalPrice: 50,
+    name: 'Dining Hall (South)',
+    removalPrice: 250,
     position: { x: 13, y: 1.5, z: 18.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 3,
     unlockIds: [ 'dining' ],
   },
   {
-    name: 'Unlock Theater Room (West)',
-    removalPrice: 75,
+    name: 'Theater Room (West)',
+    removalPrice: 250,
     position: { x: -15, y: 1.5, z: 3 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 5,
     unlockIds: [ 'theater', 'parlor' ],
   },
   {
-    name: 'Unlock Theater Room (East)',
-    removalPrice: 75,
+    name: 'Theater Room (East)',
+    removalPrice: 250,
     position: { x: 19, y: 1.5, z: 3 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 5,
     unlockIds: [ 'theater', 'dining' ],
   },
   {
-    name: 'Unlock Art Gallery (South)',
-    removalPrice: 200,
+    name: 'Art Gallery (South)',
+    removalPrice: 500,
     position: { x: 26.5, y: 1.5, z: -2 },
     rotation: Quaternion.fromEuler(0, 0, 0),
     width: 5,
     unlockIds: [ 'gallery', 'dining' ],
   },
   {
-    name: 'Unlock Kitchen (South)',
-    removalPrice: 200,
+    name: 'Kitchen (South)',
+    removalPrice: 500,
     position: { x: -22, y: 1.5, z: -2 },
     rotation: Quaternion.fromEuler(0, 0, 0),
     width: 5,
     unlockIds: [ 'kitchen', 'parlor' ],
   },
   {
-    name: 'Unlock Vault',
-    removalPrice: 200,
+    name: 'Vault',
+    removalPrice: 1000,
     position: { x: 0.5, y: 1.5, z: -26 },
     rotation: Quaternion.fromEuler(0, 0, 0),
     width: 3,
     unlockIds: [ 'vault' ],
   },
   {
-    name: 'Unlock Treasure Room (West)',
+    name: 'Treasure Room (West)',
     removalPrice: 75,
     position: { x: -15, y: 1.5, z: -19 },
     rotation: Quaternion.fromEuler(0, 90, 0),
@@ -125,7 +128,7 @@ export const PURCHASE_BARRIERS = [
     unlockIds: [ 'treasure', 'kitchen' ],
   },
   {
-    name: 'Unlock Treasure Room (East)',
+    name: 'Treasure Room (East)',
     removalPrice: 75,
     position: { x: 20, y: 1.5, z: -19 },
     rotation: Quaternion.fromEuler(0, 90, 0),
@@ -134,34 +137,34 @@ export const PURCHASE_BARRIERS = [
   },
 ]
 
-export const ENEMY_SPAWN_POINTS = {
+export const ENEMY_SPAWN_POINTS: Record<string, Vector3Like[]> = {
   start: [
-    { x: -20, z: 34 },
-    { x: 12, z: 36 },
-    { x: 26, z: 20 },
-    { x: 18, z: 8 },
+    { x: -20, y: 3, z: 34 },
+    { x: 12, y: 3, z: 36 },
+    { x: 26, y: 3, z: 20 },
+    { x: 18, y: 3, z: 8 },
   ],
   theater: [
-    { x: -13.5, z: 10 },
+    { x: -13.5, y: 3, z: 10 },
   ],
   parlor: [
-    { x: -36, z: 23 },
-    { x: -35, z: -5 },
+    { x: -36, y: 3, z: 23 },
+    { x: -35, y: 3, z: -5 },
   ],
   dining: [
-    { x: 46, z: 16 },
-    { x: 41, z: -5 },
+    { x: 46, y: 3, z: 16 },
+    { x: 41, y: 3, z: -5 },
   ],
   gallery: [
-    { x: 35, z: -39 },
-    { x: 12, z: -40 },
+    { x: 35, y: 3, z: -39 },
+    { x: 12, y: 3, z: -40 },
   ],
   kitchen: [
-    { x: -28, z: -32 },
-    { x: -40, z: -5 },
+    { x: -28, y: 3, z: -32 },
+    { x: -40, y: 3, z: -5 },
   ],
   treasure: [
-    { x: -13, z: -27 },
-    { x: 0, z: -37 },
+    { x: -13, y: 3, z: -27 },
+    { x: 0, y: 3, z: -37 },
   ],
 };
