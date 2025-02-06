@@ -16,7 +16,9 @@ import {
 } from 'hytopia';
 
 import PistolEntity from './guns/PistolEntity';
-import PurchaseBarrierEntity from './PurchaseBarrierEntity';
+import ShotgunEntity from './guns/ShotgunEntity';
+
+import InteractableEntity from './InteractableEntity';
 import type GunEntity from './GunEntity';
 import { INVISIBLE_WALL_COLLISION_GROUP } from '../gameConfig';
 
@@ -49,10 +51,10 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.autoCancelMouseLeftClick = false;
     
     // Setup player animations
-    this.playerController.idleLoopedAnimations = [ 'idle_gun_right' ];
+    this.playerController.idleLoopedAnimations = [ ];
     this.playerController.interactOneshotAnimations = [];
-    this.playerController.walkLoopedAnimations = [ 'idle_gun_right', 'walk_lower' ];
-    this.playerController.runLoopedAnimations = [ 'idle_gun_right', 'run_lower' ];
+    this.playerController.walkLoopedAnimations = ['walk_lower' ];
+    this.playerController.runLoopedAnimations = [ 'run_lower' ];
     this.playerController.onTickWithPlayerInput = this._onTickWithPlayerInput;
     
     // Setup UI
@@ -106,7 +108,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     });
 
     // Give player a pistol.
-    this._gun = new PistolEntity({ parent: this });
+    this._gun = new ShotgunEntity({ parent: this });
     this._gun.spawn(world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
 
     // Spawn light
@@ -197,8 +199,8 @@ export default class GamePlayerEntity extends PlayerEntity {
       return;
     }
 
-    if (hitEntity instanceof PurchaseBarrierEntity) {
-      hitEntity.purchase(this);
+    if (hitEntity instanceof InteractableEntity) {
+      hitEntity.interact(this);
     }
   }
 

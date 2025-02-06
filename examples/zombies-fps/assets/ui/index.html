@@ -36,12 +36,12 @@
   </div>
 </div>
 
-<template id="purchase-barrier-template">
-    <div class="purchase-barrier">
-      <div class="barrier-name"></div>
-      <div class="barrier-cost"></div>
-      <div class="barrier-prompt">Press "E" to unlock</div>
-      <div class="barrier-caret"></div>
+<template id="purchase-label-template">
+    <div class="purchase-label">
+      <div class="label-name"></div>
+      <div class="label-cost"></div>
+      <div class="label-prompt">Press "E" to purchase</div>
+      <div class="label-caret"></div>
     </div>
 </template>
 
@@ -49,20 +49,22 @@
 <script>
   const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
 
-  hytopia.registerSceneUITemplate('purchase-barrier', (id, onState) => {
-    const template = document.getElementById('purchase-barrier-template');
+  // register purchase label template
+  hytopia.registerSceneUITemplate('purchase-label', (id, onState) => {
+    const template = document.getElementById('purchase-label-template');
     const clone = template.content.cloneNode(true);
-    const barrierName = clone.querySelector('.barrier-name');
-    const barrierCost = clone.querySelector('.barrier-cost');
+    const labelName = clone.querySelector('.label-name');
+    const labelCost = clone.querySelector('.label-cost');
 
     onState(state => {
-      barrierName.textContent = state.name;
-      barrierCost.textContent = `$${state.cost}`;
+      labelName.textContent = state.name;
+      labelCost.textContent = `$${state.cost}`;
     });
 
     return clone;
   });
 
+  // handle game data ui updates
   hytopia.onData(data => {
     const { type } = data;
 
@@ -317,7 +319,7 @@
     transform: translateY(-50%);
   }
 
-  .purchase-barrier {
+  .purchase-label {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 12px 20px;
     border-radius: 4px;
@@ -332,24 +334,24 @@
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
   }
 
-  .barrier-name {
+  .label-name {
     font-size: 20px;
     margin-bottom: 6px;
     font-weight: bold;
   }
 
-  .barrier-cost {
+  .label-cost {
     font-size: 16px;
     margin-bottom: 6px;
     color: #44ff44;
   }
 
-  .barrier-prompt {
+  .label-prompt {
     font-size: 14px;
     opacity: 0.8;
   }
 
-  .barrier-caret {
+  .label-caret {
     position: absolute;
     bottom: -8px;
     left: 50%;

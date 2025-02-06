@@ -1,7 +1,5 @@
-import {
-  Audio,
-  PlayerEntity,
-} from 'hytopia';
+import { Quaternion } from 'hytopia';
+import type { PlayerEntity, Vector3Like, QuaternionLike } from 'hytopia';
 
 import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
@@ -14,13 +12,16 @@ export default class PistolEntity extends GunEntity {
       fireRate: options.fireRate ?? 5,
       hand: options.hand ?? 'right',
       iconImageUri: 'icons/pistol.png',
+      idleAnimation: 'idle_gun_right',
       name: 'Pistol',
       maxAmmo: options.maxAmmo ?? 10,
       modelUri: 'models/items/pistol.glb',
       modelScale: 1.3,
       parent: options.parent,
+      range: options.range ?? 50,
       reloadAudioUri: 'audio/sfx/pistol-reload.mp3',
       reloadTimeMs: options.reloadTimeMs ?? 1250,
+      shootAnimation: 'shoot_gun_right',
       shootAudioUri: 'audio/sfx/pistol-shoot.mp3',
     });
   }
@@ -44,6 +45,13 @@ export default class PistolEntity extends GunEntity {
 
     // play shoot animation
     parentPlayerEntity.startModelOneshotAnimations([ 'shoot_gun_right' ]);
+  }
+
+  public override getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike } {
+    return {
+      position: { x: 0.03, y: 0.1, z: -0.5 },
+      rotation: Quaternion.fromEuler(0, 90, 0),
+    };
   }
 }
 

@@ -1,10 +1,11 @@
 import { Audio, Collider, ColliderShape, CollisionGroup, GameServer } from 'hytopia';
 import PurchaseBarrierEntity from './PurchaseBarrierEntity';
-import { INVISIBLE_WALLS, INVISIBLE_WALL_COLLISION_GROUP, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS } from '../gameConfig';
+import { INVISIBLE_WALLS, INVISIBLE_WALL_COLLISION_GROUP, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS, WEAPON_CRATES } from '../gameConfig';
 import type { World, Vector3Like } from 'hytopia';
 
 // temp
 import ZombieEntity from './enemies/ZombieEntity';
+import WeaponCrateEntity from './WeaponCrateEntity';
 
 const GAME_WAVE_INTERVAL_MS = 30 * 1000; // 30 seconds between waves
 const SLOWEST_SPAWN_INTERVAL_MS = 4000; // Starting spawn rate
@@ -39,30 +40,41 @@ export default class GameManager {
     this.world = world;
 
     // Setup invisible walls that only enemies can pass through
-    INVISIBLE_WALLS.forEach(wall => {
-      const wallCollider = new Collider({
-        shape: ColliderShape.BLOCK,
-        halfExtents: wall.halfExtents,
-        relativePosition: wall.position, // since this is not attached to a rigid body, relative position is relative to the world global coordinate space.
-        collisionGroups: {
-          belongsTo: [ INVISIBLE_WALL_COLLISION_GROUP ],
-          collidesWith: [ CollisionGroup.PLAYER ],
-        },
+    // INVISIBLE_WALLS.forEach(wall => {
+    //   const wallCollider = new Collider({
+    //     shape: ColliderShape.BLOCK,
+    //     halfExtents: wall.halfExtents,
+    //     relativePosition: wall.position, // since this is not attached to a rigid body, relative position is relative to the world global coordinate space.
+    //     collisionGroups: {
+    //       belongsTo: [ INVISIBLE_WALL_COLLISION_GROUP ],
+    //       collidesWith: [ CollisionGroup.PLAYER ],
+    //     },
+    //   });
+
+    //   wallCollider.addToSimulation(world.simulation);
+    // });
+
+    // // Setup purchase barriers
+    // PURCHASE_BARRIERS.forEach(barrier => {
+    //   const purchaseBarrier = new PurchaseBarrierEntity({
+    //     name: barrier.name,
+    //     removalPrice: barrier.removalPrice,
+    //     unlockIds: barrier.unlockIds,
+    //     width: barrier.width,
+    //   });
+
+    //   purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
+    // });
+
+    // Setup weapon crates
+    WEAPON_CRATES.forEach(crate => {
+      const weaponCrate = new WeaponCrateEntity({
+        name: crate.name,
+        purchasePrice: crate.purchasePrice,
+        tintColor: crate.tintColor,
       });
 
-      wallCollider.addToSimulation(world.simulation);
-    });
-
-    // Setup purchase barriers
-    PURCHASE_BARRIERS.forEach(barrier => {
-      const purchaseBarrier = new PurchaseBarrierEntity({
-        name: barrier.name,
-        removalPrice: barrier.removalPrice,
-        unlockIds: barrier.unlockIds,
-        width: barrier.width,
-      });
-
-      purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
+      weaponCrate.spawn(world, crate.position, crate.rotation);
     });
 
     world.chatManager.registerCommand('/start', () => this.startGame());
@@ -97,10 +109,11 @@ export default class GameManager {
       const spawnPoint = ENEMY_SPAWN_POINTS[id];
       if (spawnPoint) spawnPoints.push(...spawnPoint);
     });
-    console.log(this.unlockedIds, spawnPoints.length);
 
     const spawnPoint = spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
-    const zombie = new ZombieEntity();
+    const zombie = new ZombieEntity({
+      speed: Math.min(6, 2 + this.waveNumber * 0.5), // max speed of 6
+    });
 
     zombie.spawn(this.world, spawnPoint);
 

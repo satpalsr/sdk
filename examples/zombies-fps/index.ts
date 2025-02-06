@@ -8,7 +8,7 @@ startServer(world => {
   // Load map.
   world.loadMap(worldMap);
 
-  world.simulation.enableDebugRaycasting(true);
+  //world.simulation.enableDebugRaycasting(true);
 
   // Setup lighting
   world.setAmbientLightIntensity(0.0001);

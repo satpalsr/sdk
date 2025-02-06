@@ -5,6 +5,8 @@ import {
   PathfindingEntityController,
 } from 'hytopia';
 
+import type { QuaternionLike, Vector3Like, World } from 'hytopia';
+
 import GamePlayerEntity from './GamePlayerEntity';
 
 const RETARGET_ACCUMULATOR_THRESHOLD_MS = 5000;
@@ -14,6 +16,7 @@ export interface EnemyEntityOptions extends EntityOptions {
   damageAudioUri?: string;
   damage: number;
   health: number;
+  idleAudioUri?: string;
   jumpHeight?: number
   reward: number;
   speed: number;
@@ -28,10 +31,11 @@ export default class EnemyEntity extends Entity {
   public speed: number;
 
   private _damageAudio: Audio | undefined;
-  private _targetEntity: Entity | undefined;
+  private _idleAudio: Audio | undefined;
+  private _isPathfinding = false;
   private _pathfindAccumulatorMs = 0;
   private _retargetAccumulatorMs = 0;
-  private _isPathfinding = false;
+  private _targetEntity: Entity | undefined;
 
   public constructor(options: EnemyEntityOptions) {
     super(options);
@@ -51,10 +55,28 @@ export default class EnemyEntity extends Entity {
       });
     }
 
+    if (options.idleAudioUri) {
+      this._idleAudio = new Audio({
+        attachedToEntity: this,
+        uri: options.idleAudioUri,
+        volume: 0.5,
+        loop: true,
+        referenceDistance: 1,
+      });
+    }
+
     this.onEntityCollision = this._onEntityCollision;
     this.onTick = this._onTick;
 
     this.setCcdEnabled(true);
+  }
+
+  public override spawn(world: World, position: Vector3Like, rotation: QuaternionLike) {
+    super.spawn(world, position, rotation);
+
+    if (this._idleAudio) {
+      this._idleAudio.play(world, true);
+    }
   }
 
   public takeDamage(damage: number, fromPlayer: GamePlayerEntity) {

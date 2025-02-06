@@ -7,11 +7,10 @@ import {
   Entity,
   EntityOptions,
   PlayerEntity,
-  Quaternion,
-  RigidBodyType,
   Vector3Like,
   QuaternionLike,
   World,
+  PlayerEntityController,
 } from 'hytopia';
 
 import EnemyEntity from './EnemyEntity';
@@ -28,18 +27,24 @@ export interface GunEntityOptions extends EntityOptions {
   shootAudioUri: string; // The audio played when shooting
   hand: GunHand;        // The hand the weapon is held in.
   parent?: GamePlayerEntity; // The parent player entity.
+  range: number;         // The max range bullets travel for raycast hits
+  idleAnimation: string; // The animation played when the gun is idle.
   iconImageUri: string; // The image uri of the weapon icon.
   maxAmmo: number;      // The amount of ammo the clip can hold.
+  shootAnimation: string; // The animation played when the gun is shooting.
 }
 
-export default class GunEntity extends Entity {
+export default abstract class GunEntity extends Entity {
   public ammo: number;
   public damage: number;
   public fireRate: number;
   public hand: GunHand;
+  public idleAnimation: string;
   public iconImageUri: string;
   public maxAmmo: number;
+  public range: number;
   public reloadTimeMs: number;
+  public shootAnimation: string;
   private _lastFireTime: number = 0;
   private _muzzleFlashChildEntity: Entity | undefined;
   private _reloadAudio: Audio;
@@ -57,9 +62,12 @@ export default class GunEntity extends Entity {
     this.damage = options.damage;
     this.ammo = options.ammo;
     this.hand = options.hand;
+    this.idleAnimation = options.idleAnimation;
     this.iconImageUri = options.iconImageUri;
     this.maxAmmo = options.maxAmmo;
+    this.range = options.range;
     this.reloadTimeMs = options.reloadTimeMs;
+    this.shootAnimation = options.shootAnimation;
 
     this._reloadAudio = new Audio({
       attachedToEntity: this,
@@ -70,6 +78,10 @@ export default class GunEntity extends Entity {
       attachedToEntity: this,
       uri: options.shootAudioUri,
     });
+
+    if (options.parent) {
+      this._updateParentAnimations();
+    }
   }
 
   public get isEquipped(): boolean { return !!this.parent; }
@@ -94,7 +106,25 @@ export default class GunEntity extends Entity {
     });
 
     // pistol specific atm
-    this._muzzleFlashChildEntity.spawn(this.world, { x: 0.03, y: 0.1, z: -0.5 }, Quaternion.fromEuler(0, 90, 0));
+    const { position, rotation } = this.getMuzzleFlashPositionRotation();
+    this._muzzleFlashChildEntity.spawn(this.world, position, rotation);
+  }
+
+  public abstract getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike };
+
+  public getShootOriginDirection(): { origin: Vector3Like, direction: Vector3Like } {
+    const parentPlayerEntity = this.parent as GamePlayerEntity;
+
+    const { x, y, z } = parentPlayerEntity.position;
+    const cameraYOffset = parentPlayerEntity.player.camera.offset.y;    
+    const direction = parentPlayerEntity.player.camera.facingDirection;
+    const origin = {
+      x: x + (direction.x * 0.5),
+      y: y + (direction.y * 0.5) + cameraYOffset,
+      z: z + (direction.z * 0.5),
+    };
+
+    return { origin, direction };
   }
 
   // simple convenience helper for handling ammo and fire rate in shoot() overrides.
@@ -116,6 +146,27 @@ export default class GunEntity extends Entity {
     return true;
   }
 
+  public shootRaycast(origin: Vector3Like, direction: Vector3Like, length: number) {
+    if (!this.parent || !this.parent.world) {
+      return;
+    }
+
+    const parentPlayerEntity = this.parent as GamePlayerEntity;
+   
+    const raycastHit = this.parent.world.simulation.raycast(origin, direction, length, {
+      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({ // filter group is the group the raycast belongs to.
+        belongsTo: [ CollisionGroup.ALL ],
+        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
+      }),
+    });
+
+    const hitEntity = raycastHit?.hitEntity;
+
+    if (hitEntity && hitEntity instanceof EnemyEntity) {
+      hitEntity.takeDamage(this.damage, parentPlayerEntity);
+    }
+  }
+
   // override to create specific gun shoot logic
   public shoot() {
     if (!this.parent || !this.parent.world) {
@@ -124,8 +175,12 @@ export default class GunEntity extends Entity {
 
     const parentPlayerEntity = this.parent as GamePlayerEntity;
     
-    // Check for hit
-    this.checkHit();
+    // Deal damage and raycast
+    const { origin, direction } = this.getShootOriginDirection();
+    this.shootRaycast(origin, direction, this.range);
+
+    // Play shoot animation
+    parentPlayerEntity.startModelOneshotAnimations([ this.shootAnimation ]);
 
     // Show Muzzle Flash
     if (this._muzzleFlashChildEntity) {
@@ -140,36 +195,6 @@ export default class GunEntity extends Entity {
     
     // Play shoot audio
     this._shootAudio.play(this.parent.world, true);
-  }
-
-  public checkHit() {
-    if (!this.parent || !this.parent.world) {
-      return;
-    }
-
-    const parentPlayerEntity = this.parent as GamePlayerEntity;
-
-    const { x, y, z } = parentPlayerEntity.position;
-    const cameraYOffset = parentPlayerEntity.player.camera.offset.y;    
-    const direction = parentPlayerEntity.player.camera.facingDirection;
-    const origin = {
-      x: x + (direction.x * 0.5),
-      y: y + (direction.y * 0.5) + cameraYOffset,
-      z: z + (direction.z * 0.5),
-    };
-
-    const raycastHit = this.parent.world.simulation.raycast(origin, direction, 50, {
-      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({ // filter group is the group the raycast belongs to.
-        belongsTo: [ CollisionGroup.ALL ],
-        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
-      }),
-    });
-
-    const hitEntity = raycastHit?.hitEntity;
-
-    if (hitEntity && hitEntity instanceof EnemyEntity) {
-      hitEntity.takeDamage(this.damage, parentPlayerEntity);
-    }
   }
 
   public reload() {
@@ -191,6 +216,18 @@ export default class GunEntity extends Entity {
       this._reloading = false;
       this._updatePlayerUIAmmo();
     }, this.reloadTimeMs);
+  }
+
+  private _updateParentAnimations() {
+    if (!this.parent || !this.parent.world) {
+      return;
+    }
+
+    const playerEntityController = this.parent.controller as PlayerEntityController;
+
+    playerEntityController.idleLoopedAnimations = [ this.idleAnimation ];
+    playerEntityController.walkLoopedAnimations = [ this.idleAnimation, 'walk_lower' ];
+    playerEntityController.runLoopedAnimations = [ this.idleAnimation, 'run_lower' ];
   }
 
   private _updatePlayerUIAmmo() {

@@ -12,6 +12,7 @@ import {
 
 import GameManager from './GameManager';
 import GamePlayerEntity from './GamePlayerEntity';
+import InteractableEntity from './InteractableEntity';
 
 const WALL_COLLIDER_OPTIONS: ColliderOptions = {
   shape: ColliderShape.BLOCK,
@@ -28,7 +29,7 @@ export interface PurchaseBarrierEntityOptions {
   unlockIds: string[];
 }
 
-export default class PurchaseBarrierEntity extends Entity {
+export default class PurchaseBarrierEntity extends InteractableEntity {
   public removalPrice: number;
   private _unlockIds: string[];
   private _width: number;
@@ -50,13 +51,13 @@ export default class PurchaseBarrierEntity extends Entity {
     return this._width;
   }
   
-  public purchase(purchasingPlayer: GamePlayerEntity) {
+  public override interact(interactingPlayer: GamePlayerEntity) {
     if (!this.isSpawned || !this.world) {
       return;
     }
 
-    if (!purchasingPlayer.spendMoney(this.removalPrice)) {
-      this.world.chatManager.sendPlayerMessage(purchasingPlayer.player, `You don't have enough money to unlock this barrier!`, 'FF0000');
+    if (!interactingPlayer.spendMoney(this.removalPrice)) {
+      this.world.chatManager.sendPlayerMessage(interactingPlayer.player, `You don't have enough money to unlock this barrier!`, 'FF0000');
       return;
     }
 
@@ -110,11 +111,11 @@ export default class PurchaseBarrierEntity extends Entity {
       }
     }
 
-    // Spawn Scene UI that shows barrier removal price & purchase button
+    // Spawn Scene UI that shows barrier removal price
     (new SceneUI({
       attachedToEntity: this,
       offset: { x: 0, y: 1, z: 0 },
-      templateId: 'purchase-barrier',
+      templateId: 'purchase-label',
       viewDistance: 4,
       state: {
         name: this.name,
