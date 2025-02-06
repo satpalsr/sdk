@@ -11,18 +11,18 @@ export default class ShotgunEntity extends GunEntity {
       damage: options.damage ?? 3, // damage per pellet
       fireRate: options.fireRate ?? 1.3,
       hand: options.hand ?? 'right',
-      iconImageUri: 'icons/shotgun.png',
-      idleAnimation: 'idle_gun_both',
-      name: 'Shotgun',
+      iconImageUri: options.iconImageUri ?? 'icons/shotgun.png',
+      idleAnimation: options.idleAnimation ?? 'idle_gun_both',
+      name: options.name ?? 'Shotgun',
       maxAmmo: options.maxAmmo ?? 5,
-      modelUri: 'models/items/shotgun.glb',
-      modelScale: 1.2,
+      modelUri: options.modelUri ?? 'models/items/shotgun.glb',
+      modelScale: options.modelScale ?? 1.2,
       parent: options.parent,
       range: options.range ?? 8,
-      reloadAudioUri: 'audio/sfx/shotgun-reload.mp3',
+      reloadAudioUri: options.reloadAudioUri ?? 'audio/sfx/shotgun-reload.mp3',
       reloadTimeMs: options.reloadTimeMs ?? 1000,
-      shootAudioUri: 'audio/sfx/shotgun-shoot.mp3',
-      shootAnimation: 'shoot_gun_both',
+      shootAudioUri: options.shootAudioUri ?? 'audio/sfx/shotgun-shoot.mp3',
+      shootAnimation: options.shootAnimation ?? 'shoot_gun_both',
     });
   }
 
