@@ -40,31 +40,31 @@ export default class GameManager {
     this.world = world;
 
     // Setup invisible walls that only enemies can pass through
-    // INVISIBLE_WALLS.forEach(wall => {
-    //   const wallCollider = new Collider({
-    //     shape: ColliderShape.BLOCK,
-    //     halfExtents: wall.halfExtents,
-    //     relativePosition: wall.position, // since this is not attached to a rigid body, relative position is relative to the world global coordinate space.
-    //     collisionGroups: {
-    //       belongsTo: [ INVISIBLE_WALL_COLLISION_GROUP ],
-    //       collidesWith: [ CollisionGroup.PLAYER ],
-    //     },
-    //   });
+    INVISIBLE_WALLS.forEach(wall => {
+      const wallCollider = new Collider({
+        shape: ColliderShape.BLOCK,
+        halfExtents: wall.halfExtents,
+        relativePosition: wall.position, // since this is not attached to a rigid body, relative position is relative to the world global coordinate space.
+        collisionGroups: {
+          belongsTo: [ INVISIBLE_WALL_COLLISION_GROUP ],
+          collidesWith: [ CollisionGroup.PLAYER ],
+        },
+      });
 
-    //   wallCollider.addToSimulation(world.simulation);
-    // });
+      wallCollider.addToSimulation(world.simulation);
+    });
 
     // // Setup purchase barriers
-    // PURCHASE_BARRIERS.forEach(barrier => {
-    //   const purchaseBarrier = new PurchaseBarrierEntity({
-    //     name: barrier.name,
-    //     removalPrice: barrier.removalPrice,
-    //     unlockIds: barrier.unlockIds,
-    //     width: barrier.width,
-    //   });
+    PURCHASE_BARRIERS.forEach(barrier => {
+      const purchaseBarrier = new PurchaseBarrierEntity({
+        name: barrier.name,
+        removalPrice: barrier.removalPrice,
+        unlockIds: barrier.unlockIds,
+        width: barrier.width,
+      });
 
-    //   purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
-    // });
+      purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
+    });
 
     // Setup weapon crates
     WEAPON_CRATES.forEach(crate => {

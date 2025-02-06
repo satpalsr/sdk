@@ -8,7 +8,7 @@ export default class AK47Entity extends PistolEntity {
   public constructor(options: Partial<GunEntityOptions>) {
     super({
       ammo: options.ammo ?? 30,
-      damage: options.damage ?? 5,
+      damage: options.damage ?? 3,
       fireRate: options.fireRate ?? 10,
       iconImageUri: options.iconImageUri ?? 'icons/ak-47.png',
       idleAnimation: options.idleAnimation ?? 'idle_gun_both',

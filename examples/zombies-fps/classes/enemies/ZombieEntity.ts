@@ -11,7 +11,7 @@ export default class ZombieEntity extends EnemyEntity {
     const animation = speed > 5 ? 'run' : speed > 3 ? 'walk' : 'crawling';
 
     super({
-      damage: options.damage ?? 3,
+      damage: options.damage ?? 2,
       damageAudioUri: options.damageAudioUri ?? 'audio/sfx/entity/zombie/zombie-hurt.mp3',
       health: options.health ?? 7,
       idleAudioUri: options.idleAudioUri ?? 'audio/sfx/zombie-idle.mp3',
