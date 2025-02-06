@@ -11,9 +11,9 @@ startServer(world => {
   world.simulation.enableDebugRaycasting(true);
 
   // Setup lighting
-  world.setAmbientLightIntensity(0.3);
+  world.setAmbientLightIntensity(0.0001);
   world.setAmbientLightColor({ r: 255, g: 192, b: 192 });
-  world.setDirectionalLightIntensity(0.8);
+  world.setDirectionalLightIntensity(0.0001);
 
   // Setup game
   GameManager.instance.setupGame(world);

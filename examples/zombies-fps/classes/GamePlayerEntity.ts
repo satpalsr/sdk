@@ -1,6 +1,8 @@
 import { 
   Audio,
   CollisionGroup,
+  Light,
+  LightType,
   Player,
   PlayerCameraOrientation,
   PlayerEntity,
@@ -26,7 +28,8 @@ export default class GamePlayerEntity extends PlayerEntity {
   public money: number;
   private _damageAudio: Audio;
   private _purchaseAudio: Audio;
-  private _gun: GunEntity | null = null;
+  private _gun: GunEntity | undefined;
+  private _light: Light;
 
   // Player entities always assign a PlayerController to the entity, so we can safely create a convenience getter
   public get playerController(): PlayerEntityController {
@@ -80,6 +83,17 @@ export default class GamePlayerEntity extends PlayerEntity {
       loop: false,
       volume: 1,
     });
+
+    this._light = new Light({
+      angle: Math.PI / 4 + 0.1,
+      penumbra: 0.03,
+      attachedToEntity: this,
+      trackedEntity: this,
+      type: LightType.SPOTLIGHT,
+      intensity: 5,
+      offset: { x: 0, y: 0, z: 0.1 }, 
+      color: { r: 255, g: 255, b: 255 },
+    });
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
@@ -94,6 +108,9 @@ export default class GamePlayerEntity extends PlayerEntity {
     // Give player a pistol.
     this._gun = new PistolEntity({ parent: this });
     this._gun.spawn(world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
+
+    // Spawn light
+    this._light.spawn(world);
   }
 
   public addMoney(amount: number) {

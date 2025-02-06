@@ -1,11 +1,14 @@
 import {
   Audio,
+  Collider,
+  ColliderShape,
   CollisionGroup,
   CollisionGroupsBuilder,
   Entity,
   EntityOptions,
   PlayerEntity,
   Quaternion,
+  RigidBodyType,
   Vector3Like,
   QuaternionLike,
   World,
@@ -38,6 +41,7 @@ export default class GunEntity extends Entity {
   public maxAmmo: number;
   public reloadTimeMs: number;
   private _lastFireTime: number = 0;
+  private _muzzleFlashChildEntity: Entity | undefined;
   private _reloadAudio: Audio;
   private _reloading: boolean = false;
   private _shootAudio: Audio;
@@ -72,8 +76,25 @@ export default class GunEntity extends Entity {
 
   public override spawn(world: World, position: Vector3Like, rotation: QuaternionLike) {
     super.spawn(world, position, rotation);
+    this.createMuzzleFlashChildEntity();
     this._updatePlayerUIAmmo();
     this._updatePlayerUIWeapon();
+  }
+
+  public createMuzzleFlashChildEntity() {
+    if (!this.isSpawned || !this.world) {
+      return;
+    }
+
+    this._muzzleFlashChildEntity = new Entity({
+      parent: this,
+      modelUri: 'models/environment/muzzle-flash.gltf',
+      modelScale: 0.5,
+      opacity: 0,
+    });
+
+    // pistol specific atm
+    this._muzzleFlashChildEntity.spawn(this.world, { x: 0.03, y: 0.1, z: -0.5 }, Quaternion.fromEuler(0, 90, 0));
   }
 
   // simple convenience helper for handling ammo and fire rate in shoot() overrides.
@@ -105,6 +126,14 @@ export default class GunEntity extends Entity {
     
     // Check for hit
     this.checkHit();
+
+    // Show Muzzle Flash
+    if (this._muzzleFlashChildEntity) {
+      this._muzzleFlashChildEntity.setOpacity(1);
+      setTimeout(() => {
+        this._muzzleFlashChildEntity.setOpacity(0);
+      }, 35);
+    }
     
     // Update player ammo
     this._updatePlayerUIAmmo();
