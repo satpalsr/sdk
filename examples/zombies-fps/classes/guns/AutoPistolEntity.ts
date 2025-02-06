@@ -1,25 +1,24 @@
 import { Quaternion } from 'hytopia';
-import ShotgunEntity from './ShotgunEntity';
+import PistolEntity from './PistolEntity';
 import type { GunEntityOptions } from '../GunEntity';
 import type { PlayerEntity, QuaternionLike, Vector3Like } from 'hytopia';
 
-export default class AutoShotgunEntity extends ShotgunEntity {
+export default class AutoPistolEntity extends PistolEntity {
   public constructor(options: Partial<GunEntityOptions>) {
     super({
-      ammo: options.ammo ?? 15,
-      fireRate: options.fireRate ?? 4,
-      iconImageUri: options.iconImageUri ?? 'icons/auto-shotgun.png',
-      name: options.name ?? 'Auto Shotgun',
-      maxAmmo: options.maxAmmo ?? 15,
-      modelUri: options.modelUri ?? 'models/items/auto-shotgun.glb',
-      reloadTimeMs: options.reloadTimeMs ?? 2500,
+      ammo: options.ammo ?? 20,
+      fireRate: options.fireRate ?? 6,
+      iconImageUri: options.iconImageUri ?? 'icons/auto-pistol.png',
+      name: options.name ?? 'Auto Pistol',
+      maxAmmo: options.maxAmmo ?? 20,
+      modelUri: options.modelUri ?? 'models/items/auto-pistol.glb',
       ...options,
     });
   }
 
   public override getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike } {
     return {
-      position: { x: 0.015, y: 0, z: -0.82 },
+      position: { x: 0.01, y: 0.1, z: -0.35 },
       rotation: Quaternion.fromEuler(0, 90, 0),
     };
   }

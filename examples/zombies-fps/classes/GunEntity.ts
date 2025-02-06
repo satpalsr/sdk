@@ -77,6 +77,8 @@ export default abstract class GunEntity extends Entity {
     this._shootAudio = new Audio({
       attachedToEntity: this,
       uri: options.shootAudioUri,
+      volume: 0.3,
+      referenceDistance: 8,
     });
 
     if (options.parent) {
