@@ -1,4 +1,4 @@
-import { Collider, ColliderShape, CollisionGroup, GameServer } from 'hytopia';
+import { Audio, Collider, ColliderShape, CollisionGroup, GameServer } from 'hytopia';
 import PurchaseBarrierEntity from './PurchaseBarrierEntity';
 import { INVISIBLE_WALLS, INVISIBLE_WALL_COLLISION_GROUP, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS } from '../gameConfig';
 import type { World, Vector3Like } from 'hytopia';
@@ -21,6 +21,15 @@ export default class GameManager {
   private _enemySpawnTimeout: NodeJS.Timeout | undefined;
   private _startTime: number | undefined;
   private _waveTimeout: NodeJS.Timeout | undefined;
+  private _waveStartAudio: Audio;
+
+  public constructor() {
+    this._waveStartAudio = new Audio({
+      uri: 'audio/sfx/wave-start.mp3',
+      loop: false,
+      volume: 1,
+    });
+  }
 
   public addUnlockedId(id: string) {
     this.unlockedIds.add(id);
@@ -106,6 +115,8 @@ export default class GameManager {
     clearTimeout(this._waveTimeout);
 
     this.waveNumber++;
+
+    this._waveStartAudio.play(this.world, true);
 
     GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
       player.ui.sendData({
