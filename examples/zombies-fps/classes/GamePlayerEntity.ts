@@ -16,10 +16,10 @@ import {
 } from 'hytopia';
 
 import PistolEntity from './guns/PistolEntity';
-import ShotgunEntity from './guns/ShotgunEntity';
 
 import InteractableEntity from './InteractableEntity';
 import type GunEntity from './GunEntity';
+import type { GunEntityOptions } from './GunEntity';
 import { INVISIBLE_WALL_COLLISION_GROUP } from '../gameConfig';
 
 const BASE_HEALTH = 100;
@@ -51,7 +51,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.autoCancelMouseLeftClick = false;
     
     // Setup player animations
-    this.playerController.idleLoopedAnimations = [ ];
+    this.playerController.idleLoopedAnimations = [];
     this.playerController.interactOneshotAnimations = [];
     this.playerController.walkLoopedAnimations = ['walk_lower' ];
     this.playerController.runLoopedAnimations = [ 'run_lower' ];
@@ -68,7 +68,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     // Set base stats
     this.health = BASE_HEALTH;
     this.maxHealth = BASE_HEALTH;
-    this.money = 0;
+    this.money = 600; //0;
 
     // Setup damage audio
     this._damageAudio = new Audio({
@@ -108,16 +108,33 @@ export default class GamePlayerEntity extends PlayerEntity {
     });
 
     // Give player a pistol.
-    this._gun = new ShotgunEntity({ parent: this });
-    this._gun.spawn(world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
+    this.equipGun(new PistolEntity({ parent: this }));
 
     // Spawn light
     this._light.spawn(world);
+
+    // Start auto heal ticker
+    this._autoHealTicker();
   }
 
   public addMoney(amount: number) {
     this.money += amount;
     this._updatePlayerUIMoney();
+  }
+
+  public equipGun(gun: GunEntity) {
+    if (!this.world) {
+      return;
+    }
+
+    if (gun.isSpawned) {
+      // no support for equipping already spawned guns atm, like pickup up guns etc, 
+      // but would be easy to add. Not needed for this game though.
+      return console.warn('Cannot equip already spawned gun!');
+    }
+
+    this._gun = gun;
+    this._gun.spawn(this.world, { x: 0, y: 0, z: -0.2 }, Quaternion.fromEuler(-90, 0, 0));
   }
 
   public spendMoney(amount: number): boolean {
@@ -137,12 +154,8 @@ export default class GamePlayerEntity extends PlayerEntity {
     }
 
     this.health -= damage;
-
-    this.player.ui.sendData({
-      type: 'health',
-      health: this.health,
-      maxHealth: this.maxHealth,
-    });
+    
+    this._updatePlayerUIHealth();
 
     // if player is dead, despawn, gg's, todo: make a 15s time for player to be revived.
     if (this.health <= 0) {
@@ -206,6 +219,25 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _updatePlayerUIMoney() {
     this.player.ui.sendData({ type: 'money', money: this.money });
+  }
+
+  private _updatePlayerUIHealth() {
+    this.player.ui.sendData({ type: 'health', health: this.health, maxHealth: this.maxHealth });
+  }
+
+  private _autoHealTicker() {
+    setTimeout(() => {
+      if (!this.isSpawned) {
+        return;
+      }
+
+      if (this.health < this.maxHealth) {
+        this.health += 1;
+        this._updatePlayerUIHealth();
+      }
+
+      this._autoHealTicker();
+    }, 1000);
   }
 }
 

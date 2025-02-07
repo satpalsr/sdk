@@ -13,8 +13,8 @@ const RETARGET_ACCUMULATOR_THRESHOLD_MS = 5000;
 const PATHFIND_ACCUMULATOR_THRESHOLD_MS = 3000;
 
 export interface EnemyEntityOptions extends EntityOptions {
-  damageAudioUri?: string;
   damage: number;
+  damageAudioUri?: string;
   health: number;
   idleAudioUri?: string;
   jumpHeight?: number
@@ -25,8 +25,8 @@ export interface EnemyEntityOptions extends EntityOptions {
 export default class EnemyEntity extends Entity {
   public damage: number;
   public health: number;
-  public maxHealth: number;
   public jumpHeight: number;
+  public maxHealth: number;
   public reward: number;
   public speed: number;
 
@@ -39,10 +39,10 @@ export default class EnemyEntity extends Entity {
 
   public constructor(options: EnemyEntityOptions) {
     super(options);
-    this.health = options.health;
-    this.maxHealth = options.health;
     this.damage = options.damage;
+    this.health = options.health;
     this.jumpHeight = options.jumpHeight ?? 1;
+    this.maxHealth = options.health;
     this.reward = options.reward;
     this.speed = options.speed;
 
@@ -61,7 +61,7 @@ export default class EnemyEntity extends Entity {
         uri: options.idleAudioUri,
         volume: 0.5,
         loop: true,
-        referenceDistance: 1,
+        referenceDistance: 1, // low reference distance so its only heard when the enemy is very near
       });
     }
 
@@ -90,20 +90,17 @@ export default class EnemyEntity extends Entity {
       this._damageAudio.play(this.world, true);
     }
 
+    // Give reward based on damage as % of health
+    fromPlayer.addMoney((this.damage / this.maxHealth) * this.reward);
+
     if (this.health <= 0 && this.isSpawned) {
       // Enemy is dead, give half reward & despawn
-      fromPlayer.addMoney(Math.floor(this.reward / 2));
       this.despawn();
     } else {
-      if (!this.isSpawned || !this.world) {
-        return;
-      }
-
-      // Give a % of reward based on damage
-      fromPlayer.addMoney(Math.floor(this.reward * (damage / this.maxHealth) * 0.5));
-
       // Apply red tint for 75ms to indicate damage
       this.setTintColor({ r: 255, g: 0, b: 0 });
+      // Reset tint after 75ms, make sure to check if the entity is still
+      // spawned to prevent setting tint on a despawned entity
       setTimeout(() => this.isSpawned ? this.setTintColor({ r: 255, g: 255, b: 255 }) : undefined, 75);
     }
   }
@@ -116,6 +113,10 @@ export default class EnemyEntity extends Entity {
     otherEntity.takeDamage(this.damage);
   }
 
+  /*
+   * Pathfinding is handled on an accumulator basis to prevent excessive pathfinding
+   * or movement calculations. It defers to dumb movements 
+   */
   private _onTick = (entity: Entity, tickDeltaMs: number) => {
     if (!this.isSpawned) {
       return;

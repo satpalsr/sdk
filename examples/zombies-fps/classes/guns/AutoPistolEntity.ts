@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 import type { PlayerEntity, QuaternionLike, Vector3Like } from 'hytopia';
 
 export default class AutoPistolEntity extends PistolEntity {
-  public constructor(options: Partial<GunEntityOptions>) {
+  public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
       ammo: options.ammo ?? 20,
       fireRate: options.fireRate ?? 6,

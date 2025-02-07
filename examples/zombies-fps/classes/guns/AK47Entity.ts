@@ -5,7 +5,7 @@ import type { PlayerEntity, QuaternionLike, Vector3Like } from 'hytopia';
 
 // fire behavior is very similar to a pistol, so we inherit from it.
 export default class AK47Entity extends PistolEntity {
-  public constructor(options: Partial<GunEntityOptions>) {
+  public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
       ammo: options.ammo ?? 30,
       damage: options.damage ?? 3,

@@ -5,7 +5,7 @@ import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
 
 export default class PistolEntity extends GunEntity {
-  public constructor(options: Partial<GunEntityOptions>) {
+  public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
       ammo: options.ammo ?? 10,
       damage: options.damage ?? 3,

@@ -68,11 +68,7 @@ export default class GameManager {
 
     // Setup weapon crates
     WEAPON_CRATES.forEach(crate => {
-      const weaponCrate = new WeaponCrateEntity({
-        name: crate.name,
-        purchasePrice: crate.purchasePrice,
-        tintColor: crate.tintColor,
-      });
+      const weaponCrate = new WeaponCrateEntity();
 
       weaponCrate.spawn(world, crate.position, crate.rotation);
     });

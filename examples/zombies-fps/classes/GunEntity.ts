@@ -1,7 +1,5 @@
 import {
   Audio,
-  Collider,
-  ColliderShape,
   CollisionGroup,
   CollisionGroupsBuilder,
   Entity,
@@ -19,19 +17,19 @@ import type GamePlayerEntity from './GamePlayerEntity';
 export type GunHand = 'left' | 'right' | 'both';
 
 export interface GunEntityOptions extends EntityOptions {
-  ammo: number;         // The amount of ammo in the clip.
-  damage: number;       // The damage of the gun.
-  fireRate: number;     // Bullets shot per second.
-  reloadAudioUri: string; // The audio played when reloading
-  reloadTimeMs: number;   // Seconds to reload.
-  shootAudioUri: string; // The audio played when shooting
-  hand: GunHand;        // The hand the weapon is held in.
+  ammo: number;              // The amount of ammo in the clip.
+  damage: number;            // The damage of the gun.
+  fireRate: number;          // Bullets shot per second.
+  hand: GunHand;             // The hand the weapon is held in.
+  iconImageUri: string;      // The image uri of the weapon icon.
+  idleAnimation: string;     // The animation played when the gun is idle.
+  maxAmmo: number;           // The amount of ammo the clip can hold.
   parent?: GamePlayerEntity; // The parent player entity.
-  range: number;         // The max range bullets travel for raycast hits
-  idleAnimation: string; // The animation played when the gun is idle.
-  iconImageUri: string; // The image uri of the weapon icon.
-  maxAmmo: number;      // The amount of ammo the clip can hold.
-  shootAnimation: string; // The animation played when the gun is shooting.
+  range: number;             // The max range bullets travel for raycast hits
+  reloadAudioUri: string;    // The audio played when reloading
+  reloadTimeMs: number;      // Seconds to reload.
+  shootAnimation: string;    // The animation played when the gun is shooting.
+  shootAudioUri: string;     // The audio played when shooting
 }
 
 export default abstract class GunEntity extends Entity {
@@ -39,8 +37,8 @@ export default abstract class GunEntity extends Entity {
   public damage: number;
   public fireRate: number;
   public hand: GunHand;
-  public idleAnimation: string;
   public iconImageUri: string;
+  public idleAnimation: string;
   public maxAmmo: number;
   public range: number;
   public reloadTimeMs: number;
@@ -58,17 +56,18 @@ export default abstract class GunEntity extends Entity {
       parentNodeName: options.parent ? GunEntity._getParentNodeName(options.hand) : undefined,
     });
 
-    this.fireRate = options.fireRate;
-    this.damage = options.damage;
     this.ammo = options.ammo;
+    this.damage = options.damage;
+    this.fireRate = options.fireRate;
     this.hand = options.hand;
-    this.idleAnimation = options.idleAnimation;
     this.iconImageUri = options.iconImageUri;
+    this.idleAnimation = options.idleAnimation;
     this.maxAmmo = options.maxAmmo;
     this.range = options.range;
     this.reloadTimeMs = options.reloadTimeMs;
     this.shootAnimation = options.shootAnimation;
 
+    // Create reusable audio instances
     this._reloadAudio = new Audio({
       attachedToEntity: this,
       uri: options.reloadAudioUri,  
@@ -148,25 +147,25 @@ export default abstract class GunEntity extends Entity {
     return true;
   }
 
-  public shootRaycast(origin: Vector3Like, direction: Vector3Like, length: number) {
-    if (!this.parent || !this.parent.world) {
+  public reload() {
+    if (!this.parent || !this.parent.world || this._reloading) {
       return;
     }
 
-    const parentPlayerEntity = this.parent as GamePlayerEntity;
-   
-    const raycastHit = this.parent.world.simulation.raycast(origin, direction, length, {
-      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({ // filter group is the group the raycast belongs to.
-        belongsTo: [ CollisionGroup.ALL ],
-        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
-      }),
-    });
+    this.ammo = 0; // set the ammo to 0 to prevent fire while reloading if clip wasn't empty.
+    this._reloading = true;
+    this._reloadAudio.play(this.parent.world, true);
+    this._updatePlayerUIReload();
 
-    const hitEntity = raycastHit?.hitEntity;
+    setTimeout(() => {
+      if (!this.isEquipped) {
+        return;
+      }
 
-    if (hitEntity && hitEntity instanceof EnemyEntity) {
-      hitEntity.takeDamage(this.damage, parentPlayerEntity);
-    }
+      this.ammo = this.maxAmmo;
+      this._reloading = false;
+      this._updatePlayerUIAmmo();
+    }, this.reloadTimeMs);
   }
 
   // override to create specific gun shoot logic
@@ -199,25 +198,25 @@ export default abstract class GunEntity extends Entity {
     this._shootAudio.play(this.parent.world, true);
   }
 
-  public reload() {
-    if (!this.parent || !this.parent.world || this._reloading) {
+  public shootRaycast(origin: Vector3Like, direction: Vector3Like, length: number) {
+    if (!this.parent || !this.parent.world) {
       return;
     }
 
-    this.ammo = 0; // set the ammo to 0 to prevent fire while reloading if clip wasn't empty.
-    this._reloading = true;
-    this._reloadAudio.play(this.parent.world, true);
-    this._updatePlayerUIReload();
+    const parentPlayerEntity = this.parent as GamePlayerEntity;
+   
+    const raycastHit = this.parent.world.simulation.raycast(origin, direction, length, {
+      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({ // filter group is the group the raycast belongs to.
+        belongsTo: [ CollisionGroup.ALL ],
+        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
+      }),
+    });
 
-    setTimeout(() => {
-      if (!this.isEquipped) {
-        return;
-      }
+    const hitEntity = raycastHit?.hitEntity;
 
-      this.ammo = this.maxAmmo;
-      this._reloading = false;
-      this._updatePlayerUIAmmo();
-    }, this.reloadTimeMs);
+    if (hitEntity && hitEntity instanceof EnemyEntity) {
+      hitEntity.takeDamage(this.damage, parentPlayerEntity);
+    }
   }
 
   private _updateParentAnimations() {

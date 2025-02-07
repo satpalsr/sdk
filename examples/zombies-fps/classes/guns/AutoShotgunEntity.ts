@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 import type { PlayerEntity, QuaternionLike, Vector3Like } from 'hytopia';
 
 export default class AutoShotgunEntity extends ShotgunEntity {
-  public constructor(options: Partial<GunEntityOptions>) {
+  public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
       ammo: options.ammo ?? 15,
       fireRate: options.fireRate ?? 4,
@@ -19,7 +19,7 @@ export default class AutoShotgunEntity extends ShotgunEntity {
 
   public override getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike } {
     return {
-      position: { x: 0.015, y: 0, z: -0.82 },
+      position: { x: 0.015, y: 0, z: -1 },
       rotation: Quaternion.fromEuler(0, 90, 0),
     };
   }

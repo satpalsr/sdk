@@ -139,58 +139,36 @@ export const PURCHASE_BARRIERS = [
 
 export const WEAPON_CRATES = [
   {
-    name: 'Rusty Weapon Crate',
     position: { x: -3, y: 1.5, z: 16.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
-    purchasePrice: 100,
   },
   {
-    name: 'Rusty Weapon Crate',
     position: { x: 10.5, y: 1.5, z: 16.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
-    purchasePrice: 100,
   },
   {
-    name: 'Weapon Crate',
     position: { x: -27.5, y: 1.5, z: 2.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
-    purchasePrice: 400,
-    tintColor: { r: 0, g: 255, b: 255 },
   },
   {
-    name: 'Weapon Crate',
     position: { x: 22, y: 1.5, z: 7 },
     rotation: Quaternion.fromEuler(0, -45, 0),
-    purchasePrice: 400,
-    tintColor: { r: 0, g: 255, b: 255 },
   },
   {
-    name: 'Advanced Weapon Crate',
     position: { x: -23.5, y: 1.5, z: -24.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
-    purchasePrice: 1000,
-    tintColor: { r: 255, g: 0, b: 255 },
   },
   {
-    name: 'Advanced Weapon Crate',
     position: { x: 31, y: 1.5, z: -14.5 },
     rotation: Quaternion.fromEuler(0, 45, 0),
-    purchasePrice: 1000,
-    tintColor: { r: 255, g: 0, b: 255 },
   },
   {
-    name: 'Mega Weapon Crate',
     position: { x: 2.5, y: 2.5, z: -4.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
-    purchasePrice: 2000,
-    tintColor: { r: 255, g: 210, b: 0 },
   },
   {
-    name: 'Magical Weapon Crate',
     position: { x: 0.5, y: 1.5, z: -29.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
-    purchasePrice: 5000,
-    tintColor: { r: 50, g: 50, b: 255 },
   },
 ]
 
