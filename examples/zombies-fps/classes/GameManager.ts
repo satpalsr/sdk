@@ -95,13 +95,8 @@ export default class GameManager {
     this.isStarted = true;
     this._startTime = Date.now();
 
-    const playerCount = this.world.entityManager.getAllPlayerEntities().length;
-
     GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
-      player.ui.sendData({
-        type: 'start',
-        playerCount,
-      });
+      player.ui.sendData({ type: 'start' });
     });
 
     this._spawnLoop();

@@ -173,6 +173,10 @@ export default class EnemyEntity extends Entity {
     const targetableEntities = this.world.entityManager.getAllPlayerEntities();
 
     targetableEntities.forEach(target => {
+      if (target instanceof GamePlayerEntity && target.downed) { // skip downed players
+        return;
+      }
+      
       const distance = this._getTargetDistance(target);
       if (distance < nearestDistance) {
         nearestTarget = target;
