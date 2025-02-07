@@ -137,10 +137,6 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     // Start auto heal ticker
     this._autoHealTicker();
-
-    if (Math.random() > 0.5) {
-      this._setDowned(true);
-    }
   }
 
   public addMoney(amount: number) {
