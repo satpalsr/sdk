@@ -1,4 +1,5 @@
-import { PathfindingEntityController } from 'hytopia';
+import { GameServer, PathfindingEntityController } from 'hytopia';
+import type { GamePlayerEntity, QuaternionLike, Vector3Like, World } from 'hytopia';
 
 import EnemyEntity from '../EnemyEntity';
 import type { EnemyEntityOptions } from '../EnemyEntity';
@@ -27,6 +28,40 @@ export default class RipperEntity extends EnemyEntity {
         enabledRotations: { x: false, y: true, z: false },
         ccdEnabled: true,
       },
+    });
+  }
+
+  public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike) {
+    super.spawn(world, position, rotation);
+
+    this._updateBossUI({
+      type: 'boss',
+      name: 'BOSS: RIPPER',
+      health: this.health,
+      maxHealth: this.maxHealth,
+      show: true,
+    });
+  }
+
+  public override takeDamage(damage: number, fromPlayer: GamePlayerEntity) {
+    // Do the UI check first, because otherwise
+    // takeDamage can trigger a despawn if health < 0
+    this._updateBossUI({
+      type: 'boss',
+      show: this.health - damage > 0,
+      healthPercent: ((this.health - damage) / this.maxHealth) * 100,
+    });
+
+    super.takeDamage(damage, fromPlayer);
+  }
+
+  private _updateBossUI(data = {}) {
+    if (!this.world) {
+      return;
+    }
+
+    GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
+      player.ui.sendData(data);
     });
   }
 }

@@ -4,6 +4,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
 <!-- UI-->
+<div class="boss-health-container">
+  <div class="boss-name"></div>
+  <div class="boss-health-bar">
+    <div class="boss-health-fill"></div>
+  </div>
+</div>
+
 <div class="crosshair"></div>
 <div class="vignette"></div>
 <div class="wave-announcement">Wave <span class="wave-number"></span></div>
@@ -206,6 +213,27 @@
       const digits = Math.max(2, Math.min(8, moneyAmount.toString().length));
       moneyDisplay.style.width = `${10 + (digits * 10)}px`;
     }
+
+    if (type === 'boss') {
+      const { name, healthPercent, show } = data;
+      const bossContainer = document.querySelector('.boss-health-container');
+      const bossName = document.querySelector('.boss-name');
+      const bossHealthFill = document.querySelector('.boss-health-fill');
+      console.log(data);
+      if (show === true) {
+        bossContainer.style.display = 'block';
+      } else if (show === false) {
+        bossContainer.style.display = 'none';
+      }
+
+      if (name) {
+        bossName.textContent = name;
+      }
+
+      if (healthPercent) {
+        bossHealthFill.style.width = `${healthPercent}%`;
+      }
+    }
   });
 
   function showWaveAnnouncement(waveNumber) {
@@ -221,6 +249,42 @@
 
 <!-- UI Styles -->
 <style>
+  .boss-health-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    text-align: center;
+  }
+
+  .boss-name {
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .boss-health-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+
+  .boss-health-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #800000, #ff0000);
+    transition: width 0.3s ease;
+  }
+
   .game-info {
     display: none;
     position: fixed;

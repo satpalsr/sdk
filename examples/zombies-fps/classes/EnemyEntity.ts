@@ -151,7 +151,7 @@ export default class EnemyEntity extends Entity {
       this._isPathfinding = pathfindingController.pathfind(this._targetEntity.position, this.speed, {
         maxFall: this.jumpHeight,
         maxJump: this.jumpHeight,
-        maxOpenSetIterations: 400,
+        maxOpenSetIterations: 200,
         verticalPenalty: this.preferJumping ? -1 : 1,
         pathfindAbortCallback: () => this._isPathfinding = false,
         pathfindCompleteCallback: () => this._isPathfinding = false,
