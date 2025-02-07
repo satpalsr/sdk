@@ -16,8 +16,9 @@ const WAVE_SPAWN_INTERVAL_REDUCTION_MS = 250; // Spawn rate reduction per wave
 export default class GameManager {
   public static readonly instance = new GameManager();
 
-  public waveNumber = 0;
+  public isStarted = false;
   public unlockedIds: Set<string> = new Set([ 'start' ]);
+  public waveNumber = 0;
   public world: World | undefined;
 
   private _enemySpawnTimeout: NodeJS.Timeout | undefined;
@@ -89,11 +90,12 @@ export default class GameManager {
   }
 
   public startGame() {
-    if (!this.world) return; // type guard
+    if (!this.world || this.isStarted) return; // type guard
+
+    this.isStarted = true;
+    this._startTime = Date.now();
 
     const playerCount = this.world.entityManager.getAllPlayerEntities().length;
-
-    this._startTime = Date.now();
 
     GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
       player.ui.sendData({

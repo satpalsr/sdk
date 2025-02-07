@@ -1,4 +1,5 @@
 import {
+  Audio,
   Collider,
   RigidBodyType,
   QuaternionLike,
@@ -61,6 +62,7 @@ export interface WeaponCrateEntityOptions {
 export default class WeaponCrateEntity extends InteractableEntity {
   public purchasePrice: number;
   private _purchaseSceneUI: SceneUI;
+  private _rouletteAudio: Audio;
   private _rouletteSceneUI: SceneUI;
   private _rollableWeaponIds: string[];
   private _rolledWeaponId: string | undefined;
@@ -94,6 +96,13 @@ export default class WeaponCrateEntity extends InteractableEntity {
         name: this.name,
         cost: this.purchasePrice,
       },
+    });
+
+    this._rouletteAudio = new Audio({
+      attachedToEntity: this,
+      uri: 'audio/sfx/roulette.mp3',
+      volume: 0.3,
+      referenceDistance: 4,
     });
 
     this._rouletteSceneUI = new SceneUI({
@@ -139,6 +148,8 @@ export default class WeaponCrateEntity extends InteractableEntity {
       possibleWeapons: POSSIBLE_WEAPONS,
     });
     this._rouletteSceneUI.load(this.world);
+
+    this._rouletteAudio.play(this.world, true);
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
