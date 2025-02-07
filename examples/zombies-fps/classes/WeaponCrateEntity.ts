@@ -52,13 +52,20 @@ const POSSIBLE_WEAPONS = [
   },
 ]
 
+export interface WeaponCrateEntityOptions {
+  name: string,
+  price: number,
+  rollableWeaponIds: string[],
+};
+
 export default class WeaponCrateEntity extends InteractableEntity {
   public purchasePrice: number;
   private _purchaseSceneUI: SceneUI;
   private _rouletteSceneUI: SceneUI;
+  private _rollableWeaponIds: string[];
   private _rolledWeaponId: string | undefined;
 
-  public constructor() {
+  public constructor(options: WeaponCrateEntityOptions) {
     const colliderOptions = Collider.optionsFromModelUri('models/environment/weaponbox.gltf');
 
     if (colliderOptions.halfExtents) { // make it taller for better interact area
@@ -66,7 +73,7 @@ export default class WeaponCrateEntity extends InteractableEntity {
     }
 
     super({
-      name: 'Weapon Crate',
+      name: options.name,
       modelUri: 'models/environment/weaponbox.gltf',
       rigidBodyOptions: {
         type: RigidBodyType.FIXED,
@@ -75,7 +82,8 @@ export default class WeaponCrateEntity extends InteractableEntity {
       tintColor: { r: 255, g: 255, b: 255 },
     });
 
-    this.purchasePrice = 200;
+    this.purchasePrice = options.price;
+    this._rollableWeaponIds = options.rollableWeaponIds;
 
     this._purchaseSceneUI = new SceneUI({
       attachedToEntity: this,
@@ -125,7 +133,7 @@ export default class WeaponCrateEntity extends InteractableEntity {
     this._purchaseSceneUI.unload();
 
     // Roll a weapon and show roll UI
-    this._rolledWeaponId = POSSIBLE_WEAPONS[Math.floor(Math.random() * POSSIBLE_WEAPONS.length)].id;
+    this._rolledWeaponId = this._rollableWeaponIds[Math.floor(Math.random() * this._rollableWeaponIds.length)];
     this._rouletteSceneUI.setState({
       selectedWeaponId: this._rolledWeaponId,
       possibleWeapons: POSSIBLE_WEAPONS,

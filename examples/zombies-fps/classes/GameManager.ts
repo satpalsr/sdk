@@ -5,6 +5,7 @@ import type { World, Vector3Like } from 'hytopia';
 
 // temp
 import ZombieEntity from './enemies/ZombieEntity';
+import RipperEntity from './enemies/RipperEntity';
 import WeaponCrateEntity from './WeaponCrateEntity';
 
 const GAME_WAVE_INTERVAL_MS = 30 * 1000; // 30 seconds between waves
@@ -54,7 +55,7 @@ export default class GameManager {
       wallCollider.addToSimulation(world.simulation);
     });
 
-    // // Setup purchase barriers
+    // Setup purchase barriers
     PURCHASE_BARRIERS.forEach(barrier => {
       const purchaseBarrier = new PurchaseBarrierEntity({
         name: barrier.name,
@@ -68,10 +69,21 @@ export default class GameManager {
 
     // Setup weapon crates
     WEAPON_CRATES.forEach(crate => {
-      const weaponCrate = new WeaponCrateEntity();
+      const weaponCrate = new WeaponCrateEntity({
+        name: crate.name,
+        price: crate.price,
+        rollableWeaponIds: crate.rollableWeaponIds,
+      });
 
       weaponCrate.spawn(world, crate.position, crate.rotation);
     });
+
+    // Start ambient music
+    (new Audio({
+      uri: 'audio/music/bg.mp3',
+      loop: true,
+      volume: 0.4,
+    })).play(world);
 
     world.chatManager.registerCommand('/start', () => this.startGame());
   }
@@ -99,19 +111,12 @@ export default class GameManager {
 
     clearTimeout(this._enemySpawnTimeout);
 
-    const spawnPoints: Vector3Like[] = [];
-
-    this.unlockedIds.forEach(id => {
-      const spawnPoint = ENEMY_SPAWN_POINTS[id];
-      if (spawnPoint) spawnPoints.push(...spawnPoint);
-    });
-
-    const spawnPoint = spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
     const zombie = new ZombieEntity({
-      speed: Math.min(6, 2 + this.waveNumber * 0.5), // max speed of 6
+      health: 7 + (this.waveNumber * 0.25),
+      speed: Math.min(6, 2 + this.waveNumber * 0.25), // max speed of 6
     });
 
-    zombie.spawn(this.world, spawnPoint);
+    zombie.spawn(this.world, this._getSpawnPoint());
 
     const nextSpawn = Math.max(FASTEST_SPAWN_INTERVAL_MS, SLOWEST_SPAWN_INTERVAL_MS - (this.waveNumber * WAVE_SPAWN_INTERVAL_REDUCTION_MS));
 
@@ -135,10 +140,30 @@ export default class GameManager {
     });
 
     // Spawn a few zombies to start the wave
-    for (let i = 0; i < Math.min(12, this.waveNumber * 2); i++) {
+    for (let i = 0; i < Math.min(4, this.waveNumber * 2); i++) {
       this._spawnLoop();
+    }
+    
+    if (this.waveNumber % 5 === 0) { // Spawn a ripper every 5 waves
+      const ripper = new RipperEntity({
+        health: 50 * this.waveNumber,
+        speed: 2 + this.waveNumber * 0.25,
+        reward: 50 * this.waveNumber,
+      });
+      ripper.spawn(this.world, this._getSpawnPoint());
     }
 
     this._waveTimeout = setTimeout(() => this._waveLoop(), GAME_WAVE_INTERVAL_MS);
+  }
+
+  private _getSpawnPoint(): Vector3Like {
+    const spawnPoints: Vector3Like[] = [];
+
+    this.unlockedIds.forEach(id => {
+      const spawnPoint = ENEMY_SPAWN_POINTS[id];
+      if (spawnPoint) spawnPoints.push(...spawnPoint);
+    });
+
+    return spawnPoints[Math.floor(Math.random() * spawnPoints.length)];
   }
 }

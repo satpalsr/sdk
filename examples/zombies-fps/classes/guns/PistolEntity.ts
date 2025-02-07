@@ -9,7 +9,7 @@ export default class PistolEntity extends GunEntity {
     super({
       ammo: options.ammo ?? 10,
       damage: options.damage ?? 3,
-      fireRate: options.fireRate ?? 5,
+      fireRate: options.fireRate ?? 9,
       hand: options.hand ?? 'right',
       iconImageUri: options.iconImageUri ?? 'icons/pistol.png',
       idleAnimation: options.idleAnimation ?? 'idle_gun_right',

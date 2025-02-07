@@ -9,7 +9,7 @@ export default class AR15Entity extends PistolEntity {
     super({
       ammo: options.ammo ?? 30,
       damage: options.damage ?? 4,
-      fireRate: options.fireRate ?? 8,
+      fireRate: options.fireRate ?? 15,
       iconImageUri: options.iconImageUri ?? 'icons/ar-15.png',
       idleAnimation: options.idleAnimation ?? 'idle_gun_both',
       name: options.name ?? 'AR-15',

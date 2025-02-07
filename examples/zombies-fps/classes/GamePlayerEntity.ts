@@ -68,7 +68,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     // Set base stats
     this.health = BASE_HEALTH;
     this.maxHealth = BASE_HEALTH;
-    this.money = 600; //0;
+    this.money = 0;
 
     // Setup damage audio
     this._damageAudio = new Audio({
@@ -131,6 +131,10 @@ export default class GamePlayerEntity extends PlayerEntity {
       // no support for equipping already spawned guns atm, like pickup up guns etc, 
       // but would be easy to add. Not needed for this game though.
       return console.warn('Cannot equip already spawned gun!');
+    }
+
+    if (this._gun) { // despawn old gun
+      this._gun.despawn();
     }
 
     this._gun = gun;

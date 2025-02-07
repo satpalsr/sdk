@@ -187,7 +187,9 @@ export default abstract class GunEntity extends Entity {
     if (this._muzzleFlashChildEntity) {
       this._muzzleFlashChildEntity.setOpacity(1);
       setTimeout(() => {
-        this._muzzleFlashChildEntity.setOpacity(0);
+        if (this.isSpawned && this._muzzleFlashChildEntity?.isSpawned) {
+          this._muzzleFlashChildEntity.setOpacity(0);
+        }
       }, 35);
     }
     

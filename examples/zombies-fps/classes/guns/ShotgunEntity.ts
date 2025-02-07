@@ -7,14 +7,14 @@ import type { GunEntityOptions } from '../GunEntity';
 export default class ShotgunEntity extends GunEntity {
   public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
-      ammo: options.ammo ?? 5,
-      damage: options.damage ?? 3, // damage per pellet
+      ammo: options.ammo ?? 3,
+      damage: options.damage ?? 4, // damage per pellet
       fireRate: options.fireRate ?? 1.3,
       hand: options.hand ?? 'right',
       iconImageUri: options.iconImageUri ?? 'icons/shotgun.png',
       idleAnimation: options.idleAnimation ?? 'idle_gun_both',
       name: options.name ?? 'Shotgun',
-      maxAmmo: options.maxAmmo ?? 5,
+      maxAmmo: options.maxAmmo ?? 3,
       modelUri: options.modelUri ?? 'models/items/shotgun.glb',
       modelScale: options.modelScale ?? 1.2,
       parent: options.parent,

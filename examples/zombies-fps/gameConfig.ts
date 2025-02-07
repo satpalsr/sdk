@@ -25,7 +25,7 @@ export const INVISIBLE_WALLS = [
     halfExtents: { x: 1, y: 5, z: 0.5 },
   },
   { // Parlor (south window)
-    position: { x: -21, y: 1, z: 16},
+    position: { x: -22, y: 1, z: 16},
     halfExtents: { x: 1, y: 5, z: 0.5 },
   },
   { // Parlor (north window)
@@ -65,7 +65,7 @@ export const PURCHASE_BARRIERS = [
   },
   {
     name: 'Parlor (South)',
-    removalPrice: 150,
+    removalPrice: 75,
     position: { x: -8, y: 1.5, z: 18.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 3,
@@ -73,7 +73,7 @@ export const PURCHASE_BARRIERS = [
   },
   {
     name: 'Dining Hall (South)',
-    removalPrice: 250,
+    removalPrice: 150,
     position: { x: 13, y: 1.5, z: 18.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 3,
@@ -139,36 +139,60 @@ export const PURCHASE_BARRIERS = [
 
 export const WEAPON_CRATES = [
   {
+    name: 'Rusty Weapon Crate',
     position: { x: -3, y: 1.5, z: 16.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
+    price: 100,
+    rollableWeaponIds: [ 'pistol', 'shotgun', 'ar15' ],
   },
   {
+    name: 'Rusty Weapon Crate',
     position: { x: 10.5, y: 1.5, z: 16.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
+    price: 100,
+    rollableWeaponIds: [ 'pistol', 'shotgun', 'ar15' ],
   },
   {
+    name: 'Weapon Crate',
     position: { x: -27.5, y: 1.5, z: 2.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
+    price: 200,
+    rollableWeaponIds: [ 'shotgun', 'ar15', 'auto-pistol', ],
   },
   {
+    name: 'Weapon Crate',
     position: { x: 22, y: 1.5, z: 7 },
     rotation: Quaternion.fromEuler(0, -45, 0),
+    price: 200,
+    rollableWeaponIds: [ 'shotgun', 'ar15', 'auto-pistol', ],
   },
   {
+    name: 'Weapon Crate',
     position: { x: -23.5, y: 1.5, z: -24.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
+    price: 200,
+    rollableWeaponIds: [ 'shotgun', 'ar15', 'auto-pistol', ],
   },
   {
+    name: 'Elite Weapon Crate',
     position: { x: 31, y: 1.5, z: -14.5 },
     rotation: Quaternion.fromEuler(0, 45, 0),
+    price: 300,
+    rollableWeaponIds: [ 'ak47', 'ar15', 'auto-pistol', 'auto-shotgun', ],
   },
   {
+    name: 'Elite Weapon Crate',
     position: { x: 2.5, y: 2.5, z: -4.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
+    price: 300,
+    rollableWeaponIds: [ 'ak47', 'ar15', 'auto-pistol', 'auto-shotgun', ],
   },
   {
+    name: 'Elite Weapon Crate',
     position: { x: 0.5, y: 1.5, z: -29.5 },
     rotation: Quaternion.fromEuler(0, 0, 0),
+    price: 300,
+    rollableWeaponIds: [ 'ak47', 'ar15', 'auto-pistol', 'auto-shotgun', ],
   },
 ]
 

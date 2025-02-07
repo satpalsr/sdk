@@ -7,7 +7,7 @@ export default class AutoPistolEntity extends PistolEntity {
   public constructor(options: Partial<GunEntityOptions> = {}) {
     super({
       ammo: options.ammo ?? 20,
-      fireRate: options.fireRate ?? 6,
+      fireRate: options.fireRate ?? 7,
       iconImageUri: options.iconImageUri ?? 'icons/auto-pistol.png',
       name: options.name ?? 'Auto Pistol',
       maxAmmo: options.maxAmmo ?? 20,

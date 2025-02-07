@@ -3,24 +3,26 @@ import { PathfindingEntityController } from 'hytopia';
 import EnemyEntity from '../EnemyEntity';
 import type { EnemyEntityOptions } from '../EnemyEntity';
 
-export default class ZombieEntity extends EnemyEntity {
+export default class RipperEntity extends EnemyEntity {
   public constructor(options: Partial<EnemyEntityOptions> = {}) {
-    const speed = options.speed ?? 1 + Math.random() * 4;    
-    const animation = speed > 5 ? 'run' : speed > 3 ? 'walk' : 'crawling';
+    const speed = options.speed ?? 2;
+    const animation = speed > 6 ? 'animation.ripper_zombie.sprint' : 'animation.ripper_zombie.walk';
 
     super({
-      damage: options.damage ?? 2,
+      damage: options.damage ?? 6,
       damageAudioUri: options.damageAudioUri ?? 'audio/sfx/entity/zombie/zombie-hurt.mp3',
-      health: options.health ?? 7,
-      idleAudioUri: options.idleAudioUri ?? 'audio/sfx/zombie-idle.mp3',
+      health: options.health ?? 300,
+      idleAudioUri: options.idleAudioUri ?? 'audio/sfx/ripper-idle.mp3',
+      idleAudioVolume: 1,
+      idleAudioReferenceDistance: 8,
       jumpHeight: options.jumpHeight ?? 2,
-      reward: options.reward ?? 10,
-      speed: options.speed ?? speed,
-
+      preferJumping: true,
+      reward: options.reward ?? 300,
+      speed,
       controller: new PathfindingEntityController(),
-      modelUri: 'models/npcs/zombie.gltf',
+      modelUri: 'models/npcs/ripper-boss.gltf',
       modelLoopedAnimations: [ animation ],
-      modelScale: 0.5 + Math.random() * 0.2,
+      modelScale: 0.5,
       rigidBodyOptions: {
         enabledRotations: { x: false, y: true, z: false },
         ccdEnabled: true,

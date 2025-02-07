@@ -17,7 +17,10 @@ export interface EnemyEntityOptions extends EntityOptions {
   damageAudioUri?: string;
   health: number;
   idleAudioUri?: string;
+  idleAudioReferenceDistance?: number;
+  idleAudioVolume?: number;
   jumpHeight?: number
+  preferJumping?: boolean;
   reward: number;
   speed: number;
 }
@@ -27,6 +30,7 @@ export default class EnemyEntity extends Entity {
   public health: number;
   public jumpHeight: number;
   public maxHealth: number;
+  public preferJumping: boolean;
   public reward: number;
   public speed: number;
 
@@ -43,6 +47,7 @@ export default class EnemyEntity extends Entity {
     this.health = options.health;
     this.jumpHeight = options.jumpHeight ?? 1;
     this.maxHealth = options.health;
+    this.preferJumping = options.preferJumping ?? false;
     this.reward = options.reward;
     this.speed = options.speed;
 
@@ -59,9 +64,9 @@ export default class EnemyEntity extends Entity {
       this._idleAudio = new Audio({
         attachedToEntity: this,
         uri: options.idleAudioUri,
-        volume: 0.5,
+        volume: options.idleAudioVolume ?? 0.5,
         loop: true,
-        referenceDistance: 1, // low reference distance so its only heard when the enemy is very near
+        referenceDistance: options.idleAudioReferenceDistance ?? 1, // low reference distance so its only heard when the enemy is very near
       });
     }
 
@@ -71,7 +76,7 @@ export default class EnemyEntity extends Entity {
     this.setCcdEnabled(true);
   }
 
-  public override spawn(world: World, position: Vector3Like, rotation: QuaternionLike) {
+  public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike) {
     super.spawn(world, position, rotation);
 
     if (this._idleAudio) {
@@ -144,10 +149,10 @@ export default class EnemyEntity extends Entity {
       pathfindingController.face(this._targetEntity.position, this.speed * 2);
     } else if (this._pathfindAccumulatorMs > PATHFIND_ACCUMULATOR_THRESHOLD_MS) {
       this._isPathfinding = pathfindingController.pathfind(this._targetEntity.position, this.speed, {
-        maxFall: 3,
-        maxJump: 1,
-        maxOpenSetIterations: 300,
-        verticalPenalty: 1,
+        maxFall: this.jumpHeight,
+        maxJump: this.jumpHeight,
+        maxOpenSetIterations: 400,
+        verticalPenalty: this.preferJumping ? -1 : 1,
         pathfindAbortCallback: () => this._isPathfinding = false,
         pathfindCompleteCallback: () => this._isPathfinding = false,
         waypointMoveSkippedCallback: () => this._isPathfinding = false,
