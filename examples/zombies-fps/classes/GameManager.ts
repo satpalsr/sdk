@@ -10,8 +10,9 @@ import WeaponCrateEntity from './WeaponCrateEntity';
 
 const GAME_WAVE_INTERVAL_MS = 30 * 1000; // 30 seconds between waves
 const SLOWEST_SPAWN_INTERVAL_MS = 4000; // Starting spawn rate
-const FASTEST_SPAWN_INTERVAL_MS = 500; // Fastest spawn rate
-const WAVE_SPAWN_INTERVAL_REDUCTION_MS = 250; // Spawn rate reduction per wave
+const FASTEST_SPAWN_INTERVAL_MS = 750; // Fastest spawn rate
+const WAVE_SPAWN_INTERVAL_REDUCTION_MS = 300; // Spawn rate reduction per wave
+const WAVE_DELAY_MS = 10000; // 10s between waves
 
 export default class GameManager {
   public static readonly instance = new GameManager();
@@ -19,6 +20,7 @@ export default class GameManager {
   public isStarted = false;
   public unlockedIds: Set<string> = new Set([ 'start' ]);
   public waveNumber = 0;
+  public waveDelay = 0;
   public world: World | undefined;
 
   private _enemySpawnTimeout: NodeJS.Timeout | undefined;
@@ -115,9 +117,10 @@ export default class GameManager {
 
     zombie.spawn(this.world, this._getSpawnPoint());
 
-    const nextSpawn = Math.max(FASTEST_SPAWN_INTERVAL_MS, SLOWEST_SPAWN_INTERVAL_MS - (this.waveNumber * WAVE_SPAWN_INTERVAL_REDUCTION_MS));
+    const nextSpawn = Math.max(FASTEST_SPAWN_INTERVAL_MS, SLOWEST_SPAWN_INTERVAL_MS - (this.waveNumber * WAVE_SPAWN_INTERVAL_REDUCTION_MS)) + this.waveDelay;
 
     this._enemySpawnTimeout = setTimeout(() => this._spawnLoop(), nextSpawn);
+    this.waveDelay = 0;
   }
 
   private _waveLoop() {
@@ -126,6 +129,7 @@ export default class GameManager {
     clearTimeout(this._waveTimeout);
 
     this.waveNumber++;
+    this.waveDelay = WAVE_DELAY_MS;
 
     this._waveStartAudio.play(this.world, true);
 
@@ -135,11 +139,6 @@ export default class GameManager {
         wave: this.waveNumber,
       });
     });
-
-    // Spawn a few zombies to start the wave
-    for (let i = 0; i < Math.min(4, this.waveNumber * 2); i++) {
-      this._spawnLoop();
-    }
     
     if (this.waveNumber % 5 === 0) { // Spawn a ripper every 5 waves
       const ripper = new RipperEntity({
@@ -149,7 +148,7 @@ export default class GameManager {
       });
       ripper.spawn(this.world, this._getSpawnPoint());
     }
-
+    
     this._waveTimeout = setTimeout(() => this._waveLoop(), GAME_WAVE_INTERVAL_MS);
   }
 

@@ -57,7 +57,7 @@ export const INVISIBLE_WALLS = [
 export const PURCHASE_BARRIERS = [
   {
     name: 'Theater Room (South)',
-    removalPrice: 500,
+    removalPrice: 300,
     position: { x: 2.5, y: 1.5, z: 15 },
     rotation: Quaternion.fromEuler(0, 0, 0),
     width: 5,
@@ -73,7 +73,7 @@ export const PURCHASE_BARRIERS = [
   },
   {
     name: 'Dining Hall (South)',
-    removalPrice: 150,
+    removalPrice: 75,
     position: { x: 13, y: 1.5, z: 18.5 },
     rotation: Quaternion.fromEuler(0, 90, 0),
     width: 3,

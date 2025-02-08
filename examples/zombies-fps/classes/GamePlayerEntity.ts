@@ -264,6 +264,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.jumpVelocity = downed ? 0 : 10;
 
     if (downed) {
+      this._downedSceneUI.setState({ progress: 0 })
       this._downedSceneUI.load(this.world);
       this.world.chatManager.sendPlayerMessage(this.player, 'You are downed! A teammate can still revive you!', 'FF0000');
     } else {
