@@ -147,13 +147,8 @@ startServer(world => { // Perform our game setup logic in the startServer init c
 
   // Setup Player Leave & Despawn Controlled Entity
   world.onPlayerLeave = player => {
-    // Despawn all player entities for the player that left
-    // We apply a translation prior to despawn because of a bug in the RAPIER
-    // physics engine we use where entities despawned to not trigger a collision
-    // event for leaving a sensor. This is a workaround till a better solution is found.
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
-      entity.setPosition({ x: 0, y: 100, z: 0 });
-      setTimeout(() => entity.despawn(), 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
+      entity.despawn();
     });
 
     playerCount--;
@@ -225,6 +220,12 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
         z: direction.z * BULLET_SPEED,
       },
       rotation: getRotationFromDirection(direction), // Get the rotation from the direction vector so it's facing the right way we shot it
+      colliders: [
+        {
+          ...Collider.optionsFromModelUri('models/bullet.gltf', 0.3),
+          isSensor: true,
+        }
+      ]
     },
   });
 
@@ -255,9 +256,8 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
     });
 
     if (enemyHealth[otherEntity.id!] <= 0) {
-      // YEET the spider before despawning it so it registers leaving the sensor
-      otherEntity.setPosition({ x: 0, y: 100, z: 0 });
-      setTimeout(() => { otherEntity.despawn(); }, 50); // Despawn after a short delay so we step the physics after translating it so leaving the sensor registers.
+      console.log('bullet killed spider, despawning spider..');
+      otherEntity.despawn();
     }
 
     bullet.despawn();
@@ -306,8 +306,10 @@ function spawnPayloadEntity(world: World) {
           onCollision: (other: BlockType | Entity, started: boolean) => { 
             if (other instanceof PlayerEntity) {
               started ? payloadPlayerEntityCount++ : payloadPlayerEntityCount--;
-            } else if (other instanceof Entity) {
+              console.log('player count change', payloadPlayerEntityCount, started, other.name);
+            } else if (other instanceof Entity && other.name === 'Spider') {
               started ? payloadPlayerEntityCount-- : payloadPlayerEntityCount++;
+              console.log('ENTITY count change', payloadPlayerEntityCount, started, other.name);
             }
           },
         },
