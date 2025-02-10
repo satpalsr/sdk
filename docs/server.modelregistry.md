@@ -110,6 +110,20 @@ Retrieves the bounding box of a model.
 </td></tr>
 <tr><td>
 
+[getHeight(modelUri)](./server.modelregistry.getheight.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Retrieves the Y-axis height of a model for a scale of 1.
+
+
+</td></tr>
+<tr><td>
+
 [getNodeNames(modelUri)](./server.modelregistry.getnodenames.md)
 
 
