@@ -21,7 +21,6 @@ import PistolEntity from './guns/PistolEntity';
 
 import InteractableEntity from './InteractableEntity';
 import type GunEntity from './GunEntity';
-import type { GunEntityOptions } from './GunEntity';
 import { INVISIBLE_WALL_COLLISION_GROUP } from '../gameConfig';
 import GameManager from './GameManager';
 
@@ -269,7 +268,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.jumpVelocity = downed ? 0 : 10;
 
     if (!downed && this._gun) {
-      this._gun.updateParentAnimations();
+      this._gun.setParentAnimations();
     }
 
     if (downed) {

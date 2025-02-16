@@ -1,5 +1,4 @@
 import { startServer } from 'hytopia';
-import GamePlayerEntity from './classes/GamePlayerEntity';
 import worldMap from './assets/maps/terrain.json';
 
 import GameManager from './classes/GameManager';
@@ -7,8 +6,6 @@ import GameManager from './classes/GameManager';
 startServer(world => {
   // Load map.
   world.loadMap(worldMap);
-
-  //world.simulation.enableDebugRaycasting(true);
 
   // Setup lighting
   world.setAmbientLightIntensity(0.0001);
