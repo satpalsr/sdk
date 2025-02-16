@@ -63,7 +63,7 @@ let gameUiState: object = {};
 
 // Audio
 const gameActiveAudio = new Audio({
-  uri: 'audio/music/hytopia-main.mp3',
+  uri: 'audio/music.mp3',
   loop: true,
   volume: 0.2,
 });
@@ -297,9 +297,9 @@ function generateWall(world: World, direction: GameWallDirection, speedModifier:
       const yOffset = (selectedShape.length - y - 1) * 1 + 0.5;
 
       const wallSegment = new Entity({
-        blockTextureUri: selectedShape[y][x] === 2 ? 'textures/dirt.png' : 
-                        selectedShape[y][x] === 3 ? 'textures/sand.png' : 
-                        'textures/oak_leaves.png',
+        blockTextureUri: selectedShape[y][x] === 2 ? 'blocks/dirt.png' : 
+                        selectedShape[y][x] === 3 ? 'blocks/sand.png' : 
+                        'blocks/oak-leaves.png',
         blockHalfExtents: {
           x: isNorthSouth ? 0.5 : 0.5,
           y: 0.5,
