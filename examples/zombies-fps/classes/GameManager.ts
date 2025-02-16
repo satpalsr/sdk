@@ -162,9 +162,11 @@ export default class GameManager {
       playerEntity.despawn();
     });
 
-    GameServer.instance.playerManager.getConnectedPlayers().forEach(player => {
-      this.spawnPlayerEntity(player);
-    });
+    setTimeout(() => { // brief timeout for at least a tick to allow packet resolution.
+      GameServer.instance.playerManager.getConnectedPlayers().forEach(player => {
+        this.spawnPlayerEntity(player);
+      });
+    }, 250);
 
     this.spawnPurchaseBarriers();
     this.startCountdown();
