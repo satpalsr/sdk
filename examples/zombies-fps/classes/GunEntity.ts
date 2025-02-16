@@ -81,7 +81,7 @@ export default abstract class GunEntity extends Entity {
     });
 
     if (options.parent) {
-      this._updateParentAnimations();
+      this.setParentAnimations();
     }
   }
 
@@ -168,6 +168,18 @@ export default abstract class GunEntity extends Entity {
     }, this.reloadTimeMs);
   }
 
+  public setParentAnimations() {
+    if (!this.parent || !this.parent.world) {
+      return;
+    }
+
+    const playerEntityController = this.parent.controller as PlayerEntityController;
+
+    playerEntityController.idleLoopedAnimations = [ this.idleAnimation, 'idle_lower' ];
+    playerEntityController.walkLoopedAnimations = [ this.idleAnimation, 'walk_lower' ];
+    playerEntityController.runLoopedAnimations = [ this.idleAnimation, 'run_lower' ];
+  }
+
   // override to create specific gun shoot logic
   public shoot() {
     if (!this.parent || !this.parent.world) {
@@ -219,18 +231,6 @@ export default abstract class GunEntity extends Entity {
     if (hitEntity && hitEntity instanceof EnemyEntity) {
       hitEntity.takeDamage(this.damage, parentPlayerEntity);
     }
-  }
-
-  private _updateParentAnimations() {
-    if (!this.parent || !this.parent.world) {
-      return;
-    }
-
-    const playerEntityController = this.parent.controller as PlayerEntityController;
-
-    playerEntityController.idleLoopedAnimations = [ this.idleAnimation, 'idle_lower' ];
-    playerEntityController.walkLoopedAnimations = [ this.idleAnimation, 'walk_lower' ];
-    playerEntityController.runLoopedAnimations = [ this.idleAnimation, 'run_lower' ];
   }
 
   private _updatePlayerUIAmmo() {

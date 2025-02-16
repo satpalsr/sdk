@@ -21,12 +21,10 @@ startServer(world => {
   // Spawn a player entity when a player joins the game.
   world.onPlayerJoin = player => {
     if (GameManager.instance.isStarted) {
-      return world.chatManager.sendPlayerMessage(player, 'This round has already started, please wait for the next round. You can fly around as a spectator.', 'FF0000');
+      return world.chatManager.sendPlayerMessage(player, 'This round has already started, you will automatically join when the next round starts. While you wait, you can fly around as a spectator by using W, A, S, D.', 'FF0000');
     }
 
-    const playerEntity = new GamePlayerEntity(player);
-
-    playerEntity.spawn(world, { x: 2, y: 10, z: 19 });
+    GameManager.instance.spawnPlayerEntity(player);
   };
 
   // Despawn all player entities when a player leaves the game.

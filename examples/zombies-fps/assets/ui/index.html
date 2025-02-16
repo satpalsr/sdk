@@ -73,6 +73,7 @@
 <!-- UI Scripts-->
 <script>
   const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
+  let timerInterval;
 
   hytopia.registerSceneUITemplate('downed-player', (id, onState) => {
     const template = document.getElementById('downed-player-template');
@@ -158,10 +159,15 @@
       document.querySelector('.game-info').style.display = 'block';
       document.querySelector('.game-info .timer').textContent = 'Time: 00:00';
       document.querySelector('.game-info .wave').textContent = 'Wave: 1';
+      
+      // Clear previous timer
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      }
 
       // Start game timer
       const startTime = Date.now();
-      setInterval(() => {
+      timerInterval = setInterval(() => {
         const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
         const minutes = Math.floor(elapsedSeconds / 60).toString().padStart(2, '0');
         const seconds = (elapsedSeconds % 60).toString().padStart(2, '0'); 

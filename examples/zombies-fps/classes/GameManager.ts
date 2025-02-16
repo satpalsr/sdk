@@ -1,16 +1,18 @@
 import { Audio, Collider, ColliderShape, CollisionGroup, GameServer } from 'hytopia';
+import GamePlayerEntity from './GamePlayerEntity';
 import PurchaseBarrierEntity from './PurchaseBarrierEntity';
 import { INVISIBLE_WALLS, INVISIBLE_WALL_COLLISION_GROUP, PURCHASE_BARRIERS, ENEMY_SPAWN_POINTS, WEAPON_CRATES } from '../gameConfig';
-import type { World, Vector3Like } from 'hytopia';
-
-// temp
-import ZombieEntity from './enemies/ZombieEntity';
 import RipperEntity from './enemies/RipperEntity';
+import ZombieEntity from './enemies/ZombieEntity';
 import WeaponCrateEntity from './WeaponCrateEntity';
+import type { World, Vector3Like } from 'hytopia';
+import type EnemyEntity from './EnemyEntity';
+import type { Player } from 'hytopia';
 
 const GAME_WAVE_INTERVAL_MS = 30 * 1000; // 30 seconds between waves
 const SLOWEST_SPAWN_INTERVAL_MS = 4000; // Starting spawn rate
 const FASTEST_SPAWN_INTERVAL_MS = 750; // Fastest spawn rate
+const GAME_START_COUNTDOWN_S = 45; // 45 seconds delay before game starts
 const WAVE_SPAWN_INTERVAL_REDUCTION_MS = 300; // Spawn rate reduction per wave
 const WAVE_DELAY_MS = 10000; // 10s between waves
 
@@ -24,7 +26,9 @@ export default class GameManager {
   public world: World | undefined;
 
   private _enemySpawnTimeout: NodeJS.Timeout | undefined;
-  private _startTime: number | undefined;
+  private _endGameTimeout: NodeJS.Timeout | undefined;
+  private _startCountdown: number = GAME_START_COUNTDOWN_S;
+  private _startInterval: NodeJS.Timeout | undefined;
   private _waveTimeout: NodeJS.Timeout | undefined;
   private _waveStartAudio: Audio;
 
@@ -38,6 +42,28 @@ export default class GameManager {
 
   public addUnlockedId(id: string) {
     this.unlockedIds.add(id);
+  }
+
+  public checkEndGame() {
+    clearTimeout(this._endGameTimeout);
+
+    this._endGameTimeout = setTimeout(() => {
+      if (!this.world) return;
+
+      let allPlayersDowned = true;
+
+      this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
+        const gamePlayerEntity = playerEntity as GamePlayerEntity;
+
+        if (!gamePlayerEntity.downed) {
+          allPlayersDowned = false;
+        }
+      });
+
+      if (allPlayersDowned) {
+        this.endGame();
+      }
+    }, 1000);
   }
 
   public setupGame(world: World) {
@@ -58,17 +84,8 @@ export default class GameManager {
       wallCollider.addToSimulation(world.simulation);
     });
 
-    // Setup purchase barriers
-    PURCHASE_BARRIERS.forEach(barrier => {
-      const purchaseBarrier = new PurchaseBarrierEntity({
-        name: barrier.name,
-        removalPrice: barrier.removalPrice,
-        unlockIds: barrier.unlockIds,
-        width: barrier.width,
-      });
-
-      purchaseBarrier.spawn(world, barrier.position, barrier.rotation);
-    });
+    // Spawn initial purchase barriers
+    this.spawnPurchaseBarriers();
 
     // Setup weapon crates
     WEAPON_CRATES.forEach(crate => {
@@ -88,14 +105,31 @@ export default class GameManager {
       volume: 0.4,
     })).play(world);
 
-    world.chatManager.registerCommand('/start', () => this.startGame());
+    this.startCountdown();
+  }
+
+  public startCountdown() {
+    clearInterval(this._startInterval);
+    this._startCountdown = GAME_START_COUNTDOWN_S;
+    this._startInterval = setInterval(() => {
+      if (!this.world || !this.world.entityManager.getAllPlayerEntities().length) return;
+
+      this._startCountdown--;
+
+      if (this._startCountdown <= 0) {
+        this.startGame();
+        this.world.chatManager.sendBroadcastMessage('Game starting!', 'FF0000');
+      } else {
+        this.world.chatManager.sendBroadcastMessage(`${this._startCountdown} seconds until the game starts...`, 'FF0000');
+      }
+    }, 1000);
   }
 
   public startGame() {
     if (!this.world || this.isStarted) return; // type guard
 
     this.isStarted = true;
-    this._startTime = Date.now();
+    clearInterval(this._startInterval);
 
     GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
       player.ui.sendData({ type: 'start' });
@@ -103,6 +137,64 @@ export default class GameManager {
 
     this._spawnLoop();
     this._waveLoop();
+  }
+
+  public endGame() {
+    if (!this.world) return;
+
+    this.world.chatManager.sendBroadcastMessage(`Game Over! Your team made it to wave ${this.waveNumber}!`, '00FF00');
+
+    clearTimeout(this._enemySpawnTimeout);
+    clearTimeout(this._waveTimeout);
+
+    this.isStarted = false;
+    this.unlockedIds = new Set([ 'start' ]);
+    this.waveNumber = 0;
+    this.waveDelay = 0;
+
+    this.world.entityManager.getEntitiesByTag('enemy').forEach(entity => {
+      const enemy = entity as EnemyEntity;
+      enemy.takeDamage(enemy.health); // triggers any UI updates when killed via takedamage
+    });
+
+    this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
+      const player = playerEntity.player;
+      playerEntity.despawn();
+    });
+
+    GameServer.instance.playerManager.getConnectedPlayers().forEach(player => {
+      this.spawnPlayerEntity(player);
+    });
+
+    this.spawnPurchaseBarriers();
+    this.startCountdown();
+  }
+
+  public spawnPlayerEntity(player: Player) {
+    if (!this.world) return;
+
+    const playerEntity = new GamePlayerEntity(player);
+    playerEntity.spawn(this.world, { x: 2, y: 10, z: 19 });
+    player.camera.setAttachedToEntity(playerEntity);
+  }
+
+  public spawnPurchaseBarriers() {
+    if (!this.world) return;
+   
+    this.world.entityManager.getEntitiesByTag('purchase-barrier').forEach(entity => {
+      entity.despawn();
+    });
+    
+    PURCHASE_BARRIERS.forEach(barrier => {
+      const purchaseBarrier = new PurchaseBarrierEntity({
+        name: barrier.name,
+        removalPrice: barrier.removalPrice,
+        unlockIds: barrier.unlockIds,
+        width: barrier.width,
+      });
+
+      purchaseBarrier.spawn(this.world!, barrier.position, barrier.rotation);
+    });
   }
 
   private _spawnLoop() {

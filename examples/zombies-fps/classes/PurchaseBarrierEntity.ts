@@ -40,6 +40,7 @@ export default class PurchaseBarrierEntity extends InteractableEntity {
       rigidBodyOptions: {
         type: RigidBodyType.FIXED,
       },
+      tag: 'purchase-barrier',
     });
 
     this.removalPrice = options.removalPrice;

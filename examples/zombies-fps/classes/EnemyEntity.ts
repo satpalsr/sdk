@@ -42,7 +42,7 @@ export default class EnemyEntity extends Entity {
   private _targetEntity: Entity | undefined;
 
   public constructor(options: EnemyEntityOptions) {
-    super(options);
+    super({ ...options, tag: 'enemy' });
     this.damage = options.damage;
     this.health = options.health;
     this.jumpHeight = options.jumpHeight ?? 1;
@@ -84,7 +84,7 @@ export default class EnemyEntity extends Entity {
     }
   }
 
-  public takeDamage(damage: number, fromPlayer: GamePlayerEntity) {
+  public takeDamage(damage: number, fromPlayer?: GamePlayerEntity) {
     if (!this.world) {
       return;
     }
@@ -96,7 +96,9 @@ export default class EnemyEntity extends Entity {
     }
 
     // Give reward based on damage as % of health
-    fromPlayer.addMoney((this.damage / this.maxHealth) * this.reward);
+    if (fromPlayer) {
+      fromPlayer.addMoney((this.damage / this.maxHealth) * this.reward);
+    }
 
     if (this.health <= 0 && this.isSpawned) {
       // Enemy is dead, give half reward & despawn

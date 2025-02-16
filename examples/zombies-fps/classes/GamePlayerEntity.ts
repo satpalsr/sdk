@@ -23,6 +23,7 @@ import InteractableEntity from './InteractableEntity';
 import type GunEntity from './GunEntity';
 import type { GunEntityOptions } from './GunEntity';
 import { INVISIBLE_WALL_COLLISION_GROUP } from '../gameConfig';
+import GameManager from './GameManager';
 
 const BASE_HEALTH = 100;
 const REVIVE_REQUIRED_HEALTH = 50;
@@ -137,6 +138,10 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     // Start auto heal ticker
     this._autoHealTicker();
+
+    // Reset any prior UI from respawn
+    this._updatePlayerUIHealth();
+    this._updatePlayerUIMoney();
   }
 
   public addMoney(amount: number) {
@@ -263,10 +268,16 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.walkVelocity = downed ? 1 : 4;
     this.playerController.jumpVelocity = downed ? 0 : 10;
 
+    if (!downed && this._gun) {
+      this._gun.updateParentAnimations();
+    }
+
     if (downed) {
       this._downedSceneUI.setState({ progress: 0 })
       this._downedSceneUI.load(this.world);
       this.world.chatManager.sendPlayerMessage(this.player, 'You are downed! A teammate can still revive you!', 'FF0000');
+
+      GameManager.instance.checkEndGame();
     } else {
       this._downedSceneUI.unload();
       this.world.chatManager.sendPlayerMessage(this.player, 'You are back up! Thank your team & fight the horde!', '00FF00');
