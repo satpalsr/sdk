@@ -1,4 +1,5 @@
 import {
+  Audio,
   CollisionGroup,
   ColliderShape,
   BlockType,
@@ -55,6 +56,12 @@ startServer(world => {
 
   setupJoinNPC(world);
   startBlockSpawner(world);
+
+  (new Audio({
+    uri: 'audio/bgm.mp3',
+    loop: true,
+    volume: 0.05,
+  })).play(world);
 });
 
 /**
