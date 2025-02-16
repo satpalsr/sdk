@@ -1,13 +1,12 @@
-/// <reference types="node" />
-
 import type { AnyPacket } from '@hytopia.com/server-protocol';
 import http from 'http';
 import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
 import type { IPacket } from '@hytopia.com/server-protocol';
+import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/getSession';
 import protocol from '@hytopia.com/server-protocol';
-import RAPIER from '@dimforge/rapier3d-compat';
-import { SdpMatrix3 } from '@dimforge/rapier3d-compat';
+import RAPIER from '@dimforge/rapier3d-compat-simd';
+import { SdpMatrix3 } from '@dimforge/rapier3d-compat-simd';
 import type { Socket as Socket_2 } from 'net';
 import { WebSocket as WebSocket_2 } from 'ws';
 
@@ -2343,6 +2342,8 @@ export declare class Player {
     readonly id: string;
     /** The unique HYTOPIA username for the player. */
     readonly username: string;
+    /** The profile picture URL for the player. */
+    readonly profilePictureUrl: string | undefined;
     /** The camera for the player. */
     readonly camera: PlayerCamera;
 

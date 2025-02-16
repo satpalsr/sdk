@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.47.11",
+    "toolVersion": "7.50.0",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -7115,7 +7115,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.Collider",
-                  "canonicalReference": "@dimforge/rapier3d-compat!Collider:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!Collider:class"
                 },
                 {
                   "kind": "Content",
@@ -9391,7 +9391,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.Vector",
-              "canonicalReference": "@dimforge/rapier3d-compat!Vector:interface"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector:interface"
             },
             {
               "kind": "Content",
@@ -9400,7 +9400,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.Vector",
-              "canonicalReference": "@dimforge/rapier3d-compat!Vector:interface"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector:interface"
             },
             {
               "kind": "Content",
@@ -18288,6 +18288,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Player#profilePictureUrl:member",
+              "docComment": "/**\n * The profile picture URL for the player.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly profilePictureUrl: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "profilePictureUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Player#ui:member",
               "docComment": "/**\n * The UI for the player.\n */\n",
               "excerptTokens": [
@@ -24793,7 +24823,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.InteractionGroups",
-              "canonicalReference": "@dimforge/rapier3d-compat!InteractionGroups:type"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!InteractionGroups:type"
             },
             {
               "kind": "Content",
@@ -24877,7 +24907,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.QueryFilterFlags",
-              "canonicalReference": "@dimforge/rapier3d-compat!QueryFilterFlags:enum"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!QueryFilterFlags:enum"
             },
             {
               "kind": "Content",
@@ -24886,7 +24916,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.Collider",
-              "canonicalReference": "@dimforge/rapier3d-compat!Collider:class"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!Collider:class"
             },
             {
               "kind": "Content",
@@ -24895,7 +24925,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.RigidBody",
-              "canonicalReference": "@dimforge/rapier3d-compat!RigidBody:class"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!RigidBody:class"
             },
             {
               "kind": "Content",
@@ -24904,7 +24934,7 @@
             {
               "kind": "Reference",
               "text": "RAPIER.Collider",
-              "canonicalReference": "@dimforge/rapier3d-compat!Collider:class"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!Collider:class"
             },
             {
               "kind": "Content",
@@ -26795,7 +26825,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.RigidBody",
-                  "canonicalReference": "@dimforge/rapier3d-compat!RigidBody:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!RigidBody:class"
                 },
                 {
                   "kind": "Content",
@@ -30436,7 +30466,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.ColliderHandle",
-                  "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!ColliderHandle:type"
                 },
                 {
                   "kind": "Content",
@@ -30445,7 +30475,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.ColliderHandle",
-                  "canonicalReference": "@dimforge/rapier3d-compat!ColliderHandle:type"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!ColliderHandle:type"
                 },
                 {
                   "kind": "Content",
@@ -30507,7 +30537,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.Vector3",
-                  "canonicalReference": "@dimforge/rapier3d-compat!Vector3:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector3:class"
                 },
                 {
                   "kind": "Content",
@@ -30598,7 +30628,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.Vector3",
-                  "canonicalReference": "@dimforge/rapier3d-compat!Vector3:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector3:class"
                 },
                 {
                   "kind": "Content",
@@ -30607,7 +30637,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.Vector3",
-                  "canonicalReference": "@dimforge/rapier3d-compat!Vector3:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector3:class"
                 },
                 {
                   "kind": "Content",
@@ -30702,7 +30732,7 @@
                 {
                   "kind": "Reference",
                   "text": "RAPIER.Vector3",
-                  "canonicalReference": "@dimforge/rapier3d-compat!Vector3:class"
+                  "canonicalReference": "@dimforge/rapier3d-compat-simd!Vector3:class"
                 },
                 {
                   "kind": "Content",
@@ -30815,7 +30845,7 @@
             {
               "kind": "Reference",
               "text": "RapierSdpMatrix3",
-              "canonicalReference": "@dimforge/rapier3d-compat!SdpMatrix3:class"
+              "canonicalReference": "@dimforge/rapier3d-compat-simd!SdpMatrix3:class"
             },
             {
               "kind": "Content",

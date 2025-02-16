@@ -106,6 +106,27 @@ The current [PlayerInput](./server.playerinput.md) of the player.
 </td></tr>
 <tr><td>
 
+[profilePictureUrl](./server.player.profilepictureurl.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+The profile picture URL for the player.
+
+
+</td></tr>
+<tr><td>
+
 [ui](./server.player.ui.md)
 
 
