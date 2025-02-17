@@ -2120,6 +2120,137 @@ export declare enum LightType {
 }
 
 /**
+ * Represents a 2x2 matrix.
+ *
+ * @remarks
+ * All matrix methods result in mutation of the matrix instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a 2x2 matrix. Various convenience methods are
+ * provided for common matrix operations.
+ *
+ * @public
+ */
+export declare class Matrix2 extends Float32Array {
+    constructor(m00: number, m01: number, m10: number, m11: number);
+    /** The determinant of the matrix. */
+    get determinant(): number;
+    /** The frobenius normal of the matrix. */
+    get frobeniusNormal(): number;
+    /**
+     * Creates a new `Matrix2` instance.
+     *
+     * @returns A new `Matrix2` instance.
+     */
+    static create(): Matrix2;
+    /**
+     * Creates a new `Matrix2` instance from a rotation of identity matrix.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @returns A new `Matrix2` instance.
+     */
+    static fromRotation(angle: number): Matrix2;
+    /**
+     * Creates a new `Matrix2` instance from a scale of identity matrix.
+     *
+     * @param scale - The scale of the matrix.
+     * @returns A new `Matrix2` instance.
+     */
+    static fromScaling(scale: Vector2): Matrix2;
+    /**
+     * Adds a matrix to the current matrix.
+     *
+     * @param matrix2 - The matrix to add to the current matrix.
+     * @returns The current matrix.
+     */
+    add(matrix2: Matrix2): Matrix2;
+    /**
+     * Sets the adjugate of the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    adjoint(): Matrix2;
+    /**
+     * Clones the current matrix.
+     *
+     * @returns A clone of the current matrix.
+     */
+    clone(): Matrix2;
+    /**
+     * Copies a matrix to the current matrix.
+     *
+     * @param matrix2 - The matrix2 to copy to the current matrix.
+     * @returns The current matrix.
+     */
+    copy(matrix2: Matrix2): Matrix2;
+    /**
+     * Checks if the current matrix is approximately equal to another matrix.
+     *
+     * @param matrix2 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    equals(matrix2: Matrix2): boolean;
+    /**
+     * Checks if the current matrix is exactly equal to another matrix.
+     *
+     * @param matrix2 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    exactEquals(matrix2: Matrix2): boolean;
+    /**
+     * Sets the current matrix to the identity matrix.
+     *
+     * @returns The current matrix.
+     */
+    identity(): Matrix2;
+    /**
+     * Inverts the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    invert(): Matrix2;
+    /**
+     * Multiplies the current matrix by another matrix.
+     *
+     * @param matrix2 - The matrix to multiply the current matrix by.
+     * @returns The current matrix.
+     */
+    multiply(matrix2: Matrix2): Matrix2;
+    /**
+     * Multiplies each element of the current matrix by a scalar value.
+     *
+     * @param scalar - The scalar value to multiply the current matrix elements by.
+     * @returns The current matrix.
+     */
+    multiplyScalar(scalar: number): Matrix2;
+    /**
+     * Rotates the current matrix by an angle in radians.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @returns The current matrix.
+     */
+    rotate(angle: number): Matrix2;
+    /**
+     * Subtracts a matrix from the current matrix.
+     *
+     * @param matrix2 - The matrix to subtract from the current matrix.
+     * @returns The current matrix.
+     */
+    subtract(matrix2: Matrix2): Matrix2;
+    /**
+     * Returns a string representation of the current matrix.
+     *
+     * @returns A string representation of the current matrix.
+     */
+    toString(): string;
+    /**
+     * Transposes the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    transpose(): Matrix2;
+}
+
+/**
  * Represents a 3x3 matrix.
  *
  * @remarks
@@ -2130,7 +2261,7 @@ export declare enum LightType {
  *
  * @public
  */
-declare class Matrix3 extends Float32Array {
+export declare class Matrix3 extends Float32Array {
     constructor(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number);
     /** The determinant of the matrix. */
     get determinant(): number;
@@ -2290,7 +2421,7 @@ declare class Matrix3 extends Float32Array {
  *
  * @public
  */
-declare class Matrix4 extends Float32Array {
+export declare class Matrix4 extends Float32Array {
     constructor(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number);
     /** The determinant of the matrix. */
     get determinant(): number;
@@ -4364,6 +4495,257 @@ export declare function startServer(init: (world: World) => void): void;
 
 /** The input keys that are included in the PlayerInput. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+/**
+ * Represents a 2D vector.
+ *
+ * @remarks
+ * All vector methods result in mutation of the vector instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a 2-dimensional vector. Various convenience
+ * methods are provided for common vector operations.
+ *
+ * @public
+ */
+export declare class Vector2 extends Float32Array implements Vector2Like {
+    constructor(x: number, y: number);
+    /** The length of the vector. */
+    get length(): number;
+    /** The squared length of the vector. */
+    get squaredLength(): number;
+    /** The magnitude of the vector. Alias for `length`. */
+    get magnitude(): number;
+    /** The squared magnitude of the vector. Alias for `squaredLength`. */
+    get squaredMagnitude(): number;
+    /** The x-component of the vector. */
+    get x(): number;
+    set x(value: number);
+    /** The y-component of the vector. */
+    get y(): number;
+    set y(value: number);
+    /**
+     * Creates a new `Vector2` instance.
+     *
+     * @returns A new `Vector2` instance.
+     */
+    static create(): Vector2;
+    /**
+     * Adds a vector to the current vector.
+     *
+     * @param vector2 - The vector to add to the current vector.
+     * @returns The current vector.
+     */
+    add(vector2: Vector2): Vector2;
+    /**
+     * Returns the angle between two vectors.
+     *
+     * @param vector2 - The vector to compare to the current vector.
+     * @returns The angle between the two vectors.
+     */
+    angle(vector2: Vector2): number;
+    /**
+     * Rounds each component of the vector up to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    ceil(): Vector2;
+    /**
+     * Returns a new vector with the same components as the current vector.
+     *
+     * @returns A new `Vector2` instance.
+     */
+    clone(): Vector2;
+    /**
+     * Copies the components of a vector to the current vector.
+     *
+     * @param vector2 - The vector to copy the components from.
+     * @returns The current vector.
+     */
+    copy(vector2: Vector2): Vector2;
+    /**
+     * Calculates the cross product of the current vector and another vector.
+     *
+     * @param vector2 - The vector to calculate the cross product with.
+     * @returns The cross product of the two vector 2s as a vector3.
+     */
+    cross(vector2: Vector2): Vector3;
+    /**
+     * Calculates the distance between the current vector and another vector.
+     *
+     * @param vector2 - The vector to calculate the distance to.
+     * @returns The distance between the two vectors.
+     */
+    distance(vector2: Vector2): number;
+    /**
+     * Divides the current vector by another vector.
+     *
+     * @param vector2 - The vector to divide the current vector by.
+     * @returns The current vector.
+     */
+    divide(vector2: Vector2): Vector2;
+    /**
+     * Calculates the dot product of the current vector and another vector.
+     *
+     * @param vector2 - The vector to calculate the dot product with.
+     * @returns The dot product of the two vectors.
+     */
+    dot(vector2: Vector2): number;
+    /**
+     * Checks if the current vector is approximately equal to another vector.
+     *
+     * @param vector2 - The vector to compare to the current vector.
+     * @returns `true` if the two vectors are equal, `false` otherwise.
+     */
+    equals(vector2: Vector2): boolean;
+    /**
+     * Checks if the current vector is exactly equal to another vector.
+     *
+     * @param vector2 - The vector to compare to the current vector.
+     * @returns `true` if the two vectors are equal, `false` otherwise.
+     */
+    exactEquals(vector2: Vector2): boolean;
+    /**
+     * Rounds each component of the vector down to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    floor(): Vector2;
+    /**
+     * Inverts the components of the current vector.
+     *
+     * @returns The current vector.
+     */
+    invert(): Vector2;
+    /**
+     * Linearly interpolates between the current vector and another vector.
+     *
+     * @param vector2 - The vector to interpolate to.
+     * @param t - The interpolation factor. A value between 0 and 1.
+     * @returns The current vector.
+     */
+    lerp(vector2: Vector2, t: number): Vector2;
+    /**
+     * Sets each component of the vector to the maximum of the current vector and another vector.
+     *
+     * @param vector2 - The vector to compare to the current vector.
+     * @returns The current vector.
+     */
+    max(vector2: Vector2): Vector2;
+    /**
+     * Sets each component of the vector to the minimum of the current vector and another vector.
+     *
+     * @param vector2 - The vector to compare to the current vector.
+     * @returns The current vector.
+     */
+    min(vector2: Vector2): Vector2;
+    /**
+     * Multiplies each component of the current vector by the corresponding component of another vector.
+     *
+     * @param vector2 - The vector to multiply the current vector by.
+     * @returns The current vector.
+     */
+    multiply(vector2: Vector2): Vector2;
+    /**
+     * Negates each component of the vector.
+     *
+     * @returns The current vector.
+     */
+    negate(): Vector2;
+    /**
+     * Normalizes the current vector.
+     *
+     * @returns The current vector.
+     */
+    normalize(): Vector2;
+    /**
+     * Randomizes the components of the current vector.
+     *
+     * @param scale - The scale of the resulting vector.
+     * @returns The current vector.
+     */
+    randomize(scale?: number): Vector2;
+    /**
+     * Rotates the current vector around an origin.
+     *
+     * @param vector2 - The vector to rotate around.
+     * @param angle - The angle to rotate the vector by.
+     * @returns The current vector.
+     */
+    rotate(vector2: Vector2, angle: number): Vector2;
+    /**
+     * Rounds each component of the vector to the nearest integer.
+     *
+     * @returns The current vector.
+     */
+    round(): Vector2;
+    /**
+     * Scales the current vector by a scalar value.
+     *
+     * @param scale - The scalar value to scale the vector by.
+     * @returns The current vector.
+     */
+    scale(scale: number): Vector2;
+    /**
+     * Scales the current vector by a scalar value and adds the result to another vector.
+     *
+     * @param vector2 - The vector to add the scaled vector to.
+     * @param scale - The scalar value to scale the vector by.
+     * @returns The current vector.
+     */
+    scaleAndAdd(vector2: Vector2, scale: number): Vector2;
+    /**
+     * Subtracts a vector from the current vector.
+     *
+     * @param vector2 - The vector to subtract from the current vector.
+     * @returns The current vector.
+     */
+    subtract(vector2: Vector2): Vector2;
+    /**
+     * Returns a string representation of the vector in x,y format.
+     *
+     * @returns A string representation of the vector in the format x,y.
+     */
+    toString(): string;
+    /**
+     * Transforms the current vector by a matrix2.
+     *
+     * @param matrix2 - The matrix2 to transform the vector by.
+     * @returns The current vector.
+     */
+    transformMatrix2(matrix2: Matrix2): Vector2;
+    /**
+     * Transforms the current vector by a matrix3.
+     *
+     * @param matrix3 - The matrix3 to transform the vector by.
+     * @returns The current vector.
+     */
+    transformMatrix3(matrix3: Matrix3): Vector2;
+    /**
+     * Transforms the current vector by a matrix4.
+     *
+     * @param matrix4 - The matrix4 to transform the vector by.
+     * @returns The current vector.
+     */
+    transformMatrix4(matrix4: Matrix4): Vector2;
+    /**
+     * Sets each component of the vector to zero.
+     *
+     * @returns The current vector.
+     */
+    zero(): Vector2;
+}
+
+/** A 2-dimensional vector of boolean values. @public */
+export declare interface Vector2Boolean {
+    x: boolean;
+    y: boolean;
+}
+
+/** A 2-dimensional vector. @public */
+export declare interface Vector2Like {
+    x: number;
+    y: number;
+}
 
 /**
  * Represents a 3-dimensional vector.

@@ -195,6 +195,39 @@ Manages Light instances in a world.
 </td></tr>
 <tr><td>
 
+[Matrix2](./server.matrix2.md)
+
+
+</td><td>
+
+Represents a 2x2 matrix.
+
+
+</td></tr>
+<tr><td>
+
+[Matrix3](./server.matrix3.md)
+
+
+</td><td>
+
+Represents a 3x3 matrix.
+
+
+</td></tr>
+<tr><td>
+
+[Matrix4](./server.matrix4.md)
+
+
+</td><td>
+
+Represents a 4x4 matrix.
+
+
+</td></tr>
+<tr><td>
+
 [ModelRegistry](./server.modelregistry.md)
 
 
@@ -344,6 +377,17 @@ A simple entity controller with basic movement functions.
 </td><td>
 
 Represents the physics simulation for a world.
+
+
+</td></tr>
+<tr><td>
+
+[Vector2](./server.vector2.md)
+
+
+</td><td>
+
+Represents a 2D vector.
 
 
 </td></tr>
@@ -778,6 +822,28 @@ Options for creating a SceneUI instance.
 </td><td>
 
 A 3x3 symmetric positive-definite matrix for spatial dynamics.
+
+
+</td></tr>
+<tr><td>
+
+[Vector2Boolean](./server.vector2boolean.md)
+
+
+</td><td>
+
+A 2-dimensional vector of boolean values.
+
+
+</td></tr>
+<tr><td>
+
+[Vector2Like](./server.vector2like.md)
+
+
+</td><td>
+
+A 2-dimensional vector.
 
 
 </td></tr>
