@@ -4,7 +4,7 @@
 
 ## Quaternion.magnitude property
 
-The magnitude of the quaternion. Also known as the length.
+The magnitude of the quaternion. Alias for `.length`<!-- -->.
 
 **Signature:**
 

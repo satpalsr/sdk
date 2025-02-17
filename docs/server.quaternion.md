@@ -78,6 +78,27 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[length](./server.quaternion.length.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The length of the quaternion.
+
+
+</td></tr>
+<tr><td>
+
 [magnitude](./server.quaternion.magnitude.md)
 
 
@@ -93,7 +114,28 @@ number
 
 </td><td>
 
-The magnitude of the quaternion. Also known as the length.
+The magnitude of the quaternion. Alias for `.length`<!-- -->.
+
+
+</td></tr>
+<tr><td>
+
+[squaredLength](./server.quaternion.squaredlength.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The squared length of the quaternion.
 
 
 </td></tr>
@@ -114,7 +156,7 @@ number
 
 </td><td>
 
-The squared magnitude of the quaternion. Also known as the squared length.
+The squared magnitude of the quaternion. Alias for `.squaredLength`<!-- -->.
 
 
 </td></tr>
@@ -360,6 +402,20 @@ Calculates and returns the angle between the current quaternion and another quat
 </td></tr>
 <tr><td>
 
+[identity()](./server.quaternion.identity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the current quaternion to the identity quaternion.
+
+
+</td></tr>
+<tr><td>
+
 [invert()](./server.quaternion.invert.md)
 
 
@@ -388,6 +444,20 @@ Linearly interpolates between the current quaternion and another quaternion.
 </td></tr>
 <tr><td>
 
+[logarithm()](./server.quaternion.logarithm.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the current quaternion to its natural logarithm.
+
+
+</td></tr>
+<tr><td>
+
 [multiply(quaternion)](./server.quaternion.multiply.md)
 
 
@@ -411,6 +481,34 @@ Multiplies the quaternion by another quaternion.
 </td><td>
 
 Normalizes the quaternion.
+
+
+</td></tr>
+<tr><td>
+
+[power(exponent)](./server.quaternion.power.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Raises the current quaternion to a power.
+
+
+</td></tr>
+<tr><td>
+
+[randomize()](./server.quaternion.randomize.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Randomizes the current quaternion.
 
 
 </td></tr>
@@ -467,6 +565,20 @@ Rotates the quaternion around the z-axis.
 </td><td>
 
 Scales the quaternion by a scalar value.
+
+
+</td></tr>
+<tr><td>
+
+[setAxisAngle(axis, angle)](./server.quaternion.setaxisangle.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the current quaternion to the angle and rotation axis.
 
 
 </td></tr>

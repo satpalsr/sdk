@@ -2119,6 +2119,448 @@ export declare enum LightType {
     SPOTLIGHT = 1
 }
 
+/**
+ * Represents a 3x3 matrix.
+ *
+ * @remarks
+ * All matrix methods result in mutation of the matrix instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a 3x3 matrix. Various convenience methods are
+ * provided for common matrix operations.
+ *
+ * @public
+ */
+declare class Matrix3 extends Float32Array {
+    constructor(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number);
+    /** The determinant of the matrix. */
+    get determinant(): number;
+    /** The frobenius normal of the matrix. */
+    get frobeniusNormal(): number;
+    /**
+     * Creates a new `Matrix3` instance.
+     *
+     * @returns A new `Matrix3` instance.
+     */
+    static create(): Matrix3;
+    /**
+     * Creates a new `Matrix3` instance from a `Matrix4` instance.
+     *
+     * @param matrix4 - The `Matrix4` instance to create the `Matrix3` instance from.
+     * @returns A new `Matrix3` instance.
+     */
+    static fromMatrix4(matrix4: Matrix4): Matrix3;
+    /**
+     * Creates a new `Matrix3` instance from a `Quaternion` instance.
+     *
+     * @param quaternion - The `Quaternion` instance to create the `Matrix3` instance from.
+     * @returns A new `Matrix3` instance.
+     */
+    static fromQuaternion(quaternion: Quaternion): Matrix3;
+    /**
+     * Creates a new `Matrix3` instance from a rotation of identity matrix.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @returns A new `Matrix3` instance.
+     */
+    static fromRotation(angle: number): Matrix3;
+    /**
+     * Creates a new `Matrix3` instance from a scale of identity matrix.
+     *
+     * @param scale - The scale of the matrix.
+     * @returns A new `Matrix3` instance.
+     */
+    static fromScaling(scale: Vector3): Matrix3;
+    /**
+     * Creates a new `Matrix3` instance from a translation of identity matrix.
+     *
+     * @param translation - The translation of the matrix.
+     * @returns A new `Matrix3` instance.
+     */
+    static fromTranslation(translation: Vector3): Matrix3;
+    /**
+     * Adds a matrix to the current matrix.
+     *
+     * @param matrix3 - The matrix to add to the current matrix.
+     * @returns The current matrix.
+     */
+    add(matrix3: Matrix3): Matrix3;
+    /**
+     * Sets the adjugate of the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    adjoint(): Matrix3;
+    /**
+     * Clones the current matrix.
+     *
+     * @returns A clone of the current matrix.
+     */
+    clone(): Matrix3;
+    /**
+     * Copies a matrix to the current matrix.
+     *
+     * @param matrix3 - The matrix to copy to the current matrix.
+     * @returns The current matrix.
+     */
+    copy(matrix3: Matrix3): Matrix3;
+    /**
+     * Checks if the current matrix is approximately equal to another matrix.
+     *
+     * @param matrix3 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    equals(matrix3: Matrix3): boolean;
+    /**
+     * Checks if the current matrix is exactly equal to another matrix.
+     *
+     * @param matrix3 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    exactEquals(matrix3: Matrix3): boolean;
+    /**
+     * Sets the current matrix to the identity matrix.
+     *
+     * @returns The current matrix.
+     */
+    identity(): Matrix3;
+    /**
+     * Inverts the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    invert(): Matrix3;
+    /**
+     * Multiplies the current matrix by another matrix.
+     *
+     * @param matrix3 - The matrix to multiply the current matrix by.
+     * @returns The current matrix.
+     */
+    multiply(matrix3: Matrix3): Matrix3;
+    /**
+     * Multiplies each element of the current matrix by a scalar value.
+     *
+     * @param scalar - The scalar value to multiply the current matrix elements by.
+     * @returns The current matrix.
+     */
+    multiplyScalar(scalar: number): Matrix3;
+    /**
+     * Sets the current matrix to a projection matrix with the given bounds.
+     *
+     * @param width - The width of the projection.
+     * @param height - The height of the projection.
+     * @returns The current matrix.
+     */
+    projection(width: number, height: number): Matrix3;
+    /**
+     * Rotates the current matrix by an angle in radians.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @returns The current matrix.
+     */
+    rotate(angle: number): Matrix3;
+    /**
+     * Subtracts a matrix from the current matrix.
+     *
+     * @param matrix3 - The matrix to subtract from the current matrix.
+     * @returns The current matrix.
+     */
+    subtract(matrix3: Matrix3): Matrix3;
+    /**
+     * Returns a string representation of the current matrix.
+     *
+     * @returns A string representation of the current matrix.
+     */
+    toString(): string;
+    /**
+     * Transposes the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    transpose(): Matrix3;
+}
+
+/**
+ * Represents a 4x4 matrix.
+ *
+ * @remarks
+ * All matrix methods result in mutation of the matrix instance.
+ * This class extends `Float32Array` to provide an efficient way to
+ * create and manipulate a 4x4 matrix. Various convenience methods are
+ * provided for common matrix operations.
+ *
+ * @public
+ */
+declare class Matrix4 extends Float32Array {
+    constructor(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number);
+    /** The determinant of the matrix. */
+    get determinant(): number;
+    /** The frobenius normal of the matrix. */
+    get frobeniusNormal(): number;
+    /**
+     * Creates a new `Matrix4` instance.
+     *
+     * @returns A new `Matrix4` instance.
+     */
+    static create(): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a `Quaternion` object.
+     *
+     * @param quaternion - The `Quaternion` object to create the `Matrix4` instance from.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromQuaternion(quaternion: Quaternion): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from an angle and axis.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @param axis - The axis to rotate the matrix around.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromRotation(angle: number, axis: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a rotation and translation.
+     *
+     * @param rotation - The rotation of the matrix.
+     * @param translation - The translation of the matrix.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromRotationTranslation(rotation: Quaternion, translation: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a rotation, translation, and scale.
+     *
+     * @param rotation - The rotation of the matrix.
+     * @param translation - The translation of the matrix.
+     * @param scale - The scale of the matrix.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromRotationTranslationScale(rotation: Quaternion, translation: Vector3, scale: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a rotation, translation, scale, and origin.
+     *
+     * @param rotation - The rotation of the matrix.
+     * @param translation - The translation of the matrix.
+     * @param scale - The scale of the matrix.
+     * @param origin - The origin of the matrix.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromRotationTranslationScaleOrigin(rotation: Quaternion, translation: Vector3, scale: Vector3, origin: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a scale of identity matrix.
+     *
+     * @param scale - The scale of the matrix.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromScaling(scale: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a translation of identity matrix.
+     *
+     * @param translation - The translation of the matrix.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromTranslation(translation: Vector3): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from an x-rotation of identity matrix.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromXRotation(angle: number): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a y-rotation of identity matrix.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromYRotation(angle: number): Matrix4;
+    /**
+     * Creates a new `Matrix4` instance from a z-rotation of identity matrix.
+     *
+     * @param angle - The angle in radians to rotate the matrix by.
+     * @returns A new `Matrix4` instance.
+     */
+    static fromZRotation(angle: number): Matrix4;
+    /**
+     * Adds a matrix to the current matrix.
+     *
+     * @param matrix4 - The matrix to add to the current matrix.
+     * @returns The current matrix.
+     */
+    add(matrix4: Matrix4): Matrix4;
+    /**
+     * Sets the adjugate of the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    adjoint(): Matrix4;
+    /**
+     * Clones the current matrix.
+     *
+     * @returns A clone of the current matrix.
+     */
+    clone(): Matrix4;
+    /**
+     * Copies a matrix to the current matrix.
+     *
+     * @param matrix4 - The matrix to copy to the current matrix.
+     * @returns The current matrix.
+     */
+    copy(matrix4: Matrix4): Matrix4;
+    /**
+     * Checks if the current matrix is approximately equal to another matrix.
+     *
+     * @param matrix4 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    equals(matrix4: Matrix4): boolean;
+    /**
+     * Checks if the current matrix is exactly equal to another matrix.
+     *
+     * @param matrix4 - The matrix to compare to the current matrix.
+     * @returns `true` if the current matrix is equal to the provided matrix, `false` otherwise.
+     */
+    exactEquals(matrix4: Matrix4): boolean;
+    /**
+     * Sets the current matrix to a frustrum matrix with the given bounds.
+     *
+     * @param left - The left bound of the projection.
+     * @param right - The right bound of the projection.
+     * @param bottom - The bottom bound of the projection.
+     * @param top - The top bound of the projection.
+     * @param near - The near bound of the projection.
+     * @param far - The far bound of the projection.
+     * @returns The current matrix.
+     */
+    frustrum(left: number, right: number, bottom: number, top: number, near: number, far: number): Matrix4;
+    /**
+     * Sets the current matrix to the identity matrix.
+     *
+     * @returns The current matrix.
+     */
+    identity(): Matrix4;
+    /**
+     * Inverts the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    invert(): Matrix4;
+    /**
+     * Sets the current matrix to a look-at matrix with the given eye, center, and up vectors.
+     *
+     * @param eye - The eye vector of the camera.
+     * @param center - The center vector of the camera.
+     * @param up - The up vector of the camera.
+     * @returns The current matrix.
+     */
+    lookAt(eye: Vector3, center: Vector3, up: Vector3): Matrix4;
+    /**
+     * Multiplies the current matrix by another matrix.
+     *
+     * @param matrix4 - The matrix to multiply the current matrix by.
+     * @returns The current matrix.
+     */
+    multiply(matrix4: Matrix4): Matrix4;
+    /**
+     * Multiplies each element of the current matrix by a scalar value.
+     *
+     * @param scalar - The scalar value to multiply the current matrix elements by.
+     * @returns The current matrix.
+     */
+    multiplyScalar(scalar: number): Matrix4;
+    /**
+     * Sets the current matrix to an orthogonal matrix with the given bounds.
+     *
+     * @param left - The left bound of the projection.
+     * @param right - The right bound of the projection.
+     * @param bottom - The bottom bound of the projection.
+     * @param top - The top bound of the projection.
+     * @param near - The near bound of the projection.
+     * @param far - The far bound of the projection.
+     * @returns The current matrix.
+     */
+    orthogonal(left: number, right: number, bottom: number, top: number, near: number, far: number): Matrix4;
+    /**
+     * Sets the current matrix to a perspective matrix with the given field of view, aspect ratio, and near and far bounds.
+     *
+     * @param fovy - The field of view of the projection.
+     * @param aspect - The aspect ratio of the projection.
+     * @param near - The near bound of the projection.
+     * @param far - The far bound of the projection.
+     * @returns The current matrix.
+     */
+    perspective(fovy: number, aspect: number, near: number, far: number): Matrix4;
+    /**
+     * Rotates the current matrix by an angle in radians around an axis.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @param axis - The axis to rotate the current matrix around.
+     * @returns The current matrix.
+     */
+    rotate(angle: number, axis: Vector3): Matrix4;
+    /**
+     * Rotates the current matrix by an angle in radians around the x-axis.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @returns The current matrix.
+     */
+    rotateX(angle: number): Matrix4;
+    /**
+     * Rotates the current matrix by an angle in radians around the y-axis.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @returns The current matrix.
+     */
+    rotateY(angle: number): Matrix4;
+    /**
+     * Rotates the current matrix by an angle in radians around the z-axis.
+     *
+     * @param angle - The angle in radians to rotate the current matrix by.
+     * @returns The current matrix.
+     */
+    rotateZ(angle: number): Matrix4;
+    /**
+     * Scales the current matrix by a vector.
+     *
+     * @param vector3 - The vector to scale the current matrix by.
+     * @returns The current matrix.
+     */
+    scale(vector3: Vector3): Matrix4;
+    /**
+     * Subtracts a matrix from the current matrix.
+     *
+     * @param matrix4 - The matrix to subtract from the current matrix.
+     * @returns The current matrix.
+     */
+    subtract(matrix4: Matrix4): Matrix4;
+    /**
+     * Sets the current matrix to a matrix that looks at a target.
+     *
+     * @param eye - The eye vector of the camera.
+     * @param center - The center vector of the camera.
+     * @param up - The up vector of the camera.
+     * @returns The current matrix.
+     */
+    targetTo(eye: Vector3, center: Vector3, up: Vector3): Matrix4;
+    /**
+     * Returns a string representation of the current matrix.
+     *
+     * @returns A string representation of the current matrix.
+     */
+    toString(): string;
+    /**
+     * Translates the current matrix by a vector.
+     *
+     * @param vector3 - The vector to translate the current matrix by.
+     * @returns The current matrix.
+     */
+    translate(vector3: Vector3): Matrix4;
+    /**
+     * Transposes the current matrix.
+     *
+     * @returns The current matrix.
+     */
+    transpose(): Matrix4;
+}
+
 /** A bounding box for a model. @public */
 declare type ModelBoundingBox = {
     min: Vector3Like;
@@ -2953,9 +3395,13 @@ export declare const PORT: string | 8080;
  */
 export declare class Quaternion extends Float32Array implements QuaternionLike {
     constructor(x: number, y: number, z: number, w: number);
-    /** The magnitude of the quaternion. Also known as the length. */
+    /** The length of the quaternion. */
+    get length(): number;
+    /** The squared length of the quaternion. */
+    get squaredLength(): number;
+    /** The magnitude of the quaternion. Alias for `.length`. */
     get magnitude(): number;
-    /** The squared magnitude of the quaternion. Also known as the squared length. */
+    /** The squared magnitude of the quaternion. Alias for `.squaredLength`. */
     get squaredMagnitude(): number;
     /** The x-component of the quaternion. */
     get x(): number;
@@ -3037,6 +3483,12 @@ export declare class Quaternion extends Float32Array implements QuaternionLike {
      */
     getAngle(quaternion: Quaternion): number;
     /**
+     * Sets the current quaternion to the identity quaternion.
+     *
+     * @returns The current quaternion.
+     */
+    identity(): Quaternion;
+    /**
      * Inverts each component of the quaternion.
      *
      * @returns The current quaternion.
@@ -3051,6 +3503,12 @@ export declare class Quaternion extends Float32Array implements QuaternionLike {
      */
     lerp(quaternion: Quaternion, t: number): Quaternion;
     /**
+     * Sets the current quaternion to its natural logarithm.
+     *
+     * @returns The current quaternion.
+     */
+    logarithm(): Quaternion;
+    /**
      * Multiplies the quaternion by another quaternion.
      *
      * @param quaternionLike - The quaternion to multiply by.
@@ -3063,6 +3521,19 @@ export declare class Quaternion extends Float32Array implements QuaternionLike {
      * @returns The current quaternion.
      */
     normalize(): Quaternion;
+    /**
+     * Raises the current quaternion to a power.
+     *
+     * @param exponent - The exponent to raise the quaternion to.
+     * @returns The current quaternion.
+     */
+    power(exponent: number): Quaternion;
+    /**
+     * Randomizes the current quaternion.
+     *
+     * @returns The current quaternion.
+     */
+    randomize(): Quaternion;
     /**
      * Rotates the quaternion around the x-axis.
      *
@@ -3091,6 +3562,14 @@ export declare class Quaternion extends Float32Array implements QuaternionLike {
      * @returns The current quaternion.
      */
     scale(scale: number): Quaternion;
+    /**
+     * Sets the current quaternion to the angle and rotation axis.
+     *
+     * @param axis - The axis to rotate around.
+     * @param angle - The angle to rotate in radians.
+     * @returns The current quaternion.
+     */
+    setAxisAngle(axis: Vector3, angle: number): Quaternion;
     /**
      * Spherically interpolates between the current quaternion and another quaternion.
      *
@@ -3899,9 +4378,13 @@ export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "
  */
 export declare class Vector3 extends Float32Array implements Vector3Like {
     constructor(x: number, y: number, z: number);
-    /** The magnitude of the vector. Also known as the length. */
+    /** The length of the vector. */
+    get length(): number;
+    /** The squared length of the vector. */
+    get squaredLength(): number;
+    /** The magnitude of the vector. Alias for `length`. */
     get magnitude(): number;
-    /** The squared magnitude of the vector. Also known as the squared length. */
+    /** The squared magnitude of the vector. Alias for `squaredLength`. */
     get squaredMagnitude(): number;
     /** The x-component of the vector. */
     get x(): number;
@@ -3912,6 +4395,12 @@ export declare class Vector3 extends Float32Array implements Vector3Like {
     /** The z-component of the vector. */
     get z(): number;
     set z(value: number);
+    /**
+     * Creates a new `Vector3` instance.
+     *
+     * @returns A new `Vector3` instance.
+     */
+    static create(): Vector3;
     /**
      * Creates a new `Vector3` instance from a `Vector3Like` object.
      *
@@ -4034,6 +4523,13 @@ export declare class Vector3 extends Float32Array implements Vector3Like {
      */
     normalize(): Vector3;
     /**
+     * Randomizes the vector.
+     *
+     * @param scale - Length of the resulting vector, if omitted a unit vector is set.
+     * @returns The current vector.
+     */
+    randomize(scale?: number): Vector3;
+    /**
      * Rotates the vector around the x-axis.
      *
      * @param vector3 - The origin vector to rotate around.
@@ -4071,6 +4567,14 @@ export declare class Vector3 extends Float32Array implements Vector3Like {
      */
     scale(scale: number): Vector3;
     /**
+     * Adds 2 vectors together after scaling the provided vector by a scalar value.
+     *
+     * @param vector3 - The vector to add the scaled vector to.
+     * @param scale - The scalar value to scale the current vector by.
+     * @returns The current vector.
+     */
+    scaleAndAdd(vector3: Vector3, scale: number): Vector3;
+    /**
      * Subtracts a vector from the current vector.
      *
      * @param vector3 - The vector to subtract from the current vector.
@@ -4083,6 +4587,33 @@ export declare class Vector3 extends Float32Array implements Vector3Like {
      * @returns A string representation of the vector in the format x,y,z.
      */
     toString(): string;
+    /**
+     * Transforms the vector by a matrix3.
+     *
+     * @param matrix3 - The matrix3 to transform the vector by.
+     * @returns The current vector.
+     */
+    transformMatrix3(matrix3: Matrix3): Vector3;
+    /**
+     * Transforms the vector by a matrix4.
+     *
+     * @param matrix4 - The matrix4 to transform the vector by.
+     * @returns The current vector.
+     */
+    transformMatrix4(matrix4: Matrix4): Vector3;
+    /**
+     * Transforms the vector by a quaternion.
+     *
+     * @param quaternion - The quaternion to transform the vector by.
+     * @returns The current vector.
+     */
+    transformQuaternion(quaternion: Quaternion): Vector3;
+    /**
+     * Sets each component of the vector to zero.
+     *
+     * @returns The current vector.
+     */
+    zero(): Vector3;
 }
 
 /** A 3-dimensional vector of boolean values. @public */

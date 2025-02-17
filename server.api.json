@@ -24022,6 +24022,38 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Quaternion#identity:member(1)",
+              "docComment": "/**\n * Sets the current quaternion to the identity quaternion.\n *\n * @returns The current quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "identity(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "identity"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Quaternion#invert:member(1)",
               "docComment": "/**\n * Inverts each component of the quaternion.\n *\n * @returns The current quaternion.\n */\n",
               "excerptTokens": [
@@ -24051,6 +24083,36 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "invert"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Quaternion#length:member",
+              "docComment": "/**\n * The length of the quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get length(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "length",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Method",
@@ -24119,9 +24181,41 @@
               "name": "lerp"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Quaternion#logarithm:member(1)",
+              "docComment": "/**\n * Sets the current quaternion to its natural logarithm.\n *\n * @returns The current quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "logarithm(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "logarithm"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Quaternion#magnitude:member",
-              "docComment": "/**\n * The magnitude of the quaternion. Also known as the length.\n */\n",
+              "docComment": "/**\n * The magnitude of the quaternion. Alias for `.length`.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -24229,6 +24323,87 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "normalize"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Quaternion#power:member(1)",
+              "docComment": "/**\n * Raises the current quaternion to a power.\n *\n * @param exponent - The exponent to raise the quaternion to.\n *\n * @returns The current quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "power(exponent: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "exponent",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "power"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Quaternion#randomize:member(1)",
+              "docComment": "/**\n * Randomizes the current quaternion.\n *\n * @returns The current quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "randomize(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "randomize"
             },
             {
               "kind": "Method",
@@ -24428,6 +24603,72 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Quaternion#setAxisAngle:member(1)",
+              "docComment": "/**\n * Sets the current quaternion to the angle and rotation axis.\n *\n * @param axis - The axis to rotate around.\n *\n * @param angle - The angle to rotate in radians.\n *\n * @returns The current quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setAxisAngle(axis: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", angle: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "axis",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "angle",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "setAxisAngle"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Quaternion#slerp:member(1)",
               "docComment": "/**\n * Spherically interpolates between the current quaternion and another quaternion.\n *\n * @param quaternion - The quaternion to interpolate with.\n *\n * @param t - The interpolation factor.\n *\n * @returns The current quaternion.\n */\n",
               "excerptTokens": [
@@ -24494,8 +24735,38 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Quaternion#squaredLength:member",
+              "docComment": "/**\n * The squared length of the quaternion.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get squaredLength(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "squaredLength",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Quaternion#squaredMagnitude:member",
-              "docComment": "/**\n * The squared magnitude of the quaternion. Also known as the squared length.\n */\n",
+              "docComment": "/**\n * The squared magnitude of the quaternion. Alias for `.squaredLength`.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31205,6 +31476,38 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!Vector3.create:member(1)",
+              "docComment": "/**\n * Creates a new `Vector3` instance.\n *\n * @returns A new `Vector3` instance.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static create(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "create"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!Vector3#cross:member(1)",
               "docComment": "/**\n * Calculates the cross product of the current vector and another vector.\n *\n * @param vector3 - The vector to calculate the cross product with.\n *\n * @returns The current vector.\n */\n",
               "excerptTokens": [
@@ -31565,6 +31868,36 @@
               "name": "invert"
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!Vector3#length:member",
+              "docComment": "/**\n * The length of the vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get length(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "length",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!Vector3#lerp:member(1)",
               "docComment": "/**\n * Linearly interpolates between the current vector and another vector.\n *\n * @param vector3 - The vector to interpolate to.\n *\n * @param t - The interpolation factor. A value between 0 and 1.\n *\n * @returns The current vector.\n */\n",
@@ -31633,7 +31966,7 @@
             {
               "kind": "Property",
               "canonicalReference": "server!Vector3#magnitude:member",
-              "docComment": "/**\n * The magnitude of the vector. Also known as the length.\n */\n",
+              "docComment": "/**\n * The magnitude of the vector. Alias for `length`.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31873,6 +32206,55 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "normalize"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#randomize:member(1)",
+              "docComment": "/**\n * Randomizes the vector.\n *\n * @param scale - Length of the resulting vector, if omitted a unit vector is set.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "randomize(scale?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "scale",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "randomize"
             },
             {
               "kind": "Method",
@@ -32154,9 +32536,105 @@
               "name": "scale"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#scaleAndAdd:member(1)",
+              "docComment": "/**\n * Adds 2 vectors together after scaling the provided vector by a scalar value.\n *\n * @param vector3 - The vector to add the scaled vector to.\n *\n * @param scale - The scalar value to scale the current vector by.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "scaleAndAdd(vector3: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", scale: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "vector3",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "scale",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "scaleAndAdd"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Vector3#squaredLength:member",
+              "docComment": "/**\n * The squared length of the vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get squaredLength(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "squaredLength",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Vector3#squaredMagnitude:member",
-              "docComment": "/**\n * The squared magnitude of the vector. Also known as the squared length.\n */\n",
+              "docComment": "/**\n * The squared magnitude of the vector. Alias for `squaredLength`.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32265,6 +32743,156 @@
               "name": "toString"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#transformMatrix3:member(1)",
+              "docComment": "/**\n * Transforms the vector by a matrix3.\n *\n * @param matrix3 - The matrix3 to transform the vector by.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformMatrix3(matrix3: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Matrix3",
+                  "canonicalReference": "server!~Matrix3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "matrix3",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformMatrix3"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#transformMatrix4:member(1)",
+              "docComment": "/**\n * Transforms the vector by a matrix4.\n *\n * @param matrix4 - The matrix4 to transform the vector by.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformMatrix4(matrix4: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Matrix4",
+                  "canonicalReference": "server!~Matrix4:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "matrix4",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformMatrix4"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#transformQuaternion:member(1)",
+              "docComment": "/**\n * Transforms the vector by a quaternion.\n *\n * @param quaternion - The quaternion to transform the vector by.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformQuaternion(quaternion: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Quaternion",
+                  "canonicalReference": "server!Quaternion:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "quaternion",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformQuaternion"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Vector3#x:member",
               "docComment": "/**\n * The x-component of the vector.\n */\n",
@@ -32353,6 +32981,38 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#zero:member(1)",
+              "docComment": "/**\n * Sets each component of the vector to zero.\n *\n * @returns The current vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "zero(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "zero"
             }
           ],
           "extendsTokenRange": {

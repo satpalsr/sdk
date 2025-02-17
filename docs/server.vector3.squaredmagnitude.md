@@ -4,7 +4,7 @@
 
 ## Vector3.squaredMagnitude property
 
-The squared magnitude of the vector. Also known as the squared length.
+The squared magnitude of the vector. Alias for `squaredLength`<!-- -->.
 
 **Signature:**
 

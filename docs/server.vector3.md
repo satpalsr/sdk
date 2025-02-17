@@ -78,6 +78,27 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[length](./server.vector3.length.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The length of the vector.
+
+
+</td></tr>
+<tr><td>
+
 [magnitude](./server.vector3.magnitude.md)
 
 
@@ -93,7 +114,28 @@ number
 
 </td><td>
 
-The magnitude of the vector. Also known as the length.
+The magnitude of the vector. Alias for `length`<!-- -->.
+
+
+</td></tr>
+<tr><td>
+
+[squaredLength](./server.vector3.squaredlength.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The squared length of the vector.
 
 
 </td></tr>
@@ -114,7 +156,7 @@ number
 
 </td><td>
 
-The squared magnitude of the vector. Also known as the squared length.
+The squared magnitude of the vector. Alias for `squaredLength`<!-- -->.
 
 
 </td></tr>
@@ -248,6 +290,22 @@ Returns a new vector with the same components as the current vector.
 </td><td>
 
 Copies the components of a vector to the current vector.
+
+
+</td></tr>
+<tr><td>
+
+[create()](./server.vector3.create.md)
+
+
+</td><td>
+
+`static`
+
+
+</td><td>
+
+Creates a new `Vector3` instance.
 
 
 </td></tr>
@@ -451,6 +509,20 @@ Normalizes the vector.
 </td></tr>
 <tr><td>
 
+[randomize(scale)](./server.vector3.randomize.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Randomizes the vector.
+
+
+</td></tr>
+<tr><td>
+
 [rotateX(vector3, angle)](./server.vector3.rotatex.md)
 
 
@@ -521,6 +593,20 @@ Scales each component of the vector by a scalar value.
 </td></tr>
 <tr><td>
 
+[scaleAndAdd(vector3, scale)](./server.vector3.scaleandadd.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Adds 2 vectors together after scaling the provided vector by a scalar value.
+
+
+</td></tr>
+<tr><td>
+
 [subtract(vector3)](./server.vector3.subtract.md)
 
 
@@ -544,6 +630,62 @@ Subtracts a vector from the current vector.
 </td><td>
 
 Returns a string representation of the vector in x,y,z format.
+
+
+</td></tr>
+<tr><td>
+
+[transformMatrix3(matrix3)](./server.vector3.transformmatrix3.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Transforms the vector by a matrix3.
+
+
+</td></tr>
+<tr><td>
+
+[transformMatrix4(matrix4)](./server.vector3.transformmatrix4.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Transforms the vector by a matrix4.
+
+
+</td></tr>
+<tr><td>
+
+[transformQuaternion(quaternion)](./server.vector3.transformquaternion.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Transforms the vector by a quaternion.
+
+
+</td></tr>
+<tr><td>
+
+[zero()](./server.vector3.zero.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets each component of the vector to zero.
 
 
 </td></tr>

@@ -4,7 +4,7 @@
 
 ## Quaternion.squaredMagnitude property
 
-The squared magnitude of the quaternion. Also known as the squared length.
+The squared magnitude of the quaternion. Alias for `.squaredLength`<!-- -->.
 
 **Signature:**
 

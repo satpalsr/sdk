@@ -4,7 +4,7 @@
 
 ## Vector3.magnitude property
 
-The magnitude of the vector. Also known as the length.
+The magnitude of the vector. Alias for `length`<!-- -->.
 
 **Signature:**
 
