@@ -215,6 +215,9 @@ export default class GameManager {
 
     this._enemySpawnTimeout = setTimeout(() => this._spawnLoop(), nextSpawn);
     this.waveDelay = 0;
+
+    // Check end game conditions.
+    this.checkEndGame();
   }
 
   private _waveLoop() {
