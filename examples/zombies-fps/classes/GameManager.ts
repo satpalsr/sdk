@@ -45,7 +45,9 @@ export default class GameManager {
   }
 
   public checkEndGame() {
-    clearTimeout(this._endGameTimeout);
+    if (this._endGameTimeout !== undefined) {
+      return;
+    }
 
     this._endGameTimeout = setTimeout(() => {
       if (!this.world) return;
@@ -63,6 +65,8 @@ export default class GameManager {
       if (allPlayersDowned) {
         this.endGame();
       }
+
+      this._endGameTimeout = undefined;
     }, 1000);
   }
 
@@ -217,9 +221,7 @@ export default class GameManager {
     this.waveDelay = 0;
 
     // Check end game conditions.
-    if (!GameServer.instance.playerManager.getConnectedPlayers().length) {
-      this.endGame();
-    }
+    this.checkEndGame();
   }
 
   private _waveLoop() {
