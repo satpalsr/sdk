@@ -217,7 +217,9 @@ export default class GameManager {
     this.waveDelay = 0;
 
     // Check end game conditions.
-    this.checkEndGame();
+    if (!GameServer.instance.playerManager.getConnectedPlayers().length) {
+      this.endGame();
+    }
   }
 
   private _waveLoop() {
