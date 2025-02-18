@@ -97,7 +97,7 @@ The determinant of the matrix.
 </td></tr>
 <tr><td>
 
-[frobeniusNormal](./server.matrix2.frobeniusnormal.md)
+[frobeniusNorm](./server.matrix2.frobeniusnorm.md)
 
 
 </td><td>

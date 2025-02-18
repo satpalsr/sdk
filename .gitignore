@@ -10,3 +10,6 @@ package-lock.json
 
 # macOS system files in any folder
 **/.DS_Store
+
+# Ignore all model .optimized folders
+**/.optimized

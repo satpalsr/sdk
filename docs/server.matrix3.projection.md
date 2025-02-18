@@ -4,7 +4,7 @@
 
 ## Matrix3.projection() method
 
-Sets the current matrix to a projection matrix with the given bounds.
+Sets the current matrix to a orthographic projection matrix with the given bounds.
 
 **Signature:**
 

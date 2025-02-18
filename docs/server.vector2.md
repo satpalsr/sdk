@@ -306,20 +306,6 @@ Creates a new `Vector2` instance.
 </td></tr>
 <tr><td>
 
-[cross(vector2)](./server.vector2.cross.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Calculates the cross product of the current vector and another vector.
-
-
-</td></tr>
-<tr><td>
-
 [distance(vector2)](./server.vector2.distance.md)
 
 

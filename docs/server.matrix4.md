@@ -97,7 +97,7 @@ The determinant of the matrix.
 </td></tr>
 <tr><td>
 
-[frobeniusNormal](./server.matrix4.frobeniusnormal.md)
+[frobeniusNorm](./server.matrix4.frobeniusnorm.md)
 
 
 </td><td>
@@ -112,7 +112,7 @@ number
 
 </td><td>
 
-The frobenius normal of the matrix.
+The frobenius norm of the matrix.
 
 
 </td></tr>
@@ -482,7 +482,7 @@ Multiplies each element of the current matrix by a scalar value.
 </td></tr>
 <tr><td>
 
-[orthogonal(left, right, bottom, top, near, far)](./server.matrix4.orthogonal.md)
+[orthographic(left, right, bottom, top, near, far)](./server.matrix4.orthographic.md)
 
 
 </td><td>
@@ -490,7 +490,7 @@ Multiplies each element of the current matrix by a scalar value.
 
 </td><td>
 
-Sets the current matrix to an orthogonal matrix with the given bounds.
+Sets the current matrix to an orthographic projection matrix with the given bounds.
 
 
 </td></tr>

@@ -97,7 +97,7 @@ The determinant of the matrix.
 </td></tr>
 <tr><td>
 
-[frobeniusNormal](./server.matrix3.frobeniusnormal.md)
+[frobeniusNorm](./server.matrix3.frobeniusnorm.md)
 
 
 </td><td>
@@ -112,7 +112,7 @@ number
 
 </td><td>
 
-The frobenius normal of the matrix.
+The frobenius norm of the matrix.
 
 
 </td></tr>
@@ -312,7 +312,7 @@ Creates a new `Matrix3` instance from a scale of identity matrix.
 
 </td><td>
 
-Creates a new `Matrix3` instance from a translation of identity matrix.
+Creates a new `Matrix3` instance from a translation of identity matrix. This is used only when working with two-dimensional homogeneous coordinates, which is why the `translation` parameter is a `Vector2`<!-- -->.
 
 
 </td></tr>
@@ -382,7 +382,7 @@ Multiplies each element of the current matrix by a scalar value.
 
 </td><td>
 
-Sets the current matrix to a projection matrix with the given bounds.
+Sets the current matrix to a orthographic projection matrix with the given bounds.
 
 
 </td></tr>
@@ -425,6 +425,20 @@ Subtracts a matrix from the current matrix.
 </td><td>
 
 Returns a string representation of the current matrix.
+
+
+</td></tr>
+<tr><td>
+
+[transformVector(vector)](./server.matrix3.transformvector.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Multiplies the provided vector3 by this matrix. This modifies the vector in-place, but also returns the transformed vector.
 
 
 </td></tr>

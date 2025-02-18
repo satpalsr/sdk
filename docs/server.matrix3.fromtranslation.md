@@ -4,12 +4,12 @@
 
 ## Matrix3.fromTranslation() method
 
-Creates a new `Matrix3` instance from a translation of identity matrix.
+Creates a new `Matrix3` instance from a translation of identity matrix. This is used only when working with two-dimensional homogeneous coordinates, which is why the `translation` parameter is a `Vector2`<!-- -->.
 
 **Signature:**
 
 ```typescript
-static fromTranslation(translation: Vector3): Matrix3;
+static fromTranslation(translation: Vector2): Matrix3;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ translation
 
 </td><td>
 
-[Vector3](./server.vector3.md)
+[Vector2](./server.vector2.md)
 
 
 </td><td>

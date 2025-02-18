@@ -610,4 +610,18 @@ Returns a string representation of the quaternion in x,y,z,w format.
 
 
 </td></tr>
+<tr><td>
+
+[transformVector(vector)](./server.quaternion.transformvector.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Rotates the provided vector by the rotation this quaternion represents. This modifies the vector in-place, but also returns the rotated vector.
+
+
+</td></tr>
 </tbody></table>

@@ -353,6 +353,20 @@ Divides each component of the current vector by the corresponding component of a
 </td></tr>
 <tr><td>
 
+[dot(vector3)](./server.vector3.dot.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Returns the dot product of this vector and another vector.
+
+
+</td></tr>
+<tr><td>
+
 [equals(vector3)](./server.vector3.equals.md)
 
 
