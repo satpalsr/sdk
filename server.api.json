@@ -17578,12 +17578,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Matrix2#frobeniusNormal:member",
+              "canonicalReference": "server!Matrix2#frobeniusNorm:member",
               "docComment": "/**\n * The frobenius normal of the matrix.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get frobeniusNormal(): "
+                  "text": "get frobeniusNorm(): "
                 },
                 {
                   "kind": "Content",
@@ -17597,7 +17597,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "frobeniusNormal",
+              "name": "frobeniusNorm",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -18548,12 +18548,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Matrix3#frobeniusNormal:member",
-              "docComment": "/**\n * The frobenius normal of the matrix.\n */\n",
+              "canonicalReference": "server!Matrix3#frobeniusNorm:member",
+              "docComment": "/**\n * The frobenius norm of the matrix.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get frobeniusNormal(): "
+                  "text": "get frobeniusNorm(): "
                 },
                 {
                   "kind": "Content",
@@ -18567,7 +18567,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "frobeniusNormal",
+              "name": "frobeniusNorm",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -18778,7 +18778,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Matrix3.fromTranslation:member(1)",
-              "docComment": "/**\n * Creates a new `Matrix3` instance from a translation of identity matrix.\n *\n * @param translation - The translation of the matrix.\n *\n * @returns A new `Matrix3` instance.\n */\n",
+              "docComment": "/**\n * Creates a new `Matrix3` instance from a translation of identity matrix. This is used only when working with two-dimensional homogeneous coordinates, which is why the `translation` parameter is a `Vector2`.\n *\n * @param translation - The translation of the matrix.\n *\n * @returns A new `Matrix3` instance.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -18786,8 +18786,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Vector3",
-                  "canonicalReference": "server!Vector3:class"
+                  "text": "Vector2",
+                  "canonicalReference": "server!Vector2:class"
                 },
                 {
                   "kind": "Content",
@@ -18991,7 +18991,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Matrix3#projection:member(1)",
-              "docComment": "/**\n * Sets the current matrix to a projection matrix with the given bounds.\n *\n * @param width - The width of the projection.\n *\n * @param height - The height of the projection.\n *\n * @returns The current matrix.\n */\n",
+              "docComment": "/**\n * Sets the current matrix to a orthographic projection matrix with the given bounds.\n *\n * @param width - The width of the projection.\n *\n * @param height - The height of the projection.\n *\n * @returns The current matrix.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -19182,6 +19182,56 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "toString"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Matrix3#transformVector:member(1)",
+              "docComment": "/**\n * Multiplies the provided vector3 by this matrix. This modifies the vector in-place, but also returns the transformed vector.\n *\n * @param vector - The vector to multiply by this.\n *\n * @returns The transformed vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformVector(vector: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "vector",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformVector"
             },
             {
               "kind": "Method",
@@ -19845,12 +19895,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Matrix4#frobeniusNormal:member",
-              "docComment": "/**\n * The frobenius normal of the matrix.\n */\n",
+              "canonicalReference": "server!Matrix4#frobeniusNorm:member",
+              "docComment": "/**\n * The frobenius norm of the matrix.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get frobeniusNormal(): "
+                  "text": "get frobeniusNorm(): "
                 },
                 {
                   "kind": "Content",
@@ -19864,7 +19914,7 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "frobeniusNormal",
+              "name": "frobeniusNorm",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -20866,12 +20916,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!Matrix4#orthogonal:member(1)",
-              "docComment": "/**\n * Sets the current matrix to an orthogonal matrix with the given bounds.\n *\n * @param left - The left bound of the projection.\n *\n * @param right - The right bound of the projection.\n *\n * @param bottom - The bottom bound of the projection.\n *\n * @param top - The top bound of the projection.\n *\n * @param near - The near bound of the projection.\n *\n * @param far - The far bound of the projection.\n *\n * @returns The current matrix.\n */\n",
+              "canonicalReference": "server!Matrix4#orthographic:member(1)",
+              "docComment": "/**\n * Sets the current matrix to an orthographic projection matrix with the given bounds.\n *\n * @param left - The left bound of the frustum.\n *\n * @param right - The right bound of the frustum.\n *\n * @param bottom - The bottom bound of the frustum.\n *\n * @param top - The top bound of the frustum.\n *\n * @param near - The near bound of the frustum.\n *\n * @param far - The far bound of the frustum.\n *\n * @returns The current matrix.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "orthogonal(left: "
+                  "text": "orthographic(left: "
                 },
                 {
                   "kind": "Content",
@@ -20991,7 +21041,7 @@
               ],
               "isOptional": false,
               "isAbstract": false,
-              "name": "orthogonal"
+              "name": "orthographic"
             },
             {
               "kind": "Method",
@@ -29285,6 +29335,56 @@
               "name": "toString"
             },
             {
+              "kind": "Method",
+              "canonicalReference": "server!Quaternion#transformVector:member(1)",
+              "docComment": "/**\n * Rotates the provided vector by the rotation this quaternion represents. This modifies the vector in-place, but also returns the rotated vector.\n *\n * @param vector - the vector to rotate\n *\n * @returns the rotated vector.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "transformVector(vector: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "vector",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "transformVector"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "server!Quaternion#w:member",
               "docComment": "/**\n * The w-component of the quaternion.\n */\n",
@@ -36001,56 +36101,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!Vector2#cross:member(1)",
-              "docComment": "/**\n * Calculates the cross product of the current vector and another vector.\n *\n * @param vector2 - The vector to calculate the cross product with.\n *\n * @returns The cross product of the two vector 2s as a vector3.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "cross(vector2: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector2",
-                  "canonicalReference": "server!Vector2:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3",
-                  "canonicalReference": "server!Vector3:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "vector2",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "cross"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!Vector2#distance:member(1)",
               "docComment": "/**\n * Calculates the distance between the current vector and another vector.\n *\n * @param vector2 - The vector to calculate the distance to.\n *\n * @returns The distance between the two vectors.\n */\n",
               "excerptTokens": [
@@ -37942,6 +37992,55 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "divide"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Vector3#dot:member(1)",
+              "docComment": "/**\n * Returns the dot product of this vector and another vector.\n *\n * @param vector3 - the other vector\n *\n * @returns the dot product of this and vector3\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dot(vector3: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3",
+                  "canonicalReference": "server!Vector3:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "vector3",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dot"
             },
             {
               "kind": "Method",

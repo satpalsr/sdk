@@ -2135,7 +2135,7 @@ export declare class Matrix2 extends Float32Array {
     /** The determinant of the matrix. */
     get determinant(): number;
     /** The frobenius normal of the matrix. */
-    get frobeniusNormal(): number;
+    get frobeniusNorm(): number;
     /**
      * Creates a new `Matrix2` instance.
      *
@@ -2265,8 +2265,8 @@ export declare class Matrix3 extends Float32Array {
     constructor(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number);
     /** The determinant of the matrix. */
     get determinant(): number;
-    /** The frobenius normal of the matrix. */
-    get frobeniusNormal(): number;
+    /** The frobenius norm of the matrix. */
+    get frobeniusNorm(): number;
     /**
      * Creates a new `Matrix3` instance.
      *
@@ -2303,11 +2303,13 @@ export declare class Matrix3 extends Float32Array {
     static fromScaling(scale: Vector3): Matrix3;
     /**
      * Creates a new `Matrix3` instance from a translation of identity matrix.
+     * This is used only when working with two-dimensional homogeneous coordinates,
+     * which is why the `translation` parameter is a `Vector2`.
      *
      * @param translation - The translation of the matrix.
      * @returns A new `Matrix3` instance.
      */
-    static fromTranslation(translation: Vector3): Matrix3;
+    static fromTranslation(translation: Vector2): Matrix3;
     /**
      * Adds a matrix to the current matrix.
      *
@@ -2375,7 +2377,15 @@ export declare class Matrix3 extends Float32Array {
      */
     multiplyScalar(scalar: number): Matrix3;
     /**
-     * Sets the current matrix to a projection matrix with the given bounds.
+     * Multiplies the provided vector3 by this matrix. This modifies
+     * the vector in-place, but also returns the transformed vector.
+     *
+     * @param vector - The vector to multiply by this.
+     * @returns The transformed vector.
+     */
+    transformVector(vector: Vector3): Vector3;
+    /**
+     * Sets the current matrix to a orthographic projection matrix with the given bounds.
      *
      * @param width - The width of the projection.
      * @param height - The height of the projection.
@@ -2425,8 +2435,8 @@ export declare class Matrix4 extends Float32Array {
     constructor(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number);
     /** The determinant of the matrix. */
     get determinant(): number;
-    /** The frobenius normal of the matrix. */
-    get frobeniusNormal(): number;
+    /** The frobenius norm of the matrix. */
+    get frobeniusNorm(): number;
     /**
      * Creates a new `Matrix4` instance.
      *
@@ -2598,17 +2608,17 @@ export declare class Matrix4 extends Float32Array {
      */
     multiplyScalar(scalar: number): Matrix4;
     /**
-     * Sets the current matrix to an orthogonal matrix with the given bounds.
+     * Sets the current matrix to an orthographic projection matrix with the given bounds.
      *
-     * @param left - The left bound of the projection.
-     * @param right - The right bound of the projection.
-     * @param bottom - The bottom bound of the projection.
-     * @param top - The top bound of the projection.
-     * @param near - The near bound of the projection.
-     * @param far - The far bound of the projection.
+     * @param left - The left bound of the frustum.
+     * @param right - The right bound of the frustum.
+     * @param bottom - The bottom bound of the frustum.
+     * @param top - The top bound of the frustum.
+     * @param near - The near bound of the frustum.
+     * @param far - The far bound of the frustum.
      * @returns The current matrix.
      */
-    orthogonal(left: number, right: number, bottom: number, top: number, near: number, far: number): Matrix4;
+    orthographic(left: number, right: number, bottom: number, top: number, near: number, far: number): Matrix4;
     /**
      * Sets the current matrix to a perspective matrix with the given field of view, aspect ratio, and near and far bounds.
      *
@@ -3647,6 +3657,14 @@ export declare class Quaternion extends Float32Array implements QuaternionLike {
      */
     multiply(quaternion: Quaternion): Quaternion;
     /**
+     * Rotates the provided vector by the rotation this quaternion represents.
+     * This modifies the vector in-place, but also returns the rotated vector.
+     *
+     * @param vector - the vector to rotate
+     * @returns the rotated vector.
+     */
+    transformVector(vector: Vector3): Vector3;
+    /**
      * Normalizes the quaternion.
      *
      * @returns The current quaternion.
@@ -4563,13 +4581,6 @@ export declare class Vector2 extends Float32Array implements Vector2Like {
      */
     copy(vector2: Vector2): Vector2;
     /**
-     * Calculates the cross product of the current vector and another vector.
-     *
-     * @param vector2 - The vector to calculate the cross product with.
-     * @returns The cross product of the two vector 2s as a vector3.
-     */
-    cross(vector2: Vector2): Vector3;
-    /**
      * Calculates the distance between the current vector and another vector.
      *
      * @param vector2 - The vector to calculate the distance to.
@@ -4837,6 +4848,13 @@ export declare class Vector3 extends Float32Array implements Vector3Like {
      * @returns The current vector.
      */
     divide(vector3: Vector3): Vector3;
+    /**
+     * Returns the dot product of this vector and another vector.
+     *
+     * @param vector3 - the other vector
+     * @returns the dot product of this and vector3
+     */
+    dot(vector3: Vector3): number;
     /**
      * Checks if the current vector is approximately equal to another vector.
      *
