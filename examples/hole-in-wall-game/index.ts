@@ -167,7 +167,7 @@ function addPlayerEntityToQueue(world: World, playerEntity: PlayerEntity) {
   world.chatManager.sendPlayerMessage(playerEntity.player, 'You have joined the next game queue!', '00FF00');
   uiUpdate({ queueCount: QUEUED_PLAYER_ENTITIES.size });
 
-  if (gameState === 'awaitingPlayers' && QUEUED_PLAYER_ENTITIES.size > 1) {
+  if (gameState === 'awaitingPlayers' && QUEUED_PLAYER_ENTITIES.size > 0) {
     queueGame(world);
   }
 
@@ -270,7 +270,7 @@ function killPlayer(playerEntity: PlayerEntity) {
   playerEntity.setPosition(GAME_CONFIG.POSITIONS.PLAYER_SPAWN);
   GAME_PLAYER_ENTITIES.delete(playerEntity);
 
-  if (GAME_PLAYER_ENTITIES.size <= 1) {
+  if (GAME_PLAYER_ENTITIES.size <= 0) {
     endGame();
   }
 

@@ -1054,6 +1054,8 @@ export declare interface ColliderOptions {
     collisionGroups?: CollisionGroups;
     /** Whether the collider is enabled. */
     enabled?: boolean;
+    /** The flags of the collider if the shape is a trimesh */
+    flags?: number;
     /** The friction of the collider. */
     friction?: number;
     /** The friction combine rule of the collider. */

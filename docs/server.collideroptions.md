@@ -132,6 +132,25 @@ _(Optional)_ Whether the collider is enabled.
 </td></tr>
 <tr><td>
 
+[flags?](./server.collideroptions.flags.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The flags of the collider if the shape is a trimesh
+
+
+</td></tr>
+<tr><td>
+
 [friction?](./server.collideroptions.friction.md)
 
 

@@ -8035,6 +8035,33 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!ColliderOptions#flags:member",
+              "docComment": "/**\n * The flags of the collider if the shape is a trimesh\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "flags?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "flags",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!ColliderOptions#friction:member",
               "docComment": "/**\n * The friction of the collider.\n */\n",
               "excerptTokens": [
