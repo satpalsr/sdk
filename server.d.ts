@@ -570,6 +570,7 @@ export declare namespace ChatEventPayload {
     export interface SendBroadcastMessage {
         message: string;
         color?: string;
+        playerId?: string;
     }
     export interface SendPlayerMessage {
         player: Player;
@@ -2922,7 +2923,7 @@ export declare type PathfindingOptions = {
  *
  * @public
  */
-export declare class Player {
+export declare class Player implements protocol.Serializable {
     /** The unique HYTOPIA UUID for the player. */
     readonly id: string;
     /** The unique HYTOPIA username for the player. */
@@ -2960,6 +2961,7 @@ export declare class Player {
      * Disconnects the player from the game server.
      */
     disconnect(): void;
+
 
 
 

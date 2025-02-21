@@ -69,4 +69,23 @@ string
 
 
 </td></tr>
+<tr><td>
+
+[playerId?](./server.chateventpayload.sendbroadcastmessage.playerid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
 </tbody></table>

@@ -9,8 +9,9 @@ A player in the game.
 **Signature:**
 
 ```typescript
-export default class Player 
+export default class Player implements protocol.Serializable 
 ```
+**Implements:** protocol.Serializable
 
 ## Remarks
 

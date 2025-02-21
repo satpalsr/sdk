@@ -4485,6 +4485,33 @@
                     "startIndex": 1,
                     "endIndex": 2
                   }
+                },
+                {
+                  "kind": "PropertySignature",
+                  "canonicalReference": "server!ChatEventPayload.SendBroadcastMessage#playerId:member",
+                  "docComment": "",
+                  "excerptTokens": [
+                    {
+                      "kind": "Content",
+                      "text": "playerId?: "
+                    },
+                    {
+                      "kind": "Content",
+                      "text": "string"
+                    },
+                    {
+                      "kind": "Content",
+                      "text": ";"
+                    }
+                  ],
+                  "isReadonly": false,
+                  "isOptional": true,
+                  "releaseTag": "Public",
+                  "name": "playerId",
+                  "propertyTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
                 }
               ],
               "extendsTokenRanges": []
@@ -22611,7 +22638,16 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class Player "
+              "text": "export default class Player implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "protocol.Serializable",
+              "canonicalReference": "@hytopia.com/server-protocol!Serializable:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
           ],
           "fileUrlPath": "src/players/Player.ts",
@@ -22950,7 +22986,12 @@
               "isAbstract": false
             }
           ],
-          "implementsTokenRanges": []
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Class",
