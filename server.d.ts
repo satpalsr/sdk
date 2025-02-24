@@ -3227,10 +3227,13 @@ export declare type PlayerCameraOrientation = {
 export declare class PlayerEntity extends Entity {
     /** The player the player entity is assigned to and controlled by. */
     readonly player: Player;
+    /** The SceneUI instance for the player entity's nametag. */
+    readonly nametagSceneUI: SceneUI;
     /**
      * @param options - The options for the player entity.
      */
     constructor(options: PlayerEntityOptions);
+
 
 }
 

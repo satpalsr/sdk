@@ -93,6 +93,27 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[nametagSceneUI](./server.playerentity.nametagsceneui.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[SceneUI](./server.sceneui.md)
+
+
+</td><td>
+
+The SceneUI instance for the player entity's nametag.
+
+
+</td></tr>
+<tr><td>
+
 [player](./server.playerentity.player.md)
 
 

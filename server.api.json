@@ -25525,6 +25525,37 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!PlayerEntity#nametagSceneUI:member",
+              "docComment": "/**\n * The SceneUI instance for the player entity's nametag.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly nametagSceneUI: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SceneUI",
+                  "canonicalReference": "server!SceneUI:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "nametagSceneUI",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!PlayerEntity#player:member",
               "docComment": "/**\n * The player the player entity is assigned to and controlled by.\n */\n",
               "excerptTokens": [
