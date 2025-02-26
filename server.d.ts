@@ -44,10 +44,6 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
 
 
 
-    static readonly Events: {
-        /** @remarks Emitted when the audio is paused. */
-        readonly PAUSE: AudioEvent.PAUSE;
-    };
     /**
      * @param options - The options for the Audio instance.
      */
