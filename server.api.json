@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "/**\n * Represents a audio playback in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * <h2>Events</h2> This class is an EventRouter, and emits the events and payloads listed under {@link AudioEventPayloads}\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a audio playback in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * <h2>Events</h2> <p> This class is an EventRouter, and emits the events and payloads listed under {@link AudioEventPayloads} </p>\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
