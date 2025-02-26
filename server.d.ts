@@ -17,9 +17,9 @@ import { WebSocket as WebSocket_2 } from 'ws';
  * They support a variety of configuration options through
  * the {@link AudioOptions} constructor argument.
  *
- * ## Events
+ * <h2>Events</h2>
  * This class is an EventRouter, and emits the events
- * and payloads listed under {@link AudioEventPayloads}.
+ * and payloads listed under {@link AudioEventPayloads}
  *
  * @example
  * ```typescript
