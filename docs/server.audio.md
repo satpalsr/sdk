@@ -177,6 +177,29 @@ The duration of the audio in seconds if explicitly set.
 </td></tr>
 <tr><td>
 
+[Events](./server.audio.events.md)
+
+
+</td><td>
+
+`static`
+
+`readonly`
+
+
+</td><td>
+
+typeof [AudioEvent](./server.audioevent.md)
+
+
+</td><td>
+
+The events that an Audio instance can emit.
+
+
+</td></tr>
+<tr><td>
+
 [id](./server.audio.id.md)
 
 

@@ -52,6 +52,12 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
 
 
     /**
+     * The events that an Audio instance can emit.
+     *
+     * @public
+     */
+    static readonly Events: typeof AudioEvent;
+    /**
      * @param options - The options for the Audio instance.
      */
     constructor(options: AudioOptions);
