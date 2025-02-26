@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_INTENSITY" property
 
+Emitted when the intensity of the light is set.
+
 **Signature:**
 
 ```typescript

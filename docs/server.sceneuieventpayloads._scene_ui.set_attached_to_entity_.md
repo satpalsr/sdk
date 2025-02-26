@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.SET\_ATTACHED\_TO\_ENTITY" property
 
+Emitted when a SceneUI is attached to an entity.
+
 **Signature:**
 
 ```typescript

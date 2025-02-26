@@ -19,6 +19,10 @@ export default class BlockType extends EventRouter implements protocol.Serializa
 
 Block types are created directly as instances. They support a variety of configuration options through the [BlockTypeOptions](./server.blocktypeoptions.md) constructor argument. Block types are registered with a [BlockTypeRegistry](./server.blocktyperegistry.md) instance, allowing you to create custom blocks with unique visual representations and behaviors.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [BlockTypeEventPayloads](./server.blocktypeeventpayloads.md)
+
 ## Example
 
 

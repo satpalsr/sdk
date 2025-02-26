@@ -4,6 +4,8 @@
 
 ## PlayerEventPayloads."PLAYER.JOINED\_WORLD" property
 
+Emitted when a player joins a world.
+
 **Signature:**
 
 ```typescript

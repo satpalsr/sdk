@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_COLOR" property
 
+Emitted when the color of the light is set.
+
 **Signature:**
 
 ```typescript

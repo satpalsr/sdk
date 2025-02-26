@@ -4,6 +4,8 @@
 
 ## PlayerEventPayloads."PLAYER.LEFT\_WORLD" property
 
+Emitted when a player leaves a world.
+
 **Signature:**
 
 ```typescript

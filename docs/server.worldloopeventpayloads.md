@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when the world loop starts.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the world loop stops.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the world loop tick ends.
+
 
 </td></tr>
 <tr><td>
@@ -101,6 +107,8 @@ Description
 
 </td><td>
 
+Emitted when an error occurs during a world loop tick.
+
 
 </td></tr>
 <tr><td>
@@ -117,6 +125,8 @@ Description
 
 
 </td><td>
+
+Emitted when the world loop tick starts.
 
 
 </td></tr>

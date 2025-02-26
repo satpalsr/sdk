@@ -29,6 +29,10 @@ The internal order of tick operations is as follows:
 
 5. Synchronize network packets with player clients
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [WorldLoopEventPayloads](./server.worldloopeventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WorldLoop` class.
 
 ## Properties

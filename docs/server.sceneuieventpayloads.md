@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a SceneUI is loaded into the world.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when a SceneUI is attached to an entity.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the offset of a SceneUI is set.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when the position of a SceneUI is set.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when the state of a SceneUI is set.
+
 
 </td></tr>
 <tr><td>
@@ -135,6 +145,8 @@ Description
 
 </td><td>
 
+Emitted when the view distance of a SceneUI is set.
+
 
 </td></tr>
 <tr><td>
@@ -151,6 +163,8 @@ Description
 
 
 </td><td>
+
+Emitted when a SceneUI is unloaded from the world.
 
 
 </td></tr>

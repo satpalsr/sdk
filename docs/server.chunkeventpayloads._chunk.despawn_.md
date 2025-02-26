@@ -4,6 +4,8 @@
 
 ## ChunkEventPayloads."CHUNK.DESPAWN" property
 
+Emitted when a chunk is despawned.
+
 **Signature:**
 
 ```typescript

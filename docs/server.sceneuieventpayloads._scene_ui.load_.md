@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.LOAD" property
 
+Emitted when a SceneUI is loaded into the world.
+
 **Signature:**
 
 ```typescript

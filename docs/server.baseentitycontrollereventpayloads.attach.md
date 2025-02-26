@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.attach property
 
+Emitted when an entity is attached to the controller.
+
 **Signature:**
 
 ```typescript

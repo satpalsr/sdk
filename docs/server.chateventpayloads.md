@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a broadcast message is sent.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when a message is sent to a specific player.
 
 
 </td></tr>

@@ -19,6 +19,10 @@ export default class PlayerCamera extends EventRouter implements protocol.Serial
 
 The camera is used to render the player's view of the world. The player's camera exposes functionality to control the camera of a player. All player objects have a camera, accessible via [Player.camera](./server.player.camera.md)<!-- -->.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [PlayerCameraEventPayloads](./server.playercameraeventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerCamera` class.
 
 ## Example

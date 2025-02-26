@@ -4,6 +4,8 @@
 
 ## ChunkEventPayloads."CHUNK.SPAWN" property
 
+Emitted when a chunk is spawned.
+
 **Signature:**
 
 ```typescript

@@ -17,6 +17,10 @@ export default class ChatManager extends EventRouter
 
 The ChatManager is created internally as a singleton for each [World](./server.world.md) instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [ChatEventPayloads](./server.chateventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.
 
 ## Example

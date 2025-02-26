@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_OFFSET" property
 
+Emitted when the offset of the light is set.
+
 **Signature:**
 
 ```typescript

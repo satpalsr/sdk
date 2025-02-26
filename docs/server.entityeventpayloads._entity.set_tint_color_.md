@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SET\_TINT\_COLOR" property
 
+Emitted when the tint color of the entity is set.
+
 **Signature:**
 
 ```typescript

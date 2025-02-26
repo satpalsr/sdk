@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a light is despawned.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the angle of the spotlight is set.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the light is attached to an entity.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when the color of the light is set.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when the maximum distance the light will illuminate is set.
+
 
 </td></tr>
 <tr><td>
@@ -134,6 +144,8 @@ Description
 
 
 </td><td>
+
+Emitted when the intensity of the light is set.
 
 
 </td></tr>
@@ -152,6 +164,8 @@ Description
 
 </td><td>
 
+Emitted when the offset of the light is set.
+
 
 </td></tr>
 <tr><td>
@@ -168,6 +182,8 @@ Description
 
 
 </td><td>
+
+Emitted when the penumbra of the spotlight is set.
 
 
 </td></tr>
@@ -186,6 +202,8 @@ Description
 
 </td><td>
 
+Emitted when the position of the light is set.
+
 
 </td></tr>
 <tr><td>
@@ -202,6 +220,8 @@ Description
 
 
 </td><td>
+
+Emitted when the tracked entity of the spotlight is set.
 
 
 </td></tr>
@@ -220,6 +240,8 @@ Description
 
 </td><td>
 
+Emitted when the tracked position of the spotlight is set.
+
 
 </td></tr>
 <tr><td>
@@ -236,6 +258,8 @@ Description
 
 
 </td><td>
+
+Emitted when a light is spawned.
 
 
 </td></tr>

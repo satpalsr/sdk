@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_MODEL\_HIDDEN\_NODES" property
 
+Emitted when the nodes of the model the camera is attached to are set to be hidden.
+
 **Signature:**
 
 ```typescript

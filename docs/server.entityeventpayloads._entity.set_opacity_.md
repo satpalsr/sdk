@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SET\_OPACITY" property
 
+Emitted when the opacity of the entity is set.
+
 **Signature:**
 
 ```typescript

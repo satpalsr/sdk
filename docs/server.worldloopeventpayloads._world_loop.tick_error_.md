@@ -4,6 +4,8 @@
 
 ## WorldLoopEventPayloads."WORLD\_LOOP.TICK\_ERROR" property
 
+Emitted when an error occurs during a world loop tick.
+
 **Signature:**
 
 ```typescript

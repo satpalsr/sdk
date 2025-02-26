@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.DESPAWN" property
 
+Emitted when a light is despawned.
+
 **Signature:**
 
 ```typescript

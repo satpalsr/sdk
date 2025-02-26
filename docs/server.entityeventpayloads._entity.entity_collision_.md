@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.ENTITY\_COLLISION" property
 
+Emitted when an entity collides with another entity.
+
 **Signature:**
 
 ```typescript

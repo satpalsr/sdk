@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_ANGLE" property
 
+Emitted when the angle of the spotlight is set.
+
 **Signature:**
 
 ```typescript

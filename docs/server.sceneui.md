@@ -19,6 +19,10 @@ export default class SceneUI extends EventRouter implements protocol.Serializabl
 
 SceneUI instances are created directly as instances. They support a variety of configuration options through the [SceneUIOptions](./server.sceneuioptions.md) constructor argument.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [SceneUIEventPayloads](./server.sceneuieventpayloads.md)
+
 ## Example
 
 

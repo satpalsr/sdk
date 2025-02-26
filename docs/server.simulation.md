@@ -17,6 +17,10 @@ export default class Simulation extends EventRouter
 
 The simulation internally and automatically handles the physical interactions, collisions, contact forces, and events for all aspects of the world. Most methods are not often used directly, but are provided for advanced usage.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [SimulationEventPayloads](./server.simulationeventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Simulation` class.
 
 ## Properties

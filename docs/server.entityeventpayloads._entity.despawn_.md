@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.DESPAWN" property
 
+Emitted when an entity is despawned.
+
 **Signature:**
 
 ```typescript

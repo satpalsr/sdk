@@ -23,6 +23,10 @@ The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk
 
 Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the [BlockTypeRegistry](./server.blocktyperegistry.md) associated with the [World](./server.world.md) the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [ChunkEventPayloads](./server.chunkeventpayloads.md)
+
 ## Example
 
 

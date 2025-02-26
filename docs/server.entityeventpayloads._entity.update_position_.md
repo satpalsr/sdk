@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.UPDATE\_POSITION" property
 
+Emitted when the position of the entity is updated at the end of the tick, either directly or by physics.
+
 **Signature:**
 
 ```typescript

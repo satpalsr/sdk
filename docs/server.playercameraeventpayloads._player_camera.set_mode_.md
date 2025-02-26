@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_MODE" property
 
+Emitted when the mode of the camera is set.
+
 **Signature:**
 
 ```typescript

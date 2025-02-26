@@ -16,6 +16,10 @@ export default class PlayerManager
 
 The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`<!-- -->.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [PlayerManagerEventPayloads](./server.playermanagereventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.
 
 ## Example

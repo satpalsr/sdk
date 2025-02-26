@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.UNLOAD" property
 
+Emitted when a SceneUI is unloaded from the world.
+
 **Signature:**
 
 ```typescript

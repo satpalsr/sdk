@@ -4,6 +4,8 @@
 
 ## PlayerUIEventPayloads."PLAYER\_UI.LOCK\_POINTER" property
 
+Emitted when the player's mouse pointer is locked or unlocked.
+
 **Signature:**
 
 ```typescript

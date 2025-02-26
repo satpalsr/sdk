@@ -4,6 +4,8 @@
 
 ## ChatEventPayloads."CHAT.PLAYER\_MESSAGE" property
 
+Emitted when a message is sent to a specific player.
+
 **Signature:**
 
 ```typescript

@@ -19,6 +19,10 @@ export default class Light extends EventRouter implements protocol.Serializable
 
 Lights are created directly as instances. They support a variety of configuration options through the [LightOptions](./server.lightoptions.md) constructor argument.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [LightEventPayloads](./server.lighteventpayloads.md)
+
 ## Example
 
 

@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a player sends a chat message.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when a player joins a world.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when a player leaves a world.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when a player's client requests a round trip time synchronization.
 
 
 </td></tr>

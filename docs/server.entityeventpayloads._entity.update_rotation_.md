@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.UPDATE\_ROTATION" property
 
+Emitted when the rotation of the entity is updated at the end of the tick, either directly or by physics.
+
 **Signature:**
 
 ```typescript

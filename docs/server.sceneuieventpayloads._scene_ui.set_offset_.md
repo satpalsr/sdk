@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.SET\_OFFSET" property
 
+Emitted when the offset of a SceneUI is set.
+
 **Signature:**
 
 ```typescript

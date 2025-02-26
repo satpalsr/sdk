@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_TRACKED\_POSITION" property
 
+Emitted when the tracked position of the camera is set.
+
 **Signature:**
 
 ```typescript

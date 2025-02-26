@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_TRACKED\_POSITION" property
 
+Emitted when the tracked position of the spotlight is set.
+
 **Signature:**
 
 ```typescript

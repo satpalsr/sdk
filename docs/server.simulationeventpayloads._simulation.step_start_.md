@@ -4,6 +4,8 @@
 
 ## SimulationEventPayloads."SIMULATION.STEP\_START" property
 
+Emitted when the simulation step starts.
+
 **Signature:**
 
 ```typescript

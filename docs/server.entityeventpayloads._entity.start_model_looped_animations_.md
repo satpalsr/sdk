@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.START\_MODEL\_LOOPED\_ANIMATIONS" property
 
+Emitted when the looped animations of the entity's model are started.
+
 **Signature:**
 
 ```typescript

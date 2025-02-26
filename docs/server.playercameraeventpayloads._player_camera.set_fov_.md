@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_FOV" property
 
+Emitted when the field of view of the camera is set.
+
 **Signature:**
 
 ```typescript

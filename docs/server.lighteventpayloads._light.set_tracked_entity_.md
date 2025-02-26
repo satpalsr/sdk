@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_TRACKED\_ENTITY" property
 
+Emitted when the tracked entity of the spotlight is set.
+
 **Signature:**
 
 ```typescript

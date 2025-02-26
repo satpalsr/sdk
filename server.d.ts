@@ -52,12 +52,6 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
 
 
     /**
-     * The events that an Audio instance can emit.
-     *
-     * @public
-     */
-    static readonly Events: typeof AudioEvent;
-    /**
      * @param options - The options for the Audio instance.
      */
     constructor(options: AudioOptions);
@@ -320,6 +314,11 @@ export declare interface AudioOptions {
  * niche behavior of one controller for many entities that
  * behave in unison.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link BaseEntityControllerEventPayloads}
+ *
  * @public
  */
 export declare abstract class BaseEntityController extends EventRouter {
@@ -378,22 +377,28 @@ export declare enum BaseEntityControllerEvent {
 
 /** Event payloads for BaseEntityController emitted events. @public */
 export declare interface BaseEntityControllerEventPayloads {
+    /** Emitted when an entity is attached to the controller. */
     [BaseEntityControllerEvent.ATTACH]: {
         entity: Entity;
     };
+    /** Emitted when an entity is despawned. */
     [BaseEntityControllerEvent.DESPAWN]: {
         entity: Entity;
     };
+    /** Emitted when an entity is detached from the controller. */
     [BaseEntityControllerEvent.DETACH]: {
         entity: Entity;
     };
+    /** Emitted when an entity is spawned. */
     [BaseEntityControllerEvent.SPAWN]: {
         entity: Entity;
     };
+    /** Emitted when an entity is ticked. */
     [BaseEntityControllerEvent.TICK]: {
         entity: Entity;
         deltaTimeMs: number;
     };
+    /** Emitted when an entity is ticked with player input. */
     [BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]: {
         entity: PlayerEntity;
         input: PlayerInput;
@@ -439,6 +444,11 @@ export declare class Block {
  * Block types are registered with a {@link BlockTypeRegistry} instance,
  * allowing you to create custom blocks with unique visual representations
  * and behaviors.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link BlockTypeEventPayloads}
  *
  * @example
  * ```typescript
@@ -491,6 +501,7 @@ export declare enum BlockTypeEvent {
 
 /** Event payloads for BlockType emitted events. @public */
 export declare interface BlockTypeEventPayloads {
+    /** Emitted when an entity collides with a block type. */
     [BlockTypeEvent.ENTITY_COLLISION]: {
         blockType: BlockType;
         entity: Entity;
@@ -498,6 +509,7 @@ export declare interface BlockTypeEventPayloads {
         colliderHandleA: number;
         colliderHandleB: number;
     };
+    /** Emitted when an entity's contact force is applied to a block type. */
     [BlockTypeEvent.ENTITY_CONTACT_FORCE]: {
         blockType: BlockType;
         entity: Entity;
@@ -527,6 +539,11 @@ export declare interface BlockTypeOptions {
  * for each {@link World} instance in a game server. A block
  * type registry allows you to register and retrieve block
  * types by their unique id for a world.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link BlockTypeRegistryEventPayloads}
  *
  * @example
  * ```typescript
@@ -577,6 +594,7 @@ export declare enum BlockTypeRegistryEvent {
 
 /** Event payloads for BlockTypeRegistry emitted events. @public */
 export declare interface BlockTypeRegistryEventPayloads {
+    /** Emitted when a block type is registered. */
     [BlockTypeRegistryEvent.REGISTER_BLOCK_TYPE]: {
         blockTypeRegistry: BlockTypeRegistry;
         id: number;
@@ -592,11 +610,13 @@ export declare enum ChatEvent {
 
 /** Event payloads for ChatManager emitted events. @public */
 export declare interface ChatEventPayloads {
+    /** Emitted when a broadcast message is sent. */
     [ChatEvent.BROADCAST_MESSAGE]: {
         message: string;
         color?: string;
         playerId?: string;
     };
+    /** Emitted when a message is sent to a specific player. */
     [ChatEvent.PLAYER_MESSAGE]: {
         player: Player;
         message: string;
@@ -614,6 +634,11 @@ export declare interface ChatEventPayloads {
  * send messages to specific players, and register
  * commands that can be used in chat to execute game
  * logic.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link ChatEventPayloads}
  *
  * @example
  * ```typescript
@@ -693,6 +718,11 @@ export declare class ChatManager extends EventRouter {
  * Block type ids are ones that have been registered in the {@link BlockTypeRegistry}
  * associated with the {@link World} the chunk belongs to. A block type id of 0
  * is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link ChunkEventPayloads}
  *
  * @example
  * ```typescript
@@ -797,15 +827,18 @@ export declare enum ChunkEvent {
 
 /** Event payloads for Chunk emitted events. @public */
 export declare interface ChunkEventPayloads {
+    /** Emitted when a chunk is despawned. */
     [ChunkEvent.DESPAWN]: {
         chunk: Chunk;
     };
+    /** Emitted when a block is set in a chunk. */
     [ChunkEvent.SET_BLOCK]: {
         chunk: Chunk;
         globalCoordinate: Vector3Like;
         localCoordinate: Vector3Like;
         blockTypeId: number;
     };
+    /** Emitted when a chunk is spawned. */
     [ChunkEvent.SPAWN]: {
         chunk: Chunk;
     };
@@ -1268,6 +1301,11 @@ export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
  * allow full control of their rigid body and attached collider
  * dynamics.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link EntityEventPayloads}
+ *
  * @example
  * ```typescript
  * const spider = new Entity({
@@ -1483,6 +1521,7 @@ export declare enum EntityEvent {
 
 /** Event payloads for Entity emitted events. @public */
 export declare interface EntityEventPayloads {
+    /** Emitted when an entity collides with a block type. */
     [EntityEvent.BLOCK_COLLISION]: {
         entity: Entity;
         blockType: BlockType;
@@ -1490,14 +1529,17 @@ export declare interface EntityEventPayloads {
         colliderHandleA: number;
         colliderHandleB: number;
     };
+    /** Emitted when an entity's contact force is applied to a block type. */
     [EntityEvent.BLOCK_CONTACT_FORCE]: {
         entity: Entity;
         blockType: BlockType;
         contactForceData: ContactForceData;
     };
+    /** Emitted when an entity is despawned. */
     [EntityEvent.DESPAWN]: {
         entity: Entity;
     };
+    /** Emitted when an entity collides with another entity. */
     [EntityEvent.ENTITY_COLLISION]: {
         entity: Entity;
         otherEntity: Entity;
@@ -1505,55 +1547,68 @@ export declare interface EntityEventPayloads {
         colliderHandleA: number;
         colliderHandleB: number;
     };
+    /** Emitted when an entity's contact force is applied to another entity. */
     [EntityEvent.ENTITY_CONTACT_FORCE]: {
         entity: Entity;
         otherEntity: Entity;
         contactForceData: ContactForceData;
     };
+    /** Emitted when the playback rate of the entity's model animations is set. */
     [EntityEvent.SET_MODEL_ANIMATIONS_PLAYBACK_RATE]: {
         entity: Entity;
         playbackRate: number;
     };
+    /** Emitted when the nodes of the entity's model are set to be hidden. */
     [EntityEvent.SET_MODEL_HIDDEN_NODES]: {
         entity: Entity;
         modelHiddenNodes: Set<string>;
     };
+    /** Emitted when the opacity of the entity is set. */
     [EntityEvent.SET_OPACITY]: {
         entity: Entity;
         opacity: number;
     };
+    /** Emitted when the parent of the entity is set. */
     [EntityEvent.SET_PARENT]: {
         entity: Entity;
         parent: Entity | undefined;
         parentNodeName: string | undefined;
     };
+    /** Emitted when the tint color of the entity is set. */
     [EntityEvent.SET_TINT_COLOR]: {
         entity: Entity;
         tintColor: RgbColor | undefined;
     };
+    /** Emitted when the entity is spawned. */
     [EntityEvent.SPAWN]: {
         entity: Entity;
     };
+    /** Emitted when the looped animations of the entity's model are started. */
     [EntityEvent.START_MODEL_LOOPED_ANIMATIONS]: {
         entity: Entity;
         animations: Set<string>;
     };
+    /** Emitted when the oneshot animations of the entity's model are started. */
     [EntityEvent.START_MODEL_ONESHOT_ANIMATIONS]: {
         entity: Entity;
         animations: Set<string>;
     };
+    /** Emitted when the model animations of the entity are stopped. */
     [EntityEvent.STOP_MODEL_ANIMATIONS]: {
         entity: Entity;
         animations: Set<string>;
     };
+    /** Emitted when the entity is ticked. */
     [EntityEvent.TICK]: {
         entity: Entity;
         tickDeltaMs: number;
     };
+    /** Emitted when the position of the entity is updated at the end of the tick, either directly or by physics. */
     [EntityEvent.UPDATE_POSITION]: {
         entity: Entity;
         position: Vector3Like;
     };
+    /** Emitted when the rotation of the entity is updated at the end of the tick, either directly or by physics. */
     [EntityEvent.UPDATE_ROTATION]: {
         entity: Entity;
         rotation: QuaternionLike;
@@ -1671,8 +1726,6 @@ export declare interface EntityOptions {
  * @public
  */
 declare class EventRouter {
-    /** The singleton instance for global server events. */
-    static readonly serverInstance: EventRouter;
     private _emitter;
     private _finalListeners;
     /**
@@ -1833,9 +1886,11 @@ export declare enum GameServerEvent {
 
 /** Event payloads for GameServer emitted events. @public */
 export declare interface GameServerEventPayloads {
+    /** Emitted when the game server starts. */
     [GameServerEvent.START]: {
         startedAtMs: number;
     };
+    /** Emitted when the game server stops. */
     [GameServerEvent.STOP]: {
         stoppedAtMs: number;
     };
@@ -1849,6 +1904,11 @@ export declare interface GameServerEventPayloads {
  * Lights are created directly as instances. They support a
  * variety of configuration options through the {@link LightOptions}
  * constructor argument.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link LightEventPayloads}
  *
  * @example
  * ```typescript
@@ -2001,49 +2061,61 @@ export declare enum LightEvent {
 
 /** Event payloads for Light emitted events. @public */
 export declare interface LightEventPayloads {
+    /** Emitted when a light is despawned. */
     [LightEvent.DESPAWN]: {
         light: Light;
     };
+    /** Emitted when the angle of the spotlight is set. */
     [LightEvent.SET_ANGLE]: {
         light: Light;
         angle: number;
     };
+    /** Emitted when the light is attached to an entity. */
     [LightEvent.SET_ATTACHED_TO_ENTITY]: {
         light: Light;
         entity: Entity;
     };
+    /** Emitted when the color of the light is set. */
     [LightEvent.SET_COLOR]: {
         light: Light;
         color: RgbColor;
     };
+    /** Emitted when the maximum distance the light will illuminate is set. */
     [LightEvent.SET_DISTANCE]: {
         light: Light;
         distance: number;
     };
+    /** Emitted when the intensity of the light is set. */
     [LightEvent.SET_INTENSITY]: {
         light: Light;
         intensity: number;
     };
+    /** Emitted when the offset of the light is set. */
     [LightEvent.SET_OFFSET]: {
         light: Light;
         offset: Vector3Like;
     };
+    /** Emitted when the penumbra of the spotlight is set. */
     [LightEvent.SET_PENUMBRA]: {
         light: Light;
         penumbra: number;
     };
+    /** Emitted when the position of the light is set. */
     [LightEvent.SET_POSITION]: {
         light: Light;
         position: Vector3Like;
     };
+    /** Emitted when the tracked entity of the spotlight is set. */
     [LightEvent.SET_TRACKED_ENTITY]: {
         light: Light;
         entity: Entity;
     };
+    /** Emitted when the tracked position of the spotlight is set. */
     [LightEvent.SET_TRACKED_POSITION]: {
         light: Light;
         position: Vector3Like;
     };
+    /** Emitted when a light is spawned. */
     [LightEvent.SPAWN]: {
         light: Light;
     };
@@ -2916,6 +2988,11 @@ export declare type PathfindingOptions = {
  * authenticate with the game server. This is all handled
  * internally.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link PlayerEventPayloads}
+ *
  * @public
  */
 export declare class Player extends EventRouter implements protocol.Serializable {
@@ -2972,6 +3049,11 @@ export declare class Player extends EventRouter implements protocol.Serializable
  * world. The player's camera exposes functionality to
  * control the camera of a player. All player objects
  * have a camera, accessible via {@link Player.camera}.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link PlayerCameraEventPayloads}
  *
  * @example
  * ```typescript
@@ -3124,54 +3206,67 @@ export declare enum PlayerCameraEvent {
 
 /** Event payloads for PlayerCamera emitted events. @public */
 export declare interface PlayerCameraEventPayloads {
+    /** Emitted when the camera looks at an entity. */
     [PlayerCameraEvent.LOOK_AT_ENTITY]: {
         playerCamera: PlayerCamera;
         entity: Entity;
     };
+    /** Emitted when the camera looks at a position. */
     [PlayerCameraEvent.LOOK_AT_POSITION]: {
         playerCamera: PlayerCamera;
         position: Vector3Like;
     };
+    /** Emitted when the camera is attached to an entity. */
     [PlayerCameraEvent.SET_ATTACHED_TO_ENTITY]: {
         playerCamera: PlayerCamera;
         entity: Entity;
     };
+    /** Emitted when the camera is attached to a position. */
     [PlayerCameraEvent.SET_ATTACHED_TO_POSITION]: {
         playerCamera: PlayerCamera;
         position: Vector3Like;
     };
+    /** Emitted when the film offset of the camera is set. */
     [PlayerCameraEvent.SET_FILM_OFFSET]: {
         playerCamera: PlayerCamera;
         filmOffset: number;
     };
+    /** Emitted when the forward offset of the camera is set. */
     [PlayerCameraEvent.SET_FORWARD_OFFSET]: {
         playerCamera: PlayerCamera;
         forwardOffset: number;
     };
+    /** Emitted when the field of view of the camera is set. */
     [PlayerCameraEvent.SET_FOV]: {
         playerCamera: PlayerCamera;
         fov: number;
     };
+    /** Emitted when the nodes of the model the camera is attached to are set to be hidden. */
     [PlayerCameraEvent.SET_MODEL_HIDDEN_NODES]: {
         playerCamera: PlayerCamera;
         modelHiddenNodes: Set<string>;
     };
+    /** Emitted when the mode of the camera is set. */
     [PlayerCameraEvent.SET_MODE]: {
         playerCamera: PlayerCamera;
         mode: PlayerCameraMode;
     };
+    /** Emitted when the offset of the camera is set. */
     [PlayerCameraEvent.SET_OFFSET]: {
         playerCamera: PlayerCamera;
         offset: Vector3Like;
     };
+    /** Emitted when the tracked entity of the camera is set. */
     [PlayerCameraEvent.SET_TRACKED_ENTITY]: {
         playerCamera: PlayerCamera;
         entity: Entity | undefined;
     };
+    /** Emitted when the tracked position of the camera is set. */
     [PlayerCameraEvent.SET_TRACKED_POSITION]: {
         playerCamera: PlayerCamera;
         position: Vector3Like | undefined;
     };
+    /** Emitted when the zoom of the camera is set. */
     [PlayerCameraEvent.SET_ZOOM]: {
         playerCamera: PlayerCamera;
         zoom: number;
@@ -3380,18 +3475,22 @@ export declare enum PlayerEvent {
 
 /** Event payloads for Player emitted events. @public */
 export declare interface PlayerEventPayloads {
+    /** Emitted when a player sends a chat message. */
     [PlayerEvent.CHAT_MESSAGE_SEND]: {
         player: Player;
         message: string;
     };
+    /** Emitted when a player joins a world. */
     [PlayerEvent.JOINED_WORLD]: {
         player: Player;
         world: World;
     };
+    /** Emitted when a player leaves a world. */
     [PlayerEvent.LEFT_WORLD]: {
         player: Player;
         world: World;
     };
+    /** Emitted when a player's client requests a round trip time synchronization. */
     [PlayerEvent.REQUEST_SYNC]: {
         player: Player;
         receivedAt: number;
@@ -3409,6 +3508,11 @@ export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
  * The PlayerManager is created internally as a global
  * singleton accessible with the static property
  * `PlayerManager.instance`.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link PlayerManagerEventPayloads}
  *
  * @example
  * ```typescript
@@ -3450,9 +3554,11 @@ export declare class PlayerManager {
 
 /** Event payloads for PlayerManager emitted events. @public */
 export declare interface PlayerManagerEventPayloads {
+    /** Emitted when a player connects to the server. */
     [PlayerManagerEvent.PLAYER_CONNECTED]: {
         player: Player;
     };
+    /** Emitted when a player disconnects from the server. */
     [PlayerManagerEvent.PLAYER_DISCONNECTED]: {
         player: Player;
     };
@@ -3465,6 +3571,11 @@ export declare interface PlayerManagerEventPayloads {
  * UI allows control of all in-game overlays a player
  * sees. UI is controlled by HTML, CSS and JavaScript
  * files you provide in your `assets` folder.
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link PlayerUIEventPayloads}
  *
  * @public
  */
@@ -3511,14 +3622,17 @@ export declare enum PlayerUIEvent {
 
 /** Event payloads for PlayerUI emitted events. @public */
 export declare interface PlayerUIEventPayloads {
+    /** Emitted when the player's client UI is loaded. */
     [PlayerUIEvent.LOAD]: {
         playerUI: PlayerUI;
         htmlUri: string;
     };
+    /** Emitted when the player's mouse pointer is locked or unlocked. */
     [PlayerUIEvent.LOCK_POINTER]: {
         playerUI: PlayerUI;
         lock: boolean;
     };
+    /** Emitted when the player's client UI sends data to the server. */
     [PlayerUIEvent.SEND_DATA]: {
         playerUI: PlayerUI;
         data: object;
@@ -4191,6 +4305,11 @@ export declare enum RigidBodyType {
  * They support a variety of configuration options through
  * the {@link SceneUIOptions} constructor argument.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link SceneUIEventPayloads}
+ *
  * @example
  * ```typescript
  * const sceneUI = new SceneUI({
@@ -4289,29 +4408,36 @@ export declare enum SceneUIEvent {
 
 /** Event payloads for SceneUI emitted events. @public */
 export declare interface SceneUIEventPayloads {
+    /** Emitted when a SceneUI is loaded into the world. */
     [SceneUIEvent.LOAD]: {
         sceneUI: SceneUI;
     };
+    /** Emitted when a SceneUI is attached to an entity. */
     [SceneUIEvent.SET_ATTACHED_TO_ENTITY]: {
         sceneUI: SceneUI;
         entity: Entity;
     };
+    /** Emitted when the offset of a SceneUI is set. */
     [SceneUIEvent.SET_OFFSET]: {
         sceneUI: SceneUI;
         offset: Vector3Like;
     };
+    /** Emitted when the position of a SceneUI is set. */
     [SceneUIEvent.SET_POSITION]: {
         sceneUI: SceneUI;
         position: Vector3Like;
     };
+    /** Emitted when the state of a SceneUI is set. */
     [SceneUIEvent.SET_STATE]: {
         sceneUI: SceneUI;
         state: object;
     };
+    /** Emitted when the view distance of a SceneUI is set. */
     [SceneUIEvent.SET_VIEW_DISTANCE]: {
         sceneUI: SceneUI;
         viewDistance: number;
     };
+    /** Emitted when a SceneUI is unloaded from the world. */
     [SceneUIEvent.UNLOAD]: {
         sceneUI: SceneUI;
     };
@@ -4468,6 +4594,11 @@ export declare class SimpleEntityController extends BaseEntityController {
  * of the world. Most methods are not often used directly, but are
  * provided for advanced usage.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link SimulationEventPayloads}
+ *
  * @public
  */
 export declare class Simulation extends EventRouter {
@@ -4555,14 +4686,17 @@ export declare enum SimulationEvent {
 
 /** Event payloads for Simulation emitted events. @public */
 export declare interface SimulationEventPayloads {
+    /** Emitted when the simulation step starts. */
     [SimulationEvent.STEP_START]: {
         simulation: Simulation;
         tickDeltaMs: number;
     };
+    /** Emitted when the simulation step ends. */
     [SimulationEvent.STEP_END]: {
         simulation: Simulation;
         stepDurationMs: number;
     };
+    /** Emitted when a debug raycast is performed. */
     [SimulationEvent.DEBUG_RAYCAST]: {
         simulation: Simulation;
         origin: Vector3Like;
@@ -4570,6 +4704,7 @@ export declare interface SimulationEventPayloads {
         length: number;
         hit: boolean;
     };
+    /** Emitted when the simulation debug rendering is enabled. */
     [SimulationEvent.DEBUG_RENDER]: {
         simulation: Simulation;
         vertices: Float32Array;
@@ -5149,6 +5284,11 @@ export declare type WaypointMoveSkippedCallback = (waypoint: Vector3Like, waypoi
  * automatically created default world is all you need, but
  * this flexibility is available for more complex games.
  *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link WorldEventPayloads}
+ *
  * @example
  * ```typescript
  * const world = new World({
@@ -5270,6 +5410,45 @@ export declare enum WorldEvent {
     STOP = "WORLD.STOP"
 }
 
+/** Event payloads for World emitted events. @public */
+export declare interface WorldEventPayloads {
+    /** Emitted when the color of the world's ambient light is set. */
+    [WorldEvent.SET_AMBIENT_LIGHT_COLOR]: {
+        world: World;
+        color: RgbColor;
+    };
+    /** Emitted when the intensity of the world's ambient light is set. */
+    [WorldEvent.SET_AMBIENT_LIGHT_INTENSITY]: {
+        world: World;
+        intensity: number;
+    };
+    /** Emitted when the color of the world's directional light is set. */
+    [WorldEvent.SET_DIRECTIONAL_LIGHT_COLOR]: {
+        world: World;
+        color: RgbColor;
+    };
+    /** Emitted when the intensity of the world's directional light is set. */
+    [WorldEvent.SET_DIRECTIONAL_LIGHT_INTENSITY]: {
+        world: World;
+        intensity: number;
+    };
+    /** Emitted when the position of the world's directional light is set. */
+    [WorldEvent.SET_DIRECTIONAL_LIGHT_POSITION]: {
+        world: World;
+        position: Vector3Like;
+    };
+    /** Emitted when the world starts. */
+    [WorldEvent.START]: {
+        world: World;
+        startedAtMs: number;
+    };
+    /** Emitted when the world stops. */
+    [WorldEvent.STOP]: {
+        world: World;
+        stoppedAtMs: number;
+    };
+}
+
 /**
  * Manages the tick loop for a world.
  *
@@ -5288,6 +5467,11 @@ export declare enum WorldEvent {
  * 4. Check and emit entity updates
  *
  * 5. Synchronize network packets with player clients
+ *
+ * <h2>Events</h2>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link WorldLoopEventPayloads}
  *
  * @public
  */
@@ -5321,20 +5505,25 @@ export declare enum WorldLoopEvent {
 
 /** Event payloads for WorldLoop emitted events. @public */
 export declare interface WorldLoopEventPayloads {
+    /** Emitted when the world loop starts. */
     [WorldLoopEvent.START]: {
         worldLoop: WorldLoop;
     };
+    /** Emitted when the world loop stops. */
     [WorldLoopEvent.STOP]: {
         worldLoop: WorldLoop;
     };
+    /** Emitted when the world loop tick starts. */
     [WorldLoopEvent.TICK_START]: {
         worldLoop: WorldLoop;
         tickDeltaMs: number;
     };
+    /** Emitted when the world loop tick ends. */
     [WorldLoopEvent.TICK_END]: {
         worldLoop: WorldLoop;
         tickDurationMs: number;
     };
+    /** Emitted when an error occurs during a world loop tick. */
     [WorldLoopEvent.TICK_ERROR]: {
         worldLoop: WorldLoop;
         error: Error;

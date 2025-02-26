@@ -4,6 +4,8 @@
 
 ## WorldLoopEventPayloads."WORLD\_LOOP.STOP" property
 
+Emitted when the world loop stops.
+
 **Signature:**
 
 ```typescript

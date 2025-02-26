@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.tick property
 
+Emitted when an entity is ticked.
+
 **Signature:**
 
 ```typescript

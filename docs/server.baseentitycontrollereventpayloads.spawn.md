@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.spawn property
 
+Emitted when an entity is spawned.
+
 **Signature:**
 
 ```typescript

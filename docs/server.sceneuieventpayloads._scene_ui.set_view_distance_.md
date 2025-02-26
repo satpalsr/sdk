@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.SET\_VIEW\_DISTANCE" property
 
+Emitted when the view distance of a SceneUI is set.
+
 **Signature:**
 
 ```typescript

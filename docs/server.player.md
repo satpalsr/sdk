@@ -19,6 +19,10 @@ export default class Player extends EventRouter implements protocol.Serializable
 
 Players are automatically created when they connect and authenticate with the game server. This is all handled internally.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [PlayerEventPayloads](./server.playereventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.
 
 ## Properties

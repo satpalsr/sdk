@@ -4,6 +4,8 @@
 
 ## GameServerEventPayloads."GAMESERVER.STOP" property
 
+Emitted when the game server stops.
+
 **Signature:**
 
 ```typescript

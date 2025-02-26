@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_POSITION" property
 
+Emitted when the position of the light is set.
+
 **Signature:**
 
 ```typescript

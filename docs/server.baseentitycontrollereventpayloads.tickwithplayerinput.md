@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.tickWithPlayerInput property
 
+Emitted when an entity is ticked with player input.
+
 **Signature:**
 
 ```typescript

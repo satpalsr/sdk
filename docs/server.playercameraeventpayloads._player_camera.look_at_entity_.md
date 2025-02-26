@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.LOOK\_AT\_ENTITY" property
 
+Emitted when the camera looks at an entity.
+
 **Signature:**
 
 ```typescript

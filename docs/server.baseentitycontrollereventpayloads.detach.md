@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.detach property
 
+Emitted when an entity is detached from the controller.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_ATTACHED\_TO\_ENTITY" property
 
+Emitted when the light is attached to an entity.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_ATTACHED\_TO\_ENTITY" property
 
+Emitted when the camera is attached to an entity.
+
 **Signature:**
 
 ```typescript

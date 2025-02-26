@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SPAWN" property
 
+Emitted when the entity is spawned.
+
 **Signature:**
 
 ```typescript

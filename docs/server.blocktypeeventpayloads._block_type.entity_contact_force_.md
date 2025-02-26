@@ -4,6 +4,8 @@
 
 ## BlockTypeEventPayloads."BLOCK\_TYPE.ENTITY\_CONTACT\_FORCE" property
 
+Emitted when an entity's contact force is applied to a block type.
+
 **Signature:**
 
 ```typescript

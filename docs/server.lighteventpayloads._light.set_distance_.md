@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_DISTANCE" property
 
+Emitted when the maximum distance the light will illuminate is set.
+
 **Signature:**
 
 ```typescript

@@ -1080,6 +1080,17 @@ A 3-dimensional vector.
 </td></tr>
 <tr><td>
 
+[WorldEventPayloads](./server.worldeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for World emitted events.
+
+
+</td></tr>
+<tr><td>
+
 [WorldLoopEventPayloads](./server.worldloopeventpayloads.md)
 
 

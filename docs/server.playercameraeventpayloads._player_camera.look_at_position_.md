@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.LOOK\_AT\_POSITION" property
 
+Emitted when the camera looks at a position.
+
 **Signature:**
 
 ```typescript

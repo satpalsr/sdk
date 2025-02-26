@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_FORWARD\_OFFSET" property
 
+Emitted when the forward offset of the camera is set.
+
 **Signature:**
 
 ```typescript

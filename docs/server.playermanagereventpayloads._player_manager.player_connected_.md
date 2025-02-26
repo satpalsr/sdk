@@ -4,6 +4,8 @@
 
 ## PlayerManagerEventPayloads."PLAYER\_MANAGER.PLAYER\_CONNECTED" property
 
+Emitted when a player connects to the server.
+
 **Signature:**
 
 ```typescript

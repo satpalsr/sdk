@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a player connects to the server.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when a player disconnects from the server.
 
 
 </td></tr>

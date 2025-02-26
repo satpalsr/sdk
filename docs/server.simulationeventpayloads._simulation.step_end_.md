@@ -4,6 +4,8 @@
 
 ## SimulationEventPayloads."SIMULATION.STEP\_END" property
 
+Emitted when the simulation step ends.
+
 **Signature:**
 
 ```typescript

@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when the player's client UI is loaded.
+
 
 </td></tr>
 <tr><td>
@@ -67,6 +69,8 @@ Description
 
 </td><td>
 
+Emitted when the player's mouse pointer is locked or unlocked.
+
 
 </td></tr>
 <tr><td>
@@ -83,6 +87,8 @@ Description
 
 
 </td><td>
+
+Emitted when the player's client UI sends data to the server.
 
 
 </td></tr>

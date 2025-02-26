@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SET\_PENUMBRA" property
 
+Emitted when the penumbra of the spotlight is set.
+
 **Signature:**
 
 ```typescript

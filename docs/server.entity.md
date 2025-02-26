@@ -19,6 +19,10 @@ export default class Entity extends RigidBody implements protocol.Serializable
 
 Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [EntityEventPayloads](./server.entityeventpayloads.md)
+
 ## Example
 
 

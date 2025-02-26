@@ -4,6 +4,8 @@
 
 ## SimulationEventPayloads."SIMULATION.DEBUG\_RAYCAST" property
 
+Emitted when a debug raycast is performed.
+
 **Signature:**
 
 ```typescript

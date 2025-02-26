@@ -4,6 +4,8 @@
 
 ## WorldLoopEventPayloads."WORLD\_LOOP.TICK\_END" property
 
+Emitted when the world loop tick ends.
+
 **Signature:**
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SET\_PARENT" property
 
+Emitted when the parent of the entity is set.
+
 **Signature:**
 
 ```typescript

@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a chunk is despawned.
+
 
 </td></tr>
 <tr><td>
@@ -67,6 +69,8 @@ Description
 
 </td><td>
 
+Emitted when a block is set in a chunk.
+
 
 </td></tr>
 <tr><td>
@@ -83,6 +87,8 @@ Description
 
 
 </td><td>
+
+Emitted when a chunk is spawned.
 
 
 </td></tr>

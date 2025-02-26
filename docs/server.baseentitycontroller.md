@@ -17,6 +17,10 @@ export default abstract class BaseEntityController extends EventRouter
 
 The BaseEntityController should be extended by a more specific entity controller that you or a plugin implements. Entity controllers are intended to be used as one controller instance per entity, but are flexible enough for edge cases such as if you want to create niche behavior of one controller for many entities that behave in unison.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [BaseEntityControllerEventPayloads](./server.baseentitycontrollereventpayloads.md)
+
 ## Methods
 
 <table><thead><tr><th>

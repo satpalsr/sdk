@@ -4,6 +4,8 @@
 
 ## PlayerManagerEventPayloads."PLAYER\_MANAGER.PLAYER\_DISCONNECTED" property
 
+Emitted when a player disconnects from the server.
+
 **Signature:**
 
 ```typescript

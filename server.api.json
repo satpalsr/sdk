@@ -367,41 +367,6 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!Audio.Events:member",
-              "docComment": "/**\n * The events that an Audio instance can emit.\n *\n * @public\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "static readonly Events: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "typeof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "AudioEvent",
-                  "canonicalReference": "server!AudioEvent:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "Events",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "isStatic": true,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
               "canonicalReference": "server!Audio#id:member",
               "docComment": "/**\n * The unique identifier for the audio.\n */\n",
               "excerptTokens": [
@@ -2589,7 +2554,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BaseEntityController:class",
-          "docComment": "/**\n * A base class for entity controller implementations.\n *\n * @remarks\n *\n * The BaseEntityController should be extended by a more specific entity controller that you or a plugin implements. Entity controllers are intended to be used as one controller instance per entity, but are flexible enough for edge cases such as if you want to create niche behavior of one controller for many entities that behave in unison.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A base class for entity controller implementations.\n *\n * @remarks\n *\n * The BaseEntityController should be extended by a more specific entity controller that you or a plugin implements. Entity controllers are intended to be used as one controller instance per entity, but are flexible enough for edge cases such as if you want to create niche behavior of one controller for many entities that behave in unison.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link BaseEntityControllerEventPayloads}\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3139,7 +3104,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#attach:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is attached to the controller.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3184,7 +3149,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#despawn:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is despawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3229,7 +3194,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#detach:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is detached from the controller.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3274,7 +3239,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#spawn:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3319,7 +3284,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#tick:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is ticked.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3364,7 +3329,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BaseEntityControllerEventPayloads#tickWithPlayerInput:member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is ticked with player input.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3561,7 +3526,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockType:class",
-          "docComment": "/**\n * Represents a block type.\n *\n * @remarks\n *\n * Block types are created directly as instances. They support a variety of configuration options through the {@link BlockTypeOptions} constructor argument. Block types are registered with a {@link BlockTypeRegistry} instance, allowing you to create custom blocks with unique visual representations and behaviors.\n *\n * @example\n * ```typescript\n * const stoneBlockTypeId = 10;\n * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({\n *   id: stoneBlockTypeId,\n *   textureUri: 'textures/stone.png',\n *   name: 'Stone',\n * }));\n *\n * // Create a stone block at coordinate 0, 1, 0\n * world.chunkLattice.setBlock({ x: 0, y: 1, z: 0 }, stoneBlockTypeId);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a block type.\n *\n * @remarks\n *\n * Block types are created directly as instances. They support a variety of configuration options through the {@link BlockTypeOptions} constructor argument. Block types are registered with a {@link BlockTypeRegistry} instance, allowing you to create custom blocks with unique visual representations and behaviors.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link BlockTypeEventPayloads}\n *\n * @example\n * ```typescript\n * const stoneBlockTypeId = 10;\n * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({\n *   id: stoneBlockTypeId,\n *   textureUri: 'textures/stone.png',\n *   name: 'Stone',\n * }));\n *\n * // Create a stone block at coordinate 0, 1, 0\n * world.chunkLattice.setBlock({ x: 0, y: 1, z: 0 }, stoneBlockTypeId);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3895,7 +3860,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeEventPayloads#\"BLOCK_TYPE.ENTITY_COLLISION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity collides with a block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -3949,7 +3914,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeEventPayloads#\"BLOCK_TYPE.ENTITY_CONTACT_FORCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity's contact force is applied to a block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4169,7 +4134,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!BlockTypeRegistry:class",
-          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages known block types in a world.\n *\n * @remarks\n *\n * Block type registries are created internally as a singleton for each {@link World} instance in a game server. A block type registry allows you to register and retrieve block types by their unique id for a world.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link BlockTypeRegistryEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BlockTypeRegistry` class.\n *\n * @example\n * ```typescript\n * world.blockTypeRegistry.registerGenericBlockType({\n *   id: 15,\n *   textureUri: 'textures/dirt.png',\n *   name: 'Dirt',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4483,7 +4448,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!BlockTypeRegistryEventPayloads#\"BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a block type is registered.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4614,7 +4579,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ChatEventPayloads#\"CHAT.BROADCAST_MESSAGE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a broadcast message is sent.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4650,7 +4615,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ChatEventPayloads#\"CHAT.PLAYER_MESSAGE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a message is sent to a specific player.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -4698,7 +4663,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!ChatManager:class",
-          "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages chat and commands in a world.\n *\n * @remarks\n *\n * The ChatManager is created internally as a singleton for each {@link World} instance in a game server. The ChatManager allows you to broadcast messages, send messages to specific players, and register commands that can be used in chat to execute game logic.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link ChatEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ChatManager` class.\n *\n * @example\n * ```typescript\n * world.chatManager.registerCommand('/kick', (player, args, message) => {\n *   const admins = [ 'arkdev', 'testuser123' ];\n *   if (admins.includes(player.username)) {\n *     const targetUsername = args[0];\n *     const targetPlayer = world.playerManager.getConnectedPlayerByUsername(targetUsername);\n *\n *     if (targetPlayer) {\n *       targetPlayer.disconnect();\n *     }\n *   }\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4988,7 +4953,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Chunk:class",
-          "docComment": "/**\n * A 16^3 chunk of blocks. Used to represent a world's terrain.\n *\n * @remarks\n *\n * Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each containing 16^3 possible blocks as a 16x16x16 cube. Chunks can be spawned, despawned, have their unique blocks set or removed, and more. Chunks represent their internal block coordinates in local space, meaning only coordinates x: 0...15, y: 0...15, z: 0...15 are valid.\n *\n * The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().\n *\n * Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the {@link BlockTypeRegistry} associated with the {@link World} the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).\n *\n * @example\n * ```typescript\n * // Assume we previously registered a stone block with type id of 10..\n *\n * const chunk = new Chunk();\n *\n * chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone\n * chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * A 16^3 chunk of blocks. Used to represent a world's terrain.\n *\n * @remarks\n *\n * Chunks make up the bulk of the terrain in a world. Chunks are fixed size, each containing 16^3 possible blocks as a 16x16x16 cube. Chunks can be spawned, despawned, have their unique blocks set or removed, and more. Chunks represent their internal block coordinates in local space, meaning only coordinates x: 0...15, y: 0...15, z: 0...15 are valid.\n *\n * The Chunk follows a spawn and despawn lifecycle pattern. When you create a chunk, when you're ready to load it in your world you use .spawn(). To remove it, you use .despawn().\n *\n * Use .setBlock() to set the block type id at a specific local cooridnate. Block type ids are ones that have been registered in the {@link BlockTypeRegistry} associated with the {@link World} the chunk belongs to. A block type id of 0 is used to represent no block. Removing a block is done by .setBlock(localCoordinate, 0).\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link ChunkEventPayloads}\n *\n * @example\n * ```typescript\n * // Assume we previously registered a stone block with type id of 10..\n *\n * const chunk = new Chunk();\n *\n * chunk.setBlock({ x: 0, y: 0, z: 0 }, 10); // Set the block at 0, 0, 0 to stone\n * chunk.spawn(world, { x: 16, y: 0, z: 16 }); // Spawn the chunk at global coordinate 16, 0, 16\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -5776,7 +5741,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ChunkEventPayloads#\"CHUNK.DESPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a chunk is despawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -5821,7 +5786,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ChunkEventPayloads#\"CHUNK.SET_BLOCK\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a block is set in a chunk.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -5884,7 +5849,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!ChunkEventPayloads#\"CHUNK.SPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a chunk is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -9543,7 +9508,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Entity:class",
-          "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n *\n * spider.spawn(world, { x: 20, y: 6, z: 10 });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents an entity in a world.\n *\n * @remarks\n *\n * Entities are highly configurable and controllable. All entities are created from a .gltf model asset and allow full control of their rigid body and attached collider dynamics.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link EntityEventPayloads}\n *\n * @example\n * ```typescript\n * const spider = new Entity({\n *   name: 'Spider',\n *   modelUri: 'models/spider.gltf',\n *   modelLoopedAnimations: [ 'walk' ],\n *   rigidBodyOptions: {\n *     type: RigidBodyType.DYNAMIC,\n *     enabledRotations: { x: false, y: true, z: false },\n *     colliders: [\n *       {\n *         shape: ColliderShape.ROUND_CYLINDER,\n *         borderRadius: 0.1,\n *         halfHeight: 0.225,\n *         radius: 0.5,\n *         tag: 'body',\n *       }\n *     ],\n *   },\n * });\n *\n * spider.spawn(world, { x: 20, y: 6, z: 10 });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -11257,7 +11222,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.BLOCK_COLLISION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity collides with a block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11311,7 +11276,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.BLOCK_CONTACT_FORCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity's contact force is applied to a block type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11374,7 +11339,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.DESPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity is despawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11419,7 +11384,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.ENTITY_COLLISION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity collides with another entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11473,7 +11438,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.ENTITY_CONTACT_FORCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an entity's contact force is applied to another entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11536,7 +11501,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the playback rate of the entity's model animations is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11581,7 +11546,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SET_MODEL_HIDDEN_NODES\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the nodes of the entity's model are set to be hidden.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11635,7 +11600,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SET_OPACITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the opacity of the entity is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11680,7 +11645,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SET_PARENT\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the parent of the entity is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11734,7 +11699,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SET_TINT_COLOR\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the tint color of the entity is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11788,7 +11753,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.SPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the entity is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11833,7 +11798,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.START_MODEL_LOOPED_ANIMATIONS\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the looped animations of the entity's model are started.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11887,7 +11852,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.START_MODEL_ONESHOT_ANIMATIONS\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the oneshot animations of the entity's model are started.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11941,7 +11906,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.STOP_MODEL_ANIMATIONS\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the model animations of the entity are stopped.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -11995,7 +11960,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.TICK\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the entity is ticked.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -12040,7 +12005,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.UPDATE_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the position of the entity is updated at the end of the tick, either directly or by physics.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -12094,7 +12059,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!EntityEventPayloads#\"ENTITY.UPDATE_ROTATION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the rotation of the entity is updated at the end of the tick, either directly or by physics.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -13364,7 +13329,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!GameServerEventPayloads#\"GAMESERVER.START\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the game server starts.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -13400,7 +13365,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!GameServerEventPayloads#\"GAMESERVER.STOP\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the game server stops.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -13439,7 +13404,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Light:class",
-          "docComment": "/**\n * Represents a light in a world. Lights can be point lights or spotlights.\n *\n * @remarks\n *\n * Lights are created directly as instances. They support a variety of configuration options through the {@link LightOptions} constructor argument.\n *\n * @example\n * ```typescript\n * const light = new Light({\n *   attachedToEntity: playerEntity,\n *   color: { r: 255, g: 0, b: 0 },\n *   intensity: 5,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n *\n * light.spawn(world);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a light in a world. Lights can be point lights or spotlights.\n *\n * @remarks\n *\n * Lights are created directly as instances. They support a variety of configuration options through the {@link LightOptions} constructor argument.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link LightEventPayloads}\n *\n * @example\n * ```typescript\n * const light = new Light({\n *   attachedToEntity: playerEntity,\n *   color: { r: 255, g: 0, b: 0 },\n *   intensity: 5,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n *\n * light.spawn(world);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -14820,7 +14785,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.DESPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a light is despawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14865,7 +14830,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_ANGLE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the angle of the spotlight is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14910,7 +14875,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_ATTACHED_TO_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the light is attached to an entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -14964,7 +14929,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_COLOR\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the color of the light is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15018,7 +14983,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_DISTANCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the maximum distance the light will illuminate is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15063,7 +15028,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_INTENSITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the intensity of the light is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15108,7 +15073,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_OFFSET\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the offset of the light is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15162,7 +15127,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_PENUMBRA\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the penumbra of the spotlight is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15207,7 +15172,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the position of the light is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15261,7 +15226,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_TRACKED_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the tracked entity of the spotlight is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15315,7 +15280,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SET_TRACKED_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the tracked position of the spotlight is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -15369,7 +15334,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!LightEventPayloads#\"LIGHT.SPAWN\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a light is spawned.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -21368,7 +21333,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Player:class",
-          "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * A player in the game.\n *\n * @remarks\n *\n * Players are automatically created when they connect and authenticate with the game server. This is all handled internally.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link PlayerEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Player` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -21743,7 +21708,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerCamera:class",
-          "docComment": "/**\n * The camera for a Player.\n *\n * @remarks\n *\n * The camera is used to render the player's view of the world. The player's camera exposes functionality to control the camera of a player. All player objects have a camera, accessible via {@link Player.camera}.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerCamera` class.\n *\n * @example\n * ```typescript\n * player.camera.setMode(PlayerCameraMode.FIRST_PERSON);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * The camera for a Player.\n *\n * @remarks\n *\n * The camera is used to render the player's view of the world. The player's camera exposes functionality to control the camera of a player. All player objects have a camera, accessible via {@link Player.camera}.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link PlayerCameraEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerCamera` class.\n *\n * @example\n * ```typescript\n * player.camera.setMode(PlayerCameraMode.FIRST_PERSON);\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -23184,7 +23149,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.LOOK_AT_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the camera looks at an entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23238,7 +23203,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.LOOK_AT_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the camera looks at a position.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23292,7 +23257,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_ATTACHED_TO_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the camera is attached to an entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23346,7 +23311,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_ATTACHED_TO_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the camera is attached to a position.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23400,7 +23365,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_FILM_OFFSET\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the film offset of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23445,7 +23410,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_FORWARD_OFFSET\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the forward offset of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23490,7 +23455,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_FOV\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the field of view of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23535,7 +23500,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_MODE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the mode of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23589,7 +23554,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_MODEL_HIDDEN_NODES\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the nodes of the model the camera is attached to are set to be hidden.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23643,7 +23608,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_OFFSET\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the offset of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23697,7 +23662,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_TRACKED_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the tracked entity of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23751,7 +23716,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_TRACKED_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the tracked position of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -23805,7 +23770,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerCameraEventPayloads#\"PLAYER_CAMERA.SET_ZOOM\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the zoom of the camera is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25384,7 +25349,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.CHAT_MESSAGE_SEND\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player sends a chat message.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25429,7 +25394,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.JOINED_WORLD\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player joins a world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25483,7 +25448,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.LEFT_WORLD\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player leaves a world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25537,7 +25502,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.REQUEST_SYNC\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player's client requests a round trip time synchronization.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25634,7 +25599,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerManager:class",
-          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link PlayerManagerEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25842,7 +25807,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerManagerEventPayloads#\"PLAYER_MANAGER.PLAYER_CONNECTED\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player connects to the server.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25887,7 +25852,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerManagerEventPayloads#\"PLAYER_MANAGER.PLAYER_DISCONNECTED\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a player disconnects from the server.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -25935,7 +25900,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerUI:class",
-          "docComment": "/**\n * The UI for a player.\n *\n * @remarks\n *\n * UI allows control of all in-game overlays a player sees. UI is controlled by HTML, CSS and JavaScript files you provide in your `assets` folder.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerUI` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * The UI for a player.\n *\n * @remarks\n *\n * UI allows control of all in-game overlays a player sees. UI is controlled by HTML, CSS and JavaScript files you provide in your `assets` folder.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link PlayerUIEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerUI` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -26276,7 +26241,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.LOAD\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the player's client UI is loaded.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26321,7 +26286,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.LOCK_POINTER\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the player's mouse pointer is locked or unlocked.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -26366,7 +26331,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.SEND_DATA\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the player's client UI sends data to the server.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -32327,7 +32292,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!SceneUI:class",
-          "docComment": "/**\n * UI rendered within the 3D space of a world's game scene.\n *\n * @remarks\n *\n * SceneUI instances are created directly as instances. They support a variety of configuration options through the {@link SceneUIOptions} constructor argument.\n *\n * @example\n * ```typescript\n * const sceneUI = new SceneUI({\n *   templateId: 'player-health-bar',\n *   attachedToEntity: playerEntity,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * UI rendered within the 3D space of a world's game scene.\n *\n * @remarks\n *\n * SceneUI instances are created directly as instances. They support a variety of configuration options through the {@link SceneUIOptions} constructor argument.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link SceneUIEventPayloads}\n *\n * @example\n * ```typescript\n * const sceneUI = new SceneUI({\n *   templateId: 'player-health-bar',\n *   attachedToEntity: playerEntity,\n *   offset: { x: 0, y: 1, z: 0 },\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -33203,7 +33168,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.LOAD\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a SceneUI is loaded into the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33248,7 +33213,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.SET_ATTACHED_TO_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a SceneUI is attached to an entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33302,7 +33267,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.SET_OFFSET\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the offset of a SceneUI is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33356,7 +33321,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.SET_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the position of a SceneUI is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33410,7 +33375,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.SET_STATE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the state of a SceneUI is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33455,7 +33420,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.SET_VIEW_DISTANCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the view distance of a SceneUI is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -33500,7 +33465,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SceneUIEventPayloads#\"SCENE_UI.UNLOAD\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a SceneUI is unloaded from the world.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34217,7 +34182,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Simulation:class",
-          "docComment": "/**\n * Represents the physics simulation for a world.\n *\n * @remarks\n *\n * The simulation internally and automatically handles the physical interactions, collisions, contact forces, and events for all aspects of the world. Most methods are not often used directly, but are provided for advanced usage.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Simulation` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents the physics simulation for a world.\n *\n * @remarks\n *\n * The simulation internally and automatically handles the physical interactions, collisions, contact forces, and events for all aspects of the world. Most methods are not often used directly, but are provided for advanced usage.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link SimulationEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Simulation` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34837,7 +34802,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SimulationEventPayloads#\"SIMULATION.DEBUG_RAYCAST\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when a debug raycast is performed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34900,7 +34865,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SimulationEventPayloads#\"SIMULATION.DEBUG_RENDER\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the simulation debug rendering is enabled.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -34963,7 +34928,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SimulationEventPayloads#\"SIMULATION.STEP_END\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the simulation step ends.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -35008,7 +34973,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!SimulationEventPayloads#\"SIMULATION.STEP_START\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the simulation step starts.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -39073,7 +39038,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!World:class",
-          "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single automatically created default world is all you need, but this flexibility is available for more complex games.\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'skyboxes/partly-cloudy',\n * });\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a world in the game server.\n *\n * @remarks\n *\n * Worlds are the primary container for game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or \"room\" simulations, etc. In most cases, the single automatically created default world is all you need, but this flexibility is available for more complex games.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link WorldEventPayloads}\n *\n * @example\n * ```typescript\n * const world = new World({\n *   id: 1,\n *   name: 'My World',\n *   skyboxUri: 'skyboxes/partly-cloudy',\n * });\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -40190,9 +40155,369 @@
           ]
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!WorldEventPayloads:interface",
+          "docComment": "/**\n * Event payloads for World emitted events.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface WorldEventPayloads "
+            }
+          ],
+          "fileUrlPath": "src/world/World.ts",
+          "releaseTag": "Public",
+          "name": "WorldEventPayloads",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.SET_AMBIENT_LIGHT_COLOR\":member",
+              "docComment": "/**\n * Emitted when the color of the world's ambient light is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.SET_AMBIENT_LIGHT_COLOR",
+                  "canonicalReference": "server!WorldEvent.SET_AMBIENT_LIGHT_COLOR:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        color: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.SET_AMBIENT_LIGHT_COLOR\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.SET_AMBIENT_LIGHT_INTENSITY\":member",
+              "docComment": "/**\n * Emitted when the intensity of the world's ambient light is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.SET_AMBIENT_LIGHT_INTENSITY",
+                  "canonicalReference": "server!WorldEvent.SET_AMBIENT_LIGHT_INTENSITY:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        intensity: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.SET_AMBIENT_LIGHT_INTENSITY\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.SET_DIRECTIONAL_LIGHT_COLOR\":member",
+              "docComment": "/**\n * Emitted when the color of the world's directional light is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.SET_DIRECTIONAL_LIGHT_COLOR",
+                  "canonicalReference": "server!WorldEvent.SET_DIRECTIONAL_LIGHT_COLOR:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        color: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.SET_DIRECTIONAL_LIGHT_COLOR\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.SET_DIRECTIONAL_LIGHT_INTENSITY\":member",
+              "docComment": "/**\n * Emitted when the intensity of the world's directional light is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.SET_DIRECTIONAL_LIGHT_INTENSITY",
+                  "canonicalReference": "server!WorldEvent.SET_DIRECTIONAL_LIGHT_INTENSITY:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        intensity: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.SET_DIRECTIONAL_LIGHT_INTENSITY\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.SET_DIRECTIONAL_LIGHT_POSITION\":member",
+              "docComment": "/**\n * Emitted when the position of the world's directional light is set.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.SET_DIRECTIONAL_LIGHT_POSITION",
+                  "canonicalReference": "server!WorldEvent.SET_DIRECTIONAL_LIGHT_POSITION:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        position: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.SET_DIRECTIONAL_LIGHT_POSITION\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.START\":member",
+              "docComment": "/**\n * Emitted when the world starts.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.START",
+                  "canonicalReference": "server!WorldEvent.START:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        startedAtMs: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.START\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldEventPayloads#\"WORLD.STOP\":member",
+              "docComment": "/**\n * Emitted when the world stops.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldEvent.STOP",
+                  "canonicalReference": "server!WorldEvent.STOP:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        stoppedAtMs: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD.STOP\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!WorldLoop:class",
-          "docComment": "/**\n * Manages the tick loop for a world.\n *\n * @remarks\n *\n * The world loop automatically handles ticking physics, entities, and other world logic.\n *\n * The internal order of tick operations is as follows:\n *\n * 1. Update chunks and meshing\n *\n * 2. Tick entity logic\n *\n * 3. Step physics\n *\n * 4. Check and emit entity updates\n *\n * 5. Synchronize network packets with player clients\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WorldLoop` class.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages the tick loop for a world.\n *\n * @remarks\n *\n * The world loop automatically handles ticking physics, entities, and other world logic.\n *\n * The internal order of tick operations is as follows:\n *\n * 1. Update chunks and meshing\n *\n * 2. Tick entity logic\n *\n * 3. Step physics\n *\n * 4. Check and emit entity updates\n *\n * 5. Synchronize network packets with player clients\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link WorldLoopEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WorldLoop` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -40482,7 +40807,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldLoopEventPayloads#\"WORLD_LOOP.START\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the world loop starts.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -40527,7 +40852,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldLoopEventPayloads#\"WORLD_LOOP.STOP\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the world loop stops.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -40572,7 +40897,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldLoopEventPayloads#\"WORLD_LOOP.TICK_END\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the world loop tick ends.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -40617,7 +40942,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldLoopEventPayloads#\"WORLD_LOOP.TICK_ERROR\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when an error occurs during a world loop tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -40671,7 +40996,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!WorldLoopEventPayloads#\"WORLD_LOOP.TICK_START\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the world loop tick starts.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

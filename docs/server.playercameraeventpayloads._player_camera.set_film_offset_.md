@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_FILM\_OFFSET" property
 
+Emitted when the film offset of the camera is set.
+
 **Signature:**
 
 ```typescript

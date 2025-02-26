@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.SET\_POSITION" property
 
+Emitted when the position of a SceneUI is set.
+
 **Signature:**
 
 ```typescript

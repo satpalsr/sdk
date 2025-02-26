@@ -4,6 +4,8 @@
 
 ## BaseEntityControllerEventPayloads.despawn property
 
+Emitted when an entity is despawned.
+
 **Signature:**
 
 ```typescript

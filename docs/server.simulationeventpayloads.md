@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when a debug raycast is performed.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the simulation debug rendering is enabled.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the simulation step ends.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when the simulation step starts.
 
 
 </td></tr>

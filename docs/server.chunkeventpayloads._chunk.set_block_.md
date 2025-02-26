@@ -4,6 +4,8 @@
 
 ## ChunkEventPayloads."CHUNK.SET\_BLOCK" property
 
+Emitted when a block is set in a chunk.
+
 **Signature:**
 
 ```typescript

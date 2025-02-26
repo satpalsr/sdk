@@ -4,6 +4,8 @@
 
 ## WorldLoopEventPayloads."WORLD\_LOOP.TICK\_START" property
 
+Emitted when the world loop tick starts.
+
 **Signature:**
 
 ```typescript

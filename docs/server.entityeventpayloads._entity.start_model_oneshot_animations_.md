@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.START\_MODEL\_ONESHOT\_ANIMATIONS" property
 
+Emitted when the oneshot animations of the entity's model are started.
+
 **Signature:**
 
 ```typescript

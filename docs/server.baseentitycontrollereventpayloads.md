@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when an entity is attached to the controller.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity is despawned.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when an entity is detached from the controller.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity is spawned.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when an entity is ticked.
+
 
 </td></tr>
 <tr><td>
@@ -134,6 +144,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity is ticked with player input.
 
 
 </td></tr>

@@ -4,6 +4,8 @@
 
 ## BlockTypeRegistryEventPayloads."BLOCK\_TYPE\_REGISTRY.REGISTER\_BLOCK\_TYPE" property
 
+Emitted when a block type is registered.
+
 **Signature:**
 
 ```typescript

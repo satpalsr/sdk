@@ -4,6 +4,8 @@
 
 ## SceneUIEventPayloads."SCENE\_UI.SET\_STATE" property
 
+Emitted when the state of a SceneUI is set.
+
 **Signature:**
 
 ```typescript

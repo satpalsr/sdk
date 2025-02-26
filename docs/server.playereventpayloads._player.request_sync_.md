@@ -4,6 +4,8 @@
 
 ## PlayerEventPayloads."PLAYER.REQUEST\_SYNC" property
 
+Emitted when a player's client requests a round trip time synchronization.
+
 **Signature:**
 
 ```typescript

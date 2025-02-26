@@ -4,6 +4,8 @@
 
 ## BlockTypeEventPayloads."BLOCK\_TYPE.ENTITY\_COLLISION" property
 
+Emitted when an entity collides with a block type.
+
 **Signature:**
 
 ```typescript

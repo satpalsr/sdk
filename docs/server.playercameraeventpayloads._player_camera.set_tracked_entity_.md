@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_TRACKED\_ENTITY" property
 
+Emitted when the tracked entity of the camera is set.
+
 **Signature:**
 
 ```typescript

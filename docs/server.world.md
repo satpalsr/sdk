@@ -19,6 +19,10 @@ export default class World extends EventRouter implements protocol.Serializable
 
 Worlds are the primary container for game objects and interactions. A game can have multiple worlds running simultaneously, each uniquely isolated from each other. Players who have joined your server can be assigned to a world programmatically by your game logic if desired. This is useful for things like mini-games, or complex dungeons with multiple floors that can be optimized by splitting them into seperate world or "room" simulations, etc. In most cases, the single automatically created default world is all you need, but this flexibility is available for more complex games.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [WorldEventPayloads](./server.worldeventpayloads.md)
+
 ## Example
 
 

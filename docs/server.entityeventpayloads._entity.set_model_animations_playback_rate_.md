@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SET\_MODEL\_ANIMATIONS\_PLAYBACK\_RATE" property
 
+Emitted when the playback rate of the entity's model animations is set.
+
 **Signature:**
 
 ```typescript

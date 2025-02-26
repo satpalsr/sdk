@@ -17,6 +17,10 @@ export default class PlayerUI extends EventRouter
 
 UI allows control of all in-game overlays a player sees. UI is controlled by HTML, CSS and JavaScript files you provide in your `assets` folder.
 
+<h2>Events</h2>
+
+This class is an EventRouter, and instances of it emit events with payloads listed under [PlayerUIEventPayloads](./server.playeruieventpayloads.md)
+
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerUI` class.
 
 ## Properties

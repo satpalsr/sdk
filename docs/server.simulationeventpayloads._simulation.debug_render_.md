@@ -4,6 +4,8 @@
 
 ## SimulationEventPayloads."SIMULATION.DEBUG\_RENDER" property
 
+Emitted when the simulation debug rendering is enabled.
+
 **Signature:**
 
 ```typescript

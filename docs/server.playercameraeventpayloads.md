@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when the camera looks at an entity.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the camera looks at a position.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the camera is attached to an entity.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when the camera is attached to a position.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when the film offset of the camera is set.
+
 
 </td></tr>
 <tr><td>
@@ -134,6 +144,8 @@ Description
 
 
 </td><td>
+
+Emitted when the forward offset of the camera is set.
 
 
 </td></tr>
@@ -152,6 +164,8 @@ Description
 
 </td><td>
 
+Emitted when the field of view of the camera is set.
+
 
 </td></tr>
 <tr><td>
@@ -168,6 +182,8 @@ Description
 
 
 </td><td>
+
+Emitted when the mode of the camera is set.
 
 
 </td></tr>
@@ -186,6 +202,8 @@ Description
 
 </td><td>
 
+Emitted when the nodes of the model the camera is attached to are set to be hidden.
+
 
 </td></tr>
 <tr><td>
@@ -202,6 +220,8 @@ Description
 
 
 </td><td>
+
+Emitted when the offset of the camera is set.
 
 
 </td></tr>
@@ -220,6 +240,8 @@ Description
 
 </td><td>
 
+Emitted when the tracked entity of the camera is set.
+
 
 </td></tr>
 <tr><td>
@@ -237,6 +259,8 @@ Description
 
 </td><td>
 
+Emitted when the tracked position of the camera is set.
+
 
 </td></tr>
 <tr><td>
@@ -253,6 +277,8 @@ Description
 
 
 </td><td>
+
+Emitted when the zoom of the camera is set.
 
 
 </td></tr>

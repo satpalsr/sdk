@@ -4,6 +4,8 @@
 
 ## PlayerUIEventPayloads."PLAYER\_UI.LOAD" property
 
+Emitted when the player's client UI is loaded.
+
 **Signature:**
 
 ```typescript

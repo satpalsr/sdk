@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when an entity collides with a block type.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity's contact force is applied to a block type.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when an entity is despawned.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity collides with another entity.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when an entity's contact force is applied to another entity.
+
 
 </td></tr>
 <tr><td>
@@ -134,6 +144,8 @@ Description
 
 
 </td><td>
+
+Emitted when the playback rate of the entity's model animations is set.
 
 
 </td></tr>
@@ -152,6 +164,8 @@ Description
 
 </td><td>
 
+Emitted when the nodes of the entity's model are set to be hidden.
+
 
 </td></tr>
 <tr><td>
@@ -168,6 +182,8 @@ Description
 
 
 </td><td>
+
+Emitted when the opacity of the entity is set.
 
 
 </td></tr>
@@ -186,6 +202,8 @@ Description
 
 </td><td>
 
+Emitted when the parent of the entity is set.
+
 
 </td></tr>
 <tr><td>
@@ -202,6 +220,8 @@ Description
 
 
 </td><td>
+
+Emitted when the tint color of the entity is set.
 
 
 </td></tr>
@@ -220,6 +240,8 @@ Description
 
 </td><td>
 
+Emitted when the entity is spawned.
+
 
 </td></tr>
 <tr><td>
@@ -236,6 +258,8 @@ Description
 
 
 </td><td>
+
+Emitted when the looped animations of the entity's model are started.
 
 
 </td></tr>
@@ -254,6 +278,8 @@ Description
 
 </td><td>
 
+Emitted when the oneshot animations of the entity's model are started.
+
 
 </td></tr>
 <tr><td>
@@ -270,6 +296,8 @@ Description
 
 
 </td><td>
+
+Emitted when the model animations of the entity are stopped.
 
 
 </td></tr>
@@ -288,6 +316,8 @@ Description
 
 </td><td>
 
+Emitted when the entity is ticked.
+
 
 </td></tr>
 <tr><td>
@@ -305,6 +335,8 @@ Description
 
 </td><td>
 
+Emitted when the position of the entity is updated at the end of the tick, either directly or by physics.
+
 
 </td></tr>
 <tr><td>
@@ -321,6 +353,8 @@ Description
 
 
 </td><td>
+
+Emitted when the rotation of the entity is updated at the end of the tick, either directly or by physics.
 
 
 </td></tr>

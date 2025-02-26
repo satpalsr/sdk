@@ -4,6 +4,8 @@
 
 ## PlayerUIEventPayloads."PLAYER\_UI.SEND\_DATA" property
 
+Emitted when the player's client UI sends data to the server.
+
 **Signature:**
 
 ```typescript

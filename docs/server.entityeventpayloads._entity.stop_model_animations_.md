@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.STOP\_MODEL\_ANIMATIONS" property
 
+Emitted when the model animations of the entity are stopped.
+
 **Signature:**
 
 ```typescript

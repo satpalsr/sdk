@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when the game server starts.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the game server stops.
 
 
 </td></tr>

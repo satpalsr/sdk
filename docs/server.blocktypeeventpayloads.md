@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when an entity collides with a block type.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when an entity's contact force is applied to a block type.
 
 
 </td></tr>

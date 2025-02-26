@@ -4,6 +4,8 @@
 
 ## EntityEventPayloads."ENTITY.SET\_MODEL\_HIDDEN\_NODES" property
 
+Emitted when the nodes of the entity's model are set to be hidden.
+
 **Signature:**
 
 ```typescript

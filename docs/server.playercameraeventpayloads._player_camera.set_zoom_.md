@@ -4,6 +4,8 @@
 
 ## PlayerCameraEventPayloads."PLAYER\_CAMERA.SET\_ZOOM" property
 
+Emitted when the zoom of the camera is set.
+
 **Signature:**
 
 ```typescript

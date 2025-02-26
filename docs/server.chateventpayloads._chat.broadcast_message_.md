@@ -4,6 +4,8 @@
 
 ## ChatEventPayloads."CHAT.BROADCAST\_MESSAGE" property
 
+Emitted when a broadcast message is sent.
+
 **Signature:**
 
 ```typescript

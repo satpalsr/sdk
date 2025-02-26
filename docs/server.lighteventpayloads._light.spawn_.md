@@ -4,6 +4,8 @@
 
 ## LightEventPayloads."LIGHT.SPAWN" property
 
+Emitted when a light is spawned.
+
 **Signature:**
 
 ```typescript

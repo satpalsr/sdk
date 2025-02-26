@@ -4,6 +4,8 @@
 
 ## GameServerEventPayloads."GAMESERVER.START" property
 
+Emitted when the game server starts.
+
 **Signature:**
 
 ```typescript
