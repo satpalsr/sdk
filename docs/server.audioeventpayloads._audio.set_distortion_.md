@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_DISTORTION" property
 
+Emitted when the audio's distortion is set.
+
 **Signature:**
 
 ```typescript

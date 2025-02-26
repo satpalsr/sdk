@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.PAUSE" property
 
+Emitted when the audio is paused.
+
 **Signature:**
 
 ```typescript

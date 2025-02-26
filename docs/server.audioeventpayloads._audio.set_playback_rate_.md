@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_PLAYBACK\_RATE" property
 
+Emitted when the audio's playback rate is set.
+
 **Signature:**
 
 ```typescript

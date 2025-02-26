@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_ATTACHED\_TO\_ENTITY" property
 
+Emitted when the audio is attached to an entity.
+
 **Signature:**
 
 ```typescript

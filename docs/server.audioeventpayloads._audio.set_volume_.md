@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_VOLUME" property
 
+Emitted when the audio's volume is set.
+
 **Signature:**
 
 ```typescript

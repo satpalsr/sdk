@@ -176,7 +176,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!Audio:class",
-          "docComment": "/**\n * Represents a audio playback in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * <h2>Events</h2> <p> This class is an EventRouter, and emits the events and payloads listed under {@link AudioEventPayloads} </p>\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents a audio playback in a world.\n *\n * @remarks\n *\n * Audio instances are created directly as instances. They support a variety of configuration options through the {@link AudioOptions} constructor argument.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link AudioEventPayloads}\n *\n * @example\n * ```typescript\n * (new Audio({\n *   uri: 'music/song.mp3', // relative to the server's assets directory in the project root, resolves to assets/music/song.mp3\n *   loop: true,\n *   volume: 0.5,\n * })).play(world);\n * ```\n *\n * @eventProperty @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1456,7 +1456,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.PAUSE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio is paused.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1501,7 +1501,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.PLAY_RESTART\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio is restarted.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1546,7 +1546,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.PLAY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio is played.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1591,7 +1591,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_ATTACHED_TO_ENTITY\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio is attached to an entity.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1645,7 +1645,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_DETUNE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's detune is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1690,7 +1690,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_DISTORTION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's distortion is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1735,7 +1735,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_PLAYBACK_RATE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's playback rate is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1780,7 +1780,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_POSITION\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's position is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1834,7 +1834,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_REFERENCE_DISTANCE\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's reference distance is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -1879,7 +1879,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!AudioEventPayloads#\"AUDIO.SET_VOLUME\":member",
-              "docComment": "",
+              "docComment": "/**\n * Emitted when the audio's volume is set.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

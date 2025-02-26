@@ -21,7 +21,7 @@ Audio instances are created directly as instances. They support a variety of con
 
 <h2>Events</h2>
 
-This class is an EventRouter, and emits the events and payloads listed under [AudioEventPayloads](./server.audioeventpayloads.md)
+This class is an EventRouter, and instances of it emit events with payloads listed under [AudioEventPayloads](./server.audioeventpayloads.md)
 
 ## Example
 

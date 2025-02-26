@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_DETUNE" property
 
+Emitted when the audio's detune is set.
+
 **Signature:**
 
 ```typescript

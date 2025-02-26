@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.PLAY" property
 
+Emitted when the audio is played.
+
 **Signature:**
 
 ```typescript

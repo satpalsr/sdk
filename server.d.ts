@@ -18,10 +18,9 @@ import { WebSocket as WebSocket_2 } from 'ws';
  * the {@link AudioOptions} constructor argument.
  *
  * <h2>Events</h2>
- * <p>
- * This class is an EventRouter, and emits the events
- * and payloads listed under {@link AudioEventPayloads}
- * </p>
+ *
+ * This class is an EventRouter, and instances of it emit
+ * events with payloads listed under {@link AudioEventPayloads}
  *
  * @example
  * ```typescript
@@ -31,6 +30,8 @@ import { WebSocket as WebSocket_2 } from 'ws';
  *   volume: 0.5,
  * })).play(world);
  * ```
+ *
+ * @eventProperty
  *
  * @public
  */
@@ -161,39 +162,49 @@ export declare enum AudioEvent {
 
 /** Event payloads for Audio emitted events. @public */
 export declare interface AudioEventPayloads {
+    /** Emitted when the audio is paused. */
     [AudioEvent.PAUSE]: {
         audio: Audio;
     };
+    /** Emitted when the audio is played. */
     [AudioEvent.PLAY]: {
         audio: Audio;
     };
+    /** Emitted when the audio is restarted. */
     [AudioEvent.PLAY_RESTART]: {
         audio: Audio;
     };
+    /** Emitted when the audio is attached to an entity. */
     [AudioEvent.SET_ATTACHED_TO_ENTITY]: {
         audio: Audio;
         entity: Entity | undefined;
     };
+    /** Emitted when the audio's detune is set. */
     [AudioEvent.SET_DETUNE]: {
         audio: Audio;
         detune: number;
     };
+    /** Emitted when the audio's distortion is set. */
     [AudioEvent.SET_DISTORTION]: {
         audio: Audio;
         distortion: number;
     };
+    /** Emitted when the audio's position is set. */
     [AudioEvent.SET_POSITION]: {
         audio: Audio;
         position: Vector3Like;
     };
+    /** Emitted when the audio's playback rate is set. */
     [AudioEvent.SET_PLAYBACK_RATE]: {
         audio: Audio;
         playbackRate: number;
     };
+    /** Emitted when the audio's reference distance is set. */
     [AudioEvent.SET_REFERENCE_DISTANCE]: {
         audio: Audio;
         referenceDistance: number;
     };
+    /** Emitted when the audio's volume is set. */
     [AudioEvent.SET_VOLUME]: {
         audio: Audio;
         volume: number;

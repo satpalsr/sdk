@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.PLAY\_RESTART" property
 
+Emitted when the audio is restarted.
+
 **Signature:**
 
 ```typescript

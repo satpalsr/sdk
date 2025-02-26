@@ -50,6 +50,8 @@ Description
 
 </td><td>
 
+Emitted when the audio is paused.
+
 
 </td></tr>
 <tr><td>
@@ -66,6 +68,8 @@ Description
 
 
 </td><td>
+
+Emitted when the audio is restarted.
 
 
 </td></tr>
@@ -84,6 +88,8 @@ Description
 
 </td><td>
 
+Emitted when the audio is played.
+
 
 </td></tr>
 <tr><td>
@@ -100,6 +106,8 @@ Description
 
 
 </td><td>
+
+Emitted when the audio is attached to an entity.
 
 
 </td></tr>
@@ -118,6 +126,8 @@ Description
 
 </td><td>
 
+Emitted when the audio's detune is set.
+
 
 </td></tr>
 <tr><td>
@@ -134,6 +144,8 @@ Description
 
 
 </td><td>
+
+Emitted when the audio's distortion is set.
 
 
 </td></tr>
@@ -152,6 +164,8 @@ Description
 
 </td><td>
 
+Emitted when the audio's playback rate is set.
+
 
 </td></tr>
 <tr><td>
@@ -168,6 +182,8 @@ Description
 
 
 </td><td>
+
+Emitted when the audio's position is set.
 
 
 </td></tr>
@@ -186,6 +202,8 @@ Description
 
 </td><td>
 
+Emitted when the audio's reference distance is set.
+
 
 </td></tr>
 <tr><td>
@@ -202,6 +220,8 @@ Description
 
 
 </td><td>
+
+Emitted when the audio's volume is set.
 
 
 </td></tr>

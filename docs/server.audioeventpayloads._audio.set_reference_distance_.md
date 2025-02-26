@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_REFERENCE\_DISTANCE" property
 
+Emitted when the audio's reference distance is set.
+
 **Signature:**
 
 ```typescript

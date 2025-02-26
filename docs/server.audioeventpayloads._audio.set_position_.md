@@ -4,6 +4,8 @@
 
 ## AudioEventPayloads."AUDIO.SET\_POSITION" property
 
+Emitted when the audio's position is set.
+
 **Signature:**
 
 ```typescript
