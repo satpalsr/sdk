@@ -9,8 +9,9 @@ Manages chat and commands in a world.
 **Signature:**
 
 ```typescript
-export default class ChatManager 
+export default class ChatManager extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 
@@ -34,50 +35,6 @@ world.chatManager.registerCommand('/kick', (player, args, message) => {
   }
 });
 ```
-
-## Properties
-
-<table><thead><tr><th>
-
-Property
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[onBroadcastMessage?](./server.chatmanager.onbroadcastmessage.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(player: [Player](./server.player.md) \| undefined, message: string, color?: string) =&gt; void
-
-
-</td><td>
-
-_(Optional)_ A function that is called when a broadcast (public) message is sent by a player or the server.
-
-
-</td></tr>
-</tbody></table>
 
 ## Methods
 

@@ -1,5 +1,5 @@
 import type { AnyPacket } from '@hytopia.com/server-protocol';
-import http from 'http';
+import EventEmitter from 'eventemitter3';
 import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
 import type { IPacket } from '@hytopia.com/server-protocol';
@@ -7,7 +7,6 @@ import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/get
 import protocol from '@hytopia.com/server-protocol';
 import RAPIER from '@dimforge/rapier3d-compat-simd';
 import { SdpMatrix3 } from '@dimforge/rapier3d-compat-simd';
-import type { Socket as Socket_2 } from 'net';
 import { WebSocket as WebSocket_2 } from 'ws';
 
 /**
@@ -29,7 +28,7 @@ import { WebSocket as WebSocket_2 } from 'ws';
  *
  * @public
  */
-export declare class Audio implements protocol.Serializable {
+export declare class Audio extends EventRouter implements protocol.Serializable {
 
 
 
@@ -140,49 +139,8 @@ export declare class Audio implements protocol.Serializable {
 
 }
 
-/** Payloads for events an Audio instance can emit. @public */
-export declare namespace AudioEventPayload {
-    export interface Pause {
-        audio: Audio;
-    }
-    export interface Play {
-        audio: Audio;
-    }
-    export interface PlayRestart {
-        audio: Audio;
-    }
-    export interface SetAttachedToEntity {
-        audio: Audio;
-        entity: Entity | undefined;
-    }
-    export interface SetDetune {
-        audio: Audio;
-        detune: number;
-    }
-    export interface SetDistortion {
-        audio: Audio;
-        distortion: number;
-    }
-    export interface SetPosition {
-        audio: Audio;
-        position: Vector3Like;
-    }
-    export interface SetPlaybackRate {
-        audio: Audio;
-        playbackRate: number;
-    }
-    export interface SetReferenceDistance {
-        audio: Audio;
-        referenceDistance: number;
-    }
-    export interface SetVolume {
-        audio: Audio;
-        volume: number;
-    }
-}
-
 /** Event types an Audio instance can emit. @public */
-export declare enum AudioEventType {
+export declare enum AudioEvent {
     PAUSE = "AUDIO.PAUSE",
     PLAY = "AUDIO.PLAY",
     PLAY_RESTART = "AUDIO.PLAY_RESTART",
@@ -300,42 +258,7 @@ export declare interface AudioOptions {
  *
  * @public
  */
-export declare abstract class BaseEntityController {
-    /**
-     * A function that is called every tick. Useful for implementing
-     * tick logic without writing a new entity controller class.
-     */
-    onTick?: (entity: Entity, deltaTimeMs: number) => void;
-    /**
-     * A function that is called every tick with player input by a
-     * PlayerEntity with this controller attached. Useful for implementing
-     * tick logic without writing a new entity controller class.
-     */
-    onTickWithPlayerInput?: (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => void;
-    /**
-     * A function that is called when the controller is attached to an entity.
-     * Useful for implementing attach logic without writing a
-     * new entity controller class.
-     */
-    onAttach?: (entity: Entity) => void;
-    /**
-     * A function that is called when the controlled entity is despawned.
-     * Useful for implementing despawn logic without writing a
-     * new entity controller class.
-     */
-    onDespawn?: (entity: Entity) => void;
-    /**
-     * A function that is called when the controller is detached from an entity.
-     * Useful for implementing detach logic without writing a
-     * new entity controller class.
-     */
-    onDetach?: (entity: Entity) => void;
-    /**
-     * A function that is called when the controlled entity is spawned.
-     * Useful for implementing spawn logic without writing a
-     * new entity controller class.
-     */
-    onSpawn?: (entity: Entity) => void;
+export declare abstract class BaseEntityController extends EventRouter {
     /**
      * Override this method to handle the attachment of an entity
      * to your entity controller.
@@ -377,6 +300,16 @@ export declare abstract class BaseEntityController {
      * @param deltaTimeMs - The delta time in milliseconds since the last tick.
      */
     tick(entity: Entity, deltaTimeMs: number): void;
+}
+
+/** Event types a BaseEntityController instance can emit. @public */
+export declare enum BaseEntityControllerEvent {
+    ATTACH = "attach",
+    DESPAWN = "despawn",
+    DETACH = "detach",
+    SPAWN = "spawn",
+    TICK = "tick",
+    TICK_WITH_PLAYER_INPUT = "tickWithPlayerInput"
 }
 
 /**
@@ -432,33 +365,7 @@ export declare class Block {
  *
  * @public
  */
-export declare class BlockType implements protocol.Serializable {
-    /**
-     * A callback function that is invoked when an entity collides with blocks of this type.
-     *
-     * @remarks
-     * This must be set before a block of this type is created.
-     * If it is set after a block is created, only future created
-     * blocks of this type will have the callback set.
-     *
-     * @param blockType - The block type the collision is for.
-     * @param entity - The entity that collided with the block type.
-     * @param started - Whether the collision started.
-     */
-    onEntityCollision?: ((blockType: BlockType, entity: Entity, started: boolean) => void) | ((blockType: BlockType, entity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
-    /**
-     * A callback function that is invoked when an entity contacts a block of this type.
-     *
-     * @remarks
-     * This must be set before a block of this type is created.
-     * If it is set after a block is created, only future created
-     * blocks of this type will have the callback set.
-     *
-     * @param blockType - The block type the contact is for.
-     * @param entity - The entity that contacted the block type.
-     * @param contactForceData - The contact force data.
-     */
-    onEntityContactForce?: (blockType: BlockType, entity: Entity, contactForceData: ContactForceData) => void;
+export declare class BlockType extends EventRouter implements protocol.Serializable {
 
 
 
@@ -484,6 +391,12 @@ export declare class BlockType implements protocol.Serializable {
     get textureUri(): string;
 
 
+}
+
+/** Event types a BlockType instance can emit. @public */
+export declare enum BlockTypeEvent {
+    ENTITY_COLLISION = "BLOCK_TYPE.ENTITY_COLLISION",
+    ENTITY_CONTACT_FORCE = "BLOCK_TYPE.ENTITY_CONTACT_FORCE"
 }
 
 /** Options for creating a block type instance. @public */
@@ -520,7 +433,7 @@ export declare interface BlockTypeOptions {
  *
  * @public
  */
-export declare class BlockTypeRegistry implements protocol.Serializable {
+export declare class BlockTypeRegistry extends EventRouter implements protocol.Serializable {
 
 
 
@@ -551,38 +464,15 @@ export declare class BlockTypeRegistry implements protocol.Serializable {
 
 }
 
-/** Payloads for events a BlockTypeRegistry instance can emit. @public */
-export declare namespace BlockTypeRegistryEventPayload {
-    export interface RegisterBlockType {
-        blockTypeRegistry: BlockTypeRegistry;
-        id: number;
-        blockType: BlockType;
-    }
-}
-
 /** Event types a BlockTypeRegistry instance can emit. @public */
-export declare enum BlockTypeRegistryEventType {
+export declare enum BlockTypeRegistryEvent {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }
 
-/** Payloads for events a ChatManager instance can emit. @public */
-export declare namespace ChatEventPayload {
-    export interface SendBroadcastMessage {
-        message: string;
-        color?: string;
-        playerId?: string;
-    }
-    export interface SendPlayerMessage {
-        player: Player;
-        message: string;
-        color?: string;
-    }
-}
-
 /** Event types a ChatManager instance can emit. @public */
-export declare enum ChatEventType {
-    SEND_BROADCAST_MESSAGE = "CHAT.SEND_BROADCAST_MESSAGE",
-    SEND_PLAYER_MESSAGE = "CHAT.SEND_PLAYER_MESSAGE"
+export declare enum ChatEvent {
+    BROADCAST_MESSAGE = "CHAT.BROADCAST_MESSAGE",
+    PLAYER_MESSAGE = "CHAT.PLAYER_MESSAGE"
 }
 
 /**
@@ -613,16 +503,7 @@ export declare enum ChatEventType {
  *
  * @public
  */
-export declare class ChatManager {
-    /**
-     * A function that is called when a broadcast (public) message is sent
-     * by a player or the server.
-     *
-     * @param player - The player that sent the message, or undefined if the message is a system message from the server.
-     * @param message - The message to send.
-     * @param color - The color of the message as a hex color code, excluding #.
-     */
-    onBroadcastMessage?: (player: Player | undefined, message: string, color?: string) => void;
+export declare class ChatManager extends EventRouter {
 
 
 
@@ -662,7 +543,6 @@ export declare class ChatManager {
     sendPlayerMessage(player: Player, message: string, color?: string): void;
 
 
-
 }
 
 /**
@@ -697,7 +577,7 @@ export declare class ChatManager {
  *
  * @public
  */
-export declare class Chunk implements protocol.Serializable {
+export declare class Chunk extends EventRouter implements protocol.Serializable {
 
 
 
@@ -779,24 +659,8 @@ export declare class Chunk implements protocol.Serializable {
 
 }
 
-/** Payloads for events a Chunk instance can emit. @public */
-export declare namespace ChunkEventPayload {
-    export interface Despawn {
-        chunk: Chunk;
-    }
-    export interface SetBlock {
-        chunk: Chunk;
-        globalCoordinate: Vector3Like;
-        localCoordinate: Vector3Like;
-        blockTypeId: number;
-    }
-    export interface Spawn {
-        chunk: Chunk;
-    }
-}
-
 /** Event types a Chunk instance can emit. @public */
-export declare enum ChunkEventType {
+export declare enum ChunkEvent {
     DESPAWN = "CHUNK.DESPAWN",
     SET_BLOCK = "CHUNK.SET_BLOCK",
     SPAWN = "CHUNK.SPAWN"
@@ -888,7 +752,7 @@ export declare enum CoefficientCombineRule {
  *
  * @public
  */
-export declare class Collider {
+export declare class Collider extends EventRouter {
 
 
 
@@ -1286,66 +1150,6 @@ export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
  * @public
  */
 export declare class Entity extends RigidBody implements protocol.Serializable {
-    /**
-     * A function that is called when the entity collides with a block.
-     *
-     * @remarks
-     * This must be set before the entity is spawned.
-     *
-     * @param entity - The Entity instance the collision is for.
-     * @param blockType - The block type that the entity collided with.
-     * @param started - Whether the collision started or ended.
-     */
-    onBlockCollision?: ((entity: Entity, blockType: BlockType, started: boolean) => void) | ((entity: Entity, blockType: BlockType, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
-    /**
-     * A function that is called when the entity collides with a block.
-     *
-     * @remarks
-     * This must be set before the entity is spawned.
-     *
-     * @param entity - The Entity instance the collision is for.
-     * @param blockType - The block type that the entity collided with.
-     * @param contactForceData - The contact force data.
-     */
-    onBlockContactForce?: (entity: Entity, blockType: BlockType, contactForceData: ContactForceData) => void;
-    /**
-     * A function that is called when the entity collides with another entity.
-     *
-     * @remarks
-     * This must be set before the entity is spawned.
-     *
-     * @param entity - The Entity instance the collision is for.
-     * @param otherEntity - The other entity that the entity collided with.
-     * @param started - Whether the collision started or ended.
-     */
-    onEntityCollision?: ((entity: Entity, otherEntity: Entity, started: boolean) => void) | ((entity: Entity, otherEntity: Entity, started: boolean, colliderHandleA: number, colliderHandleB: number) => void);
-    /**
-     * A function that is called when the entity contacts another entity.
-     *
-     * @remarks
-     * This must be set before the entity is spawned.
-     *
-     * @param entity - The Entity instance the collision is for.
-     * @param otherEntity - The other entity that the entity collided with.
-     * @param contactForceData - The contact force data.
-     */
-    onEntityContactForce?: (entity: Entity, otherEntity: Entity, contactForceData: ContactForceData) => void;
-    /**
-     * A function that is called when the entity is spawned.
-     * @param entity - The Entity instance that spawned.
-     */
-    onSpawn?: (entity: Entity) => void;
-    /**
-     * A function that is called when the entity is despawned.
-     * @param entity - The Entity instance that despawned.
-     */
-    onDespawn?: (entity: Entity) => void;
-    /**
-     * A function that is called every tick.
-     * @param entity - The Entity instance that ticked.
-     * @param tickDeltaMs - The delta time in milliseconds since the last tick.
-     */
-    onTick?: (entity: Entity, tickDeltaMs: number) => void;
 
 
 
@@ -1511,60 +1315,13 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 }
 
-/** Payloads for events an Entity instance can emit. @public */
-export declare namespace EntityEventPayload {
-    export interface Despawn {
-        entity: Entity;
-    }
-    export interface SetModelAnimationsPlaybackRate {
-        entity: Entity;
-        playbackRate: number;
-    }
-    export interface SetModelHiddenNodes {
-        entity: Entity;
-        modelHiddenNodes: Set<string>;
-    }
-    export interface SetOpacity {
-        entity: Entity;
-        opacity: number;
-    }
-    export interface SetParent {
-        entity: Entity;
-        parent: Entity | undefined;
-        parentNodeName: string | undefined;
-    }
-    export interface SetTintColor {
-        entity: Entity;
-        tintColor: RgbColor | undefined;
-    }
-    export interface Spawn {
-        entity: Entity;
-    }
-    export interface StartModelLoopedAnimations {
-        entity: Entity;
-        animations: Set<string>;
-    }
-    export interface StartModelOneshotAnimations {
-        entity: Entity;
-        animations: Set<string>;
-    }
-    export interface StopModelAnimations {
-        entity: Entity;
-        animations: Set<string>;
-    }
-    export interface UpdatePosition {
-        entity: Entity;
-        position: Vector3Like;
-    }
-    export interface UpdateRotation {
-        entity: Entity;
-        rotation: QuaternionLike;
-    }
-}
-
 /** Event types an Entity instance can emit. @public */
-export declare enum EntityEventType {
+export declare enum EntityEvent {
+    BLOCK_COLLISION = "ENTITY.BLOCK_COLLISION",
+    BLOCK_CONTACT_FORCE = "ENTITY.BLOCK_CONTACT_FORCE",
     DESPAWN = "ENTITY.DESPAWN",
+    ENTITY_COLLISION = "ENTITY.ENTITY_COLLISION",
+    ENTITY_CONTACT_FORCE = "ENTITY.ENTITY_CONTACT_FORCE",
     SET_MODEL_ANIMATIONS_PLAYBACK_RATE = "ENTITY.SET_MODEL_ANIMATIONS_PLAYBACK_RATE",
     SET_MODEL_HIDDEN_NODES = "ENTITY.SET_MODEL_HIDDEN_NODES",
     SET_OPACITY = "ENTITY.SET_OPACITY",
@@ -1574,6 +1331,7 @@ export declare enum EntityEventType {
     START_MODEL_LOOPED_ANIMATIONS = "ENTITY.START_MODEL_LOOPED_ANIMATIONS",
     START_MODEL_ONESHOT_ANIMATIONS = "ENTITY.START_MODEL_ONESHOT_ANIMATIONS",
     STOP_MODEL_ANIMATIONS = "ENTITY.STOP_MODEL_ANIMATIONS",
+    TICK = "ENTITY.TICK",
     UPDATE_POSITION = "ENTITY.UPDATE_POSITION",
     UPDATE_ROTATION = "ENTITY.UPDATE_ROTATION"
 }
@@ -1686,54 +1444,80 @@ export declare interface EntityOptions {
 /**
  * Manages event emission and assigned listener callbacks.
  *
- * @remarks
- * This class is used as a singleton for global server events via
- * {@link EventRouter.serverInstance}. For individual worlds, an
- * internal EventRouter instance is instantiated per world. EventRouters
- * only have visibility of events emitted and subscribed to relative to
- * their unique instances.
- *
  * @public
  */
 export declare class EventRouter {
     /** The singleton instance for global server events. */
     static readonly serverInstance: EventRouter;
     private _emitter;
-    private _tag;
-    /** Enable logging of all events. Default: false */
-    logAllEvents: boolean;
-    /** Enable logging of event payloads. Default: false */
-    logEventsPayloads: boolean;
-    /** Enable logging of events with no listeners. Default: false */
-    logUnlistenedEvents: boolean;
-    /** Array of events to exclude from logging */
-    logIgnoreEvents: string[];
-    /** Array of event prefixes to exclude from logging */
-    logIgnoreEventPrefixes: string[];
-    /** @param tag - Tag for logging, used to identify EventRouter instances in logs. */
-    constructor(tag: string);
+    private _finalListeners;
     /**
      * Emit an event, invoking all registered listeners for the event type.
      *
      * @param eventType - The type of event to emit.
      * @param payload - The payload to emit.
      *
-     * @returns `true` if listeners were found and invoked, `false` otherwise.
+     * @returns `true` if any listeners were found and invoked, `false` otherwise.
      */
-    emit<TPayload>(eventType: string, payload: TPayload): boolean;
+    emit<TEventType extends keyof EventPayloadMap>(eventType: TEventType, payload: EventPayloadMap[TEventType]): boolean;
+    emit<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): boolean;
+    /**
+     * Emits an event to the local and global server instance event routers.
+     *
+     * @param eventType - The type of event to emit.
+     * @param payload - The payload to emit.
+     */
+    emitWithGlobal<TEventType extends keyof EventPayloadMap>(eventType: TEventType, payload: EventPayloadMap[TEventType]): void;
+    emitWithGlobal<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): void;
+    /**
+     * Emits an event to local and provided world event routers.
+     *
+     * @param world - The world to broadcast the event to.
+     * @param eventType - The type of event to broadcast.
+     * @param payload - The payload to broadcast.
+     */
+    emitWithWorld<TEventType extends keyof EventPayloadMap>(world: World, eventType: TEventType, payload: EventPayloadMap[TEventType]): void;
+    emitWithWorld<TEventType extends string, TPayload = any>(world: World, eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): void;
+
+    final<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
+    /**
+     * Check if there are listeners for a specific event type.
+     *
+     * @param eventType - The type of event to check for listeners.
+     *
+     * @returns `true` if listeners are found, `false` otherwise.
+     */
+    hasListeners(eventType: keyof EventPayloadMap): boolean;
+    /**
+     * Get all listeners for a specific event type.
+     *
+     * @param eventType - The type of event to get listeners for.
+     *
+     * @returns All listeners for the event type.
+     */
+    listeners(eventType: keyof EventPayloadMap): EventEmitter.EventListener<any, string>[];
+    /**
+     * Get the number of listeners for a specific event type.
+     *
+     * @param eventType - The type of event to get the listener count for.
+     *
+     * @returns The number of listeners for the event type.
+     */
+    listenerCount(eventType: keyof EventPayloadMap): number;
     /**
      * Remove a listener for a specific event type.
      *
      * @param eventType - The type of event to remove the listener from.
      * @param listener - The listener function to remove.
      */
-    off<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    off<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
+    off<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
     /**
-     * Remove all listeners for a specific event type.
+     * Remove all listeners or all listeners for a provided event type.
      *
      * @param eventType - The type of event to remove all listeners from.
      */
-    offAll(eventType: string): void;
+    offAll(eventType?: keyof EventPayloadMap): void;
     /**
      * Register a listener for a specific event type.
      *
@@ -1743,28 +1527,16 @@ export declare class EventRouter {
      * @param eventType - The type of event to listen for.
      * @param listener - The listener function to invoke when the event is emitted.
      */
-    on<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    on<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
+    on<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
     /**
      * Register a listener for a specific event type that will be invoked once.
      *
      * @param eventType - The type of event to listen for.
      * @param listener - The listener function to invoke when the event is emitted.
      */
-    once<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
-    /**
-     * Register a listener for a specific event type that will be invoked before all other existing listeners.
-     *
-     * @param eventType - The type of event to listen for.
-     * @param listener - The listener function to invoke when the event is emitted.
-     */
-    prependOn<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
-    /**
-     * Register a listener for a specific event type that will be invoked once before all other existing listeners.
-     *
-     * @param eventType - The type of event to listen for.
-     * @param listener - The listener function to invoke when the event is emitted.
-     */
-    prependOnce<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+    once<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
+    once<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
 }
 
 /**
@@ -1829,18 +1601,8 @@ export declare class GameServer {
 
 }
 
-/** Payloads for events emitted by a GameServer instance. @public */
-export declare namespace GameServerEventPayload {
-    export interface Start {
-        startedAtMs: number;
-    }
-    export interface Stop {
-        stoppedAtMs: number;
-    }
-}
-
 /** Event types a GameServer instance can emit. @public */
-export declare enum GameServerEventType {
+export declare enum GameServerEvent {
     START = "GAMESERVER.START",
     STOP = "GAMESERVER.STOP"
 }
@@ -1868,7 +1630,7 @@ export declare enum GameServerEventType {
  *
  * @public
  */
-export declare class Light implements protocol.Serializable {
+export declare class Light extends EventRouter implements protocol.Serializable {
 
 
 
@@ -1987,58 +1749,8 @@ export declare class Light implements protocol.Serializable {
 
 }
 
-/** Payloads for events a Light instance can emit. @public */
-export declare namespace LightEventPayload {
-    export interface Despawn {
-        light: Light;
-    }
-    export interface SetAngle {
-        light: Light;
-        angle: number;
-    }
-    export interface SetAttachedToEntity {
-        light: Light;
-        entity: Entity;
-    }
-    export interface SetColor {
-        light: Light;
-        color: RgbColor;
-    }
-    export interface SetDistance {
-        light: Light;
-        distance: number;
-    }
-    export interface SetIntensity {
-        light: Light;
-        intensity: number;
-    }
-    export interface SetOffset {
-        light: Light;
-        offset: Vector3Like;
-    }
-    export interface SetPenumbra {
-        light: Light;
-        penumbra: number;
-    }
-    export interface SetPosition {
-        light: Light;
-        position: Vector3Like;
-    }
-    export interface SetTrackedEntity {
-        light: Light;
-        entity: Entity;
-    }
-    export interface SetTrackedPosition {
-        light: Light;
-        position: Vector3Like;
-    }
-    export interface Spawn {
-        light: Light;
-    }
-}
-
 /** Event types a Light instance can emit. @public */
-export declare enum LightEventType {
+export declare enum LightEvent {
     DESPAWN = "LIGHT.DESPAWN",
     SET_ANGLE = "LIGHT.SET_ANGLE",
     SET_ATTACHED_TO_ENTITY = "LIGHT.SET_ATTACHED_TO_ENTITY",
@@ -2050,7 +1762,6 @@ export declare enum LightEventType {
     SET_POSITION = "LIGHT.SET_POSITION",
     SET_TRACKED_ENTITY = "LIGHT.SET_TRACKED_ENTITY",
     SET_TRACKED_POSITION = "LIGHT.SET_TRACKED_POSITION",
-    SET_TYPE = "LIGHT.SET_TYPE",
     SPAWN = "LIGHT.SPAWN"
 }
 
@@ -2923,7 +2634,7 @@ export declare type PathfindingOptions = {
  *
  * @public
  */
-export declare class Player implements protocol.Serializable {
+export declare class Player extends EventRouter implements protocol.Serializable {
     /** The unique HYTOPIA UUID for the player. */
     readonly id: string;
     /** The unique HYTOPIA username for the player. */
@@ -2985,7 +2696,7 @@ export declare class Player implements protocol.Serializable {
  *
  * @public
  */
-export declare class PlayerCamera implements protocol.Serializable {
+export declare class PlayerCamera extends EventRouter implements protocol.Serializable {
     /** The player that the camera belongs to. @readonly */
     readonly player: Player;
 
@@ -3110,64 +2821,8 @@ export declare class PlayerCamera implements protocol.Serializable {
 
 }
 
-/** Payloads for events a PlayerCamera can emit. @public */
-export declare namespace PlayerCameraEventPayload {
-    export interface LookAtEntity {
-        playerCamera: PlayerCamera;
-        entity: Entity;
-    }
-    export interface LookAtPosition {
-        playerCamera: PlayerCamera;
-        position: Vector3Like;
-    }
-    export interface SetAttachedToEntity {
-        playerCamera: PlayerCamera;
-        entity: Entity;
-    }
-    export interface SetAttachedToPosition {
-        playerCamera: PlayerCamera;
-        position: Vector3Like;
-    }
-    export interface SetFilmOffset {
-        playerCamera: PlayerCamera;
-        filmOffset: number;
-    }
-    export interface SetForwardOffset {
-        playerCamera: PlayerCamera;
-        forwardOffset: number;
-    }
-    export interface SetFov {
-        playerCamera: PlayerCamera;
-        fov: number;
-    }
-    export interface SetModelHiddenNodes {
-        playerCamera: PlayerCamera;
-        modelHiddenNodes: Set<string>;
-    }
-    export interface SetMode {
-        playerCamera: PlayerCamera;
-        mode: PlayerCameraMode;
-    }
-    export interface SetOffset {
-        playerCamera: PlayerCamera;
-        offset: Vector3Like;
-    }
-    export interface SetTrackedEntity {
-        playerCamera: PlayerCamera;
-        entity: Entity | undefined;
-    }
-    export interface SetTrackedPosition {
-        playerCamera: PlayerCamera;
-        position: Vector3Like | undefined;
-    }
-    export interface SetZoom {
-        playerCamera: PlayerCamera;
-        zoom: number;
-    }
-}
-
 /** Event types a PlayerCamera can emit. @public */
-export declare enum PlayerCameraEventType {
+export declare enum PlayerCameraEvent {
     LOOK_AT_ENTITY = "PLAYER_CAMERA.LOOK_AT_ENTITY",
     LOOK_AT_POSITION = "PLAYER_CAMERA.LOOK_AT_POSITION",
     SET_ATTACHED_TO_ENTITY = "PLAYER_CAMERA.SET_ATTACHED_TO_ENTITY",
@@ -3375,29 +3030,8 @@ export declare interface PlayerEntityOptions extends EntityOptions {
     player: Player;
 }
 
-/** Payloads for events a Player can emit. @public */
-export declare namespace PlayerEventPayload {
-    export interface ChatMessageSend {
-        player: Player;
-        message: protocol.ChatMessageSchema;
-    }
-    export interface JoinedWorld {
-        player: Player;
-        world: World;
-    }
-    export interface LeftWorld {
-        player: Player;
-        world: World;
-    }
-    export interface RequestSync {
-        player: Player;
-        receivedAt: number;
-        receivedAtMs: number;
-    }
-}
-
 /** Event types a Player can emit. @public */
-export declare enum PlayerEventType {
+export declare enum PlayerEvent {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
     LEFT_WORLD = "PLAYER.LEFT_WORLD",
@@ -3463,7 +3097,7 @@ export declare class PlayerManager {
  *
  * @public
  */
-export declare class PlayerUI {
+export declare class PlayerUI extends EventRouter {
     /** The player that the UI belongs to. @readonly */
     readonly player: Player;
     /**
@@ -3497,24 +3131,8 @@ export declare class PlayerUI {
     sendData(data: object): void;
 }
 
-/** Payloads for events a PlayerUI instance can emit. @public */
-export declare namespace PlayerUIEventPayload {
-    export interface Load {
-        playerUI: PlayerUI;
-        htmlUri: string;
-    }
-    export interface LockPointer {
-        playerUI: PlayerUI;
-        lock: boolean;
-    }
-    export interface SendData {
-        playerUI: PlayerUI;
-        data: object;
-    }
-}
-
 /** Event types a PlayerUI can emit. @public */
-export declare enum PlayerUIEventType {
+export declare enum PlayerUIEvent {
     LOAD = "PLAYER_UI.LOAD",
     LOCK_POINTER = "PLAYER_UI.LOCK_POINTER",
     SEND_DATA = "PLAYER_UI.SEND_DATA"
@@ -3798,7 +3416,7 @@ export declare interface RgbColor {
  *
  * @public
  */
-export declare class RigidBody {
+export declare class RigidBody extends EventRouter {
 
 
 
@@ -4197,7 +3815,7 @@ export declare enum RigidBodyType {
  *
  * @public
  */
-export declare class SceneUI implements protocol.Serializable {
+export declare class SceneUI extends EventRouter implements protocol.Serializable {
 
 
 
@@ -4269,6 +3887,17 @@ export declare class SceneUI implements protocol.Serializable {
      */
     unload(): void;
 
+}
+
+/** Event types a SceneUI instance can emit. @public */
+export declare enum SceneUIEvent {
+    LOAD = "SCENE_UI.LOAD",
+    SET_ATTACHED_TO_ENTITY = "SCENE_UI.SET_ATTACHED_TO_ENTITY",
+    SET_OFFSET = "SCENE_UI.SET_OFFSET",
+    SET_POSITION = "SCENE_UI.SET_POSITION",
+    SET_STATE = "SCENE_UI.SET_STATE",
+    SET_VIEW_DISTANCE = "SCENE_UI.SET_VIEW_DISTANCE",
+    UNLOAD = "SCENE_UI.UNLOAD"
 }
 
 /**
@@ -4424,7 +4053,7 @@ export declare class SimpleEntityController extends BaseEntityController {
  *
  * @public
  */
-export declare class Simulation {
+export declare class Simulation extends EventRouter {
 
 
 
@@ -4497,6 +4126,14 @@ export declare class Simulation {
 
 
 
+}
+
+/** Event types a Simulation instance can emit. @public */
+export declare enum SimulationEvent {
+    STEP_START = "SIMULATION.STEP_START",
+    STEP_END = "SIMULATION.STEP_END",
+    DEBUG_RAYCAST = "SIMULATION.DEBUG_RAYCAST",
+    DEBUG_RENDER = "SIMULATION.DEBUG_RENDER"
 }
 
 /** A 3x3 symmetric positive-definite matrix for spatial dynamics. @public */
@@ -5082,18 +4719,7 @@ export declare type WaypointMoveSkippedCallback = (waypoint: Vector3Like, waypoi
  *
  * @public
  */
-export declare class World implements protocol.Serializable {
-    /**
-     * A function that is called when a player joins the world.
-     * @param player - The player that joined the world.
-     */
-    onPlayerJoin?: (player: Player) => void;
-    /**
-     * A function that is called when a player leaves the world.
-     * @param player - The player that left the world.
-     */
-    onPlayerLeave?: (player: Player) => void;
-
+export declare class World extends EventRouter implements protocol.Serializable {
 
 
 
@@ -5142,8 +4768,6 @@ export declare class World implements protocol.Serializable {
     get chunkLattice(): ChunkLattice;
     /** The entity manager for the world. */
     get entityManager(): EntityManager;
-    /** The event router for the world. */
-    get eventRouter(): EventRouter;
     /** The light manager for the world. */
     get lightManager(): LightManager;
     /** The world loop for the world. */
@@ -5194,6 +4818,17 @@ export declare class World implements protocol.Serializable {
 
 }
 
+/** Event types a World instance can emit. @public */
+export declare enum WorldEvent {
+    SET_AMBIENT_LIGHT_COLOR = "WORLD.SET_AMBIENT_LIGHT_COLOR",
+    SET_AMBIENT_LIGHT_INTENSITY = "WORLD.SET_AMBIENT_LIGHT_INTENSITY",
+    SET_DIRECTIONAL_LIGHT_COLOR = "WORLD.SET_DIRECTIONAL_LIGHT_COLOR",
+    SET_DIRECTIONAL_LIGHT_INTENSITY = "WORLD.SET_DIRECTIONAL_LIGHT_INTENSITY",
+    SET_DIRECTIONAL_LIGHT_POSITION = "WORLD.SET_DIRECTIONAL_LIGHT_POSITION",
+    START = "WORLD.START",
+    STOP = "WORLD.STOP"
+}
+
 /**
  * Manages the tick loop for a world.
  *
@@ -5215,7 +4850,7 @@ export declare class World implements protocol.Serializable {
  *
  * @public
  */
-export declare class WorldLoop {
+export declare class WorldLoop extends EventRouter {
 
 
 
@@ -5234,30 +4869,8 @@ export declare class WorldLoop {
 
 }
 
-/** Payloads for events emitted by a WorldLoop instance. @public */
-export declare namespace WorldLoopEventPayload {
-    export interface Start {
-        worldLoop: WorldLoop;
-    }
-    export interface Stop {
-        worldLoop: WorldLoop;
-    }
-    export interface TickStart {
-        worldLoop: WorldLoop;
-        tickDeltaMs: number;
-    }
-    export interface TickEnd {
-        worldLoop: WorldLoop;
-        tickDurationMs: number;
-    }
-    export interface TickError {
-        worldLoop: WorldLoop;
-        error: Error;
-    }
-}
-
 /** Event types a WorldLoop instance can emit. @public */
-export declare enum WorldLoopEventType {
+export declare enum WorldLoopEvent {
     START = "WORLD_LOOP.START",
     STOP = "WORLD_LOOP.STOP",
     TICK_START = "WORLD_LOOP.TICK_START",

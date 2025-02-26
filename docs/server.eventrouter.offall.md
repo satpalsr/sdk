@@ -4,12 +4,12 @@
 
 ## EventRouter.offAll() method
 
-Remove all listeners for a specific event type.
+Remove all listeners or all listeners for a provided event type.
 
 **Signature:**
 
 ```typescript
-offAll(eventType: string): void;
+offAll(eventType?: keyof EventPayloadMap): void;
 ```
 
 ## Parameters
@@ -37,12 +37,12 @@ eventType
 
 </td><td>
 
-string
+keyof EventPayloadMap
 
 
 </td><td>
 
-The type of event to remove all listeners from.
+_(Optional)_ The type of event to remove all listeners from.
 
 
 </td></tr>

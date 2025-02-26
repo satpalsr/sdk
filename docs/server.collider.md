@@ -9,8 +9,9 @@ Represents a collider in a world's physics simulation.
 **Signature:**
 
 ```typescript
-export default class Collider 
+export default class Collider extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

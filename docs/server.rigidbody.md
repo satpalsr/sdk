@@ -9,8 +9,9 @@ Represents a rigid body in a world's physics simulation.
 **Signature:**
 
 ```typescript
-export default class RigidBody 
+export default class RigidBody extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

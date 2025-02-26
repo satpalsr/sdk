@@ -467,7 +467,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[AudioEventType](./server.audioeventtype.md)
+[AudioEvent](./server.audioevent.md)
 
 
 </td><td>
@@ -478,7 +478,29 @@ Event types an Audio instance can emit.
 </td></tr>
 <tr><td>
 
-[BlockTypeRegistryEventType](./server.blocktyperegistryeventtype.md)
+[BaseEntityControllerEvent](./server.baseentitycontrollerevent.md)
+
+
+</td><td>
+
+Event types a BaseEntityController instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[BlockTypeEvent](./server.blocktypeevent.md)
+
+
+</td><td>
+
+Event types a BlockType instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[BlockTypeRegistryEvent](./server.blocktyperegistryevent.md)
 
 
 </td><td>
@@ -489,7 +511,7 @@ Event types a BlockTypeRegistry instance can emit.
 </td></tr>
 <tr><td>
 
-[ChatEventType](./server.chateventtype.md)
+[ChatEvent](./server.chatevent.md)
 
 
 </td><td>
@@ -500,7 +522,7 @@ Event types a ChatManager instance can emit.
 </td></tr>
 <tr><td>
 
-[ChunkEventType](./server.chunkeventtype.md)
+[ChunkEvent](./server.chunkevent.md)
 
 
 </td><td>
@@ -544,7 +566,7 @@ The default collision groups.
 </td></tr>
 <tr><td>
 
-[EntityEventType](./server.entityeventtype.md)
+[EntityEvent](./server.entityevent.md)
 
 
 </td><td>
@@ -555,7 +577,7 @@ Event types an Entity instance can emit.
 </td></tr>
 <tr><td>
 
-[GameServerEventType](./server.gameservereventtype.md)
+[GameServerEvent](./server.gameserverevent.md)
 
 
 </td><td>
@@ -566,7 +588,7 @@ Event types a GameServer instance can emit.
 </td></tr>
 <tr><td>
 
-[LightEventType](./server.lighteventtype.md)
+[LightEvent](./server.lightevent.md)
 
 
 </td><td>
@@ -588,7 +610,7 @@ The types a Light can be.
 </td></tr>
 <tr><td>
 
-[PlayerCameraEventType](./server.playercameraeventtype.md)
+[PlayerCameraEvent](./server.playercameraevent.md)
 
 
 </td><td>
@@ -610,7 +632,7 @@ The mode of the camera.
 </td></tr>
 <tr><td>
 
-[PlayerEventType](./server.playereventtype.md)
+[PlayerEvent](./server.playerevent.md)
 
 
 </td><td>
@@ -621,7 +643,7 @@ Event types a Player can emit.
 </td></tr>
 <tr><td>
 
-[PlayerUIEventType](./server.playeruieventtype.md)
+[PlayerUIEvent](./server.playeruievent.md)
 
 
 </td><td>
@@ -643,7 +665,40 @@ The types a RigidBody can be.
 </td></tr>
 <tr><td>
 
-[WorldLoopEventType](./server.worldloopeventtype.md)
+[SceneUIEvent](./server.sceneuievent.md)
+
+
+</td><td>
+
+Event types a SceneUI instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[SimulationEvent](./server.simulationevent.md)
+
+
+</td><td>
+
+Event types a Simulation instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[WorldEvent](./server.worldevent.md)
+
+
+</td><td>
+
+Event types a World instance can emit.
+
+
+</td></tr>
+<tr><td>
+
+[WorldLoopEvent](./server.worldloopevent.md)
 
 
 </td><td>
@@ -888,142 +943,6 @@ A map representation for a world.
 </td><td>
 
 Options for creating a World instance.
-
-
-</td></tr>
-</tbody></table>
-
-## Namespaces
-
-<table><thead><tr><th>
-
-Namespace
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[AudioEventPayload](./server.audioeventpayload.md)
-
-
-</td><td>
-
-Payloads for events an Audio instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[BlockTypeRegistryEventPayload](./server.blocktyperegistryeventpayload.md)
-
-
-</td><td>
-
-Payloads for events a BlockTypeRegistry instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[ChatEventPayload](./server.chateventpayload.md)
-
-
-</td><td>
-
-Payloads for events a ChatManager instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[ChunkEventPayload](./server.chunkeventpayload.md)
-
-
-</td><td>
-
-Payloads for events a Chunk instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[EntityEventPayload](./server.entityeventpayload.md)
-
-
-</td><td>
-
-Payloads for events an Entity instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[GameServerEventPayload](./server.gameservereventpayload.md)
-
-
-</td><td>
-
-Payloads for events emitted by a GameServer instance.
-
-
-</td></tr>
-<tr><td>
-
-[LightEventPayload](./server.lighteventpayload.md)
-
-
-</td><td>
-
-Payloads for events a Light instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerCameraEventPayload](./server.playercameraeventpayload.md)
-
-
-</td><td>
-
-Payloads for events a PlayerCamera can emit.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerEventPayload](./server.playereventpayload.md)
-
-
-</td><td>
-
-Payloads for events a Player can emit.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerUIEventPayload](./server.playeruieventpayload.md)
-
-
-</td><td>
-
-Payloads for events a PlayerUI instance can emit.
-
-
-</td></tr>
-<tr><td>
-
-[WorldLoopEventPayload](./server.worldloopeventpayload.md)
-
-
-</td><td>
-
-Payloads for events emitted by a WorldLoop instance.
 
 
 </td></tr>

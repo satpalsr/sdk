@@ -9,8 +9,10 @@ Represents a world in the game server.
 **Signature:**
 
 ```typescript
-export default class World implements protocol.Serializable 
+export default class World extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks
@@ -297,27 +299,6 @@ The entity manager for the world.
 </td></tr>
 <tr><td>
 
-[eventRouter](./server.world.eventrouter.md)
-
-
-</td><td>
-
-`readonly`
-
-
-</td><td>
-
-[EventRouter](./server.eventrouter.md)
-
-
-</td><td>
-
-The event router for the world.
-
-
-</td></tr>
-<tr><td>
-
 [id](./server.world.id.md)
 
 
@@ -397,44 +378,6 @@ string
 </td><td>
 
 The name of the world.
-
-
-</td></tr>
-<tr><td>
-
-[onPlayerJoin?](./server.world.onplayerjoin.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(player: [Player](./server.player.md)<!-- -->) =&gt; void
-
-
-</td><td>
-
-_(Optional)_ A function that is called when a player joins the world.
-
-
-</td></tr>
-<tr><td>
-
-[onPlayerLeave?](./server.world.onplayerleave.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(player: [Player](./server.player.md)<!-- -->) =&gt; void
-
-
-</td><td>
-
-_(Optional)_ A function that is called when a player leaves the world.
 
 
 </td></tr>

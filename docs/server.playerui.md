@@ -9,8 +9,9 @@ The UI for a player.
 **Signature:**
 
 ```typescript
-export default class PlayerUI 
+export default class PlayerUI extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

@@ -9,8 +9,10 @@ UI rendered within the 3D space of a world's game scene.
 **Signature:**
 
 ```typescript
-export default class SceneUI implements protocol.Serializable 
+export default class SceneUI extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks

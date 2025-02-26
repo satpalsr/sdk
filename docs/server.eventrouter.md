@@ -12,44 +12,6 @@ Manages event emission and assigned listener callbacks.
 export default class EventRouter 
 ```
 
-## Remarks
-
-This class is used as a singleton for global server events via [EventRouter.serverInstance](./server.eventrouter.serverinstance.md)<!-- -->. For individual worlds, an internal EventRouter instance is instantiated per world. EventRouters only have visibility of events emitted and subscribed to relative to their unique instances.
-
-## Constructors
-
-<table><thead><tr><th>
-
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(tag)](./server.eventrouter._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `EventRouter` class
-
-
-</td></tr>
-</tbody></table>
-
 ## Properties
 
 <table><thead><tr><th>
@@ -74,101 +36,6 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
-
-[logAllEvents](./server.eventrouter.logallevents.md)
-
-
-</td><td>
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
-
-Enable logging of all events. Default: false
-
-
-</td></tr>
-<tr><td>
-
-[logEventsPayloads](./server.eventrouter.logeventspayloads.md)
-
-
-</td><td>
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
-
-Enable logging of event payloads. Default: false
-
-
-</td></tr>
-<tr><td>
-
-[logIgnoreEventPrefixes](./server.eventrouter.logignoreeventprefixes.md)
-
-
-</td><td>
-
-
-</td><td>
-
-string\[\]
-
-
-</td><td>
-
-Array of event prefixes to exclude from logging
-
-
-</td></tr>
-<tr><td>
-
-[logIgnoreEvents](./server.eventrouter.logignoreevents.md)
-
-
-</td><td>
-
-
-</td><td>
-
-string\[\]
-
-
-</td><td>
-
-Array of events to exclude from logging
-
-
-</td></tr>
-<tr><td>
-
-[logUnlistenedEvents](./server.eventrouter.logunlistenedevents.md)
-
-
-</td><td>
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
-
-Enable logging of events with no listeners. Default: false
-
-
-</td></tr>
-<tr><td>
 
 [serverInstance](./server.eventrouter.serverinstance.md)
 
@@ -227,6 +94,124 @@ Emit an event, invoking all registered listeners for the event type.
 </td></tr>
 <tr><td>
 
+[emit(eventType, payload)](./server.eventrouter.emit_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[emitWithGlobal(eventType, payload)](./server.eventrouter.emitwithglobal.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Emits an event to the local and global server instance event routers.
+
+
+</td></tr>
+<tr><td>
+
+[emitWithGlobal(eventType, payload)](./server.eventrouter.emitwithglobal_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[emitWithWorld(world, eventType, payload)](./server.eventrouter.emitwithworld.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Emits an event to local and provided world event routers.
+
+
+</td></tr>
+<tr><td>
+
+[emitWithWorld(world, eventType, payload)](./server.eventrouter.emitwithworld_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[final(eventType, listener)](./server.eventrouter.final_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[hasListeners(eventType)](./server.eventrouter.haslisteners.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Check if there are listeners for a specific event type.
+
+
+</td></tr>
+<tr><td>
+
+[listenerCount(eventType)](./server.eventrouter.listenercount.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the number of listeners for a specific event type.
+
+
+</td></tr>
+<tr><td>
+
+[listeners(eventType)](./server.eventrouter.listeners.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get all listeners for a specific event type.
+
+
+</td></tr>
+<tr><td>
+
 [off(eventType, listener)](./server.eventrouter.off.md)
 
 
@@ -241,6 +226,18 @@ Remove a listener for a specific event type.
 </td></tr>
 <tr><td>
 
+[off(eventType, listener)](./server.eventrouter.off_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [offAll(eventType)](./server.eventrouter.offall.md)
 
 
@@ -249,7 +246,7 @@ Remove a listener for a specific event type.
 
 </td><td>
 
-Remove all listeners for a specific event type.
+Remove all listeners or all listeners for a provided event type.
 
 
 </td></tr>
@@ -269,6 +266,18 @@ Register a listener for a specific event type.
 </td></tr>
 <tr><td>
 
+[on(eventType, listener)](./server.eventrouter.on_1.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [once(eventType, listener)](./server.eventrouter.once.md)
 
 
@@ -283,29 +292,13 @@ Register a listener for a specific event type that will be invoked once.
 </td></tr>
 <tr><td>
 
-[prependOn(eventType, listener)](./server.eventrouter.prependon.md)
+[once(eventType, listener)](./server.eventrouter.once_1.md)
 
 
 </td><td>
 
 
 </td><td>
-
-Register a listener for a specific event type that will be invoked before all other existing listeners.
-
-
-</td></tr>
-<tr><td>
-
-[prependOnce(eventType, listener)](./server.eventrouter.prependonce.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Register a listener for a specific event type that will be invoked once before all other existing listeners.
 
 
 </td></tr>

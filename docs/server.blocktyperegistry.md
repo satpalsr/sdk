@@ -9,8 +9,10 @@ Manages known block types in a world.
 **Signature:**
 
 ```typescript
-export default class BlockTypeRegistry implements protocol.Serializable 
+export default class BlockTypeRegistry extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks

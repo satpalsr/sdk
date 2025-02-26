@@ -9,8 +9,9 @@ Manages the tick loop for a world.
 **Signature:**
 
 ```typescript
-export default class WorldLoop 
+export default class WorldLoop extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

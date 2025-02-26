@@ -9,7 +9,7 @@ Register a listener for a specific event type that will be invoked once.
 **Signature:**
 
 ```typescript
-once<TPayload>(eventType: string, listener: (payload: TPayload) => void): void;
+once<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ eventType
 
 </td><td>
 
-string
+TEventType
 
 
 </td><td>
@@ -53,7 +53,7 @@ listener
 
 </td><td>
 
-(payload: TPayload) =&gt; void
+(payload: EventPayloadMap\[TEventType\]) =&gt; void
 
 
 </td><td>

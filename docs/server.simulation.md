@@ -9,8 +9,9 @@ Represents the physics simulation for a world.
 **Signature:**
 
 ```typescript
-export default class Simulation 
+export default class Simulation extends EventRouter 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

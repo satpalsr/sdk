@@ -9,8 +9,10 @@ Represents a light in a world. Lights can be point lights or spotlights.
 **Signature:**
 
 ```typescript
-export default class Light implements protocol.Serializable 
+export default class Light extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks

@@ -9,8 +9,10 @@ A player in the game.
 **Signature:**
 
 ```typescript
-export default class Player implements protocol.Serializable 
+export default class Player extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks

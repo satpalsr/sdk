@@ -9,8 +9,10 @@ Represents a block type.
 **Signature:**
 
 ```typescript
-export default class BlockType implements protocol.Serializable 
+export default class BlockType extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks
@@ -191,44 +193,6 @@ string
 </td><td>
 
 The name of the block type.
-
-
-</td></tr>
-<tr><td>
-
-[onEntityCollision?](./server.blocktype.onentitycollision.md)
-
-
-</td><td>
-
-
-</td><td>
-
-((blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean) =&gt; void) \| ((blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, started: boolean, colliderHandleA: number, colliderHandleB: number) =&gt; void)
-
-
-</td><td>
-
-_(Optional)_ A callback function that is invoked when an entity collides with blocks of this type.
-
-
-</td></tr>
-<tr><td>
-
-[onEntityContactForce?](./server.blocktype.onentitycontactforce.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(blockType: [BlockType](./server.blocktype.md)<!-- -->, entity: [Entity](./server.entity.md)<!-- -->, contactForceData: [ContactForceData](./server.contactforcedata.md)<!-- -->) =&gt; void
-
-
-</td><td>
-
-_(Optional)_ A callback function that is invoked when an entity contacts a block of this type.
 
 
 </td></tr>

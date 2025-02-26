@@ -9,8 +9,10 @@ The camera for a Player.
 **Signature:**
 
 ```typescript
-export default class PlayerCamera implements protocol.Serializable 
+export default class PlayerCamera extends EventRouter implements protocol.Serializable 
 ```
+**Extends:** [EventRouter](./server.eventrouter.md)
+
 **Implements:** protocol.Serializable
 
 ## Remarks
