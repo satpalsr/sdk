@@ -4,7 +4,7 @@
 
 ## PlayerCameraEvent enum
 
-Event types a PlayerCamera can emit.
+Event types a PlayerCamera can emit. See [PlayerCameraEventPayloads](./server.playercameraeventpayloads.md) for the payloads.
 
 **Signature:**
 

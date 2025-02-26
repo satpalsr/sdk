@@ -4,7 +4,7 @@
 
 ## SimulationEvent enum
 
-Event types a Simulation instance can emit.
+Event types a Simulation instance can emit. See [SimulationEventPayloads](./server.simulationeventpayloads.md) for the payloads.
 
 **Signature:**
 

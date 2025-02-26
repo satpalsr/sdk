@@ -151,6 +151,17 @@ Manages entities in a world.
 </td></tr>
 <tr><td>
 
+[EventRouter](./server.eventrouter.md)
+
+
+</td><td>
+
+Manages event emission and assigned listener callbacks.
+
+
+</td></tr>
+<tr><td>
+
 [GameServer](./server.gameserver.md)
 
 
@@ -461,7 +472,7 @@ Description
 
 </td><td>
 
-Event types an Audio instance can emit.
+Event types an Audio instance can emit. See [AudioEventPayloads](./server.audioeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -472,7 +483,7 @@ Event types an Audio instance can emit.
 
 </td><td>
 
-Event types a BaseEntityController instance can emit.
+Event types a BaseEntityController instance can emit. See [BaseEntityControllerEventPayloads](./server.baseentitycontrollereventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -483,7 +494,7 @@ Event types a BaseEntityController instance can emit.
 
 </td><td>
 
-Event types a BlockType instance can emit.
+Event types a BlockType instance can emit. See [BlockTypeEventPayloads](./server.blocktypeeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -494,7 +505,7 @@ Event types a BlockType instance can emit.
 
 </td><td>
 
-Event types a BlockTypeRegistry instance can emit.
+Event types a BlockTypeRegistry instance can emit. See [BlockTypeRegistryEventPayloads](./server.blocktyperegistryeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -505,7 +516,7 @@ Event types a BlockTypeRegistry instance can emit.
 
 </td><td>
 
-Event types a ChatManager instance can emit.
+Event types a ChatManager instance can emit. See [ChatEventPayloads](./server.chateventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -516,7 +527,7 @@ Event types a ChatManager instance can emit.
 
 </td><td>
 
-Event types a Chunk instance can emit.
+Event types a Chunk instance can emit. See [ChunkEventPayloads](./server.chunkeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -560,7 +571,7 @@ The default collision groups.
 
 </td><td>
 
-Event types an Entity instance can emit.
+Event types an Entity instance can emit. See [EntityEventPayloads](./server.entityeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -571,7 +582,7 @@ Event types an Entity instance can emit.
 
 </td><td>
 
-Event types a GameServer instance can emit.
+Event types a GameServer instance can emit. See [GameServerEventPayloads](./server.gameservereventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -582,7 +593,7 @@ Event types a GameServer instance can emit.
 
 </td><td>
 
-Event types a Light instance can emit.
+Event types a Light instance can emit. See [LightEventPayloads](./server.lighteventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -604,7 +615,7 @@ The types a Light can be.
 
 </td><td>
 
-Event types a PlayerCamera can emit.
+Event types a PlayerCamera can emit. See [PlayerCameraEventPayloads](./server.playercameraeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -626,7 +637,7 @@ The mode of the camera.
 
 </td><td>
 
-Event types a Player can emit.
+Event types a Player can emit. See [PlayerEventPayloads](./server.playereventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -637,7 +648,7 @@ Event types a Player can emit.
 
 </td><td>
 
-Event types a PlayerUI can emit.
+Event types a PlayerUI can emit. See [PlayerUIEventPayloads](./server.playeruieventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -659,7 +670,7 @@ The types a RigidBody can be.
 
 </td><td>
 
-Event types a SceneUI instance can emit.
+Event types a SceneUI instance can emit. See [SceneUIEventPayloads](./server.sceneuieventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -670,7 +681,7 @@ Event types a SceneUI instance can emit.
 
 </td><td>
 
-Event types a Simulation instance can emit.
+Event types a Simulation instance can emit. See [SimulationEventPayloads](./server.simulationeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -681,7 +692,7 @@ Event types a Simulation instance can emit.
 
 </td><td>
 
-Event types a World instance can emit.
+Event types a World instance can emit. See [WorldEventPayloads](./server.worldeventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -692,7 +703,7 @@ Event types a World instance can emit.
 
 </td><td>
 
-Event types a WorldLoop instance can emit.
+Event types a WorldLoop instance can emit. See [WorldLoopEventPayloads](./server.worldloopeventpayloads.md) for the payloads.
 
 
 </td></tr>

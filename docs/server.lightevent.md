@@ -4,7 +4,7 @@
 
 ## LightEvent enum
 
-Event types a Light instance can emit.
+Event types a Light instance can emit. See [LightEventPayloads](./server.lighteventpayloads.md) for the payloads.
 
 **Signature:**
 

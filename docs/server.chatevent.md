@@ -4,7 +4,7 @@
 
 ## ChatEvent enum
 
-Event types a ChatManager instance can emit.
+Event types a ChatManager instance can emit. See [ChatEventPayloads](./server.chateventpayloads.md) for the payloads.
 
 **Signature:**
 

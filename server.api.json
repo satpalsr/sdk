@@ -185,7 +185,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -1214,7 +1214,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!AudioEvent:enum",
-          "docComment": "/**\n * Event types an Audio instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types an Audio instance can emit. See {@link AudioEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2563,7 +2563,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -2946,7 +2946,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!BaseEntityControllerEvent:enum",
-          "docComment": "/**\n * Event types a BaseEntityController instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a BaseEntityController instance can emit. See {@link BaseEntityControllerEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -3535,7 +3535,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -3786,7 +3786,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!BlockTypeEvent:enum",
-          "docComment": "/**\n * Event types a BlockType instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a BlockType instance can emit. See {@link BlockTypeEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4143,7 +4143,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -4395,7 +4395,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!BlockTypeRegistryEvent:enum",
-          "docComment": "/**\n * Event types a BlockTypeRegistry instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a BlockTypeRegistry instance can emit. See {@link BlockTypeRegistryEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4505,7 +4505,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!ChatEvent:enum",
-          "docComment": "/**\n * Event types a ChatManager instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a ChatManager instance can emit. See {@link ChatEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -4672,7 +4672,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -4962,7 +4962,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -5646,7 +5646,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!ChunkEvent:enum",
-          "docComment": "/**\n * Event types a Chunk instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a Chunk instance can emit. See {@link ChunkEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -6415,7 +6415,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -10833,7 +10833,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!EntityEvent:enum",
-          "docComment": "/**\n * Event types an Entity instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types an Entity instance can emit. See {@link EntityEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -12948,6 +12948,1712 @@
           "extendsTokenRanges": []
         },
         {
+          "kind": "Class",
+          "canonicalReference": "server!EventRouter:class",
+          "docComment": "/**\n * Manages event emission and assigned listener callbacks.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class EventRouter "
+            }
+          ],
+          "fileUrlPath": "src/events/EventRouter.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "EventRouter",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emit:member(1)",
+              "docComment": "/**\n * Emit an event, invoking all registered listeners for the event type.\n *\n * @param eventType - The type of event to emit.\n *\n * @param payload - The payload to emit.\n *\n * @returns `true` if any listeners were found and invoked, `false` otherwise.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emit<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emit"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emit:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emit<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TPayload"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emit"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emitWithGlobal:member(1)",
+              "docComment": "/**\n * Emits an event to the local and global server instance event routers.\n *\n * @param eventType - The type of event to emit.\n *\n * @param payload - The payload to emit.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emitWithGlobal<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emitWithGlobal"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emitWithGlobal:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emitWithGlobal<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TPayload"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emitWithGlobal"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emitWithWorld:member(1)",
+              "docComment": "/**\n * Emits an event to local and provided world event routers.\n *\n * @param world - The world to broadcast the event to.\n *\n * @param eventType - The type of event to broadcast.\n *\n * @param payload - The payload to broadcast.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emitWithWorld<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "world",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emitWithWorld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#emitWithWorld:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emitWithWorld<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", payload: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TPayload"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 15,
+                "endIndex": 16
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "world",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "payload",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 13,
+                    "endIndex": 14
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "emitWithWorld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#final:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "final<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: TPayload) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "final"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#hasListeners:member(1)",
+              "docComment": "/**\n * Check if there are listeners for a specific event type.\n *\n * @param eventType - The type of event to check for listeners.\n *\n * @returns `true` if listeners are found, `false` otherwise.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hasListeners(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "hasListeners"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#listenerCount:member(1)",
+              "docComment": "/**\n * Get the number of listeners for a specific event type.\n *\n * @param eventType - The type of event to get the listener count for.\n *\n * @returns The number of listeners for the event type.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listenerCount(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listenerCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#listeners:member(1)",
+              "docComment": "/**\n * Get all listeners for a specific event type.\n *\n * @param eventType - The type of event to get listeners for.\n *\n * @returns All listeners for the event type.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listeners(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventEmitter.EventListener",
+                  "canonicalReference": "eventemitter3!EventEmitter.EventListener:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any, string>[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listeners"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#off:member(1)",
+              "docComment": "/**\n * Remove a listener for a specific event type.\n *\n * @param eventType - The type of event to remove the listener from.\n *\n * @param listener - The listener function to remove.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "off<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "off"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#off:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "off<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: TPayload) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "off"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#offAll:member(1)",
+              "docComment": "/**\n * Remove all listeners or all listeners for a provided event type.\n *\n * @param eventType - The type of event to remove all listeners from.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "offAll(eventType?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "offAll"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#on:member(1)",
+              "docComment": "/**\n * Register a listener for a specific event type.\n *\n * @remarks\n *\n * Listeners are invoked in the order they are registered.\n *\n * @param eventType - The type of event to listen for.\n *\n * @param listener - The listener function to invoke when the event is emitted.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "on<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "on"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#on:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "on<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: TPayload) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "on"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#once:member(1)",
+              "docComment": "/**\n * Register a listener for a specific event type that will be invoked once.\n *\n * @param eventType - The type of event to listen for.\n *\n * @param listener - The listener function to invoke when the event is emitted.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "once<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[TEventType]) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "once"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!EventRouter#once:member(2)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "once<TEventType extends "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", TPayload = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(eventType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TEventType & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TEventType, keyof "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EventPayloads",
+                  "canonicalReference": "server!~__global.EventPayloads:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(payload: TPayload) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TEventType",
+                  "constraintTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                },
+                {
+                  "typeParameterName": "TPayload",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 2,
+              "parameters": [
+                {
+                  "parameterName": "eventType",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "listener",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 11,
+                    "endIndex": 12
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "once"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
           "kind": "TypeAlias",
           "canonicalReference": "server!FaceCallback:type",
           "docComment": "/**\n * A callback function called when the entity associated with the SimpleEntityController updates its rotation as it is attempting to face a target coordinate.\n *\n * @param currentRotation - The current rotation of the entity.\n *\n * @param targetRotation - The target rotation of the entity.\n *\n * @public\n */\n",
@@ -13255,7 +14961,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!GameServerEvent:enum",
-          "docComment": "/**\n * Event types a GameServer instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a GameServer instance can emit. See {@link GameServerEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -13413,7 +15119,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -14501,7 +16207,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!LightEvent:enum",
-          "docComment": "/**\n * Event types a Light instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a Light instance can emit. See {@link LightEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -21342,7 +23048,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -21717,7 +23423,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -22844,7 +24550,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerCameraEvent:enum",
-          "docComment": "/**\n * Event types a PlayerCamera can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a PlayerCamera can emit. See {@link PlayerCameraEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25233,7 +26939,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerEvent:enum",
-          "docComment": "/**\n * Event types a Player can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a Player can emit. See {@link PlayerEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25909,7 +27615,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -26146,7 +27852,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!PlayerUIEvent:enum",
-          "docComment": "/**\n * Event types a PlayerUI can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a PlayerUI can emit. See {@link PlayerUIEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -28351,7 +30057,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -32301,7 +34007,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -32989,7 +34695,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!SceneUIEvent:enum",
-          "docComment": "/**\n * Event types a SceneUI instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a SceneUI instance can emit. See {@link SceneUIEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -34191,7 +35897,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -34686,7 +36392,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!SimulationEvent:enum",
-          "docComment": "/**\n * Event types a Simulation instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a Simulation instance can emit. See {@link SimulationEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -39047,7 +40753,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -39993,7 +41699,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!WorldEvent:enum",
-          "docComment": "/**\n * Event types a World instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a World instance can emit. See {@link WorldEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -40526,7 +42232,7 @@
             {
               "kind": "Reference",
               "text": "EventRouter",
-              "canonicalReference": "server!~EventRouter:class"
+              "canonicalReference": "server!EventRouter:class"
             },
             {
               "kind": "Content",
@@ -40670,7 +42376,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "server!WorldLoopEvent:enum",
-          "docComment": "/**\n * Event types a WorldLoop instance can emit.\n *\n * @public\n */\n",
+          "docComment": "/**\n * Event types a WorldLoop instance can emit. See {@link WorldLoopEventPayloads} for the payloads.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

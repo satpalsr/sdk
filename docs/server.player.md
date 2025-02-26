@@ -11,7 +11,7 @@ A player in the game.
 ```typescript
 export default class Player extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 **Implements:** protocol.Serializable
 

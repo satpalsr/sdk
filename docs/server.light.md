@@ -11,7 +11,7 @@ Represents a light in a world. Lights can be point lights or spotlights.
 ```typescript
 export default class Light extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 **Implements:** protocol.Serializable
 

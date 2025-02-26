@@ -11,7 +11,7 @@ A 16^3 chunk of blocks. Used to represent a world's terrain.
 ```typescript
 export default class Chunk extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 **Implements:** protocol.Serializable
 

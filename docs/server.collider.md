@@ -11,7 +11,7 @@ Represents a collider in a world's physics simulation.
 ```typescript
 export default class Collider extends EventRouter 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

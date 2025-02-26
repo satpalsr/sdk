@@ -4,7 +4,7 @@
 
 ## BlockTypeEvent enum
 
-Event types a BlockType instance can emit.
+Event types a BlockType instance can emit. See [BlockTypeEventPayloads](./server.blocktypeeventpayloads.md) for the payloads.
 
 **Signature:**
 

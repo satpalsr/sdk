@@ -11,7 +11,7 @@ Represents a rigid body in a world's physics simulation.
 ```typescript
 export default class RigidBody extends EventRouter 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

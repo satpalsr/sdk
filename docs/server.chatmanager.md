@@ -11,7 +11,7 @@ Manages chat and commands in a world.
 ```typescript
 export default class ChatManager extends EventRouter 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

@@ -11,7 +11,7 @@ Manages known block types in a world.
 ```typescript
 export default class BlockTypeRegistry extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 **Implements:** protocol.Serializable
 

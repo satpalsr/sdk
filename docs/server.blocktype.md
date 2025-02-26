@@ -11,7 +11,7 @@ Represents a block type.
 ```typescript
 export default class BlockType extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 **Implements:** protocol.Serializable
 

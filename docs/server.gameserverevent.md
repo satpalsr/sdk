@@ -4,7 +4,7 @@
 
 ## GameServerEvent enum
 
-Event types a GameServer instance can emit.
+Event types a GameServer instance can emit. See [GameServerEventPayloads](./server.gameservereventpayloads.md) for the payloads.
 
 **Signature:**
 

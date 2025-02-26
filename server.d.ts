@@ -146,7 +146,7 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
 
 }
 
-/** Event types an Audio instance can emit. @public */
+/** Event types an Audio instance can emit. See {@link AudioEventPayloads} for the payloads. @public */
 export declare enum AudioEvent {
     PAUSE = "AUDIO.PAUSE",
     PLAY = "AUDIO.PLAY",
@@ -365,7 +365,7 @@ export declare abstract class BaseEntityController extends EventRouter {
     tick(entity: Entity, deltaTimeMs: number): void;
 }
 
-/** Event types a BaseEntityController instance can emit. @public */
+/** Event types a BaseEntityController instance can emit. See {@link BaseEntityControllerEventPayloads} for the payloads. @public */
 export declare enum BaseEntityControllerEvent {
     ATTACH = "attach",
     DESPAWN = "despawn",
@@ -493,7 +493,7 @@ export declare class BlockType extends EventRouter implements protocol.Serializa
 
 }
 
-/** Event types a BlockType instance can emit. @public */
+/** Event types a BlockType instance can emit. See {@link BlockTypeEventPayloads} for the payloads. @public */
 export declare enum BlockTypeEvent {
     ENTITY_COLLISION = "BLOCK_TYPE.ENTITY_COLLISION",
     ENTITY_CONTACT_FORCE = "BLOCK_TYPE.ENTITY_CONTACT_FORCE"
@@ -587,7 +587,7 @@ export declare class BlockTypeRegistry extends EventRouter implements protocol.S
 
 }
 
-/** Event types a BlockTypeRegistry instance can emit. @public */
+/** Event types a BlockTypeRegistry instance can emit. See {@link BlockTypeRegistryEventPayloads} for the payloads. @public */
 export declare enum BlockTypeRegistryEvent {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }
@@ -602,7 +602,7 @@ export declare interface BlockTypeRegistryEventPayloads {
     };
 }
 
-/** Event types a ChatManager instance can emit. @public */
+/** Event types a ChatManager instance can emit. See {@link ChatEventPayloads} for the payloads. @public */
 export declare enum ChatEvent {
     BROADCAST_MESSAGE = "CHAT.BROADCAST_MESSAGE",
     PLAYER_MESSAGE = "CHAT.PLAYER_MESSAGE"
@@ -818,7 +818,7 @@ export declare class Chunk extends EventRouter implements protocol.Serializable 
 
 }
 
-/** Event types a Chunk instance can emit. @public */
+/** Event types a Chunk instance can emit. See {@link ChunkEventPayloads} for the payloads. @public */
 export declare enum ChunkEvent {
     DESPAWN = "CHUNK.DESPAWN",
     SET_BLOCK = "CHUNK.SET_BLOCK",
@@ -1498,7 +1498,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 }
 
-/** Event types an Entity instance can emit. @public */
+/** Event types an Entity instance can emit. See {@link EntityEventPayloads} for the payloads. @public */
 export declare enum EntityEvent {
     BLOCK_COLLISION = "ENTITY.BLOCK_COLLISION",
     BLOCK_CONTACT_FORCE = "ENTITY.BLOCK_CONTACT_FORCE",
@@ -1725,7 +1725,7 @@ export declare interface EntityOptions {
  *
  * @public
  */
-declare class EventRouter {
+export declare class EventRouter {
     private _emitter;
     private _finalListeners;
     /**
@@ -1878,7 +1878,7 @@ export declare class GameServer {
 
 }
 
-/** Event types a GameServer instance can emit. @public */
+/** Event types a GameServer instance can emit. See {@link GameServerEventPayloads} for the payloads. @public */
 export declare enum GameServerEvent {
     START = "GAMESERVER.START",
     STOP = "GAMESERVER.STOP"
@@ -2043,7 +2043,7 @@ export declare class Light extends EventRouter implements protocol.Serializable 
 
 }
 
-/** Event types a Light instance can emit. @public */
+/** Event types a Light instance can emit. See {@link LightEventPayloads} for the payloads. @public */
 export declare enum LightEvent {
     DESPAWN = "LIGHT.DESPAWN",
     SET_ANGLE = "LIGHT.SET_ANGLE",
@@ -3187,7 +3187,7 @@ export declare class PlayerCamera extends EventRouter implements protocol.Serial
 
 }
 
-/** Event types a PlayerCamera can emit. @public */
+/** Event types a PlayerCamera can emit. See {@link PlayerCameraEventPayloads} for the payloads. @public */
 export declare enum PlayerCameraEvent {
     LOOK_AT_ENTITY = "PLAYER_CAMERA.LOOK_AT_ENTITY",
     LOOK_AT_POSITION = "PLAYER_CAMERA.LOOK_AT_POSITION",
@@ -3465,7 +3465,7 @@ export declare interface PlayerEntityOptions extends EntityOptions {
     player: Player;
 }
 
-/** Event types a Player can emit. @public */
+/** Event types a Player can emit. See {@link PlayerEventPayloads} for the payloads. @public */
 export declare enum PlayerEvent {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
@@ -3613,7 +3613,7 @@ export declare class PlayerUI extends EventRouter {
     sendData(data: object): void;
 }
 
-/** Event types a PlayerUI can emit. @public */
+/** Event types a PlayerUI can emit. See {@link PlayerUIEventPayloads} for the payloads. @public */
 export declare enum PlayerUIEvent {
     LOAD = "PLAYER_UI.LOAD",
     LOCK_POINTER = "PLAYER_UI.LOCK_POINTER",
@@ -4395,7 +4395,7 @@ export declare class SceneUI extends EventRouter implements protocol.Serializabl
 
 }
 
-/** Event types a SceneUI instance can emit. @public */
+/** Event types a SceneUI instance can emit. See {@link SceneUIEventPayloads} for the payloads. @public */
 export declare enum SceneUIEvent {
     LOAD = "SCENE_UI.LOAD",
     SET_ATTACHED_TO_ENTITY = "SCENE_UI.SET_ATTACHED_TO_ENTITY",
@@ -4676,7 +4676,7 @@ export declare class Simulation extends EventRouter {
 
 }
 
-/** Event types a Simulation instance can emit. @public */
+/** Event types a Simulation instance can emit. See {@link SimulationEventPayloads} for the payloads. @public */
 export declare enum SimulationEvent {
     STEP_START = "SIMULATION.STEP_START",
     STEP_END = "SIMULATION.STEP_END",
@@ -5399,7 +5399,7 @@ export declare class World extends EventRouter implements protocol.Serializable 
 
 }
 
-/** Event types a World instance can emit. @public */
+/** Event types a World instance can emit. See {@link WorldEventPayloads} for the payloads. @public */
 export declare enum WorldEvent {
     SET_AMBIENT_LIGHT_COLOR = "WORLD.SET_AMBIENT_LIGHT_COLOR",
     SET_AMBIENT_LIGHT_INTENSITY = "WORLD.SET_AMBIENT_LIGHT_INTENSITY",
@@ -5494,7 +5494,7 @@ export declare class WorldLoop extends EventRouter {
 
 }
 
-/** Event types a WorldLoop instance can emit. @public */
+/** Event types a WorldLoop instance can emit. See {@link WorldLoopEventPayloads} for the payloads. @public */
 export declare enum WorldLoopEvent {
     START = "WORLD_LOOP.START",
     STOP = "WORLD_LOOP.STOP",

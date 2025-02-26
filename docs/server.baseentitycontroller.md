@@ -11,7 +11,7 @@ A base class for entity controller implementations.
 ```typescript
 export default abstract class BaseEntityController extends EventRouter 
 ```
-**Extends:** EventRouter
+**Extends:** [EventRouter](./server.eventrouter.md)
 
 ## Remarks
 

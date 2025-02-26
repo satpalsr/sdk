@@ -4,7 +4,7 @@
 
 ## ChunkEvent enum
 
-Event types a Chunk instance can emit.
+Event types a Chunk instance can emit. See [ChunkEventPayloads](./server.chunkeventpayloads.md) for the payloads.
 
 **Signature:**
 

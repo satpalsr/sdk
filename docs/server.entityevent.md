@@ -4,7 +4,7 @@
 
 ## EntityEvent enum
 
-Event types an Entity instance can emit.
+Event types an Entity instance can emit. See [EntityEventPayloads](./server.entityeventpayloads.md) for the payloads.
 
 **Signature:**
 
