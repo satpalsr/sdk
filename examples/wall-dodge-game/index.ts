@@ -4,11 +4,13 @@ import {
   ColliderShape,
   BlockType,
   Entity,
+  EntityEvent,
   GameServer,
   SceneUI,
   startServer,
   Player,
   PlayerEntity,
+  PlayerEvent,
   RigidBodyType,
   SimpleEntityController,
   World,
@@ -51,8 +53,8 @@ startServer(world => {
   // world.simulation.enableDebugRendering(true);
   
   world.loadMap(worldMap);
-  world.onPlayerJoin = player => onPlayerJoin(world, player);
-  world.onPlayerLeave = player => onPlayerLeave(world, player);
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => onPlayerJoin(world, player));
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => onPlayerLeave(world, player));
 
   setupJoinNPC(world);
   startBlockSpawner(world);
@@ -180,7 +182,7 @@ function startBlockSpawner(world: World) {
         },
       });
   
-      blockEntity.onTick = () => {
+      blockEntity.on(EntityEvent.TICK, () => {
         if (blockEntity.isSpawned && blockEntity.position.z > GAME_BLOCK_DESPAWN_Z) {
           // Make it "fall" out of the world for a nice effect and prevent
           // player collision platforming sensors from not getting their off
@@ -191,7 +193,7 @@ function startBlockSpawner(world: World) {
         if (blockEntity.isSpawned && blockEntity.position.y < -5) {
           blockEntity.despawn();
         }
-      };
+      });
   
       blockEntity.spawn(world, spawnPoint);
 
@@ -268,12 +270,12 @@ function onPlayerJoin(world: World, player: Player) {
     modelScale: 0.5,
   });
 
-  playerEntity.onTick = () => {
+  playerEntity.on(EntityEvent.TICK, () => {
     if (playerEntity.position.y < -3 || playerEntity.position.y > 10) {
       // Assume the player has fallen off the map or shot over the wall
       endGame(playerEntity);
     }
-  };
+  });
 
   // Spawn with a random X coordinate to spread players out a bit.
   playerEntity.spawn(world, getRandomSpawnCoordinate());

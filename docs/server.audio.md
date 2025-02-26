@@ -173,6 +173,27 @@ The duration of the audio in seconds if explicitly set.
 </td></tr>
 <tr><td>
 
+[Events](./server.audio.events.md)
+
+
+</td><td>
+
+`static`
+
+`readonly`
+
+
+</td><td>
+
+{ readonly PAUSE: [AudioEvent.PAUSE](./server.audioevent.md)<!-- -->; }
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [id](./server.audio.id.md)
 
 

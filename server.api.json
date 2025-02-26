@@ -367,6 +367,45 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!Audio.Events:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static readonly Events: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        readonly PAUSE: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AudioEvent.PAUSE",
+                  "canonicalReference": "server!AudioEvent.PAUSE:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "Events",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": true,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!Audio#id:member",
               "docComment": "/**\n * The unique identifier for the audio.\n */\n",
               "excerptTokens": [
