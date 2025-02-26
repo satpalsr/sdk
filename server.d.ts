@@ -1878,7 +1878,7 @@ export declare class GameServer {
 
 }
 
-/** Event types a GameServer instance can emit. See {@link GameServerEventPayloads} for the payloads. @public */
+/** Event types a GameServer instance can emit to the global event router. See {@link GameServerEventPayloads} for the payloads. @public */
 export declare enum GameServerEvent {
     START = "GAMESERVER.START",
     STOP = "GAMESERVER.STOP"
