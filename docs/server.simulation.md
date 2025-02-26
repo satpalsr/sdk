@@ -11,7 +11,7 @@ Represents the physics simulation for a world.
 ```typescript
 export default class Simulation extends EventRouter 
 ```
-**Extends:** [EventRouter](./server.eventrouter.md)
+**Extends:** EventRouter
 
 ## Remarks
 

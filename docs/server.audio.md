@@ -11,7 +11,7 @@ Represents a audio playback in a world.
 ```typescript
 export default class Audio extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** [EventRouter](./server.eventrouter.md)
+**Extends:** EventRouter
 
 **Implements:** protocol.Serializable
 

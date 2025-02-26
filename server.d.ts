@@ -157,6 +157,47 @@ export declare enum AudioEvent {
     SET_VOLUME = "AUDIO.SET_VOLUME"
 }
 
+/** Event payloads for Audio emitted events. @public */
+export declare interface AudioEventPayloads {
+    [AudioEvent.PAUSE]: {
+        audio: Audio;
+    };
+    [AudioEvent.PLAY]: {
+        audio: Audio;
+    };
+    [AudioEvent.PLAY_RESTART]: {
+        audio: Audio;
+    };
+    [AudioEvent.SET_ATTACHED_TO_ENTITY]: {
+        audio: Audio;
+        entity: Entity | undefined;
+    };
+    [AudioEvent.SET_DETUNE]: {
+        audio: Audio;
+        detune: number;
+    };
+    [AudioEvent.SET_DISTORTION]: {
+        audio: Audio;
+        distortion: number;
+    };
+    [AudioEvent.SET_POSITION]: {
+        audio: Audio;
+        position: Vector3Like;
+    };
+    [AudioEvent.SET_PLAYBACK_RATE]: {
+        audio: Audio;
+        playbackRate: number;
+    };
+    [AudioEvent.SET_REFERENCE_DISTANCE]: {
+        audio: Audio;
+        referenceDistance: number;
+    };
+    [AudioEvent.SET_VOLUME]: {
+        audio: Audio;
+        volume: number;
+    };
+}
+
 /**
  * Manages audio instances in a world.
  *
@@ -316,6 +357,32 @@ export declare enum BaseEntityControllerEvent {
     TICK_WITH_PLAYER_INPUT = "tickWithPlayerInput"
 }
 
+/** Event payloads for BaseEntityController emitted events. @public */
+export declare interface BaseEntityControllerEventPayloads {
+    [BaseEntityControllerEvent.ATTACH]: {
+        entity: Entity;
+    };
+    [BaseEntityControllerEvent.DESPAWN]: {
+        entity: Entity;
+    };
+    [BaseEntityControllerEvent.DETACH]: {
+        entity: Entity;
+    };
+    [BaseEntityControllerEvent.SPAWN]: {
+        entity: Entity;
+    };
+    [BaseEntityControllerEvent.TICK]: {
+        entity: Entity;
+        deltaTimeMs: number;
+    };
+    [BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]: {
+        entity: PlayerEntity;
+        input: PlayerInput;
+        cameraOrientation: PlayerCameraOrientation;
+        deltaTimeMs: number;
+    };
+}
+
 /**
  * Represents a block in a world.
  *
@@ -403,6 +470,22 @@ export declare enum BlockTypeEvent {
     ENTITY_CONTACT_FORCE = "BLOCK_TYPE.ENTITY_CONTACT_FORCE"
 }
 
+/** Event payloads for BlockType emitted events. @public */
+export declare interface BlockTypeEventPayloads {
+    [BlockTypeEvent.ENTITY_COLLISION]: {
+        blockType: BlockType;
+        entity: Entity;
+        started: boolean;
+        colliderHandleA: number;
+        colliderHandleB: number;
+    };
+    [BlockTypeEvent.ENTITY_CONTACT_FORCE]: {
+        blockType: BlockType;
+        entity: Entity;
+        contactForceData: ContactForceData;
+    };
+}
+
 /** Options for creating a block type instance. @public */
 export declare interface BlockTypeOptions {
     /** The unique numeric identifier for the block type. */
@@ -473,10 +556,33 @@ export declare enum BlockTypeRegistryEvent {
     REGISTER_BLOCK_TYPE = "BLOCK_TYPE_REGISTRY.REGISTER_BLOCK_TYPE"
 }
 
+/** Event payloads for BlockTypeRegistry emitted events. @public */
+export declare interface BlockTypeRegistryEventPayloads {
+    [BlockTypeRegistryEvent.REGISTER_BLOCK_TYPE]: {
+        blockTypeRegistry: BlockTypeRegistry;
+        id: number;
+        blockType: BlockType;
+    };
+}
+
 /** Event types a ChatManager instance can emit. @public */
 export declare enum ChatEvent {
     BROADCAST_MESSAGE = "CHAT.BROADCAST_MESSAGE",
     PLAYER_MESSAGE = "CHAT.PLAYER_MESSAGE"
+}
+
+/** Event payloads for ChatManager emitted events. @public */
+export declare interface ChatEventPayloads {
+    [ChatEvent.BROADCAST_MESSAGE]: {
+        message: string;
+        color?: string;
+        playerId?: string;
+    };
+    [ChatEvent.PLAYER_MESSAGE]: {
+        player: Player;
+        message: string;
+        color?: string;
+    };
 }
 
 /**
@@ -668,6 +774,22 @@ export declare enum ChunkEvent {
     DESPAWN = "CHUNK.DESPAWN",
     SET_BLOCK = "CHUNK.SET_BLOCK",
     SPAWN = "CHUNK.SPAWN"
+}
+
+/** Event payloads for Chunk emitted events. @public */
+export declare interface ChunkEventPayloads {
+    [ChunkEvent.DESPAWN]: {
+        chunk: Chunk;
+    };
+    [ChunkEvent.SET_BLOCK]: {
+        chunk: Chunk;
+        globalCoordinate: Vector3Like;
+        localCoordinate: Vector3Like;
+        blockTypeId: number;
+    };
+    [ChunkEvent.SPAWN]: {
+        chunk: Chunk;
+    };
 }
 
 /**
@@ -1340,6 +1462,85 @@ export declare enum EntityEvent {
     UPDATE_ROTATION = "ENTITY.UPDATE_ROTATION"
 }
 
+/** Event payloads for Entity emitted events. @public */
+export declare interface EntityEventPayloads {
+    [EntityEvent.BLOCK_COLLISION]: {
+        entity: Entity;
+        blockType: BlockType;
+        started: boolean;
+        colliderHandleA: number;
+        colliderHandleB: number;
+    };
+    [EntityEvent.BLOCK_CONTACT_FORCE]: {
+        entity: Entity;
+        blockType: BlockType;
+        contactForceData: ContactForceData;
+    };
+    [EntityEvent.DESPAWN]: {
+        entity: Entity;
+    };
+    [EntityEvent.ENTITY_COLLISION]: {
+        entity: Entity;
+        otherEntity: Entity;
+        started: boolean;
+        colliderHandleA: number;
+        colliderHandleB: number;
+    };
+    [EntityEvent.ENTITY_CONTACT_FORCE]: {
+        entity: Entity;
+        otherEntity: Entity;
+        contactForceData: ContactForceData;
+    };
+    [EntityEvent.SET_MODEL_ANIMATIONS_PLAYBACK_RATE]: {
+        entity: Entity;
+        playbackRate: number;
+    };
+    [EntityEvent.SET_MODEL_HIDDEN_NODES]: {
+        entity: Entity;
+        modelHiddenNodes: Set<string>;
+    };
+    [EntityEvent.SET_OPACITY]: {
+        entity: Entity;
+        opacity: number;
+    };
+    [EntityEvent.SET_PARENT]: {
+        entity: Entity;
+        parent: Entity | undefined;
+        parentNodeName: string | undefined;
+    };
+    [EntityEvent.SET_TINT_COLOR]: {
+        entity: Entity;
+        tintColor: RgbColor | undefined;
+    };
+    [EntityEvent.SPAWN]: {
+        entity: Entity;
+    };
+    [EntityEvent.START_MODEL_LOOPED_ANIMATIONS]: {
+        entity: Entity;
+        animations: Set<string>;
+    };
+    [EntityEvent.START_MODEL_ONESHOT_ANIMATIONS]: {
+        entity: Entity;
+        animations: Set<string>;
+    };
+    [EntityEvent.STOP_MODEL_ANIMATIONS]: {
+        entity: Entity;
+        animations: Set<string>;
+    };
+    [EntityEvent.TICK]: {
+        entity: Entity;
+        tickDeltaMs: number;
+    };
+    [EntityEvent.UPDATE_POSITION]: {
+        entity: Entity;
+        position: Vector3Like;
+    };
+    [EntityEvent.UPDATE_ROTATION]: {
+        entity: Entity;
+        rotation: QuaternionLike;
+    };
+}
+
 /**
  * Manages entities in a world.
  *
@@ -1450,7 +1651,7 @@ export declare interface EntityOptions {
  *
  * @public
  */
-export declare class EventRouter {
+declare class EventRouter {
     /** The singleton instance for global server events. */
     static readonly serverInstance: EventRouter;
     private _emitter;
@@ -1463,16 +1664,16 @@ export declare class EventRouter {
      *
      * @returns `true` if any listeners were found and invoked, `false` otherwise.
      */
-    emit<TEventType extends keyof EventPayloadMap>(eventType: TEventType, payload: EventPayloadMap[TEventType]): boolean;
-    emit<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): boolean;
+    emit<TEventType extends keyof EventPayloads>(eventType: TEventType, payload: EventPayloads[TEventType]): boolean;
+    emit<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): boolean;
     /**
      * Emits an event to the local and global server instance event routers.
      *
      * @param eventType - The type of event to emit.
      * @param payload - The payload to emit.
      */
-    emitWithGlobal<TEventType extends keyof EventPayloadMap>(eventType: TEventType, payload: EventPayloadMap[TEventType]): void;
-    emitWithGlobal<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): void;
+    emitWithGlobal<TEventType extends keyof EventPayloads>(eventType: TEventType, payload: EventPayloads[TEventType]): void;
+    emitWithGlobal<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): void;
     /**
      * Emits an event to local and provided world event routers.
      *
@@ -1480,10 +1681,10 @@ export declare class EventRouter {
      * @param eventType - The type of event to broadcast.
      * @param payload - The payload to broadcast.
      */
-    emitWithWorld<TEventType extends keyof EventPayloadMap>(world: World, eventType: TEventType, payload: EventPayloadMap[TEventType]): void;
-    emitWithWorld<TEventType extends string, TPayload = any>(world: World, eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, payload: TPayload): void;
+    emitWithWorld<TEventType extends keyof EventPayloads>(world: World, eventType: TEventType, payload: EventPayloads[TEventType]): void;
+    emitWithWorld<TEventType extends string, TPayload = any>(world: World, eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): void;
 
-    final<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
+    final<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Check if there are listeners for a specific event type.
      *
@@ -1491,7 +1692,7 @@ export declare class EventRouter {
      *
      * @returns `true` if listeners are found, `false` otherwise.
      */
-    hasListeners(eventType: keyof EventPayloadMap): boolean;
+    hasListeners(eventType: keyof EventPayloads): boolean;
     /**
      * Get all listeners for a specific event type.
      *
@@ -1499,7 +1700,7 @@ export declare class EventRouter {
      *
      * @returns All listeners for the event type.
      */
-    listeners(eventType: keyof EventPayloadMap): EventEmitter.EventListener<any, string>[];
+    listeners(eventType: keyof EventPayloads): EventEmitter.EventListener<any, string>[];
     /**
      * Get the number of listeners for a specific event type.
      *
@@ -1507,21 +1708,21 @@ export declare class EventRouter {
      *
      * @returns The number of listeners for the event type.
      */
-    listenerCount(eventType: keyof EventPayloadMap): number;
+    listenerCount(eventType: keyof EventPayloads): number;
     /**
      * Remove a listener for a specific event type.
      *
      * @param eventType - The type of event to remove the listener from.
      * @param listener - The listener function to remove.
      */
-    off<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
-    off<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
+    off<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
+    off<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Remove all listeners or all listeners for a provided event type.
      *
      * @param eventType - The type of event to remove all listeners from.
      */
-    offAll(eventType?: keyof EventPayloadMap): void;
+    offAll(eventType?: keyof EventPayloads): void;
     /**
      * Register a listener for a specific event type.
      *
@@ -1531,16 +1732,16 @@ export declare class EventRouter {
      * @param eventType - The type of event to listen for.
      * @param listener - The listener function to invoke when the event is emitted.
      */
-    on<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
-    on<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
+    on<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
+    on<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Register a listener for a specific event type that will be invoked once.
      *
      * @param eventType - The type of event to listen for.
      * @param listener - The listener function to invoke when the event is emitted.
      */
-    once<TEventType extends keyof EventPayloadMap>(eventType: TEventType, listener: (payload: EventPayloadMap[TEventType]) => void): void;
-    once<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloadMap>, listener: (payload: TPayload) => void): void;
+    once<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
+    once<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
 }
 
 /**
@@ -1609,6 +1810,16 @@ export declare class GameServer {
 export declare enum GameServerEvent {
     START = "GAMESERVER.START",
     STOP = "GAMESERVER.STOP"
+}
+
+/** Event payloads for GameServer emitted events. @public */
+export declare interface GameServerEventPayloads {
+    [GameServerEvent.START]: {
+        startedAtMs: number;
+    };
+    [GameServerEvent.STOP]: {
+        stoppedAtMs: number;
+    };
 }
 
 /**
@@ -1767,6 +1978,56 @@ export declare enum LightEvent {
     SET_TRACKED_ENTITY = "LIGHT.SET_TRACKED_ENTITY",
     SET_TRACKED_POSITION = "LIGHT.SET_TRACKED_POSITION",
     SPAWN = "LIGHT.SPAWN"
+}
+
+/** Event payloads for Light emitted events. @public */
+export declare interface LightEventPayloads {
+    [LightEvent.DESPAWN]: {
+        light: Light;
+    };
+    [LightEvent.SET_ANGLE]: {
+        light: Light;
+        angle: number;
+    };
+    [LightEvent.SET_ATTACHED_TO_ENTITY]: {
+        light: Light;
+        entity: Entity;
+    };
+    [LightEvent.SET_COLOR]: {
+        light: Light;
+        color: RgbColor;
+    };
+    [LightEvent.SET_DISTANCE]: {
+        light: Light;
+        distance: number;
+    };
+    [LightEvent.SET_INTENSITY]: {
+        light: Light;
+        intensity: number;
+    };
+    [LightEvent.SET_OFFSET]: {
+        light: Light;
+        offset: Vector3Like;
+    };
+    [LightEvent.SET_PENUMBRA]: {
+        light: Light;
+        penumbra: number;
+    };
+    [LightEvent.SET_POSITION]: {
+        light: Light;
+        position: Vector3Like;
+    };
+    [LightEvent.SET_TRACKED_ENTITY]: {
+        light: Light;
+        entity: Entity;
+    };
+    [LightEvent.SET_TRACKED_POSITION]: {
+        light: Light;
+        position: Vector3Like;
+    };
+    [LightEvent.SPAWN]: {
+        light: Light;
+    };
 }
 
 /**
@@ -2842,6 +3103,62 @@ export declare enum PlayerCameraEvent {
     SET_ZOOM = "PLAYER_CAMERA.SET_ZOOM"
 }
 
+/** Event payloads for PlayerCamera emitted events. @public */
+export declare interface PlayerCameraEventPayloads {
+    [PlayerCameraEvent.LOOK_AT_ENTITY]: {
+        playerCamera: PlayerCamera;
+        entity: Entity;
+    };
+    [PlayerCameraEvent.LOOK_AT_POSITION]: {
+        playerCamera: PlayerCamera;
+        position: Vector3Like;
+    };
+    [PlayerCameraEvent.SET_ATTACHED_TO_ENTITY]: {
+        playerCamera: PlayerCamera;
+        entity: Entity;
+    };
+    [PlayerCameraEvent.SET_ATTACHED_TO_POSITION]: {
+        playerCamera: PlayerCamera;
+        position: Vector3Like;
+    };
+    [PlayerCameraEvent.SET_FILM_OFFSET]: {
+        playerCamera: PlayerCamera;
+        filmOffset: number;
+    };
+    [PlayerCameraEvent.SET_FORWARD_OFFSET]: {
+        playerCamera: PlayerCamera;
+        forwardOffset: number;
+    };
+    [PlayerCameraEvent.SET_FOV]: {
+        playerCamera: PlayerCamera;
+        fov: number;
+    };
+    [PlayerCameraEvent.SET_MODEL_HIDDEN_NODES]: {
+        playerCamera: PlayerCamera;
+        modelHiddenNodes: Set<string>;
+    };
+    [PlayerCameraEvent.SET_MODE]: {
+        playerCamera: PlayerCamera;
+        mode: PlayerCameraMode;
+    };
+    [PlayerCameraEvent.SET_OFFSET]: {
+        playerCamera: PlayerCamera;
+        offset: Vector3Like;
+    };
+    [PlayerCameraEvent.SET_TRACKED_ENTITY]: {
+        playerCamera: PlayerCamera;
+        entity: Entity | undefined;
+    };
+    [PlayerCameraEvent.SET_TRACKED_POSITION]: {
+        playerCamera: PlayerCamera;
+        position: Vector3Like | undefined;
+    };
+    [PlayerCameraEvent.SET_ZOOM]: {
+        playerCamera: PlayerCamera;
+        zoom: number;
+    };
+}
+
 /** The mode of the camera. @public */
 export declare enum PlayerCameraMode {
     FIRST_PERSON = 0,
@@ -3042,6 +3359,27 @@ export declare enum PlayerEvent {
     REQUEST_SYNC = "PLAYER.REQUEST_SYNC"
 }
 
+/** Event payloads for Player emitted events. @public */
+export declare interface PlayerEventPayloads {
+    [PlayerEvent.CHAT_MESSAGE_SEND]: {
+        player: Player;
+        message: string;
+    };
+    [PlayerEvent.JOINED_WORLD]: {
+        player: Player;
+        world: World;
+    };
+    [PlayerEvent.LEFT_WORLD]: {
+        player: Player;
+        world: World;
+    };
+    [PlayerEvent.REQUEST_SYNC]: {
+        player: Player;
+        receivedAt: number;
+        receivedAtMs: number;
+    };
+}
+
 /** The input state of a Player; keys from SUPPORTED_INPUT_KEYS. @public */
 export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
 
@@ -3089,6 +3427,16 @@ export declare class PlayerManager {
     getConnectedPlayerByUsername(username: string): Player | undefined;
 
 
+}
+
+/** Event payloads for PlayerManager emitted events. @public */
+export declare interface PlayerManagerEventPayloads {
+    [PlayerManagerEvent.PLAYER_CONNECTED]: {
+        player: Player;
+    };
+    [PlayerManagerEvent.PLAYER_DISCONNECTED]: {
+        player: Player;
+    };
 }
 
 /**
@@ -3140,6 +3488,22 @@ export declare enum PlayerUIEvent {
     LOAD = "PLAYER_UI.LOAD",
     LOCK_POINTER = "PLAYER_UI.LOCK_POINTER",
     SEND_DATA = "PLAYER_UI.SEND_DATA"
+}
+
+/** Event payloads for PlayerUI emitted events. @public */
+export declare interface PlayerUIEventPayloads {
+    [PlayerUIEvent.LOAD]: {
+        playerUI: PlayerUI;
+        htmlUri: string;
+    };
+    [PlayerUIEvent.LOCK_POINTER]: {
+        playerUI: PlayerUI;
+        lock: boolean;
+    };
+    [PlayerUIEvent.SEND_DATA]: {
+        playerUI: PlayerUI;
+        data: object;
+    };
 }
 
 /**
@@ -3904,6 +4268,36 @@ export declare enum SceneUIEvent {
     UNLOAD = "SCENE_UI.UNLOAD"
 }
 
+/** Event payloads for SceneUI emitted events. @public */
+export declare interface SceneUIEventPayloads {
+    [SceneUIEvent.LOAD]: {
+        sceneUI: SceneUI;
+    };
+    [SceneUIEvent.SET_ATTACHED_TO_ENTITY]: {
+        sceneUI: SceneUI;
+        entity: Entity;
+    };
+    [SceneUIEvent.SET_OFFSET]: {
+        sceneUI: SceneUI;
+        offset: Vector3Like;
+    };
+    [SceneUIEvent.SET_POSITION]: {
+        sceneUI: SceneUI;
+        position: Vector3Like;
+    };
+    [SceneUIEvent.SET_STATE]: {
+        sceneUI: SceneUI;
+        state: object;
+    };
+    [SceneUIEvent.SET_VIEW_DISTANCE]: {
+        sceneUI: SceneUI;
+        viewDistance: number;
+    };
+    [SceneUIEvent.UNLOAD]: {
+        sceneUI: SceneUI;
+    };
+}
+
 /**
  * Manages SceneUI instances in a world.
  *
@@ -4138,6 +4532,30 @@ export declare enum SimulationEvent {
     STEP_END = "SIMULATION.STEP_END",
     DEBUG_RAYCAST = "SIMULATION.DEBUG_RAYCAST",
     DEBUG_RENDER = "SIMULATION.DEBUG_RENDER"
+}
+
+/** Event payloads for Simulation emitted events. @public */
+export declare interface SimulationEventPayloads {
+    [SimulationEvent.STEP_START]: {
+        simulation: Simulation;
+        tickDeltaMs: number;
+    };
+    [SimulationEvent.STEP_END]: {
+        simulation: Simulation;
+        stepDurationMs: number;
+    };
+    [SimulationEvent.DEBUG_RAYCAST]: {
+        simulation: Simulation;
+        origin: Vector3Like;
+        direction: Vector3Like;
+        length: number;
+        hit: boolean;
+    };
+    [SimulationEvent.DEBUG_RENDER]: {
+        simulation: Simulation;
+        vertices: Float32Array;
+        colors: Float32Array;
+    };
 }
 
 /** A 3x3 symmetric positive-definite matrix for spatial dynamics. @public */
@@ -4880,6 +5298,28 @@ export declare enum WorldLoopEvent {
     TICK_START = "WORLD_LOOP.TICK_START",
     TICK_END = "WORLD_LOOP.TICK_END",
     TICK_ERROR = "WORLD_LOOP.TICK_ERROR"
+}
+
+/** Event payloads for WorldLoop emitted events. @public */
+export declare interface WorldLoopEventPayloads {
+    [WorldLoopEvent.START]: {
+        worldLoop: WorldLoop;
+    };
+    [WorldLoopEvent.STOP]: {
+        worldLoop: WorldLoop;
+    };
+    [WorldLoopEvent.TICK_START]: {
+        worldLoop: WorldLoop;
+        tickDeltaMs: number;
+    };
+    [WorldLoopEvent.TICK_END]: {
+        worldLoop: WorldLoop;
+        tickDurationMs: number;
+    };
+    [WorldLoopEvent.TICK_ERROR]: {
+        worldLoop: WorldLoop;
+        error: Error;
+    };
 }
 
 /** A map representation for a world. @public */

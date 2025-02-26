@@ -11,7 +11,7 @@ Represents a world in the game server.
 ```typescript
 export default class World extends EventRouter implements protocol.Serializable 
 ```
-**Extends:** [EventRouter](./server.eventrouter.md)
+**Extends:** EventRouter
 
 **Implements:** protocol.Serializable
 

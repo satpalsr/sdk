@@ -151,17 +151,6 @@ Manages entities in a world.
 </td></tr>
 <tr><td>
 
-[EventRouter](./server.eventrouter.md)
-
-
-</td><td>
-
-Manages event emission and assigned listener callbacks.
-
-
-</td></tr>
-<tr><td>
-
 [GameServer](./server.gameserver.md)
 
 
@@ -750,12 +739,45 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[AudioEventPayloads](./server.audioeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Audio emitted events.
+
+
+</td></tr>
+<tr><td>
+
 [AudioOptions](./server.audiooptions.md)
 
 
 </td><td>
 
 Options for creating an Audio instance.
+
+
+</td></tr>
+<tr><td>
+
+[BaseEntityControllerEventPayloads](./server.baseentitycontrollereventpayloads.md)
+
+
+</td><td>
+
+Event payloads for BaseEntityController emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[BlockTypeEventPayloads](./server.blocktypeeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for BlockType emitted events.
 
 
 </td></tr>
@@ -772,12 +794,56 @@ Options for creating a block type instance.
 </td></tr>
 <tr><td>
 
+[BlockTypeRegistryEventPayloads](./server.blocktyperegistryeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for BlockTypeRegistry emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[ChatEventPayloads](./server.chateventpayloads.md)
+
+
+</td><td>
+
+Event payloads for ChatManager emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[ChunkEventPayloads](./server.chunkeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Chunk emitted events.
+
+
+</td></tr>
+<tr><td>
+
 [ColliderOptions](./server.collideroptions.md)
 
 
 </td><td>
 
 Options for creating a Collider instance.
+
+
+</td></tr>
+<tr><td>
+
+[EntityEventPayloads](./server.entityeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Entity emitted events.
 
 
 </td></tr>
@@ -794,12 +860,45 @@ Options for creating an Entity instance.
 </td></tr>
 <tr><td>
 
+[GameServerEventPayloads](./server.gameservereventpayloads.md)
+
+
+</td><td>
+
+Event payloads for GameServer emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[LightEventPayloads](./server.lighteventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Light emitted events.
+
+
+</td></tr>
+<tr><td>
+
 [LightOptions](./server.lightoptions.md)
 
 
 </td><td>
 
 Options for creating a Light instance.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerCameraEventPayloads](./server.playercameraeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for PlayerCamera emitted events.
 
 
 </td></tr>
@@ -822,6 +921,39 @@ Options for creating a PlayerEntityController instance.
 </td><td>
 
 Options for creating a PlayerEntity instance.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerEventPayloads](./server.playereventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Player emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerManagerEventPayloads](./server.playermanagereventpayloads.md)
+
+
+</td><td>
+
+Event payloads for PlayerManager emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerUIEventPayloads](./server.playeruieventpayloads.md)
+
+
+</td><td>
+
+Event payloads for PlayerUI emitted events.
 
 
 </td></tr>
@@ -860,12 +992,34 @@ Options for creating a RigidBody instance.
 </td></tr>
 <tr><td>
 
+[SceneUIEventPayloads](./server.sceneuieventpayloads.md)
+
+
+</td><td>
+
+Event payloads for SceneUI emitted events.
+
+
+</td></tr>
+<tr><td>
+
 [SceneUIOptions](./server.sceneuioptions.md)
 
 
 </td><td>
 
 Options for creating a SceneUI instance.
+
+
+</td></tr>
+<tr><td>
+
+[SimulationEventPayloads](./server.simulationeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for Simulation emitted events.
 
 
 </td></tr>
@@ -921,6 +1075,17 @@ A 3-dimensional vector of boolean values.
 </td><td>
 
 A 3-dimensional vector.
+
+
+</td></tr>
+<tr><td>
+
+[WorldLoopEventPayloads](./server.worldloopeventpayloads.md)
+
+
+</td><td>
+
+Event payloads for WorldLoop emitted events.
 
 
 </td></tr>

@@ -11,7 +11,7 @@ The UI for a player.
 ```typescript
 export default class PlayerUI extends EventRouter 
 ```
-**Extends:** [EventRouter](./server.eventrouter.md)
+**Extends:** EventRouter
 
 ## Remarks
 

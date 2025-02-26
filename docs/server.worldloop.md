@@ -11,7 +11,7 @@ Manages the tick loop for a world.
 ```typescript
 export default class WorldLoop extends EventRouter 
 ```
-**Extends:** [EventRouter](./server.eventrouter.md)
+**Extends:** EventRouter
 
 ## Remarks
 
