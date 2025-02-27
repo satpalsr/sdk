@@ -26,8 +26,8 @@
 import {
   startServer,
   Audio,
-  GameServer,
   PlayerEntity,
+  PlayerEvent,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -65,14 +65,18 @@ startServer(world => {
   world.loadMap(worldMap);
 
   /**
-   * Handle player joining the game. The onPlayerJoin
-   * function is called when a new player connects to
+   * Handle player joining the game. The PlayerEvent.JOINED_WORLD
+   * event is emitted to the world when a new player connects to
    * the game. From here, we create a basic player
    * entity instance which automatically handles mapping
    * their inputs to control their in-game entity and
    * internally uses our player entity controller.
+   * 
+   * The HYTOPIA SDK is heavily driven by events, you
+   * can find documentation on how the event system works,
+   * here: https://dev.hytopia.com/sdk-guides/events
    */
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -89,11 +93,11 @@ startServer(world => {
     world.chatManager.sendPlayerMessage(player, 'Press space to jump.');
     world.chatManager.sendPlayerMessage(player, 'Hold shift to sprint.');
     world.chatManager.sendPlayerMessage(player, 'Press \\ to enter or exit debug view.');
-  };
+  });
 
   /**
-   * Handle player leaving the game. The onPlayerLeave
-   * function is called when a player leaves the game.
+   * Handle player leaving the game. The PlayerEvent.LEFT_WORLD
+   * event is emitted to the world when a player leaves the game.
    * Because HYTOPIA is not opinionated on join and
    * leave game logic, we are responsible for cleaning
    * up the player and any entities associated with them
@@ -101,10 +105,14 @@ startServer(world => {
    * getting all the known PlayerEntity instances for
    * the player who left by using our world's EntityManager
    * instance.
+   * 
+   * The HYTOPIA SDK is heavily driven by events, you
+   * can find documentation on how the event system works,
+   * here: https://dev.hytopia.com/sdk-guides/events
    */
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 
   /**
    * A silly little easter egg command. When a player types

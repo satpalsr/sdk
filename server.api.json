@@ -28013,45 +28013,6 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!PlayerUI#onData:member",
-              "docComment": "/**\n * A function that is called when the player's client UI sends data to the server.\n *\n * @remarks\n *\n * Data sent is an object of any shape defined by you and controlled with invocations of `hytopia.ui.sendData()` from your loaded client UI files.\n *\n * @param playerUI - The PlayerUI instance that the data is from.\n *\n * @param data - The data sent from the client UI.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "onData?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(playerUI: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerUI",
-                  "canonicalReference": "server!PlayerUI:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", data: object) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "onData",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 4
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
               "canonicalReference": "server!PlayerUI#player:member",
               "docComment": "/**\n * The player that the UI belongs to.\n *\n * @readonly\n */\n",
               "excerptTokens": [
@@ -28153,6 +28114,27 @@
           "members": [
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!PlayerUIEvent.DATA:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "DATA = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_UI.DATA\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "DATA"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!PlayerUIEvent.LOAD:member",
               "docComment": "",
               "excerptTokens": [
@@ -28231,6 +28213,60 @@
           "name": "PlayerUIEventPayloads",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.DATA\":member",
+              "docComment": "/**\n * Emitted when data is received by the server from the player's client UI.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerUIEvent.DATA",
+                  "canonicalReference": "server!PlayerUIEvent.DATA:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        playerUI: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerUI",
+                  "canonicalReference": "server!PlayerUI:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        data: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, any>;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"PLAYER_UI.DATA\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.LOAD\":member",
@@ -28324,7 +28360,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "server!PlayerUIEventPayloads#\"PLAYER_UI.SEND_DATA\":member",
-              "docComment": "/**\n * Emitted when the player's client UI sends data to the server.\n */\n",
+              "docComment": "/**\n * Emitted when data is sent from the server to the player's client UI.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -28350,7 +28386,16 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ";\n        data: object;\n    }"
+                  "text": ";\n        data: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, any>;\n    }"
                 },
                 {
                   "kind": "Content",
@@ -28363,7 +28408,7 @@
               "name": "\"PLAYER_UI.SEND_DATA\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
-                "endIndex": 6
+                "endIndex": 8
               }
             }
           ],

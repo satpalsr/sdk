@@ -4,7 +4,7 @@ import {
   Player,
   PlayerEntity,
   PlayerEvent,
-  PlayerUI,
+  PlayerUIEvent,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -40,7 +40,8 @@ startServer(world => {
 
     // Handle data sent from player to server by client UI interactions we define. 
     // See the ui/index.html file for the UI code that sends the data.
-    player.ui.onData = (playerUI: PlayerUI, data: Record<string, any>) => {
+    player.ui.on(PlayerUIEvent.DATA, ({ playerUI, data }) => {
+      console.log('data', data);
       if (data.type === 'teleport') {
         const randomX = Math.random() * 40 - 20; // Random between -20 and 20
         const randomY = Math.random() * 13 + 2;  // Random between 2 and 15
@@ -48,7 +49,7 @@ startServer(world => {
 
         playerEntity.setPosition({ x: randomX, y: randomY, z: randomZ });
       }
-    };
+    });
   });
 
   world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {

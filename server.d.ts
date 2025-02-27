@@ -3593,19 +3593,6 @@ export declare interface PlayerManagerEventPayloads {
 export declare class PlayerUI extends EventRouter {
     /** The player that the UI belongs to. @readonly */
     readonly player: Player;
-    /**
-     * A function that is called when the player's client UI
-     * sends data to the server.
-     *
-     * @remarks
-     * Data sent is an object of any shape defined by you
-     * and controlled with invocations of  `hytopia.ui.sendData()`
-     * from your loaded client UI files.
-     *
-     * @param playerUI - The PlayerUI instance that the data is from.
-     * @param data - The data sent from the client UI.
-     */
-    onData?: (playerUI: PlayerUI, data: object) => void;
 
     /**
      * Loads client UI for the player.
@@ -3626,6 +3613,7 @@ export declare class PlayerUI extends EventRouter {
 
 /** Event types a PlayerUI can emit. See {@link PlayerUIEventPayloads} for the payloads. @public */
 export declare enum PlayerUIEvent {
+    DATA = "PLAYER_UI.DATA",
     LOAD = "PLAYER_UI.LOAD",
     LOCK_POINTER = "PLAYER_UI.LOCK_POINTER",
     SEND_DATA = "PLAYER_UI.SEND_DATA"
@@ -3633,6 +3621,11 @@ export declare enum PlayerUIEvent {
 
 /** Event payloads for PlayerUI emitted events. @public */
 export declare interface PlayerUIEventPayloads {
+    /** Emitted when data is received by the server from the player's client UI. */
+    [PlayerUIEvent.DATA]: {
+        playerUI: PlayerUI;
+        data: Record<string, any>;
+    };
     /** Emitted when the player's client UI is loaded. */
     [PlayerUIEvent.LOAD]: {
         playerUI: PlayerUI;
@@ -3643,10 +3636,10 @@ export declare interface PlayerUIEventPayloads {
         playerUI: PlayerUI;
         lock: boolean;
     };
-    /** Emitted when the player's client UI sends data to the server. */
+    /** Emitted when data is sent from the server to the player's client UI. */
     [PlayerUIEvent.SEND_DATA]: {
         playerUI: PlayerUI;
-        data: object;
+        data: Record<string, any>;
     };
 }
 

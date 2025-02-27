@@ -48,25 +48,6 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[onData?](./server.playerui.ondata.md)
-
-
-</td><td>
-
-
-</td><td>
-
-(playerUI: [PlayerUI](./server.playerui.md)<!-- -->, data: object) =&gt; void
-
-
-</td><td>
-
-_(Optional)_ A function that is called when the player's client UI sends data to the server.
-
-
-</td></tr>
-<tr><td>
-
 [player](./server.playerui.player.md)
 
 

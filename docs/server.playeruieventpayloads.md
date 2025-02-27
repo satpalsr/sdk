@@ -37,6 +37,25 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+["PLAYER\_UI.DATA"](./server.playeruieventpayloads._player_ui.data_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ playerUI: [PlayerUI](./server.playerui.md)<!-- -->; data: Record&lt;string, any&gt;; }
+
+
+</td><td>
+
+Emitted when data is received by the server from the player's client UI.
+
+
+</td></tr>
+<tr><td>
+
 ["PLAYER\_UI.LOAD"](./server.playeruieventpayloads._player_ui.load_.md)
 
 
@@ -83,12 +102,12 @@ Emitted when the player's mouse pointer is locked or unlocked.
 
 </td><td>
 
-{ playerUI: [PlayerUI](./server.playerui.md)<!-- -->; data: object; }
+{ playerUI: [PlayerUI](./server.playerui.md)<!-- -->; data: Record&lt;string, any&gt;; }
 
 
 </td><td>
 
-Emitted when the player's client UI sends data to the server.
+Emitted when data is sent from the server to the player's client UI.
 
 
 </td></tr>
