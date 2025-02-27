@@ -2,6 +2,8 @@ import {
   Audio,
   Entity,
   EntityOptions,
+  EntityEvent,
+  EventPayloads,
   PathfindingEntityController,
 } from 'hytopia';
 
@@ -70,8 +72,8 @@ export default class EnemyEntity extends Entity {
       });
     }
 
-    this.onEntityCollision = this._onEntityCollision;
-    this.onTick = this._onTick;
+    this.on(EntityEvent.ENTITY_COLLISION, this._onEntityCollision);
+    this.on(EntityEvent.TICK, this._onTick);
 
     this.setCcdEnabled(true);
   }
@@ -112,7 +114,9 @@ export default class EnemyEntity extends Entity {
     }
   }
 
-  private _onEntityCollision = (entity: Entity, otherEntity: Entity, started: boolean) => {
+  private _onEntityCollision = (payload: EventPayloads[EntityEvent.ENTITY_COLLISION]) => {
+    const { otherEntity, started } = payload;
+
     if (!started || !(otherEntity instanceof GamePlayerEntity)) {
       return;
     }
@@ -124,7 +128,9 @@ export default class EnemyEntity extends Entity {
    * Pathfinding is handled on an accumulator basis to prevent excessive pathfinding
    * or movement calculations. It defers to dumb movements 
    */
-  private _onTick = (entity: Entity, tickDeltaMs: number) => {
+  private _onTick = (payload: EventPayloads[EntityEvent.TICK]) => {
+    const { tickDeltaMs } = payload;
+
     if (!this.isSpawned) {
       return;
     }

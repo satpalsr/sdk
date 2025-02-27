@@ -2,7 +2,9 @@ import {
   startServer,
   ColliderShape,
   PlayerEntity,
+  PlayerEvent,
   Entity,
+  EntityEvent,
   RigidBodyType,
   GameServer,
   SimpleEntityController,
@@ -17,7 +19,7 @@ startServer(world => {
   // world.simulation.enableDebugRendering(true);
   
   world.loadMap(worldMap);
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -27,11 +29,11 @@ startServer(world => {
     });
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
-  };
+  });
 
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 
   /**
    * Spawn a block entity as a moving platform
@@ -46,7 +48,7 @@ startServer(world => {
   });
 
   // Clamp the z range the platform moves back and forth between
-  blockPlatform.onTick = blockPlatform => { 
+  blockPlatform.on(EntityEvent.TICK, () => { 
     const position = blockPlatform.position;
 
     if (position.z < -9) {
@@ -56,7 +58,7 @@ startServer(world => {
     if (position.z > 8) {
       blockPlatform.setLinearVelocity({ x: 0, y: 0, z: -3 });
     }
-  };
+  });
 
   blockPlatform.spawn(world, { x: 3, y: 3, z: -7 });
 
@@ -87,11 +89,11 @@ startServer(world => {
     blockHalfExtents: { x: 0.5, y: 0.5, z: 0.5 }, 
   });
 
-  movableBlock.onEntityCollision = (movableBlock, otherEntity, started) => {
+  movableBlock.on(EntityEvent.ENTITY_COLLISION, ({ started }) => {
     if (started) {
       world.chatManager.sendBroadcastMessage('The sand block was pushed!');
     }
-  };
+  });
 
   movableBlock.spawn(world, { x: -4, y: 10, z: -6 });
 
@@ -149,7 +151,7 @@ startServer(world => {
 
   // Simple pathfinding
   let pathfindAccumulator = 0;
-  blockPet.onTick = (blockPet, tickDeltaMs) => {
+  blockPet.on(EntityEvent.TICK, ({ tickDeltaMs }) => {
     pathfindAccumulator += tickDeltaMs;
 
     if (pathfindAccumulator > 3000) { // only pathfind every 3 seconds so we don't do unecessary pathfinding
@@ -172,5 +174,5 @@ startServer(world => {
       blockPetEntityController.move(targetPosition, 3);
       blockPetEntityController.face(targetPosition, 1);
     }
-  };
+  });
 });

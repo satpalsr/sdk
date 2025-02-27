@@ -69,7 +69,7 @@ payload
 
 </td><td>
 
-EventPayloads\[TEventType\]
+[EventPayloads](./server.eventpayloads.md)<!-- -->\[TEventType\]
 
 
 </td><td>

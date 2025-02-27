@@ -49,7 +49,7 @@ eventType
 
 </td><td>
 
-TEventType &amp; Exclude&lt;TEventType, keyof EventPayloads&gt;
+TEventType &amp; Exclude&lt;TEventType, keyof [EventPayloads](./server.eventpayloads.md)<!-- -->&gt;
 
 
 </td><td>

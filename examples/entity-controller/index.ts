@@ -1,6 +1,7 @@
 import {
   startServer,
   PlayerEntity,
+  PlayerEvent,
 } from 'hytopia';
 
 import MyEntityController from './MyEntityController';
@@ -17,7 +18,7 @@ startServer(world => {
 
   world.loadMap(worldMap);
 
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -30,9 +31,9 @@ startServer(world => {
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
     console.log('Spawned player entity!');
 
-  };
+  });
   
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 });

@@ -2,6 +2,7 @@ import {
   startServer,
   Entity,
   PlayerEntity,
+  PlayerEvent,
   Quaternion,
 } from 'hytopia';
 
@@ -11,7 +12,7 @@ startServer(world => {
   world.loadMap(worldMap);
 
   // Spawn a player entity when a player joins the game.
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -35,9 +36,9 @@ startServer(world => {
       { x: 0, y: 0.3, z: 0.5 }, // spawn with a position relative to the parent node
       Quaternion.fromEuler(-90, 0, 90), // spawn with a rotation so it looks correct in the hand
     );
-  };
+  });
 
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 });

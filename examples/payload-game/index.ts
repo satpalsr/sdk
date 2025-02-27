@@ -18,13 +18,16 @@
 
 import {
   Audio,
+  BaseEntityControllerEvent,
   BlockType,
   PlayerCameraMode,
   ColliderShape,
   CollisionGroup,
   PlayerEntityController,
   Entity,
+  EntityEvent,
   PlayerEntity,
+  PlayerEvent,
   RigidBodyType,
   SimpleEntityController,
   Vector3,
@@ -38,6 +41,7 @@ import type {
   PlayerCameraOrientation,
   QuaternionLike,
   Vector3Like,
+  EventPayloads,
 } from 'hytopia';
 
 import map from './assets/map.json';
@@ -99,7 +103,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
   world.loadMap(map);
 
   // Setup Player Join & Spawn Controlled Entity
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({ // Create an entity our newly joined player controls
       player,
       name: 'Player',
@@ -121,7 +125,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     playerEntity.spawn(world, randomSpawnCoordinate);
 
     // We need to do some custom logic for player inputs, so let's assign custom onTick handler to the default player controller.
-    playerEntity.controller!.onTickWithPlayerInput = onTickWithPlayerInput;
+    playerEntity.controller!.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, onTickWithPlayerInput);
 
     // Set custom collision groups for the player entity, this is so we can reference the PLAYER collision group
     // specifically in enemy collision sensors.
@@ -143,10 +147,10 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     if (!started) {
       chatManager.sendBroadcastMessage('Enter command /start to start the game!', 'FFFFFF');
     }
-  };
+  });
 
   // Setup Player Leave & Despawn Controlled Entity
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => {
       entity.despawn();
     });
@@ -154,7 +158,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     playerCount--;
 
     chatManager.sendBroadcastMessage(`Player ${player.username} has left the game!`, 'FFFFFF');
-  };
+  });
 
   // Spawn Payload
   spawnPayloadEntity(world);
@@ -229,13 +233,13 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
     },
   });
 
-  bullet.onBlockCollision = (bullet: Entity, block: BlockType, started: boolean) => { // If the bullet hits a block, despawn it
+  bullet.on(EntityEvent.BLOCK_COLLISION, ({  started }) => { // If the bullet hits a block, despawn it
     if (started) {
       bullet.despawn();
     }
-  };
+  });
 
-  bullet.onEntityCollision = (bullet: Entity, otherEntity: Entity, started: boolean) => { // If the bullet hits an enemy, deal damage if it is a Spider
+  bullet.on(EntityEvent.ENTITY_COLLISION, ({ otherEntity, started }) => { // If the bullet hits an enemy, deal damage if it is a Spider
     if (!started || otherEntity.name !== 'Spider') {
       return;
     }
@@ -261,7 +265,7 @@ function spawnBullet(world: World, coordinate: Vector3Like, direction: Vector3Li
     }
 
     bullet.despawn();
-  };
+  });
 
   bullet.spawn(world, coordinate);
 
@@ -317,7 +321,7 @@ function spawnPayloadEntity(world: World) {
     },
   });
 
-  payloadEntity.onTick = onTickPathfindPayload; // Use our own basic pathfinding function each tick of the game for the payload.
+  payloadEntity.on(EntityEvent.TICK, onTickPathfindPayload);
   payloadEntity.spawn(world, PAYLOAD_SPAWN_COORDINATE); // Spawn the payload at the designated spawn coordinate
 
   (new Audio({ // Play a looped idle sound that follows the payload spatially
@@ -367,19 +371,16 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
     },
   });
 
-  spider.onTick = (entity: Entity, tickDeltaMs: number) => onTickPathfindEnemy( // Use our own basic pathfinding function each tick of the game for the enemy
-    entity,
-    targetPlayers,
-    baseSpeed * randomScaleMultiplier,
-    tickDeltaMs,
-  );
+  spider.on(EntityEvent.TICK, ({ entity, tickDeltaMs }) => {
+    onTickPathfindEnemy(entity, targetPlayers, baseSpeed * randomScaleMultiplier, tickDeltaMs);
+  });
 
-  spider.onEntityCollision = (spider: Entity, entity: Entity, started: boolean) => { // If the spider hits a player, deal damage and apply knockback
-    if (started && entity instanceof PlayerEntity && entity.isSpawned) {
+  spider.on(EntityEvent.ENTITY_COLLISION, ({ otherEntity, started }) => {
+    if (started && otherEntity instanceof PlayerEntity && otherEntity.isSpawned) {
       const spiderDirection = spider.directionFromRotation;
       const knockback = 4 * randomScaleMultiplier;
 
-      entity.applyImpulse({
+      otherEntity.applyImpulse({
         x: -spiderDirection.x * knockback,
         y: 4,
         z: -spiderDirection.z * knockback,
@@ -392,9 +393,9 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
         referenceDistance: 8,
       })).play(world);
 
-      damagePlayer(entity);
+      damagePlayer(otherEntity);
     }
-  };
+  });
 
   spider.spawn(world, coordinate);
 
@@ -402,7 +403,8 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   enemyHealth[spider.id!] = 2 * Math.round(randomScaleMultiplier);
 }
 
-function onTickPathfindPayload(entity: Entity) { // Movement logic for the payload
+function onTickPathfindPayload(payload: EventPayloads[EntityEvent.TICK]) { // Movement logic for the payload
+  const entity = payload.entity;
   const speed = started // Set the payload speed relative to the number of players in the payload sensor
     ? Math.max(Math.min(PAYLOAD_PER_PLAYER_SPEED * payloadPlayerEntityCount, PAYLOAD_MAX_SPEED), 0)
     : 0;
@@ -472,7 +474,9 @@ function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, s
   enemyPathfindAccumulators[entityId]++;
 }
 
-function onTickWithPlayerInput(this: PlayerEntityController, entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, _deltaTimeMs: number) {
+function onTickWithPlayerInput(payload: EventPayloads[BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]) {
+  const { entity, input, cameraOrientation } = payload;
+
   if (!entity.world) return;
 
   if (input.ml) {

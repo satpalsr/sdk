@@ -48,8 +48,8 @@ export class PathfindingBehavior implements AgentBehavior {
 				).distance(finalPoint);
 
 				if (distanceToFinal < 3) {
-					agent.stopModelAnimations(["walk"]);
-					agent.startModelLoopedAnimations(["idle"]);
+					agent.stopModelAnimations(["walk_upper", "walk_lower"]);
+					agent.startModelLoopedAnimations(["idle_upper", "idle_lower"]);
 					if (this.targetEntity) {
 						agent.controller.face(
 							this.targetEntity.position,
@@ -75,8 +75,8 @@ export class PathfindingBehavior implements AgentBehavior {
 							this.targetEntity.position,
 							this.moveSpeed * 2
 						);
-						agent.stopModelAnimations(["walk"]);
-						agent.startModelLoopedAnimations(["idle"]);
+						agent.stopModelAnimations(["walk_upper", "walk_lower"]);
+						agent.startModelLoopedAnimations(["idle_upper", "idle_lower"]);
 
 						this.targetEntity = undefined;
 					}
@@ -111,15 +111,15 @@ export class PathfindingBehavior implements AgentBehavior {
 					moveIgnoreAxes: yDiff >= 0 ? { y: true } : undefined,
 				});
 				agent.controller.face(nextPoint, this.moveSpeed * 2);
-				agent.startModelLoopedAnimations(["walk"]);
+				agent.startModelLoopedAnimations(["walk_upper", "walk_lower"]);
 			}
 		} else if (this.path.length > 0) {
 			this.path = [];
 			this.currentPathIndex = 0;
 			this.isJumping = false;
 			this.jumpCooldown = 0;
-			agent.stopModelAnimations(["walk"]);
-			agent.startModelLoopedAnimations(["idle"]);
+			agent.stopModelAnimations(["walk_upper", "walk_lower"]);
+			agent.startModelLoopedAnimations(["idle_upper", "idle_lower"]);
 		}
 	}
 

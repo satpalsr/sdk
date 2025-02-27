@@ -37,7 +37,7 @@ eventType
 
 </td><td>
 
-keyof EventPayloads
+keyof [EventPayloads](./server.eventpayloads.md)
 
 
 </td><td>

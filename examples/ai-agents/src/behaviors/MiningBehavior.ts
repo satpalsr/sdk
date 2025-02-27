@@ -107,8 +107,8 @@ export class MiningBehavior implements AgentBehavior {
 			this.isMining = true;
 
 			// Start mining animation if available
-			agent.stopModelAnimations(["walk", "run"]);
-			agent.startModelLoopedAnimations(["idle"]); // Could be replaced with mining animation
+			agent.stopModelAnimations(["walk_upper", "walk_lower", "run_upper", "run_lower"]);
+			agent.startModelLoopedAnimations(["idle_upper", "idle_lower"]); // Could be replaced with mining animation
 
 			// Simulate mining time
 			setTimeout(() => {

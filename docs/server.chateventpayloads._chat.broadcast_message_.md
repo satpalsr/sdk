@@ -10,8 +10,8 @@ Emitted when a broadcast message is sent.
 
 ```typescript
 [ChatEvent.BROADCAST_MESSAGE]: {
+        player: Player | undefined;
         message: string;
         color?: string;
-        playerId?: string;
     };
 ```

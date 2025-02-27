@@ -3,6 +3,7 @@ import {
   Entity,
   PathfindingEntityController,
   PlayerEntity,
+  PlayerEvent,
   Quaternion,
   RigidBodyType,
   ColliderShape,
@@ -92,7 +93,7 @@ startServer(world => {
   });
 
   // Spawn a player entity when a player joins the game.
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -104,10 +105,10 @@ startServer(world => {
     world.chatManager.sendPlayerMessage(player, 'To make the zombie pathfind to you, enter: /pathfind', '00FF00');
 
     playerEntity.spawn(world, { x: 4, y: 3, z: 1 });
-  };
+  });
 
   // Despawn all player entities when a player leaves the game.
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 });

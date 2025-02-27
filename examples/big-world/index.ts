@@ -1,6 +1,7 @@
 import {
   startServer,
   PlayerEntity,
+  PlayerEvent,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -22,7 +23,7 @@ startServer(world => {
   world.loadMap(worldMap);
 
   // Spawn a player entity when a player joins the game.
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -32,10 +33,10 @@ startServer(world => {
     });
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
-  };
+  });
 
   // Despawn all player entities when a player leaves the game.
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 });

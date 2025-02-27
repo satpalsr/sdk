@@ -53,7 +53,7 @@ listener
 
 </td><td>
 
-(payload: EventPayloads\[TEventType\]) =&gt; void
+(payload: [EventPayloads](./server.eventpayloads.md)<!-- -->\[TEventType\]) =&gt; void
 
 
 </td><td>

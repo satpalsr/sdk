@@ -3,6 +3,7 @@ import {
   Audio,
   Player,
   PlayerEntity,
+  PlayerEvent,
   PlayerUI,
 } from 'hytopia';
 
@@ -14,7 +15,7 @@ const playerEntityMap = new Map<Player, PlayerEntity>();
 startServer(world => {
   world.loadMap(worldMap);
 
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     // Load the UI for the player.
     // This is loaded directly into a sandboxed iframe
     // overlaying the game. As long as it's an HTML file,
@@ -48,13 +49,13 @@ startServer(world => {
         playerEntity.setPosition({ x: randomX, y: randomY, z: randomZ });
       }
     };
-  };
+  });
 
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
     // Remove the player entity from our map for our list.
     playerEntityMap.delete(player);
-  };
+  });
 
   // Update the player list every 1 second, no need to send too frequently.
   // We want to balance not sending too much UI data too frequently, because

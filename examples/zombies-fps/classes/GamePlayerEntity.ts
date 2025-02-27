@@ -1,6 +1,8 @@
 import { 
   Audio,
+  BaseEntityControllerEvent,
   CollisionGroup,
+  EventPayloads,
   Light,
   LightType,
   Player,
@@ -65,7 +67,8 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.interactOneshotAnimations = [];
     this.playerController.walkLoopedAnimations = ['walk_lower' ];
     this.playerController.runLoopedAnimations = [ 'run_lower' ];
-    this.playerController.onTickWithPlayerInput = this._onTickWithPlayerInput;
+
+    this.playerController.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, this._onTickWithPlayerInput);
     
     // Setup UI
     this.player.ui.load('ui/index.html');
@@ -228,7 +231,9 @@ export default class GamePlayerEntity extends PlayerEntity {
     }, REVIVE_PROGRESS_INTERVAL_MS);
   }
 
-  private _onTickWithPlayerInput = (entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number) => {
+  private _onTickWithPlayerInput = (payload: EventPayloads[BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]) => {
+    const { input } = payload;
+
     if (!this._gun) {
       return;
     }

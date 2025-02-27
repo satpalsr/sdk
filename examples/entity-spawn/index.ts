@@ -2,7 +2,9 @@ import {
   startServer,
   ColliderShape,
   Entity,
+  EntityEvent,
   PlayerEntity,
+  PlayerEvent,
   RigidBodyType,
   World,
   Collider,
@@ -49,9 +51,9 @@ startServer(world => {
   });
 
   // A simple collision callback that logs when the spider collides with another Entity.
-  spider.onEntityCollision = (spider, otherEntity, started) => {
+  spider.on(EntityEvent.ENTITY_COLLISION, ({ otherEntity, started }) => {
     console.log('spider colliding with', otherEntity.name, started);
-  };
+  });
 
   spider.spawn(world, { x: 15, y: 10, z: 0 });
 });
@@ -66,7 +68,7 @@ function setup(world: World) {
   world.loadMap(worldMap);
 
   // Spawn a player entity when a player joins the game.
-  world.onPlayerJoin = player => {
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new PlayerEntity({
       player,
       name: 'Player',
@@ -76,10 +78,10 @@ function setup(world: World) {
     });
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
-  };
+  });
 
   // Despawn all player entities when a player leaves the game.
-  world.onPlayerLeave = player => {
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
     world.entityManager.getPlayerEntitiesByPlayer(player).forEach(entity => entity.despawn());
-  };
+  });
 }

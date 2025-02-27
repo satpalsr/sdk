@@ -4,11 +4,13 @@ import {
   Collider,
   ColliderShape,
   Entity,
+  EntityEvent,
   GameServer,
   RigidBodyType,
   startServer,
   Player,
   PlayerEntity,
+  PlayerEvent,
   SceneUI,
   World,
   CollisionGroup,
@@ -57,7 +59,7 @@ const GAME_PLAYER_ENTITIES = new Set<PlayerEntity>();
 let gameLevel = 1;
 let gameState: 'awaitingPlayers' | 'starting' | 'inProgress' = 'awaitingPlayers';
 let gameCountdownStartTime: number | null = null;
-let gameInterval: NodeJS.Timer;
+let gameInterval: NodeJS.Timeout;
 let gameStartTime: number | null = null;
 let gameUiState: object = {};
 
@@ -76,8 +78,8 @@ const gameInactiveAudio = new Audio({
 
 startServer(world => {
   world.loadMap(worldMap);
-  world.onPlayerJoin = player => onPlayerJoin(world, player);
-  world.onPlayerLeave = player => onPlayerLeave(world, player);
+  world.on(PlayerEvent.JOINED_WORLD, ({ player }) => onPlayerJoin(world, player));
+  world.on(PlayerEvent.LEFT_WORLD, ({ player }) => onPlayerLeave(world, player));
 
   spawnJoinNpc(world);
   gameInactiveAudio.play(world);
@@ -107,11 +109,11 @@ function onPlayerJoin(world: World, player: Player) {
     collidesWith: [CollisionGroup.BLOCK, GAME_CONFIG.WALL_COLLISION_GROUP],
   });
 
-  playerEntity.onTick = () => {
+  playerEntity.on(EntityEvent.TICK, () => {
     if (playerEntity.position.y < 5) {
       killPlayer(playerEntity);
     }
-  }
+  });
 }
 
 function onPlayerLeave(world: World, player: Player) {
@@ -343,7 +345,7 @@ function generateWall(world: World, direction: GameWallDirection, speedModifier:
         z: GAME_CONFIG.WALL_VELOCITIES[direction].z * speedModifier,
       });
 
-      wallSegment.onTick = () => {
+      wallSegment.on(EntityEvent.TICK, () => {
         if (!wallSegment.isSpawned) return;
         const position = wallSegment.position;
 
@@ -357,7 +359,7 @@ function generateWall(world: World, direction: GameWallDirection, speedModifier:
             }
           }, 1000);
         }
-      }
+      });
     }
   }
 }

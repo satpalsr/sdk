@@ -1,5 +1,7 @@
 import type { AnyPacket } from '@hytopia.com/server-protocol';
+import type { ErrorEvent as ErrorEvent_2 } from 'ws';
 import EventEmitter from 'eventemitter3';
+import http from 'http';
 import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
 import type { IPacket } from '@hytopia.com/server-protocol';
@@ -7,6 +9,7 @@ import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/get
 import protocol from '@hytopia.com/server-protocol';
 import RAPIER from '@dimforge/rapier3d-compat-simd';
 import { SdpMatrix3 } from '@dimforge/rapier3d-compat-simd';
+import type { Socket } from 'net';
 import { WebSocket as WebSocket_2 } from 'ws';
 
 /**
@@ -612,9 +615,9 @@ export declare enum ChatEvent {
 export declare interface ChatEventPayloads {
     /** Emitted when a broadcast message is sent. */
     [ChatEvent.BROADCAST_MESSAGE]: {
+        player: Player | undefined;
         message: string;
         color?: string;
-        playerId?: string;
     };
     /** Emitted when a message is sent to a specific player. */
     [ChatEvent.PLAYER_MESSAGE]: {
@@ -1718,6 +1721,14 @@ export declare interface EntityOptions {
     tag?: string;
     /** The tint color of the entity as a hex code. */
     tintColor?: RgbColor;
+}
+
+/**
+ * The payloads for all events in the game server.
+ *
+ * @public
+ */
+export declare interface EventPayloads extends AudioEventPayloads, BaseEntityControllerEventPayloads, BlockTypeEventPayloads, BlockTypeRegistryEventPayloads, ChatEventPayloads, ChunkEventPayloads, ConnectionEventPayloads, EntityEventPayloads, GameServerEventPayloads, PlayerCameraEventPayloads, PlayerEventPayloads, PlayerManagerEventPayloads, PlayerUIEventPayloads, SceneUIEventPayloads, SimulationEventPayloads, SocketEventPayloads, LightEventPayloads, WebServerEventPayloads, WorldEventPayloads, WorldLoopEventPayloads {
 }
 
 /**

@@ -89,8 +89,8 @@ export class FishingBehavior implements AgentBehavior {
 			this.isFishing = true;
 
 			// Start fishing animation if available
-			agent.stopModelAnimations(["walk", "run"]);
-			agent.startModelLoopedAnimations(["idle"]); // Could be replaced with a fishing animation
+			agent.stopModelAnimations(["walk_upper", "walk_lower", "run_upper", "run_lower"]);
+			agent.startModelLoopedAnimations(["idle_upper", "idle_lower"]); // Could be replaced with a fishing animation
 
 			// Simulate fishing time
 			setTimeout(() => {

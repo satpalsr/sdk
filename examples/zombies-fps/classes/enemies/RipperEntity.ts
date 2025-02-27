@@ -1,8 +1,9 @@
 import { GameServer, PathfindingEntityController } from 'hytopia';
-import type { GamePlayerEntity, QuaternionLike, Vector3Like, World } from 'hytopia';
+import type { QuaternionLike, Vector3Like, World } from 'hytopia';
 
 import EnemyEntity from '../EnemyEntity';
 import type { EnemyEntityOptions } from '../EnemyEntity';
+import type GamePlayerEntity from '../GamePlayerEntity';
 
 export default class RipperEntity extends EnemyEntity {
   public constructor(options: Partial<EnemyEntityOptions> = {}) {

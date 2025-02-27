@@ -26,10 +26,10 @@
 import {
 	startServer,
 	Audio,
-	GameServer,
-	PlayerEntity,
-	World,
+	ChatEvent,
 	Player,
+	PlayerEntity,
+	PlayerEvent,
 	Vector3,
 } from "hytopia";
 
@@ -93,7 +93,7 @@ startServer((world) => {
 	 * their inputs to control their in-game entity and
 	 * internally uses our player entity controller.
 	 */
-	world.onPlayerJoin = (player) => {
+	world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
 		const playerEntity = new PlayerEntity({
 			player,
 			name: "Player",
@@ -126,7 +126,7 @@ startServer((world) => {
 				lastThought: agent.getLastMonologue() || "Idle",
 			})),
 		});
-	};
+	});
 
 	/**
 	 * Handle player leaving the game. The onPlayerLeave
@@ -139,11 +139,11 @@ startServer((world) => {
 	 * the player who left by using our world's EntityManager
 	 * instance.
 	 */
-	world.onPlayerLeave = (player) => {
+	world.on(PlayerEvent.LEFT_WORLD, ({ player }) => {
 		world.entityManager
 			.getPlayerEntitiesByPlayer(player)
 			.forEach((entity) => entity.despawn());
-	};
+	});
 
 	/**
 	 * Play some peaceful ambient music to
@@ -289,11 +289,7 @@ startServer((world) => {
 	 * Instead of a chat command, we can override the chat message broadcast
 	 * to automatically respond to the player.
 	 */
-	world.chatManager.onBroadcastMessage = (
-		player: Player | undefined,
-		message: string,
-		color?: string
-	) => {
+	world.chatManager.on(ChatEvent.BROADCAST_MESSAGE, ({ player, message }) => {
 		const agents = world.entityManager
 			.getAllEntities()
 			.filter((entity) => entity instanceof BaseAgent) as BaseAgent[];
@@ -346,5 +342,5 @@ startServer((world) => {
 				});
 			}
 		});
-	};
+	});
 });

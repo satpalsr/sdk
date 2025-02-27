@@ -871,6 +871,17 @@ Options for creating an Entity instance.
 </td></tr>
 <tr><td>
 
+[EventPayloads](./server.eventpayloads.md)
+
+
+</td><td>
+
+The payloads for all events in the game server.
+
+
+</td></tr>
+<tr><td>
+
 [GameServerEventPayloads](./server.gameservereventpayloads.md)
 
 

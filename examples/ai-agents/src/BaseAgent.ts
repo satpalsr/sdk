@@ -3,6 +3,7 @@
  */
 import {
 	Entity,
+	EntityEvent,
 	Player,
 	Vector3,
 	World,
@@ -79,7 +80,7 @@ export class BaseAgent extends Entity {
 		super({
 			name: options.name || "BaseAgent",
 			modelUri: "models/players/player.gltf",
-			modelLoopedAnimations: ["idle"],
+			modelLoopedAnimations: ["idle_upper", "idle_lower"],
 			modelScale: 0.5,
 			controller: new SimpleEntityController(),
 			rigidBodyOptions: {
@@ -88,7 +89,8 @@ export class BaseAgent extends Entity {
 			},
 		});
 
-		this.onTick = this.onTickBehavior;
+		this.on(EntityEvent.TICK, this.onTickBehavior);
+
 		this.systemPrompt = options.systemPrompt;
 		this.openai = new OpenAI({
 			apiKey: process.env.OPENAI_API_KEY,

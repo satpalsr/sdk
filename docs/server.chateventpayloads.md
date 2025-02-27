@@ -45,7 +45,7 @@ Description
 
 </td><td>
 
-{ message: string; color?: string; playerId?: string; }
+{ player: [Player](./server.player.md) \| undefined; message: string; color?: string; }
 
 
 </td><td>
