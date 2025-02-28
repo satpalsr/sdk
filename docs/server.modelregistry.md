@@ -74,6 +74,44 @@ The global ModelRegistry instance as a singleton.
 
 
 </td></tr>
+<tr><td>
+
+[optimize](./server.modelregistry.optimize.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether to use optimized models when they are loaded.
+
+
+</td></tr>
+<tr><td>
+
+[optimizeEveryStart](./server.modelregistry.optimizeeverystart.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether to always run model optimization on server start.
+
+
+</td></tr>
 </tbody></table>
 
 ## Methods

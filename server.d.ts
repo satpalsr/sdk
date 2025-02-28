@@ -2810,6 +2810,10 @@ declare type ModelBoundingBox = {
 export declare class ModelRegistry {
     /** The global ModelRegistry instance as a singleton. */
     static readonly instance: ModelRegistry;
+    /** Whether to use optimized models when they are loaded. */
+    optimize: boolean;
+    /** Whether to always run model optimization on server start. */
+    optimizeEveryStart: boolean;
 
 
 
@@ -2844,6 +2848,12 @@ export declare class ModelRegistry {
      * @returns Whether the model has a node with the given name.
      */
     modelHasNode(modelUri: string, nodeName: string): boolean;
+
+
+
+
+
+
 
 
 }

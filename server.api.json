@@ -22658,6 +22658,66 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "modelHasNode"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!ModelRegistry#optimize:member",
+              "docComment": "/**\n * Whether to use optimized models when they are loaded.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "optimize: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "optimize",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!ModelRegistry#optimizeEveryStart:member",
+              "docComment": "/**\n * Whether to always run model optimization on server start.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "optimizeEveryStart: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "optimizeEveryStart",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             }
           ],
           "implementsTokenRanges": []
