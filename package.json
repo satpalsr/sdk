@@ -46,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/hytopiagg/sdk/issues"
   },
-  "homepage": "https://github.com/hytopiagg/sdk#readme"
+  "homepage": "https://github.com/hytopiagg/sdk#readme",
+  "dependencies": {
+    "@gltf-transform/cli": "4.1.1"
+  }
 }
