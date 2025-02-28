@@ -34,6 +34,7 @@ import {
   World,
   startServer,
   Collider,
+  Quaternion,
 } from 'hytopia';
 
 import type {
@@ -107,11 +108,12 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     const playerEntity = new PlayerEntity({ // Create an entity our newly joined player controls
       player,
       name: 'Player',
-      modelUri: 'models/player-with-gun.gltf',
-      modelLoopedAnimations: [ 'idle' ],
+      modelUri: 'models/soldier-player.gltf',
+      modelLoopedAnimations: [ 'idle_lower', 'idle_gun_right' ],
       modelScale: 0.5,
     });
 
+    
     player.ui.load('ui/index.html');
 
     // Setup a first person camera for the player
@@ -124,8 +126,15 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     const randomSpawnCoordinate = PLAYER_SPAWN_COORDINATES[Math.floor(Math.random() * PLAYER_SPAWN_COORDINATES.length)];
     playerEntity.spawn(world, randomSpawnCoordinate);
 
+    // Override default model animations
+    const playerController = playerEntity.controller as PlayerEntityController;
+    playerController.idleLoopedAnimations = [ 'idle_lower', 'idle_gun_right' ];
+    playerController.interactOneshotAnimations = [];
+    playerController.walkLoopedAnimations = ['walk_lower', 'idle_gun_right' ];
+    playerController.runLoopedAnimations = [ 'run_lower', 'idle_gun_right' ];
+
     // We need to do some custom logic for player inputs, so let's assign custom onTick handler to the default player controller.
-    playerEntity.controller!.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, onTickWithPlayerInput);
+    playerController.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, onTickWithPlayerInput);
 
     // Set custom collision groups for the player entity, this is so we can reference the PLAYER collision group
     // specifically in enemy collision sensors.
@@ -133,6 +142,16 @@ startServer(world => { // Perform our game setup logic in the startServer init c
       belongsTo: [ CollisionGroup.ENTITY, CollisionGroup.PLAYER ],
       collidesWith: [ CollisionGroup.ALL ],
     });
+
+    // Spawn gun as child entity
+    const gun = new Entity({
+      modelUri: 'models/raygun.gltf',
+      modelScale: 0.04,
+      parent: playerEntity,
+      parentNodeName: 'hand_right_anchor',
+    });
+
+    gun.spawn(world, { x: 0, y: 0, z: 0.1 }, Quaternion.fromEuler(-90, 0, 0));
 
     // Initialize player health
     playerEntityHealth[playerEntity.id!] = 20;
@@ -493,7 +512,7 @@ function onTickWithPlayerInput(payload: EventPayloads[BaseEntityControllerEvent.
     // Normalize the direction vector to unit length
     direction.normalize();
 
-    entity.startModelOneshotAnimations([ 'shoot' ]);
+    entity.startModelOneshotAnimations([ 'shoot_gun_right' ]);
 
     // Adjust bullet origin roughly for camera offset so crosshair is accurate
     const bulletOrigin = entity.position;
