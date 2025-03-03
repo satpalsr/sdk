@@ -16,6 +16,8 @@ export default class PersistenceManager
 
 This class is a singleton accessible with the static property `PersistenceManager.instance`<!-- -->. Convenience methods are also available on the `Player` and `GameServer` classes.
 
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PersistenceManager` class.
+
 ## Properties
 
 <table><thead><tr><th>

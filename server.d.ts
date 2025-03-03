@@ -3013,6 +3013,7 @@ export declare type PathfindingOptions = {
  */
 export declare class PersistenceManager {
     static readonly instance: PersistenceManager;
+
     /**
      * Get global data from the data persistence service.
      * @param key - The key to get the data from.
@@ -3060,6 +3061,7 @@ export declare class PersistenceManager {
  * @public
  */
 export declare class Player extends EventRouter implements protocol.Serializable {
+
     /** The unique HYTOPIA UUID for the player. */
     readonly id: string;
     /** The unique HYTOPIA username for the player. */
