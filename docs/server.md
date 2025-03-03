@@ -250,6 +250,17 @@ A pathfinding entity controller built on top of [SimpleEntityController](./serve
 </td></tr>
 <tr><td>
 
+[PersistenceManager](./server.persistencemanager.md)
+
+
+</td><td>
+
+Manages persistence of player and global data.
+
+
+</td></tr>
+<tr><td>
+
 [Player](./server.player.md)
 
 

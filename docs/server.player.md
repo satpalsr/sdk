@@ -231,6 +231,20 @@ Disconnects the player from the game server.
 </td></tr>
 <tr><td>
 
+[getPersistedData()](./server.player.getpersisteddata.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the persisted data for the player.
+
+
+</td></tr>
+<tr><td>
+
 [joinWorld(world)](./server.player.joinworld.md)
 
 
@@ -254,6 +268,20 @@ Joins a player to a world.
 </td><td>
 
 Removes the player from the current [World](./server.world.md) they are in.
+
+
+</td></tr>
+<tr><td>
+
+[setPersistedData(data)](./server.player.setpersisteddata.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Set the persisted data for the player. This data can later be retrieved using [Player.getPersistedData()](./server.player.getpersisteddata.md)<!-- -->, even if a player disconnects and rejoin a game in the future, or joins a different HYTOPIA managed lobby of your game.
 
 
 </td></tr>

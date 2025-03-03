@@ -3002,6 +3002,49 @@ export declare type PathfindingOptions = {
 };
 
 /**
+ * Manages persistence of player and global data.
+ *
+ * @remarks
+ * This class is a singleton accessible with the static property
+ * `PersistenceManager.instance`. Convenience methods are also
+ * available on the `Player` and `GameServer` classes.
+ *
+ * @public
+ */
+export declare class PersistenceManager {
+    static readonly instance: PersistenceManager;
+    /**
+     * Get global data from the data persistence service.
+     * @param key - The key to get the data from.
+     * @returns The data from the persistence layer.
+     */
+    getGlobalData(key: string): Promise<Record<string, unknown> | void>;
+    /**
+     * Get player data from the data persistence service.
+     * @param player - The player to get the data from.
+     * @returns The data from the persistence layer.
+     */
+    getPlayerData(player: Player): Promise<Record<string, unknown> | void>;
+    /**
+     * Set global data in the data persistence service. This
+     * data is available and shared by all lobbies of your game.
+     * @param key - The key to set the data to.
+     * @param data - The data to set.
+     */
+    setGlobalData(key: string, data: Record<string, unknown>): Promise<Record<string, unknown> | void>;
+    /**
+     * Set player data in the data persistence service. This
+     * data is persisted even after a player disconnects, and
+     * is retrievable no matter the lobby for your game that
+     * they join.
+     * @param player - The player to set the data to.
+     * @param data - The data to set.
+     */
+    setPlayerData(player: Player, data: Record<string, unknown>): Promise<Record<string, unknown> | void>;
+
+}
+
+/**
  * A player in the game.
  *
  * @remarks
@@ -3036,6 +3079,20 @@ export declare class Player extends EventRouter implements protocol.Serializable
     /** The current {@link World} the player is in. */
     get world(): World | undefined;
     /**
+     * Disconnects the player from the game server.
+     */
+    disconnect(): void;
+    /**
+     * Get the persisted data for the player.
+     *
+     * @remarks
+     * This method is asynchronous and returns a promise that
+     * resolves to the player data.
+     *
+     * @returns The persisted data for the player.
+     */
+    getPersistedData(): Promise<Record<string, unknown> | void>;
+    /**
      * Joins a player to a world.
      *
      * @remarks
@@ -3051,9 +3108,19 @@ export declare class Player extends EventRouter implements protocol.Serializable
      */
     leaveWorld(): void;
     /**
-     * Disconnects the player from the game server.
+     * Set the persisted data for the player. This data can
+     * later be retrieved using {@link Player.getPersistedData},
+     * even if a player disconnects and rejoin a game in the future,
+     * or joins a different HYTOPIA managed lobby of your game.
+     *
+     * @remarks
+     * This method is asynchronous and returns a promise that
+     * resolves to the player data.
+     *
+     * @param data - The data to set.
+     * @returns The persisted data for the player.
      */
-    disconnect(): void;
+    setPersistedData(data: Record<string, unknown>): Promise<Record<string, unknown> | void>;
 
 
 
