@@ -1,0 +1,424 @@
+<!-- Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arial&display=swap" rel="stylesheet">
+
+<!-- UI-->
+<div class="crosshair"></div>
+
+<div class="hud">  
+  <div class="info-container">
+    <div class="ammo-indicator" style="display: none;">
+      <img src="{{CDN_ASSETS_URL}}/icons/ammo.png" alt="Ammo Icon" class="ammo-icon">
+      <span class="current-ammo">30</span>
+      <span class="ammo-divider">/</span>
+      <span class="total-ammo">30</span>
+    </div>
+    <div class="health-bar">
+      <div class="health-bar-fill"></div>
+      <img src="{{CDN_ASSETS_URL}}/icons/heart.png" alt="Health Icon" class="health-icon">
+      <div class="health-text">100</div>
+    </div>
+  </div>
+</div>
+
+<div class="inventory-hud">
+  <div class="inventory-slot" data-slot="1">
+    <div class="slot-number">1</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+  
+  <div class="inventory-slot" data-slot="2">
+    <div class="slot-number">2</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+  
+  <div class="inventory-slot" data-slot="3">
+    <div class="slot-number">3</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+  
+  <div class="inventory-slot" data-slot="4">
+    <div class="slot-number">4</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+
+  <div class="inventory-slot" data-slot="5">
+    <div class="slot-number">5</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+</div>
+
+<!-- Scene UI Templates -->
+<template id="item-label-template">
+  <div class="item-label">
+    <div class="label-quantity"></div>
+    <div class="label-name"></div>
+    <div class="label-prompt">"E" to Pickup</div>
+    <div class="label-caret"></div>
+  </div>
+</template>
+
+<!-- UI Scripts-->
+<script>
+  const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
+
+  hytopia.registerSceneUITemplate('item-label', (id, onState) => {
+    const template = document.getElementById('item-label-template');
+    const clone = template.content.cloneNode(true);
+    const labelName = clone.querySelector('.label-name');
+    const labelQuantity = clone.querySelector('.label-quantity');
+
+    onState(state => {
+      if (state.name) {
+        labelName.textContent = state.name;
+      }
+
+      if (state.quantity !== undefined) {
+        labelQuantity.textContent = state.quantity;
+      }
+    });
+
+    return clone;
+  });
+
+  hytopia.onData(data => {
+    const { type } = data;
+
+    if (!type) {
+      return console.warn('No type received for data', data);
+    }
+
+    if (type === 'ammo-indicator') {
+      const { ammo, totalAmmo, show, reloading } = data;
+
+      if (show !== undefined) {
+        const ammoIndicator = document.querySelector('.ammo-indicator');
+        ammoIndicator.style.display = show ? 'block' : 'none';
+      }
+
+      if (reloading !== undefined) {
+        const currentAmmo = document.querySelector('.current-ammo');
+        currentAmmo.textContent = reloading ? '...' : ammo;
+      }
+
+      if (ammo !== undefined) {
+        const currentAmmo = document.querySelector('.current-ammo');
+        currentAmmo.textContent = ammo;
+      }
+
+      if (totalAmmo !== undefined) {
+        const totalAmmoElement = document.querySelector('.total-ammo');
+        totalAmmoElement.textContent = totalAmmo;
+      }
+    }
+
+    if (type === 'inventory') {
+      const { inventory } = data;
+      
+      inventory.forEach((item, i) => {
+        const slot = document.querySelector(`.inventory-slot[data-slot="${i+1}"]`);
+        const icon = slot.querySelector('.slot-icon');
+        const name = slot.querySelector('.slot-name');
+        const quantity = slot.querySelector('.slot-quantity');
+        
+        icon.style.display = item ? 'block' : 'none';
+        name.style.display = item ? 'block' : 'none';
+        quantity.style.display = item ? 'block' : 'none';
+
+        if (!item) {
+          return;
+        }
+
+        icon.src = `${CDN_ASSETS_URL}/${item.iconImageUri}`;
+        name.textContent = item.name;
+        quantity.textContent = item.quantity;
+      });
+    }
+
+    if (type === 'inventory-active-slot') {
+      const { index } = data;
+      
+      // Remove active slot class from all slots
+      document.querySelectorAll('.inventory-slot').forEach(slot => {
+        slot.classList.remove('inventory-active-slot');
+      });
+
+      // Add active slot class to selected slot
+      const activeSlot = document.querySelector(`.inventory-slot[data-slot="${index + 1}"]`);
+      if (activeSlot) {
+        activeSlot.classList.add('inventory-active-slot');
+      }
+    }
+
+    if (type === 'inventory-quantity-update') {
+      const { index, quantity } = data;
+
+      const slot = document.querySelector(`.inventory-slot[data-slot="${index + 1}"]`);
+      const quantityElement = slot.querySelector('.slot-quantity');
+
+      quantityElement.textContent = quantity;
+    }
+  });
+</script>
+
+<!-- UI Styles -->
+<style>
+  .crosshair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .crosshair::before,
+  .crosshair::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .crosshair::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .crosshair::after {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hud {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .ammo-indicator {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .ammo-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    position: relative;
+    top: 2px;
+  }
+
+  .ammo-divider {
+    margin: 0 5px;
+    opacity: 0.7;
+  }
+
+  .inventory-hud {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 99;
+  }
+
+  .inventory-slot {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .inventory-active-slot {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .slot-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  .slot-icon {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+  }
+
+  .slot-quantity {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  
+  .slot-name {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+  }
+
+  .info-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .health-bar {
+    width: 250px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .health-bar-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff0000, #ff3333);
+    transition: width 0.3s ease;
+  }
+
+  .health-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 12px;
+    z-index: 1;
+  }
+
+  .health-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+
+  .item-label {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    max-width: 220px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .label-name {
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+
+  .label-quantity {
+    position: absolute;
+    top: -12px;
+    right: -20px;
+    background: #ffb700;
+    color: black;
+    font-weight: bold;
+    padding: 2px 4px;
+    font-size: 14px;
+    text-transform: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    border: 1px solid #ffffff;
+  }
+
+  .label-prompt {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .label-caret {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(0, 0, 0, 0.6);
+  }
+
+  #chat-window {
+    width: 25% !important;
+  }
+</style>
