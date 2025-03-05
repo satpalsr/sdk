@@ -1,0 +1,113 @@
+import {
+  Audio,
+  Entity,
+  Quaternion,
+  RaycastHit,
+  Vector3Like,
+} from 'hytopia';
+
+import ItemEntity from './ItemEntity';
+import type { ItemEntityOptions } from './ItemEntity';
+import type GamePlayerEntity from './GamePlayerEntity';
+
+export interface MeleeWeaponEntityOptions extends ItemEntityOptions {
+  damage: number;           // The damage dealt by the weapon
+  attackRate: number;       // Attacks per second
+  range: number;            // The range of the melee attack
+  attackAudioUri: string;   // The audio played when attacking
+}
+
+export default abstract class MeleeWeaponEntity extends ItemEntity {
+  protected readonly damage: number;
+  protected readonly attackRate: number;
+  protected readonly range: number;
+
+  private _lastAttackTime: number = 0;
+  private _attackAudio: Audio;
+
+  public constructor(options: MeleeWeaponEntityOptions) {
+    if (!options.modelUri) {
+      throw new Error('MeleeWeaponEntity requires modelUri');
+    }
+
+    super(options);
+
+    this.damage = options.damage;
+    this.attackRate = options.attackRate;
+    this.range = options.range;
+
+    this._attackAudio = new Audio({
+      attachedToEntity: this,
+      uri: options.attackAudioUri,
+      volume: 0.3,
+      referenceDistance: 8,
+    });
+  }
+
+  public override equip(): void {
+    if (!this.world) return;
+    
+    super.equip();
+    
+    this.setRotation(Quaternion.fromEuler(-90, 0, 0));
+  }
+
+  public attack(): void {
+    if (!this.parent?.world) return;
+
+    const player = this.parent as GamePlayerEntity;
+    const { origin, direction } = this.getAttackOriginDirection();
+    
+    this._performAttackEffects(player);
+    this.attackRaycast(origin, direction, this.range);
+  }
+
+  protected getAttackOriginDirection(): { origin: Vector3Like, direction: Vector3Like } {
+    const player = this.parent as GamePlayerEntity;
+    const { x, y, z } = player.position;
+    const cameraYOffset = player.player.camera.offset.y;    
+    const direction = player.player.camera.facingDirection;
+    
+    return {
+      origin: {
+        x: x + (direction.x * 0.5),
+        y: y + (direction.y * 0.5) + cameraYOffset,
+        z: z + (direction.z * 0.5),
+      },
+      direction
+    };
+  }
+
+  protected processAttack(): boolean {
+    const now = performance.now();
+    if (this._lastAttackTime && now - this._lastAttackTime < 1000 / this.attackRate) return false;
+
+    this._lastAttackTime = now;
+    return true;
+  }
+
+  protected attackRaycast(origin: Vector3Like, direction: Vector3Like, length: number): RaycastHit | null | undefined {
+    if (!this.parent?.world) return;
+   
+    const raycastHit = this.parent.world.simulation.raycast(origin, direction, length);
+
+    if (raycastHit?.hitBlock) {
+
+    }
+
+    if (raycastHit?.hitEntity) {
+      this._handleHitEntity(raycastHit.hitEntity);
+    }
+
+    return raycastHit;
+  }
+
+  private _performAttackEffects(player: GamePlayerEntity): void {
+    player.startModelOneshotAnimations([ this.mlAnimation ]);
+    this._attackAudio.play(this.parent!.world!, true);
+  }
+
+  protected _handleHitEntity(hitEntity: Entity): void {
+    // Override in subclasses to handle hit entity logic
+  }
+}

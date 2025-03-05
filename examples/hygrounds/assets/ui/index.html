@@ -23,6 +23,13 @@
 </div>
 
 <div class="inventory-hud">
+  <div class="inventory-slot inventory-active-slot" data-slot="0">
+    <div class="slot-number">F</div>
+    <img class="slot-icon" style="display: none;">
+    <div class="slot-quantity" style="display: none;"></div>
+    <div class="slot-name" style="display: none;"></div>
+  </div>
+
   <div class="inventory-slot" data-slot="1">
     <div class="slot-number">1</div>
     <img class="slot-icon" style="display: none;">
@@ -85,7 +92,7 @@
       }
 
       if (state.quantity !== undefined) {
-        labelQuantity.textContent = state.quantity;
+        labelQuantity.textContent = state.quantity !== -1 ? state.quantity : '∞';
       }
     });
 
@@ -127,7 +134,7 @@
       const { inventory } = data;
       
       inventory.forEach((item, i) => {
-        const slot = document.querySelector(`.inventory-slot[data-slot="${i+1}"]`);
+        const slot = document.querySelector(`.inventory-slot[data-slot="${i}"]`);
         const icon = slot.querySelector('.slot-icon');
         const name = slot.querySelector('.slot-name');
         const quantity = slot.querySelector('.slot-quantity');
@@ -142,7 +149,7 @@
 
         icon.src = `${CDN_ASSETS_URL}/${item.iconImageUri}`;
         name.textContent = item.name;
-        quantity.textContent = item.quantity;
+        quantity.textContent = item.quantity !== -1 ? item.quantity : '∞';
       });
     }
 
@@ -155,7 +162,7 @@
       });
 
       // Add active slot class to selected slot
-      const activeSlot = document.querySelector(`.inventory-slot[data-slot="${index + 1}"]`);
+      const activeSlot = document.querySelector(`.inventory-slot[data-slot="${index}"]`);
       if (activeSlot) {
         activeSlot.classList.add('inventory-active-slot');
       }
@@ -164,7 +171,7 @@
     if (type === 'inventory-quantity-update') {
       const { index, quantity } = data;
 
-      const slot = document.querySelector(`.inventory-slot[data-slot="${index + 1}"]`);
+      const slot = document.querySelector(`.inventory-slot[data-slot="${index}"]`);
       const quantityElement = slot.querySelector('.slot-quantity');
 
       quantityElement.textContent = quantity;
@@ -233,6 +240,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
     gap: 10px;
   }
 
@@ -389,7 +397,7 @@
   .label-quantity {
     position: absolute;
     top: -12px;
-    right: -20px;
+    right: -10px;
     background: #ffb700;
     color: black;
     font-weight: bold;

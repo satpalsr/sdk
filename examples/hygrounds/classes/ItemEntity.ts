@@ -4,7 +4,6 @@ import {
   Entity,
   EntityOptions,
   PlayerEntityController,
-  Quaternion,
   QuaternionLike,
   SceneUI,
   Vector3Like,
@@ -12,6 +11,8 @@ import {
 } from 'hytopia';
 
 import GamePlayerEntity from './GamePlayerEntity';
+
+const INVENTORIED_POSITION = { x: 0, y: -300, z: 0 };
 
 export type HeldHand = 'left' | 'right' | 'both';
 
@@ -72,16 +73,27 @@ export default class ItemEntity extends Entity {
 
     this._updateVisualEffects();
   }
+
+  public equip() {
+    this.setParentAnimations();
+  }
+
+  public unequip() {
+    this.setPosition(INVENTORIED_POSITION);
+
+    if (this.parent instanceof GamePlayerEntity) {
+      this.parent.resetAnimations();
+    }
+  }
   
   public getQuantity(): number {
-    return 1;
+    return -1;
   }
 
   public pickup(player: GamePlayerEntity): void {
     if (!player.world) return;
 
-    this.setParent(player, ItemEntity._getHandAnchorNode(this.heldHand));
-    this.setParentAnimations();
+    this.setParent(player, ItemEntity._getHandAnchorNode(this.heldHand), INVENTORIED_POSITION);
     this._updateVisualEffects();
     
     player.addItemToInventory(this);

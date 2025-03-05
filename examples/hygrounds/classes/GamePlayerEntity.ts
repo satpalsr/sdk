@@ -13,9 +13,11 @@ import {
 
 import GunEntity from './GunEntity';
 import ItemEntity from './ItemEntity';
+import PickaxeEntity from './weapons/PickaxeEntity';
+import MeleeWeaponEntity from './MeleeWeaponEntity';
 
 const BASE_HEALTH = 100;
-const TOTAL_INVENTORY_SLOTS = 5;
+const TOTAL_INVENTORY_SLOTS = 6;
 const INTERACT_RANGE = 4;
 
 interface InventoryItem {
@@ -67,6 +69,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
     super.spawn(world, position, rotation);
+    this._setupPlayerInventory();
     this._autoHealTicker();
     this._updatePlayerUIHealth();
   }
@@ -76,12 +79,19 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._inventory[slot] = item;
     this._updatePlayerUIInventory();
     this._updatePlayerUIInventoryActiveSlot();
+    this.setActiveInventorySlotIndex(this._inventoryActiveSlotIndex);
   }
   
   public dropInventoryItem(): void {
+    if (this._inventoryActiveSlotIndex === 0) {
+      this.world?.chatManager?.sendPlayerMessage(this.player, 'You cannot drop your pickaxe!');
+      return;
+    }
+
     const item = this._inventory[this._inventoryActiveSlotIndex];
     if (!item) return;
 
+    item.unequip();
     item.drop(this.position, this.player.camera.facingDirection);
     this._inventory[this._inventoryActiveSlotIndex] = undefined;
     this._updatePlayerUIInventory();
@@ -96,8 +106,24 @@ export default class GamePlayerEntity extends PlayerEntity {
     return this._inventory[this._inventoryActiveSlotIndex] === item;
   }
 
+  public resetAnimations(): void {
+    this.playerController.idleLoopedAnimations = ['idle_lower', 'idle_upper'];
+    this.playerController.interactOneshotAnimations = [];
+    this.playerController.walkLoopedAnimations = ['walk_lower', 'walk_upper'];
+    this.playerController.runLoopedAnimations = ['run_lower', 'run_upper'];
+  }
+
   public setActiveInventorySlotIndex(index: number): void {
+    if (index !== this._inventoryActiveSlotIndex) {
+      this._inventory[this._inventoryActiveSlotIndex]?.unequip();
+    }
+
     this._inventoryActiveSlotIndex = index;
+
+    if (this._inventory[index]) {
+      this._inventory[index].equip();
+    }
+
     this._updatePlayerUIInventoryActiveSlot();
   }
 
@@ -121,13 +147,16 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _setupPlayerController(): void {
     this.playerController.autoCancelMouseLeftClick = false;
-    
-    this.playerController.idleLoopedAnimations = ['idle_lower', 'idle_upper'];
-    this.playerController.interactOneshotAnimations = [];
-    this.playerController.walkLoopedAnimations = ['walk_lower', 'walk_upper'];
-    this.playerController.runLoopedAnimations = ['run_lower', 'run_upper'];
+
+    this.resetAnimations();
 
     this.playerController.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, this._onTickWithPlayerInput);
+  }
+
+  private _setupPlayerInventory(): void {
+    const pickaxe = new PickaxeEntity();
+    pickaxe.spawn(this.world!, this.position);
+    pickaxe.pickup(this);
   }
 
   private _setupPlayerUI(): void {
@@ -144,7 +173,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     const { input } = payload;
 
     if (input.ml) {
-      this._handleShoot();
+      this._handleMouseLeftClick();
     }
 
     if (input.e) {
@@ -165,10 +194,15 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._handleInventoryHotkeys(input);
   }
 
-  private _handleShoot(): void {
+  private _handleMouseLeftClick(): void {
     const activeItem = this._inventory[this._inventoryActiveSlotIndex];
+    
     if (activeItem instanceof GunEntity) {
       activeItem.shoot();
+    }
+
+    if (activeItem instanceof MeleeWeaponEntity) {
+      activeItem.attack();
     }
   }
 
@@ -180,10 +214,15 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   private _handleInventoryHotkeys(input: any): void {
+    if (input.f) {
+      this.setActiveInventorySlotIndex(0);
+      input.f = false;
+    }
+
     for (let i = 1; i <= TOTAL_INVENTORY_SLOTS; i++) {
       const key = i.toString();
       if (input[key]) {
-        this.setActiveInventorySlotIndex(i - 1);
+        this.setActiveInventorySlotIndex(i);
         input[key] = false;
       }
     }
@@ -206,7 +245,12 @@ export default class GamePlayerEntity extends PlayerEntity {
     );
 
     const hitEntity = raycastHit?.hitEntity;
-    if (hitEntity instanceof GunEntity) {
+    if (hitEntity instanceof ItemEntity) {
+      if (this._findInventorySlot() === 0) {
+        this.world?.chatManager?.sendPlayerMessage(this.player, 'You cannot replace your pickaxe! Switch to a different item first to pick up this item.');
+        return;
+      }
+
       hitEntity.pickup(this);
     }
   }

@@ -75,6 +75,17 @@ export default abstract class GunEntity extends ItemEntity {
     });
   }
 
+  public override equip(): void {
+    if (!this.world) return;
+    
+    super.equip();
+    
+    this.setPosition({ x: 0, y: 0, z: -0.2 });
+    this.setRotation(Quaternion.fromEuler(-90, 0, 0));
+    this._reloadAudio.play(this.world, true);
+
+  }
+
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
     super.spawn(world, position, rotation);
 
@@ -85,18 +96,8 @@ export default abstract class GunEntity extends ItemEntity {
     return this.totalAmmo;
   }
 
-  public override pickup(player: GamePlayerEntity): void {
-    if (!player.world) return;
-
-    super.pickup(player);
-    
-    this.setPosition({ x: 0, y: 0, z: -0.2 });
-    this.setRotation(Quaternion.fromEuler(-90, 0, 0));
-    this._reloadAudio.play(player.world, true);
-  }
-
   public reload(): void {
-    if (!this.parent?.world || this._reloading) return;
+    if (!this.parent?.world || this._reloading || !this.totalAmmo) return;
     this._startReload();
     this._reloadAudio.play(this.parent.world, true);
 
@@ -160,6 +161,10 @@ export default abstract class GunEntity extends ItemEntity {
       }),
     });
 
+    if (raycastHit?.hitBlock) {
+
+    }
+
     if (raycastHit?.hitEntity) {
       this._handleHitEntity(raycastHit.hitEntity);
     }
@@ -187,7 +192,7 @@ export default abstract class GunEntity extends ItemEntity {
 
   private _finishReload(): void {
     this._reloading = false;
-    
+
     // prevent reloads if they swapped active item mid reload.
     if (!this.parent || !(this.parent as GamePlayerEntity).isItemActiveInInventory(this)) return;
 
