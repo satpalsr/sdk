@@ -21,9 +21,11 @@ export interface ItemEntityOptions extends EntityOptions {
   iconImageUri: string;  // The image uri of the weapon icon.
   idleAnimation: string; // The animation played when the player holding it is idle.
   mlAnimation: string;   // The animation played when the player holding it clicks the left mouse button.
+  quantity?: number;
 }
 
 export default class ItemEntity extends Entity {
+  public quantity: number;
   public readonly heldHand: HeldHand;
   public readonly iconImageUri: string;
   protected readonly idleAnimation: string;
@@ -45,6 +47,7 @@ export default class ItemEntity extends Entity {
       rigidBodyOptions: ItemEntity._createRigidBodyOptions(colliderOptions),
     });
 
+    this.quantity = options.quantity ?? -1;
     this.heldHand = options.heldHand;
     this.iconImageUri = options.iconImageUri;
     this.idleAnimation = options.idleAnimation;
@@ -75,6 +78,7 @@ export default class ItemEntity extends Entity {
   }
 
   public equip() {
+    this.setPosition({ x: 0, y: 0, z: 0 });
     this.setParentAnimations();
   }
 
@@ -87,7 +91,7 @@ export default class ItemEntity extends Entity {
   }
   
   public getQuantity(): number {
-    return -1;
+    return this.quantity;
   }
 
   public pickup(player: GamePlayerEntity): void {

@@ -13,8 +13,10 @@ const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
   name: 'Pickaxe',
   modelUri: 'models/items/pickaxe.gltf',
   modelScale: 1.25,
-  range: 1.5,
-  attackAudioUri: 'audio/sfx/pickaxe-swing.mp3'
+  range: 2.5,
+  minesMaterials: true,
+  attackAudioUri: 'audio/sfx/player/player-swing-woosh.mp3',
+  hitAudioUri: 'audio/sfx/dig/dig-stone.mp3',
 };
 
 export default class PickaxeEntity extends MeleeWeaponEntity {

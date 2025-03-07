@@ -7,6 +7,7 @@ import {
 } from 'hytopia';
 
 import ItemEntity from './ItemEntity';
+import TerrainDamageManager from './TerrainDamageManager';
 import type { ItemEntityOptions } from './ItemEntity';
 import type GamePlayerEntity from './GamePlayerEntity';
 
@@ -15,30 +16,38 @@ export interface MeleeWeaponEntityOptions extends ItemEntityOptions {
   attackRate: number;       // Attacks per second
   range: number;            // The range of the melee attack
   attackAudioUri: string;   // The audio played when attacking
+  hitAudioUri: string;      // The audio played when hitting an entity or block
+  minesMaterials: boolean;     // Whether the weapon mines materials when it hits a block
 }
 
 export default abstract class MeleeWeaponEntity extends ItemEntity {
   protected readonly damage: number;
   protected readonly attackRate: number;
   protected readonly range: number;
+  protected readonly minesMaterials: boolean;
 
   private _lastAttackTime: number = 0;
   private _attackAudio: Audio;
+  private _hitAudio: Audio;
 
   public constructor(options: MeleeWeaponEntityOptions) {
-    if (!options.modelUri) {
-      throw new Error('MeleeWeaponEntity requires modelUri');
-    }
-
     super(options);
 
     this.damage = options.damage;
     this.attackRate = options.attackRate;
     this.range = options.range;
+    this.minesMaterials = options.minesMaterials;
 
     this._attackAudio = new Audio({
       attachedToEntity: this,
       uri: options.attackAudioUri,
+      volume: 0.3,
+      referenceDistance: 8,
+    });
+
+    this._hitAudio = new Audio({
+      attachedToEntity: this,
+      uri: options.hitAudioUri,
       volume: 0.3,
       referenceDistance: 8,
     });
@@ -89,14 +98,26 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
   protected attackRaycast(origin: Vector3Like, direction: Vector3Like, length: number): RaycastHit | null | undefined {
     if (!this.parent?.world) return;
    
-    const raycastHit = this.parent.world.simulation.raycast(origin, direction, length);
+    const { world } = this.parent;
+    const raycastHit = world.simulation.raycast(origin, direction, length, {
+      filterExcludeRigidBody: this.parent.rawRigidBody,
+    });
 
     if (raycastHit?.hitBlock) {
+      TerrainDamageManager.instance.damageBlock(world, raycastHit.hitBlock, this.damage);
 
+      if (this.minesMaterials) {
+        const player = this.parent as GamePlayerEntity;
+        player.addMaterial(1);
+      }
     }
 
     if (raycastHit?.hitEntity) {
       this._handleHitEntity(raycastHit.hitEntity);
+    }
+
+    if (raycastHit?.hitBlock || raycastHit?.hitEntity) {
+      this._hitAudio.play(world, true);
     }
 
     return raycastHit;

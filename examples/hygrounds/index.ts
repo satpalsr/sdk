@@ -1,9 +1,9 @@
 import {
   startServer,
-  PlayerEntity,
   PlayerEvent,
 } from 'hytopia';
 
+import { BEDROCK_BLOCK_ID } from './classes/TerrainDamageManager';
 import GamePlayerEntity from './classes/GamePlayerEntity';
 
 import PistolEntity from './classes/weapons/PistolEntity';
@@ -14,6 +14,17 @@ import worldMap from './assets/map.json';
 startServer(world => {
   // Load the game map
   world.loadMap(worldMap);
+
+  // Set lighting
+  world.setAmbientLightIntensity(0.6);
+  world.setDirectionalLightIntensity(5);
+
+  // Add unbreakable "bedrock" to the bottom of the map.
+  for (let x = -50; x <= 50; x++) {
+    for (let z = -50; z <= 50; z++) {
+      world.chunkLattice.setBlock({ x, y: -1, z }, BEDROCK_BLOCK_ID);
+    }
+  }
 
   world.simulation.enableDebugRaycasting(true);
 

@@ -22,6 +22,11 @@
   </div>
 </div>
 
+<div class="materials-counter">
+  <img src="{{CDN_ASSETS_URL}}/icons/block.png" alt="Materials Icon" class="materials-icon">
+  <span class="materials-amount">0</span>
+</div>
+
 <div class="inventory-hud">
   <div class="inventory-slot inventory-active-slot" data-slot="0">
     <div class="slot-number">F</div>
@@ -176,6 +181,12 @@
 
       quantityElement.textContent = quantity;
     }
+
+    if (type === 'materials') {
+      const { materials } = data;
+      const materialsAmount = document.querySelector('.materials-amount');
+      materialsAmount.textContent = materials;
+    }
   });
 </script>
 
@@ -211,6 +222,34 @@
     height: 2px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .materials-counter {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .materials-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .materials-amount {
+    font-size: 16px;
+    font-weight: bold;
   }
 
   .hud {

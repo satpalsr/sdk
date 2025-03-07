@@ -19,6 +19,8 @@ import MeleeWeaponEntity from './MeleeWeaponEntity';
 const BASE_HEALTH = 100;
 const TOTAL_INVENTORY_SLOTS = 6;
 const INTERACT_RANGE = 4;
+const BLOCK_MATERIAL_COST = 3;
+const BUILD_BLOCK_ID = 37; // stone
 
 interface InventoryItem {
   name: string;
@@ -29,9 +31,10 @@ interface InventoryItem {
 export default class GamePlayerEntity extends PlayerEntity {
   private readonly _damageAudio: Audio;
   private readonly _inventory: (ItemEntity | undefined)[] = new Array(TOTAL_INVENTORY_SLOTS).fill(undefined);
+  private _health: number = BASE_HEALTH;
   private _inventoryActiveSlotIndex: number = 0;
-  private _health: number;
-  private readonly _maxHealth: number;
+  private _maxHealth: number = BASE_HEALTH;
+  private _materials: number = 0;
 
   // Player entities always assign a PlayerController to the entity
   public get playerController(): PlayerEntityController {
@@ -56,9 +59,6 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._setupPlayerUI();
     this._setupPlayerCamera();
 
-    this._health = BASE_HEALTH;
-    this._maxHealth = BASE_HEALTH;
-
     this._damageAudio = new Audio({
       attachedToEntity: this,
       uri: 'audio/sfx/player-hurt.mp3',
@@ -80,6 +80,11 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._updatePlayerUIInventory();
     this._updatePlayerUIInventoryActiveSlot();
     this.setActiveInventorySlotIndex(this._inventoryActiveSlotIndex);
+  }
+
+  public addMaterial(quantity: number): void {
+    this._materials += quantity;
+    this._updatePlayerUIMaterials();
   }
   
   public dropInventoryItem(): void {
@@ -176,6 +181,10 @@ export default class GamePlayerEntity extends PlayerEntity {
       this._handleMouseLeftClick();
     }
 
+    if (input.mr) {
+      this._handleMouseRightClick();
+    }
+
     if (input.e) {
       this._handleInteract();
       input.e = false;
@@ -204,6 +213,40 @@ export default class GamePlayerEntity extends PlayerEntity {
     if (activeItem instanceof MeleeWeaponEntity) {
       activeItem.attack();
     }
+  }
+
+  private _handleMouseRightClick(): void {
+    this.player.input.mr = false;
+    
+    if (!this.world) return;
+
+    if (this._materials < BLOCK_MATERIAL_COST) {
+      this.world?.chatManager?.sendPlayerMessage(this.player, `You need at least ${BLOCK_MATERIAL_COST} materials to build! Break blocks with your pickaxe to gather materials.`, 'FF0000');
+      return;
+    }
+
+    const { world } = this;
+    const position = this.position;
+    const facingDirection = this.player.camera.facingDirection;
+    const origin = {
+      x: position.x + (facingDirection.x * 0.5),
+      y: position.y + (facingDirection.y * 0.5) + this.player.camera.offset.y,
+      z: position.z + (facingDirection.z * 0.5),
+    };
+
+    const raycastHit = world.simulation.raycast(origin, facingDirection, 4, {
+      filterExcludeRigidBody: this.rawRigidBody,
+    });
+
+    if (raycastHit?.hitBlock) {
+      const { hitBlock } = raycastHit;
+      const placementCoordinate = hitBlock.getNeighborGlobalCoordinateFromHitPoint(raycastHit.hitPoint);
+
+      world.chunkLattice.setBlock(placementCoordinate, BUILD_BLOCK_ID);
+
+      this._materials -= BLOCK_MATERIAL_COST;
+      this._updatePlayerUIMaterials();  
+    }    
   }
 
   private _handleReload(): void {
@@ -303,6 +346,13 @@ export default class GamePlayerEntity extends PlayerEntity {
       type: 'health',
       health: this._health,
       maxHealth: this._maxHealth
+    });
+  }
+
+  private _updatePlayerUIMaterials(): void {
+    this.player.ui.sendData({
+      type: 'materials',
+      materials: this._materials,
     });
   }
 

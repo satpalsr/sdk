@@ -1,20 +1,14 @@
 import {
   Audio,
-  Collider,
-  CollisionGroup,
-  CollisionGroupsBuilder,
   Entity,
-  PlayerEntity,
-  RigidBodyType,
   Vector3Like,
   Quaternion,
   QuaternionLike,
-  SceneUI,
   World,
-  PlayerEntityController,
 } from 'hytopia';
 
 import ItemEntity from './ItemEntity';
+import TerrainDamageManager from './TerrainDamageManager';
 import type { ItemEntityOptions } from './ItemEntity';
 import type GamePlayerEntity from './GamePlayerEntity';
 
@@ -154,15 +148,13 @@ export default abstract class GunEntity extends ItemEntity {
   protected shootRaycast(origin: Vector3Like, direction: Vector3Like, length: number): void {
     if (!this.parent?.world) return;
    
+    const { world } = this.parent;
     const raycastHit = this.parent.world.simulation.raycast(origin, direction, length, {
-      filterGroups: CollisionGroupsBuilder.buildRawCollisionGroups({
-        belongsTo: [ CollisionGroup.ALL ],
-        collidesWith: [ CollisionGroup.BLOCK, CollisionGroup.ENTITY ],
-      }),
+      filterExcludeRigidBody: this.parent.rawRigidBody,
     });
 
     if (raycastHit?.hitBlock) {
-
+      TerrainDamageManager.instance.damageBlock(world, raycastHit.hitBlock, this.damage);
     }
 
     if (raycastHit?.hitEntity) {

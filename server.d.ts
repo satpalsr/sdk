@@ -814,6 +814,7 @@ export declare class Chunk extends EventRouter implements protocol.Serializable 
     setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 
 
+
     private _meshColliders;
 
 
