@@ -8,6 +8,7 @@ import GamePlayerEntity from './classes/GamePlayerEntity';
 
 import AK47Entity from './classes/weapons/AK47Entity';
 import BoltActionSniperEntity from './classes/weapons/BoltActionSniper';
+import LightMachineGunEntity from './classes/weapons/LightMachineGun';
 import PistolEntity from './classes/weapons/PistolEntity';
 import PickaxeEntity from './classes/weapons/PickaxeEntity';
 import ShotgunEntity from './classes/weapons/ShotgunEntity';
@@ -31,6 +32,9 @@ startServer(world => {
 
   const testBoltActionSniper = new BoltActionSniperEntity();
   testBoltActionSniper.spawn(world, { x: -5, y: 10, z: -8 });
+
+  const lightMachineGun = new LightMachineGunEntity();
+  lightMachineGun.spawn(world, { x: -5, y: 10, z: -13 });
 
   const testShotgun = new ShotgunEntity();
   testShotgun.spawn(world, { x: -5, y: 10, z: -5 });

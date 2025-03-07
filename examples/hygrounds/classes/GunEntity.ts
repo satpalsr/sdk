@@ -49,7 +49,7 @@ export default abstract class GunEntity extends ItemEntity {
     }
 
     super(options);
-console.log(options);
+
     this.ammo = options.ammo;
     this.damage = options.damage;
     this.fireRate = options.fireRate;
