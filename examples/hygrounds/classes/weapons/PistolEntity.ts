@@ -16,7 +16,7 @@ const DEFAULT_PISTOL_OPTIONS: GunEntityOptions = {
   totalAmmo: 50,
   modelUri: 'models/items/pistol.glb',
   modelScale: 1.3,
-  range: 50,
+  range: 30,
   reloadAudioUri: 'audio/sfx/pistol-reload.mp3',
   reloadTimeMs: 1250,
   shootAudioUri: 'audio/sfx/pistol-shoot.mp3',

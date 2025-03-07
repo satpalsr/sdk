@@ -81,6 +81,14 @@
   </div>
 </template>
 
+<template id="chest-label-template">
+  <div class="item-label">
+    <div class="label-name"></div>
+    <div class="label-prompt">"E" to Open</div>
+    <div class="label-caret"></div>
+  </div>
+</template>
+
 <!-- UI Scripts-->
 <script>
   const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
@@ -98,6 +106,20 @@
 
       if (state.quantity !== undefined) {
         labelQuantity.textContent = state.quantity !== -1 ? state.quantity : '∞';
+      }
+    });
+
+    return clone;
+  });
+
+  hytopia.registerSceneUITemplate('chest-label', (id, onState) => {
+    const template = document.getElementById('chest-label-template');
+    const clone = template.content.cloneNode(true);
+    const labelName = clone.querySelector('.label-name');
+
+    onState(state => {
+      if (state.name) {
+        labelName.textContent = state.name;
       }
     });
 

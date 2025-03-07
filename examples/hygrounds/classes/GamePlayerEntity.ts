@@ -11,6 +11,7 @@ import {
   PlayerEntityController,
 } from 'hytopia';
 
+import ChestEntity from './ChestEntity';
 import GunEntity from './GunEntity';
 import ItemEntity from './ItemEntity';
 import PickaxeEntity from './weapons/PickaxeEntity';
@@ -83,6 +84,8 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   public addMaterial(quantity: number): void {
+    if (!quantity) return;
+
     this._materials += quantity;
     this._updatePlayerUIMaterials();
   }
@@ -200,6 +203,11 @@ export default class GamePlayerEntity extends PlayerEntity {
       input.r = false;
     }
 
+    if (input.z) {
+      this._handleZoomScope();
+      input.z = false;
+    }
+
     this._handleInventoryHotkeys(input);
   }
 
@@ -256,6 +264,13 @@ export default class GamePlayerEntity extends PlayerEntity {
     }
   }
 
+  private _handleZoomScope(): void {
+    const activeItem = this._inventory[this._inventoryActiveSlotIndex];
+    if (activeItem instanceof GunEntity) {
+      activeItem.zoomScope();
+    }
+  }
+
   private _handleInventoryHotkeys(input: any): void {
     if (input.f) {
       this.setActiveInventorySlotIndex(0);
@@ -288,6 +303,11 @@ export default class GamePlayerEntity extends PlayerEntity {
     );
 
     const hitEntity = raycastHit?.hitEntity;
+
+    if (hitEntity instanceof ChestEntity) {
+      hitEntity.open();
+    }
+
     if (hitEntity instanceof ItemEntity) {
       if (this._findInventorySlot() === 0) {
         this.world?.chatManager?.sendPlayerMessage(this.player, 'You cannot replace your pickaxe! Switch to a different item first to pick up this item.');

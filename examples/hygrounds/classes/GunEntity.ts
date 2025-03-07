@@ -24,6 +24,7 @@ export interface GunEntityOptions extends ItemEntityOptions {
   reloadAudioUri: string;    // The audio played when reloading
   reloadTimeMs: number;      // Seconds to reload.
   shootAudioUri: string;     // The audio played when shooting
+  scopeZoom?: number;         // The zoom level when scoped in.
 }
 
 export default abstract class GunEntity extends ItemEntity {
@@ -32,6 +33,7 @@ export default abstract class GunEntity extends ItemEntity {
   protected readonly maxAmmo: number;
   protected readonly range: number;
   protected readonly reloadTimeMs: number;
+  protected readonly scopeZoom: number = 1;
 
   protected ammo: number;
   protected totalAmmo: number;
@@ -47,7 +49,7 @@ export default abstract class GunEntity extends ItemEntity {
     }
 
     super(options);
-
+console.log(options);
     this.ammo = options.ammo;
     this.damage = options.damage;
     this.fireRate = options.fireRate;
@@ -55,6 +57,7 @@ export default abstract class GunEntity extends ItemEntity {
     this.totalAmmo = options.totalAmmo;
     this.range = options.range;
     this.reloadTimeMs = options.reloadTimeMs;
+    this.scopeZoom = options.scopeZoom ?? 1;
 
     this._reloadAudio = new Audio({
       attachedToEntity: this,
@@ -78,6 +81,14 @@ export default abstract class GunEntity extends ItemEntity {
     this.setRotation(Quaternion.fromEuler(-90, 0, 0));
     this._reloadAudio.play(this.world, true);
 
+  }
+
+  public override unequip(): void {
+    super.unequip();
+
+    // reset any scope zoom
+    const player = this.parent as GamePlayerEntity;
+    player.player.camera.setZoom(1);
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
@@ -109,6 +120,16 @@ export default abstract class GunEntity extends ItemEntity {
     this._performShootEffects(player);
     this.shootRaycast(origin, direction, this.range);
     this._updateUI(player);
+  }
+
+  public zoomScope(): void {
+    console.log('zoom?', this.scopeZoom);
+    if (!this.parent?.world || this.scopeZoom === 1) return;
+
+    const player = this.parent as GamePlayerEntity;
+    const zoom = player.player.camera.zoom === 1 ? this.scopeZoom : 1;
+console.log('set zoom?', zoom);
+    player.player.camera.setZoom(zoom);
   }
 
   protected getShootOriginDirection(): { origin: Vector3Like, direction: Vector3Like } {

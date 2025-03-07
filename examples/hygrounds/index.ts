@@ -3,11 +3,14 @@ import {
   PlayerEvent,
 } from 'hytopia';
 
-import { BEDROCK_BLOCK_ID } from './classes/TerrainDamageManager';
+import GameManager from './classes/GameManager';
 import GamePlayerEntity from './classes/GamePlayerEntity';
 
+import AK47Entity from './classes/weapons/AK47Entity';
+import BoltActionSniperEntity from './classes/weapons/BoltActionSniper';
 import PistolEntity from './classes/weapons/PistolEntity';
 import PickaxeEntity from './classes/weapons/PickaxeEntity';
+import ShotgunEntity from './classes/weapons/ShotgunEntity';
 
 import worldMap from './assets/map.json';
 
@@ -19,15 +22,19 @@ startServer(world => {
   world.setAmbientLightIntensity(0.6);
   world.setDirectionalLightIntensity(5);
 
-  // Add unbreakable "bedrock" to the bottom of the map.
-  for (let x = -50; x <= 50; x++) {
-    for (let z = -50; z <= 50; z++) {
-      world.chunkLattice.setBlock({ x, y: -1, z }, BEDROCK_BLOCK_ID);
-    }
-  }
-
   world.simulation.enableDebugRaycasting(true);
 
+  GameManager.instance.setupGame(world);
+
+  const testAK47 = new AK47Entity();
+  testAK47.spawn(world, { x: -5, y: 10, z: -3 });
+
+  const testBoltActionSniper = new BoltActionSniperEntity();
+  testBoltActionSniper.spawn(world, { x: -5, y: 10, z: -8 });
+
+  const testShotgun = new ShotgunEntity();
+  testShotgun.spawn(world, { x: -5, y: 10, z: -5 });
+ 
   const textPickaxe = new PickaxeEntity();
   textPickaxe.spawn(world, { x: -3, y: 3, z: -3 });
 
@@ -39,7 +46,7 @@ startServer(world => {
     const playerEntity = new GamePlayerEntity(player);
     
     // Spawn player at starting position
-    playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
+    playerEntity.spawn(world, { x: -22, y: 3, z: -9 });
   });
 
   // Handle player leaving the game

@@ -1,6 +1,5 @@
 import { Block, Vector3Like, World } from 'hytopia';
-
-export const BEDROCK_BLOCK_ID = 2;
+import { BEDROCK_BLOCK_ID } from '../gameConfig';
 
 interface BlockDamage {
   blockId: number;
@@ -13,6 +12,18 @@ export default class TerrainDamageManager {
   private _blockDamages: Map<string, BlockDamage> = new Map();
 
   private constructor() {}
+
+  public static getBreakMaterialCount(blockId: number): number {
+    switch (blockId) {
+      case BEDROCK_BLOCK_ID:
+      case 22: // lava
+      case 42: // water flow
+      case 43: // water still
+        return 0;
+      default:
+        return 1;
+    }
+  }
 
   public damageBlock(world: World, block: Block, damage: number): void {
     const coordinateKey = this._coordinateToKey(block.globalCoordinate);
