@@ -7,10 +7,12 @@ import GameManager from './classes/GameManager';
 import GamePlayerEntity from './classes/GamePlayerEntity';
 
 import AK47Entity from './classes/weapons/AK47Entity';
+import AutoShotgunEntity from './classes/weapons/AutoShotgunEntity';
 import BoltActionSniperEntity from './classes/weapons/BoltActionSniper';
 import LightMachineGunEntity from './classes/weapons/LightMachineGun';
 import PistolEntity from './classes/weapons/PistolEntity';
 import PickaxeEntity from './classes/weapons/PickaxeEntity';
+import RocketLauncherEntity from './classes/weapons/RocketLauncher';
 import ShotgunEntity from './classes/weapons/ShotgunEntity';
 
 import worldMap from './assets/map.json';
@@ -30,11 +32,17 @@ startServer(world => {
   const testAK47 = new AK47Entity();
   testAK47.spawn(world, { x: -5, y: 10, z: -3 });
 
+  const testAutoShotgun = new AutoShotgunEntity();
+  testAutoShotgun.spawn(world, { x: -9, y: 10, z: -4 });
+
   const testBoltActionSniper = new BoltActionSniperEntity();
   testBoltActionSniper.spawn(world, { x: -5, y: 10, z: -8 });
 
   const lightMachineGun = new LightMachineGunEntity();
   lightMachineGun.spawn(world, { x: -5, y: 10, z: -13 });
+
+  const rocketLauncher = new RocketLauncherEntity();
+  rocketLauncher.spawn(world, { x: -23, y: 10, z: -9 });
 
   const testShotgun = new ShotgunEntity();
   testShotgun.spawn(world, { x: -5, y: 10, z: -5 });

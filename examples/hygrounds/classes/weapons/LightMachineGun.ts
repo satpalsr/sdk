@@ -34,7 +34,7 @@ export default class LightMachineGunEntity extends GunEntity {
   }
 
   public override getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike } {
-    return { // TODO: FIX MUZZLE FLASH POSITION
+    return {
       position: { x: 0, y: 0.05, z: -1.7 },
       rotation: Quaternion.fromEuler(0, 90, 0),
     };
