@@ -1,7 +1,6 @@
 import { Quaternion, Vector3Like, QuaternionLike } from 'hytopia';
 import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
-import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_AUTO_SHOTGUN_OPTIONS: GunEntityOptions = {
   ammo: 4,

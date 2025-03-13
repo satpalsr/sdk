@@ -213,7 +213,11 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _handleMouseLeftClick(): void {
     const activeItem = this._inventory[this._inventoryActiveSlotIndex];
-    
+ 
+    if (activeItem instanceof ItemEntity && activeItem.consumable) {
+      activeItem.consume();
+    }
+
     if (activeItem instanceof GunEntity) {
       activeItem.shoot();
     }

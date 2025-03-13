@@ -1,6 +1,7 @@
 import {
   startServer,
   PlayerEvent,
+  ModelRegistry,
 } from 'hytopia';
 
 import GameManager from './classes/GameManager';
@@ -14,6 +15,7 @@ import PistolEntity from './classes/weapons/PistolEntity';
 import PickaxeEntity from './classes/weapons/PickaxeEntity';
 import RocketLauncherEntity from './classes/weapons/RocketLauncher';
 import ShotgunEntity from './classes/weapons/ShotgunEntity';
+import MedPackEntity from './classes/items/MedPackEntity';
 
 import worldMap from './assets/map.json';
 
@@ -40,6 +42,9 @@ startServer(world => {
 
   const lightMachineGun = new LightMachineGunEntity();
   lightMachineGun.spawn(world, { x: -5, y: 10, z: -13 });
+
+  const medPack = new MedPackEntity();
+  medPack.spawn(world, { x: -16, y: 10, z: -7 });
 
   const rocketLauncher = new RocketLauncherEntity();
   rocketLauncher.spawn(world, { x: -23, y: 10, z: -9 });

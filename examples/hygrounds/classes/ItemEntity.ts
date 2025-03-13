@@ -1,4 +1,5 @@
 import {
+  Audio,
   Collider,
   CollisionGroup,
   Entity,
@@ -22,12 +23,18 @@ export interface ItemEntityOptions extends EntityOptions {
   idleAnimation: string; // The animation played when the player holding it is idle.
   mlAnimation: string;   // The animation played when the player holding it clicks the left mouse button.
   quantity?: number;
+  consumable?: boolean;
+  consumeAudioUri?: string;
+  consumeTimeMs?: number;
 }
 
 export default class ItemEntity extends Entity {
+  public readonly consumable: boolean;
   public quantity: number;
   public readonly heldHand: HeldHand;
   public readonly iconImageUri: string;
+  protected readonly consumeAudioUri: string | undefined;
+  protected readonly consumeTimeMs: number;
   protected readonly idleAnimation: string;
   protected readonly mlAnimation: string;
   private readonly _labelSceneUI: SceneUI;
@@ -41,12 +48,16 @@ export default class ItemEntity extends Entity {
       ? Collider.optionsFromModelUri(options.modelUri)
       : Collider.optionsFromBlockHalfExtents(options.blockHalfExtents!);
 
+
     super({
       ...options,
       parentNodeName: ItemEntity._getHandAnchorNode(options.heldHand),
-      rigidBodyOptions: ItemEntity._createRigidBodyOptions(colliderOptions),
+      rigidBodyOptions: ItemEntity._createRigidBodyOptions(colliderOptions, options.modelScale ?? 1),
     });
 
+    this.consumable = options.consumable ?? false;
+    this.consumeAudioUri = options.consumeAudioUri;
+    this.consumeTimeMs = options.consumeTimeMs ?? 0;
     this.quantity = options.quantity ?? -1;
     this.heldHand = options.heldHand;
     this.iconImageUri = options.iconImageUri;
@@ -58,6 +69,26 @@ export default class ItemEntity extends Entity {
     if (options.parent) {
       this.setParentAnimations();
     }
+  }
+
+  public consume(): void {
+    if (!this.consumable || !this.consumeAudioUri || !this.parent || !this.world) return;
+
+    this.quantity--;
+
+    if (!this.quantity) {
+      this.drop(this.position, { x: 0, y: 0, z: 0 });
+      this.despawn();
+    }
+
+    (new Audio({
+      attachedToEntity: this.parent,
+      uri: this.consumeAudioUri,
+      volume: 0.5,
+      referenceDistance: 5,
+    })).play(this.world);
+    
+    this._updateVisualEffects();
   }
 
   public drop(fromPosition: Vector3Like, direction: Vector3Like): void {
@@ -142,7 +173,7 @@ export default class ItemEntity extends Entity {
     return heldHand === 'left' ? 'hand_left_anchor' : 'hand_right_anchor';
   }
 
-  private static _createRigidBodyOptions(colliderOptions: any) {
+  private static _createRigidBodyOptions(colliderOptions: any, modelScale: number) {
     return {
       enabledRotations: { x: false, y: true, z: false },
       colliders: [{
@@ -152,12 +183,12 @@ export default class ItemEntity extends Entity {
           collidesWith: [ CollisionGroup.BLOCK ],
         },
         halfExtents: colliderOptions.halfExtents ? {
-          x: colliderOptions.halfExtents.x * 2,
-          y: colliderOptions.halfExtents.y * 2,
-          z: colliderOptions.halfExtents.z * 2,
+          x: colliderOptions.halfExtents.x * modelScale * 2,
+          y: colliderOptions.halfExtents.y * modelScale * 2,
+          z: colliderOptions.halfExtents.z * modelScale * 2,
         } : undefined,
-        halfHeight: colliderOptions.halfHeight ? colliderOptions.halfHeight * 2 : undefined,
-        radius: colliderOptions.radius ? colliderOptions.radius * 2 : undefined,
+        halfHeight: colliderOptions.halfHeight ? colliderOptions.halfHeight * modelScale * 2 : undefined,
+        radius: colliderOptions.radius ? colliderOptions.radius * modelScale * 2 : undefined,
       }]
     };
   }
