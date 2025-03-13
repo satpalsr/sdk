@@ -72,13 +72,23 @@ export default class ItemEntity extends Entity {
   }
 
   public consume(): void {
-    if (!this.consumable || !this.consumeAudioUri || !this.parent || !this.world) return;
+    if (!this.consumable || !this.consumeAudioUri || this.quantity <= 0 || !this.parent || !this.world) return;
+
+    if (!(this.parent instanceof GamePlayerEntity)) {
+      return;
+    }
+
+    this.parent.player.input.ml = false;
 
     this.quantity--;
 
+    this.parent.updateItemInventoryQuantity(this);
+    
     if (!this.quantity) {
-      this.drop(this.position, { x: 0, y: 0, z: 0 });
-      this.despawn();
+      this.parent.dropActiveInventoryItem();
+      setTimeout(() => {
+        this.despawn();
+      }, 0);
     }
 
     (new Audio({
@@ -87,8 +97,7 @@ export default class ItemEntity extends Entity {
       volume: 0.5,
       referenceDistance: 5,
     })).play(this.world);
-    
-    this._updateVisualEffects();
+
   }
 
   public drop(fromPosition: Vector3Like, direction: Vector3Like): void {
@@ -183,12 +192,12 @@ export default class ItemEntity extends Entity {
           collidesWith: [ CollisionGroup.BLOCK ],
         },
         halfExtents: colliderOptions.halfExtents ? {
-          x: colliderOptions.halfExtents.x * modelScale * 2,
-          y: colliderOptions.halfExtents.y * modelScale * 2,
-          z: colliderOptions.halfExtents.z * modelScale * 2,
+          x: colliderOptions.halfExtents.x * modelScale,
+          y: colliderOptions.halfExtents.y * modelScale * 1.5,
+          z: colliderOptions.halfExtents.z * modelScale,
         } : undefined,
-        halfHeight: colliderOptions.halfHeight ? colliderOptions.halfHeight * modelScale * 2 : undefined,
-        radius: colliderOptions.radius ? colliderOptions.radius * modelScale * 2 : undefined,
+        halfHeight: colliderOptions.halfHeight ? colliderOptions.halfHeight * modelScale * 1.5 : undefined,
+        radius: colliderOptions.radius ? colliderOptions.radius * modelScale * 1.5 : undefined,
       }]
     };
   }

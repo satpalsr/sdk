@@ -14,6 +14,11 @@
       <span class="ammo-divider">/</span>
       <span class="total-ammo">30</span>
     </div>
+    <div class="shield-bar">
+      <div class="shield-bar-fill"></div>
+      <img src="{{CDN_ASSETS_URL}}/icons/shield.png" alt="Shield Icon" class="shield-icon">
+      <div class="shield-text">0</div>
+    </div>
     <div class="health-bar">
       <div class="health-bar-fill"></div>
       <img src="{{CDN_ASSETS_URL}}/icons/heart.png" alt="Health Icon" class="health-icon">
@@ -157,6 +162,15 @@
       }
     }
 
+    if (type === 'health') {
+      const { health, maxHealth } = data;
+      const healthText = document.querySelector('.health-text');
+      const healthBarFill = document.querySelector('.health-bar-fill');
+      
+      healthText.textContent = health;
+      healthBarFill.style.width = `${(health / maxHealth) * 100}%`;
+    }
+
     if (type === 'inventory') {
       const { inventory } = data;
       
@@ -208,6 +222,15 @@
       const { materials } = data;
       const materialsAmount = document.querySelector('.materials-amount');
       materialsAmount.textContent = materials;
+    }
+
+    if (type === 'shield') {
+      const { shield, maxShield } = data;
+      const shieldText = document.querySelector('.shield-text');
+      const shieldBarFill = document.querySelector('.shield-bar-fill');
+      
+      shieldText.textContent = shield;
+      shieldBarFill.style.width = `${(shield / maxShield) * 100}%`;
     }
   });
 </script>
@@ -394,6 +417,44 @@
     align-items: center;
     gap: 10px;
     flex-direction: column;
+  }
+
+  .shield-bar {
+    width: 250px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
+    position: relative;
+  }
+
+  .shield-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #0000ff, #3333ff);
+    transition: width 0.3s ease;
+  }
+
+  .shield-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 12px;
+    z-index: 1;
+  }
+
+  .shield-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
   }
 
   .health-bar {

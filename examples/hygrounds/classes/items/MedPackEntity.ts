@@ -1,5 +1,9 @@
+import { Quaternion } from 'hytopia';
 import ItemEntity from "../ItemEntity";
+import GamePlayerEntity from '../GamePlayerEntity';
 import type { ItemEntityOptions } from "../ItemEntity";
+
+const ADD_HEALTH_AMOUNT = 50;
 
 const DEFAULT_MEDPACK_OPTIONS: ItemEntityOptions = {
   heldHand: 'right',
@@ -21,6 +25,19 @@ export default class MedPackEntity extends ItemEntity {
   }
 
   public override consume(): void {
+    if (!(this.parent instanceof GamePlayerEntity) || this.parent.health >= this.parent.maxHealth) {
+      return;
+    }
+
+    this.parent.updateHealth(ADD_HEALTH_AMOUNT);
+
     super.consume(); 
+  }
+
+  public override equip(): void {
+    super.equip();
+
+    this.setPosition({ x: 0, y: 0.15, z: 0.3 });
+    this.setRotation(Quaternion.fromEuler(-90, 0, 270));
   }
 }

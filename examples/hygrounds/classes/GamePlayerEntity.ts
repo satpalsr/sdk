@@ -18,10 +18,13 @@ import PickaxeEntity from './weapons/PickaxeEntity';
 import MeleeWeaponEntity from './MeleeWeaponEntity';
 
 const BASE_HEALTH = 100;
-const TOTAL_INVENTORY_SLOTS = 6;
-const INTERACT_RANGE = 4;
+const BASE_SHIELD = 0;
 const BLOCK_MATERIAL_COST = 3;
 const BUILD_BLOCK_ID = 37; // stone
+const INTERACT_RANGE = 4;
+const MAX_HEALTH = 100;
+const MAX_SHIELD = 100;
+const TOTAL_INVENTORY_SLOTS = 6;
 
 interface InventoryItem {
   name: string;
@@ -34,8 +37,10 @@ export default class GamePlayerEntity extends PlayerEntity {
   private readonly _inventory: (ItemEntity | undefined)[] = new Array(TOTAL_INVENTORY_SLOTS).fill(undefined);
   private _health: number = BASE_HEALTH;
   private _inventoryActiveSlotIndex: number = 0;
-  private _maxHealth: number = BASE_HEALTH;
+  private _maxHealth: number = MAX_HEALTH;
+  private _maxShield: number = MAX_SHIELD;
   private _materials: number = 0;
+  private _shield: number = BASE_SHIELD;
 
   // Player entities always assign a PlayerController to the entity
   public get playerController(): PlayerEntityController {
@@ -47,6 +52,15 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._health = Math.max(0, Math.min(value, this._maxHealth));
     this._updatePlayerUIHealth();
   }
+
+  public get shield(): number { return this._shield; }
+  public set shield(value: number) {
+    this._shield = Math.max(0, Math.min(value, this._maxShield));
+    this._updatePlayerUIShield();
+  }
+
+  public get maxHealth(): number { return this._maxHealth; }
+  public get maxShield(): number { return this._maxShield; }
 
   public constructor(player: Player) {
     super({
@@ -90,7 +104,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._updatePlayerUIMaterials();
   }
   
-  public dropInventoryItem(): void {
+  public dropActiveInventoryItem(): void {
     if (this._inventoryActiveSlotIndex === 0) {
       this.world?.chatManager?.sendPlayerMessage(this.player, 'You cannot drop your pickaxe!');
       return;
@@ -140,6 +154,18 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     this.health = this.health - damage;
     this._playDamageAudio();
+  }
+
+  public updateHealth(amount: number): void {
+    this.health = Math.min(this.health + amount, this._maxHealth);
+
+    this._updatePlayerUIHealth();
+  }
+
+  public updateShield(amount: number): void {
+    this.shield = Math.min(this.shield + amount, this._maxShield);
+
+    this._updatePlayerUIShield();
   }
 
   public updateItemInventoryQuantity(item: ItemEntity): void {
@@ -194,7 +220,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     }
 
     if (input.q) {
-      this.dropInventoryItem();
+      this.dropActiveInventoryItem();
       input.q = false;
     }
 
@@ -380,6 +406,14 @@ export default class GamePlayerEntity extends PlayerEntity {
     });
   }
 
+  private _updatePlayerUIShield(): void {
+    this.player.ui.sendData({
+      type: 'shield',
+      shield: this._shield,
+      maxShield: this._maxShield,
+    });
+  }
+
   private _playDamageAudio(): void {
     this._damageAudio.setDetune(-200 + Math.random() * 800);
     this._damageAudio.play(this.world!, true);
@@ -394,6 +428,6 @@ export default class GamePlayerEntity extends PlayerEntity {
       }
 
       this._autoHealTicker();
-    }, 1000);
+    }, 2000);
   }
 }

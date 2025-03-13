@@ -16,6 +16,7 @@ import PickaxeEntity from './classes/weapons/PickaxeEntity';
 import RocketLauncherEntity from './classes/weapons/RocketLauncher';
 import ShotgunEntity from './classes/weapons/ShotgunEntity';
 import MedPackEntity from './classes/items/MedPackEntity';
+import ShieldPotionEntity from './classes/items/ShieldPotionEntity';
 
 import worldMap from './assets/map.json';
 
@@ -45,6 +46,9 @@ startServer(world => {
 
   const medPack = new MedPackEntity();
   medPack.spawn(world, { x: -16, y: 10, z: -7 });
+
+  const shieldPotion = new ShieldPotionEntity();
+  shieldPotion.spawn(world, { x: -18, y: 10, z: -3 });
 
   const rocketLauncher = new RocketLauncherEntity();
   rocketLauncher.spawn(world, { x: -23, y: 10, z: -9 });
