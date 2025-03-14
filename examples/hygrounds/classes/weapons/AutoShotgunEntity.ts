@@ -3,21 +3,21 @@ import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_AUTO_SHOTGUN_OPTIONS: GunEntityOptions = {
-  ammo: 4,
-  damage: 4,
-  fireRate: 2.5,
+  ammo: 6,
+  damage: 10,         // Per pellet (7 pellets = 70 max damage)
+  fireRate: 1.5,
   heldHand: 'both',
   iconImageUri: 'icons/auto-shotgun.png',
   idleAnimation: 'idle_gun_both',
   mlAnimation: 'shoot_gun_both',
   name: 'Auto Shotgun',
-  maxAmmo: 4,
-  totalAmmo: 20,
+  maxAmmo: 6,
+  totalAmmo: 30,
   modelUri: 'models/items/auto-shotgun.glb',
   modelScale: 1.2,
   range: 8,
   reloadAudioUri: 'audio/sfx/shotgun-reload.mp3',
-  reloadTimeMs: 1000,
+  reloadTimeMs: 3500,
   shootAudioUri: 'audio/sfx/shotgun-shoot.mp3',
 };
 

@@ -4,8 +4,8 @@ import type { MeleeWeaponEntityOptions } from '../MeleeWeaponEntity';
 import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
-  damage: 2,
-  attackRate: 4,
+  damage: 10,         // 9 hits to kill unshielded
+  attackRate: 5,    // Slower attack rate to prevent spam
   heldHand: 'right',
   iconImageUri: 'icons/pickaxe.png',
   idleAnimation: 'idle_gun_right',

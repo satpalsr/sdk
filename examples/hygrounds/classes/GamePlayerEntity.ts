@@ -91,6 +91,11 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public addItemToInventory(item: ItemEntity): void {
     const slot = this._findInventorySlot();
+
+    if (slot === this._inventoryActiveSlotIndex) {
+      this.dropActiveInventoryItem();
+    }
+
     this._inventory[slot] = item;
     this._updatePlayerUIInventory();
     this._updatePlayerUIInventoryActiveSlot();
@@ -356,6 +361,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     // Find first empty slot or use active slot if none found
     const emptySlot = this._inventory.findIndex(slot => !slot);
+
     return emptySlot !== -1 ? emptySlot : this._inventoryActiveSlotIndex;
   }
 

@@ -5,20 +5,20 @@ import type { GunEntityOptions } from '../GunEntity';
 const DEFAULT_BOLT_ACTION_SNIPER_OPTIONS: GunEntityOptions = {
   ammo: 1,
   damage: 75,
-  fireRate: 1,
+  fireRate: 0.5,
   heldHand: 'both',
   iconImageUri: 'icons/bolt-action-sniper.png',
   idleAnimation: 'idle_gun_both',
   mlAnimation: 'shoot_gun_both',
   name: 'Bolt Action Sniper',
   maxAmmo: 1,
-  totalAmmo: 15,
+  totalAmmo: 12,
   scopeZoom: 5,
   modelUri: 'models/items/bolt-action-sniper.glb',
   modelScale: 1.3,
   range: 100,
   reloadAudioUri: 'audio/sfx/sniper-reload.mp3',
-  reloadTimeMs: 1500,
+  reloadTimeMs: 3000,
   shootAudioUri: 'audio/sfx/sniper-shoot.mp3',
 };
 

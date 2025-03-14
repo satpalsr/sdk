@@ -3,22 +3,22 @@ import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_LIGHT_MACHINE_GUN_OPTIONS: GunEntityOptions = {
-  ammo: 100,
-  damage: 2,
-  fireRate: 15,
+  ammo: 50,
+  damage: 15,
+  fireRate: 10,
   heldHand: 'both',
   iconImageUri: 'icons/light-machine-gun.png',
   idleAnimation: 'idle_gun_both',
   mlAnimation: 'shoot_gun_both',
   name: 'Light Machine Gun',
-  maxAmmo: 100,
-  totalAmmo: 200,
+  maxAmmo: 50,
+  totalAmmo: 300,
   scopeZoom: 2,
   modelUri: 'models/items/light-machine-gun.glb',
   modelScale: 1.3,
   range: 40,
   reloadAudioUri: 'audio/sfx/machine-gun-reload.mp3',
-  reloadTimeMs: 3000,
+  reloadTimeMs: 4200,
   shootAudioUri: 'audio/sfx/machine-gun-shoot.mp3',
 };
 

@@ -4,21 +4,21 @@ import type { GunEntityOptions } from '../GunEntity';
 import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_SHOTGUN_OPTIONS: GunEntityOptions = {
-  ammo: 3,
-  damage: 4,
-  fireRate: 1.3,
+  ammo: 4,
+  damage: 12,         // Per pellet (7 pellets = 84 max damage)
+  fireRate: 0.8,
   heldHand: 'both',
   iconImageUri: 'icons/shotgun.png',
   idleAnimation: 'idle_gun_both',
   mlAnimation: 'shoot_gun_both',
   name: 'Shotgun',
-  maxAmmo: 3,
-  totalAmmo: 20,
+  maxAmmo: 4,
+  totalAmmo: 24,
   modelUri: 'models/items/shotgun.glb',
   modelScale: 1.2,
   range: 8,
   reloadAudioUri: 'audio/sfx/shotgun-reload.mp3',
-  reloadTimeMs: 1000,
+  reloadTimeMs: 3000,
   shootAudioUri: 'audio/sfx/shotgun-shoot.mp3',
 };
 

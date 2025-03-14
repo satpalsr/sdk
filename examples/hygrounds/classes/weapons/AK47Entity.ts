@@ -3,22 +3,22 @@ import GunEntity from '../GunEntity';
 import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_AK47_OPTIONS: GunEntityOptions = {
-  ammo: 30,
-  damage: 4,
-  fireRate: 10,
+  ammo: 25,
+  damage: 22,
+  fireRate: 5,
   heldHand: 'both',
   iconImageUri: 'icons/ak-47.png',
   idleAnimation: 'idle_gun_both',
   mlAnimation: 'shoot_gun_both',
   name: 'AK-47',
-  maxAmmo: 30,
-  totalAmmo: 90,
+  maxAmmo: 25,
+  totalAmmo: 150,
   scopeZoom: 2,
   modelUri: 'models/items/ak-47.glb',
   modelScale: 1.3,
   range: 40,
   reloadAudioUri: 'audio/sfx/rifle-reload.mp3',
-  reloadTimeMs: 1500,
+  reloadTimeMs: 2200,
   shootAudioUri: 'audio/sfx/rifle-shoot.mp3',
 };
 

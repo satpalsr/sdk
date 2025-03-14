@@ -4,21 +4,21 @@ import type { GunEntityOptions } from '../GunEntity';
 import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_PISTOL_OPTIONS: GunEntityOptions = {
-  ammo: 10,
-  damage: 3,
-  fireRate: 9,
+  ammo: 15,
+  damage: 18,
+  fireRate: 6,
   heldHand: 'right',
   iconImageUri: 'icons/pistol.png',
   idleAnimation: 'idle_gun_right',
   mlAnimation: 'shoot_gun_right',
   name: 'Pistol',
-  maxAmmo: 10,
-  totalAmmo: 50,
+  maxAmmo: 15,
+  totalAmmo: 75,
   modelUri: 'models/items/pistol.glb',
   modelScale: 1.3,
   range: 30,
   reloadAudioUri: 'audio/sfx/pistol-reload.mp3',
-  reloadTimeMs: 1250,
+  reloadTimeMs: 1500,
   shootAudioUri: 'audio/sfx/pistol-shoot.mp3',
 };
 

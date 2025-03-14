@@ -11,6 +11,47 @@ export const CHEST_DROP_REGION_AABB = {
 
 export const CHEST_SPAWNS_AT_START = 10;
 
+export const CHEST_MAX_DROP_ITEMS = 2;
+
+export const CHEST_DROP_ITEMS = [
+  {
+    itemId: 'ak47',
+    pickWeight: 0.4,
+  },
+  {
+    itemId: 'auto-shotgun',
+    pickWeight: 0.5,
+  },
+  {
+    itemId: 'bolt-action-sniper',
+    pickWeight: 0.6,
+  },
+  {
+    itemId: 'light-machine-gun',
+    pickWeight: 0.3,
+  },
+  {
+    itemId: 'medpack',
+    pickWeight: 1,
+  },
+  {
+    itemId: 'pistol',
+    pickWeight: 1,
+  },
+  {
+    itemId: 'rocket-launcher',
+    pickWeight: 0.2,
+  },
+  {
+    itemId: 'shotgun',
+    pickWeight: 0.5,
+  },
+  {
+    itemId: 'shield-potion',
+    pickWeight: 1,
+  },
+]
+
 export const CHEST_SPAWNS = [
   {
     position: { x: -14, y: 2, z: -16 },

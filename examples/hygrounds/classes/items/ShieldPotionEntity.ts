@@ -37,7 +37,7 @@ export default class ShieldPotionEntity extends ItemEntity {
   public override equip(): void {
     super.equip();
 
-    this.setPosition({ x: 0, y: 0.15, z: 0.3 });
-    this.setRotation(Quaternion.fromEuler(-90, 0, 270));
+    this.setPosition({ x: 0, y: 0.15, z: -0.2 });
+    this.setRotation(Quaternion.fromEuler(-90, 0, 0));
   }
 }

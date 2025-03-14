@@ -9,11 +9,11 @@ import GamePlayerEntity from './classes/GamePlayerEntity';
 
 import AK47Entity from './classes/weapons/AK47Entity';
 import AutoShotgunEntity from './classes/weapons/AutoShotgunEntity';
-import BoltActionSniperEntity from './classes/weapons/BoltActionSniper';
-import LightMachineGunEntity from './classes/weapons/LightMachineGun';
+import BoltActionSniperEntity from './classes/weapons/BoltActionSniperEntity';
+import LightMachineGunEntity from './classes/weapons/LightMachineGunEntity';
 import PistolEntity from './classes/weapons/PistolEntity';
 import PickaxeEntity from './classes/weapons/PickaxeEntity';
-import RocketLauncherEntity from './classes/weapons/RocketLauncher';
+import RocketLauncherEntity from './classes/weapons/RocketLauncherEntity';
 import ShotgunEntity from './classes/weapons/ShotgunEntity';
 import MedPackEntity from './classes/items/MedPackEntity';
 import ShieldPotionEntity from './classes/items/ShieldPotionEntity';

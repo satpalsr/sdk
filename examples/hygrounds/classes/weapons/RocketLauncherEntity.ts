@@ -8,20 +8,20 @@ const ROCKET_DESTRUCTION_RADIUS = 4;
 
 const DEFAULT_ROCKET_LAUNCHER_OPTIONS: GunEntityOptions = {
   ammo: 1,
-  damage: 75,
-  fireRate: 1.25,
+  damage: 80,
+  fireRate: 0.8,
   heldHand: 'right',
   iconImageUri: 'icons/rocket-launcher.png',
   idleAnimation: 'idle_gun_right',
   mlAnimation: 'shoot_gun_right',
   name: 'Rocket Launcher',
   maxAmmo: 1,
-  totalAmmo: 4,
+  totalAmmo: 5,
   modelUri: 'models/items/rocket-launcher.glb',
   modelScale: 1.3,
   range: 8,
   reloadAudioUri: 'audio/sfx/rocket-launcher-reload.mp3',
-  reloadTimeMs: 1000,
+  reloadTimeMs: 2500,
   shootAudioUri: 'audio/sfx/rocket-launcher-shoot.mp3',
 };
 
