@@ -3,15 +3,17 @@ import {
   World,
 } from 'hytopia';
 
-import ChestEntity from './ChestEntity';
 import {
   BEDROCK_BLOCK_ID,
   CHEST_SPAWNS,
   CHEST_SPAWNS_AT_START,
   CHEST_DROP_INTERVAL_MS,
   CHEST_DROP_REGION_AABB,
+  ITEM_SPAWNS,
 } from '../gameConfig';
 
+import ChestEntity from './ChestEntity';
+import ItemFactory from './ItemFactory';
 
 export default class GameManager {
   public static readonly instance = new GameManager();
@@ -37,6 +39,12 @@ export default class GameManager {
     selectedSpawns.forEach(spawn => {
       const chest = new ChestEntity();
       chest.spawn(world, spawn.position, spawn.rotation);
+    });
+
+    // Spawn initial items at selected positions
+    ITEM_SPAWNS.forEach(async (spawn) => {
+      const pistol = await ItemFactory.createItem('pistol');
+      pistol.spawn(world, spawn.position);
     });
 
     // Setup chest drop interval

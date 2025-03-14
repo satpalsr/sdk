@@ -9,6 +9,8 @@ import GamePlayerEntity from './classes/GamePlayerEntity';
 
 import worldMap from './assets/map.json';
 
+import BoltActionSniperEntity from './classes/weapons/BoltActionSniperEntity';
+
 startServer(world => {
   // Load the game map
   world.loadMap(worldMap);
@@ -20,6 +22,9 @@ startServer(world => {
   world.simulation.enableDebugRaycasting(true);
 
   GameManager.instance.setupGame(world);
+
+  const sniper = new BoltActionSniperEntity();
+  sniper.spawn(world, { x: -5, y: 10, z: 0 });
 
   // Handle player joining the game
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {

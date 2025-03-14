@@ -10,7 +10,7 @@ import {
 } from 'hytopia';
 
 import { CHEST_DROP_ITEMS, CHEST_MAX_DROP_ITEMS } from '../gameConfig';
-import type ItemEntity from './ItemEntity';
+import ItemFactory from './ItemFactory';
 
 export default class ChestEntity extends Entity {
   private _labelSceneUI: SceneUI;
@@ -103,46 +103,8 @@ export default class ChestEntity extends Entity {
       }
     }
 
-    let itemModule
-
-    // We do imports here to avoid circular dependencies
-    // We should really just refactor import patterns,
-    // but this is a quick fix for now.
-    switch(selectedItem.itemId) {
-      case 'ak47':
-        itemModule = await import('./weapons/AK47Entity');
-        break;
-      case 'auto-shotgun':
-        itemModule = await import('./weapons/AutoShotgunEntity');
-        break;
-      case 'bolt-action-sniper':
-        itemModule = await import('./weapons/BoltActionSniperEntity');
-        break;
-      case 'light-machine-gun':
-        itemModule = await import('./weapons/LightMachineGunEntity');
-        break;
-      case 'medpack':
-        itemModule = await import('./items/MedPackEntity');
-        break;
-      case 'pistol':
-        itemModule = await import('./weapons/PistolEntity');
-        break;
-      case 'rocket-launcher':
-        itemModule = await import('./weapons/RocketLauncherEntity');
-        break;
-      case 'shotgun':
-        itemModule = await import('./weapons/ShotgunEntity');
-        break;
-      case 'shield-potion':
-        itemModule = await import('./items/ShieldPotionEntity');
-        break;
-      default:
-        throw new Error(`Unknown chest item id: ${selectedItem.itemId}`);
-    }
-
-    const itemClass = itemModule.default;
-    const item = new itemClass();
-
+    const item = await ItemFactory.createItem(selectedItem.itemId);
+    
     if (item) {
       item.spawn(this.world, {
         x: this.position.x,

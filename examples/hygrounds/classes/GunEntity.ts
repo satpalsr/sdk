@@ -123,13 +123,16 @@ export default abstract class GunEntity extends ItemEntity {
   }
 
   public zoomScope(): void {
-    console.log('zoom?', this.scopeZoom);
     if (!this.parent?.world || this.scopeZoom === 1) return;
 
     const player = this.parent as GamePlayerEntity;
     const zoom = player.player.camera.zoom === 1 ? this.scopeZoom : 1;
-console.log('set zoom?', zoom);
+
     player.player.camera.setZoom(zoom);
+    player.player.ui.sendData({
+      type: 'scope-zoom',
+      zoom,
+    });
   }
 
   protected getShootOriginDirection(): { origin: Vector3Like, direction: Vector3Like } {

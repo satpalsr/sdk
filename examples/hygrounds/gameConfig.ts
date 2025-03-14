@@ -4,12 +4,17 @@ export const BEDROCK_BLOCK_ID = 2;
 
 export const BLOCK_ID_BREAK_DAMAGE: Record<string | number, number> = {
   1: 50, // bricks
+  4: 50, // cobblestone
   6: 70, // diamond block
   7: 70, // diamond ore
   8: 10, // dirt
+  14: 10, // glass
   15: 70, // gold ore
   16: 10, // grass
   17: 10, // gravel
+  19: 100, // infected shadowrock core
+  20: 100, // infected shadowrock
+  24: 50, // mossy cobblestone
   27: 10, // oak leaves
   30: 10, // sand
   36: 100, // stone bricks
@@ -23,8 +28,11 @@ export const BLOCK_ID_MATERIALS: Record<string | number, number> = {
   6: 10, // diamond block
   7: 10, // diamond ore,
   8: 0, // dirt
+  14: 0, // glass
   15: 8, // gold ore,
   16: 0, // grass
+  19: 8, // infected shadowrock core
+  20: 8, // infected shadowrock
   22: 0, // lava
   23: 2, // log
   28: 2, // oak planks
@@ -309,6 +317,8 @@ export const CHEST_SPAWNS = [
   },
 ];
 
-const ITEM_SPAWNS = [
-
+export const ITEM_SPAWNS = [
+  {
+    position: { x: -21.5, y: 2, z: -17 },
+  }
 ];
