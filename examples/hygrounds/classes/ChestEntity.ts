@@ -105,6 +105,9 @@ export default class ChestEntity extends Entity {
 
     let itemModule
 
+    // We do imports here to avoid circular dependencies
+    // We should really just refactor import patterns,
+    // but this is a quick fix for now.
     switch(selectedItem.itemId) {
       case 'ak47':
         itemModule = await import('./weapons/AK47Entity');

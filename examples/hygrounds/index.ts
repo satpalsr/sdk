@@ -7,17 +7,6 @@ import {
 import GameManager from './classes/GameManager';
 import GamePlayerEntity from './classes/GamePlayerEntity';
 
-import AK47Entity from './classes/weapons/AK47Entity';
-import AutoShotgunEntity from './classes/weapons/AutoShotgunEntity';
-import BoltActionSniperEntity from './classes/weapons/BoltActionSniperEntity';
-import LightMachineGunEntity from './classes/weapons/LightMachineGunEntity';
-import PistolEntity from './classes/weapons/PistolEntity';
-import PickaxeEntity from './classes/weapons/PickaxeEntity';
-import RocketLauncherEntity from './classes/weapons/RocketLauncherEntity';
-import ShotgunEntity from './classes/weapons/ShotgunEntity';
-import MedPackEntity from './classes/items/MedPackEntity';
-import ShieldPotionEntity from './classes/items/ShieldPotionEntity';
-
 import worldMap from './assets/map.json';
 
 startServer(world => {
@@ -31,36 +20,6 @@ startServer(world => {
   world.simulation.enableDebugRaycasting(true);
 
   GameManager.instance.setupGame(world);
-
-  const testAK47 = new AK47Entity();
-  testAK47.spawn(world, { x: -5, y: 10, z: -3 });
-
-  const testAutoShotgun = new AutoShotgunEntity();
-  testAutoShotgun.spawn(world, { x: -9, y: 10, z: -4 });
-
-  const testBoltActionSniper = new BoltActionSniperEntity();
-  testBoltActionSniper.spawn(world, { x: -5, y: 10, z: -8 });
-
-  const lightMachineGun = new LightMachineGunEntity();
-  lightMachineGun.spawn(world, { x: -5, y: 10, z: -13 });
-
-  const medPack = new MedPackEntity();
-  medPack.spawn(world, { x: -16, y: 10, z: -7 });
-
-  const shieldPotion = new ShieldPotionEntity();
-  shieldPotion.spawn(world, { x: -18, y: 10, z: -3 });
-
-  const rocketLauncher = new RocketLauncherEntity();
-  rocketLauncher.spawn(world, { x: -23, y: 10, z: -9 });
-
-  const testShotgun = new ShotgunEntity();
-  testShotgun.spawn(world, { x: -5, y: 10, z: -5 });
- 
-  const textPickaxe = new PickaxeEntity();
-  textPickaxe.spawn(world, { x: -3, y: 3, z: -3 });
-
-  const testPistol = new PistolEntity();
-  testPistol.spawn(world, { x: 3, y: 2.5, z: 3 });
 
   // Handle player joining the game
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
