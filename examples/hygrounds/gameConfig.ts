@@ -2,6 +2,40 @@ import { Quaternion } from 'hytopia';
 
 export const BEDROCK_BLOCK_ID = 2;
 
+export const BLOCK_ID_BREAK_DAMAGE: Record<string | number, number> = {
+  1: 50, // bricks
+  6: 70, // diamond block
+  7: 70, // diamond ore
+  8: 10, // dirt
+  15: 70, // gold ore
+  16: 10, // grass
+  17: 10, // gravel
+  27: 10, // oak leaves
+  30: 10, // sand
+  36: 100, // stone bricks
+  37: 40, // stone (also build block)
+  default: 30, // default for all other blocks
+}
+
+export const BLOCK_ID_MATERIALS: Record<string | number, number> = {
+  1: 4, // bricks
+  2: 0, // bedrock
+  6: 10, // diamond block
+  7: 10, // diamond ore,
+  8: 0, // dirt
+  15: 8, // gold ore,
+  16: 0, // grass
+  22: 0, // lava
+  23: 2, // log
+  28: 2, // oak planks
+  36: 5, // stone bricks
+  42: 0, // water flow
+  43: 0, // water still
+  default: 1, // default for all other blocks
+};
+
+export const BUILD_BLOCK_ID = 37; // stone
+
 export const CHEST_DROP_INTERVAL_MS = 20 * 1000; // 20 seconds
 
 export const CHEST_DROP_REGION_AABB = {

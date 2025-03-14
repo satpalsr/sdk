@@ -104,9 +104,9 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
     });
 
     if (raycastHit?.hitBlock) {
-      TerrainDamageManager.instance.damageBlock(world, raycastHit.hitBlock, this.damage);
+      const brokeBlock = TerrainDamageManager.instance.damageBlock(world, raycastHit.hitBlock, this.damage);
 
-      if (this.minesMaterials) {
+      if (this.minesMaterials && brokeBlock) {
         const player = this.parent as GamePlayerEntity;
         const blockId = raycastHit.hitBlock.blockType.id;
         const materialCount = TerrainDamageManager.getBreakMaterialCount(blockId);

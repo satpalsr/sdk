@@ -16,11 +16,11 @@ import GunEntity from './GunEntity';
 import ItemEntity from './ItemEntity';
 import PickaxeEntity from './weapons/PickaxeEntity';
 import MeleeWeaponEntity from './MeleeWeaponEntity';
+import { BUILD_BLOCK_ID } from '../gameConfig';
 
 const BASE_HEALTH = 100;
 const BASE_SHIELD = 0;
 const BLOCK_MATERIAL_COST = 3;
-const BUILD_BLOCK_ID = 37; // stone
 const INTERACT_RANGE = 4;
 const MAX_HEALTH = 100;
 const MAX_SHIELD = 100;

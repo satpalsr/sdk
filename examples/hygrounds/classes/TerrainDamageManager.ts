@@ -1,5 +1,9 @@
 import { Block, Vector3Like, World } from 'hytopia';
-import { BEDROCK_BLOCK_ID } from '../gameConfig';
+import {
+  BEDROCK_BLOCK_ID,
+  BLOCK_ID_BREAK_DAMAGE,
+  BLOCK_ID_MATERIALS,
+ } from '../gameConfig';
 
 interface BlockDamage {
   blockId: number;
@@ -14,18 +18,10 @@ export default class TerrainDamageManager {
   private constructor() {}
 
   public static getBreakMaterialCount(blockId: number): number {
-    switch (blockId) {
-      case BEDROCK_BLOCK_ID:
-      case 22: // lava
-      case 42: // water flow
-      case 43: // water still
-        return 0;
-      default:
-        return 1;
-    }
+    return BLOCK_ID_MATERIALS[blockId] ?? BLOCK_ID_MATERIALS.default; 
   }
 
-  public damageBlock(world: World, block: Block, damage: number): void {
+  public damageBlock(world: World, block: Block, damage: number): boolean {
     const coordinateKey = this._coordinateToKey(block.globalCoordinate);
     let blockDamage = this._blockDamages.get(coordinateKey);
 
@@ -33,7 +29,7 @@ export default class TerrainDamageManager {
       const blockId = block.blockType.id;
 
       if (block.blockType.isLiquid || blockId === BEDROCK_BLOCK_ID) {
-        return;
+        return false;
       }
 
       blockDamage = { blockId, totalDamage: 0 };
@@ -42,10 +38,16 @@ export default class TerrainDamageManager {
 
     blockDamage.totalDamage += damage;
 
-    if (blockDamage.totalDamage > 1) { // change later
+    const requiredBreakDamage = BLOCK_ID_BREAK_DAMAGE[blockDamage.blockId] ?? BLOCK_ID_BREAK_DAMAGE.default;
+
+    if (blockDamage.totalDamage >= requiredBreakDamage) {
       world.chunkLattice.setBlock(block.globalCoordinate, 0);
       this._blockDamages.delete(coordinateKey);
+      
+      return true;
     }
+
+    return false;
   }
 
   private _coordinateToKey(coordinate: Vector3Like): string {

@@ -221,6 +221,22 @@
     if (type === 'materials') {
       const { materials } = data;
       const materialsAmount = document.querySelector('.materials-amount');
+      const currentMaterials = parseInt(materialsAmount.textContent);
+      const difference = materials - currentMaterials;
+      
+      if (difference !== 0) {
+        const materialsCounter = document.querySelector('.materials-counter');
+        const floatingNumber = document.createElement('div');
+        floatingNumber.className = 'floating-number';
+        floatingNumber.textContent = difference > 0 ? `+${difference}` : difference;
+        materialsCounter.appendChild(floatingNumber);
+
+        // Remove the element after animation completes
+        setTimeout(() => {
+          floatingNumber.remove();
+        }, 1000);
+      }
+      
       materialsAmount.textContent = materials;
     }
 
@@ -284,6 +300,27 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .floating-number {
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    pointer-events: none;
+    animation: floatUp 1s ease-out forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
   }
 
   .materials-icon {
