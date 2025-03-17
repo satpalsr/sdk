@@ -7,10 +7,10 @@ import {
   World,
 } from 'hytopia';
 
+import GamePlayerEntity from './GamePlayerEntity';
 import ItemEntity from './ItemEntity';
 import TerrainDamageManager from './TerrainDamageManager';
 import type { ItemEntityOptions } from './ItemEntity';
-import type GamePlayerEntity from './GamePlayerEntity';
 
 export type GunHand = 'left' | 'right' | 'both';
 
@@ -182,7 +182,7 @@ export default abstract class GunEntity extends ItemEntity {
     }
 
     if (raycastHit?.hitEntity) {
-      this._handleHitEntity(raycastHit.hitEntity);
+      this._handleHitEntity(raycastHit.hitEntity, direction);
     }
   }
 
@@ -238,8 +238,10 @@ export default abstract class GunEntity extends ItemEntity {
     this.updateAmmoIndicatorUI();
   }
 
-  protected _handleHitEntity(hitEntity: Entity): void {
-    // Override in subclasses to handle hit entity logic
+  protected _handleHitEntity(hitEntity: Entity, hitDirection: Vector3Like): void {
+    if (!(hitEntity instanceof GamePlayerEntity)) return;
+
+    hitEntity.takeDamage(this.damage, hitDirection, this.parent as GamePlayerEntity);
   }
 
   public updateAmmoIndicatorUI(reloading: boolean = false): void {

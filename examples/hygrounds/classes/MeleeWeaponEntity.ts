@@ -6,10 +6,10 @@ import {
   Vector3Like,
 } from 'hytopia';
 
+import GamePlayerEntity from './GamePlayerEntity';
 import ItemEntity from './ItemEntity';
 import TerrainDamageManager from './TerrainDamageManager';
 import type { ItemEntityOptions } from './ItemEntity';
-import type GamePlayerEntity from './GamePlayerEntity';
 
 export interface MeleeWeaponEntityOptions extends ItemEntityOptions {
   damage: number;           // The damage dealt by the weapon
@@ -76,13 +76,9 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
     const { x, y, z } = player.position;
     const cameraYOffset = player.player.camera.offset.y;    
     const direction = player.player.camera.facingDirection;
-    
+
     return {
-      origin: {
-        x: x + (direction.x * 0.5),
-        y: y + (direction.y * 0.5) + cameraYOffset,
-        z: z + (direction.z * 0.5),
-      },
+      origin: { x, y: y + cameraYOffset, z },
       direction
     };
   }
@@ -116,7 +112,7 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
     }
 
     if (raycastHit?.hitEntity) {
-      this._handleHitEntity(raycastHit.hitEntity);
+      this._handleHitEntity(raycastHit.hitEntity, direction);
     }
 
     if (raycastHit?.hitBlock || raycastHit?.hitEntity) {
@@ -131,7 +127,9 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
     this._attackAudio.play(this.parent!.world!, true);
   }
 
-  protected _handleHitEntity(hitEntity: Entity): void {
-    // Override in subclasses to handle hit entity logic
+  protected _handleHitEntity(hitEntity: Entity, hitDirection: Vector3Like): void {
+    if (!(hitEntity instanceof GamePlayerEntity)) return;
+
+    hitEntity.takeDamage(this.damage, hitDirection, this.parent as GamePlayerEntity);
   }
 }

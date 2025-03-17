@@ -9,6 +9,7 @@ import {
   QuaternionLike,
   World,
   PlayerEntityController,
+  ColliderShape,
 } from 'hytopia';
 
 import ChestEntity from './ChestEntity';
@@ -35,6 +36,7 @@ interface InventoryItem {
 export default class GamePlayerEntity extends PlayerEntity {
   private readonly _damageAudio: Audio;
   private readonly _inventory: (ItemEntity | undefined)[] = new Array(TOTAL_INVENTORY_SLOTS).fill(undefined);
+  private _dead: boolean = false;
   private _health: number = BASE_HEALTH;
   private _inventoryActiveSlotIndex: number = 0;
   private _maxHealth: number = MAX_HEALTH;
@@ -73,6 +75,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._setupPlayerController();
     this._setupPlayerUI();
     this._setupPlayerCamera();
+    this._setupPlayerHeadshotCollider();
 
     this._damageAudio = new Audio({
       attachedToEntity: this,
@@ -108,6 +111,24 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._materials += quantity;
     this._updatePlayerUIMaterials();
   }
+
+  public checkDeath(attacker?: GamePlayerEntity): void {
+    if (this.health <= 0) {
+      this._dead = true;
+
+      this.dropAllInventoryItems();
+      this.player.camera.setMode(PlayerCameraMode.SPECTATOR);
+
+      if (this.isSpawned && this.world) {
+        this.playerController.idleLoopedAnimations = [ 'sleep' ];
+        this.world.chatManager.sendPlayerMessage(this.player, 'You have died! You will respawn when the next round starts!', 'FF0000');
+
+        if (attacker) {
+          this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} has killed ${this.player.username}!`, 'FF0000');
+        }
+      }
+    }
+  }
   
   public dropActiveInventoryItem(): void {
     if (this._inventoryActiveSlotIndex === 0) {
@@ -123,6 +144,20 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._inventory[this._inventoryActiveSlotIndex] = undefined;
     this._updatePlayerUIInventory();
     this._updatePlayerUIInventoryActiveSlot();
+  }
+
+  public dropAllInventoryItems(): void {
+    // skip 0, we cannot drop the pickaxe
+    for (let i = 1; i < this._inventory.length; i++) {
+      const item = this._inventory[i];
+      if (!item) continue;
+
+      item.unequip();
+      item.drop(this.position, this.player.camera.facingDirection);
+      this._inventory[i] = undefined;
+    }
+
+    this._updatePlayerUIInventory();
   }
 
   public getItemInventorySlot(item: ItemEntity): number {
@@ -154,11 +189,22 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._updatePlayerUIInventoryActiveSlot();
   }
 
-  public takeDamage(damage: number): void {
-    if (!this.isSpawned || !this.world) return;
+  public takeDamage(damage: number, hitDirection: Vector3Like, attacker?: GamePlayerEntity): void {
+    if (!this.isSpawned || !this.world || this._dead) return;
 
-    this.health = this.health - damage;
     this._playDamageAudio();
+
+    // Handle shield damage first
+    if (this.shield > 0) {
+      const shieldDamage = Math.min(damage, this.shield);
+      this.shield -= shieldDamage;
+      damage -= shieldDamage;      
+      if (damage === 0) return;
+    }
+
+    // Handle health damage
+    this.health -= damage;
+    this.checkDeath(attacker);
   }
 
   public updateHealth(amount: number): void {
@@ -192,6 +238,15 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, this._onTickWithPlayerInput);
   }
 
+  private _setupPlayerHeadshotCollider(): void {
+    this.createAndAddChildCollider({
+      shape: ColliderShape.BALL,
+      radius: 0.45,
+      relativePosition: { x: 0, y: 0.4, z: 0 },
+      isSensor: true,
+    });
+  }
+
   private _setupPlayerInventory(): void {
     const pickaxe = new PickaxeEntity();
     pickaxe.spawn(this.world!, this.position);
@@ -199,6 +254,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   private _setupPlayerUI(): void {
+    this.nametagSceneUI.setViewDistance(8); // lessen view distance so you only see player names when close
     this.player.ui.load('ui/index.html');
   }
 
@@ -427,7 +483,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _autoHealTicker(): void {
     setTimeout(() => {
-      if (!this.isSpawned) return;
+      if (!this.isSpawned || this._dead) return;
 
       if (this.health < this._maxHealth) {
         this.health += 1;

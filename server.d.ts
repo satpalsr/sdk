@@ -3367,7 +3367,8 @@ export declare interface PlayerCameraEventPayloads {
 /** The mode of the camera. @public */
 export declare enum PlayerCameraMode {
     FIRST_PERSON = 0,
-    THIRD_PERSON = 1
+    THIRD_PERSON = 1,
+    SPECTATOR = 2
 }
 
 /** The camera orientation state of a Player. @public */

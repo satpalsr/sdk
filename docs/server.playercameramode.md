@@ -46,6 +46,20 @@ FIRST\_PERSON
 </td></tr>
 <tr><td>
 
+SPECTATOR
+
+
+</td><td>
+
+`2`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 THIRD\_PERSON
 
 

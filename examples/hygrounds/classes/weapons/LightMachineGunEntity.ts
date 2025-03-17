@@ -13,7 +13,7 @@ const DEFAULT_LIGHT_MACHINE_GUN_OPTIONS: GunEntityOptions = {
   name: 'Light Machine Gun',
   maxAmmo: 50,
   totalAmmo: 300,
-  scopeZoom: 2,
+  scopeZoom: 1.5,
   modelUri: 'models/items/light-machine-gun.glb',
   modelScale: 1.3,
   range: 40,

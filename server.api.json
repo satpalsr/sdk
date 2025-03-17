@@ -26360,6 +26360,27 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!PlayerCameraMode.SPECTATOR:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SPECTATOR = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "SPECTATOR"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!PlayerCameraMode.THIRD_PERSON:member",
               "docComment": "",
               "excerptTokens": [
