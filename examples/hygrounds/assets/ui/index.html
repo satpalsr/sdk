@@ -6,6 +6,13 @@
 <!-- UI-->
 <div class="crosshair"></div>
 
+<div class="damage-indicator-container">
+  <div class="damage-indicator top"></div>
+  <div class="damage-indicator right"></div>
+  <div class="damage-indicator bottom"></div>
+  <div class="damage-indicator left"></div>
+</div>
+
 <img src="{{CDN_ASSETS_URL}}/ui/images/scope.png" class="scope-overlay">
 
 <div class="hud">  
@@ -161,6 +168,41 @@
       if (totalAmmo !== undefined) {
         const totalAmmoElement = document.querySelector('.total-ammo');
         totalAmmoElement.textContent = totalAmmo;
+      }
+    }
+
+    if (type === 'damage-indicator') {
+      const { direction } = data;
+      
+      // Make sure we have a valid direction object
+      if (!direction || typeof direction.x === 'undefined' || typeof direction.z === 'undefined') {
+        console.error('Invalid direction object:', direction);
+        return;
+      }
+      
+      // Hide all indicators first
+      document.querySelectorAll('.damage-indicator').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Determine which indicator to show based on the dominant direction
+      const absX = Math.abs(direction.x);
+      const absZ = Math.abs(direction.z);
+      
+      let indicatorClass;
+      if (absX > absZ) {
+        indicatorClass = direction.x > 0 ? '.damage-indicator.right' : '.damage-indicator.left';
+      } else {
+        indicatorClass = direction.z > 0 ? '.damage-indicator.top' : '.damage-indicator.bottom';
+      }
+      
+      // Show and animate the indicator
+      const indicator = document.querySelector(indicatorClass);
+      if (indicator) {
+        indicator.classList.add('active');
+        indicator.style.animation = 'none';
+        indicator.offsetHeight; // Force reflow
+        indicator.style.animation = 'fadeOut 1s forwards';
       }
     }
 
@@ -617,5 +659,66 @@
 
   #chat-window {
     width: 25% !important;
+  }
+
+  .damage-indicator-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .damage-indicator {
+    position: absolute;
+    opacity: 0;
+    background: linear-gradient(to center, rgba(255,0,0,0.7), rgba(255,0,0,0));
+  }
+
+  .damage-indicator.active {
+    opacity: 1;
+  }
+
+  /* Top damage indicator */
+  .damage-indicator.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255,0,0,0.7), rgba(255,0,0,0));
+  }
+
+  /* Right damage indicator */
+  .damage-indicator.right {
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,0,0,0.7), rgba(255,0,0,0));
+  }
+
+  /* Bottom damage indicator */
+  .damage-indicator.bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(255,0,0,0.7), rgba(255,0,0,0));
+  }
+
+  /* Left damage indicator */
+  .damage-indicator.left {
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,0,0,0.7), rgba(255,0,0,0));
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
 </style>

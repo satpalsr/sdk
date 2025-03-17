@@ -194,6 +194,17 @@ export default class GamePlayerEntity extends PlayerEntity {
 
     this._playDamageAudio();
 
+    // Convert hit direction to screen space coordinates
+    const facingDir = this.player.camera.facingDirection;
+    this.player.ui.sendData({
+      type: 'damage-indicator', 
+      direction: {
+        x: -(facingDir.x * hitDirection.z - facingDir.z * hitDirection.x),
+        y: 0,
+        z: -(facingDir.x * hitDirection.x + facingDir.z * hitDirection.z)
+      }
+    });
+
     // Handle shield damage first
     if (this.shield > 0) {
       const shieldDamage = Math.min(damage, this.shield);
