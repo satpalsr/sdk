@@ -65,6 +65,12 @@ export default class GameManager {
     this._spawnStartingChests();
     this._spawnStartingItems();
     this._startChestDropInterval();
+
+    // Move all players to random spawn positions
+    this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
+      playerEntity.setPosition(this.getRandomSpawnPosition());
+      playerEntity.player.ui.sendData({ type: 'game-start' });
+    });
     
     // Set game timer
     this._gameTimer = setTimeout(() => this.endGame(), GAME_DURATION_MS);
@@ -105,6 +111,11 @@ export default class GameManager {
     // Sync UI for the new player
     this.syncLeaderboard(player);
     this.syncTimer(player);
+
+    // Send start announcement if game is active
+    if (this._gameActive) {
+      player.ui.sendData({ type: 'game-start' });
+    }
   }
 
   /**

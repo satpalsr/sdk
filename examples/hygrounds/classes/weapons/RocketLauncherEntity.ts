@@ -1,4 +1,4 @@
-import { Audio, Entity, Quaternion, Vector3Like, QuaternionLike, RigidBodyType, EntityEvent } from 'hytopia';
+import { Audio, Entity, Quaternion, Vector3Like, QuaternionLike, RigidBodyType, EntityEvent, Vector3 } from 'hytopia';
 import GunEntity from '../GunEntity';
 import { BEDROCK_BLOCK_ID } from '../../gameConfig';
 import type { GunEntityOptions } from '../GunEntity';
@@ -99,7 +99,19 @@ export default class RocketLauncherEntity extends GunEntity {
         y: Math.floor(contactPoint.y), 
         z: Math.floor(contactPoint.z)
       };
+
+      // Deal damage to nearby players
+      this.parent.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
+        const playerPos = Vector3.fromVector3Like(playerEntity.position);
+        const contactPos = Vector3.fromVector3Like(contactPoint);
+        const distance = playerPos.distance(contactPos);
+
+        if (distance <= ROCKET_DESTRUCTION_RADIUS) {
+          (playerEntity as GamePlayerEntity).takeDamage(this.damage, direction, this.parent as GamePlayerEntity);
+        }
+      });
       
+      // Break blocks
       for (let dx = -ROCKET_DESTRUCTION_RADIUS; dx <= ROCKET_DESTRUCTION_RADIUS; dx++) {
         for (let dy = -ROCKET_DESTRUCTION_RADIUS; dy <= ROCKET_DESTRUCTION_RADIUS; dy++) {
           for (let dz = -ROCKET_DESTRUCTION_RADIUS; dz <= ROCKET_DESTRUCTION_RADIUS; dz++) {

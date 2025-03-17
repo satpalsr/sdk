@@ -1,7 +1,7 @@
 <!-- Fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arial&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 <!-- UI-->
 <div class="crosshair"></div>
@@ -17,10 +17,13 @@
 
 <img src="{{CDN_ASSETS_URL}}/ui/images/scope.png" class="scope-overlay">
 
+<!-- Game Start Announcement -->
+<div class="game-start-announcement">DEATHMATCH!</div>
+
 <!-- Leaderboard -->
 <div class="leaderboard">
   <div class="leaderboard-title">HyGrounds Deathmatch</div>
-  <div class="leaderboard-timer">10:00</div>
+  <div class="leaderboard-timer">0:00</div>
   <div class="leaderboard-header">
     <div class="header-name">Player</div>
     <div class="header-kills">Kills</div>
@@ -210,6 +213,16 @@
     }
   }
 
+  function showGameStartAnnouncement() {
+    const announcement = document.querySelector('.game-start-announcement');
+    announcement.classList.add('active');
+    
+    // Remove the active class after animation completes
+    setTimeout(() => {
+      announcement.classList.remove('active');
+    }, 3000);
+  }
+
   hytopia.registerSceneUITemplate('item-label', (id, onState) => {
     const template = document.getElementById('item-label-template');
     const clone = template.content.cloneNode(true);
@@ -248,6 +261,10 @@
 
     if (!type) {
       return console.warn('No type received for data', data);
+    }
+
+    if (type === 'game-start') {
+      showGameStartAnnouncement();
     }
 
     if (type === 'ammo-indicator') {
@@ -497,6 +514,35 @@
     transform: translateY(-50%);
   }
 
+  .game-start-announcement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #ff3333;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .game-start-announcement.active {
+    animation: announcementFade 3s ease-in-out forwards;
+  }
+
+  @keyframes announcementFade {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  }
+
   .hit-damage-container {
     position: fixed;
     top: 50%;
@@ -513,7 +559,7 @@
 
   .hit-damage-number {
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     animation: damagePopup 0.5s ease-out forwards;
@@ -545,7 +591,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -593,7 +639,7 @@
     flex-direction: column;
     z-index: 99;
     gap: 10px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -659,7 +705,7 @@
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.8);
@@ -676,7 +722,7 @@
     position: absolute;
     bottom: 2px;
     left: 2px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.9);
@@ -691,7 +737,7 @@
     bottom: -18px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.8);
@@ -789,7 +835,7 @@
     text-align: center;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     position: relative;
     max-width: 220px;
@@ -1000,7 +1046,7 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     white-space: nowrap;
     overflow: hidden;
-    max-width: 150px;
+    max-width: 160px;
     text-overflow: ellipsis;
   }
 </style>
