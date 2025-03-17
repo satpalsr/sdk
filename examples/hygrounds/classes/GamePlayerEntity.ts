@@ -18,6 +18,7 @@ import ItemEntity from './ItemEntity';
 import PickaxeEntity from './weapons/PickaxeEntity';
 import MeleeWeaponEntity from './MeleeWeaponEntity';
 import { BUILD_BLOCK_ID } from '../gameConfig';
+import GameManager from './GameManager';
 
 const BASE_HEALTH = 100;
 const BASE_SHIELD = 0;
@@ -42,6 +43,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   private _maxHealth: number = MAX_HEALTH;
   private _maxShield: number = MAX_SHIELD;
   private _materials: number = 0;
+  private _respawnTimer: NodeJS.Timeout | undefined;
   private _shield: number = BASE_SHIELD;
 
   // Player entities always assign a PlayerController to the entity
@@ -118,12 +120,17 @@ export default class GamePlayerEntity extends PlayerEntity {
     if (this.health <= 0) {
       this._dead = true;
 
+      if (attacker) {
+        GameManager.instance.addKill(attacker.player.username);
+      }
+
       this.dropAllInventoryItems();
       this.player.camera.setMode(PlayerCameraMode.SPECTATOR);
 
       if (this.isSpawned && this.world) {
         this.playerController.idleLoopedAnimations = [ 'sleep' ];
-        this.world.chatManager.sendPlayerMessage(this.player, 'You have died! You will respawn when the next round starts!', 'FF0000');
+        this.world.chatManager.sendPlayerMessage(this.player, 'You have died! Respawning in 10 seconds...', 'FF0000');
+        this._respawnTimer = setTimeout(() => this.respawn(), 10 * 1000);
 
         if (attacker) {
           this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} has killed ${this.player.username}!`, 'FF0000');
@@ -184,6 +191,24 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.runLoopedAnimations = ['run_lower', 'run_upper'];
   }
 
+  public resetMaterials(): void {
+    this._materials = 0;
+    this._updatePlayerUIMaterials();
+  }
+
+  public respawn(): void {
+    if (!this.world) return;
+
+    this._dead = false;
+    this.health = this._maxHealth;
+    this.shield = 0;
+    this.resetAnimations();
+    this.player.camera.setAttachedToEntity(this);
+    this.player.camera.setMode(PlayerCameraMode.FIRST_PERSON);
+    this.setActiveInventorySlotIndex(0);
+    this.setPosition(GameManager.instance.getRandomSpawnPosition());
+  }
+
   public setActiveInventorySlotIndex(index: number): void {
     if (index !== this._inventoryActiveSlotIndex) {
       this._inventory[this._inventoryActiveSlotIndex]?.unequip();
@@ -199,7 +224,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   public takeDamage(damage: number, hitDirection: Vector3Like, attacker?: GamePlayerEntity): void {
-    if (!this.isSpawned || !this.world || this._dead) return;
+    if (!this.isSpawned || !this.world || !GameManager.instance.isGameActive ||  this._dead) return;
 
     this._playDamageAudio();
 

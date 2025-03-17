@@ -21,7 +21,7 @@ const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
 
 export default class PickaxeEntity extends MeleeWeaponEntity {
   public constructor(options: Partial<MeleeWeaponEntityOptions> = {}) {
-    super({ ...DEFAULT_PICKAXE_OPTIONS, ...options });
+    super({ ...DEFAULT_PICKAXE_OPTIONS, ...options, tag: 'pickaxe' });
   }
 
   public override attack(): void {

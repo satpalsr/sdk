@@ -317,6 +317,8 @@ export const CHEST_SPAWNS = [
   },
 ];
 
+export const GAME_DURATION_MS = 10 * 60 * 1000; // 10 minutes
+
 export const ITEM_SPAWNS = [
   { position: { x: -21.5, y: 2, z: -17 } },
   { position: { x: -28.5, y: 7, z: -35.5 } },
@@ -376,7 +378,9 @@ export const ITEM_SPAWN_ITEMS = [
 
 export const ITEM_SPAWNS_AT_START = 8;
 
+export const MINIMUM_PLAYERS_TO_START = 2;
+
 export const SPAWN_REGION_AABB = {
-  min: { x: -50, y: 20, z: -50 },
-  max: { x: 50, y: 30, z: 50 },
+  min: { x: -45, y: 30, z: -45 },
+  max: { x: 45, y: 35, z: 45 },
 };

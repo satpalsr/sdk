@@ -17,6 +17,22 @@
 
 <img src="{{CDN_ASSETS_URL}}/ui/images/scope.png" class="scope-overlay">
 
+<!-- Leaderboard -->
+<div class="leaderboard">
+  <div class="leaderboard-title">HyGrounds Deathmatch</div>
+  <div class="leaderboard-timer">10:00</div>
+  <div class="leaderboard-header">
+    <div class="header-name">Player</div>
+    <div class="header-kills">Kills</div>
+  </div>
+  <div class="leaderboard-players">
+    <div class="leaderboard-player no-kills">
+      <div class="player-name">Waiting for players...</div>
+      <div class="player-kills"></div>
+    </div>
+  </div>
+</div>
+
 <div class="hud">  
   <div class="info-container">
     <div class="ammo-indicator" style="display: none;">
@@ -108,6 +124,91 @@
 <!-- UI Scripts-->
 <script>
   const CDN_ASSETS_URL = '{{CDN_ASSETS_URL}}';
+  let leaderboardKillCounts = {};
+  let gameEndTime = 0;
+  let timerInterval;
+
+  function updateLeaderboard() {
+    const leaderboardPlayers = document.querySelector('.leaderboard-players');
+    leaderboardPlayers.innerHTML = '';
+
+    // Check if game has started
+    if (gameEndTime === 0) {
+      // Show "Waiting for players..." message if game hasn't started
+      const waitingElement = document.createElement('div');
+      waitingElement.className = 'leaderboard-player no-kills';
+      waitingElement.innerHTML = `
+        <div class="player-name">Waiting for players...</div>
+        <div class="player-kills"></div>
+      `;
+      leaderboardPlayers.appendChild(waitingElement);
+      return;
+    }
+
+    // Get sorted players by kill count
+    const sortedPlayers = Object.entries(leaderboardKillCounts)
+      .sort((a, b) => b[1] - a[1]);
+
+    if (sortedPlayers.length === 0 || sortedPlayers.every(player => player[1] === 0)) {
+      // Show "No kills yet" message if no players have kills
+      const noKillsElement = document.createElement('div');
+      noKillsElement.className = 'leaderboard-player no-kills';
+      noKillsElement.innerHTML = `
+        <div class="player-name">No kills yet</div>
+        <div class="player-kills"></div>
+      `;
+      leaderboardPlayers.appendChild(noKillsElement);
+      return;
+    }
+
+    // Create player elements for the leaderboard
+    sortedPlayers.forEach((player, index) => {
+      const [username, killCount] = player;
+      
+      // Skip players with 0 kills
+      if (killCount === 0) return;
+      
+      const playerElement = document.createElement('div');
+      playerElement.className = 'leaderboard-player';
+      
+      let rankIcon = '';
+      if (index === 0) {
+        rankIcon = `<img src="${CDN_ASSETS_URL}/icons/crown-gold.png" class="rank-icon">`;
+      } else if (index === 1) {
+        rankIcon = `<img src="${CDN_ASSETS_URL}/icons/crown-silver.png" class="rank-icon">`;
+      } else if (index === 2) {
+        rankIcon = `<img src="${CDN_ASSETS_URL}/icons/crown-bronze.png" class="rank-icon">`;
+      }
+
+      playerElement.innerHTML = `
+        <div class="player-name">
+          ${rankIcon}
+          ${username}
+        </div>
+        <div class="player-kills">${killCount}</div>
+      `;
+      
+      leaderboardPlayers.appendChild(playerElement);
+    });
+  }
+
+  function updateTimer() {
+    const now = Date.now();
+    const timeRemaining = Math.max(0, gameEndTime - now);
+    
+    // Format time as mm:ss
+    const minutes = Math.floor(timeRemaining / 60000);
+    const seconds = Math.floor((timeRemaining % 60000) / 1000);
+    const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    const timerElement = document.querySelector('.leaderboard-timer');
+    timerElement.textContent = formattedTime;
+    
+    // Stop the timer when it reaches zero
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+    }
+  }
 
   hytopia.registerSceneUITemplate('item-label', (id, onState) => {
     const template = document.getElementById('item-label-template');
@@ -288,6 +389,18 @@
       quantityElement.textContent = quantity;
     }
 
+    if (type === 'leaderboard-sync') {
+      const { killCounts } = data;
+      leaderboardKillCounts = killCounts;
+      updateLeaderboard();
+    }
+
+    if (type === 'leaderboard-update') {
+      const { username, killCount } = data;
+      leaderboardKillCounts[username] = killCount;
+      updateLeaderboard();
+    }
+
     if (type === 'materials') {
       const { materials } = data;
       const materialsAmount = document.querySelector('.materials-amount');
@@ -328,6 +441,24 @@
       } else {
         scopeOverlay.classList.add('active');
       }
+    }
+
+    if (type === 'timer-sync') {
+      const { startedAt, endsAt } = data;
+      
+      // Clear any existing timer interval
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      }
+      
+      // Set the end time
+      gameEndTime = endsAt;
+      
+      // Update timer immediately
+      updateTimer();
+      
+      // Set up interval to update timer every second
+      timerInterval = setInterval(updateTimer, 1000);
     }
   });
 </script>
@@ -784,5 +915,92 @@
   @keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
+  }
+
+  /* Leaderboard Styles */
+  .leaderboard {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+  }
+
+  .leaderboard-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .leaderboard-timer {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 5px;
+  }
+
+  .leaderboard-players {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .leaderboard-player {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+
+  .leaderboard-player:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .rank-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+
+  .player-name {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 150px;
+    text-overflow: ellipsis;
   }
 </style>
