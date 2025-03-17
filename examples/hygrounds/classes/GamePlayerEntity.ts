@@ -250,12 +250,13 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   private _setupPlayerHeadshotCollider(): void {
-    this.createAndAddChildCollider({
-      shape: ColliderShape.BALL,
-      radius: 0.45,
-      relativePosition: { x: 0, y: 0.4, z: 0 },
-      isSensor: true,
-    });
+    // TODO
+    // this.createAndAddChildCollider({
+    //   shape: ColliderShape.BALL,
+    //   radius: 0.45,
+    //   relativePosition: { x: 0, y: 0.4, z: 0 },
+    //   isSensor: true,
+    // });
   }
 
   private _setupPlayerInventory(): void {

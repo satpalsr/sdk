@@ -10,6 +10,8 @@ import {
   CHEST_DROP_INTERVAL_MS,
   CHEST_DROP_REGION_AABB,
   ITEM_SPAWNS,
+  ITEM_SPAWNS_AT_START,
+  ITEM_SPAWN_ITEMS,
 } from '../gameConfig';
 
 import ChestEntity from './ChestEntity';
@@ -32,19 +34,33 @@ export default class GameManager {
     }
 
     // Get random unique initial chest spawns
-    const shuffledSpawns = [...CHEST_SPAWNS].sort(() => Math.random() - 0.5);
-    const selectedSpawns = shuffledSpawns.slice(0, CHEST_SPAWNS_AT_START);
+    const shuffledChestSpawns = [...CHEST_SPAWNS].sort(() => Math.random() - 0.5);
+    const selectedChestSpawns = shuffledChestSpawns.slice(0, CHEST_SPAWNS_AT_START);
 
     // Spawn initial chests at selected positions
-    selectedSpawns.forEach(spawn => {
+    selectedChestSpawns.forEach(spawn => {
       const chest = new ChestEntity();
       chest.spawn(world, spawn.position, spawn.rotation);
     });
 
     // Spawn initial items at selected positions
-    ITEM_SPAWNS.forEach(async (spawn) => {
-      const pistol = await ItemFactory.createItem('pistol');
-      pistol.spawn(world, spawn.position);
+    const shuffledItemSpawns = [...ITEM_SPAWNS].sort(() => Math.random() - 0.5);
+    const selectedItemSpawns = shuffledItemSpawns.slice(0, ITEM_SPAWNS_AT_START);
+    const totalWeight = ITEM_SPAWN_ITEMS.reduce((sum, item) => sum + item.pickWeight, 0);
+
+    selectedItemSpawns.forEach(async spawn => {
+      let random = Math.random() * totalWeight;
+      let selectedItem = ITEM_SPAWN_ITEMS[0];
+      for (const item of ITEM_SPAWN_ITEMS) {
+        random -= item.pickWeight;
+        if (random <= 0) {
+          selectedItem = item;
+          break;
+        }
+      }
+
+      const item = await ItemFactory.createItem(selectedItem.itemId);
+      item.spawn(world, spawn.position, Quaternion.fromEuler(0, Math.random() * 360 - 180, 0));
     });
 
     // Setup chest drop interval

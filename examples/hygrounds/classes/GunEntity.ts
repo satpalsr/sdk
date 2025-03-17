@@ -88,7 +88,7 @@ export default abstract class GunEntity extends ItemEntity {
 
     // reset any scope zoom
     const player = this.parent as GamePlayerEntity;
-    player.player.camera.setZoom(1);
+    this.zoomScope(true);
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
@@ -122,11 +122,11 @@ export default abstract class GunEntity extends ItemEntity {
     this._updateUI(player);
   }
 
-  public zoomScope(): void {
+  public zoomScope(reset: boolean = false): void {
     if (!this.parent?.world || this.scopeZoom === 1) return;
 
     const player = this.parent as GamePlayerEntity;
-    const zoom = player.player.camera.zoom === 1 ? this.scopeZoom : 1;
+    const zoom = player.player.camera.zoom === 1 && !reset ? this.scopeZoom : 1;
 
     player.player.camera.setZoom(zoom);
     player.player.ui.sendData({

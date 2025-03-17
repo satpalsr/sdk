@@ -318,7 +318,60 @@ export const CHEST_SPAWNS = [
 ];
 
 export const ITEM_SPAWNS = [
-  {
-    position: { x: -21.5, y: 2, z: -17 },
-  }
+  { position: { x: -21.5, y: 2, z: -17 } },
+  { position: { x: -28.5, y: 7, z: -35.5 } },
+  { position: { x: -19.5, y: 2, z: -46.5 } },
+  { position: { x: -37.5, y: 2, z: -3.5 } },
+  { position: { x: -31.5, y: 2, z: 16.5 } },
+  { position: { x: -18.5, y: 2, z: 40.5 } },
+  { position: { x: 1.5, y: 2, z: 11.5 } },
+  { position: { x: 7.5, y: 10, z: 36.5 } },
+  { position: { x: 20.5, y: 2, z: 44.5 } },
+  { position: { x: 37.5, y: 2, z: 38.5 } },
+  { position: { x: 44.5, y: 2, z: -3.5 } },
+  { position: { x: 37.5, y: 2, z: -17.5 } },
+  { position: { x: 40.5, y: 10, z: -41.5 } },
+  { position: { x: 3.5, y: 10, z: -31.5 } },
+  { position: { x: -30.5, y: 10, z: 41.5 } },
 ];
+
+export const ITEM_SPAWN_ITEMS = [
+  {
+    itemId: 'ak47',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'auto-shotgun',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'bolt-action-sniper',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'light-machine-gun',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'medpack',
+    pickWeight: 1,
+  },
+  {
+    itemId: 'pistol',
+    pickWeight: 1,
+  },
+  {
+    itemId: 'rocket-launcher',
+    pickWeight: 0.03,
+  },
+  {
+    itemId: 'shotgun',
+    pickWeight: 0.08,
+  },
+  {
+    itemId: 'shield-potion',
+    pickWeight: 1,
+  },
+];
+
+export const ITEM_SPAWNS_AT_START = 8;
