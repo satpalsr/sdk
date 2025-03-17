@@ -1,9 +1,9 @@
 import {
   startServer,
   PlayerEvent,
-  ModelRegistry,
 } from 'hytopia';
 
+import { SPAWN_REGION_AABB } from './gameConfig';
 import GameManager from './classes/GameManager';
 import GamePlayerEntity from './classes/GamePlayerEntity';
 
@@ -30,8 +30,11 @@ startServer(world => {
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     const playerEntity = new GamePlayerEntity(player);
     
-    // Spawn player at starting position
-    playerEntity.spawn(world, { x: -22, y: 3, z: -9 });
+    // Spawn player at a random position within the spawn region
+    // const randomX = SPAWN_REGION_AABB.min.x + Math.random() * (SPAWN_REGION_AABB.max.x - SPAWN_REGION_AABB.min.x);
+    // const randomY = SPAWN_REGION_AABB.min.y + Math.random() * (SPAWN_REGION_AABB.max.y - SPAWN_REGION_AABB.min.y);
+    // const randomZ = SPAWN_REGION_AABB.min.z + Math.random() * (SPAWN_REGION_AABB.max.z - SPAWN_REGION_AABB.min.z);
+    playerEntity.spawn(world, { x: 0, y: 30, z: 0 });
   });
 
   // Handle player leaving the game

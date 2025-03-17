@@ -13,6 +13,8 @@
   <div class="damage-indicator left"></div>
 </div>
 
+<div class="hit-damage-container"></div>
+
 <img src="{{CDN_ASSETS_URL}}/ui/images/scope.png" class="scope-overlay">
 
 <div class="hud">  
@@ -206,6 +208,30 @@
       }
     }
 
+    if (type === 'show-damage') {
+      const { damage } = data;
+      
+      // Create a new damage number element
+      const damageNumber = document.createElement('div');
+      damageNumber.className = 'hit-damage-number';
+      damageNumber.textContent = damage;
+      
+      // Add some randomness to position
+      const randomX = Math.random() * 60 - 30; // -30 to 30px
+      const randomY = Math.random() * 40 - 20; // -20 to 20px
+      
+      damageNumber.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      
+      // Add to container
+      const container = document.querySelector('.hit-damage-container');
+      container.appendChild(damageNumber);
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        damageNumber.remove();
+      }, 500);
+    }
+
     if (type === 'health') {
       const { health, maxHealth } = data;
       const healthText = document.querySelector('.health-text');
@@ -338,6 +364,44 @@
     height: 2px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .hit-damage-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 100;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hit-damage-number {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    animation: damagePopup 0.5s ease-out forwards;
+    position: absolute;
+  }
+
+  @keyframes damagePopup {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) translateY(0);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.2) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1) translateY(-50px);
+    }
   }
 
   .materials-counter {

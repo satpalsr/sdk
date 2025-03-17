@@ -239,9 +239,12 @@ export default abstract class GunEntity extends ItemEntity {
   }
 
   protected _handleHitEntity(hitEntity: Entity, hitDirection: Vector3Like): void {
-    if (!(hitEntity instanceof GamePlayerEntity)) return;
+    if (!(hitEntity instanceof GamePlayerEntity) || hitEntity.isDead) return;
 
-    hitEntity.takeDamage(this.damage, hitDirection, this.parent as GamePlayerEntity);
+    const attacker = this.parent as GamePlayerEntity;
+
+    attacker.dealtDamage(this.damage);
+    hitEntity.takeDamage(this.damage, hitDirection, attacker);
   }
 
   public updateAmmoIndicatorUI(reloading: boolean = false): void {

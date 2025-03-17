@@ -9,7 +9,7 @@ import {
   QuaternionLike,
   World,
   PlayerEntityController,
-  ColliderShape,
+  SceneUI,
 } from 'hytopia';
 
 import ChestEntity from './ChestEntity';
@@ -63,6 +63,8 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public get maxHealth(): number { return this._maxHealth; }
   public get maxShield(): number { return this._maxShield; }
+
+  public get isDead(): boolean { return this._dead; }
 
   public constructor(player: Player) {
     super({
@@ -129,6 +131,13 @@ export default class GamePlayerEntity extends PlayerEntity {
       }
     }
   }
+
+  public dealtDamage(damage: number): void {
+    this.player.ui.sendData({
+      type: 'show-damage',
+      damage,
+    });
+  }
   
   public dropActiveInventoryItem(): void {
     if (this._inventoryActiveSlotIndex === 0) {
@@ -193,6 +202,10 @@ export default class GamePlayerEntity extends PlayerEntity {
     if (!this.isSpawned || !this.world || this._dead) return;
 
     this._playDamageAudio();
+
+    // Flash for damage
+    this.setTintColor({ r: 255, g: 0, b: 0});
+    setTimeout(() => this.setTintColor({ r: 255, g: 255, b: 255 }), 100); // reset tint color after 100ms
 
     // Convert hit direction to screen space coordinates
     const facingDir = this.player.camera.facingDirection;

@@ -42,14 +42,14 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
       attachedToEntity: this,
       uri: options.attackAudioUri,
       volume: 0.3,
-      referenceDistance: 8,
+      referenceDistance: 3,
     });
 
     this._hitAudio = new Audio({
       attachedToEntity: this,
       uri: options.hitAudioUri,
       volume: 0.3,
-      referenceDistance: 8,
+      referenceDistance: 3,
     });
   }
 
@@ -128,8 +128,11 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
   }
 
   protected _handleHitEntity(hitEntity: Entity, hitDirection: Vector3Like): void {
-    if (!(hitEntity instanceof GamePlayerEntity)) return;
+    if (!(hitEntity instanceof GamePlayerEntity) || hitEntity.isDead) return;
+    
+    const attacker = this.parent as GamePlayerEntity;
 
-    hitEntity.takeDamage(this.damage, hitDirection, this.parent as GamePlayerEntity);
+    attacker.dealtDamage(this.damage);
+    hitEntity.takeDamage(this.damage, hitDirection, attacker);
   }
 }

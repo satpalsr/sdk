@@ -16,7 +16,7 @@ const DEFAULT_LIGHT_MACHINE_GUN_OPTIONS: GunEntityOptions = {
   scopeZoom: 1.5,
   modelUri: 'models/items/light-machine-gun.glb',
   modelScale: 1.3,
-  range: 40,
+  range: 50,
   reloadAudioUri: 'audio/sfx/machine-gun-reload.mp3',
   reloadTimeMs: 4200,
   shootAudioUri: 'audio/sfx/machine-gun-shoot.mp3',

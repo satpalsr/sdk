@@ -375,3 +375,8 @@ export const ITEM_SPAWN_ITEMS = [
 ];
 
 export const ITEM_SPAWNS_AT_START = 8;
+
+export const SPAWN_REGION_AABB = {
+  min: { x: -50, y: 20, z: -50 },
+  max: { x: 50, y: 30, z: 50 },
+};

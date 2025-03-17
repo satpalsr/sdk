@@ -18,7 +18,7 @@ const DEFAULT_BOLT_ACTION_SNIPER_OPTIONS: GunEntityOptions = {
   modelScale: 1.3,
   range: 100,
   reloadAudioUri: 'audio/sfx/sniper-reload.mp3',
-  reloadTimeMs: 3000,
+  reloadTimeMs: 2200,
   shootAudioUri: 'audio/sfx/sniper-shoot.mp3',
 };
 
