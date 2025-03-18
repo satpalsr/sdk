@@ -19,8 +19,6 @@ import MeleeWeaponEntity from './MeleeWeaponEntity';
 import { BUILD_BLOCK_ID } from '../gameConfig';
 import GameManager from './GameManager';
 
-import RocketLauncherEntity from './weapons/RocketLauncherEntity';
-
 const BASE_HEALTH = 100;
 const BASE_SHIELD = 0;
 const BLOCK_MATERIAL_COST = 3;
@@ -95,10 +93,6 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._setupPlayerInventory();
     this._autoHealTicker();
     this._updatePlayerUIHealth();
-
-    const rocketLauncher = new RocketLauncherEntity();
-    rocketLauncher.spawn(world, this.position);
-    rocketLauncher.pickup(this);
   }
 
   public addItemToInventory(item: ItemEntity): void {

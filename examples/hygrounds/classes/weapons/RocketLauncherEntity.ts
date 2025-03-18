@@ -93,6 +93,11 @@ export default class RocketLauncherEntity extends GunEntity {
 
       const { world } = this.parent;
       const contactManifold = world.simulation.getContactManifolds(colliderHandleA, colliderHandleB)[0];
+
+      if (!contactManifold) {
+        return;
+      }
+
       const contactPoint = contactManifold.contactPoints[0];
       const contactCoordinate = {
         x: Math.floor(contactPoint.x),
