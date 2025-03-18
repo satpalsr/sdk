@@ -319,6 +319,8 @@ export const CHEST_SPAWNS = [
 
 export const GAME_DURATION_MS = 10 * 60 * 1000; // 10 minutes
 
+export const ITEM_DESPAWN_TIME_MS = 30 * 1000; // 30 seconds
+
 export const ITEM_SPAWNS = [
   { position: { x: -21.5, y: 2, z: -17 } },
   { position: { x: -28.5, y: 7, z: -35.5 } },

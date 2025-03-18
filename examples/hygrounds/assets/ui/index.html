@@ -24,6 +24,7 @@
 <div class="leaderboard">
   <div class="leaderboard-title">HyGrounds Deathmatch</div>
   <div class="leaderboard-timer">0:00</div>
+  <div class="leaderboard-players-count">Players: 0</div>
   <div class="leaderboard-header">
     <div class="header-name">Player</div>
     <div class="header-kills">Kills</div>
@@ -416,6 +417,12 @@
       const { username, killCount } = data;
       leaderboardKillCounts[username] = killCount;
       updateLeaderboard();
+    }
+
+    if (type === 'players-count') {
+      const { count } = data;
+      const playersCount = document.querySelector('.leaderboard-players-count');
+      playersCount.textContent = `Players: ${count}`;
     }
 
     if (type === 'materials') {
@@ -1031,6 +1038,19 @@
 
   .leaderboard-player:hover {
     background: rgba(255, 255, 255, 0.2);
+  }
+
+  .leaderboard-players-count {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
   }
 
   .rank-icon {

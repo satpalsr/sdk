@@ -122,12 +122,21 @@ export default class GamePlayerEntity extends PlayerEntity {
 
       if (attacker) {
         GameManager.instance.addKill(attacker.player.username);
+
+        // Focus on the player that killed you
+        this.player.camera.setMode(PlayerCameraMode.THIRD_PERSON);
+        this.player.camera.setAttachedToEntity(attacker);
+        this.player.camera.setModelHiddenNodes([]);
       }
 
       this.dropAllInventoryItems();
-      this.player.camera.setMode(PlayerCameraMode.SPECTATOR);
 
       if (this.isSpawned && this.world) {
+        // reset player inputs
+        Object.keys(this.player.input).forEach(key => {
+          this.player.input[key] = false;
+        });
+
         this.playerController.idleLoopedAnimations = [ 'sleep' ];
         this.world.chatManager.sendPlayerMessage(this.player, 'You have died! Respawning in 10 seconds...', 'FF0000');
         this._respawnTimer = setTimeout(() => this.respawn(), 10 * 1000);
@@ -204,7 +213,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.shield = 0;
     this.resetAnimations();
     this.player.camera.setAttachedToEntity(this);
-    this.player.camera.setMode(PlayerCameraMode.FIRST_PERSON);
+    this._setupPlayerCamera();
     this.setActiveInventorySlotIndex(0);
     this.setPosition(GameManager.instance.getRandomSpawnPosition());
   }
@@ -316,6 +325,10 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _onTickWithPlayerInput = (payload: EventPayloads[BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]): void => {
     const { input } = payload;
+    
+    if (this._dead) {
+      return;
+    }
 
     if (input.ml) {
       this._handleMouseLeftClick();

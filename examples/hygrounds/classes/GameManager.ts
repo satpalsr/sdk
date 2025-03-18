@@ -33,11 +33,18 @@ export default class GameManager {
   private _chestDropInterval: NodeJS.Timeout | undefined;
   private _gameStartAt: number = 0;
   private _gameTimer: NodeJS.Timeout | undefined;
+  private _playerCount: number = 0;
   private _restartTimer: NodeJS.Timeout | undefined;
   private _killCounter: Map<string, number> = new Map();
   private _gameActive: boolean = false;
 
   public get isGameActive(): boolean { return this._gameActive; }
+
+  public get playerCount(): number { return this._playerCount; }
+  public set playerCount(value: number) {
+    this._playerCount = value;
+    this._updatePlayerCountUI();
+  }
 
   /**
    * Sets up the game world and waits for players to join
@@ -70,6 +77,7 @@ export default class GameManager {
     this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
       playerEntity.setPosition(this.getRandomSpawnPosition());
       playerEntity.player.ui.sendData({ type: 'game-start' });
+      this._sendGameStartAnnouncements(playerEntity.player);
     });
     
     // Set game timer
@@ -77,9 +85,6 @@ export default class GameManager {
 
     // Sync UI for all players
     this._syncAllPlayersUI();
-    
-    // Announce game start with instructions
-    this._sendGameStartAnnouncements();
   }
 
   /**
@@ -109,12 +114,13 @@ export default class GameManager {
     playerEntity.spawn(this.world, this.getRandomSpawnPosition());
 
     // Sync UI for the new player
-    this.syncLeaderboard(player);
     this.syncTimer(player);
+    this.syncLeaderboard(player);
 
     // Send start announcement if game is active
     if (this._gameActive) {
       player.ui.sendData({ type: 'game-start' });
+      this._sendGameStartAnnouncements(player);
     }
   }
 
@@ -247,16 +253,16 @@ export default class GameManager {
   }
 
   /**
-   * Sends game start announcements to all players
+   * Sends game start announcements to a specific player
    */
-  private _sendGameStartAnnouncements() {
+  private _sendGameStartAnnouncements(player: Player) {
     if (!this.world) return;
     
-    this.world.chatManager.sendBroadcastMessage('Game started!', '00FF00');
-    this.world.chatManager.sendBroadcastMessage('- Search for chests and weapons to survive');
-    this.world.chatManager.sendBroadcastMessage('- Break blocks with your pickaxe to gain materials');
-    this.world.chatManager.sendBroadcastMessage('- Right click to spend 3 materials to place a block');
-    this.world.chatManager.sendBroadcastMessage('- The player with the most kills wins');
+    this.world.chatManager.sendPlayerMessage(player, 'Game started!', '00FF00');
+    this.world.chatManager.sendPlayerMessage(player, '- Search for chests and weapons to survive');
+    this.world.chatManager.sendPlayerMessage(player, '- Break blocks with your pickaxe to gain materials');
+    this.world.chatManager.sendPlayerMessage(player, '- Right click to spend 3 materials to place a block');
+    this.world.chatManager.sendPlayerMessage(player, '- The player with the most kills wins');
   }
 
   /**
@@ -349,6 +355,16 @@ export default class GameManager {
         killCount,
       });
     });
+  }
+
+  private _updatePlayerCountUI() {
+    setTimeout(() => { // have to wait 1 tick, we need to figure out this race condition later
+      if (!this.world) return;
+
+      GameServer.instance.playerManager.getConnectedPlayersByWorld(this.world).forEach(player => {
+        player.ui.sendData({ type: 'players-count', count: this._playerCount });
+      });
+    }, 25);
   }
 
   /**

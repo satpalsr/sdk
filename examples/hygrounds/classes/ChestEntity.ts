@@ -112,6 +112,8 @@ export default class ChestEntity extends Entity {
         z: this.position.z,
       });
 
+      item.startDespawnTimer();
+
       item.applyImpulse({ // apply an impulse in a random x/z direction
         x: (Math.random() - 0.5) * 10 * item.mass,
         y: 5 * item.mass,

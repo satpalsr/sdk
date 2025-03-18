@@ -12,6 +12,7 @@ import {
 } from 'hytopia';
 
 import GamePlayerEntity from './GamePlayerEntity';
+import { ITEM_DESPAWN_TIME_MS } from '../gameConfig';
 
 const INVENTORIED_POSITION = { x: 0, y: -300, z: 0 };
 
@@ -37,6 +38,7 @@ export default class ItemEntity extends Entity {
   protected readonly consumeTimeMs: number;
   protected readonly idleAnimation: string;
   protected readonly mlAnimation: string;
+  private _despawnTimer: NodeJS.Timeout | undefined;
   private readonly _labelSceneUI: SceneUI;
 
   public constructor(options: ItemEntityOptions) {
@@ -103,6 +105,8 @@ export default class ItemEntity extends Entity {
   public drop(fromPosition: Vector3Like, direction: Vector3Like): void {
     if (!this.world) return;
 
+    this.startDespawnTimer();
+
     this.setParent(undefined, undefined, fromPosition);
 
     // Apply impulse in next tick to avoid physics issues
@@ -137,6 +141,8 @@ export default class ItemEntity extends Entity {
   public pickup(player: GamePlayerEntity): void {
     if (!player.world) return;
 
+    this.stopDespawnTimer();
+
     this.setParent(player, ItemEntity._getHandAnchorNode(this.heldHand), INVENTORIED_POSITION);
     this._updateVisualEffects();
     
@@ -155,6 +161,21 @@ export default class ItemEntity extends Entity {
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {
     super.spawn(world, position, rotation);
     this._updateVisualEffects(); 
+  }
+
+  public startDespawnTimer(): void {
+    if (this._despawnTimer) return;
+
+    this._despawnTimer = setTimeout(() => {
+      this.despawn();
+    }, ITEM_DESPAWN_TIME_MS);
+  }
+
+  public stopDespawnTimer(): void {
+    if (!this._despawnTimer) return;
+
+    clearTimeout(this._despawnTimer);
+    this._despawnTimer = undefined;
   }
 
   private _createLabelUI(): SceneUI {

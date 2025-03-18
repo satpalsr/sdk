@@ -15,13 +15,12 @@ startServer(world => {
   world.setAmbientLightIntensity(0.8);
   world.setDirectionalLightIntensity(5);
 
-  world.simulation.enableDebugRaycasting(true);
-
   GameManager.instance.setupGame(world);
 
   // Handle player joining the game
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
     GameManager.instance.spawnPlayerEntity(player);
+    GameManager.instance.playerCount++;
   });
 
   // Handle player leaving the game
@@ -30,5 +29,12 @@ startServer(world => {
     world.entityManager
       .getPlayerEntitiesByPlayer(player)
       .forEach(entity => entity.despawn());
+
+    GameManager.instance.playerCount--;
   });
 });
+
+
+/*
+- fix zoom of SMG
+*/
