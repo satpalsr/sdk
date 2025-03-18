@@ -4,8 +4,8 @@ import type { MeleeWeaponEntityOptions } from '../MeleeWeaponEntity';
 import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
-  damage: 10,         // 9 hits to kill unshielded
-  attackRate: 5,    // Slower attack rate to prevent spam
+  damage: 10,         // 10 hits to kill unshielded
+  attackRate: 4.5,    // Slower attack rate to prevent spam
   heldHand: 'right',
   iconImageUri: 'icons/pickaxe.png',
   idleAnimation: 'idle_gun_right',
@@ -13,7 +13,7 @@ const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
   name: 'Pickaxe',
   modelUri: 'models/items/pickaxe.gltf',
   modelScale: 1.25,
-  range: 2.5,
+  range: 2,
   minesMaterials: true,
   attackAudioUri: 'audio/sfx/player/player-swing-woosh.mp3',
   hitAudioUri: 'audio/sfx/dig/dig-stone.mp3',
@@ -30,7 +30,7 @@ export default class PickaxeEntity extends MeleeWeaponEntity {
     super.attack();
     
     // Cancel input since pickaxe requires click-to-attack
-    (this.parent as GamePlayerEntity).player.input.ml = false;
+    //(this.parent as GamePlayerEntity).player.input.ml = false;
   }
 
   public override equip(): void {
