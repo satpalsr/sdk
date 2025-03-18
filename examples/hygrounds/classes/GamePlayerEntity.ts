@@ -142,7 +142,7 @@ export default class GamePlayerEntity extends PlayerEntity {
         this._respawnTimer = setTimeout(() => this.respawn(), 10 * 1000);
 
         if (attacker) {
-          this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} has killed ${this.player.username}!`, 'FF0000');
+          this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} killed ${this.player.username} with a ${attacker.getActiveItemName()}!`, 'FF0000');
         }
       }
     }
@@ -183,6 +183,13 @@ export default class GamePlayerEntity extends PlayerEntity {
     }
 
     this._updatePlayerUIInventory();
+  }
+
+  public getActiveItemName(): string {
+    const activeItem = this._inventory[this._inventoryActiveSlotIndex];
+    if (!activeItem) return '';
+
+    return activeItem.name;
   }
 
   public getItemInventorySlot(item: ItemEntity): number {

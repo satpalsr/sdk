@@ -51,7 +51,7 @@ export const CHEST_DROP_REGION_AABB = {
   max: { x: 45, y: 100, z: 45 },
 };
 
-export const CHEST_SPAWNS_AT_START = 10;
+export const CHEST_SPAWNS_AT_START = 15;
 
 export const CHEST_MAX_DROP_ITEMS = 2;
 
@@ -75,6 +75,10 @@ export const CHEST_DROP_ITEMS = [
   {
     itemId: 'medpack',
     pickWeight: 1,
+  },
+  {
+    itemId: 'mining-drill',
+    pickWeight: 0.4,
   },
   {
     itemId: 'pistol',
@@ -359,6 +363,10 @@ export const ITEM_SPAWN_ITEMS = [
   {
     itemId: 'medpack',
     pickWeight: 1,
+  },
+  {
+    itemId: 'mining-drill',
+    pickWeight: 0.05,
   },
   {
     itemId: 'pistol',

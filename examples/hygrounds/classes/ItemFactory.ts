@@ -22,6 +22,9 @@ export default class ItemFactory {
       case 'medpack':
         itemModule = await import('./items/MedPackEntity');
         break;
+      case 'mining-drill':
+        itemModule = await import('./weapons/MiningDrillEntity');
+        break;
       case 'pistol':
         itemModule = await import('./weapons/PistolEntity');
         break;
