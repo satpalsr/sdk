@@ -258,11 +258,11 @@ export default class GameManager {
   private _sendGameStartAnnouncements(player: Player) {
     if (!this.world) return;
     
-    this.world.chatManager.sendPlayerMessage(player, 'Game started!', '00FF00');
+    this.world.chatManager.sendPlayerMessage(player, 'Game started - most kills wins!', '00FF00');
     this.world.chatManager.sendPlayerMessage(player, '- Search for chests and weapons to survive');
     this.world.chatManager.sendPlayerMessage(player, '- Break blocks with your pickaxe to gain materials');
     this.world.chatManager.sendPlayerMessage(player, '- Right click to spend 3 materials to place a block');
-    this.world.chatManager.sendPlayerMessage(player, '- The player with the most kills wins');
+    this.world.chatManager.sendPlayerMessage(player, '- Some weapons can zoom with "Z".');
   }
 
   /**
