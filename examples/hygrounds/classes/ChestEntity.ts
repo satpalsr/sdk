@@ -9,7 +9,7 @@ import {
   World,
 } from 'hytopia';
 
-import { CHEST_DROP_ITEMS, CHEST_MAX_DROP_ITEMS } from '../gameConfig';
+import { CHEST_DROP_ITEMS, CHEST_MAX_DROP_ITEMS, CHEST_OPEN_DESPAWN_MS } from '../gameConfig';
 import ItemFactory from './ItemFactory';
 
 export default class ChestEntity extends Entity {
@@ -67,6 +67,13 @@ export default class ChestEntity extends Entity {
         this._spawnRandomChestItem();
       }
     }, 600);
+
+    // despawn chest after 20 seconds
+    setTimeout(() => {
+      if (this.isSpawned) {
+        this.despawn();
+      }
+    }, CHEST_OPEN_DESPAWN_MS);
   }
 
   public override spawn(world: World, position: Vector3Like, rotation?: QuaternionLike): void {

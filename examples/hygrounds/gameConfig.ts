@@ -55,6 +55,8 @@ export const CHEST_SPAWNS_AT_START = 15;
 
 export const CHEST_MAX_DROP_ITEMS = 2;
 
+export const CHEST_OPEN_DESPAWN_MS = 20 * 1000; // 20 seconds
+
 export const CHEST_DROP_ITEMS = [
   {
     itemId: 'ak47',

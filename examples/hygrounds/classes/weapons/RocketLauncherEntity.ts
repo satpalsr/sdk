@@ -86,8 +86,8 @@ export default class RocketLauncherEntity extends GunEntity {
       0
     );
 
-    rocketMissileEntity.on(EntityEvent.BLOCK_COLLISION, ({ colliderHandleA, colliderHandleB }) => {
-      if (!this.parent?.world || !rocketMissileEntity.isSpawned) {
+    rocketMissileEntity.on(EntityEvent.BLOCK_COLLISION, ({ blockType, colliderHandleA, colliderHandleB }) => {
+      if (!this.parent?.world || !rocketMissileEntity.isSpawned || blockType.isLiquid) {
         return;
       }
 

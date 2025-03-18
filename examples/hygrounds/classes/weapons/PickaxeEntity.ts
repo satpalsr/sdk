@@ -1,7 +1,6 @@
-import { Quaternion, RaycastHit, Vector3Like } from 'hytopia';
+import { Quaternion } from 'hytopia';
 import MeleeWeaponEntity from '../MeleeWeaponEntity';
 import type { MeleeWeaponEntityOptions } from '../MeleeWeaponEntity';
-import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_PICKAXE_OPTIONS: MeleeWeaponEntityOptions = {
   damage: 10,         // 10 hits to kill unshielded
@@ -28,9 +27,6 @@ export default class PickaxeEntity extends MeleeWeaponEntity {
     if (!this.parent || !this.processAttack()) return;
 
     super.attack();
-    
-    // Cancel input since pickaxe requires click-to-attack
-    //(this.parent as GamePlayerEntity).player.input.ml = false;
   }
 
   public override equip(): void {
