@@ -13,3 +13,6 @@ package-lock.json
 
 # Ignore all model .optimized folders
 **/.optimized
+
+# Ignore local persistence files
+**/dev/persistence
