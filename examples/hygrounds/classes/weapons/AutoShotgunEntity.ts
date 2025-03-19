@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_AUTO_SHOTGUN_OPTIONS: GunEntityOptions = {
   ammo: 6,
-  damage: 16,
+  damage: 11,
   fireRate: 1.5,
   heldHand: 'both',
   iconImageUri: 'icons/auto-shotgun.png',

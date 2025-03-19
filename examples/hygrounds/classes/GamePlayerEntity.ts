@@ -210,6 +210,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   public resetCamera(): void {
     this._setupPlayerCamera();
+    this.player.camera.setAttachedToEntity(this);
   }
 
   public resetMaterials(): void {

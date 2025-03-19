@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_SUBMACHINE_GUN_OPTIONS: GunEntityOptions = {
   ammo: 60,
-  damage: 7,
+  damage: 6,
   fireRate: 12,
   heldHand: 'right',
   iconImageUri: 'icons/submachine-gun.png',
