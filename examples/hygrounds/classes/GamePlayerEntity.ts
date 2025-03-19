@@ -134,8 +134,8 @@ export default class GamePlayerEntity extends PlayerEntity {
         });
 
         this.playerController.idleLoopedAnimations = [ 'sleep' ];
-        this.world.chatManager.sendPlayerMessage(this.player, 'You have died! Respawning in 10 seconds...', 'FF0000');
-        this._respawnTimer = setTimeout(() => this.respawn(), 10 * 1000);
+        this.world.chatManager.sendPlayerMessage(this.player, 'You have died! Respawning in 5 seconds...', 'FF0000');
+        this._respawnTimer = setTimeout(() => this.respawn(), 5 * 1000);
 
         if (attacker) {
           if (this.player.username !== attacker.player.username) {
