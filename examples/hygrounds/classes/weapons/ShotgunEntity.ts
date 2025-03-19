@@ -5,7 +5,7 @@ import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_SHOTGUN_OPTIONS: GunEntityOptions = {
   ammo: 4,
-  damage: 12,         // Per pellet (7 pellets = 84 max damage)
+  damage: 18,
   fireRate: 0.8,
   heldHand: 'both',
   iconImageUri: 'icons/shotgun.png',

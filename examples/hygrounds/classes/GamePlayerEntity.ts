@@ -465,7 +465,10 @@ export default class GamePlayerEntity extends PlayerEntity {
       origin,
       this.player.camera.facingDirection,
       INTERACT_RANGE,
-      { filterExcludeRigidBody: this.rawRigidBody }
+      {
+        filterExcludeRigidBody: this.rawRigidBody,
+        filterFlags: 8, // Rapier exclude sensors,
+      }
     );
 
     const hitEntity = raycastHit?.hitEntity;

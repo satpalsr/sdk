@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_LIGHT_MACHINE_GUN_OPTIONS: GunEntityOptions = {
   ammo: 50,
-  damage: 15,
+  damage: 9,
   fireRate: 10,
   heldHand: 'both',
   iconImageUri: 'icons/light-machine-gun.png',

@@ -4,7 +4,7 @@ import type { GunEntityOptions } from '../GunEntity';
 
 const DEFAULT_AUTO_SHOTGUN_OPTIONS: GunEntityOptions = {
   ammo: 6,
-  damage: 10,         // Per pellet (7 pellets = 70 max damage)
+  damage: 16,
   fireRate: 1.5,
   heldHand: 'both',
   iconImageUri: 'icons/auto-shotgun.png',
