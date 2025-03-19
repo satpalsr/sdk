@@ -92,6 +92,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     super.spawn(world, position, rotation);
     this._setupPlayerInventory();
     this._autoHealTicker();
+    this._outOfWorldTicker();
     this._updatePlayerUIHealth();
   }
 
@@ -570,13 +571,25 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _autoHealTicker(): void {
     setTimeout(() => {
-      if (!this.isSpawned || this._dead) return;
+      if (!this.isSpawned) return;
 
-      if (this.health < this._maxHealth) {
+      if (this.health < this._maxHealth && !this._dead) {
         this.health += 1;
       }
 
       this._autoHealTicker();
     }, 2000);
+  }
+
+  private _outOfWorldTicker(): void {
+    setTimeout(() => {
+      if (!this.isSpawned) return;
+
+      if (this.position.y < -100 && !this._dead) {
+        this.takeDamage(MAX_HEALTH + MAX_SHIELD, { x: 0, y: 0, z: -1 });
+      }
+
+      this._outOfWorldTicker();
+    }, 3000);
   }
 }
