@@ -1,4 +1,4 @@
-import { Audio, Entity, Quaternion, Vector3Like, QuaternionLike, RigidBodyType, EntityEvent, Vector3 } from 'hytopia';
+import { Audio, CollisionGroup, Entity, Quaternion, Vector3Like, QuaternionLike, RigidBodyType, EntityEvent, Vector3, Collider } from 'hytopia';
 import GunEntity from '../GunEntity';
 import { BEDROCK_BLOCK_ID } from '../../gameConfig';
 import type { GunEntityOptions } from '../GunEntity';
@@ -64,6 +64,15 @@ export default class RocketLauncherEntity extends GunEntity {
       modelScale: 0.75,
       rigidBodyOptions: {
         type: RigidBodyType.KINEMATIC_VELOCITY,
+        colliders: [
+          {
+            ...Collider.optionsFromModelUri('models/items/rocket-missile.glb', 0.75),
+            collisionGroups: {
+              belongsTo: [ CollisionGroup.ENTITY ],
+              collidesWith: [ CollisionGroup.BLOCK ],
+            }
+          },
+        ],
         linearVelocity: { 
           x: direction.x * 30,
           y: direction.y * 30,
@@ -71,7 +80,7 @@ export default class RocketLauncherEntity extends GunEntity {
         },
       }
     });
-
+    
     // Create a despawn timer if it doesn't hit
     setTimeout(() => {
       if (rocketMissileEntity.isSpawned) {

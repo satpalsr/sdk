@@ -137,7 +137,11 @@ export default class GamePlayerEntity extends PlayerEntity {
         this._respawnTimer = setTimeout(() => this.respawn(), 10 * 1000);
 
         if (attacker) {
-          this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} killed ${this.player.username} with a ${attacker.getActiveItemName()}!`, 'FF0000');
+          if (this.player.username !== attacker.player.username) {
+            this.world.chatManager.sendBroadcastMessage(`${attacker.player.username} killed ${this.player.username} with a ${attacker.getActiveItemName()}!`, 'FF0000');
+          } else {
+            this.world.chatManager.sendBroadcastMessage(`${this.player.username} self-destructed!`, 'FF0000');
+          }
         }
       }
     }
@@ -342,7 +346,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
   private _onTickWithPlayerInput = (payload: EventPayloads[BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT]): void => {
     const { input } = payload;
-    
+
     if (this._dead) {
       return;
     }
