@@ -300,7 +300,7 @@ export default class GameManager {
     this.world.chatManager.sendPlayerMessage(player, '- Search for chests and weapons to survive');
     this.world.chatManager.sendPlayerMessage(player, '- Break blocks with your pickaxe to gain materials');
     this.world.chatManager.sendPlayerMessage(player, '- Right click to spend 3 materials to place a block');
-    this.world.chatManager.sendPlayerMessage(player, '- Some weapons can zoom with "Z".');
+    this.world.chatManager.sendPlayerMessage(player, '- Some weapons zoom with "Z". Drop items with "Q"');
   }
 
   /**

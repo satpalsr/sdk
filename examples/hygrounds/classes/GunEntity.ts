@@ -142,11 +142,7 @@ export default abstract class GunEntity extends ItemEntity {
     const direction = player.player.camera.facingDirection;
     
     return {
-      origin: {
-        x: x + (direction.x * 0.5),
-        y: y + (direction.y * 0.5) + cameraYOffset,
-        z: z + (direction.z * 0.5),
-      },
+      origin: { x, y: y + cameraYOffset, z },
       direction
     };
   }
