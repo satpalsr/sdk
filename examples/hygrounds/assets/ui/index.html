@@ -20,6 +20,9 @@
 <!-- Game Start Announcement -->
 <div class="game-start-announcement">DEATHMATCH!</div>
 
+<!-- Winner Announcement -->
+<div class="winner-announcement"></div>
+
 <!-- Leaderboard -->
 <div class="leaderboard">
   <div class="leaderboard-title">HyGrounds Deathmatch</div>
@@ -224,6 +227,17 @@
     }, 3000);
   }
 
+  function showWinnerAnnouncement(username) {
+    const announcement = document.querySelector('.winner-announcement');
+    announcement.textContent = `${username} wins!`;
+    announcement.classList.add('active');
+    
+    // Remove the active class after animation completes
+    setTimeout(() => {
+      announcement.classList.remove('active');
+    }, 5000);
+  }
+
   hytopia.registerSceneUITemplate('item-label', (id, onState) => {
     const template = document.getElementById('item-label-template');
     const clone = template.content.cloneNode(true);
@@ -266,6 +280,11 @@
 
     if (type === 'game-start') {
       showGameStartAnnouncement();
+    }
+
+    if (type === 'announce-winner') {
+      const { username } = data;
+      showWinnerAnnouncement(username);
     }
 
     if (type === 'ammo-indicator') {
@@ -540,12 +559,43 @@
   }
 
   .game-start-announcement.active {
-    animation: announcementFade 3s ease-in-out forwards;
+    animation: announcementFade 5s ease-in-out forwards;
+  }
+
+  .winner-announcement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .winner-announcement.active {
+    animation: winnerFade 5s ease-in-out forwards;
   }
 
   @keyframes announcementFade {
     0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
     20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  }
+
+  @keyframes winnerFade {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    40% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
     80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
   }

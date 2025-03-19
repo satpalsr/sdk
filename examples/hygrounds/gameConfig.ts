@@ -44,7 +44,7 @@ export const BLOCK_ID_MATERIALS: Record<string | number, number> = {
 
 export const BUILD_BLOCK_ID = 37; // stone
 
-export const CHEST_DROP_INTERVAL_MS = 20 * 1000; // 20 seconds
+export const CHEST_DROP_INTERVAL_MS = 15 * 1000; // 20 seconds
 
 export const CHEST_DROP_REGION_AABB = {
   min: { x: -45, y: 100, z: -45 },

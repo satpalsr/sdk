@@ -121,11 +121,7 @@ export default class GamePlayerEntity extends PlayerEntity {
 
       if (attacker) {
         GameManager.instance.addKill(attacker.player.username);
-
-        // Focus on the player that killed you
-        this.player.camera.setMode(PlayerCameraMode.THIRD_PERSON);
-        this.player.camera.setAttachedToEntity(attacker);
-        this.player.camera.setModelHiddenNodes([]);
+        this.focusCameraOnPlayer(attacker);
       }
 
       this.dropAllInventoryItems();
@@ -145,6 +141,12 @@ export default class GamePlayerEntity extends PlayerEntity {
         }
       }
     }
+  }
+
+  public focusCameraOnPlayer(player: GamePlayerEntity): void {
+    this.player.camera.setMode(PlayerCameraMode.THIRD_PERSON);
+    this.player.camera.setAttachedToEntity(player);
+    this.player.camera.setModelHiddenNodes([]);
   }
 
   public dealtDamage(damage: number): void {
@@ -204,6 +206,10 @@ export default class GamePlayerEntity extends PlayerEntity {
     this.playerController.interactOneshotAnimations = [];
     this.playerController.walkLoopedAnimations = ['walk_lower', 'walk_upper'];
     this.playerController.runLoopedAnimations = ['run_lower', 'run_upper'];
+  }
+
+  public resetCamera(): void {
+    this._setupPlayerCamera();
   }
 
   public resetMaterials(): void {

@@ -96,6 +96,8 @@ export default class GameManager {
     this._gameActive = false;
     this.world.chatManager.sendBroadcastMessage('Game over! Starting the next round in 10 seconds...', 'FF0000');
     
+    this._focusWinningPlayer();
+
     // Clear any existing restart timer
     if (this._restartTimer) {
       clearTimeout(this._restartTimer);
@@ -205,6 +207,7 @@ export default class GameManager {
       if (playerEntity instanceof GamePlayerEntity) {
         playerEntity.setActiveInventorySlotIndex(0); // reset to pickaxe at slot 0
         playerEntity.dropAllInventoryItems();
+        playerEntity.resetCamera();
         playerEntity.resetMaterials();
         playerEntity.health = 100;
         playerEntity.shield = 0;
@@ -237,6 +240,41 @@ export default class GameManager {
 
     // Reset leaderboard
     this.resetLeaderboard();
+  }
+
+  public _focusWinningPlayer() {
+    if (!this.world) return;
+
+    // Find player with most kills
+    let highestKills = 0;
+    let winningPlayer = '';
+    
+    this._killCounter.forEach((kills, player) => {
+      if (kills > highestKills) {
+        highestKills = kills;
+        winningPlayer = player;
+      }
+    });
+
+    // Get winning player entity
+    const winningPlayerEntity = this.world.entityManager
+      .getAllPlayerEntities()
+      .find(entity => entity.player.username === winningPlayer);
+
+    if (!winningPlayerEntity) return;
+
+    this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
+      if (playerEntity instanceof GamePlayerEntity) {
+        if (playerEntity.player.username !== winningPlayer) { // don't change camera for the winner
+          playerEntity.focusCameraOnPlayer(winningPlayerEntity as GamePlayerEntity);
+        }
+          
+        playerEntity.player.ui.sendData({
+          type: 'announce-winner',
+          username: winningPlayer,
+        });
+      }
+    });
   }
 
   /**
