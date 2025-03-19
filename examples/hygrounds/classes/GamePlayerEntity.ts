@@ -254,7 +254,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   public takeDamage(damage: number, hitDirection: Vector3Like, attacker?: GamePlayerEntity): void {
-    if (!this.isSpawned || !this.world || !GameManager.instance.isGameActive ||  this._dead) return;
+    if (!this.isSpawned || !this.world || !GameManager.instance.isGameActive || this._dead) return;
 
     this._playDamageAudio();
 
