@@ -244,6 +244,10 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._updatePlayerUIInventoryActiveSlot();
   }
 
+  public setGravity(gravityScale: number): void {
+    this.setGravityScale(gravityScale);
+  }
+
   public takeDamage(damage: number, hitDirection: Vector3Like, attacker?: GamePlayerEntity): void {
     if (!this.isSpawned || !this.world || !GameManager.instance.isGameActive ||  this._dead) return;
 

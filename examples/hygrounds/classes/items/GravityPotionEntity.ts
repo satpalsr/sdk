@@ -3,33 +3,38 @@ import ItemEntity from "../ItemEntity";
 import GamePlayerEntity from '../GamePlayerEntity';
 import type { ItemEntityOptions } from "../ItemEntity";
 
-const ADD_SHIELD_AMOUNT = 25;
+const GRAVITY_SCALE = 0.3;
+const GRAVITY_DURATION_MS = 15 * 1000; // 15 seconds
 
-const DEFAULT_SHIELD_POTION_OPTIONS: ItemEntityOptions = {
+const DEFAULT_GRAVITY_POTION_OPTIONS: ItemEntityOptions = {
   heldHand: 'right',
-  iconImageUri: 'icons/shield-potion.png',
+  iconImageUri: 'icons/gravity-potion.png',
   idleAnimation: 'idle_gun_right',
   mlAnimation: 'shoot_gun_right',
-  modelUri: 'models/items/shield-potion.glb',
+  modelUri: 'models/items/gravity-potion.glb',
   modelScale: 0.4,
-  name: 'Shield Potion',
+  name: 'Gravity Potion',
   consumable: true,
   consumeAudioUri: 'audio/sfx/potion-consume.mp3',
   consumeTimeMs: 1000,
   quantity: 1,
 }
 
-export default class ShieldPotionEntity extends ItemEntity {
+export default class GravityPotionEntity extends ItemEntity {
   public constructor(options: Partial<ItemEntityOptions> = {}) {
-    super({ ...DEFAULT_SHIELD_POTION_OPTIONS, ...options });
+    super({ ...DEFAULT_GRAVITY_POTION_OPTIONS, ...options });
   }
 
   public override consume(): void {
-    if (!(this.parent instanceof GamePlayerEntity) || this.parent.shield >= this.parent.maxShield) {
+    if (!(this.parent instanceof GamePlayerEntity)) {
       return;
     }
 
-    this.parent.updateShield(ADD_SHIELD_AMOUNT);
+    const parent = this.parent as GamePlayerEntity;
+
+    // Apply gravity potion effect
+    parent.setGravity(GRAVITY_SCALE);
+    setTimeout(() => parent.setGravity(1), GRAVITY_DURATION_MS);
 
     super.consume(); 
   }

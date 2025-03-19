@@ -16,6 +16,9 @@ export default class ItemFactory {
       case 'bolt-action-sniper':
         itemModule = await import('./weapons/BoltActionSniperEntity');
         break;
+      case 'gravity-potion':
+        itemModule = await import('./items/GravityPotionEntity');
+        break;
       case 'light-machine-gun':
         itemModule = await import('./weapons/LightMachineGunEntity');
         break;

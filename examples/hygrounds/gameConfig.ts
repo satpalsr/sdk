@@ -71,6 +71,10 @@ export const CHEST_DROP_ITEMS = [
     pickWeight: 0.6,
   },
   {
+    itemId: 'gravity-potion',
+    pickWeight: 0.35,
+  },
+  {
     itemId: 'light-machine-gun',
     pickWeight: 0.3,
   },
@@ -356,6 +360,10 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'bolt-action-sniper',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'gravity-potion',
     pickWeight: 0.05,
   },
   {
