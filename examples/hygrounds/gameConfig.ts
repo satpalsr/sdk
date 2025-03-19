@@ -106,6 +106,10 @@ export const CHEST_DROP_ITEMS = [
     itemId: 'shield-potion',
     pickWeight: 1,
   },
+  {
+    itemId: 'submachine-gun',
+    pickWeight: 0.4,
+  },
 ]
 
 export const CHEST_SPAWNS = [
@@ -401,6 +405,10 @@ export const ITEM_SPAWN_ITEMS = [
   {
     itemId: 'shield-potion',
     pickWeight: 1,
+  },
+  {
+    itemId: 'submachine-gun',
+    pickWeight: 0.05,
   },
 ];
 
