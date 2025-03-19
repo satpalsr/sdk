@@ -15,7 +15,7 @@ const DEFAULT_AUTO_SHOTGUN_OPTIONS: GunEntityOptions = {
   totalAmmo: 30,
   modelUri: 'models/items/auto-shotgun.glb',
   modelScale: 1.2,
-  range: 8,
+  range: 10,
   reloadAudioUri: 'audio/sfx/shotgun-reload.mp3',
   reloadTimeMs: 3500,
   shootAudioUri: 'audio/sfx/shotgun-shoot.mp3',

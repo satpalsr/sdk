@@ -16,7 +16,7 @@ const DEFAULT_AK47_OPTIONS: GunEntityOptions = {
   scopeZoom: 2,
   modelUri: 'models/items/ak-47.glb',
   modelScale: 1.3,
-  range: 70,
+  range: 80,
   reloadAudioUri: 'audio/sfx/rifle-reload.mp3',
   reloadTimeMs: 2200,
   shootAudioUri: 'audio/sfx/rifle-shoot.mp3',

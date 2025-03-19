@@ -16,7 +16,7 @@ const DEFAULT_SUBMACHINE_GUN_OPTIONS: GunEntityOptions = {
   scopeZoom: 1.35,
   modelUri: 'models/items/submachine-gun.glb',
   modelScale: 1.3,
-  range: 35,
+  range: 40,
   reloadAudioUri: 'audio/sfx/rifle-reload.mp3',
   reloadTimeMs: 1500,
   shootAudioUri: 'audio/sfx/pistol-shoot.mp3',
