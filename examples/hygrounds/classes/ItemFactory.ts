@@ -13,6 +13,9 @@ export default class ItemFactory {
       case 'auto-shotgun':
         itemModule = await import('./weapons/AutoShotgunEntity');
         break;
+      case 'auto-sniper':
+        itemModule = await import('./weapons/AutoSniperEntity');
+        break;
       case 'bolt-action-sniper':
         itemModule = await import('./weapons/BoltActionSniperEntity');
         break;

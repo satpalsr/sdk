@@ -67,6 +67,10 @@ export const CHEST_DROP_ITEMS = [
     pickWeight: 0.5,
   },
   {
+    itemId: 'auto-sniper',
+    pickWeight: 0.4,
+  },
+  {
     itemId: 'bolt-action-sniper',
     pickWeight: 0.6,
   },
@@ -356,6 +360,10 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'auto-shotgun',
+    pickWeight: 0.05,
+  },
+  {
+    itemId: 'auto-sniper',
     pickWeight: 0.05,
   },
   {
