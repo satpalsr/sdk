@@ -34,11 +34,14 @@ export default class ItemFactory {
       case 'pistol':
         itemModule = await import('./weapons/PistolEntity');
         break;
-      case 'submachine-gun':
-        itemModule = await import('./weapons/SubmachineGunEntity');
+      case 'revolver':
+        itemModule = await import('./weapons/RevolverEntity');
         break;
       case 'rocket-launcher':
         itemModule = await import('./weapons/RocketLauncherEntity');
+        break;
+        case 'submachine-gun':
+        itemModule = await import('./weapons/SubmachineGunEntity');
         break;
       case 'shotgun':
         itemModule = await import('./weapons/ShotgunEntity');

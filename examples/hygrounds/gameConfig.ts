@@ -95,6 +95,10 @@ export const CHEST_DROP_ITEMS = [
     pickWeight: 1,
   },
   {
+    itemId: 'revolver',
+    pickWeight: 0.4,
+  },
+  {
     itemId: 'rocket-launcher',
     pickWeight: 0.2,
   },
@@ -393,6 +397,10 @@ export const ITEM_SPAWN_ITEMS = [
   {
     itemId: 'pistol',
     pickWeight: 1,
+  },
+  {
+    itemId: 'revolver',
+    pickWeight: 0.1,
   },
   {
     itemId: 'rocket-launcher',

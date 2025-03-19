@@ -36,5 +36,6 @@ startServer(world => {
 
 
 /*
-- fix zoom of SMG
+- raycasts from weapons need to ignore other items
+- Fix players stuck in placed blocks
 */
