@@ -27166,7 +27166,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!PlayerEntityController#tickWithPlayerInput:member(1)",
-              "docComment": "/**\n * Ticks the player movement for the entity controller, overriding the default implementation.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "docComment": "/**\n * Ticks the player movement for the entity controller, overriding the default implementation. If the entity to tick is a child entity, only the event will be emitted but the default movement logic will not be applied.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

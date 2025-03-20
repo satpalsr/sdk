@@ -3511,7 +3511,9 @@ export declare class PlayerEntityController extends BaseEntityController {
     spawn(entity: Entity): void;
     /**
      * Ticks the player movement for the entity controller,
-     * overriding the default implementation.
+     * overriding the default implementation. If the entity to tick
+     * is a child entity, only the event will be emitted but the default
+     * movement logic will not be applied.
      *
      * @param entity - The entity to tick.
      * @param input - The current input state of the player.

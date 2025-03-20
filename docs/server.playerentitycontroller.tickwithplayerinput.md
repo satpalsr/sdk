@@ -4,7 +4,7 @@
 
 ## PlayerEntityController.tickWithPlayerInput() method
 
-Ticks the player movement for the entity controller, overriding the default implementation.
+Ticks the player movement for the entity controller, overriding the default implementation. If the entity to tick is a child entity, only the event will be emitted but the default movement logic will not be applied.
 
 **Signature:**
 
