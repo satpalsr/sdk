@@ -9,6 +9,7 @@ import {
   QuaternionLike,
   World,
   PlayerEntityController,
+  PlayerUIEvent,
 } from 'hytopia';
 
 import ChestEntity from './ChestEntity';
@@ -337,6 +338,15 @@ export default class GamePlayerEntity extends PlayerEntity {
   private _setupPlayerUI(): void {
     this.nametagSceneUI.setViewDistance(8); // lessen view distance so you only see player names when close
     this.player.ui.load('ui/index.html');
+
+    // Handle inventory selection from mobile UI
+    this.player.ui.on(PlayerUIEvent.DATA, (payload) => {
+      const { data } = payload;
+
+      if (data.type === 'inventory-select') {
+        this.setActiveInventorySlotIndex(data.index);
+      }
+    });
   }
 
   private _setupPlayerCamera(): void {

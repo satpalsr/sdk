@@ -25,7 +25,7 @@
 
 <!-- Leaderboard -->
 <div class="leaderboard">
-  <div class="leaderboard-title">HyGrounds Deathmatch</div>
+  <div class="leaderboard-title">Deathmatch</div>
   <div class="leaderboard-timer">0:00</div>
   <div class="leaderboard-players-count">Players: 0</div>
   <div class="leaderboard-header">
@@ -58,6 +58,26 @@
       <img src="{{CDN_ASSETS_URL}}/icons/heart.png" alt="Health Icon" class="health-icon">
       <div class="health-text">100</div>
     </div>
+  </div>
+</div>
+
+<div class="mobile-buttons-container">
+  <div id="mobile-reload-button" class="mobile-button">
+    <img src="{{CDN_ASSETS_URL}}/icons/mobile-reload.png" />
+  </div>  
+  
+  <div id="mobile-interact-button" class="mobile-button">E</div>
+  
+  <div id="mobile-jump-button" class="mobile-button">
+    <img src="{{CDN_ASSETS_URL}}/icons/mobile-jump.png" />
+  </div>
+  
+  <div id="mobile-attack-button" class="mobile-button">
+    <img src="{{CDN_ASSETS_URL}}/icons/mobile-shoot.png" />
+  </div>
+  
+  <div id="mobile-place-block-button" class="mobile-button">
+    <img src="{{CDN_ASSETS_URL}}/icons/mobile-place-block.png" />
   </div>
 </div>
 
@@ -504,6 +524,73 @@
       timerInterval = setInterval(updateTimer, 1000);
     }
   });
+
+  // Mobile UI Controls
+  const inventorySlots = document.querySelectorAll('.inventory-slot');
+
+  inventorySlots.forEach((slot, index) => {
+    slot.addEventListener('click', () => {
+      hytopia.sendData({
+        type: 'inventory-select',
+        index: index,
+      })
+    });
+  });
+
+  const mobileInteractButton = document.getElementById('mobile-interact-button');
+  mobileInteractButton.addEventListener('touchstart', () => {
+    mobileInteractButton.classList.add('active');
+    hytopia.pressInput('e', true);
+  });
+
+  mobileInteractButton.addEventListener('touchend', () => {
+    mobileInteractButton.classList.remove('active');
+    hytopia.pressInput('e', false);
+  });
+
+  const mobileReloadButton = document.getElementById('mobile-reload-button');
+  mobileReloadButton.addEventListener('touchstart', () => {
+    mobileReloadButton.classList.add('active');
+    hytopia.pressInput('r', true);
+  });
+
+  mobileReloadButton.addEventListener('touchend', () => {
+    mobileReloadButton.classList.remove('active');
+    hytopia.pressInput('r', false);
+  });
+
+  const mobileJumpButton = document.getElementById('mobile-jump-button');
+  mobileJumpButton.addEventListener('touchstart', () => {
+    mobileJumpButton.classList.add('active');
+    hytopia.pressInput(' ', true);
+  });
+
+  mobileJumpButton.addEventListener('touchend', () => {
+    mobileJumpButton.classList.remove('active');
+    hytopia.pressInput(' ', false);
+  });
+
+  const mobileAttackButton = document.getElementById('mobile-attack-button');
+  mobileAttackButton.addEventListener('touchstart', () => {
+    mobileAttackButton.classList.add('active');
+    hytopia.pressInput('ml', true);
+  }, { passive: true });
+
+  mobileAttackButton.addEventListener('touchend', () => {
+    mobileAttackButton.classList.remove('active');
+    hytopia.pressInput('ml', false);
+  }, { passive: true });
+
+  const mobilePlaceBlockButton = document.getElementById('mobile-place-block-button');
+  mobilePlaceBlockButton.addEventListener('touchstart', () => {
+    mobilePlaceBlockButton.classList.add('active');
+    hytopia.pressInput('mr', true);
+  });
+
+  mobilePlaceBlockButton.addEventListener('touchend', () => {
+    mobilePlaceBlockButton.classList.remove('active');
+    hytopia.pressInput('mr', false);
+  });
 </script>
 
 <!-- UI Styles -->
@@ -737,7 +824,7 @@
     right: 20px;
     display: flex;
     gap: 10px;
-    z-index: 99;
+    z-index: 999;
   }
 
   .inventory-slot {
@@ -1028,7 +1115,9 @@
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     padding: 10px;
-    width: 200px;
+    width: 15%;
+    max-width: 200px;
+    max-height: 40%;
     font-family: 'Arial', sans-serif;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -1118,5 +1207,132 @@
     overflow: hidden;
     max-width: 160px;
     text-overflow: ellipsis;
+  }
+
+  .mobile-buttons-container {
+    display: none;
+  }
+
+  /* Mobile UI */
+  body.mobile .hud {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 35px;
+    right: auto;
+  }
+
+  body.mobile .inventory-hud {
+    bottom: 30px;
+  }
+
+  body.mobile .inventory-slot {
+    width: 45px;
+    height: 45px;
+  }
+
+  body.mobile .slot-number {
+    font-size: 12px;
+    top: -16px;
+  }
+
+  body.mobile .slot-name {
+    font-size: 8px;
+    bottom: -14px;
+  }
+
+  body.mobile .slot-quantity {
+    font-size: 10px;
+  }
+
+  body.mobile .shield-bar,
+  body.mobile .health-bar {
+    width: 120px;
+    height: 16px;
+  }
+
+  body.mobile .shield-text,
+  body.mobile .health-text {
+    font-size: 0.7em;
+  }
+
+  body.mobile .shield-icon,
+  body.mobile .health-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  body.mobile .leaderboard-title {
+    font-size: 14px;
+  }
+
+  body.mobile .leaderboard-timer {
+    font-size: 12px;
+  }
+
+  body.mobile .leaderboard-players-count {
+    font-size: 12px;
+  }
+
+  body.mobile .leaderboard-header {
+    font-size: 10px;
+  }
+
+  body.mobile .leaderboard-player {
+    font-size: 10px;
+  }
+
+  body.mobile .materials-counter {
+    right: 20px;
+    bottom: 115px;
+    font-size: 12px;
+  }
+
+  body.mobile .floating-number {
+    font-size: 14px;
+  }
+
+  body.mobile div > canvas { /* hide three debugger panels */
+    display: none !important;
+  }
+
+  body.mobile .mobile-buttons-container {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    bottom: 113px;
+    right: 118px;
+    user-select: none;
+  }
+
+  body.mobile .mobile-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  body.mobile .mobile-button.active {
+    transform: scale(0.92);
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  body.mobile .mobile-button img {
+    width: 25px;
+    height: 25px;
   }
 </style>
