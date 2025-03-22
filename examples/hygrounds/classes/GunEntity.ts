@@ -244,6 +244,10 @@ export default abstract class GunEntity extends ItemEntity {
   }
 
   public updateAmmoIndicatorUI(reloading: boolean = false): void {
+    if (!this.parent) {
+      return;
+    }
+
     const player = this.parent as GamePlayerEntity;
 
     player.player.ui.sendData(reloading ? {

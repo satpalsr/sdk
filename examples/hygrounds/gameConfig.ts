@@ -60,11 +60,11 @@ export const CHEST_OPEN_DESPAWN_MS = 20 * 1000; // 20 seconds
 export const CHEST_DROP_ITEMS = [
   {
     itemId: 'ak47',
-    pickWeight: 0.5,
+    pickWeight: 0.7,
   },
   {
     itemId: 'auto-shotgun',
-    pickWeight: 0.5,
+    pickWeight: 0.6,
   },
   {
     itemId: 'auto-sniper',
@@ -76,43 +76,43 @@ export const CHEST_DROP_ITEMS = [
   },
   {
     itemId: 'gravity-potion',
-    pickWeight: 0.4,
+    pickWeight: 0.3,
   },
   {
     itemId: 'light-machine-gun',
-    pickWeight: 0.5,
+    pickWeight: 0.6,
   },
   {
     itemId: 'medpack',
-    pickWeight: 1,
+    pickWeight: 1.2,
   },
   {
     itemId: 'mining-drill',
-    pickWeight: 0.5,
+    pickWeight: 0.8,
   },
   {
     itemId: 'pistol',
-    pickWeight: 1,
+    pickWeight: 1.5,
   },
   {
     itemId: 'revolver',
-    pickWeight: 0.5,
+    pickWeight: 0.9,
   },
   {
     itemId: 'rocket-launcher',
-    pickWeight: 0.4,
+    pickWeight: 0.3,
   },
   {
     itemId: 'shotgun',
-    pickWeight: 0.5,
+    pickWeight: 0.8,
   },
   {
     itemId: 'shield-potion',
-    pickWeight: 1,
+    pickWeight: 1.2,
   },
   {
     itemId: 'submachine-gun',
-    pickWeight: 0.5,
+    pickWeight: 1.0,
   },
 ]
 

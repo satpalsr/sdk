@@ -90,6 +90,7 @@ export default class ItemEntity extends Entity {
       this.parent.dropActiveInventoryItem();
       setTimeout(() => {
         this.despawn();
+        this.stopDespawnTimer();
       }, 0);
     }
 
@@ -167,7 +168,9 @@ export default class ItemEntity extends Entity {
     if (this._despawnTimer) return;
 
     this._despawnTimer = setTimeout(() => {
-      this.despawn();
+      if (this.isSpawned) {
+        this.despawn();
+      }
     }, ITEM_DESPAWN_TIME_MS);
   }
 
