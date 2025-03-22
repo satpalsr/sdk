@@ -88,7 +88,7 @@ export const CHEST_DROP_ITEMS = [
   },
   {
     itemId: 'mining-drill',
-    pickWeight: 0.8,
+    pickWeight: 0.5,
   },
   {
     itemId: 'pistol',
