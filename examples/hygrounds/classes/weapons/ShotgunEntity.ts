@@ -6,7 +6,7 @@ import type GamePlayerEntity from '../GamePlayerEntity';
 const DEFAULT_SHOTGUN_OPTIONS: GunEntityOptions = {
   ammo: 4,
   damage: 13,
-  fireRate: 0.8,
+  fireRate: 1.3,
   heldHand: 'both',
   iconImageUri: 'icons/shotgun.png',
   idleAnimation: 'idle_gun_both',
