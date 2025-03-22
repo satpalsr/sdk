@@ -36,7 +36,7 @@ export default class RocketLauncherEntity extends GunEntity {
     super.shoot();
     
     // Cancel input since rocket launcher requires click-to-shoot
-    (this.parent as GamePlayerEntity).player.input.ml = false;
+    // (this.parent as GamePlayerEntity).player.input.ml = false;
   }
 
   public override getMuzzleFlashPositionRotation(): { position: Vector3Like, rotation: QuaternionLike } {
