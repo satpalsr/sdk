@@ -31498,7 +31498,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!RigidBody#createAndAddChildCollider:member(1)",
-              "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @remarks\n *\n * If the rigid body is not simulated, the collider will be added to the rigid body as a pending child collider and also simulated when the rigid body is simulated.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body.\n */\n",
+              "docComment": "/**\n * Creates and adds a child collider to the rigid body for the simulation it belongs to.\n *\n * @remarks\n *\n * If the rigid body is not simulated, the collider will be added to the rigid body as a pending child collider and also simulated when the rigid body is simulated.\n *\n * @param colliderOptions - The options for the child collider to add.\n *\n * @returns The child collider that was added to the rigid body, or null if failed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -31520,13 +31520,17 @@
                 },
                 {
                   "kind": "Content",
+                  "text": " | null"
+                },
+                {
+                  "kind": "Content",
                   "text": ";"
                 }
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
                 "startIndex": 3,
-                "endIndex": 4
+                "endIndex": 5
               },
               "releaseTag": "Public",
               "isProtected": false,

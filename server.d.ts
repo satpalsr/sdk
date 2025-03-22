@@ -1084,6 +1084,8 @@ export declare class Collider extends EventRouter {
 
 
 
+    private _requireUnsimulated;
+    private _requireNotRemoved;
 
 }
 
@@ -4254,9 +4256,9 @@ export declare class RigidBody extends EventRouter {
      * and also simulated when the rigid body is simulated.
      *
      * @param colliderOptions - The options for the child collider to add.
-     * @returns The child collider that was added to the rigid body.
+     * @returns The child collider that was added to the rigid body, or null if failed.
      */
-    createAndAddChildCollider(colliderOptions: ColliderOptions): Collider;
+    createAndAddChildCollider(colliderOptions: ColliderOptions): Collider | null;
     /**
      * Creates and adds multiple child colliders to the rigid body for the simulation it belongs to.
      * @param colliderOptions - The options for the child colliders to add to the rigid body.

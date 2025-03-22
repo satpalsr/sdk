@@ -9,7 +9,7 @@ Creates and adds a child collider to the rigid body for the simulation it belong
 **Signature:**
 
 ```typescript
-createAndAddChildCollider(colliderOptions: ColliderOptions): Collider;
+createAndAddChildCollider(colliderOptions: ColliderOptions): Collider | null;
 ```
 
 ## Parameters
@@ -49,9 +49,9 @@ The options for the child collider to add.
 </tbody></table>
 **Returns:**
 
-[Collider](./server.collider.md)
+[Collider](./server.collider.md) \| null
 
-The child collider that was added to the rigid body.
+The child collider that was added to the rigid body, or null if failed.
 
 ## Remarks
 
