@@ -2,57 +2,16 @@
 
 [Home](./index.md) &gt; [server](./server.md) &gt; [PlayerEntityOptions](./server.playerentityoptions.md)
 
-## PlayerEntityOptions interface
+## PlayerEntityOptions type
 
 Options for creating a PlayerEntity instance.
 
 **Signature:**
 
 ```typescript
-export interface PlayerEntityOptions extends EntityOptions 
+export type PlayerEntityOptions = {
+    player: Player;
+} & EntityOptions;
 ```
-**Extends:** [EntityOptions](./server.entityoptions.md)
+**References:** [Player](./server.player.md)<!-- -->, [EntityOptions](./server.entityoptions.md)
 
-## Properties
-
-<table><thead><tr><th>
-
-Property
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[player](./server.playerentityoptions.player.md)
-
-
-</td><td>
-
-
-</td><td>
-
-[Player](./server.player.md)
-
-
-</td><td>
-
-The player the player entity is assigned to.
-
-
-</td></tr>
-</tbody></table>

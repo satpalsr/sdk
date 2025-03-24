@@ -827,6 +827,17 @@ Event payloads for BaseEntityController emitted events.
 </td></tr>
 <tr><td>
 
+[BaseEntityOptions](./server.baseentityoptions.md)
+
+
+</td><td>
+
+The base options for an entity.
+
+
+</td></tr>
+<tr><td>
+
 [BaseRigidBodyOptions](./server.baserigidbodyoptions.md)
 
 
@@ -844,6 +855,17 @@ The base options for a rigid body.
 </td><td>
 
 The options for a block collider.
+
+
+</td></tr>
+<tr><td>
+
+[BlockEntityOptions](./server.blockentityoptions.md)
+
+
+</td><td>
+
+The options for creating a block entity.
 
 
 </td></tr>
@@ -959,17 +981,6 @@ Event payloads for Entity emitted events.
 </td></tr>
 <tr><td>
 
-[EntityOptions](./server.entityoptions.md)
-
-
-</td><td>
-
-Options for creating an Entity instance.
-
-
-</td></tr>
-<tr><td>
-
 [EventPayloads](./server.eventpayloads.md)
 
 
@@ -1047,6 +1058,17 @@ Options for creating a Light instance.
 </td></tr>
 <tr><td>
 
+[ModelEntityOptions](./server.modelentityoptions.md)
+
+
+</td><td>
+
+The options for creating a model entity.
+
+
+</td></tr>
+<tr><td>
+
 [NoneColliderOptions](./server.nonecollideroptions.md)
 
 
@@ -1075,17 +1097,6 @@ Event payloads for PlayerCamera emitted events.
 </td><td>
 
 Options for creating a PlayerEntityController instance.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerEntityOptions](./server.playerentityoptions.md)
-
-
-</td><td>
-
-Options for creating a PlayerEntity instance.
 
 
 </td></tr>
@@ -1440,6 +1451,17 @@ A decoded set of collision groups represented as their string equivalents.
 </td></tr>
 <tr><td>
 
+[EntityOptions](./server.entityoptions.md)
+
+
+</td><td>
+
+The options for creating an Entity instance.
+
+
+</td></tr>
+<tr><td>
+
 [FaceCallback](./server.facecallback.md)
 
 
@@ -1545,6 +1567,17 @@ Options for the [PathfindingEntityController.pathfind()](./server.pathfindingent
 </td><td>
 
 The camera orientation state of a Player.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerEntityOptions](./server.playerentityoptions.md)
+
+
+</td><td>
+
+Options for creating a PlayerEntity instance.
 
 
 </td></tr>

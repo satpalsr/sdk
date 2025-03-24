@@ -3,7 +3,7 @@ import {
   BallColliderOptions,
   Collider,
   Entity,
-  EntityOptions,
+  ModelEntityOptions,
   QuaternionLike,
   SceneUI,
   Vector3Like,
@@ -18,7 +18,7 @@ export default class ChestEntity extends Entity {
   private _openAudio: Audio;
   private _opened: boolean = false;
 
-  public constructor(options: EntityOptions = {}) {
+  public constructor(options: Partial<ModelEntityOptions> = {}) {
     super({
       modelUri: 'models/environment/chest.gltf',
       modelScale: 1,

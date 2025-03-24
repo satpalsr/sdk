@@ -1,9 +1,9 @@
 import {
   Audio,
   Entity,
-  EntityOptions,
   EntityEvent,
   EventPayloads,
+  ModelEntityOptions,
   PathfindingEntityController,
 } from 'hytopia';
 
@@ -14,7 +14,7 @@ import GamePlayerEntity from './GamePlayerEntity';
 const RETARGET_ACCUMULATOR_THRESHOLD_MS = 5000;
 const PATHFIND_ACCUMULATOR_THRESHOLD_MS = 3000;
 
-export interface EnemyEntityOptions extends EntityOptions {
+export interface EnemyEntityOptions extends ModelEntityOptions {
   damage: number;
   damageAudioUri?: string;
   health: number;

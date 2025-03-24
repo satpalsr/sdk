@@ -11,14 +11,14 @@ import ItemEntity from './ItemEntity';
 import TerrainDamageManager from './TerrainDamageManager';
 import type { ItemEntityOptions } from './ItemEntity';
 
-export interface MeleeWeaponEntityOptions extends ItemEntityOptions {
+export type MeleeWeaponEntityOptions = {
   damage: number;           // The damage dealt by the weapon
   attackRate: number;       // Attacks per second
   range: number;            // The range of the melee attack
   attackAudioUri: string;   // The audio played when attacking
   hitAudioUri: string;      // The audio played when hitting an entity or block
-  minesMaterials: boolean;     // Whether the weapon mines materials when it hits a block
-}
+  minesMaterials: boolean;  // Whether the weapon mines materials when it hits a block
+} & ItemEntityOptions;
 
 export default abstract class MeleeWeaponEntity extends ItemEntity {
   protected readonly damage: number;

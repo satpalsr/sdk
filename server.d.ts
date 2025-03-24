@@ -453,6 +453,26 @@ export declare interface BaseEntityControllerEventPayloads {
     };
 }
 
+/** The base options for an entity. @public */
+export declare interface BaseEntityOptions {
+    /** The entity controller to use for the entity. */
+    controller?: BaseEntityController;
+    /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
+    opacity?: number;
+    /** The parent entity of the entity, entities with a parent will ignore creating their own colliders. */
+    parent?: Entity;
+    /** The name of the parent's node (if parent is a model entity) to attach the entity to. */
+    parentNodeName?: string;
+    /** The rigid body options for the entity. */
+    rigidBodyOptions?: RigidBodyOptions;
+    /** An arbitrary identifier tag of the entity. Useful for your own logic. */
+    tag?: string;
+    /** The tint color of the entity as a hex code. */
+    tintColor?: RgbColor;
+    /** The name of the entity. */
+    name?: string;
+}
+
 /** The base options for a rigid body. @public */
 export declare interface BaseRigidBodyOptions {
     /** The type of the rigid body, defaults to {@link RigidBodyType.DYNAMIC}. */
@@ -501,6 +521,14 @@ export declare interface BlockColliderOptions extends BaseColliderOptions {
     shape: ColliderShape.BLOCK;
     /** The half extents of the block collider. */
     halfExtents?: Vector3Like;
+}
+
+/** The options for creating a block entity. @public */
+export declare interface BlockEntityOptions extends BaseEntityOptions {
+    /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created. */
+    blockHalfExtents?: Vector3Like;
+    /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
+    blockTextureUri?: string;
 }
 
 /**
@@ -1774,39 +1802,8 @@ export declare class EntityManager {
 
 }
 
-/** Options for creating an Entity instance. @public */
-export declare interface EntityOptions {
-    /** The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created. */
-    blockHalfExtents?: Vector3Like;
-    /** The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block */
-    blockTextureUri?: string;
-    /** The entity controller to use for the entity. */
-    controller?: BaseEntityController;
-    /** The playback rate of the entity's model animations. */
-    modelAnimationsPlaybackRate?: number;
-    /** The nodes to hide on the entity's model. */
-    modelHiddenNodes?: string[];
-    /** The looped animations to start when the entity is spawned. */
-    modelLoopedAnimations?: string[];
-    /** The scale of the entity's model. */
-    modelScale?: number;
-    /** The URI or path to the .gltf model asset to be used for the entity. */
-    modelUri?: string;
-    /** The name of the entity. */
-    name?: string;
-    /** The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque. */
-    opacity?: number;
-    /** The parent entity of the entity, entities with a parent will ignore creating their own colliders. */
-    parent?: Entity;
-    /** The name of the parent's node (if parent is a model entity) to attach the entity to. */
-    parentNodeName?: string;
-    /** The rigid body options for the entity. */
-    rigidBodyOptions?: RigidBodyOptions;
-    /** An arbitrary identifier tag of the entity. Useful for your own logic. */
-    tag?: string;
-    /** The tint color of the entity as a hex code. */
-    tintColor?: RgbColor;
-}
+/** The options for creating an Entity instance. @public */
+export declare type EntityOptions = BlockEntityOptions | ModelEntityOptions;
 
 /**
  * Manages error and warning logging.
@@ -2923,6 +2920,20 @@ declare type ModelBoundingBox = {
     max: Vector3Like;
 };
 
+/** The options for creating a model entity. @public */
+export declare interface ModelEntityOptions extends BaseEntityOptions {
+    /** The playback rate of the entity's model animations. */
+    modelAnimationsPlaybackRate?: number;
+    /** The nodes to hide on the entity's model. */
+    modelHiddenNodes?: string[];
+    /** The looped animations to start when the entity is spawned. */
+    modelLoopedAnimations?: string[];
+    /** The scale of the entity's model. */
+    modelScale?: number;
+    /** The URI or path to the .gltf model asset to be used for the entity. */
+    modelUri?: string;
+}
+
 /**
  * Manages model data for all known models of the game.
  *
@@ -3692,10 +3703,10 @@ export declare interface PlayerEntityControllerOptions {
 }
 
 /** Options for creating a PlayerEntity instance. @public */
-export declare interface PlayerEntityOptions extends EntityOptions {
+export declare type PlayerEntityOptions = {
     /** The player the player entity is assigned to. */
     player: Player;
-}
+} & EntityOptions;
 
 /** Event types a Player can emit. See {@link PlayerEventPayloads} for the payloads. @public */
 export declare enum PlayerEvent {

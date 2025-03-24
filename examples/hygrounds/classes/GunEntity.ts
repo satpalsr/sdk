@@ -14,7 +14,7 @@ import type { ItemEntityOptions } from './ItemEntity';
 
 export type GunHand = 'left' | 'right' | 'both';
 
-export interface GunEntityOptions extends ItemEntityOptions {
+export type GunEntityOptions = {
   ammo: number;              // The amount of ammo in the clip.
   damage: number;            // The damage of the gun.
   fireRate: number;          // Bullets shot per second.
@@ -25,7 +25,7 @@ export interface GunEntityOptions extends ItemEntityOptions {
   reloadTimeMs: number;      // Seconds to reload.
   shootAudioUri: string;     // The audio played when shooting
   scopeZoom?: number;         // The zoom level when scoped in.
-}
+} & ItemEntityOptions;
 
 export default abstract class GunEntity extends ItemEntity {
   protected readonly damage: number;
@@ -44,7 +44,7 @@ export default abstract class GunEntity extends ItemEntity {
   private _shootAudio: Audio;
 
   public constructor(options: GunEntityOptions) {
-    if (!options.modelUri) {
+    if (!('modelUri' in options)) {
       throw new Error('GunEntity requires modelUri');
     }
 

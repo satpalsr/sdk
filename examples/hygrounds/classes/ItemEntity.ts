@@ -4,11 +4,14 @@ import {
   CollisionGroup,
   Entity,
   EntityOptions,
+  BlockEntityOptions,
+  ModelEntityOptions,
   PlayerEntityController,
   QuaternionLike,
   SceneUI,
   Vector3Like,
   World,
+  ErrorHandler,
 } from 'hytopia';
 
 import GamePlayerEntity from './GamePlayerEntity';
@@ -18,7 +21,7 @@ const INVENTORIED_POSITION = { x: 0, y: -300, z: 0 };
 
 export type HeldHand = 'left' | 'right' | 'both';
 
-export interface ItemEntityOptions extends EntityOptions {
+export type ItemEntityOptions = {
   heldHand: HeldHand;    // The hand the item is held in.
   iconImageUri: string;  // The image uri of the weapon icon.
   idleAnimation: string; // The animation played when the player holding it is idle.
@@ -27,7 +30,7 @@ export interface ItemEntityOptions extends EntityOptions {
   consumable?: boolean;
   consumeAudioUri?: string;
   consumeTimeMs?: number;
-}
+} & EntityOptions;
 
 export default class ItemEntity extends Entity {
   public readonly consumable: boolean;
@@ -42,19 +45,20 @@ export default class ItemEntity extends Entity {
   private readonly _labelSceneUI: SceneUI;
 
   public constructor(options: ItemEntityOptions) {
-    if (!options.modelUri && !options.blockHalfExtents) {
-      throw new Error('ItemEntity requires either modelUri or blockHalfExtents');
-    }
-
-    const colliderOptions = options.modelUri
+    const colliderOptions = 'modelUri' in options && options.modelUri
       ? Collider.optionsFromModelUri(options.modelUri)
-      : Collider.optionsFromBlockHalfExtents(options.blockHalfExtents!);
+      : 'blockHalfExtents' in options && options.blockHalfExtents
+        ? Collider.optionsFromBlockHalfExtents(options.blockHalfExtents)
+        : undefined;
 
+    if (!colliderOptions) {
+      ErrorHandler.fatalError('ItemEntity.constructor(): Item must be a model or block entity!');
+    }
 
     super({
       ...options,
       parentNodeName: ItemEntity._getHandAnchorNode(options.heldHand),
-      rigidBodyOptions: ItemEntity._createRigidBodyOptions(colliderOptions, options.modelScale ?? 1),
+      rigidBodyOptions: ItemEntity._createRigidBodyOptions(colliderOptions, 'modelScale' in options ? options.modelScale ?? 1 : 1),
     });
 
     this.consumable = options.consumable ?? false;

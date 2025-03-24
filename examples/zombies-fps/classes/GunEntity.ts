@@ -3,12 +3,12 @@ import {
   CollisionGroup,
   CollisionGroupsBuilder,
   Entity,
-  EntityOptions,
   PlayerEntity,
   Vector3Like,
   QuaternionLike,
   World,
   PlayerEntityController,
+  ModelEntityOptions,
 } from 'hytopia';
 
 import EnemyEntity from './EnemyEntity';
@@ -16,7 +16,7 @@ import type GamePlayerEntity from './GamePlayerEntity';
 
 export type GunHand = 'left' | 'right' | 'both';
 
-export interface GunEntityOptions extends EntityOptions {
+export type GunEntityOptions = {
   ammo: number;              // The amount of ammo in the clip.
   damage: number;            // The damage of the gun.
   fireRate: number;          // Bullets shot per second.
@@ -30,7 +30,7 @@ export interface GunEntityOptions extends EntityOptions {
   reloadTimeMs: number;      // Seconds to reload.
   shootAnimation: string;    // The animation played when the gun is shooting.
   shootAudioUri: string;     // The audio played when shooting
-}
+} & ModelEntityOptions;
 
 export default abstract class GunEntity extends Entity {
   public ammo: number;

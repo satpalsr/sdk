@@ -1,5 +1,7 @@
 import {
   startServer,
+  BlockType,
+  Collider,
   ColliderShape,
   Entity,
   EntityEvent,
@@ -7,7 +9,6 @@ import {
   PlayerEvent,
   RigidBodyType,
   World,
-  Collider,
 } from 'hytopia';
 
 import worldMap from './assets/map.json';
@@ -41,8 +42,8 @@ startServer(world => {
           radius: 9,
           isSensor: true, // Sensors are colliders that do not react with physics, but can still trigger collision events.
           tag: 'aggro-sensor',
-          onCollision: (otherEntity, started) => {
-            console.log('spider aggro-sensor colliding with', otherEntity.name, started);
+          onCollision: (other: Entity | BlockType, started: boolean) => {
+            console.log('spider aggro-sensor colliding with', other.name, started);
           },
         },
       ],

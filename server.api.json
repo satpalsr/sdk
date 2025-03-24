@@ -3940,6 +3940,244 @@
         },
         {
           "kind": "Interface",
+          "canonicalReference": "server!BaseEntityOptions:interface",
+          "docComment": "/**\n * The base options for an entity.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BaseEntityOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/entities/Entity.ts",
+          "releaseTag": "Public",
+          "name": "BaseEntityOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#controller:member",
+              "docComment": "/**\n * The entity controller to use for the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "controller?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BaseEntityController",
+                  "canonicalReference": "server!BaseEntityController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "controller",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#name:member",
+              "docComment": "/**\n * The name of the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#opacity:member",
+              "docComment": "/**\n * The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "opacity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "opacity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#parent:member",
+              "docComment": "/**\n * The parent entity of the entity, entities with a parent will ignore creating their own colliders.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parent?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parent",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#parentNodeName:member",
+              "docComment": "/**\n * The name of the parent's node (if parent is a model entity) to attach the entity to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parentNodeName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parentNodeName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#rigidBodyOptions:member",
+              "docComment": "/**\n * The rigid body options for the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rigidBodyOptions?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyOptions",
+                  "canonicalReference": "server!RigidBodyOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "rigidBodyOptions",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tag?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityOptions#tintColor:member",
+              "docComment": "/**\n * The tint color of the entity as a hex code.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tintColor?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RgbColor",
+                  "canonicalReference": "server!RgbColor:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tintColor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
           "canonicalReference": "server!BaseRigidBodyOptions:interface",
           "docComment": "/**\n * The base options for a rigid body.\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -4333,6 +4571,93 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!BlockEntityOptions:interface",
+          "docComment": "/**\n * The options for creating a block entity.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BlockEntityOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseEntityOptions",
+              "canonicalReference": "server!BaseEntityOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/entities/Entity.ts",
+          "releaseTag": "Public",
+          "name": "BlockEntityOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BlockEntityOptions#blockHalfExtents:member",
+              "docComment": "/**\n * The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blockHalfExtents?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "blockHalfExtents",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BlockEntityOptions#blockTextureUri:member",
+              "docComment": "/**\n * The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "blockTextureUri?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "blockTextureUri",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -10655,7 +10980,7 @@
                 {
                   "kind": "Reference",
                   "text": "EntityOptions",
-                  "canonicalReference": "server!EntityOptions:interface"
+                  "canonicalReference": "server!EntityOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -13624,432 +13949,40 @@
           "implementsTokenRanges": []
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "server!EntityOptions:interface",
-          "docComment": "/**\n * Options for creating an Entity instance.\n *\n * @public\n */\n",
+          "kind": "TypeAlias",
+          "canonicalReference": "server!EntityOptions:type",
+          "docComment": "/**\n * The options for creating an Entity instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface EntityOptions "
+              "text": "export type EntityOptions = "
+            },
+            {
+              "kind": "Reference",
+              "text": "BlockEntityOptions",
+              "canonicalReference": "server!BlockEntityOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ModelEntityOptions",
+              "canonicalReference": "server!ModelEntityOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
             }
           ],
           "fileUrlPath": "src/world/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "EntityOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#blockHalfExtents:member",
-              "docComment": "/**\n * The half extents of the visual size of the block entity when blockTextureUri is set. If no rigidBodyOptions.colliders are provided, a block collider with the size of the half extents will be created.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "blockHalfExtents?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "blockHalfExtents",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#blockTextureUri:member",
-              "docComment": "/**\n * The texture uri of a entity if the entity is a block entity, if set rigidBodyOptions collider shape [0] must be a block\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "blockTextureUri?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "blockTextureUri",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#controller:member",
-              "docComment": "/**\n * The entity controller to use for the entity.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "controller?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "BaseEntityController",
-                  "canonicalReference": "server!BaseEntityController:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "controller",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#modelAnimationsPlaybackRate:member",
-              "docComment": "/**\n * The playback rate of the entity's model animations.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "modelAnimationsPlaybackRate?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "modelAnimationsPlaybackRate",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#modelHiddenNodes:member",
-              "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "modelHiddenNodes?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "modelHiddenNodes",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#modelLoopedAnimations:member",
-              "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "modelLoopedAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "modelLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#modelScale:member",
-              "docComment": "/**\n * The scale of the entity's model.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "modelScale?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "modelScale",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#modelUri:member",
-              "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "modelUri?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "modelUri",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#name:member",
-              "docComment": "/**\n * The name of the entity.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "name?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "name",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#opacity:member",
-              "docComment": "/**\n * The opacity of the entity between 0 and 1. 0 is fully transparent, 1 is fully opaque.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "opacity?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "opacity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#parent:member",
-              "docComment": "/**\n * The parent entity of the entity, entities with a parent will ignore creating their own colliders.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "parent?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "parent",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#parentNodeName:member",
-              "docComment": "/**\n * The name of the parent's node (if parent is a model entity) to attach the entity to.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "parentNodeName?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "parentNodeName",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#rigidBodyOptions:member",
-              "docComment": "/**\n * The rigid body options for the entity.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "rigidBodyOptions?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RigidBodyOptions",
-                  "canonicalReference": "server!RigidBodyOptions:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "rigidBodyOptions",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#tag:member",
-              "docComment": "/**\n * An arbitrary identifier tag of the entity. Useful for your own logic.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tag?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "tag",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!EntityOptions#tintColor:member",
-              "docComment": "/**\n * The tint color of the entity as a hex code.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tintColor?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RgbColor",
-                  "canonicalReference": "server!RgbColor:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "tintColor",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
         },
         {
           "kind": "Class",
@@ -23946,6 +23879,173 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!ModelEntityOptions:interface",
+          "docComment": "/**\n * The options for creating a model entity.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ModelEntityOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseEntityOptions",
+              "canonicalReference": "server!BaseEntityOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/entities/Entity.ts",
+          "releaseTag": "Public",
+          "name": "ModelEntityOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelAnimationsPlaybackRate:member",
+              "docComment": "/**\n * The playback rate of the entity's model animations.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelAnimationsPlaybackRate?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelAnimationsPlaybackRate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelHiddenNodes:member",
+              "docComment": "/**\n * The nodes to hide on the entity's model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelHiddenNodes?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelHiddenNodes",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelLoopedAnimations:member",
+              "docComment": "/**\n * The looped animations to start when the entity is spawned.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelScale:member",
+              "docComment": "/**\n * The scale of the entity's model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelScale?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelScale",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelUri:member",
+              "docComment": "/**\n * The URI or path to the .gltf model asset to be used for the entity.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelUri?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelUri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!ModelRegistry:class",
           "docComment": "/**\n * Manages model data for all known models of the game.\n *\n * @remarks\n *\n * The ModelRegistry is created internally as a global singletone accessible with the static property `ModelRegistry.instance`.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ModelRegistry` class.\n *\n * @example\n * ```typescript\n * import { ModelRegistry } from 'hytopia';\n *\n * const modelRegistry = ModelRegistry.instance;\n * const boundingBox = modelRegistry.getBoundingBox('models/player.gltf');\n * ```\n *\n * @public\n */\n",
@@ -28067,7 +28167,7 @@
                 {
                   "kind": "Reference",
                   "text": "PlayerEntityOptions",
-                  "canonicalReference": "server!PlayerEntityOptions:interface"
+                  "canonicalReference": "server!PlayerEntityOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -29301,64 +29401,44 @@
           "extendsTokenRanges": []
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "server!PlayerEntityOptions:interface",
+          "kind": "TypeAlias",
+          "canonicalReference": "server!PlayerEntityOptions:type",
           "docComment": "/**\n * Options for creating a PlayerEntity instance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface PlayerEntityOptions extends "
+              "text": "export type PlayerEntityOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    player: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Player",
+              "canonicalReference": "server!Player:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n} & "
             },
             {
               "kind": "Reference",
               "text": "EntityOptions",
-              "canonicalReference": "server!EntityOptions:interface"
+              "canonicalReference": "server!EntityOptions:type"
             },
             {
               "kind": "Content",
-              "text": " "
+              "text": ";"
             }
           ],
           "fileUrlPath": "src/world/entities/PlayerEntity.ts",
           "releaseTag": "Public",
           "name": "PlayerEntityOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityOptions#player:member",
-              "docComment": "/**\n * The player the player entity is assigned to.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "player: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Player",
-                  "canonicalReference": "server!Player:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "player",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
         },
         {
           "kind": "Enum",
@@ -45049,7 +45129,7 @@
                 {
                   "kind": "Reference",
                   "text": "EntityOptions",
-                  "canonicalReference": "server!EntityOptions:interface"
+                  "canonicalReference": "server!EntityOptions:type"
                 },
                 {
                   "kind": "Content",
