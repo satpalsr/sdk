@@ -111,7 +111,7 @@ Loads client UI for the player.
 
 </td><td>
 
-Locks or unlocks the player's mouse pointer.
+Locks or unlocks the player's mouse pointer. If the pointer is unlocked with lockPointer(false), the player will not be able to use in-game inputs or camera controls from the mouse pointer until `player.ui.lockPointer(true)`<!-- -->, or in your game's client UI html with `hytopia.lockPointer(true)`<!-- -->.
 
 
 </td></tr>
