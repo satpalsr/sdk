@@ -305,6 +305,49 @@ export declare interface AudioOptions {
     volume?: number;
 }
 
+/** The options for a ball collider. @public */
+export declare interface BallColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.BALL;
+    /** The radius of the ball collider. */
+    radius?: number;
+}
+
+/** The base options for a collider. @public */
+export declare interface BaseColliderOptions {
+    /** The shape of the collider. */
+    shape: ColliderShape;
+    /** The bounciness of the collider. */
+    bounciness?: number;
+    /** The bounciness combine rule of the collider. */
+    bouncinessCombineRule?: CoefficientCombineRule;
+    /** The collision groups the collider belongs to. */
+    collisionGroups?: CollisionGroups;
+    /** Whether the collider is enabled. */
+    enabled?: boolean;
+    /** The flags of the collider if the shape is a trimesh */
+    flags?: number;
+    /** The friction of the collider. */
+    friction?: number;
+    /** The friction combine rule of the collider. */
+    frictionCombineRule?: CoefficientCombineRule;
+    /** Whether the collider is a sensor. */
+    isSensor?: boolean;
+    /** The mass of the collider. */
+    mass?: number;
+    /** The on collision callback for the collider. */
+    onCollision?: CollisionCallback;
+    /** The parent rigid body of the collider. */
+    parentRigidBody?: RigidBody;
+    /** The relative position of the collider. Relative to parent rigid body. */
+    relativePosition?: Vector3Like;
+    /** The relative rotation of the collider. Relative to parent rigid body. */
+    relativeRotation?: QuaternionLike;
+    /** The simulation the collider is in, if provided the collider will automatically be added to the simulation. */
+    simulation?: Simulation;
+    /** An arbitrary identifier tag of the collider. Useful for your own logic. */
+    tag?: string;
+}
+
 /**
  * A base class for entity controller implementations.
  *
@@ -410,6 +453,22 @@ export declare interface BaseEntityControllerEventPayloads {
     };
 }
 
+/** The base options for a rigid body. @public */
+export declare interface BaseRigidBodyOptions {
+    /** The type of the rigid body, defaults to {@link RigidBodyType.DYNAMIC}. */
+    type?: RigidBodyType;
+    /** The colliders of the rigid body, provided as {@link ColliderOptions}. */
+    colliders?: ColliderOptions[];
+    /** Whether the rigid body is enabled. */
+    enabled?: boolean;
+    /** The position of the rigid body. */
+    position?: Vector3Like;
+    /** The rotation of the rigid body. */
+    rotation?: QuaternionLike;
+    /** The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation. */
+    simulation?: Simulation;
+}
+
 /**
  * Represents a block in a world.
  *
@@ -435,6 +494,13 @@ export declare class Block {
      * @returns A neighbor global coordinate of this block based on the hit point.
      */
     getNeighborGlobalCoordinateFromHitPoint(hitPoint: Vector3Like): Vector3Like;
+}
+
+/** The options for a block collider. @public */
+export declare interface BlockColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.BLOCK;
+    /** The half extents of the block collider. */
+    halfExtents?: Vector3Like;
 }
 
 /**
@@ -483,7 +549,7 @@ export declare class BlockType extends EventRouter implements protocol.Serializa
     /** The unique identifier for the block type. */
     get id(): number;
     /** The collider options for the block type. */
-    get colliderOptions(): ColliderOptions;
+    get colliderOptions(): TrimeshColliderOptions;
     /** Whether the block type is a liquid. */
     get isLiquid(): boolean;
     /** Whether the block type is meshable. */
@@ -525,7 +591,7 @@ export declare interface BlockTypeOptions {
     /** The unique numeric identifier for the block type. */
     id: number;
     /** The custom collider options for the block type. */
-    customColliderOptions?: ColliderOptions;
+    customColliderOptions?: TrimeshColliderOptions;
     /** Whether the block type is a liquid. */
     isLiquid?: boolean;
     /** The name of the block type. */
@@ -603,6 +669,15 @@ export declare interface BlockTypeRegistryEventPayloads {
         id: number;
         blockType: BlockType;
     };
+}
+
+/** The options for a capsule collider. @public */
+export declare interface CapsuleColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.CAPSULE;
+    /** The half height of the capsule collider. */
+    halfHeight?: number;
+    /** The radius of the capsule collider. */
+    radius?: number;
 }
 
 /** Event types a ChatManager instance can emit. See {@link ChatEventPayloads} for the payloads. @public */
@@ -1089,56 +1164,12 @@ export declare class Collider extends EventRouter {
 
 }
 
-/** Options for creating a Collider instance. @public */
-export declare interface ColliderOptions {
-    /** The shape of the collider. */
-    shape: ColliderShape;
-    /** The border radius of the collider if the shape is a round cylinder. */
-    borderRadius?: number;
-    /** The bounciness of the collider. */
-    bounciness?: number;
-    /** The bounciness combine rule of the collider. */
-    bouncinessCombineRule?: CoefficientCombineRule;
-    /** The collision groups the collider belongs to. */
-    collisionGroups?: CollisionGroups;
-    /** Whether the collider is enabled. */
-    enabled?: boolean;
-    /** The flags of the collider if the shape is a trimesh */
-    flags?: number;
-    /** The friction of the collider. */
-    friction?: number;
-    /** The friction combine rule of the collider. */
-    frictionCombineRule?: CoefficientCombineRule;
-    /** The half extents of the collider if the shape is a block. */
-    halfExtents?: Vector3Like;
-    /** The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder. */
-    halfHeight?: number;
-    /** The indices of the collider if the shape is a trimesh. */
-    indices?: Uint32Array;
-    /** Whether the collider is a sensor. */
-    isSensor?: boolean;
-    /** The mass of the collider. */
-    mass?: number;
-    /** The on collision callback for the collider. */
-    onCollision?: CollisionCallback;
-    /** The parent rigid body of the collider. */
-    parentRigidBody?: RigidBody;
-    /** The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder. */
-    radius?: number;
-    /** The relative position of the collider. Relative to parent rigid body. */
-    relativePosition?: Vector3Like;
-    /** The relative rotation of the collider. Relative to parent rigid body. */
-    relativeRotation?: QuaternionLike;
-    /** The simulation the collider is in, if provided the collider will automatically be added to the simulation. */
-    simulation?: Simulation;
-    /** An arbitrary identifier tag of the collider. Useful for your own logic. */
-    tag?: string;
-    /** The vertices of the collider if the shape is a trimesh. */
-    vertices?: Float32Array;
-}
+/** The options for a collider. @public */
+export declare type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | NoneColliderOptions;
 
 /** The shapes a collider can be. @public */
 export declare enum ColliderShape {
+    NONE = "none",
     BALL = "ball",
     BLOCK = "block",
     CAPSULE = "capsule",
@@ -1265,6 +1296,15 @@ export declare class CollisionGroupsBuilder {
  */
 export declare type CommandCallback = (player: Player, args: string[], message: string) => void;
 
+/** The options for a cone collider. @public */
+export declare interface ConeColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.CONE;
+    /** The half height of the cone collider. */
+    halfHeight?: number;
+    /** The radius of the cone collider. */
+    radius?: number;
+}
+
 /** Data for contact forces. @public */
 export declare type ContactForceData = {
     /** The total force vector. */
@@ -1289,6 +1329,15 @@ export declare type ContactManifold = {
     normal: Vector3Like;
 };
 
+/** The options for a cylinder collider. @public */
+export declare interface CylinderColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.CYLINDER;
+    /** The half height of the cylinder collider. */
+    halfHeight?: number;
+    /** The radius of the cylinder collider. */
+    radius?: number;
+}
+
 /** A decoded set of collision groups represented as their string equivalents. @public */
 export declare type DecodedCollisionGroups = {
     belongsTo: string[];
@@ -1297,6 +1346,39 @@ export declare type DecodedCollisionGroups = {
 
 /** The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided. @public */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
+
+/** The options for a dynamic rigid body, also the default type. @public */
+export declare interface DynamicRigidBodyOptions extends BaseRigidBodyOptions {
+    type?: RigidBodyType.DYNAMIC;
+    /** The additional mass of the rigid body. */
+    additionalMass?: number;
+    /** The additional mass properties of the rigid body. */
+    additionalMassProperties?: RigidBodyAdditionalMassProperties;
+    /** The additional solver iterations of the rigid body. */
+    additionalSolverIterations?: number;
+    /** The angular damping of the rigid body. */
+    angularDamping?: number;
+    /** The angular velocity of the rigid body. */
+    angularVelocity?: Vector3Like;
+    /** Whether the rigid body has continuous collision detection enabled. */
+    ccdEnabled?: boolean;
+    /** The dominance group of the rigid body. */
+    dominanceGroup?: number;
+    /** The enabled axes of positional movement of the rigid body. */
+    enabledPositions?: Vector3Boolean;
+    /** The enabled rotations of the rigid body. */
+    enabledRotations?: Vector3Boolean;
+    /** The gravity scale of the rigid body. */
+    gravityScale?: number;
+    /** The linear damping of the rigid body. */
+    linearDamping?: number;
+    /** The linear velocity of the rigid body. */
+    linearVelocity?: Vector3Like;
+    /** Whether the rigid body is sleeping. */
+    sleeping?: boolean;
+    /** The soft continuous collision detection prediction of the rigid body. */
+    softCcdPrediction?: number;
+}
 
 /**
  * Represents an entity in a world.
@@ -1727,6 +1809,36 @@ export declare interface EntityOptions {
 }
 
 /**
+ * Manages error and warning logging.
+ *
+ * @public
+ */
+export declare class ErrorHandler {
+    private static errorCount;
+    private static warningCount;
+    /**
+     * Logs a formatted warning message to alert about potential issues
+     * @param message - The warning message to display
+     * @param context - Optional context information about the warning
+     */
+    static warning(message: string, context?: string): void;
+    /**
+     * Logs a formatted error message with stack trace to help debug issues
+     * @param message - The error message to display
+     * @param context - Optional context information about the error
+     */
+    static error(message: string, context?: string): void;
+    /**
+     * Logs a formatted fatal error message with stack trace and throws the error
+     * @param message - The error message to display
+     * @param context - Optional context information about the error
+     * @throws The created Error object
+     */
+    static fatalError(message: string, context?: string): never;
+
+}
+
+/**
  * The payloads for all events in the game server.
  *
  * @public
@@ -1858,6 +1970,11 @@ export declare type FaceOptions = {
     faceCompleteCallback?: FaceCompleteCallback;
 };
 
+/** The options for a fixed rigid body. @public */
+export declare interface FixedRigidBodyOptions extends BaseRigidBodyOptions {
+    type: RigidBodyType.FIXED;
+}
+
 /**
  * Manages the game and associated worlds and systems.
  *
@@ -1908,6 +2025,20 @@ export declare interface GameServerEventPayloads {
     [GameServerEvent.STOP]: {
         stoppedAtMs: number;
     };
+}
+
+/** The options for a kinematic position rigid body. @public */
+export declare interface KinematicPositionRigidBodyOptions extends BaseRigidBodyOptions {
+    type: RigidBodyType.KINEMATIC_POSITION;
+}
+
+/** The options for a kinematic velocity rigid body. @public */
+export declare interface KinematicVelocityRigidBodyOptions extends BaseRigidBodyOptions {
+    type: RigidBodyType.KINEMATIC_VELOCITY;
+    /** The angular velocity of the rigid body. */
+    angularVelocity?: Vector3Like;
+    /** The linear velocity of the rigid body. */
+    linearVelocity?: Vector3Like;
 }
 
 /**
@@ -2896,6 +3027,11 @@ export declare type MoveOptions = {
         z?: boolean;
     };
 };
+
+/** The options for an error type "none" collider. @public */
+export declare interface NoneColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.NONE;
+}
 
 /**
  * A callback function called when the pathfinding algorithm aborts.
@@ -4321,8 +4457,6 @@ export declare class RigidBody extends EventRouter {
 
 
 
-
-
 }
 
 /** Additional mass properties for a RigidBody. @public */
@@ -4333,49 +4467,8 @@ export declare type RigidBodyAdditionalMassProperties = {
     principalAngularInertiaLocalFrame: QuaternionLike;
 };
 
-/** Options for creating a RigidBody instance. @public */
-export declare interface RigidBodyOptions {
-    /** The type of the rigid body. */
-    type?: RigidBodyType;
-    /** The additional mass of the rigid body. */
-    additionalMass?: number;
-    /** The additional mass properties of the rigid body. */
-    additionalMassProperties?: RigidBodyAdditionalMassProperties;
-    /** The additional solver iterations of the rigid body. */
-    additionalSolverIterations?: number;
-    /** The angular damping of the rigid body. */
-    angularDamping?: number;
-    /** The angular velocity of the rigid body. */
-    angularVelocity?: Vector3Like;
-    /** Whether the rigid body has continuous collision detection enabled. */
-    ccdEnabled?: boolean;
-    /** The colliders of the rigid body, provided as {@link ColliderOptions}. */
-    colliders?: ColliderOptions[];
-    /** The dominance group of the rigid body. */
-    dominanceGroup?: number;
-    /** Whether the rigid body is enabled. */
-    enabled?: boolean;
-    /** The enabled axes of positional movement of the rigid body. */
-    enabledPositions?: Vector3Boolean;
-    /** The enabled rotations of the rigid body. */
-    enabledRotations?: Vector3Boolean;
-    /** The gravity scale of the rigid body. */
-    gravityScale?: number;
-    /** The linear damping of the rigid body. */
-    linearDamping?: number;
-    /** The linear velocity of the rigid body. */
-    linearVelocity?: Vector3Like;
-    /** The position of the rigid body. */
-    position?: Vector3Like;
-    /** The rotation of the rigid body. */
-    rotation?: QuaternionLike;
-    /** The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation. */
-    simulation?: Simulation;
-    /** Whether the rigid body is sleeping. */
-    sleeping?: boolean;
-    /** The soft continuous collision detection prediction of the rigid body. */
-    softCcdPrediction?: number;
-}
+/** The options for a rigid body. @public */
+export declare type RigidBodyOptions = DynamicRigidBodyOptions | FixedRigidBodyOptions | KinematicPositionRigidBodyOptions | KinematicVelocityRigidBodyOptions;
 
 /** The types a RigidBody can be. @public */
 export declare enum RigidBodyType {
@@ -4383,6 +4476,17 @@ export declare enum RigidBodyType {
     FIXED = "fixed",
     KINEMATIC_POSITION = "kinematic_position",
     KINEMATIC_VELOCITY = "kinematic_velocity"
+}
+
+/** The options for a round cylinder collider. @public */
+export declare interface RoundCylinderColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.ROUND_CYLINDER;
+    /** The border radius of the round cylinder collider. */
+    borderRadius?: number;
+    /** The half height of the round cylinder collider. */
+    halfHeight?: number;
+    /** The radius of the round cylinder collider. */
+    radius?: number;
 }
 
 /**
@@ -4822,6 +4926,15 @@ export declare function startServer(init: (world: World) => void): void;
 
 /** The input keys that are included in the PlayerInput. @public */
 export declare const SUPPORTED_INPUT_KEYS: readonly ["w", "a", "s", "d", "sp", "sh", "tb", "ml", "mr", "q", "e", "r", "f", "z", "x", "c", "v", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+/** The options for a trimesh collider. @public */
+export declare interface TrimeshColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.TRIMESH;
+    /** The indices of the trimesh collider. */
+    indices?: Uint32Array;
+    /** The vertices of the trimesh collider. */
+    vertices?: Float32Array;
+}
 
 /**
  * Represents a 2D vector.

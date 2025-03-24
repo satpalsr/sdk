@@ -1,5 +1,5 @@
 import {
-  ColliderOptions,
+  BlockColliderOptions,
   ColliderShape,
   CollisionGroup,
   Entity,
@@ -14,7 +14,7 @@ import GameManager from './GameManager';
 import GamePlayerEntity from './GamePlayerEntity';
 import InteractableEntity from './InteractableEntity';
 
-const WALL_COLLIDER_OPTIONS: ColliderOptions = {
+const WALL_COLLIDER_OPTIONS: BlockColliderOptions = {
   shape: ColliderShape.BLOCK,
   collisionGroups: {
     belongsTo: [ CollisionGroup.BLOCK ],

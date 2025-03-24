@@ -102,6 +102,20 @@ CYLINDER
 </td></tr>
 <tr><td>
 
+NONE
+
+
+</td><td>
+
+`"none"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 ROUND\_CYLINDER
 
 

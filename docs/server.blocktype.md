@@ -107,7 +107,7 @@ Description
 
 </td><td>
 
-[ColliderOptions](./server.collideroptions.md)
+[TrimeshColliderOptions](./server.trimeshcollideroptions.md)
 
 
 </td><td>

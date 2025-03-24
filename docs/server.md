@@ -151,6 +151,17 @@ Manages entities in a world.
 </td></tr>
 <tr><td>
 
+[ErrorHandler](./server.errorhandler.md)
+
+
+</td><td>
+
+Manages error and warning logging.
+
+
+</td></tr>
+<tr><td>
+
 [EventRouter](./server.eventrouter.md)
 
 
@@ -783,12 +794,56 @@ Options for creating an Audio instance.
 </td></tr>
 <tr><td>
 
+[BallColliderOptions](./server.ballcollideroptions.md)
+
+
+</td><td>
+
+The options for a ball collider.
+
+
+</td></tr>
+<tr><td>
+
+[BaseColliderOptions](./server.basecollideroptions.md)
+
+
+</td><td>
+
+The base options for a collider.
+
+
+</td></tr>
+<tr><td>
+
 [BaseEntityControllerEventPayloads](./server.baseentitycontrollereventpayloads.md)
 
 
 </td><td>
 
 Event payloads for BaseEntityController emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[BaseRigidBodyOptions](./server.baserigidbodyoptions.md)
+
+
+</td><td>
+
+The base options for a rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[BlockColliderOptions](./server.blockcollideroptions.md)
+
+
+</td><td>
+
+The options for a block collider.
 
 
 </td></tr>
@@ -827,6 +882,17 @@ Event payloads for BlockTypeRegistry emitted events.
 </td></tr>
 <tr><td>
 
+[CapsuleColliderOptions](./server.capsulecollideroptions.md)
+
+
+</td><td>
+
+The options for a capsule collider.
+
+
+</td></tr>
+<tr><td>
+
 [ChatEventPayloads](./server.chateventpayloads.md)
 
 
@@ -849,12 +915,34 @@ Event payloads for Chunk emitted events.
 </td></tr>
 <tr><td>
 
-[ColliderOptions](./server.collideroptions.md)
+[ConeColliderOptions](./server.conecollideroptions.md)
 
 
 </td><td>
 
-Options for creating a Collider instance.
+The options for a cone collider.
+
+
+</td></tr>
+<tr><td>
+
+[CylinderColliderOptions](./server.cylindercollideroptions.md)
+
+
+</td><td>
+
+The options for a cylinder collider.
+
+
+</td></tr>
+<tr><td>
+
+[DynamicRigidBodyOptions](./server.dynamicrigidbodyoptions.md)
+
+
+</td><td>
+
+The options for a dynamic rigid body, also the default type.
 
 
 </td></tr>
@@ -893,12 +981,45 @@ The payloads for all events in the game server.
 </td></tr>
 <tr><td>
 
+[FixedRigidBodyOptions](./server.fixedrigidbodyoptions.md)
+
+
+</td><td>
+
+The options for a fixed rigid body.
+
+
+</td></tr>
+<tr><td>
+
 [GameServerEventPayloads](./server.gameservereventpayloads.md)
 
 
 </td><td>
 
 Event payloads for GameServer emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[KinematicPositionRigidBodyOptions](./server.kinematicpositionrigidbodyoptions.md)
+
+
+</td><td>
+
+The options for a kinematic position rigid body.
+
+
+</td></tr>
+<tr><td>
+
+[KinematicVelocityRigidBodyOptions](./server.kinematicvelocityrigidbodyoptions.md)
+
+
+</td><td>
+
+The options for a kinematic velocity rigid body.
 
 
 </td></tr>
@@ -921,6 +1042,17 @@ Event payloads for Light emitted events.
 </td><td>
 
 Options for creating a Light instance.
+
+
+</td></tr>
+<tr><td>
+
+[NoneColliderOptions](./server.nonecollideroptions.md)
+
+
+</td><td>
+
+The options for an error type "none" collider.
 
 
 </td></tr>
@@ -1014,12 +1146,12 @@ A RGB color.
 </td></tr>
 <tr><td>
 
-[RigidBodyOptions](./server.rigidbodyoptions.md)
+[RoundCylinderColliderOptions](./server.roundcylindercollideroptions.md)
 
 
 </td><td>
 
-Options for creating a RigidBody instance.
+The options for a round cylinder collider.
 
 
 </td></tr>
@@ -1064,6 +1196,17 @@ Event payloads for Simulation emitted events.
 </td><td>
 
 A 3x3 symmetric positive-definite matrix for spatial dynamics.
+
+
+</td></tr>
+<tr><td>
+
+[TrimeshColliderOptions](./server.trimeshcollideroptions.md)
+
+
+</td><td>
+
+The options for a trimesh collider.
 
 
 </td></tr>
@@ -1219,6 +1362,17 @@ Description
 
 </th></tr></thead>
 <tbody><tr><td>
+
+[ColliderOptions](./server.collideroptions.md)
+
+
+</td><td>
+
+The options for a collider.
+
+
+</td></tr>
+<tr><td>
 
 [CollisionCallback](./server.collisioncallback.md)
 
@@ -1446,6 +1600,17 @@ Options for raycasting.
 </td><td>
 
 Additional mass properties for a RigidBody.
+
+
+</td></tr>
+<tr><td>
+
+[RigidBodyOptions](./server.rigidbodyoptions.md)
+
+
+</td><td>
+
+The options for a rigid body.
 
 
 </td></tr>

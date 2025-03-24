@@ -2552,6 +2552,552 @@
           "extendsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!BallColliderOptions:interface",
+          "docComment": "/**\n * The options for a ball collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BallColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "BallColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BallColliderOptions#radius:member",
+              "docComment": "/**\n * The radius of the ball collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "radius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "radius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BallColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.BALL",
+                  "canonicalReference": "server!ColliderShape.BALL:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!BaseColliderOptions:interface",
+          "docComment": "/**\n * The base options for a collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BaseColliderOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "BaseColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#bounciness:member",
+              "docComment": "/**\n * The bounciness of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "bounciness?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "bounciness",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#bouncinessCombineRule:member",
+              "docComment": "/**\n * The bounciness combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "bouncinessCombineRule?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "bouncinessCombineRule",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#collisionGroups:member",
+              "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "collisionGroups?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CollisionGroups",
+                  "canonicalReference": "server!CollisionGroups:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "collisionGroups",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#enabled:member",
+              "docComment": "/**\n * Whether the collider is enabled.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enabled?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "enabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#flags:member",
+              "docComment": "/**\n * The flags of the collider if the shape is a trimesh\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "flags?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "flags",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#friction:member",
+              "docComment": "/**\n * The friction of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "friction?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "friction",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#frictionCombineRule:member",
+              "docComment": "/**\n * The friction combine rule of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "frictionCombineRule?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CoefficientCombineRule",
+                  "canonicalReference": "server!CoefficientCombineRule:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "frictionCombineRule",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#isSensor:member",
+              "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isSensor?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "isSensor",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#mass:member",
+              "docComment": "/**\n * The mass of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mass?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "mass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#onCollision:member",
+              "docComment": "/**\n * The on collision callback for the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "onCollision?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CollisionCallback",
+                  "canonicalReference": "server!CollisionCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "onCollision",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#parentRigidBody:member",
+              "docComment": "/**\n * The parent rigid body of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parentRigidBody?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBody",
+                  "canonicalReference": "server!RigidBody:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parentRigidBody",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#relativePosition:member",
+              "docComment": "/**\n * The relative position of the collider. Relative to parent rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "relativePosition?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "relativePosition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#relativeRotation:member",
+              "docComment": "/**\n * The relative rotation of the collider. Relative to parent rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "relativeRotation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "relativeRotation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#shape:member",
+              "docComment": "/**\n * The shape of the collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape",
+                  "canonicalReference": "server!ColliderShape:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#simulation:member",
+              "docComment": "/**\n * The simulation the collider is in, if provided the collider will automatically be added to the simulation.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "simulation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Simulation",
+                  "canonicalReference": "server!Simulation:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "simulation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseColliderOptions#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the collider. Useful for your own logic.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tag?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!BaseEntityController:class",
           "docComment": "/**\n * A base class for entity controller implementations.\n *\n * @remarks\n *\n * The BaseEntityController should be extended by a more specific entity controller that you or a plugin implements. Entity controllers are intended to be used as one controller instance per entity, but are flexible enough for edge cases such as if you want to create niche behavior of one controller for many entities that behave in unison.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link BaseEntityControllerEventPayloads}\n *\n * @public\n */\n",
@@ -3393,6 +3939,195 @@
           "extendsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!BaseRigidBodyOptions:interface",
+          "docComment": "/**\n * The base options for a rigid body.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BaseRigidBodyOptions "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "releaseTag": "Public",
+          "name": "BaseRigidBodyOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#colliders:member",
+              "docComment": "/**\n * The colliders of the rigid body, provided as {@link ColliderOptions}.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "colliders?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderOptions",
+                  "canonicalReference": "server!ColliderOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "colliders",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#enabled:member",
+              "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enabled?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "enabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#position:member",
+              "docComment": "/**\n * The position of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "position?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "position",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#rotation:member",
+              "docComment": "/**\n * The rotation of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rotation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "QuaternionLike",
+                  "canonicalReference": "server!QuaternionLike:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "rotation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#simulation:member",
+              "docComment": "/**\n * The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "simulation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Simulation",
+                  "canonicalReference": "server!Simulation:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "simulation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseRigidBodyOptions#type:member",
+              "docComment": "/**\n * The type of the rigid body, defaults to {@link RigidBodyType.DYNAMIC}.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType",
+                  "canonicalReference": "server!RigidBodyType:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!Block:class",
           "docComment": "/**\n * Represents a block in a world.\n *\n * @remarks\n *\n * Instances of this class are created internally but made publicly available through various public facing API methods.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `Block` class.\n *\n * @public\n */\n",
@@ -3524,6 +4259,94 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!BlockColliderOptions:interface",
+          "docComment": "/**\n * The options for a block collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface BlockColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "BlockColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BlockColliderOptions#halfExtents:member",
+              "docComment": "/**\n * The half extents of the block collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "halfExtents?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "halfExtents",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BlockColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.BLOCK",
+                  "canonicalReference": "server!ColliderShape.BLOCK:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!BlockType:class",
           "docComment": "/**\n * Represents a block type.\n *\n * @remarks\n *\n * Block types are created directly as instances. They support a variety of configuration options through the {@link BlockTypeOptions} constructor argument. Block types are registered with a {@link BlockTypeRegistry} instance, allowing you to create custom blocks with unique visual representations and behaviors.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link BlockTypeEventPayloads}\n *\n * @example\n * ```typescript\n * const stoneBlockTypeId = 10;\n * world.blockTypeRegistry.registerBlockType(stoneBlockTypeId, new BlockType({\n *   id: stoneBlockTypeId,\n *   textureUri: 'textures/stone.png',\n *   name: 'Stone',\n * }));\n *\n * // Create a stone block at coordinate 0, 1, 0\n * world.chunkLattice.setBlock({ x: 0, y: 1, z: 0 }, stoneBlockTypeId);\n * ```\n *\n * @public\n */\n",
@@ -3601,8 +4424,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "text": "TrimeshColliderOptions",
+                  "canonicalReference": "server!TrimeshColliderOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -4003,8 +4826,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "text": "TrimeshColliderOptions",
+                  "canonicalReference": "server!TrimeshColliderOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -4501,6 +5324,120 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!CapsuleColliderOptions:interface",
+          "docComment": "/**\n * The options for a capsule collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CapsuleColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "CapsuleColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CapsuleColliderOptions#halfHeight:member",
+              "docComment": "/**\n * The half height of the capsule collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "halfHeight?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "halfHeight",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CapsuleColliderOptions#radius:member",
+              "docComment": "/**\n * The radius of the capsule collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "radius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "radius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CapsuleColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.CAPSULE",
+                  "canonicalReference": "server!ColliderShape.CAPSULE:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Enum",
@@ -6449,7 +7386,7 @@
                 {
                   "kind": "Reference",
                   "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "canonicalReference": "server!ColliderOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -6926,7 +7863,7 @@
                 {
                   "kind": "Reference",
                   "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "canonicalReference": "server!ColliderOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -6983,7 +7920,7 @@
                 {
                   "kind": "Reference",
                   "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "canonicalReference": "server!ColliderOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -7838,628 +8775,94 @@
           "implementsTokenRanges": []
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "server!ColliderOptions:interface",
-          "docComment": "/**\n * Options for creating a Collider instance.\n *\n * @public\n */\n",
+          "kind": "TypeAlias",
+          "canonicalReference": "server!ColliderOptions:type",
+          "docComment": "/**\n * The options for a collider.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface ColliderOptions "
+              "text": "export type ColliderOptions = "
+            },
+            {
+              "kind": "Reference",
+              "text": "BallColliderOptions",
+              "canonicalReference": "server!BallColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "BlockColliderOptions",
+              "canonicalReference": "server!BlockColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "CapsuleColliderOptions",
+              "canonicalReference": "server!CapsuleColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ConeColliderOptions",
+              "canonicalReference": "server!ConeColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "CylinderColliderOptions",
+              "canonicalReference": "server!CylinderColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "RoundCylinderColliderOptions",
+              "canonicalReference": "server!RoundCylinderColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "TrimeshColliderOptions",
+              "canonicalReference": "server!TrimeshColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "NoneColliderOptions",
+              "canonicalReference": "server!NoneColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
             }
           ],
           "fileUrlPath": "src/world/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "ColliderOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#borderRadius:member",
-              "docComment": "/**\n * The border radius of the collider if the shape is a round cylinder.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "borderRadius?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "borderRadius",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#bounciness:member",
-              "docComment": "/**\n * The bounciness of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "bounciness?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "bounciness",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#bouncinessCombineRule:member",
-              "docComment": "/**\n * The bounciness combine rule of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "bouncinessCombineRule?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CoefficientCombineRule",
-                  "canonicalReference": "server!CoefficientCombineRule:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "bouncinessCombineRule",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#collisionGroups:member",
-              "docComment": "/**\n * The collision groups the collider belongs to.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "collisionGroups?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CollisionGroups",
-                  "canonicalReference": "server!CollisionGroups:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "collisionGroups",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#enabled:member",
-              "docComment": "/**\n * Whether the collider is enabled.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "enabled?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "enabled",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#flags:member",
-              "docComment": "/**\n * The flags of the collider if the shape is a trimesh\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "flags?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "flags",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#friction:member",
-              "docComment": "/**\n * The friction of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "friction?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "friction",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#frictionCombineRule:member",
-              "docComment": "/**\n * The friction combine rule of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "frictionCombineRule?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CoefficientCombineRule",
-                  "canonicalReference": "server!CoefficientCombineRule:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "frictionCombineRule",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#halfExtents:member",
-              "docComment": "/**\n * The half extents of the collider if the shape is a block.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "halfExtents?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "halfExtents",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#halfHeight:member",
-              "docComment": "/**\n * The half height of the collider if the shape is a capsule, cone, cylinder, or round cylinder.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "halfHeight?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "halfHeight",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#indices:member",
-              "docComment": "/**\n * The indices of the collider if the shape is a trimesh.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "indices?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Uint32Array",
-                  "canonicalReference": "!Uint32Array:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "indices",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#isSensor:member",
-              "docComment": "/**\n * Whether the collider is a sensor.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "isSensor?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "isSensor",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#mass:member",
-              "docComment": "/**\n * The mass of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "mass?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "mass",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#onCollision:member",
-              "docComment": "/**\n * The on collision callback for the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "onCollision?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "CollisionCallback",
-                  "canonicalReference": "server!CollisionCallback:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "onCollision",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#parentRigidBody:member",
-              "docComment": "/**\n * The parent rigid body of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "parentRigidBody?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RigidBody",
-                  "canonicalReference": "server!RigidBody:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "parentRigidBody",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#radius:member",
-              "docComment": "/**\n * The radius of the collider if the shape is a ball, capsule, cone, cylinder, or round cylinder.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "radius?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "radius",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#relativePosition:member",
-              "docComment": "/**\n * The relative position of the collider. Relative to parent rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "relativePosition?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "relativePosition",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#relativeRotation:member",
-              "docComment": "/**\n * The relative rotation of the collider. Relative to parent rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "relativeRotation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "relativeRotation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#shape:member",
-              "docComment": "/**\n * The shape of the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "shape: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderShape",
-                  "canonicalReference": "server!ColliderShape:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "shape",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#simulation:member",
-              "docComment": "/**\n * The simulation the collider is in, if provided the collider will automatically be added to the simulation.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "simulation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Simulation",
-                  "canonicalReference": "server!Simulation:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "simulation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#tag:member",
-              "docComment": "/**\n * An arbitrary identifier tag of the collider. Useful for your own logic.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tag?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "tag",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!ColliderOptions#vertices:member",
-              "docComment": "/**\n * The vertices of the collider if the shape is a trimesh.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "vertices?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Float32Array",
-                  "canonicalReference": "!Float32Array:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "vertices",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 16
+          }
         },
         {
           "kind": "Enum",
@@ -8580,6 +8983,27 @@
               },
               "releaseTag": "Public",
               "name": "CYLINDER"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!ColliderShape.NONE:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "NONE = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"none\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "NONE"
             },
             {
               "kind": "EnumMember",
@@ -9359,6 +9783,120 @@
           }
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!ConeColliderOptions:interface",
+          "docComment": "/**\n * The options for a cone collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ConeColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "ConeColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ConeColliderOptions#halfHeight:member",
+              "docComment": "/**\n * The half height of the cone collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "halfHeight?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "halfHeight",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ConeColliderOptions#radius:member",
+              "docComment": "/**\n * The radius of the cone collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "radius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "radius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!ConeColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.CONE",
+                  "canonicalReference": "server!ColliderShape.CONE:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "TypeAlias",
           "canonicalReference": "server!ContactForceData:type",
           "docComment": "/**\n * Data for contact forces.\n *\n * @public\n */\n",
@@ -9465,6 +10003,120 @@
           }
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!CylinderColliderOptions:interface",
+          "docComment": "/**\n * The options for a cylinder collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CylinderColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "CylinderColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CylinderColliderOptions#halfHeight:member",
+              "docComment": "/**\n * The half height of the cylinder collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "halfHeight?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "halfHeight",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CylinderColliderOptions#radius:member",
+              "docComment": "/**\n * The radius of the cylinder collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "radius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "radius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!CylinderColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.CYLINDER",
+                  "canonicalReference": "server!ColliderShape.CYLINDER:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "TypeAlias",
           "canonicalReference": "server!DecodedCollisionGroups:type",
           "docComment": "/**\n * A decoded set of collision groups represented as their string equivalents.\n *\n * @public\n */\n",
@@ -9502,7 +10154,7 @@
             {
               "kind": "Reference",
               "text": "RigidBodyOptions",
-              "canonicalReference": "server!RigidBodyOptions:interface"
+              "canonicalReference": "server!RigidBodyOptions:type"
             }
           ],
           "fileUrlPath": "src/world/entities/Entity.ts",
@@ -9513,6 +10165,449 @@
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!DynamicRigidBodyOptions:interface",
+          "docComment": "/**\n * The options for a dynamic rigid body, also the default type.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface DynamicRigidBodyOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseRigidBodyOptions",
+              "canonicalReference": "server!BaseRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "releaseTag": "Public",
+          "name": "DynamicRigidBodyOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#additionalMass:member",
+              "docComment": "/**\n * The additional mass of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "additionalMass?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "additionalMass",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#additionalMassProperties:member",
+              "docComment": "/**\n * The additional mass properties of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "additionalMassProperties?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyAdditionalMassProperties",
+                  "canonicalReference": "server!RigidBodyAdditionalMassProperties:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "additionalMassProperties",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#additionalSolverIterations:member",
+              "docComment": "/**\n * The additional solver iterations of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "additionalSolverIterations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "additionalSolverIterations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#angularDamping:member",
+              "docComment": "/**\n * The angular damping of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "angularDamping?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "angularDamping",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#angularVelocity:member",
+              "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "angularVelocity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "angularVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#ccdEnabled:member",
+              "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ccdEnabled?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "ccdEnabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#dominanceGroup:member",
+              "docComment": "/**\n * The dominance group of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dominanceGroup?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "dominanceGroup",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#enabledPositions:member",
+              "docComment": "/**\n * The enabled axes of positional movement of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enabledPositions?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "enabledPositions",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#enabledRotations:member",
+              "docComment": "/**\n * The enabled rotations of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "enabledRotations?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Boolean",
+                  "canonicalReference": "server!Vector3Boolean:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "enabledRotations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#gravityScale:member",
+              "docComment": "/**\n * The gravity scale of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "gravityScale?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "gravityScale",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#linearDamping:member",
+              "docComment": "/**\n * The linear damping of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "linearDamping?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "linearDamping",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#linearVelocity:member",
+              "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "linearVelocity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "linearVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#sleeping:member",
+              "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sleeping?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "sleeping",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#softCcdPrediction:member",
+              "docComment": "/**\n * The soft continuous collision detection prediction of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "softCcdPrediction?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "softCcdPrediction",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DynamicRigidBodyOptions#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType.DYNAMIC",
+                  "canonicalReference": "server!RigidBodyType.DYNAMIC:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Class",
@@ -12882,7 +13977,7 @@
                 {
                   "kind": "Reference",
                   "text": "RigidBodyOptions",
-                  "canonicalReference": "server!RigidBodyOptions:interface"
+                  "canonicalReference": "server!RigidBodyOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -12955,6 +14050,217 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!ErrorHandler:class",
+          "docComment": "/**\n * Manages error and warning logging.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class ErrorHandler "
+            }
+          ],
+          "fileUrlPath": "src/errors/ErrorHandler.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "ErrorHandler",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ErrorHandler.error:member(1)",
+              "docComment": "/**\n * Logs a formatted error message with stack trace to help debug issues\n *\n * @param message - The error message to display\n *\n * @param context - Optional context information about the error\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static error(message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "message",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "error"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ErrorHandler.fatalError:member(1)",
+              "docComment": "/**\n * Logs a formatted fatal error message with stack trace and throws the error\n *\n * @param message - The error message to display\n *\n * @param context - Optional context information about the error\n *\n * @throws\n *\n * The created Error object\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static fatalError(message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "never"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "message",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "fatalError"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ErrorHandler.warning:member(1)",
+              "docComment": "/**\n * Logs a formatted warning message to alert about potential issues\n *\n * @param message - The warning message to display\n *\n * @param context - Optional context information about the warning\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static warning(message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "message",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "warning"
+            }
+          ],
+          "implementsTokenRanges": []
         },
         {
           "kind": "Interface",
@@ -15064,6 +16370,66 @@
           }
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "server!FixedRigidBodyOptions:interface",
+          "docComment": "/**\n * The options for a fixed rigid body.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface FixedRigidBodyOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseRigidBodyOptions",
+              "canonicalReference": "server!BaseRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "releaseTag": "Public",
+          "name": "FixedRigidBodyOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!FixedRigidBodyOptions#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType.FIXED",
+                  "canonicalReference": "server!RigidBodyType.FIXED:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
           "kind": "Class",
           "canonicalReference": "server!GameServer:class",
           "docComment": "/**\n * Manages the game and associated worlds and systems.\n *\n * @remarks\n *\n * This class is used as a singleton and should be accessed via the `instance` property\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `GameServer` class.\n *\n * @public\n */\n",
@@ -15393,6 +16759,182 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!KinematicPositionRigidBodyOptions:interface",
+          "docComment": "/**\n * The options for a kinematic position rigid body.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface KinematicPositionRigidBodyOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseRigidBodyOptions",
+              "canonicalReference": "server!BaseRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "releaseTag": "Public",
+          "name": "KinematicPositionRigidBodyOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!KinematicPositionRigidBodyOptions#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType.KINEMATIC_POSITION",
+                  "canonicalReference": "server!RigidBodyType.KINEMATIC_POSITION:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!KinematicVelocityRigidBodyOptions:interface",
+          "docComment": "/**\n * The options for a kinematic velocity rigid body.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface KinematicVelocityRigidBodyOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseRigidBodyOptions",
+              "canonicalReference": "server!BaseRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "releaseTag": "Public",
+          "name": "KinematicVelocityRigidBodyOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!KinematicVelocityRigidBodyOptions#angularVelocity:member",
+              "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "angularVelocity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "angularVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!KinematicVelocityRigidBodyOptions#linearVelocity:member",
+              "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "linearVelocity?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "linearVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!KinematicVelocityRigidBodyOptions#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RigidBodyType.KINEMATIC_VELOCITY",
+                  "canonicalReference": "server!RigidBodyType.KINEMATIC_VELOCITY:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Class",
@@ -22844,6 +24386,66 @@
             "startIndex": 1,
             "endIndex": 6
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!NoneColliderOptions:interface",
+          "docComment": "/**\n * The options for an error type \"none\" collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface NoneColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "NoneColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!NoneColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.NONE",
+                  "canonicalReference": "server!ColliderShape.NONE:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "TypeAlias",
@@ -30949,7 +32551,7 @@
                 {
                   "kind": "Reference",
                   "text": "RigidBodyOptions",
-                  "canonicalReference": "server!RigidBodyOptions:interface"
+                  "canonicalReference": "server!RigidBodyOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -31507,7 +33109,7 @@
                 {
                   "kind": "Reference",
                   "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "canonicalReference": "server!ColliderOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -31561,7 +33163,7 @@
                 {
                   "kind": "Reference",
                   "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
+                  "canonicalReference": "server!ColliderOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -34194,576 +35796,58 @@
           }
         },
         {
-          "kind": "Interface",
-          "canonicalReference": "server!RigidBodyOptions:interface",
-          "docComment": "/**\n * Options for creating a RigidBody instance.\n *\n * @public\n */\n",
+          "kind": "TypeAlias",
+          "canonicalReference": "server!RigidBodyOptions:type",
+          "docComment": "/**\n * The options for a rigid body.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface RigidBodyOptions "
+              "text": "export type RigidBodyOptions = "
+            },
+            {
+              "kind": "Reference",
+              "text": "DynamicRigidBodyOptions",
+              "canonicalReference": "server!DynamicRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "FixedRigidBodyOptions",
+              "canonicalReference": "server!FixedRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "KinematicPositionRigidBodyOptions",
+              "canonicalReference": "server!KinematicPositionRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "KinematicVelocityRigidBodyOptions",
+              "canonicalReference": "server!KinematicVelocityRigidBodyOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
             }
           ],
           "fileUrlPath": "src/world/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "RigidBodyOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#additionalMass:member",
-              "docComment": "/**\n * The additional mass of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "additionalMass?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "additionalMass",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#additionalMassProperties:member",
-              "docComment": "/**\n * The additional mass properties of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "additionalMassProperties?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RigidBodyAdditionalMassProperties",
-                  "canonicalReference": "server!RigidBodyAdditionalMassProperties:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "additionalMassProperties",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#additionalSolverIterations:member",
-              "docComment": "/**\n * The additional solver iterations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "additionalSolverIterations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "additionalSolverIterations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#angularDamping:member",
-              "docComment": "/**\n * The angular damping of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "angularDamping?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "angularDamping",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#angularVelocity:member",
-              "docComment": "/**\n * The angular velocity of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "angularVelocity?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "angularVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#ccdEnabled:member",
-              "docComment": "/**\n * Whether the rigid body has continuous collision detection enabled.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "ccdEnabled?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "ccdEnabled",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#colliders:member",
-              "docComment": "/**\n * The colliders of the rigid body, provided as {@link ColliderOptions}.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "colliders?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderOptions",
-                  "canonicalReference": "server!ColliderOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "colliders",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#dominanceGroup:member",
-              "docComment": "/**\n * The dominance group of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "dominanceGroup?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "dominanceGroup",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#enabled:member",
-              "docComment": "/**\n * Whether the rigid body is enabled.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "enabled?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "enabled",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#enabledPositions:member",
-              "docComment": "/**\n * The enabled axes of positional movement of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "enabledPositions?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "enabledPositions",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#enabledRotations:member",
-              "docComment": "/**\n * The enabled rotations of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "enabledRotations?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Boolean",
-                  "canonicalReference": "server!Vector3Boolean:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "enabledRotations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#gravityScale:member",
-              "docComment": "/**\n * The gravity scale of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "gravityScale?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "gravityScale",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#linearDamping:member",
-              "docComment": "/**\n * The linear damping of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "linearDamping?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "linearDamping",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#linearVelocity:member",
-              "docComment": "/**\n * The linear velocity of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "linearVelocity?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "linearVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#position:member",
-              "docComment": "/**\n * The position of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "position?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "position",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#rotation:member",
-              "docComment": "/**\n * The rotation of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "rotation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "QuaternionLike",
-                  "canonicalReference": "server!QuaternionLike:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "rotation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#simulation:member",
-              "docComment": "/**\n * The simulation the rigid body is in. If provided, the rigid body will be automatically added to the simulation.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "simulation?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Simulation",
-                  "canonicalReference": "server!Simulation:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "simulation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#sleeping:member",
-              "docComment": "/**\n * Whether the rigid body is sleeping.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "sleeping?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "sleeping",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#softCcdPrediction:member",
-              "docComment": "/**\n * The soft continuous collision detection prediction of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "softCcdPrediction?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "softCcdPrediction",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!RigidBodyOptions#type:member",
-              "docComment": "/**\n * The type of the rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "type?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "RigidBodyType",
-                  "canonicalReference": "server!RigidBodyType:enum"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "type",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
         },
         {
           "kind": "Enum",
@@ -34863,6 +35947,147 @@
               },
               "releaseTag": "Public",
               "name": "KINEMATIC_VELOCITY"
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!RoundCylinderColliderOptions:interface",
+          "docComment": "/**\n * The options for a round cylinder collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface RoundCylinderColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "RoundCylinderColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RoundCylinderColliderOptions#borderRadius:member",
+              "docComment": "/**\n * The border radius of the round cylinder collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "borderRadius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "borderRadius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RoundCylinderColliderOptions#halfHeight:member",
+              "docComment": "/**\n * The half height of the round cylinder collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "halfHeight?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "halfHeight",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RoundCylinderColliderOptions#radius:member",
+              "docComment": "/**\n * The radius of the round cylinder collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "radius?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "radius",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!RoundCylinderColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.ROUND_CYLINDER",
+                  "canonicalReference": "server!ColliderShape.ROUND_CYLINDER:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
             }
           ]
         },
@@ -37702,6 +38927,122 @@
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!TrimeshColliderOptions:interface",
+          "docComment": "/**\n * The options for a trimesh collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface TrimeshColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "TrimeshColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!TrimeshColliderOptions#indices:member",
+              "docComment": "/**\n * The indices of the trimesh collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "indices?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Uint32Array",
+                  "canonicalReference": "!Uint32Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "indices",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!TrimeshColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.TRIMESH",
+                  "canonicalReference": "server!ColliderShape.TRIMESH:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!TrimeshColliderOptions#vertices:member",
+              "docComment": "/**\n * The vertices of the trimesh collider.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "vertices?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Float32Array",
+                  "canonicalReference": "!Float32Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "vertices",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Class",

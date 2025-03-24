@@ -9,5 +9,5 @@ The custom collider options for the block type.
 **Signature:**
 
 ```typescript
-customColliderOptions?: ColliderOptions;
+customColliderOptions?: TrimeshColliderOptions;
 ```

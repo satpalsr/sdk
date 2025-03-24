@@ -1,5 +1,6 @@
 import {
   Audio,
+  BallColliderOptions,
   Collider,
   Entity,
   EntityOptions,
@@ -30,7 +31,7 @@ export default class ChestEntity extends Entity {
         gravityScale: 0.3, // we want it to drop slow when spawned mid-game in the sky randomly.
         colliders: [
           {
-            ...Collider.optionsFromModelUri('models/environment/chest.gltf'),
+            ...Collider.optionsFromModelUri('models/environment/chest.gltf') as BallColliderOptions,
             radius: 0.45, // collider isn't calculating perfect because of the coin positions in the model.
             bounciness: 0.25,
           }

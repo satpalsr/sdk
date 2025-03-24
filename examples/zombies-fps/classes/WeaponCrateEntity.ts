@@ -6,6 +6,7 @@ import {
   Vector3Like,
   World,
   SceneUI,
+  ColliderShape,
 } from 'hytopia';
 
 import GamePlayerEntity from './GamePlayerEntity';
@@ -70,7 +71,7 @@ export default class WeaponCrateEntity extends InteractableEntity {
   public constructor(options: WeaponCrateEntityOptions) {
     const colliderOptions = Collider.optionsFromModelUri('models/environment/weaponbox.gltf');
 
-    if (colliderOptions.halfExtents) { // make it taller for better interact area
+    if (colliderOptions.shape === ColliderShape.BLOCK && colliderOptions.halfExtents) { // make it taller for better interact area
       colliderOptions.halfExtents.y = 3;
     }
 
