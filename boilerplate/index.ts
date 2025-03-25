@@ -87,7 +87,7 @@ startServer(world => {
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
 
-    // Load our game UI
+    // Load our game UI for this player
     player.ui.load('ui/index.html');
 
     // Send a nice welcome message that only the player who joined will see ;)
