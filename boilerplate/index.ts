@@ -87,6 +87,9 @@ startServer(world => {
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
 
+    // Load our game UI
+    player.ui.load('ui/index.html');
+
     // Send a nice welcome message that only the player who joined will see ;)
     world.chatManager.sendPlayerMessage(player, 'Welcome to the game!', '00FF00');
     world.chatManager.sendPlayerMessage(player, 'Use WASD to move around.');
