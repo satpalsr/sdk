@@ -99,7 +99,7 @@ export default class ItemEntity extends Entity {
     }
 
     (new Audio({
-      attachedToEntity: this.parent,
+      attachedToEntity: this,
       uri: this.consumeAudioUri,
       volume: 0.5,
       referenceDistance: 5,
