@@ -101,8 +101,8 @@ function init() {
  */
 function installProjectDependencies() {
   execSync('bun init --yes');
-  execSync('bun add hytopia@latest');
-  execSync('bun add @hytopia.com/assets');
+  execSync('bun add hytopia@latest --force');
+  execSync('bun add @hytopia.com/assets --force');
 }
 
 /**
