@@ -37,7 +37,7 @@ ATTACH
 
 </td><td>
 
-`"attach"`
+`"BASE_ENTITY_CONTROLLER.ATTACH"`
 
 
 </td><td>
@@ -51,7 +51,7 @@ DESPAWN
 
 </td><td>
 
-`"despawn"`
+`"BASE_ENTITY_CONTROLLER.DESPAWN"`
 
 
 </td><td>
@@ -65,7 +65,7 @@ DETACH
 
 </td><td>
 
-`"detach"`
+`"BASE_ENTITY_CONTROLLER.DETACH"`
 
 
 </td><td>
@@ -79,7 +79,7 @@ SPAWN
 
 </td><td>
 
-`"spawn"`
+`"BASE_ENTITY_CONTROLLER.SPAWN"`
 
 
 </td><td>
@@ -93,7 +93,7 @@ TICK
 
 </td><td>
 
-`"tick"`
+`"BASE_ENTITY_CONTROLLER.TICK"`
 
 
 </td><td>
@@ -107,7 +107,7 @@ TICK\_WITH\_PLAYER\_INPUT
 
 </td><td>
 
-`"tickWithPlayerInput"`
+`"BASE_ENTITY_CONTROLLER.TICK_WITH_PLAYER_INPUT"`
 
 
 </td><td>

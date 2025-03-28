@@ -46,18 +46,6 @@ Emit an event, invoking all registered listeners for the event type.
 </td></tr>
 <tr><td>
 
-[emit(eventType, payload)](./server.eventrouter.emit_1.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [emitWithGlobal(eventType, payload)](./server.eventrouter.emitwithglobal.md)
 
 
@@ -72,18 +60,6 @@ Emits an event to the local and global server instance event routers.
 </td></tr>
 <tr><td>
 
-[emitWithGlobal(eventType, payload)](./server.eventrouter.emitwithglobal_1.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [emitWithWorld(world, eventType, payload)](./server.eventrouter.emitwithworld.md)
 
 
@@ -93,30 +69,6 @@ Emits an event to the local and global server instance event routers.
 </td><td>
 
 Emits an event to local and provided world event routers.
-
-
-</td></tr>
-<tr><td>
-
-[emitWithWorld(world, eventType, payload)](./server.eventrouter.emitwithworld_1.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[final(eventType, listener)](./server.eventrouter.final_1.md)
-
-
-</td><td>
-
-
-</td><td>
 
 
 </td></tr>
@@ -178,18 +130,6 @@ Remove a listener for a specific event type.
 </td></tr>
 <tr><td>
 
-[off(eventType, listener)](./server.eventrouter.off_1.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [offAll(eventType)](./server.eventrouter.offall.md)
 
 
@@ -218,18 +158,6 @@ Register a listener for a specific event type.
 </td></tr>
 <tr><td>
 
-[on(eventType, listener)](./server.eventrouter.on_1.md)
-
-
-</td><td>
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 [once(eventType, listener)](./server.eventrouter.once.md)
 
 
@@ -239,18 +167,6 @@ Register a listener for a specific event type.
 </td><td>
 
 Register a listener for a specific event type that will be invoked once.
-
-
-</td></tr>
-<tr><td>
-
-[once(eventType, listener)](./server.eventrouter.once_1.md)
-
-
-</td><td>
-
-
-</td><td>
 
 
 </td></tr>

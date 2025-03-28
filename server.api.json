@@ -3515,7 +3515,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"attach\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.ATTACH\""
                 }
               ],
               "initializerTokenRange": {
@@ -3536,7 +3536,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"despawn\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.DESPAWN\""
                 }
               ],
               "initializerTokenRange": {
@@ -3557,7 +3557,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"detach\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.DETACH\""
                 }
               ],
               "initializerTokenRange": {
@@ -3578,7 +3578,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"spawn\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.SPAWN\""
                 }
               ],
               "initializerTokenRange": {
@@ -3599,7 +3599,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"tick\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.TICK\""
                 }
               ],
               "initializerTokenRange": {
@@ -3620,7 +3620,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "\"tickWithPlayerInput\""
+                  "text": "\"BASE_ENTITY_CONTROLLER.TICK_WITH_PLAYER_INPUT\""
                 }
               ],
               "initializerTokenRange": {
@@ -3649,7 +3649,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#attach:member",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.ATTACH\":member",
               "docComment": "/**\n * Emitted when an entity is attached to the controller.\n */\n",
               "excerptTokens": [
                 {
@@ -3686,7 +3686,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "attach",
+              "name": "\"BASE_ENTITY_CONTROLLER.ATTACH\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 6
@@ -3694,7 +3694,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#despawn:member",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.DESPAWN\":member",
               "docComment": "/**\n * Emitted when an entity is despawned.\n */\n",
               "excerptTokens": [
                 {
@@ -3731,7 +3731,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "despawn",
+              "name": "\"BASE_ENTITY_CONTROLLER.DESPAWN\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 6
@@ -3739,7 +3739,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#detach:member",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.DETACH\":member",
               "docComment": "/**\n * Emitted when an entity is detached from the controller.\n */\n",
               "excerptTokens": [
                 {
@@ -3776,7 +3776,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "detach",
+              "name": "\"BASE_ENTITY_CONTROLLER.DETACH\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 6
@@ -3784,7 +3784,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#spawn:member",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.SPAWN\":member",
               "docComment": "/**\n * Emitted when an entity is spawned.\n */\n",
               "excerptTokens": [
                 {
@@ -3821,7 +3821,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "spawn",
+              "name": "\"BASE_ENTITY_CONTROLLER.SPAWN\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 6
@@ -3829,52 +3829,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#tick:member",
-              "docComment": "/**\n * Emitted when an entity is ticked.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "["
-                },
-                {
-                  "kind": "Reference",
-                  "text": "BaseEntityControllerEvent.TICK",
-                  "canonicalReference": "server!BaseEntityControllerEvent.TICK:member"
-                },
-                {
-                  "kind": "Content",
-                  "text": "]: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "{\n        entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";\n        deltaTimeMs: number;\n    }"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "tick",
-              "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 6
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!BaseEntityControllerEventPayloads#tickWithPlayerInput:member",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.TICK_WITH_PLAYER_INPUT\":member",
               "docComment": "/**\n * Emitted when an entity is ticked with player input.\n */\n",
               "excerptTokens": [
                 {
@@ -3929,10 +3884,55 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "tickWithPlayerInput",
+              "name": "\"BASE_ENTITY_CONTROLLER.TICK_WITH_PLAYER_INPUT\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 10
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!BaseEntityControllerEventPayloads#\"BASE_ENTITY_CONTROLLER.TICK\":member",
+              "docComment": "/**\n * Emitted when an entity is ticked.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BaseEntityControllerEvent.TICK",
+                  "canonicalReference": "server!BaseEntityControllerEvent.TICK:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        deltaTimeMs: number;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"BASE_ENTITY_CONTROLLER.TICK\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
               }
             }
           ],
@@ -14586,128 +14586,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!EventRouter#emit:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "emit<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", payload: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TPayload"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "payload",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "emit"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!EventRouter#emitWithGlobal:member(1)",
               "docComment": "/**\n * Emits an event to the local and global server instance event routers.\n *\n * @param eventType - The type of event to emit.\n *\n * @param payload - The payload to emit.\n */\n",
               "excerptTokens": [
@@ -14793,128 +14671,6 @@
                   "parameterTypeTokenRange": {
                     "startIndex": 6,
                     "endIndex": 8
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "emitWithGlobal"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!EventRouter#emitWithGlobal:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "emitWithGlobal<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", payload: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TPayload"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "payload",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
                   },
                   "isOptional": false
                 }
@@ -15034,267 +14790,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "emitWithWorld"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!EventRouter#emitWithWorld:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "emitWithWorld<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(world: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", payload: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TPayload"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "world",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 7,
-                    "endIndex": 12
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "payload",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "emitWithWorld"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!EventRouter#final:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "final<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", listener: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(payload: TPayload) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "listener",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "final"
             },
             {
               "kind": "Method",
@@ -15561,128 +15056,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!EventRouter#off:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "off<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", listener: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(payload: TPayload) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "listener",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "off"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!EventRouter#offAll:member(1)",
               "docComment": "/**\n * Remove all listeners or all listeners for a provided event type.\n *\n * @param eventType - The type of event to remove all listeners from.\n */\n",
               "excerptTokens": [
@@ -15835,128 +15208,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "server!EventRouter#on:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "on<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", listener: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(payload: TPayload) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "listener",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "on"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "server!EventRouter#once:member(1)",
               "docComment": "/**\n * Register a listener for a specific event type that will be invoked once.\n *\n * @param eventType - The type of event to listen for.\n *\n * @param listener - The listener function to invoke when the event is emitted.\n */\n",
               "excerptTokens": [
@@ -16046,128 +15297,6 @@
                   "parameterTypeTokenRange": {
                     "startIndex": 6,
                     "endIndex": 9
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "once"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!EventRouter#once:member(2)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "once<TEventType extends "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", TPayload = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "any"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">(eventType: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "TEventType & "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Exclude",
-                  "canonicalReference": "!Exclude:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<TEventType, keyof "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EventPayloads",
-                  "canonicalReference": "server!EventPayloads:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", listener: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(payload: TPayload) => void"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "typeParameters": [
-                {
-                  "typeParameterName": "TEventType",
-                  "constraintTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  }
-                },
-                {
-                  "typeParameterName": "TPayload",
-                  "constraintTokenRange": {
-                    "startIndex": 0,
-                    "endIndex": 0
-                  },
-                  "defaultTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  }
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 13,
-                "endIndex": 14
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 2,
-              "parameters": [
-                {
-                  "parameterName": "eventType",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 10
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "listener",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 12
                   },
                   "isOptional": false
                 }

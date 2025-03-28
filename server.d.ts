@@ -413,12 +413,12 @@ export declare abstract class BaseEntityController extends EventRouter {
 
 /** Event types a BaseEntityController instance can emit. See {@link BaseEntityControllerEventPayloads} for the payloads. @public */
 export declare enum BaseEntityControllerEvent {
-    ATTACH = "attach",
-    DESPAWN = "despawn",
-    DETACH = "detach",
-    SPAWN = "spawn",
-    TICK = "tick",
-    TICK_WITH_PLAYER_INPUT = "tickWithPlayerInput"
+    ATTACH = "BASE_ENTITY_CONTROLLER.ATTACH",
+    DESPAWN = "BASE_ENTITY_CONTROLLER.DESPAWN",
+    DETACH = "BASE_ENTITY_CONTROLLER.DETACH",
+    SPAWN = "BASE_ENTITY_CONTROLLER.SPAWN",
+    TICK = "BASE_ENTITY_CONTROLLER.TICK",
+    TICK_WITH_PLAYER_INPUT = "BASE_ENTITY_CONTROLLER.TICK_WITH_PLAYER_INPUT"
 }
 
 /** Event payloads for BaseEntityController emitted events. @public */
@@ -1860,7 +1860,6 @@ export declare class EventRouter {
      * @returns `true` if any listeners were found and invoked, `false` otherwise.
      */
     emit<TEventType extends keyof EventPayloads>(eventType: TEventType, payload: EventPayloads[TEventType]): boolean;
-    emit<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): boolean;
     /**
      * Emits an event to the local and global server instance event routers.
      *
@@ -1868,7 +1867,6 @@ export declare class EventRouter {
      * @param payload - The payload to emit.
      */
     emitWithGlobal<TEventType extends keyof EventPayloads>(eventType: TEventType, payload: EventPayloads[TEventType]): void;
-    emitWithGlobal<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): void;
     /**
      * Emits an event to local and provided world event routers.
      *
@@ -1877,9 +1875,7 @@ export declare class EventRouter {
      * @param payload - The payload to broadcast.
      */
     emitWithWorld<TEventType extends keyof EventPayloads>(world: World, eventType: TEventType, payload: EventPayloads[TEventType]): void;
-    emitWithWorld<TEventType extends string, TPayload = any>(world: World, eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, payload: TPayload): void;
 
-    final<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Check if there are listeners for a specific event type.
      *
@@ -1911,7 +1907,6 @@ export declare class EventRouter {
      * @param listener - The listener function to remove.
      */
     off<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
-    off<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Remove all listeners or all listeners for a provided event type.
      *
@@ -1928,7 +1923,6 @@ export declare class EventRouter {
      * @param listener - The listener function to invoke when the event is emitted.
      */
     on<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
-    on<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
     /**
      * Register a listener for a specific event type that will be invoked once.
      *
@@ -1936,7 +1930,6 @@ export declare class EventRouter {
      * @param listener - The listener function to invoke when the event is emitted.
      */
     once<TEventType extends keyof EventPayloads>(eventType: TEventType, listener: (payload: EventPayloads[TEventType]) => void): void;
-    once<TEventType extends string, TPayload = any>(eventType: TEventType & Exclude<TEventType, keyof EventPayloads>, listener: (payload: TPayload) => void): void;
 }
 
 /**

@@ -37,7 +37,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[attach](./server.baseentitycontrollereventpayloads.attach.md)
+["BASE\_ENTITY\_CONTROLLER.ATTACH"](./server.baseentitycontrollereventpayloads._base_entity_controller.attach_.md)
 
 
 </td><td>
@@ -56,7 +56,7 @@ Emitted when an entity is attached to the controller.
 </td></tr>
 <tr><td>
 
-[despawn](./server.baseentitycontrollereventpayloads.despawn.md)
+["BASE\_ENTITY\_CONTROLLER.DESPAWN"](./server.baseentitycontrollereventpayloads._base_entity_controller.despawn_.md)
 
 
 </td><td>
@@ -75,7 +75,7 @@ Emitted when an entity is despawned.
 </td></tr>
 <tr><td>
 
-[detach](./server.baseentitycontrollereventpayloads.detach.md)
+["BASE\_ENTITY\_CONTROLLER.DETACH"](./server.baseentitycontrollereventpayloads._base_entity_controller.detach_.md)
 
 
 </td><td>
@@ -94,7 +94,7 @@ Emitted when an entity is detached from the controller.
 </td></tr>
 <tr><td>
 
-[spawn](./server.baseentitycontrollereventpayloads.spawn.md)
+["BASE\_ENTITY\_CONTROLLER.SPAWN"](./server.baseentitycontrollereventpayloads._base_entity_controller.spawn_.md)
 
 
 </td><td>
@@ -113,26 +113,7 @@ Emitted when an entity is spawned.
 </td></tr>
 <tr><td>
 
-[tick](./server.baseentitycontrollereventpayloads.tick.md)
-
-
-</td><td>
-
-
-</td><td>
-
-{ entity: [Entity](./server.entity.md)<!-- -->; deltaTimeMs: number; }
-
-
-</td><td>
-
-Emitted when an entity is ticked.
-
-
-</td></tr>
-<tr><td>
-
-[tickWithPlayerInput](./server.baseentitycontrollereventpayloads.tickwithplayerinput.md)
+["BASE\_ENTITY\_CONTROLLER.TICK\_WITH\_PLAYER\_INPUT"](./server.baseentitycontrollereventpayloads._base_entity_controller.tick_with_player_input_.md)
 
 
 </td><td>
@@ -146,6 +127,25 @@ Emitted when an entity is ticked.
 </td><td>
 
 Emitted when an entity is ticked with player input.
+
+
+</td></tr>
+<tr><td>
+
+["BASE\_ENTITY\_CONTROLLER.TICK"](./server.baseentitycontrollereventpayloads._base_entity_controller.tick_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ entity: [Entity](./server.entity.md)<!-- -->; deltaTimeMs: number; }
+
+
+</td><td>
+
+Emitted when an entity is ticked.
 
 
 </td></tr>
