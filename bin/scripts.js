@@ -247,6 +247,29 @@ function initEditorMcp(editorName, editorFlag) {
 function packageProject() {
   const sourceDir = process.cwd();
   const projectName = path.basename(sourceDir);
+  const packageJsonPath = path.join(sourceDir, 'package.json');
+  
+  // Check if package.json exists
+  if (!fs.existsSync(packageJsonPath)) {
+    console.error('❌ Error: package.json not found. This directory does not appear to be a HYTOPIA project.');
+    console.error('   Please run this command in a valid HYTOPIA project directory.');
+    return;
+  }
+  
+  // Check if package.json contains "hytopia"
+  try {
+    const packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
+    if (!packageJsonContent.includes('hytopia')) {
+      console.error('❌ Error: This directory does not appear to be a HYTOPIA project.');
+      console.error('   The package.json file does not contain a reference to HYTOPIA.');
+      return;
+    }
+  } catch (err) {
+    console.error('❌ Error: Could not read package.json file:', err.message);
+    return;
+  }
+  
+  // Prepare to package
   const outputFile = path.join(sourceDir, `${projectName}.zip`);
   
   console.log(`📦 Packaging project "${projectName}"...`);
