@@ -153,7 +153,7 @@ function displayInitSuccessMessage() {
   console.log('✅ HYTOPIA PROJECT INITIALIZED SUCCESSFULLY!');
   console.log(' ');
   console.log('💡 1. Start your development server with: bun --watch index.ts');
-  console.log('🎮 2. Play your game by opening: https://play.hytopia.com/?join=localhost:8080');
+  console.log('🎮 2. Play your game by opening: https://hytopia.com/play/?join=localhost:8080');
   logDivider();
 }
 

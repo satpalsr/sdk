@@ -22,7 +22,7 @@ The HYTOPIA SDK makes it easy for developers to create multiplayer games on the 
 Available as a simple NPM package, this SDK provides everything you need to get started:
 
 - Compiled HYTOPIA Server: The ready-to-use server software.
-- Game Client & Debugger: Accessible at https://play.hytopia.com
+- Game Client & Debugger: Accessible at https://hytopia.com/play
 - TypeScript Definitions: For strong typing and code completion.
 - Documentation: Detailed guides and API reference.
 - Default Assets: Textures, models, audio and more you can use in your games.
