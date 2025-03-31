@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const archiver = require('archiver');
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
@@ -18,7 +19,8 @@ const flags = {};
   // Execute the appropriate command
   const commandHandlers = {
     'init': init,
-    'init-mcp': initMcp
+    'init-mcp': initMcp,
+    'package': packageProject
   };
   
   const handler = commandHandlers[command];
@@ -47,7 +49,7 @@ function parseCommandLineFlags() {
  */
 function displayAvailableCommands(command) {
   console.log('Unknown command: ' + command);
-  console.log('Supported commands: init, init-mcp');
+  console.log('Supported commands: init, init-mcp, package');
 }
 
 /**
@@ -231,6 +233,83 @@ function initEditorMcp(editorName, editorFlag) {
   execSync(`bunx topia-mcp@latest init ${editorFlag}`);
   console.log(`✅ ${editorName} MCP initialized successfully!`);
   logDivider();
+}
+
+/**
+ * Package command
+ * 
+ * Creates a zip file of the project directory, excluding node_modules,
+ * package-lock.json, bun.lock, and bun.lockb files.
+ * 
+ * @example
+ * `bunx hytopia package`
+ */
+function packageProject() {
+  const sourceDir = process.cwd();
+  const projectName = path.basename(sourceDir);
+  const outputFile = path.join(sourceDir, `${projectName}.zip`);
+  
+  console.log(`📦 Packaging project "${projectName}"...`);
+  
+  // Create a file to stream archive data to
+  const output = fs.createWriteStream(outputFile);
+  const archive = archiver('zip', {
+    zlib: { level: 9 } // Sets the compression level
+  });
+  
+  // Listen for all archive data to be written
+  output.on('close', function() {
+    console.log(`✅ Project packaged successfully! (${archive.pointer()} total bytes)`);
+    console.log(`📁 Package saved to: ${outputFile}`);
+  });
+  
+  // Good practice to catch warnings (ie stat failures and other non-blocking errors)
+  archive.on('warning', function(err) {
+    if (err.code === 'ENOENT') {
+      console.warn('⚠️ Warning:', err);
+    } else {
+      throw err;
+    }
+  });
+  
+  // Catch errors
+  archive.on('error', function(err) {
+    console.error('❌ Error during packaging:', err);
+    throw err;
+  });
+  
+  // Pipe archive data to the file
+  archive.pipe(output);
+  
+  // Get all files and directories in the source directory
+  const items = fs.readdirSync(sourceDir);
+  
+  // Files/directories to exclude
+  const excludeItems = [
+    'node_modules',
+    'package-lock.json',
+    'bun.lock',
+    'bun.lockb',
+    `${projectName}.zip` // Exclude the output file itself
+  ];
+  
+  // Add each item to the archive, excluding the ones in the exclude list
+  items.forEach(item => {
+    const itemPath = path.join(sourceDir, item);
+    
+    if (!excludeItems.includes(item)) {
+      const stats = fs.statSync(itemPath);
+      
+      if (stats.isDirectory()) {
+        archive.directory(itemPath, item);
+      } else {
+        archive.file(itemPath, { name: item });
+      }
+    }
+  });
+  
+  // Finalize the archive
+  archive.finalize();
 }
 
 /**
