@@ -259,7 +259,7 @@ function packageProject() {
   
   // Listen for all archive data to be written
   output.on('close', function() {
-    console.log(`✅ Project packaged successfully! (${archive.pointer()} total bytes)`);
+    console.log(`✅ Project packaged successfully! (${(archive.pointer() / 1024 / 1024).toFixed(2)} MB)`);
     console.log(`📁 Package saved to: ${outputFile}`);
   });
   
