@@ -113,8 +113,9 @@ export default class GameManager {
     if (!this.world) return;
 
     const playerEntity = new GamePlayerEntity(player);
+    
     playerEntity.spawn(this.world, this.getRandomSpawnPosition());
-
+  
     // Sync UI for the new player
     this.syncTimer(player);
     this.syncLeaderboard(player);
@@ -124,6 +125,9 @@ export default class GameManager {
       player.ui.sendData({ type: 'game-start' });
       this._sendGameStartAnnouncements(player);
     }
+
+    // Load player's data
+    playerEntity.loadPersistedData();
   }
 
   /**
@@ -141,6 +145,8 @@ export default class GameManager {
    * Gets a random spawn position within the defined spawn region
    */
   public getRandomSpawnPosition(): Vector3Like {
+    return { x: 0, y : 10, z: 0 };
+
     return {
       x: SPAWN_REGION_AABB.min.x + Math.random() * (SPAWN_REGION_AABB.max.x - SPAWN_REGION_AABB.min.x),
       y: SPAWN_REGION_AABB.min.y + Math.random() * (SPAWN_REGION_AABB.max.y - SPAWN_REGION_AABB.min.y),
