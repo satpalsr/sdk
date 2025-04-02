@@ -364,27 +364,27 @@ export const ITEM_SPAWNS = [
 export const ITEM_SPAWN_ITEMS = [
   {
     itemId: 'ak47',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'auto-shotgun',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'auto-sniper',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'bolt-action-sniper',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'gravity-potion',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'light-machine-gun',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'medpack',
@@ -392,23 +392,23 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'mining-drill',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
   {
     itemId: 'pistol',
-    pickWeight: 0.03,
+    pickWeight: 0.3,
   },
   {
     itemId: 'revolver',
-    pickWeight: 0.1,
+    pickWeight: 0.5,
   },
   {
     itemId: 'rocket-launcher',
-    pickWeight: 0.03,
+    pickWeight: 0.3,
   },
   {
     itemId: 'shotgun',
-    pickWeight: 0.08,
+    pickWeight: 0.8,
   },
   {
     itemId: 'shield-potion',
@@ -416,11 +416,11 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'submachine-gun',
-    pickWeight: 0.05,
+    pickWeight: 0.5,
   },
 ];
 
-export const ITEM_SPAWNS_AT_START = 8;
+export const ITEM_SPAWNS_AT_START = 12;
 
 export const MINIMUM_PLAYERS_TO_START = 2;
 
