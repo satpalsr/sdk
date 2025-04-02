@@ -134,20 +134,18 @@ export default class GameManager {
   /**
    * Increments kill count for a player and updates the leaderboard
    */
-  public addKill(playerId: string): void {
-    const killCount = this._killCounter.get(playerId) ?? 0;
+  public addKill(playerUsername: string): void {
+    const killCount = this._killCounter.get(playerUsername) ?? 0;
     const newKillCount = killCount + 1;
     
-    this._killCounter.set(playerId, newKillCount);
-    this._updateLeaderboardUI(playerId, newKillCount);
+    this._killCounter.set(playerUsername, newKillCount);
+    this._updateLeaderboardUI(playerUsername, newKillCount);
   }
 
   /**
    * Gets a random spawn position within the defined spawn region
    */
   public getRandomSpawnPosition(): Vector3Like {
-    return { x: 0, y : 10, z: 0 };
-
     return {
       x: SPAWN_REGION_AABB.min.x + Math.random() * (SPAWN_REGION_AABB.max.x - SPAWN_REGION_AABB.min.x),
       y: SPAWN_REGION_AABB.min.y + Math.random() * (SPAWN_REGION_AABB.max.y - SPAWN_REGION_AABB.min.y),
