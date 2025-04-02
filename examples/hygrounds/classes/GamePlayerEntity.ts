@@ -29,6 +29,7 @@ const INTERACT_RANGE = 4;
 const MAX_HEALTH = 100;
 const MAX_SHIELD = 100;
 const TOTAL_INVENTORY_SLOTS = 6;
+const STARTING_MATERIALS = 30;
 
 interface InventoryItem {
   name: string;
@@ -49,7 +50,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   private _lastExpSave: number = 0;
   private _maxHealth: number = MAX_HEALTH;
   private _maxShield: number = MAX_SHIELD;
-  private _materials: number = 0;
+  private _materials: number = STARTING_MATERIALS;
   private _rankIndex: number = 0;
   private _rankSceneUI: SceneUI;
   private _respawnTimer: NodeJS.Timeout | undefined;
@@ -113,6 +114,7 @@ export default class GamePlayerEntity extends PlayerEntity {
     this._autoHealTicker();
     this._outOfWorldTicker();
     this._updatePlayerUIHealth();
+    this._updatePlayerUIMaterials();
 
     this._rankSceneUI.load(world);
   }
@@ -269,7 +271,7 @@ export default class GamePlayerEntity extends PlayerEntity {
   }
 
   public resetMaterials(): void {
-    this._materials = 0;
+    this._materials = STARTING_MATERIALS;
     this._updatePlayerUIMaterials();
   }
 

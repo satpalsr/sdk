@@ -5,7 +5,7 @@ import type GamePlayerEntity from '../GamePlayerEntity';
 
 const DEFAULT_PISTOL_OPTIONS: GunEntityOptions = {
   ammo: 15,
-  damage: 18,
+  damage: 14,
   fireRate: 4,
   heldHand: 'right',
   iconImageUri: 'icons/pistol.png',

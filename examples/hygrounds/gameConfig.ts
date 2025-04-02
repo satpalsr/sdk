@@ -92,7 +92,7 @@ export const CHEST_DROP_ITEMS = [
   },
   {
     itemId: 'pistol',
-    pickWeight: 1.5,
+    pickWeight: 0.8,
   },
   {
     itemId: 'revolver',
@@ -388,7 +388,7 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'medpack',
-    pickWeight: 1,
+    pickWeight: 0.5,
   },
   {
     itemId: 'mining-drill',
@@ -396,7 +396,7 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'pistol',
-    pickWeight: 1,
+    pickWeight: 0.03,
   },
   {
     itemId: 'revolver',
@@ -412,7 +412,7 @@ export const ITEM_SPAWN_ITEMS = [
   },
   {
     itemId: 'shield-potion',
-    pickWeight: 1,
+    pickWeight: 0.5,
   },
   {
     itemId: 'submachine-gun',
