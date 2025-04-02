@@ -20,6 +20,7 @@ import {
   ITEM_SPAWN_ITEMS,
   MINIMUM_PLAYERS_TO_START,
   SPAWN_REGION_AABB,
+  RANK_WIN_EXP,
 } from '../gameConfig';
 
 import GamePlayerEntity from './GamePlayerEntity';
@@ -96,7 +97,7 @@ export default class GameManager {
     this._gameActive = false;
     this.world.chatManager.sendBroadcastMessage('Game over! Starting the next round in 10 seconds...', 'FF0000');
     
-    this._focusWinningPlayer();
+    this._identifyWinningPlayer();
 
     // Clear any existing restart timer
     if (this._restartTimer) {
@@ -248,7 +249,7 @@ export default class GameManager {
     this.resetLeaderboard();
   }
 
-  public _focusWinningPlayer() {
+  public _identifyWinningPlayer() {
     if (!this.world) return;
 
     // Find player with most kills
@@ -268,6 +269,11 @@ export default class GameManager {
       .find(entity => entity.player.username === winningPlayer);
 
     if (!winningPlayerEntity) return;
+
+    // Give winning player XP for winning
+    if (winningPlayerEntity instanceof GamePlayerEntity) {
+      winningPlayerEntity.addExp(RANK_WIN_EXP);
+    }
 
     this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {
       if (playerEntity instanceof GamePlayerEntity) {

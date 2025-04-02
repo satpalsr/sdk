@@ -426,8 +426,8 @@ export const MINIMUM_PLAYERS_TO_START = 2;
 
 export const RANK_ASSIST_EXP = 20;
 export const RANK_SAVE_INTERVAL_EXP = 500; // Every increment of this, save the persisted data.
-export const RANK_KILL_EXP = 400; // 100;
-export const RANK_WIN_EXP = 500;
+export const RANK_KILL_EXP = 100;
+export const RANK_WIN_EXP = 1000;
 export const RANKS = [
   {
     name: 'Unranked',
