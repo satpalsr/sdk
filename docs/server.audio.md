@@ -376,7 +376,7 @@ The position of the audio in the world if explicitly set.
 
 </td><td>
 
-number \| undefined
+number
 
 
 </td><td>

@@ -747,7 +747,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "number | undefined"
+                  "text": "number"
                 },
                 {
                   "kind": "Content",

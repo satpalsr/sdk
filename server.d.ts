@@ -86,7 +86,7 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
     /** The playback rate of the audio if explicitly set. */
     get playbackRate(): number | undefined;
     /** The reference distance of the audio if explicitly set. */
-    get referenceDistance(): number | undefined;
+    get referenceDistance(): number;
     /** The server tick at which the audio started playing. */
     get startTick(): number | undefined;
     /** The URI of the audio asset. */
