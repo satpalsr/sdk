@@ -54,6 +54,7 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
 
 
 
+
     /**
      * @param options - The options for the Audio instance.
      */
@@ -62,6 +63,8 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
     get id(): number | undefined;
     /** The entity to which the audio is attached if explicitly set. */
     get attachedToEntity(): Entity | undefined;
+    /** The cutoff distance where the audio will be reduced to 0 volume. */
+    get cutoffDistance(): number;
     /** The duration of the audio in seconds if explicitly set. */
     get duration(): number | undefined;
     /** The detune of the audio in cents if explicitly set. */
@@ -110,6 +113,19 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
      */
     setAttachedToEntity(entity: Entity): void;
     /**
+     * Sets the cutoff distance of the audio.
+     *
+     * @remarks
+     * The cutoff distance defines the maximum range at which the audio can be heard.
+     * Beyond this distance, the audio volume becomes zero. As the listener moves
+     * from the reference distance toward the cutoff distance, the volume decreases
+     * linearly, providing a natural spatial audio experience with smooth volume
+     * falloff based on distance.
+     *
+     * @param cutoffDistance - The cutoff distance.
+     */
+    setCutoffDistance(cutoffDistance: number): void;
+    /**
      * Sets the detune of the audio.
      *
      * @param detune - The detune in cents.
@@ -136,6 +152,14 @@ export declare class Audio extends EventRouter implements protocol.Serializable 
     /**
      * Sets the reference distance of the audio.
      *
+     * @remarks
+     * The reference distance defines the range within which the audio plays at
+     * full volume. When a listener is within this distance from the audio source,
+     * they will hear the sound at its maximum volume. Beyond this distance, the
+     * volume decreases linearly until reaching the cutoff distance, where the
+     * sound becomes inaudible. This creates a natural spatial audio experience
+     * with smooth volume falloff based on distance.
+     *
      * @param referenceDistance - The reference distance.
      */
     setReferenceDistance(referenceDistance: number): void;
@@ -155,6 +179,7 @@ export declare enum AudioEvent {
     PLAY = "AUDIO.PLAY",
     PLAY_RESTART = "AUDIO.PLAY_RESTART",
     SET_ATTACHED_TO_ENTITY = "AUDIO.SET_ATTACHED_TO_ENTITY",
+    SET_CUTOFF_DISTANCE = "AUDIO.SET_CUTOFF_DISTANCE",
     SET_DETUNE = "AUDIO.SET_DETUNE",
     SET_DISTORTION = "AUDIO.SET_DISTORTION",
     SET_POSITION = "AUDIO.SET_POSITION",
@@ -181,6 +206,11 @@ export declare interface AudioEventPayloads {
     [AudioEvent.SET_ATTACHED_TO_ENTITY]: {
         audio: Audio;
         entity: Entity | undefined;
+    };
+    /** Emitted when the audio's cutoff distance is set. */
+    [AudioEvent.SET_CUTOFF_DISTANCE]: {
+        audio: Audio;
+        cutoffDistance: number;
     };
     /** Emitted when the audio's detune is set. */
     [AudioEvent.SET_DETUNE]: {
@@ -283,6 +313,8 @@ export declare class AudioManager {
 export declare interface AudioOptions {
     /** If set, audio playback will follow the entity's position. */
     attachedToEntity?: Entity;
+    /** The cutoff distance between the audio source and the listener where the audio will be reduced to 0 volume. Must be greater than reference distance. Defaults to reference distance + 10. */
+    cutoffDistance?: number;
     /** The duration of the audio in seconds. Defaults to full duration. */
     duration?: number;
     /** The detuning of the audio in cents. */
@@ -297,7 +329,7 @@ export declare interface AudioOptions {
     position?: Vector3Like;
     /** The playback speed of the audio. Defaults to 1. */
     playbackRate?: number;
-    /** The reference distance for reducing volume as the audio source moves away from the listener. */
+    /** The maximum reference distance between the audio source and the listener where the audio will still be max volume. Defaults to 10. */
     referenceDistance?: number;
     /** The URI or path to the audio asset to be played. */
     uri: string;

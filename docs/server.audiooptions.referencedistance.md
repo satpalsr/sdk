@@ -4,7 +4,7 @@
 
 ## AudioOptions.referenceDistance property
 
-The reference distance for reducing volume as the audio source moves away from the listener.
+The maximum reference distance between the audio source and the listener where the audio will still be max volume. Defaults to 10.
 
 **Signature:**
 

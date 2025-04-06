@@ -88,6 +88,20 @@ SET\_ATTACHED\_TO\_ENTITY
 </td></tr>
 <tr><td>
 
+SET\_CUTOFF\_DISTANCE
+
+
+</td><td>
+
+`"AUDIO.SET_CUTOFF_DISTANCE"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 SET\_DETUNE
 
 

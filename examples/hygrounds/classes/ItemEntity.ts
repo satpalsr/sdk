@@ -103,6 +103,7 @@ export default class ItemEntity extends Entity {
       uri: this.consumeAudioUri,
       volume: 0.5,
       referenceDistance: 5,
+      cutoffDistance: 15,
     })).play(this.world);
 
   }

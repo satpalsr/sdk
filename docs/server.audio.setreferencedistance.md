@@ -51,3 +51,7 @@ The reference distance.
 
 void
 
+## Remarks
+
+The reference distance defines the range within which the audio plays at full volume. When a listener is within this distance from the audio source, they will hear the sound at its maximum volume. Beyond this distance, the volume decreases linearly until reaching the cutoff distance, where the sound becomes inaudible. This creates a natural spatial audio experience with smooth volume falloff based on distance.
+

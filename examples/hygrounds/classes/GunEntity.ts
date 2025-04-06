@@ -62,6 +62,8 @@ export default abstract class GunEntity extends ItemEntity {
     this._reloadAudio = new Audio({
       attachedToEntity: this,
       uri: options.reloadAudioUri,  
+      referenceDistance: 8,
+      cutoffDistance: 20,
     });
 
     this._shootAudio = new Audio({
@@ -69,6 +71,7 @@ export default abstract class GunEntity extends ItemEntity {
       uri: options.shootAudioUri,
       volume: 0.3,
       referenceDistance: 8,
+      cutoffDistance: 60,
     });
   }
 

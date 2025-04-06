@@ -47,6 +47,7 @@ export default class ChestEntity extends Entity {
       uri: 'audio/sfx/chest-open-2.mp3',
       volume: 0.7,
       referenceDistance: 8,
+      cutoffDistance: 20,
     });
   }
 

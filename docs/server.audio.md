@@ -114,6 +114,27 @@ The entity to which the audio is attached if explicitly set.
 </td></tr>
 <tr><td>
 
+[cutoffDistance](./server.audio.cutoffdistance.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The cutoff distance where the audio will be reduced to 0 volume.
+
+
+</td></tr>
+<tr><td>
+
 [detune](./server.audio.detune.md)
 
 
@@ -507,6 +528,20 @@ Plays or resumes the audio.
 </td><td>
 
 Sets the entity to which the audio is attached, following its position.
+
+
+</td></tr>
+<tr><td>
+
+[setCutoffDistance(cutoffDistance)](./server.audio.setcutoffdistance.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the cutoff distance of the audio.
 
 
 </td></tr>

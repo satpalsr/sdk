@@ -43,6 +43,7 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
       uri: options.attackAudioUri,
       volume: 0.3,
       referenceDistance: 3,
+      cutoffDistance: 15,
     });
 
     this._hitAudio = new Audio({
@@ -50,6 +51,7 @@ export default abstract class MeleeWeaponEntity extends ItemEntity {
       uri: options.hitAudioUri,
       volume: 0.3,
       referenceDistance: 3,
+      cutoffDistance: 15,
     });
   }
 

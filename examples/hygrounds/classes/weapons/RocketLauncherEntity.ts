@@ -183,7 +183,8 @@ export default class RocketLauncherEntity extends GunEntity {
       // Explosion Audio
       (new Audio({
         uri: 'audio/sfx/rocket-launcher-explosion.mp3',
-        referenceDistance: 20,
+        referenceDistance: 15,
+        cutoffDistance: 100,
         volume: 0.4,
       })).play(world);
 

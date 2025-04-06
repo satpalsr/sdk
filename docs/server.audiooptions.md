@@ -56,6 +56,25 @@ _(Optional)_ If set, audio playback will follow the entity's position.
 </td></tr>
 <tr><td>
 
+[cutoffDistance?](./server.audiooptions.cutoffdistance.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The cutoff distance between the audio source and the listener where the audio will be reduced to 0 volume. Must be greater than reference distance. Defaults to reference distance + 10.
+
+
+</td></tr>
+<tr><td>
+
 [detune?](./server.audiooptions.detune.md)
 
 
@@ -202,7 +221,7 @@ number
 
 </td><td>
 
-_(Optional)_ The reference distance for reducing volume as the audio source moves away from the listener.
+_(Optional)_ The maximum reference distance between the audio source and the listener where the audio will still be max volume. Defaults to 10.
 
 
 </td></tr>

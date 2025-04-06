@@ -113,6 +113,25 @@ Emitted when the audio is attached to an entity.
 </td></tr>
 <tr><td>
 
+["AUDIO.SET\_CUTOFF\_DISTANCE"](./server.audioeventpayloads._audio.set_cutoff_distance_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ audio: [Audio](./server.audio.md)<!-- -->; cutoffDistance: number; }
+
+
+</td><td>
+
+Emitted when the audio's cutoff distance is set.
+
+
+</td></tr>
+<tr><td>
+
 ["AUDIO.SET\_DETUNE"](./server.audioeventpayloads._audio.set_detune_.md)
 
 
