@@ -71,7 +71,7 @@ export default abstract class GunEntity extends ItemEntity {
       uri: options.shootAudioUri,
       volume: 0.3,
       referenceDistance: 8,
-      cutoffDistance: 60,
+      cutoffDistance: 100,
     });
   }
 
