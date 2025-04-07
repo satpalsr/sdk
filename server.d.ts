@@ -4,7 +4,6 @@ import EventEmitter from 'eventemitter3';
 import http from 'http';
 import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
-import type { IPacket } from '@hytopia.com/server-protocol';
 import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/getSession';
 import protocol from '@hytopia.com/server-protocol';
 import RAPIER from '@dimforge/rapier3d-compat-simd';
@@ -3569,8 +3568,8 @@ export declare type PlayerCameraOrientation = {
  *   const playerEntity = new PlayerEntity({
  *     player,
  *     name: 'Player',
- *     modelUri: 'models/player-with-gun.gltf',
- *     modelLoopedAnimations: [ 'idle' ],
+ *     modelUri: 'models/players/player.gltf',
+ *     modelLoopedAnimations: [ 'idle_lower', 'idle_upper' ],
  *     modelScale: 0.5,
  *   });
  *
@@ -3795,8 +3794,6 @@ export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
 export declare class PlayerManager {
     /** The global PlayerManager instance as a singleton. */
     static readonly instance: PlayerManager;
-
-
 
 
     /**

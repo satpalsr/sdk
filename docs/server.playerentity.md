@@ -25,8 +25,8 @@ world.onPlayerJoin = player => {
   const playerEntity = new PlayerEntity({
     player,
     name: 'Player',
-    modelUri: 'models/player-with-gun.gltf',
-    modelLoopedAnimations: [ 'idle' ],
+    modelUri: 'models/players/player.gltf',
+    modelLoopedAnimations: [ 'idle_lower', 'idle_upper' ],
     modelScale: 0.5,
   });
 
