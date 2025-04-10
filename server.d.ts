@@ -6,8 +6,8 @@ import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
 import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/getSession';
 import protocol from '@hytopia.com/server-protocol';
-import RAPIER from '@dimforge/rapier3d-compat-simd';
-import { SdpMatrix3 } from '@dimforge/rapier3d-compat-simd';
+import RAPIER from '@dimforge/rapier3d-simd-compat';
+import { SdpMatrix3 } from '@dimforge/rapier3d-simd-compat';
 import type { Socket } from 'net';
 import { WebSocket as WebSocket_2 } from 'ws';
 

@@ -119,6 +119,8 @@ function setupJoinNPC(world: World) {
     }
   }, 250);
 
+  joinNPC.spawn(world, { x: 1, y: 3.1, z: 15 });
+ 
   // Create the Scene UI over the NPC
   const npcMessageUI = new SceneUI({
     templateId: 'join-npc-message',
@@ -127,8 +129,6 @@ function setupJoinNPC(world: World) {
   });
 
   npcMessageUI.load(world);
-
-  joinNPC.spawn(world, { x: 1, y: 3.1, z: 15 });
 }
 
 /**
