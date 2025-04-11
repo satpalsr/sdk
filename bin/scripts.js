@@ -268,6 +268,48 @@ function packageProject() {
     console.error('❌ Error: Could not read package.json file:', err.message);
     return;
   }
+
+  // Make sure assets exist and the model optimizer has been ran
+  const assetsDir = path.join(sourceDir, 'assets');
+  let hasOptimizedDir = false;
+  
+  if (fs.existsSync(assetsDir)) {
+    // Function to recursively check for .optimized directories
+    const checkForOptimizedDir = (dir) => {
+      const items = fs.readdirSync(dir);
+      
+      for (const item of items) {
+        const itemPath = path.join(dir, item);
+        const stats = fs.statSync(itemPath);
+        
+        if (stats.isDirectory()) {
+          if (item === '.optimized') {
+            hasOptimizedDir = true;
+            return true;
+          }
+          
+          // Check subdirectories
+          if (checkForOptimizedDir(itemPath)) {
+            return true;
+          }
+        }
+      }
+      
+      return false;
+    };
+    
+    checkForOptimizedDir(assetsDir);
+    
+    if (!hasOptimizedDir) {
+      console.warn('❌ Error: No .optimized directories found in the assets folder.');
+      console.warn('   Make sure your server has ran the optimizer for your models.');
+      console.warn('   This can be done by running your server with: bun --watch index.ts');
+      return;
+    }
+  } else {
+    console.warn('❌ Error: No assets directory found in the project.');
+    return;
+  }
   
   // Prepare to package
   const outputFile = path.join(sourceDir, `${projectName}.zip`);
