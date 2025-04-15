@@ -100,6 +100,21 @@
     const clone = template.content.cloneNode(true);
     return clone;
   });
+
+  // MOBILE CONTROLS
+  // Handle jump button touch / untouch
+  const mobileJumpButton = document.getElementById('mobile-jump-button');
+  mobileJumpButton.addEventListener('touchstart', e => {
+    e.preventDefault();
+    mobileJumpButton.classList.add('active');
+    hytopia.pressInput(' ', true);
+  });
+
+  mobileJumpButton.addEventListener('touchend', e => {
+    e.preventDefault();
+    mobileJumpButton.classList.remove('active');
+    hytopia.pressInput(' ', false);
+  });
 </script>
 
 <!-- Game Start Countdown -->
@@ -117,6 +132,13 @@
   <h2>Top Survivors</h2>
   <div id="leaderboard-entries" class="leaderboard-entries">
   </div>
+</div>
+
+<!-- MOBILE CONTROLS -->
+<div class="mobile-controls">
+  <a id="mobile-jump-button" class="mobile-button">
+    <img src="{{CDN_ASSETS_URL}}/icons/jump.png" />
+  </a>
 </div>
 
 <!-- Template for Join NPC Scene UI-->
@@ -246,4 +268,51 @@
   .time {
     color: #ffd700;
   }
+
+  /* By default, we hide the mobile controls */
+  .mobile-controls {
+    display: none;
+  }
+
+  /*
+    We can use the body.mobile class to detect if we're on a mobile device.
+    The HYTOPIA game client will always add this class to the body element when running on a mobile device.
+  */
+  body.mobile .mobile-controls { /* If this css selector matches because we're on mobile, show the mobile controls */
+    display: flex;
+    gap: 14px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+  }
+
+  /* You can configure and style your buttons however you'd like. This is a minimalistic starting point. */
+  .mobile-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  .mobile-button img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-button.active {
+    transform: scale(0.92);
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }  
 </style>
