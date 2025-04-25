@@ -12,5 +12,8 @@
     "@hytopia.com/assets": "latest",
     "hytopia": "latest",
     "openai": "^4.77.3"
-  }
+  },
+  "trustedDependencies": [
+    "mediasoup"
+  ]
 }

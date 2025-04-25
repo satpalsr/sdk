@@ -1,5 +1,5 @@
 {
-  "name": "zombies-fps",
+  "name": "hygrounds",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,5 +12,8 @@
   "dependencies": {
     "@hytopia.com/assets": "latest",
     "hytopia": "latest"
-  }
+  },
+  "trustedDependencies": [
+    "mediasoup"
+  ]
 }

@@ -12,5 +12,8 @@
   "dependencies": {
     "hytopia": "latest",
     "@hytopia.com/assets": "latest"
-  }
+  },
+  "trustedDependencies": [
+    "mediasoup"
+  ]
 }
