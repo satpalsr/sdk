@@ -104,7 +104,7 @@ function init() {
 function installProjectDependencies() {
   execSync('bun init --yes');
   execSync('bun add hytopia@latest --force');
-  execSync('bun add @hytopia.com/assets --force');b
+  execSync('bun add @hytopia.com/assets --force');
   // execSync('bun pm trust mediasoup'); uncomment this when webrtc support ships.
 }
 
