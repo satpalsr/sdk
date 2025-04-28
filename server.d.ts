@@ -5,6 +5,7 @@ import http from 'http';
 import type { IncomingMessage } from 'http';
 import type { InputSchema } from '@hytopia.com/server-protocol';
 import type { LobbyMembershipDto } from '@hytopia.com/creative-lib/dist/impl/getSession';
+import mediasoup from 'mediasoup';
 import protocol from '@hytopia.com/server-protocol';
 import RAPIER from '@dimforge/rapier3d-simd-compat';
 import { SdpMatrix3 } from '@dimforge/rapier3d-simd-compat';
@@ -3247,6 +3248,7 @@ export declare class Player extends EventRouter implements protocol.Serializable
 
     /** The UI for the player. */
     readonly ui: PlayerUI;
+
 
 
 
