@@ -83,7 +83,7 @@ _(Optional)_ The block types in the map.
 
 </td><td>
 
-{ \[position: string\]: [EntityOptions](./server.entityoptions.md)<!-- -->; }
+{ \[position: string\]: Omit&lt;[EntityOptions](./server.entityoptions.md)<!-- -->, 'rigidBodyOptions'&gt; &amp; { rigidBodyOptions?: Omit&lt;NonNullable&lt;[EntityOptions](./server.entityoptions.md)<!-- -->\['rigidBodyOptions'\]&gt;, 'type'&gt; &amp; { type?: any; }; }; }
 
 
 </td><td>

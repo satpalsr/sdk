@@ -5783,7 +5783,11 @@ export declare interface WorldMap {
     /** The entities in the map. */
     entities?: {
         /** The position to entity as entity options mapping. */
-        [position: string]: EntityOptions;
+        [position: string]: Omit<EntityOptions, 'rigidBodyOptions'> & {
+            rigidBodyOptions?: Omit<NonNullable<EntityOptions['rigidBodyOptions']>, 'type'> & {
+                type?: any;
+            };
+        };
     };
 }
 

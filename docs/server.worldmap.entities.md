@@ -10,6 +10,10 @@ The entities in the map.
 
 ```typescript
 entities?: {
-        [position: string]: EntityOptions;
+        [position: string]: Omit<EntityOptions, 'rigidBodyOptions'> & {
+            rigidBodyOptions?: Omit<NonNullable<EntityOptions['rigidBodyOptions']>, 'type'> & {
+                type?: any;
+            };
+        };
     };
 ```
