@@ -70,6 +70,20 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[clear()](./server.chunklattice.clear.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Despawns and clears all chunks in the lattice.
+
+
+</td></tr>
+<tr><td>
+
 [getAllChunks()](./server.chunklattice.getallchunks.md)
 
 

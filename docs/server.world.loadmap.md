@@ -4,7 +4,7 @@
 
 ## World.loadMap() method
 
-Loads a map into the world.
+Loads a map into the world, clearing any prior map.
 
 **Signature:**
 

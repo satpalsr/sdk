@@ -478,7 +478,7 @@ Description
 
 </td><td>
 
-Loads a map into the world.
+Loads a map into the world, clearing any prior map.
 
 
 </td></tr>

@@ -1003,6 +1003,10 @@ export declare class ChunkLattice {
 
 
     /**
+     * Despawns and clears all chunks in the lattice.
+     */
+    clear(): void;
+    /**
      * Get the block type id at a specific global coordinate.
      * @param globalCoordinate - The global coordinate of the block to get.
      * @returns The block type id, 0 if no block is set.
@@ -5600,7 +5604,7 @@ export declare class World extends EventRouter implements protocol.Serializable 
     /** The simulation for the world. */
     get simulation(): Simulation;
     /**
-     * Loads a map into the world.
+     * Loads a map into the world, clearing any prior map.
      * @param map - The map to load.
      */
     loadMap(map: WorldMap): void;

@@ -7387,6 +7387,37 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "server!ChunkLattice#clear:member(1)",
+              "docComment": "/**\n * Despawns and clears all chunks in the lattice.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clear(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "clear"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!ChunkLattice#getAllChunks:member(1)",
               "docComment": "/**\n * Get all chunks in the lattice.\n *\n * @returns An array of all chunks in the lattice.\n */\n",
               "excerptTokens": [
@@ -42772,7 +42803,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!World#loadMap:member(1)",
-              "docComment": "/**\n * Loads a map into the world.\n *\n * @param map - The map to load.\n */\n",
+              "docComment": "/**\n * Loads a map into the world, clearing any prior map.\n *\n * @param map - The map to load.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
