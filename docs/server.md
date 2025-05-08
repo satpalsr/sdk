@@ -1267,6 +1267,17 @@ A 3-dimensional vector.
 </td></tr>
 <tr><td>
 
+[WedgeColliderOptions](./server.wedgecollideroptions.md)
+
+
+</td><td>
+
+The options for a wedge collider.
+
+
+</td></tr>
+<tr><td>
+
 [WorldEventPayloads](./server.worldeventpayloads.md)
 
 
@@ -1490,6 +1501,28 @@ A callback function called when the entity associated with the SimpleEntityContr
 </td><td>
 
 Options for the [SimpleEntityController.face()](./server.simpleentitycontroller.face.md) method.
+
+
+</td></tr>
+<tr><td>
+
+[ModelBoundingBox](./server.modelboundingbox.md)
+
+
+</td><td>
+
+A bounding box for a model.
+
+
+</td></tr>
+<tr><td>
+
+[ModelTrimesh](./server.modeltrimesh.md)
+
+
+</td><td>
+
+A trimesh for a model.
 
 
 </td></tr>

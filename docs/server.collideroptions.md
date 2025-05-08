@@ -9,7 +9,7 @@ The options for a collider.
 **Signature:**
 
 ```typescript
-export type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | NoneColliderOptions;
+export type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | WedgeColliderOptions | NoneColliderOptions;
 ```
-**References:** [BallColliderOptions](./server.ballcollideroptions.md)<!-- -->, [BlockColliderOptions](./server.blockcollideroptions.md)<!-- -->, [CapsuleColliderOptions](./server.capsulecollideroptions.md)<!-- -->, [ConeColliderOptions](./server.conecollideroptions.md)<!-- -->, [CylinderColliderOptions](./server.cylindercollideroptions.md)<!-- -->, [RoundCylinderColliderOptions](./server.roundcylindercollideroptions.md)<!-- -->, [TrimeshColliderOptions](./server.trimeshcollideroptions.md)<!-- -->, [NoneColliderOptions](./server.nonecollideroptions.md)
+**References:** [BallColliderOptions](./server.ballcollideroptions.md)<!-- -->, [BlockColliderOptions](./server.blockcollideroptions.md)<!-- -->, [CapsuleColliderOptions](./server.capsulecollideroptions.md)<!-- -->, [ConeColliderOptions](./server.conecollideroptions.md)<!-- -->, [CylinderColliderOptions](./server.cylindercollideroptions.md)<!-- -->, [RoundCylinderColliderOptions](./server.roundcylindercollideroptions.md)<!-- -->, [TrimeshColliderOptions](./server.trimeshcollideroptions.md)<!-- -->, [WedgeColliderOptions](./server.wedgecollideroptions.md)<!-- -->, [NoneColliderOptions](./server.nonecollideroptions.md)
 

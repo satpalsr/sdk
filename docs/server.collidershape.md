@@ -142,4 +142,18 @@ TRIMESH
 
 
 </td></tr>
+<tr><td>
+
+WEDGE
+
+
+</td><td>
+
+`"wedge"`
+
+
+</td><td>
+
+
+</td></tr>
 </tbody></table>

@@ -176,6 +176,20 @@ Retrieves the names of all nodes in a model.
 </td></tr>
 <tr><td>
 
+[getTrimesh(modelUri, scale)](./server.modelregistry.gettrimesh.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Retrieves the trimesh of a model.
+
+
+</td></tr>
+<tr><td>
+
 [modelHasNode(modelUri, nodeName)](./server.modelregistry.modelhasnode.md)
 
 

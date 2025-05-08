@@ -339,6 +339,27 @@ The looped animations to start when the entity is spawned.
 </td></tr>
 <tr><td>
 
+[modelPreferredShape](./server.entity.modelpreferredshape.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[ColliderShape](./server.collidershape.md) \| undefined
+
+
+</td><td>
+
+The preferred shape of the entity's model when automatically generating its collider when no explicit colliders are provided.
+
+
+</td></tr>
+<tr><td>
+
 [modelScale](./server.entity.modelscale.md)
 
 

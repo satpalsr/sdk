@@ -9,7 +9,7 @@ Creates a collider options object from a modelUri with best approximate shape an
 **Signature:**
 
 ```typescript
-static optionsFromModelUri(modelUri: string, scale?: number): ColliderOptions;
+static optionsFromModelUri(modelUri: string, scale?: number, preferredShape?: ColliderShape): ColliderOptions;
 ```
 
 ## Parameters
@@ -58,7 +58,23 @@ number
 
 </td><td>
 
-_(Optional)_
+_(Optional)_ The scale of the model.
+
+
+</td></tr>
+<tr><td>
+
+preferredShape
+
+
+</td><td>
+
+[ColliderShape](./server.collidershape.md)
+
+
+</td><td>
+
+_(Optional)_ The preferred shape to use for the collider.
 
 
 </td></tr>

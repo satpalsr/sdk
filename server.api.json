@@ -8422,7 +8422,7 @@
             {
               "kind": "Method",
               "canonicalReference": "server!Collider.optionsFromModelUri:member(1)",
-              "docComment": "/**\n * Creates a collider options object from a modelUri with best approximate shape and size.\n *\n * @param modelUri - The URI of the model.\n *\n * @returns The collider options object.\n */\n",
+              "docComment": "/**\n * Creates a collider options object from a modelUri with best approximate shape and size.\n *\n * @param modelUri - The URI of the model.\n *\n * @param scale - The scale of the model.\n *\n * @param preferredShape - The preferred shape to use for the collider.\n *\n * @returns The collider options object.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -8442,6 +8442,15 @@
                 },
                 {
                   "kind": "Content",
+                  "text": ", preferredShape?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape",
+                  "canonicalReference": "server!ColliderShape:enum"
+                },
+                {
+                  "kind": "Content",
                   "text": "): "
                 },
                 {
@@ -8456,8 +8465,8 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
               "isProtected": false,
@@ -8476,6 +8485,14 @@
                   "parameterTypeTokenRange": {
                     "startIndex": 3,
                     "endIndex": 4
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "preferredShape",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
                   },
                   "isOptional": true
                 }
@@ -9375,6 +9392,15 @@
             },
             {
               "kind": "Reference",
+              "text": "WedgeColliderOptions",
+              "canonicalReference": "server!WedgeColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
               "text": "NoneColliderOptions",
               "canonicalReference": "server!NoneColliderOptions:interface"
             },
@@ -9388,7 +9414,7 @@
           "name": "ColliderOptions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 16
+            "endIndex": 18
           }
         },
         {
@@ -9573,6 +9599,27 @@
               },
               "releaseTag": "Public",
               "name": "TRIMESH"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!ColliderShape.WEDGE:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "WEDGE = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"wedge\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "WEDGE"
             }
           ]
         },
@@ -11576,6 +11623,41 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "modelLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!Entity#modelPreferredShape:member",
+              "docComment": "/**\n * The preferred shape of the entity's model when automatically generating its collider when no explicit colliders are provided.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get modelPreferredShape(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape",
+                  "canonicalReference": "server!ColliderShape:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "modelPreferredShape",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
@@ -23210,6 +23292,50 @@
           "implementsTokenRanges": []
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!ModelBoundingBox:type",
+          "docComment": "/**\n * A bounding box for a model.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ModelBoundingBox = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    min: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    max: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Vector3Like",
+              "canonicalReference": "server!Vector3Like:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/ModelRegistry.ts",
+          "releaseTag": "Public",
+          "name": "ModelBoundingBox",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
           "kind": "Interface",
           "canonicalReference": "server!ModelEntityOptions:interface",
           "docComment": "/**\n * The options for creating a model entity.\n *\n * @public\n */\n",
@@ -23316,6 +23442,34 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!ModelEntityOptions#modelPreferredShape:member",
+              "docComment": "/**\n * The preferred shape of the entity's model when automatically generating its collider when no explicit colliders are provided.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelPreferredShape?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape",
+                  "canonicalReference": "server!ColliderShape:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelPreferredShape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!ModelEntityOptions#modelScale:member",
               "docComment": "/**\n * The scale of the entity's model.\n */\n",
               "excerptTokens": [
@@ -23412,7 +23566,7 @@
                 {
                   "kind": "Reference",
                   "text": "ModelBoundingBox",
-                  "canonicalReference": "server!~ModelBoundingBox:type"
+                  "canonicalReference": "server!ModelBoundingBox:type"
                 },
                 {
                   "kind": "Content",
@@ -23536,6 +23690,71 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "getNodeNames"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!ModelRegistry#getTrimesh:member(1)",
+              "docComment": "/**\n * Retrieves the trimesh of a model.\n *\n * @param modelUri - The URI of the model to retrieve the trimesh for.\n *\n * @param scale - Optional uniform scaling to apply to the trimesh. Defaults to 1, which is no scaling.\n *\n * @returns The trimesh of the model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getTrimesh(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", scale?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ModelTrimesh",
+                  "canonicalReference": "server!ModelTrimesh:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "scale",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getTrimesh"
             },
             {
               "kind": "Property",
@@ -23694,6 +23913,50 @@
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!ModelTrimesh:type",
+          "docComment": "/**\n * A trimesh for a model.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ModelTrimesh = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    vertices: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Float32Array",
+              "canonicalReference": "!Float32Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    indices: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint32Array",
+              "canonicalReference": "!Uint32Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/ModelRegistry.ts",
+          "releaseTag": "Public",
+          "name": "ModelTrimesh",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
         },
         {
           "kind": "TypeAlias",
@@ -42363,6 +42626,94 @@
             "startIndex": 1,
             "endIndex": 4
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!WedgeColliderOptions:interface",
+          "docComment": "/**\n * The options for a wedge collider.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface WedgeColliderOptions extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseColliderOptions",
+              "canonicalReference": "server!BaseColliderOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/world/physics/Collider.ts",
+          "releaseTag": "Public",
+          "name": "WedgeColliderOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WedgeColliderOptions#extents:member",
+              "docComment": "/**\n * The extents of the wedge collider, defining full width (x), height (y), and length (z).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "extents?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Vector3Like",
+                  "canonicalReference": "server!Vector3Like:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "extents",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WedgeColliderOptions#shape:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shape: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColliderShape.WEDGE",
+                  "canonicalReference": "server!ColliderShape.WEDGE:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "shape",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
         },
         {
           "kind": "Class",

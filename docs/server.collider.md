@@ -469,7 +469,7 @@ Creates a collider options object from a block's half extents.
 </td></tr>
 <tr><td>
 
-[optionsFromModelUri(modelUri, scale)](./server.collider.optionsfrommodeluri.md)
+[optionsFromModelUri(modelUri, scale, preferredShape)](./server.collider.optionsfrommodeluri.md)
 
 
 </td><td>

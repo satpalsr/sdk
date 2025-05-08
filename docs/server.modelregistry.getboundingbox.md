@@ -49,7 +49,7 @@ The URI of the model to retrieve the bounding box for.
 </tbody></table>
 **Returns:**
 
-ModelBoundingBox
+[ModelBoundingBox](./server.modelboundingbox.md)
 
 The bounding box of the model.
 

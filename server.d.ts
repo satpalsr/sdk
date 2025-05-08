@@ -1094,9 +1094,11 @@ export declare class Collider extends EventRouter {
     /**
      * Creates a collider options object from a modelUri with best approximate shape and size.
      * @param modelUri - The URI of the model.
+     * @param scale - The scale of the model.
+     * @param preferredShape - The preferred shape to use for the collider.
      * @returns The collider options object.
      */
-    static optionsFromModelUri(modelUri: string, scale?: number): ColliderOptions;
+    static optionsFromModelUri(modelUri: string, scale?: number, preferredShape?: ColliderShape): ColliderOptions;
     /** The bounciness of the collider. */
     get bounciness(): number;
     /** The bounciness combine rule of the collider. */
@@ -1221,15 +1223,16 @@ export declare class Collider extends EventRouter {
     removeFromSimulation(): void;
 
 
+    private _buildWedgeConvexHullVertices;
 
 
-    private _requireUnsimulated;
-    private _requireNotRemoved;
+
+
 
 }
 
 /** The options for a collider. @public */
-export declare type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | NoneColliderOptions;
+export declare type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | WedgeColliderOptions | NoneColliderOptions;
 
 /** The shapes a collider can be. @public */
 export declare enum ColliderShape {
@@ -1240,7 +1243,8 @@ export declare enum ColliderShape {
     CONE = "cone",
     CYLINDER = "cylinder",
     ROUND_CYLINDER = "round-cylinder",
-    TRIMESH = "trimesh"
+    TRIMESH = "trimesh",
+    WEDGE = "wedge"
 }
 
 /**
@@ -1505,6 +1509,7 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
 
 
 
+
     /**
      * @param options - The options for the entity.
      */
@@ -1525,6 +1530,8 @@ export declare class Entity extends RigidBody implements protocol.Serializable {
     get modelHiddenNodes(): ReadonlySet<string>;
     /** The looped animations to start when the entity is spawned. */
     get modelLoopedAnimations(): ReadonlySet<string>;
+    /** The preferred shape of the entity's model when automatically generating its collider when no explicit colliders are provided. */
+    get modelPreferredShape(): ColliderShape | undefined;
     /** The scale of the entity's model. */
     get modelScale(): number | undefined;
     /** The URI or path to the .gltf model asset to be used for the entity. */
@@ -2944,7 +2951,7 @@ export declare class Matrix4 extends Float32Array {
 }
 
 /** A bounding box for a model. @public */
-declare type ModelBoundingBox = {
+export declare type ModelBoundingBox = {
     min: Vector3Like;
     max: Vector3Like;
 };
@@ -2957,6 +2964,8 @@ export declare interface ModelEntityOptions extends BaseEntityOptions {
     modelHiddenNodes?: string[];
     /** The looped animations to start when the entity is spawned. */
     modelLoopedAnimations?: string[];
+    /** The preferred shape of the entity's model when automatically generating its collider when no explicit colliders are provided. */
+    modelPreferredShape?: ColliderShape;
     /** The scale of the entity's model. */
     modelScale?: number;
     /** The URI or path to the .gltf model asset to be used for the entity. */
@@ -2993,6 +3002,7 @@ export declare class ModelRegistry {
 
 
 
+
     /**
      * Retrieves the bounding box of a model.
      *
@@ -3015,6 +3025,14 @@ export declare class ModelRegistry {
      */
     getNodeNames(modelUri: string): string[];
     /**
+     * Retrieves the trimesh of a model.
+     *
+     * @param modelUri - The URI of the model to retrieve the trimesh for.
+     * @param scale - Optional uniform scaling to apply to the trimesh. Defaults to 1, which is no scaling.
+     * @returns The trimesh of the model.
+     */
+    getTrimesh(modelUri: string, scale?: number): ModelTrimesh;
+    /**
      * Checks if a model has a node with the given name.
      *
      * @param modelUri - The URI of the model to check.
@@ -3030,7 +3048,14 @@ export declare class ModelRegistry {
 
 
 
+
 }
+
+/** A trimesh for a model. @public */
+export declare type ModelTrimesh = {
+    vertices: Float32Array;
+    indices: Uint32Array;
+};
 
 /**
  * A callback function called when the entity associated with the
@@ -5513,6 +5538,13 @@ export declare type WaypointMoveCompleteCallback = (waypoint: Vector3Like, waypo
  * @public
  */
 export declare type WaypointMoveSkippedCallback = (waypoint: Vector3Like, waypointIndex: number) => void;
+
+/** The options for a wedge collider. @public */
+export declare interface WedgeColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.WEDGE;
+    /** The extents of the wedge collider, defining full width (x), height (y), and length (z). */
+    extents?: Vector3Like;
+}
 
 /**
  * Represents a world in the game server.
