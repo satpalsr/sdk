@@ -1502,10 +1502,24 @@ export declare class DefaultPlayerEntityController extends BaseEntityController 
     runVelocity: number;
     /** Whether the entity sticks to platforms. */
     sticksToPlatforms: boolean;
+    /** The normalized horizontal velocity applied to the entity when it swims fast (equivalent to running). */
+    swimFastVelocity: number;
+    /** The gravity modifier applied to the entity when swimming. */
+    swimGravity: number;
+    /** The looped animation(s) that will play when the entity is swimming. */
+    swimLoopedAnimations: string[];
+    /** The maximum downward velocity that the entity can reach when affected by gravity while swimming. */
+    swimMaxGravityVelocity: number;
+    /** The normalized horizontal velocity applied to the entity when it swims slowly (equivalent to walking). */
+    swimSlowVelocity: number;
+    /** The upward velocity applied to the entity when swimming. */
+    swimUpwardVelocity: number;
     /** The looped animation(s) that will play when the entity is walking. */
     walkLoopedAnimations: string[];
     /** The normalized horizontal velocity applied to the entity when it walks. */
     walkVelocity: number;
+
+
 
 
 
@@ -1517,6 +1531,8 @@ export declare class DefaultPlayerEntityController extends BaseEntityController 
     get isGrounded(): boolean;
     /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
     get isOnPlatform(): boolean;
+    /** Whether the entity is swimming, this is determined by if the entity is in a liquid block. */
+    get isSwimming(): boolean;
     /** The platform the entity is on, if any. */
     get platform(): Entity | undefined;
     /**
@@ -1569,6 +1585,18 @@ export declare interface DefaultPlayerEntityControllerOptions {
     runLoopedAnimations?: string[];
     /** Whether the entity sticks to platforms, defaults to true. */
     sticksToPlatforms?: boolean;
+    /** The normalized horizontal velocity applied to the entity when it swims fast (equivalent to running). */
+    swimFastVelocity?: number;
+    /** The gravity modifier applied to the entity when swimming. */
+    swimGravity?: number;
+    /** The maximum downward velocity that the entity can reach when affected by gravity while swimming. */
+    swimMaxGravityVelocity?: number;
+    /** The looped animation(s) that will play when the entity is swimming. */
+    swimLoopedAnimations?: string[];
+    /** The normalized horizontal velocity applied to the entity when it swims slowly (equivalent to walking). */
+    swimSlowVelocity?: number;
+    /** The upward velocity applied to the entity when swimming. */
+    swimUpwardVelocity?: number;
     /** Overrides the animation(s) that will play when the entity is walking. */
     walkLoopedAnimations?: string[];
     /** The normalized horizontal velocity applied to the entity when it walks. */
@@ -3194,7 +3222,7 @@ export declare class ModelRegistry {
      * @param scale - Optional uniform scaling to apply to the trimesh. Defaults to 1, which is no scaling.
      * @returns The trimesh of the model.
      */
-    getTrimesh(modelUri: string, scale?: number): ModelTrimesh;
+    getTrimesh(modelUri: string, scale?: number): ModelTrimesh | undefined;
     /**
      * Checks if a model has a node with the given name.
      *

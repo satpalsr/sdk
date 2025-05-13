@@ -9,7 +9,7 @@ Retrieves the trimesh of a model.
 **Signature:**
 
 ```typescript
-getTrimesh(modelUri: string, scale?: number): ModelTrimesh;
+getTrimesh(modelUri: string, scale?: number): ModelTrimesh | undefined;
 ```
 
 ## Parameters
@@ -65,7 +65,7 @@ _(Optional)_ Optional uniform scaling to apply to the trimesh. Defaults to 1, wh
 </tbody></table>
 **Returns:**
 
-[ModelTrimesh](./server.modeltrimesh.md)
+[ModelTrimesh](./server.modeltrimesh.md) \| undefined
 
 The trimesh of the model.
 

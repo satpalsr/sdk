@@ -247,6 +247,27 @@ Whether the entity is on a platform, a platform is any entity with a kinematic r
 </td></tr>
 <tr><td>
 
+[isSwimming](./server.defaultplayerentitycontroller.isswimming.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Whether the entity is swimming, this is determined by if the entity is in a liquid block.
+
+
+</td></tr>
+<tr><td>
+
 [jumpOneshotAnimations](./server.defaultplayerentitycontroller.jumponeshotanimations.md)
 
 
@@ -358,6 +379,120 @@ boolean
 </td><td>
 
 Whether the entity sticks to platforms.
+
+
+</td></tr>
+<tr><td>
+
+[swimFastVelocity](./server.defaultplayerentitycontroller.swimfastvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The normalized horizontal velocity applied to the entity when it swims fast (equivalent to running).
+
+
+</td></tr>
+<tr><td>
+
+[swimGravity](./server.defaultplayerentitycontroller.swimgravity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The gravity modifier applied to the entity when swimming.
+
+
+</td></tr>
+<tr><td>
+
+[swimLoopedAnimations](./server.defaultplayerentitycontroller.swimloopedanimations.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string\[\]
+
+
+</td><td>
+
+The looped animation(s) that will play when the entity is swimming.
+
+
+</td></tr>
+<tr><td>
+
+[swimMaxGravityVelocity](./server.defaultplayerentitycontroller.swimmaxgravityvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The maximum downward velocity that the entity can reach when affected by gravity while swimming.
+
+
+</td></tr>
+<tr><td>
+
+[swimSlowVelocity](./server.defaultplayerentitycontroller.swimslowvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The normalized horizontal velocity applied to the entity when it swims slowly (equivalent to walking).
+
+
+</td></tr>
+<tr><td>
+
+[swimUpwardVelocity](./server.defaultplayerentitycontroller.swimupwardvelocity.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The upward velocity applied to the entity when swimming.
 
 
 </td></tr>

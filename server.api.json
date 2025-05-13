@@ -11181,6 +11181,36 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#isSwimming:member",
+              "docComment": "/**\n * Whether the entity is swimming, this is determined by if the entity is in a liquid block.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isSwimming(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isSwimming",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!DefaultPlayerEntityController#jumpOneshotAnimations:member",
               "docComment": "/**\n * The oneshot animation(s) that will play when the entity is jumping.\n */\n",
               "excerptTokens": [
@@ -11405,6 +11435,186 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimFastVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it swims fast (equivalent to running).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimFastVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimFastVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimGravity:member",
+              "docComment": "/**\n * The gravity modifier applied to the entity when swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimGravity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimGravity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimMaxGravityVelocity:member",
+              "docComment": "/**\n * The maximum downward velocity that the entity can reach when affected by gravity while swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimMaxGravityVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimMaxGravityVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimSlowVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it swims slowly (equivalent to walking).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimSlowVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimSlowVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#swimUpwardVelocity:member",
+              "docComment": "/**\n * The upward velocity applied to the entity when swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimUpwardVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "swimUpwardVelocity",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -11886,6 +12096,168 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimFastVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it swims fast (equivalent to running).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimFastVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimFastVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimGravity:member",
+              "docComment": "/**\n * The gravity modifier applied to the entity when swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimGravity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimGravity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimMaxGravityVelocity:member",
+              "docComment": "/**\n * The maximum downward velocity that the entity can reach when affected by gravity while swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimMaxGravityVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimMaxGravityVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimSlowVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it swims slowly (equivalent to walking).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimSlowVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimSlowVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#swimUpwardVelocity:member",
+              "docComment": "/**\n * The upward velocity applied to the entity when swimming.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "swimUpwardVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "swimUpwardVelocity",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -24962,13 +25334,17 @@
                 },
                 {
                   "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
                   "text": ";"
                 }
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
                 "startIndex": 5,
-                "endIndex": 6
+                "endIndex": 7
               },
               "releaseTag": "Public",
               "isProtected": false,
