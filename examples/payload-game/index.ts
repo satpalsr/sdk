@@ -20,13 +20,13 @@ import {
   Audio,
   BaseEntityControllerEvent,
   BlockType,
-  PlayerCameraMode,
+  DefaultPlayerEntity,
+  DefaultPlayerEntityController,
   ColliderShape,
   CollisionGroup,
-  PlayerEntityController,
   Entity,
   EntityEvent,
-  PlayerEntity,
+  PlayerCameraMode,
   PlayerEvent,
   RigidBodyType,
   SimpleEntityController,
@@ -105,12 +105,10 @@ startServer(world => { // Perform our game setup logic in the startServer init c
 
   // Setup Player Join & Spawn Controlled Entity
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
-    const playerEntity = new PlayerEntity({ // Create an entity our newly joined player controls
+    const playerEntity = new DefaultPlayerEntity({ // Create an entity our newly joined player controls
       player,
       name: 'Player',
       modelUri: 'models/soldier-player.gltf',
-      modelLoopedAnimations: [ 'idle_lower', 'idle_gun_right' ],
-      modelScale: 0.5,
     });
 
     
@@ -127,7 +125,7 @@ startServer(world => { // Perform our game setup logic in the startServer init c
     playerEntity.spawn(world, randomSpawnCoordinate);
 
     // Override default model animations
-    const playerController = playerEntity.controller as PlayerEntityController;
+    const playerController = playerEntity.controller as DefaultPlayerEntityController;
     playerController.idleLoopedAnimations = [ 'idle_lower', 'idle_gun_right' ];
     playerController.interactOneshotAnimations = [];
     playerController.walkLoopedAnimations = ['walk_lower', 'idle_gun_right' ];
@@ -186,10 +184,10 @@ startServer(world => { // Perform our game setup logic in the startServer init c
   startEnemySpawnLoop(world);
 
   // Game Commands
-  chatManager.registerCommand('/start', () => {
-    chatManager.sendBroadcastMessage('Game started!');
+  // chatManager.registerCommand('/start', () => {
+  //   chatManager.sendBroadcastMessage('Game started!');
     started = true;
-  });
+  // });
 
   chatManager.registerCommand('/stop', () => {
     chatManager.sendBroadcastMessage('Game stopped!');
@@ -327,7 +325,7 @@ function spawnPayloadEntity(world: World) {
           // We use a onCollision handler specific to this sensor, and 
           // not the whole entity, so we can track the number of players in the payload sensor.
           onCollision: (other: BlockType | Entity, started: boolean) => { 
-            if (other instanceof PlayerEntity) {
+            if (other instanceof DefaultPlayerEntity) {
               started ? payloadPlayerEntityCount++ : payloadPlayerEntityCount--;
               console.log('player count change', payloadPlayerEntityCount, started, other.name);
             } else if (other instanceof Entity && other.name === 'Spider') {
@@ -356,7 +354,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   const baseScale = 0.5;
   const baseSpeed = 3;
   const randomScaleMultiplier = Math.random() * 2 + 1; // Random value between 1 and 3 // Random scale multiplier to make each spider a different size
-  const targetPlayers = new Set<PlayerEntity>();
+  const targetPlayers = new Set<DefaultPlayerEntity>();
 
   const spider = new Entity({
     controller: new SimpleEntityController(),
@@ -381,7 +379,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
             collidesWith: [ CollisionGroup.PLAYER ],
           },
           onCollision: (other: BlockType | Entity, started: boolean) => { // If a player enters or exits the aggro sensor, add or remove them from the target players set
-            if (other instanceof PlayerEntity) {
+            if (other instanceof DefaultPlayerEntity) {
               started ? targetPlayers.add(other) : targetPlayers.delete(other);
             }
           },
@@ -395,7 +393,7 @@ function spawnSpider(world: World, coordinate: Vector3Like) {
   });
 
   spider.on(EntityEvent.ENTITY_COLLISION, ({ otherEntity, started }) => {
-    if (started && otherEntity instanceof PlayerEntity && otherEntity.isSpawned) {
+    if (started && otherEntity instanceof DefaultPlayerEntity && otherEntity.isSpawned) {
       const spiderDirection = spider.directionFromRotation;
       const knockback = 4 * randomScaleMultiplier;
 
@@ -454,14 +452,14 @@ function onTickPathfindPayload(payload: EventPayloads[EntityEvent.TICK]) { // Mo
   entity.controller.face(targetWaypointCoordinate, speed / 2);
 }
 
-function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<PlayerEntity>, speed: number, _tickDeltaMs: number) {
+function onTickPathfindEnemy(entity: Entity, targetPlayers: Set<DefaultPlayerEntity>, speed: number, _tickDeltaMs: number) {
   if (!entity.isSpawned || !payloadEntity) return;
   
   const entityId = entity.id!;
   enemyPathfindAccumulators[entityId] ??= 0; // Initialize the accumulator for this enemy if it isn't initialized yet
 
   if (!enemyPathfindingTargets[entityId] || enemyPathfindAccumulators[entityId] >= PATHFIND_ACCUMULATOR_THRESHOLD) {
-    const targetPlayer = targetPlayers.values().next().value as PlayerEntity | undefined;
+    const targetPlayer = targetPlayers.values().next().value as DefaultPlayerEntity | undefined;
 
     enemyPathfindingTargets[entityId] = targetPlayer?.isSpawned
       ? targetPlayer.position
@@ -523,7 +521,7 @@ function onTickWithPlayerInput(payload: EventPayloads[BaseEntityControllerEvent.
   }
 }
 
-function damagePlayer(playerEntity: PlayerEntity) {
+function damagePlayer(playerEntity: DefaultPlayerEntity) {
   const chatManager = playerEntity.world!.chatManager;
   
   playerEntityHealth[playerEntity.id!]--;

@@ -129,6 +129,28 @@ A helper class for building and decoding collision groups.
 </td></tr>
 <tr><td>
 
+[DefaultPlayerEntity](./server.defaultplayerentity.md)
+
+
+</td><td>
+
+Represents the default player model entity.
+
+
+</td></tr>
+<tr><td>
+
+[DefaultPlayerEntityController](./server.defaultplayerentitycontroller.md)
+
+
+</td><td>
+
+The player entity controller implementation.
+
+
+</td></tr>
+<tr><td>
+
 [Entity](./server.entity.md)
 
 
@@ -300,17 +322,6 @@ The camera for a Player.
 </td><td>
 
 Represents an entity controlled by a player in a world.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerEntityController](./server.playerentitycontroller.md)
-
-
-</td><td>
-
-The player entity controller implementation.
 
 
 </td></tr>
@@ -959,6 +970,17 @@ The options for a cylinder collider.
 </td></tr>
 <tr><td>
 
+[DefaultPlayerEntityControllerOptions](./server.defaultplayerentitycontrolleroptions.md)
+
+
+</td><td>
+
+Options for creating a DefaultPlayerEntityController instance.
+
+
+</td></tr>
+<tr><td>
+
 [DynamicRigidBodyOptions](./server.dynamicrigidbodyoptions.md)
 
 
@@ -1086,17 +1108,6 @@ The options for an error type "none" collider.
 </td><td>
 
 Event payloads for PlayerCamera emitted events.
-
-
-</td></tr>
-<tr><td>
-
-[PlayerEntityControllerOptions](./server.playerentitycontrolleroptions.md)
-
-
-</td><td>
-
-Options for creating a PlayerEntityController instance.
 
 
 </td></tr>
@@ -1457,6 +1468,17 @@ A contact manifold.
 </td><td>
 
 A decoded set of collision groups represented as their string equivalents.
+
+
+</td></tr>
+<tr><td>
+
+[DefaultPlayerEntityOptions](./server.defaultplayerentityoptions.md)
+
+
+</td><td>
+
+Options for creating a DefaultPlayerEntity instance.
 
 
 </td></tr>

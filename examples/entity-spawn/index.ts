@@ -3,9 +3,9 @@ import {
   BlockType,
   Collider,
   ColliderShape,
+  DefaultPlayerEntity,
   Entity,
   EntityEvent,
-  PlayerEntity,
   PlayerEvent,
   RigidBodyType,
   World,
@@ -70,12 +70,9 @@ function setup(world: World) {
 
   // Spawn a player entity when a player joins the game.
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
-    const playerEntity = new PlayerEntity({
+    const playerEntity = new DefaultPlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/players/player.gltf',
-      modelLoopedAnimations: [ 'idle' ],
-      modelScale: 0.5,
     });
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });

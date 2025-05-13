@@ -1415,6 +1415,169 @@ export declare type DecodedCollisionGroups = {
 /** The default rigid body options for a model entity when EntityOptions.rigidBodyOptions is not provided. @public */
 export declare const DEFAULT_ENTITY_RIGID_BODY_OPTIONS: RigidBodyOptions;
 
+/**
+ * Represents the default player model entity.
+ *
+ * @remarks
+ * The default player entity extends the {@link PlayerEntity} class,
+ * uses the default player model, and assigns a DefaultPlayerEntityController.
+ * This entity is the most commonly used player controlled entity in games.
+ * It automatically handles things like managing player visual customizations
+ * and cosmetics, and more. If you want to change the default model used, you
+ * can override all of the defaults, including the modelUri, but you must
+ * ensure that the model used has the same animation names and anchor points
+ * as the default player model in order to prevent unexpected behavior.
+ *
+ * @example
+ * ```typescript
+ * const playerEntity = new DefaultPlayerEntity({ player });
+ *
+ * playerEntity.spawn(world, { x: 0, y: 10, z: 0 });
+ * ```
+ *
+ * @public
+ */
+export declare class DefaultPlayerEntity extends PlayerEntity {
+    constructor(options: DefaultPlayerEntityOptions);
+}
+
+/**
+ * The player entity controller implementation.
+ *
+ * @remarks
+ * This class extends {@link BaseEntityController}
+ * and implements the default movement, platforming, jump,
+ * swimming, and other basic logic for the
+ * default player entity. We recommend you extend this class
+ * if you'd like to implement additional logic on top of the
+ * DefaultPlayerEntityController implementation.
+ *
+ * @example
+ * ```typescript
+ * // Create a custom entity controller for myEntity, prior to spawning it.
+ * myEntity.setController(new DefaultPlayerEntityController({
+ *   jumpVelocity: 10,
+ *   runVelocity: 8,
+ *   walkVelocity: 4,
+ * }));
+ *
+ * // Spawn the entity in the world.
+ * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
+ * ```
+ *
+ * @public
+ */
+export declare class DefaultPlayerEntityController extends BaseEntityController {
+    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
+    autoCancelMouseLeftClick: boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can walk.
+     * @param controller - The default player entity controller instance.
+     * @returns Whether the entity of the entity controller can walk.
+     */
+    canWalk: (controller: DefaultPlayerEntityController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can run.
+     * @param controller - The default player entity controller instance.
+     * @returns Whether the entity of the entity controller can run.
+     */
+    canRun: (controller: DefaultPlayerEntityController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can jump.
+     * @param controller - The default player entity controller instance.
+     * @returns Whether the entity of the entity controller can jump.
+     */
+    canJump: (controller: DefaultPlayerEntityController) => boolean;
+    /** The looped animation(s) that will play when the entity is idle. */
+    idleLoopedAnimations: string[];
+    /** The oneshot animation(s) that will play when the entity interacts (left click) */
+    interactOneshotAnimations: string[];
+    /** The oneshot animation(s) that will play when the entity is jumping. */
+    jumpOneshotAnimations: string[];
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity: number;
+    /** The looped animation(s) that will play when the entity is running. */
+    runLoopedAnimations: string[];
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity: number;
+    /** Whether the entity sticks to platforms. */
+    sticksToPlatforms: boolean;
+    /** The looped animation(s) that will play when the entity is walking. */
+    walkLoopedAnimations: string[];
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity: number;
+
+
+
+    /**
+     * @param options - Options for the controller.
+     */
+    constructor(options?: DefaultPlayerEntityControllerOptions);
+    /** Whether the entity is grounded. */
+    get isGrounded(): boolean;
+    /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
+    get isOnPlatform(): boolean;
+    /** The platform the entity is on, if any. */
+    get platform(): Entity | undefined;
+    /**
+     * Called when the controller is attached to an entity.
+     * @param entity - The entity to attach the controller to.
+     */
+    attach(entity: Entity): void;
+    /**
+     * Called when the controlled entity is spawned.
+     * In DefaultPlayerEntityController, this function is used to create
+     * the colliders for the entity for wall and ground detection.
+     * @param entity - The entity that is spawned.
+     */
+    spawn(entity: Entity): void;
+    /**
+     * Ticks the player movement for the entity controller,
+     * overriding the default implementation. If the entity to tick
+     * is a child entity, only the event will be emitted but the default
+     * movement logic will not be applied.
+     *
+     * @param entity - The entity to tick.
+     * @param input - The current input state of the player.
+     * @param cameraOrientation - The current camera orientation state of the player.
+     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
+     */
+    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
+}
+
+/** Options for creating a DefaultPlayerEntityController instance. @public */
+export declare interface DefaultPlayerEntityControllerOptions {
+    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
+    autoCancelMouseLeftClick?: boolean;
+    /** A function allowing custom logic to determine if the entity can jump. */
+    canJump?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can walk. */
+    canWalk?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can run. */
+    canRun?: () => boolean;
+    /** Overrides the animation(s) that will play when the entity is idle. */
+    idleLoopedAnimations?: string[];
+    /** Overrides the animation(s) that will play when the entity interacts (left click) */
+    interactOneshotAnimations?: string[];
+    /** Overrides the animation(s) that will play when the entity is jumping. */
+    jumpOneshotAnimations?: string[];
+    /** The upward velocity applied to the entity when it jumps. */
+    jumpVelocity?: number;
+    /** The normalized horizontal velocity applied to the entity when it runs. */
+    runVelocity?: number;
+    /** Overrides the animation(s) that will play when the entity is running. */
+    runLoopedAnimations?: string[];
+    /** Whether the entity sticks to platforms, defaults to true. */
+    sticksToPlatforms?: boolean;
+    /** Overrides the animation(s) that will play when the entity is walking. */
+    walkLoopedAnimations?: string[];
+    /** The normalized horizontal velocity applied to the entity when it walks. */
+    walkVelocity?: number;
+}
+
+/** Options for creating a DefaultPlayerEntity instance. @public */
+export declare type DefaultPlayerEntityOptions = {} & PlayerEntityOptions;
+
 /** The options for a dynamic rigid body, also the default type. @public */
 export declare interface DynamicRigidBodyOptions extends BaseRigidBodyOptions {
     type?: RigidBodyType.DYNAMIC;
@@ -3586,12 +3749,13 @@ export declare type PlayerCameraOrientation = {
  *
  * @remarks
  * Player entities extend the {@link Entity} class.
- * They can be created and assigned to a player when
- * a player joins a world. PlayerEntity automatically
- * handles mapping player inputs to the associated
- * entity controller of the entity, calling the
- * entity controller's onTickPlayerMovement method
- * when player input has changed.
+ * They can be created and assigned to a player at
+ * anytime during gameplay, but most commonly when
+ * a player joins a world. PlayerEntity expects
+ * a controller to be set prior to spawning.
+ * Without setting a controller, the player entity
+ * will not respond to player inputs and throw an
+ * error.
  *
  * @example
  * ```typescript
@@ -3621,140 +3785,6 @@ export declare class PlayerEntity extends Entity {
     constructor(options: PlayerEntityOptions);
 
 
-}
-
-/**
- * The player entity controller implementation.
- *
- * @remarks
- * This class extends {@link BaseEntityController}
- * and implements the default movement logic for a
- * entity. This is used as the default for
- * players when they join your game. This class may be extended
- * if you'd like to implement additional logic on top of the
- * PlayerEntityController implementation.
- *
- * @example
- * ```typescript
- * // Create a custom entity controller for myEntity, prior to spawning it.
- * myEntity.setController(new PlayerEntityController(myEntity, {
- *   jumpVelocity: 10,
- *   runVelocity: 8,
- *   walkVelocity: 4,
- * }));
- *
- * // Spawn the entity in the world.
- * myEntity.spawn(world, { x: 53, y: 10, z: 23 });
- * ```
- *
- * @public
- */
-export declare class PlayerEntityController extends BaseEntityController {
-    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
-    autoCancelMouseLeftClick: boolean;
-    /**
-     * A function allowing custom logic to determine if the entity can walk.
-     * @param playerEntityController - The entity controller instance.
-     * @returns Whether the entity of the entity controller can walk.
-     */
-    canWalk: (playerEntityController: PlayerEntityController) => boolean;
-    /**
-     * A function allowing custom logic to determine if the entity can run.
-     * @param playerEntityController - The entity controller instance.
-     * @returns Whether the entity of the entity controller can run.
-     */
-    canRun: (playerEntityController: PlayerEntityController) => boolean;
-    /**
-     * A function allowing custom logic to determine if the entity can jump.
-     * @param playerEntityController - The entity controller instance.
-     * @returns Whether the entity of the entity controller can jump.
-     */
-    canJump: (playerEntityController: PlayerEntityController) => boolean;
-    /** The looped animation(s) that will play when the entity is idle. */
-    idleLoopedAnimations: string[];
-    /** The oneshot animation(s) that will play when the entity interacts (left click) */
-    interactOneshotAnimations: string[];
-    /** The oneshot animation(s) that will play when the entity is jumping. */
-    jumpOneshotAnimations: string[];
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity: number;
-    /** The looped animation(s) that will play when the entity is running. */
-    runLoopedAnimations: string[];
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity: number;
-    /** Whether the entity sticks to platforms. */
-    sticksToPlatforms: boolean;
-    /** The looped animation(s) that will play when the entity is walking. */
-    walkLoopedAnimations: string[];
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity: number;
-
-
-
-    /**
-     * @param options - Options for the controller.
-     */
-    constructor(options?: PlayerEntityControllerOptions);
-    /** Whether the entity is grounded. */
-    get isGrounded(): boolean;
-    /** Whether the entity is on a platform, a platform is any entity with a kinematic rigid body. */
-    get isOnPlatform(): boolean;
-    /** The platform the entity is on, if any. */
-    get platform(): Entity | undefined;
-    /**
-     * Called when the controller is attached to an entity.
-     * @param entity - The entity to attach the controller to.
-     */
-    attach(entity: Entity): void;
-    /**
-     * Called when the controlled entity is spawned.
-     * In PlayerEntityController, this function is used to create
-     * the colliders for the entity for wall and ground detection.
-     * @param entity - The entity that is spawned.
-     */
-    spawn(entity: Entity): void;
-    /**
-     * Ticks the player movement for the entity controller,
-     * overriding the default implementation. If the entity to tick
-     * is a child entity, only the event will be emitted but the default
-     * movement logic will not be applied.
-     *
-     * @param entity - The entity to tick.
-     * @param input - The current input state of the player.
-     * @param cameraOrientation - The current camera orientation state of the player.
-     * @param deltaTimeMs - The delta time in milliseconds since the last tick.
-     */
-    tickWithPlayerInput(entity: PlayerEntity, input: PlayerInput, cameraOrientation: PlayerCameraOrientation, deltaTimeMs: number): void;
-}
-
-/** Options for creating a PlayerEntityController instance. @public */
-export declare interface PlayerEntityControllerOptions {
-    /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
-    autoCancelMouseLeftClick?: boolean;
-    /** A function allowing custom logic to determine if the entity can jump. */
-    canJump?: () => boolean;
-    /** A function allowing custom logic to determine if the entity can walk. */
-    canWalk?: () => boolean;
-    /** A function allowing custom logic to determine if the entity can run. */
-    canRun?: () => boolean;
-    /** Overrides the animation(s) that will play when the entity is idle. */
-    idleLoopedAnimations?: string[];
-    /** Overrides the animation(s) that will play when the entity interacts (left click) */
-    interactOneshotAnimations?: string[];
-    /** Overrides the animation(s) that will play when the entity is jumping. */
-    jumpOneshotAnimations?: string[];
-    /** The upward velocity applied to the entity when it jumps. */
-    jumpVelocity?: number;
-    /** The normalized horizontal velocity applied to the entity when it runs. */
-    runVelocity?: number;
-    /** Overrides the animation(s) that will play when the entity is running. */
-    runLoopedAnimations?: string[];
-    /** Whether the entity sticks to platforms, defaults to true. */
-    sticksToPlatforms?: boolean;
-    /** Overrides the animation(s) that will play when the entity is walking. */
-    walkLoopedAnimations?: string[];
-    /** The normalized horizontal velocity applied to the entity when it walks. */
-    walkVelocity?: number;
 }
 
 /** Options for creating a PlayerEntity instance. @public */

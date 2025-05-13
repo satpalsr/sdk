@@ -27,8 +27,7 @@ import {
 	startServer,
 	Audio,
 	ChatEvent,
-	Player,
-	PlayerEntity,
+	DefaultPlayerEntity,
 	PlayerEvent,
 	Vector3,
 } from "hytopia";
@@ -94,12 +93,9 @@ startServer((world) => {
 	 * internally uses our player entity controller.
 	 */
 	world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
-		const playerEntity = new PlayerEntity({
+		const playerEntity = new DefaultPlayerEntity({
 			player,
 			name: "Player",
-			modelUri: "models/players/player.gltf",
-			modelLoopedAnimations: ["idle"],
-			modelScale: 0.5,
 		});
 
 		playerEntity.spawn(world, { x: 0, y: 10, z: 0 });

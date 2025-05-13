@@ -1,8 +1,8 @@
 import {
   startServer,
   Audio,
+  DefaultPlayerEntity,
   Player,
-  PlayerEntity,
   PlayerEvent,
   PlayerUIEvent,
 } from 'hytopia';
@@ -10,7 +10,7 @@ import {
 import worldMap from './assets/map.json';
 
 // Simple map for player -> singular controlled entity
-const playerEntityMap = new Map<Player, PlayerEntity>();
+const playerEntityMap = new Map<Player, DefaultPlayerEntity>();
 
 startServer(world => {
   world.loadMap(worldMap);
@@ -24,12 +24,9 @@ startServer(world => {
     // or just use plain HTML like in this example.
     player.ui.load('ui/index.html');
 
-    const playerEntity = new PlayerEntity({
+    const playerEntity = new DefaultPlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/players/player.gltf',
-      modelLoopedAnimations: [ 'idle' ],
-      modelScale: 0.5,
     });
 
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });

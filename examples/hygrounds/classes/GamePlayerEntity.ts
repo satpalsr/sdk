@@ -1,14 +1,14 @@
 import { 
   Audio,
   BaseEntityControllerEvent,
+  DefaultPlayerEntity,
+  DefaultPlayerEntityController,
   EventPayloads,
   Player,
-  PlayerEntity,
   PlayerCameraMode,
   Vector3Like,
   QuaternionLike,
   World,
-  PlayerEntityController,
   PlayerUIEvent,
   SceneUI,
   ErrorHandler,
@@ -41,7 +41,7 @@ interface PlayerPersistedData extends Record<string, unknown> {
   totalExp: number
 }
 
-export default class GamePlayerEntity extends PlayerEntity {
+export default class GamePlayerEntity extends DefaultPlayerEntity {
   private readonly _damageAudio: Audio;
   private readonly _inventory: (ItemEntity | undefined)[] = new Array(TOTAL_INVENTORY_SLOTS).fill(undefined);
   private _dead: boolean = false;
@@ -58,8 +58,8 @@ export default class GamePlayerEntity extends PlayerEntity {
   private _totalExp: number = 0;
 
   // Player entities always assign a PlayerController to the entity
-  public get playerController(): PlayerEntityController {
-    return this.controller as PlayerEntityController;
+  public get playerController(): DefaultPlayerEntityController {
+    return this.controller as DefaultPlayerEntityController;
   }
 
   public get health(): number { return this._health; }
@@ -84,7 +84,6 @@ export default class GamePlayerEntity extends PlayerEntity {
       player,
       name: 'Player',
       modelUri: 'models/players/soldier-player.gltf',
-      modelScale: 0.5,
     });
     
     this._setupPlayerController();

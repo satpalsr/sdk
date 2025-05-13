@@ -2,6 +2,7 @@ import {
   Audio,
   CollisionGroup,
   ColliderShape,
+  DefaultPlayerEntity,
   BlockType,
   Entity,
   EntityEvent,
@@ -9,7 +10,6 @@ import {
   SceneUI,
   startServer,
   Player,
-  PlayerEntity,
   PlayerEvent,
   RigidBodyType,
   SimpleEntityController,
@@ -71,7 +71,7 @@ startServer(world => {
  * with to join the game.
  */
 function setupJoinNPC(world: World) {
-  let focusedPlayer: PlayerEntity | null = null;
+  let focusedPlayer: DefaultPlayerEntity | null = null;
 
   // Create our NPC
   const joinNPC = new Entity({
@@ -91,7 +91,7 @@ function setupJoinNPC(world: World) {
           isSensor: true,
           tag: 'teleport-sensor',
           onCollision: (other: BlockType | Entity, started: boolean) => {
-            if (started && other instanceof PlayerEntity) {
+            if (started && other instanceof DefaultPlayerEntity) {
               startGame(other); // When a player entity enters this sensor, start the game for them
             }
           },
@@ -103,7 +103,7 @@ function setupJoinNPC(world: World) {
           isSensor: true, // This makes the collider not collide with other entities/objets
           tag: 'rotate-sensor',
           onCollision: (other: BlockType | Entity, started: boolean) => {
-            if (started && other instanceof PlayerEntity) {
+            if (started && other instanceof DefaultPlayerEntity) {
               focusedPlayer = other;
             }
           },
@@ -210,7 +210,7 @@ function startBlockSpawner(world: World) {
   spawnBlock();
 }
 
-function startGame(playerEntity: PlayerEntity) {
+function startGame(playerEntity: DefaultPlayerEntity) {
   playerEntity.setPosition({ x: 1, y: 4, z: 1 });
   playerEntity.setOpacity(0.3);
   playerEntity.player.ui.sendData({ type: 'game-start' });
@@ -226,7 +226,7 @@ function startGame(playerEntity: PlayerEntity) {
   }, 3500);
 }
 
-function endGame(playerEntity: PlayerEntity) {
+function endGame(playerEntity: DefaultPlayerEntity) {
   const startTime = PLAYER_GAME_START_TIME.get(playerEntity.player) ?? Date.now();
   const scoreTime = Date.now() - startTime;
   const lastTopScoreTime = PLAYER_TOP_SCORES.get(playerEntity.player) ?? 0;
@@ -262,12 +262,9 @@ function onPlayerJoin(world: World, player: Player) {
   sendPlayerLeaderboardData(player);
 
   // Create the player entity
-  const playerEntity = new PlayerEntity({
+  const playerEntity = new DefaultPlayerEntity({
     player,
     name: 'Player',
-    modelUri: 'models/players/player.gltf',
-    modelLoopedAnimations: [ 'idle' ],
-    modelScale: 0.5,
   });
 
   playerEntity.on(EntityEvent.TICK, () => {
@@ -299,7 +296,7 @@ function onPlayerLeave(world: World, player: Player) {
  * We also con't collide with other players.
  * Collision groups work on if both contacted colliders belong to a group the other collides with.
  */
-function enablePlayerEntityGameCollisions(playerEntity: PlayerEntity, enabled: boolean) {
+function enablePlayerEntityGameCollisions(playerEntity: DefaultPlayerEntity, enabled: boolean) {
   playerEntity.colliders.forEach(collider => {
     collider.setCollisionGroups({
       belongsTo: [ CollisionGroup.ENTITY, CollisionGroup.PLAYER ],

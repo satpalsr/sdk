@@ -2,12 +2,13 @@ import {
   Audio,
   BaseEntityControllerEvent,
   CollisionGroup,
+  DefaultPlayerEntity,
+  DefaultPlayerEntityController,
   EventPayloads,
   Light,
   LightType,
   Player,
   PlayerCameraOrientation,
-  PlayerEntity,
   PlayerCameraMode,
   PlayerInput,
   SceneUI,
@@ -15,7 +16,6 @@ import {
   QuaternionLike,
   World,
   Quaternion,
-  PlayerEntityController,
   Vector3,
 } from 'hytopia';
 
@@ -31,7 +31,7 @@ const REVIVE_REQUIRED_HEALTH = 50;
 const REVIVE_PROGRESS_INTERVAL_MS = 1000;
 const REVIVE_DISTANCE_THRESHOLD = 3;
 
-export default class GamePlayerEntity extends PlayerEntity {
+export default class GamePlayerEntity extends DefaultPlayerEntity {
   public health: number;
   public maxHealth: number;
   public money: number;
@@ -46,8 +46,8 @@ export default class GamePlayerEntity extends PlayerEntity {
   private _reviveDistanceVectorB: Vector3;
 
   // Player entities always assign a PlayerController to the entity, so we can safely create a convenience getter
-  public get playerController(): PlayerEntityController {
-    return this.controller as PlayerEntityController;
+  public get playerController(): DefaultPlayerEntityController {
+    return this.controller as DefaultPlayerEntityController;
   }
 
   public constructor(player: Player) {
@@ -55,7 +55,6 @@ export default class GamePlayerEntity extends PlayerEntity {
       player,
       name: 'Player',
       modelUri: 'models/players/soldier-player.gltf',
-      modelScale: 0.5,
     });
     
     // Prevent mouse left click from being cancelled, required

@@ -1,7 +1,7 @@
 import {
   startServer,
   ColliderShape,
-  PlayerEntity,
+  DefaultPlayerEntity,
   PlayerEvent,
   Entity,
   EntityEvent,
@@ -20,12 +20,9 @@ startServer(world => {
   
   world.loadMap(worldMap);
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
-    const playerEntity = new PlayerEntity({
+    const playerEntity = new DefaultPlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/players/player.gltf',
-      modelLoopedAnimations: [ 'idle' ],
-      modelScale: 0.5,
     });
   
     playerEntity.spawn(world, { x: 0, y: 10, z: 0 });

@@ -3,17 +3,18 @@ import {
   BlockType,
   Collider,
   ColliderShape,
+  DefaultPlayerEntity,
   Entity,
   EntityEvent,
   GameServer,
   RigidBodyType,
   startServer,
   Player,
-  PlayerEntity,
   PlayerEvent,
   SceneUI,
   World,
   CollisionGroup,
+  PlayerEntity,
 } from 'hytopia';
 
 import GAME_WALL_SHAPES from './wall-shapes';
@@ -53,8 +54,8 @@ const GAME_CONFIG = {
 };
 
 // Game state
-const QUEUED_PLAYER_ENTITIES = new Set<PlayerEntity>();
-const GAME_PLAYER_ENTITIES = new Set<PlayerEntity>();
+const QUEUED_PLAYER_ENTITIES = new Set<DefaultPlayerEntity>();
+const GAME_PLAYER_ENTITIES = new Set<DefaultPlayerEntity>();
 
 let gameLevel = 1;
 let gameState: 'awaitingPlayers' | 'starting' | 'inProgress' = 'awaitingPlayers';
@@ -89,12 +90,10 @@ function onPlayerJoin(world: World, player: Player) {
   player.ui.load('ui/index.html');
   player.ui.sendData(gameUiState);
 
-  const playerEntity = new PlayerEntity({
+  const playerEntity = new DefaultPlayerEntity({
     player,
     name: 'Player',
-    modelUri: 'models/players/player.gltf',
-    modelLoopedAnimations: ['idle'],
-    modelScale: 0.5,
+    modelUri: 'models/players/soldier-player.gltf',
   });
 
   playerEntity.spawn(world, GAME_CONFIG.POSITIONS.PLAYER_SPAWN);
@@ -169,7 +168,7 @@ function addPlayerEntityToQueue(world: World, playerEntity: PlayerEntity) {
   world.chatManager.sendPlayerMessage(playerEntity.player, 'You have joined the next game queue!', '00FF00');
   uiUpdate({ queueCount: QUEUED_PLAYER_ENTITIES.size });
 
-  if (gameState === 'awaitingPlayers' && QUEUED_PLAYER_ENTITIES.size > 0) {
+  if (gameState === 'awaitingPlayers' && QUEUED_PLAYER_ENTITIES.size > 1) {
     queueGame(world);
   }
 
@@ -272,7 +271,7 @@ function killPlayer(playerEntity: PlayerEntity) {
   playerEntity.setPosition(GAME_CONFIG.POSITIONS.PLAYER_SPAWN);
   GAME_PLAYER_ENTITIES.delete(playerEntity);
 
-  if (GAME_PLAYER_ENTITIES.size <= 0) {
+  if (GAME_PLAYER_ENTITIES.size <= 1) {
     endGame();
   }
 

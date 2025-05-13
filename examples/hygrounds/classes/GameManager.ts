@@ -206,6 +206,7 @@ export default class GameManager {
 
     // Reset map to initial state
     this.world.loadMap(worldMap);
+    this._spawnBedrock(this.world);
 
     // Reset player state
     this.world.entityManager.getAllPlayerEntities().forEach(playerEntity => {

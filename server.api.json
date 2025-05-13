@@ -201,7 +201,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/audios/Audio.ts",
+          "fileUrlPath": "src/worlds/audios/Audio.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Audio",
@@ -1299,7 +1299,7 @@
               "text": "export declare enum AudioEvent "
             }
           ],
-          "fileUrlPath": "src/world/audios/Audio.ts",
+          "fileUrlPath": "src/worlds/audios/Audio.ts",
           "releaseTag": "Public",
           "name": "AudioEvent",
           "preserveMemberOrder": false,
@@ -1547,7 +1547,7 @@
               "text": "export interface AudioEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/audios/Audio.ts",
+          "fileUrlPath": "src/worlds/audios/Audio.ts",
           "releaseTag": "Public",
           "name": "AudioEventPayloads",
           "preserveMemberOrder": false,
@@ -2078,7 +2078,7 @@
               "text": "export default class AudioManager "
             }
           ],
-          "fileUrlPath": "src/world/audios/AudioManager.ts",
+          "fileUrlPath": "src/worlds/audios/AudioManager.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "AudioManager",
@@ -2388,7 +2388,7 @@
               "text": "export interface AudioOptions "
             }
           ],
-          "fileUrlPath": "src/world/audios/Audio.ts",
+          "fileUrlPath": "src/worlds/audios/Audio.ts",
           "releaseTag": "Public",
           "name": "AudioOptions",
           "preserveMemberOrder": false,
@@ -2741,7 +2741,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "BallColliderOptions",
           "preserveMemberOrder": false,
@@ -2819,7 +2819,7 @@
               "text": "export interface BaseColliderOptions "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "BaseColliderOptions",
           "preserveMemberOrder": false,
@@ -3287,7 +3287,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/BaseEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/BaseEntityController.ts",
           "releaseTag": "Public",
           "isAbstract": true,
           "name": "BaseEntityController",
@@ -3670,7 +3670,7 @@
               "text": "export declare enum BaseEntityControllerEvent "
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/BaseEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/BaseEntityController.ts",
           "releaseTag": "Public",
           "name": "BaseEntityControllerEvent",
           "preserveMemberOrder": false,
@@ -3813,7 +3813,7 @@
               "text": "export interface BaseEntityControllerEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/BaseEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/BaseEntityController.ts",
           "releaseTag": "Public",
           "name": "BaseEntityControllerEventPayloads",
           "preserveMemberOrder": false,
@@ -4119,7 +4119,7 @@
               "text": "export interface BaseEntityOptions "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "BaseEntityOptions",
           "preserveMemberOrder": false,
@@ -4357,7 +4357,7 @@
               "text": "export interface BaseRigidBodyOptions "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "BaseRigidBodyOptions",
           "preserveMemberOrder": false,
@@ -4546,7 +4546,7 @@
               "text": "export default class Block "
             }
           ],
-          "fileUrlPath": "src/world/blocks/Block.ts",
+          "fileUrlPath": "src/worlds/blocks/Block.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Block",
@@ -4686,7 +4686,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "BlockColliderOptions",
           "preserveMemberOrder": false,
@@ -4774,7 +4774,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "BlockEntityOptions",
           "preserveMemberOrder": false,
@@ -4870,7 +4870,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockType.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockType.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "BlockType",
@@ -5112,7 +5112,7 @@
               "text": "export declare enum BlockTypeEvent "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockType.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockType.ts",
           "releaseTag": "Public",
           "name": "BlockTypeEvent",
           "preserveMemberOrder": false,
@@ -5171,7 +5171,7 @@
               "text": "export interface BlockTypeEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockType.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockType.ts",
           "releaseTag": "Public",
           "name": "BlockTypeEventPayloads",
           "preserveMemberOrder": false,
@@ -5306,7 +5306,7 @@
               "text": "export interface BlockTypeOptions "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockType.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockType.ts",
           "releaseTag": "Public",
           "name": "BlockTypeOptions",
           "preserveMemberOrder": false,
@@ -5478,7 +5478,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockTypeRegistry.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockTypeRegistry.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "BlockTypeRegistry",
@@ -5721,7 +5721,7 @@
               "text": "export declare enum BlockTypeRegistryEvent "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockTypeRegistry.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockTypeRegistry.ts",
           "releaseTag": "Public",
           "name": "BlockTypeRegistryEvent",
           "preserveMemberOrder": false,
@@ -5759,7 +5759,7 @@
               "text": "export interface BlockTypeRegistryEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/blocks/BlockTypeRegistry.ts",
+          "fileUrlPath": "src/worlds/blocks/BlockTypeRegistry.ts",
           "releaseTag": "Public",
           "name": "BlockTypeRegistryEventPayloads",
           "preserveMemberOrder": false,
@@ -5840,7 +5840,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "CapsuleColliderOptions",
           "preserveMemberOrder": false,
@@ -5945,7 +5945,7 @@
               "text": "export declare enum ChatEvent "
             }
           ],
-          "fileUrlPath": "src/world/chat/ChatManager.ts",
+          "fileUrlPath": "src/worlds/chat/ChatManager.ts",
           "releaseTag": "Public",
           "name": "ChatEvent",
           "preserveMemberOrder": false,
@@ -6004,7 +6004,7 @@
               "text": "export interface ChatEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/chat/ChatManager.ts",
+          "fileUrlPath": "src/worlds/chat/ChatManager.ts",
           "releaseTag": "Public",
           "name": "ChatEventPayloads",
           "preserveMemberOrder": false,
@@ -6121,7 +6121,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/chat/ChatManager.ts",
+          "fileUrlPath": "src/worlds/chat/ChatManager.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "ChatManager",
@@ -6420,7 +6420,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/blocks/Chunk.ts",
+          "fileUrlPath": "src/worlds/blocks/Chunk.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Chunk",
@@ -7095,7 +7095,7 @@
               "text": "export declare enum ChunkEvent "
             }
           ],
-          "fileUrlPath": "src/world/blocks/Chunk.ts",
+          "fileUrlPath": "src/worlds/blocks/Chunk.ts",
           "releaseTag": "Public",
           "name": "ChunkEvent",
           "preserveMemberOrder": false,
@@ -7175,7 +7175,7 @@
               "text": "export interface ChunkEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/blocks/Chunk.ts",
+          "fileUrlPath": "src/worlds/blocks/Chunk.ts",
           "releaseTag": "Public",
           "name": "ChunkEventPayloads",
           "preserveMemberOrder": false,
@@ -7346,7 +7346,7 @@
               "text": "export default class ChunkLattice "
             }
           ],
-          "fileUrlPath": "src/world/blocks/ChunkLattice.ts",
+          "fileUrlPath": "src/worlds/blocks/ChunkLattice.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "ChunkLattice",
@@ -7785,7 +7785,7 @@
               "text": "export declare enum CoefficientCombineRule "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "CoefficientCombineRule",
           "preserveMemberOrder": false,
@@ -7895,7 +7895,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Collider",
@@ -9409,7 +9409,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "ColliderOptions",
           "typeTokenRange": {
@@ -9427,7 +9427,7 @@
               "text": "export declare enum ColliderShape "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "ColliderShape",
           "preserveMemberOrder": false,
@@ -9677,7 +9677,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/ColliderMap.ts",
+          "fileUrlPath": "src/worlds/physics/ColliderMap.ts",
           "releaseTag": "Public",
           "name": "CollisionCallback",
           "typeTokenRange": {
@@ -9695,7 +9695,7 @@
               "text": "export declare enum CollisionGroup "
             }
           ],
-          "fileUrlPath": "src/world/physics/CollisionGroupsBuilder.ts",
+          "fileUrlPath": "src/worlds/physics/CollisionGroupsBuilder.ts",
           "releaseTag": "Public",
           "name": "CollisionGroup",
           "preserveMemberOrder": false,
@@ -10095,7 +10095,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/CollisionGroupsBuilder.ts",
+          "fileUrlPath": "src/worlds/physics/CollisionGroupsBuilder.ts",
           "releaseTag": "Public",
           "name": "CollisionGroups",
           "typeTokenRange": {
@@ -10113,7 +10113,7 @@
               "text": "export default class CollisionGroupsBuilder "
             }
           ],
-          "fileUrlPath": "src/world/physics/CollisionGroupsBuilder.ts",
+          "fileUrlPath": "src/worlds/physics/CollisionGroupsBuilder.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "CollisionGroupsBuilder",
@@ -10348,7 +10348,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/chat/ChatManager.ts",
+          "fileUrlPath": "src/worlds/chat/ChatManager.ts",
           "releaseTag": "Public",
           "name": "CommandCallback",
           "typeTokenRange": {
@@ -10375,7 +10375,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "ConeColliderOptions",
           "preserveMemberOrder": false,
@@ -10506,7 +10506,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "ContactForceData",
           "typeTokenRange": {
@@ -10568,7 +10568,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "ContactManifold",
           "typeTokenRange": {
@@ -10595,7 +10595,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "CylinderColliderOptions",
           "preserveMemberOrder": false,
@@ -10708,7 +10708,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/CollisionGroupsBuilder.ts",
+          "fileUrlPath": "src/worlds/physics/CollisionGroupsBuilder.ts",
           "releaseTag": "Public",
           "name": "DecodedCollisionGroups",
           "typeTokenRange": {
@@ -10731,13 +10731,1252 @@
               "canonicalReference": "server!RigidBodyOptions:type"
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "DEFAULT_ENTITY_RIGID_BODY_OPTIONS",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
+          }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!DefaultPlayerEntity:class",
+          "docComment": "/**\n * Represents the default player model entity.\n *\n * @remarks\n *\n * The default player entity extends the {@link PlayerEntity} class, uses the default player model, and assigns a DefaultPlayerEntityController. This entity is the most commonly used player controlled entity in games. It automatically handles things like managing player visual customizations and cosmetics, and more. If you want to change the default model used, you can override all of the defaults, including the modelUri, but you must ensure that the model used has the same animation names and anchor points as the default player model in order to prevent unexpected behavior.\n *\n * @example\n * ```typescript\n * const playerEntity = new DefaultPlayerEntity({ player });\n *\n * playerEntity.spawn(world, { x: 0, y: 10, z: 0 });\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class DefaultPlayerEntity extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "PlayerEntity",
+              "canonicalReference": "server!PlayerEntity:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/worlds/entities/DefaultPlayerEntity.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "DefaultPlayerEntity",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "server!DefaultPlayerEntity:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DefaultPlayerEntity` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityOptions",
+                  "canonicalReference": "server!DefaultPlayerEntityOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "server!DefaultPlayerEntityController:class",
+          "docComment": "/**\n * The player entity controller implementation.\n *\n * @remarks\n *\n * This class extends {@link BaseEntityController} and implements the default movement, platforming, jump, swimming, and other basic logic for the default player entity. We recommend you extend this class if you'd like to implement additional logic on top of the DefaultPlayerEntityController implementation.\n *\n * @example\n * ```typescript\n * // Create a custom entity controller for myEntity, prior to spawning it.\n * myEntity.setController(new DefaultPlayerEntityController({\n *   jumpVelocity: 10,\n *   runVelocity: 8,\n *   walkVelocity: 4,\n * }));\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class DefaultPlayerEntityController extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseEntityController",
+              "canonicalReference": "server!BaseEntityController:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/worlds/entities/controllers/DefaultPlayerEntityController.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "DefaultPlayerEntityController",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "server!DefaultPlayerEntityController:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DefaultPlayerEntityController` class\n *\n * @param options - Options for the controller.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityControllerOptions",
+                  "canonicalReference": "server!DefaultPlayerEntityControllerOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!DefaultPlayerEntityController#attach:member(1)",
+              "docComment": "/**\n * Called when the controller is attached to an entity.\n *\n * @param entity - The entity to attach the controller to.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "attach(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "attach"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#autoCancelMouseLeftClick:member",
+              "docComment": "/**\n * Whether to automatically cancel left click input after first processed tick, defaults to true.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "autoCancelMouseLeftClick: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "autoCancelMouseLeftClick",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#canJump:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param controller - The default player entity controller instance.\n *\n * @returns Whether the entity of the entity controller can jump.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canJump: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(controller: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityController",
+                  "canonicalReference": "server!DefaultPlayerEntityController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "canJump",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#canRun:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param controller - The default player entity controller instance.\n *\n * @returns Whether the entity of the entity controller can run.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canRun: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(controller: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityController",
+                  "canonicalReference": "server!DefaultPlayerEntityController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "canRun",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#canWalk:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param controller - The default player entity controller instance.\n *\n * @returns Whether the entity of the entity controller can walk.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canWalk: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(controller: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityController",
+                  "canonicalReference": "server!DefaultPlayerEntityController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "canWalk",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#idleLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is idle.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "idleLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "idleLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#interactOneshotAnimations:member",
+              "docComment": "/**\n * The oneshot animation(s) that will play when the entity interacts (left click)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interactOneshotAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "interactOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#isGrounded:member",
+              "docComment": "/**\n * Whether the entity is grounded.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isGrounded(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isGrounded",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#isOnPlatform:member",
+              "docComment": "/**\n * Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get isOnPlatform(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isOnPlatform",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#jumpOneshotAnimations:member",
+              "docComment": "/**\n * The oneshot animation(s) that will play when the entity is jumping.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpOneshotAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "jumpOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#jumpVelocity:member",
+              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "jumpVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#platform:member",
+              "docComment": "/**\n * The platform the entity is on, if any.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get platform(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "platform",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#runLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is running.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "runLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#runVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "runVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!DefaultPlayerEntityController#spawn:member(1)",
+              "docComment": "/**\n * Called when the controlled entity is spawned. In DefaultPlayerEntityController, this function is used to create the colliders for the entity for wall and ground detection.\n *\n * @param entity - The entity that is spawned.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "spawn(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Entity",
+                  "canonicalReference": "server!Entity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "spawn"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#sticksToPlatforms:member",
+              "docComment": "/**\n * Whether the entity sticks to platforms.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sticksToPlatforms: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!DefaultPlayerEntityController#tickWithPlayerInput:member(1)",
+              "docComment": "/**\n * Ticks the player movement for the entity controller, overriding the default implementation. If the entity to tick is a child entity, only the event will be emitted but the default movement logic will not be applied.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tickWithPlayerInput(entity: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEntity",
+                  "canonicalReference": "server!PlayerEntity:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", input: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerInput",
+                  "canonicalReference": "server!PlayerInput:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", cameraOrientation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerCameraOrientation",
+                  "canonicalReference": "server!PlayerCameraOrientation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", deltaTimeMs: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "entity",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "input",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "cameraOrientation",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "deltaTimeMs",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "tickWithPlayerInput"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#walkLoopedAnimations:member",
+              "docComment": "/**\n * The looped animation(s) that will play when the entity is walking.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkLoopedAnimations: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "walkLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#walkVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkVelocity: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "walkVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!DefaultPlayerEntityControllerOptions:interface",
+          "docComment": "/**\n * Options for creating a DefaultPlayerEntityController instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface DefaultPlayerEntityControllerOptions "
+            }
+          ],
+          "fileUrlPath": "src/worlds/entities/controllers/DefaultPlayerEntityController.ts",
+          "releaseTag": "Public",
+          "name": "DefaultPlayerEntityControllerOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#autoCancelMouseLeftClick:member",
+              "docComment": "/**\n * Whether to automatically cancel left click input after first processed tick, defaults to true.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "autoCancelMouseLeftClick?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "autoCancelMouseLeftClick",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#canJump:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canJump?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "canJump",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#canRun:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canRun?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "canRun",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#canWalk:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canWalk?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "canWalk",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#idleLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is idle.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "idleLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "idleLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#interactOneshotAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity interacts (left click)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "interactOneshotAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "interactOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#jumpOneshotAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is jumping.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpOneshotAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "jumpOneshotAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#jumpVelocity:member",
+              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "jumpVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "jumpVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#runLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is running.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "runLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#runVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "runVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#sticksToPlatforms:member",
+              "docComment": "/**\n * Whether the entity sticks to platforms, defaults to true.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sticksToPlatforms?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "sticksToPlatforms",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#walkLoopedAnimations:member",
+              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is walking.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkLoopedAnimations?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "walkLoopedAnimations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#walkVelocity:member",
+              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "walkVelocity?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "walkVelocity",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "server!DefaultPlayerEntityOptions:type",
+          "docComment": "/**\n * Options for creating a DefaultPlayerEntity instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type DefaultPlayerEntityOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{} & "
+            },
+            {
+              "kind": "Reference",
+              "text": "PlayerEntityOptions",
+              "canonicalReference": "server!PlayerEntityOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/worlds/entities/DefaultPlayerEntity.ts",
+          "releaseTag": "Public",
+          "name": "DefaultPlayerEntityOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
           }
         },
         {
@@ -10759,7 +11998,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "DynamicRigidBodyOptions",
           "preserveMemberOrder": false,
@@ -11211,7 +12450,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Entity",
@@ -12553,7 +13792,7 @@
               "text": "export declare enum EntityEvent "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "EntityEvent",
           "preserveMemberOrder": false,
@@ -12927,7 +14166,7 @@
               "text": "export interface EntityEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "EntityEventPayloads",
           "preserveMemberOrder": false,
@@ -13836,7 +15075,7 @@
               "text": "export default class EntityManager "
             }
           ],
-          "fileUrlPath": "src/world/entities/EntityManager.ts",
+          "fileUrlPath": "src/worlds/entities/EntityManager.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "EntityManager",
@@ -14260,7 +15499,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "EntityOptions",
           "typeTokenRange": {
@@ -15628,7 +16867,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "FaceCallback",
           "typeTokenRange": {
@@ -15663,7 +16902,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "FaceCompleteCallback",
           "typeTokenRange": {
@@ -15707,7 +16946,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "FaceOptions",
           "typeTokenRange": {
@@ -15734,7 +16973,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "FixedRigidBodyOptions",
           "preserveMemberOrder": false,
@@ -16125,7 +17364,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "KinematicPositionRigidBodyOptions",
           "preserveMemberOrder": false,
@@ -16185,7 +17424,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "KinematicVelocityRigidBodyOptions",
           "preserveMemberOrder": false,
@@ -16310,7 +17549,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/lights/Light.ts",
+          "fileUrlPath": "src/worlds/lights/Light.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Light",
@@ -17389,7 +18628,7 @@
               "text": "export declare enum LightEvent "
             }
           ],
-          "fileUrlPath": "src/world/lights/Light.ts",
+          "fileUrlPath": "src/worlds/lights/Light.ts",
           "releaseTag": "Public",
           "name": "LightEvent",
           "preserveMemberOrder": false,
@@ -17658,7 +18897,7 @@
               "text": "export interface LightEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/lights/Light.ts",
+          "fileUrlPath": "src/worlds/lights/Light.ts",
           "releaseTag": "Public",
           "name": "LightEventPayloads",
           "preserveMemberOrder": false,
@@ -18270,7 +19509,7 @@
               "text": "export default class LightManager "
             }
           ],
-          "fileUrlPath": "src/world/lights/LightManager.ts",
+          "fileUrlPath": "src/worlds/lights/LightManager.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "LightManager",
@@ -18410,7 +19649,7 @@
               "text": "export interface LightOptions "
             }
           ],
-          "fileUrlPath": "src/world/lights/Light.ts",
+          "fileUrlPath": "src/worlds/lights/Light.ts",
           "releaseTag": "Public",
           "name": "LightOptions",
           "preserveMemberOrder": false,
@@ -18732,7 +19971,7 @@
               "text": "export declare enum LightType "
             }
           ],
-          "fileUrlPath": "src/world/lights/Light.ts",
+          "fileUrlPath": "src/worlds/lights/Light.ts",
           "releaseTag": "Public",
           "name": "LightType",
           "preserveMemberOrder": false,
@@ -23354,7 +24593,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/Entity.ts",
+          "fileUrlPath": "src/worlds/entities/Entity.ts",
           "releaseTag": "Public",
           "name": "ModelEntityOptions",
           "preserveMemberOrder": false,
@@ -23994,7 +25233,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "MoveCallback",
           "typeTokenRange": {
@@ -24029,7 +25268,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "MoveCompleteCallback",
           "typeTokenRange": {
@@ -24073,7 +25312,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "name": "MoveOptions",
           "typeTokenRange": {
@@ -24100,7 +25339,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "NoneColliderOptions",
           "preserveMemberOrder": false,
@@ -24159,7 +25398,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "name": "PathfindAbortCallback",
           "typeTokenRange": {
@@ -24185,7 +25424,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "name": "PathfindCompleteCallback",
           "typeTokenRange": {
@@ -24212,7 +25451,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "PathfindingEntityController",
@@ -24671,7 +25910,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "name": "PathfindingOptions",
           "typeTokenRange": {
@@ -27727,7 +28966,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerEntity:class",
-          "docComment": "/**\n * Represents an entity controlled by a player in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player when a player joins a world. PlayerEntity automatically handles mapping player inputs to the associated entity controller of the entity, calling the entity controller's onTickPlayerMovement method when player input has changed.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/players/player.gltf',\n *     modelLoopedAnimations: [ 'idle_lower', 'idle_upper' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Represents an entity controlled by a player in a world.\n *\n * @remarks\n *\n * Player entities extend the {@link Entity} class. They can be created and assigned to a player at anytime during gameplay, but most commonly when a player joins a world. PlayerEntity expects a controller to be set prior to spawning. Without setting a controller, the player entity will not respond to player inputs and throw an error.\n *\n * @example\n * ```typescript\n * world.onPlayerJoin = player => {\n *   const playerEntity = new PlayerEntity({\n *     player,\n *     name: 'Player',\n *     modelUri: 'models/players/player.gltf',\n *     modelLoopedAnimations: [ 'idle_lower', 'idle_upper' ],\n *     modelScale: 0.5,\n *   });\n *\n *   playerEntity.spawn(world, { x: 10, y: 20, z: 15 });\n * };\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -27743,7 +28982,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/PlayerEntity.ts",
+          "fileUrlPath": "src/worlds/entities/PlayerEntity.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "PlayerEntity",
@@ -27852,1149 +29091,6 @@
           "implementsTokenRanges": []
         },
         {
-          "kind": "Class",
-          "canonicalReference": "server!PlayerEntityController:class",
-          "docComment": "/**\n * The player entity controller implementation.\n *\n * @remarks\n *\n * This class extends {@link BaseEntityController} and implements the default movement logic for a entity. This is used as the default for players when they join your game. This class may be extended if you'd like to implement additional logic on top of the PlayerEntityController implementation.\n *\n * @example\n * ```typescript\n * // Create a custom entity controller for myEntity, prior to spawning it.\n * myEntity.setController(new PlayerEntityController(myEntity, {\n *   jumpVelocity: 10,\n *   runVelocity: 8,\n *   walkVelocity: 4,\n * }));\n *\n * // Spawn the entity in the world.\n * myEntity.spawn(world, { x: 53, y: 10, z: 23 });\n * ```\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export default class PlayerEntityController extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseEntityController",
-              "canonicalReference": "server!BaseEntityController:class"
-            },
-            {
-              "kind": "Content",
-              "text": " "
-            }
-          ],
-          "fileUrlPath": "src/world/entities/controllers/PlayerEntityController.ts",
-          "releaseTag": "Public",
-          "isAbstract": false,
-          "name": "PlayerEntityController",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "Constructor",
-              "canonicalReference": "server!PlayerEntityController:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `PlayerEntityController` class\n *\n * @param options - Options for the controller.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "constructor(options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerEntityControllerOptions",
-                  "canonicalReference": "server!PlayerEntityControllerOptions:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ");"
-                }
-              ],
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": true
-                }
-              ]
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerEntityController#attach:member(1)",
-              "docComment": "/**\n * Called when the controller is attached to an entity.\n *\n * @param entity - The entity to attach the controller to.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "attach(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "entity",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "attach"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#autoCancelMouseLeftClick:member",
-              "docComment": "/**\n * Whether to automatically cancel left click input after first processed tick, defaults to true.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "autoCancelMouseLeftClick: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "autoCancelMouseLeftClick",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#canJump:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n *\n * @param playerEntityController - The entity controller instance.\n *\n * @returns Whether the entity of the entity controller can jump.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canJump: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(playerEntityController: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerEntityController",
-                  "canonicalReference": "server!PlayerEntityController:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "canJump",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 4
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#canRun:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n *\n * @param playerEntityController - The entity controller instance.\n *\n * @returns Whether the entity of the entity controller can run.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canRun: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(playerEntityController: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerEntityController",
-                  "canonicalReference": "server!PlayerEntityController:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "canRun",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 4
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#canWalk:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param playerEntityController - The entity controller instance.\n *\n * @returns Whether the entity of the entity controller can walk.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canWalk: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "(playerEntityController: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerEntityController",
-                  "canonicalReference": "server!PlayerEntityController:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "canWalk",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 4
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#idleLoopedAnimations:member",
-              "docComment": "/**\n * The looped animation(s) that will play when the entity is idle.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "idleLoopedAnimations: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "idleLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#interactOneshotAnimations:member",
-              "docComment": "/**\n * The oneshot animation(s) that will play when the entity interacts (left click)\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interactOneshotAnimations: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "interactOneshotAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#isGrounded:member",
-              "docComment": "/**\n * Whether the entity is grounded.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get isGrounded(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "isGrounded",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#isOnPlatform:member",
-              "docComment": "/**\n * Whether the entity is on a platform, a platform is any entity with a kinematic rigid body.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get isOnPlatform(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "isOnPlatform",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#jumpOneshotAnimations:member",
-              "docComment": "/**\n * The oneshot animation(s) that will play when the entity is jumping.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "jumpOneshotAnimations: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "jumpOneshotAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#jumpVelocity:member",
-              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "jumpVelocity: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "jumpVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#platform:member",
-              "docComment": "/**\n * The platform the entity is on, if any.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "get platform(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": " | undefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": true,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "platform",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#runLoopedAnimations:member",
-              "docComment": "/**\n * The looped animation(s) that will play when the entity is running.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "runLoopedAnimations: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "runLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#runVelocity:member",
-              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "runVelocity: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "runVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerEntityController#spawn:member(1)",
-              "docComment": "/**\n * Called when the controlled entity is spawned. In PlayerEntityController, this function is used to create the colliders for the entity for wall and ground detection.\n *\n * @param entity - The entity that is spawned.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "spawn(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Entity",
-                  "canonicalReference": "server!Entity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "entity",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "spawn"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#sticksToPlatforms:member",
-              "docComment": "/**\n * Whether the entity sticks to platforms.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "sticksToPlatforms: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "sticksToPlatforms",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "server!PlayerEntityController#tickWithPlayerInput:member(1)",
-              "docComment": "/**\n * Ticks the player movement for the entity controller, overriding the default implementation. If the entity to tick is a child entity, only the event will be emitted but the default movement logic will not be applied.\n *\n * @param entity - The entity to tick.\n *\n * @param input - The current input state of the player.\n *\n * @param cameraOrientation - The current camera orientation state of the player.\n *\n * @param deltaTimeMs - The delta time in milliseconds since the last tick.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "tickWithPlayerInput(entity: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerEntity",
-                  "canonicalReference": "server!PlayerEntity:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", input: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerInput",
-                  "canonicalReference": "server!PlayerInput:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", cameraOrientation: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "PlayerCameraOrientation",
-                  "canonicalReference": "server!PlayerCameraOrientation:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", deltaTimeMs: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 9,
-                "endIndex": 10
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "entity",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "input",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "cameraOrientation",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "deltaTimeMs",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 7,
-                    "endIndex": 8
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "tickWithPlayerInput"
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#walkLoopedAnimations:member",
-              "docComment": "/**\n * The looped animation(s) that will play when the entity is walking.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "walkLoopedAnimations: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "walkLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            },
-            {
-              "kind": "Property",
-              "canonicalReference": "server!PlayerEntityController#walkVelocity:member",
-              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "walkVelocity: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "walkVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "isStatic": false,
-              "isProtected": false,
-              "isAbstract": false
-            }
-          ],
-          "extendsTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          },
-          "implementsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "server!PlayerEntityControllerOptions:interface",
-          "docComment": "/**\n * Options for creating a PlayerEntityController instance.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface PlayerEntityControllerOptions "
-            }
-          ],
-          "fileUrlPath": "src/world/entities/controllers/PlayerEntityController.ts",
-          "releaseTag": "Public",
-          "name": "PlayerEntityControllerOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#autoCancelMouseLeftClick:member",
-              "docComment": "/**\n * Whether to automatically cancel left click input after first processed tick, defaults to true.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "autoCancelMouseLeftClick?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "autoCancelMouseLeftClick",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#canJump:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can jump.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canJump?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "() => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "canJump",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#canRun:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can run.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canRun?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "() => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "canRun",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#canWalk:member",
-              "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "canWalk?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "() => boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "canWalk",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#idleLoopedAnimations:member",
-              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is idle.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "idleLoopedAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "idleLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#interactOneshotAnimations:member",
-              "docComment": "/**\n * Overrides the animation(s) that will play when the entity interacts (left click)\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "interactOneshotAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "interactOneshotAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#jumpOneshotAnimations:member",
-              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is jumping.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "jumpOneshotAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "jumpOneshotAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#jumpVelocity:member",
-              "docComment": "/**\n * The upward velocity applied to the entity when it jumps.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "jumpVelocity?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "jumpVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#runLoopedAnimations:member",
-              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is running.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "runLoopedAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "runLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#runVelocity:member",
-              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it runs.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "runVelocity?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "runVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#sticksToPlatforms:member",
-              "docComment": "/**\n * Whether the entity sticks to platforms, defaults to true.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "sticksToPlatforms?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "sticksToPlatforms",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#walkLoopedAnimations:member",
-              "docComment": "/**\n * Overrides the animation(s) that will play when the entity is walking.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "walkLoopedAnimations?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "walkLoopedAnimations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!PlayerEntityControllerOptions#walkVelocity:member",
-              "docComment": "/**\n * The normalized horizontal velocity applied to the entity when it walks.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "walkVelocity?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "walkVelocity",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
           "kind": "TypeAlias",
           "canonicalReference": "server!PlayerEntityOptions:type",
           "docComment": "/**\n * Options for creating a PlayerEntity instance.\n *\n * @public\n */\n",
@@ -29026,7 +29122,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/PlayerEntity.ts",
+          "fileUrlPath": "src/worlds/entities/PlayerEntity.ts",
           "releaseTag": "Public",
           "name": "PlayerEntityOptions",
           "typeTokenRange": {
@@ -31966,7 +32062,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/CollisionGroupsBuilder.ts",
+          "fileUrlPath": "src/worlds/physics/CollisionGroupsBuilder.ts",
           "releaseTag": "Public",
           "name": "RawCollisionGroups",
           "typeTokenRange": {
@@ -32019,7 +32115,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "RaycastHit",
           "typeTokenRange": {
@@ -32081,7 +32177,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "RaycastOptions",
           "typeTokenRange": {
@@ -32207,7 +32303,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "RigidBody",
@@ -35461,7 +35557,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "RigidBodyAdditionalMassProperties",
           "typeTokenRange": {
@@ -35515,7 +35611,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "RigidBodyOptions",
           "typeTokenRange": {
@@ -35533,7 +35629,7 @@
               "text": "export declare enum RigidBodyType "
             }
           ],
-          "fileUrlPath": "src/world/physics/RigidBody.ts",
+          "fileUrlPath": "src/worlds/physics/RigidBody.ts",
           "releaseTag": "Public",
           "name": "RigidBodyType",
           "preserveMemberOrder": false,
@@ -35643,7 +35739,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "RoundCylinderColliderOptions",
           "preserveMemberOrder": false,
@@ -35793,7 +35889,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "fileUrlPath": "src/worlds/ui/SceneUI.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "SceneUI",
@@ -36472,7 +36568,7 @@
               "text": "export declare enum SceneUIEvent "
             }
           ],
-          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "fileUrlPath": "src/worlds/ui/SceneUI.ts",
           "releaseTag": "Public",
           "name": "SceneUIEvent",
           "preserveMemberOrder": false,
@@ -36636,7 +36732,7 @@
               "text": "export interface SceneUIEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "fileUrlPath": "src/worlds/ui/SceneUI.ts",
           "releaseTag": "Public",
           "name": "SceneUIEventPayloads",
           "preserveMemberOrder": false,
@@ -36996,7 +37092,7 @@
               "text": "export default class SceneUIManager "
             }
           ],
-          "fileUrlPath": "src/world/ui/SceneUIManager.ts",
+          "fileUrlPath": "src/worlds/ui/SceneUIManager.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "SceneUIManager",
@@ -37238,7 +37334,7 @@
               "text": "export interface SceneUIOptions "
             }
           ],
-          "fileUrlPath": "src/world/ui/SceneUI.ts",
+          "fileUrlPath": "src/worlds/ui/SceneUI.ts",
           "releaseTag": "Public",
           "name": "SceneUIOptions",
           "preserveMemberOrder": false,
@@ -37430,7 +37526,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/SimpleEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/SimpleEntityController.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "SimpleEntityController",
@@ -37674,7 +37770,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "Simulation",
@@ -38169,7 +38265,7 @@
               "text": "export declare enum SimulationEvent "
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "SimulationEvent",
           "preserveMemberOrder": false,
@@ -38270,7 +38366,7 @@
               "text": "export interface SimulationEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/physics/Simulation.ts",
+          "fileUrlPath": "src/worlds/physics/Simulation.ts",
           "releaseTag": "Public",
           "name": "SimulationEventPayloads",
           "preserveMemberOrder": false,
@@ -38621,7 +38717,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "TrimeshColliderOptions",
           "preserveMemberOrder": false,
@@ -42584,7 +42680,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "name": "WaypointMoveCompleteCallback",
           "typeTokenRange": {
@@ -42619,7 +42715,7 @@
               "text": ";"
             }
           ],
-          "fileUrlPath": "src/world/entities/controllers/PathfindingEntityController.ts",
+          "fileUrlPath": "src/worlds/entities/controllers/PathfindingEntityController.ts",
           "releaseTag": "Public",
           "name": "WaypointMoveSkippedCallback",
           "typeTokenRange": {
@@ -42646,7 +42742,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/physics/Collider.ts",
+          "fileUrlPath": "src/worlds/physics/Collider.ts",
           "releaseTag": "Public",
           "name": "WedgeColliderOptions",
           "preserveMemberOrder": false,
@@ -42743,7 +42839,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/World.ts",
+          "fileUrlPath": "src/worlds/World.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "World",
@@ -43680,7 +43776,7 @@
               "text": "export declare enum WorldEvent "
             }
           ],
-          "fileUrlPath": "src/world/World.ts",
+          "fileUrlPath": "src/worlds/World.ts",
           "releaseTag": "Public",
           "name": "WorldEvent",
           "preserveMemberOrder": false,
@@ -43844,7 +43940,7 @@
               "text": "export interface WorldEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/World.ts",
+          "fileUrlPath": "src/worlds/World.ts",
           "releaseTag": "Public",
           "name": "WorldEventPayloads",
           "preserveMemberOrder": false,
@@ -44213,7 +44309,7 @@
               "text": " "
             }
           ],
-          "fileUrlPath": "src/world/WorldLoop.ts",
+          "fileUrlPath": "src/worlds/WorldLoop.ts",
           "releaseTag": "Public",
           "isAbstract": false,
           "name": "WorldLoop",
@@ -44357,7 +44453,7 @@
               "text": "export declare enum WorldLoopEvent "
             }
           ],
-          "fileUrlPath": "src/world/WorldLoop.ts",
+          "fileUrlPath": "src/worlds/WorldLoop.ts",
           "releaseTag": "Public",
           "name": "WorldLoopEvent",
           "preserveMemberOrder": false,
@@ -44479,7 +44575,7 @@
               "text": "export interface WorldLoopEventPayloads "
             }
           ],
-          "fileUrlPath": "src/world/WorldLoop.ts",
+          "fileUrlPath": "src/worlds/WorldLoop.ts",
           "releaseTag": "Public",
           "name": "WorldLoopEventPayloads",
           "preserveMemberOrder": false,
@@ -44731,7 +44827,7 @@
               "text": "export interface WorldMap "
             }
           ],
-          "fileUrlPath": "src/world/World.ts",
+          "fileUrlPath": "src/worlds/World.ts",
           "releaseTag": "Public",
           "name": "WorldMap",
           "preserveMemberOrder": false,
@@ -44880,7 +44976,7 @@
               "text": "export interface WorldOptions "
             }
           ],
-          "fileUrlPath": "src/world/World.ts",
+          "fileUrlPath": "src/worlds/World.ts",
           "releaseTag": "Public",
           "name": "WorldOptions",
           "preserveMemberOrder": false,

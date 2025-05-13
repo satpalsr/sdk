@@ -1,6 +1,6 @@
 import {
   startServer,
-  PlayerEntity,
+  DefaultPlayerEntity,
   PlayerEvent,
 } from 'hytopia';
 
@@ -19,12 +19,9 @@ startServer(world => {
   world.loadMap(worldMap);
 
   world.on(PlayerEvent.JOINED_WORLD, ({ player }) => {
-    const playerEntity = new PlayerEntity({
+    const playerEntity = new DefaultPlayerEntity({
       player,
       name: 'Player',
-      modelUri: 'models/players/player.gltf',
-      modelLoopedAnimations: [ 'idle' ],
-      modelScale: 0.5,
       controller: new MyEntityController(), // attach our entity controller
     });
 
