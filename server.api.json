@@ -7386,6 +7386,36 @@
               ]
             },
             {
+              "kind": "Property",
+              "canonicalReference": "server!ChunkLattice#chunkCount:member",
+              "docComment": "/**\n * The number of chunks in the lattice.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get chunkCount(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "chunkCount",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!ChunkLattice#clear:member(1)",
               "docComment": "/**\n * Despawns and clears all chunks in the lattice.\n */\n",
@@ -11022,6 +11052,45 @@
             },
             {
               "kind": "Property",
+              "canonicalReference": "server!DefaultPlayerEntityController#canSwim:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can swim.\n *\n * @param controller - The default player entity controller instance.\n *\n * @returns Whether the entity of the entity controller can swim.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canSwim: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(controller: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DefaultPlayerEntityController",
+                  "canonicalReference": "server!DefaultPlayerEntityController:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "canSwim",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
               "canonicalReference": "server!DefaultPlayerEntityController#canWalk:member",
               "docComment": "/**\n * A function allowing custom logic to determine if the entity can walk.\n *\n * @param controller - The default player entity controller instance.\n *\n * @returns Whether the entity of the entity controller can walk.\n */\n",
               "excerptTokens": [
@@ -11880,6 +11949,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "canRun",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!DefaultPlayerEntityControllerOptions#canSwim:member",
+              "docComment": "/**\n * A function allowing custom logic to determine if the entity can swim.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canSwim?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "canSwim",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -15454,6 +15550,36 @@
           "preserveMemberOrder": false,
           "members": [
             {
+              "kind": "Property",
+              "canonicalReference": "server!EntityManager#entityCount:member",
+              "docComment": "/**\n * The number of spawned entities in the world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get entityCount(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "entityCount",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "server!EntityManager#getAllEntities:member(1)",
               "docComment": "/**\n * Gets all spawned entities in the world.\n *\n * @returns All spawned entities in the world.\n */\n",
@@ -16277,6 +16403,15 @@
             },
             {
               "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "WorldManagerEventPayloads",
+              "canonicalReference": "server!WorldManagerEventPayloads:interface"
+            },
+            {
+              "kind": "Content",
               "text": " "
             }
           ],
@@ -16365,6 +16500,10 @@
             {
               "startIndex": 39,
               "endIndex": 40
+            },
+            {
+              "startIndex": 41,
+              "endIndex": 42
             }
           ]
         },
@@ -17528,25 +17667,17 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "server!GameServer#worlds:member",
-              "docComment": "/**\n * The worlds managed by the game server.\n */\n",
+              "canonicalReference": "server!GameServer#worldManager:member",
+              "docComment": "/**\n * The world manager for the game server\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "get worlds(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "{\n        [id: string]: "
+                  "text": "get worldManager(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "World",
-                  "canonicalReference": "server!World:class"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";\n    }"
+                  "text": "WorldManager",
+                  "canonicalReference": "server!WorldManager:class"
                 },
                 {
                   "kind": "Content",
@@ -17556,10 +17687,10 @@
               "isReadonly": true,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "worlds",
+              "name": "worldManager",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
-                "endIndex": 4
+                "endIndex": 2
               },
               "isStatic": false,
               "isProtected": false,
@@ -26888,37 +27019,6 @@
               "name": "joinWorld"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Player#leaveWorld:member(1)",
-              "docComment": "/**\n * Removes the player from the current {@link World} they are in.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "leaveWorld(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "leaveWorld"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!Player#profilePictureUrl:member",
               "docComment": "/**\n * The profile picture URL for the player.\n */\n",
@@ -26947,6 +27047,37 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!Player#resetInputs:member(1)",
+              "docComment": "/**\n * Resets all inputs keys\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "resetInputs(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "resetInputs"
             },
             {
               "kind": "Method",
@@ -27604,6 +27735,37 @@
               "isStatic": false,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!PlayerCamera#reset:member(1)",
+              "docComment": "/**\n * Resets the camera to its default, unattached, spectator mode state.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "reset(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "reset"
             },
             {
               "kind": "Method",
@@ -29586,6 +29748,27 @@
             },
             {
               "kind": "EnumMember",
+              "canonicalReference": "server!PlayerEvent.RECONNECTED_WORLD:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "RECONNECTED_WORLD = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER.RECONNECTED_WORLD\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "RECONNECTED_WORLD"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "server!PlayerEvent.REQUEST_SYNC:member",
               "docComment": "",
               "excerptTokens": [
@@ -29777,6 +29960,60 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.RECONNECTED_WORLD\":member",
+              "docComment": "/**\n * Emitted when a player reconnects to a world after a disconnect.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerEvent.RECONNECTED_WORLD",
+                  "canonicalReference": "server!PlayerEvent.RECONNECTED_WORLD:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        player: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"PLAYER.RECONNECTED_WORLD\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 8
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "server!PlayerEventPayloads#\"PLAYER.REQUEST_SYNC\":member",
               "docComment": "/**\n * Emitted when a player's client requests a round trip time synchronization.\n */\n",
               "excerptTokens": [
@@ -29875,7 +30112,7 @@
         {
           "kind": "Class",
           "canonicalReference": "server!PlayerManager:class",
-          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * <h2>Events</h2>\n *\n * This class is an EventRouter, and instances of it emit events with payloads listed under {@link PlayerManagerEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Manages all connected players in a game server.\n *\n * @remarks\n *\n * The PlayerManager is created internally as a global singleton accessible with the static property `PlayerManager.instance`.\n *\n * <h2>Events</h2>\n *\n * This class emits global events with payloads listed under {@link PlayerManagerEventPayloads}\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.\n *\n * @example\n * ```typescript\n * import { PlayerManager } from 'hytopia';\n *\n * const playerManager = PlayerManager.instance;\n * const connectedPlayers = playerManager.getConnectedPlayers();\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -30061,9 +30298,119 @@
               "isStatic": true,
               "isProtected": false,
               "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!PlayerManager#playerCount:member",
+              "docComment": "/**\n * The number of players currently connected to the server.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get playerCount(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "playerCount",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "server!PlayerManagerEvent:enum",
+          "docComment": "/**\n * Event types a PlayerManager can emit. See {@link PlayerManagerEventPayloads} for the payloads.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum PlayerManagerEvent "
+            }
+          ],
+          "fileUrlPath": "src/players/PlayerManager.ts",
+          "releaseTag": "Public",
+          "name": "PlayerManagerEvent",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!PlayerManagerEvent.PLAYER_CONNECTED:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PLAYER_CONNECTED = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_MANAGER.PLAYER_CONNECTED\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "PLAYER_CONNECTED"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!PlayerManagerEvent.PLAYER_DISCONNECTED:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PLAYER_DISCONNECTED = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_MANAGER.PLAYER_DISCONNECTED\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "PLAYER_DISCONNECTED"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!PlayerManagerEvent.PLAYER_RECONNECTED:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PLAYER_RECONNECTED = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"PLAYER_MANAGER.PLAYER_RECONNECTED\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "PLAYER_RECONNECTED"
+            }
+          ]
         },
         {
           "kind": "Interface",
@@ -30165,6 +30512,51 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "\"PLAYER_MANAGER.PLAYER_DISCONNECTED\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!PlayerManagerEventPayloads#\"PLAYER_MANAGER.PLAYER_RECONNECTED\":member",
+              "docComment": "/**\n * Emitted when a player reconnects to the server.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlayerManagerEvent.PLAYER_RECONNECTED",
+                  "canonicalReference": "server!PlayerManagerEvent.PLAYER_RECONNECTED:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        player: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Player",
+                  "canonicalReference": "server!Player:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"PLAYER_MANAGER.PLAYER_RECONNECTED\"",
               "propertyTypeTokenRange": {
                 "startIndex": 3,
                 "endIndex": 6
@@ -44129,6 +44521,36 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "stop"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!World#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the world. Useful for your own logic.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get tag(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             }
           ],
           "extendsTokenRange": {
@@ -45194,6 +45616,394 @@
           "extendsTokenRanges": []
         },
         {
+          "kind": "Class",
+          "canonicalReference": "server!WorldManager:class",
+          "docComment": "/**\n * Manages all worlds in a game server.\n *\n * @remarks\n *\n * The WorldManager is created internally as a global singleton accessible with the static property `WorldManager.instance`.\n *\n * <h2>Events</h2>\n *\n * This class emits global events with payloads listed under {@link WorldManagerEventPayloads}\n *\n * @example\n * ```typescript\n * import { WorldManager } from 'hytopia';\n *\n * const worldManager = WorldManager.instance;\n * const newWorld = worldManager.createWorld({\n *   name: 'My New World',\n *   skyboxUri: 'skyboxes/partly-cloudy',\n * });\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class WorldManager "
+            }
+          ],
+          "fileUrlPath": "src/worlds/WorldManager.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "WorldManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "server!WorldManager#createWorld:member(1)",
+              "docComment": "/**\n * Creates a new world.\n *\n * @param options - The options for the world.\n *\n * @param start - Whether to start the world immediately, defaults to true.\n *\n * @returns The created world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createWorld(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Omit",
+                  "canonicalReference": "!Omit:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldOptions",
+                  "canonicalReference": "server!WorldOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'id'>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createWorld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!WorldManager#getAllWorlds:member(1)",
+              "docComment": "/**\n * Gets all worlds.\n *\n * @returns All worlds.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAllWorlds(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getAllWorlds"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!WorldManager#getDefaultWorld:member(1)",
+              "docComment": "/**\n * Gets the default world.\n *\n * @returns The default world.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getDefaultWorld(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getDefaultWorld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!WorldManager#getWorld:member(1)",
+              "docComment": "/**\n * Gets a world by its id.\n *\n * @param id - The id of the world to get.\n *\n * @returns The world with the provided id, or undefined if no world is found.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getWorld(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getWorld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "server!WorldManager#getWorldsByTag:member(1)",
+              "docComment": "/**\n * Gets all worlds with a specific tag.\n *\n * @param tag - The tag to get the worlds for.\n *\n * @returns All worlds with the provided tag.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getWorldsByTag(tag: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "tag",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getWorldsByTag"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "server!WorldManager.instance:member",
+              "docComment": "/**\n * The global WorldManager instance as a singleton.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static readonly instance: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldManager",
+                  "canonicalReference": "server!WorldManager:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "instance",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": true,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "server!WorldManagerEvent:enum",
+          "docComment": "/**\n * Event types a WorldManager instance can emit to the global event router. See {@link WorldManagerEventPayloads} for the payloads.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum WorldManagerEvent "
+            }
+          ],
+          "fileUrlPath": "src/worlds/WorldManager.ts",
+          "releaseTag": "Public",
+          "name": "WorldManagerEvent",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "server!WorldManagerEvent.WORLD_CREATED:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "WORLD_CREATED = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"WORLD_MANAGER.WORLD_CREATED\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "WORLD_CREATED"
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "server!WorldManagerEventPayloads:interface",
+          "docComment": "/**\n * Event payloads for WorldManager emitted events.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface WorldManagerEventPayloads "
+            }
+          ],
+          "fileUrlPath": "src/worlds/WorldManager.ts",
+          "releaseTag": "Public",
+          "name": "WorldManagerEventPayloads",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldManagerEventPayloads#\"WORLD_MANAGER.WORLD_CREATED\":member",
+              "docComment": "/**\n * Emitted when a world is created.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "WorldManagerEvent.WORLD_CREATED",
+                  "canonicalReference": "server!WorldManagerEvent.WORLD_CREATED:member"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        world: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "World",
+                  "canonicalReference": "server!World:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "\"WORLD_MANAGER.WORLD_CREATED\"",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 6
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Interface",
           "canonicalReference": "server!WorldMap:interface",
           "docComment": "/**\n * A map representation for a world.\n *\n * @public\n */\n",
@@ -45599,6 +46409,33 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "skyboxUri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "server!WorldOptions#tag:member",
+              "docComment": "/**\n * An arbitrary identifier tag of the world. Useful for your own logic\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tag?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tag",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2

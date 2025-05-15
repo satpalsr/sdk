@@ -148,6 +148,25 @@ A function allowing custom logic to determine if the entity can run.
 </td></tr>
 <tr><td>
 
+[canSwim](./server.defaultplayerentitycontroller.canswim.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(controller: [DefaultPlayerEntityController](./server.defaultplayerentitycontroller.md)<!-- -->) =&gt; boolean
+
+
+</td><td>
+
+A function allowing custom logic to determine if the entity can swim.
+
+
+</td></tr>
+<tr><td>
+
 [canWalk](./server.defaultplayerentitycontroller.canwalk.md)
 
 

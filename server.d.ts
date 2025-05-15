@@ -1000,6 +1000,8 @@ export declare class ChunkLattice {
      * @param world - The world the chunk lattice is for.
      */
     constructor(world: World);
+    /** The number of chunks in the lattice. */
+    get chunkCount(): number;
 
 
     /**
@@ -1471,11 +1473,11 @@ export declare class DefaultPlayerEntityController extends BaseEntityController 
     /** Whether to automatically cancel left click input after first processed tick, defaults to true. */
     autoCancelMouseLeftClick: boolean;
     /**
-     * A function allowing custom logic to determine if the entity can walk.
+     * A function allowing custom logic to determine if the entity can jump.
      * @param controller - The default player entity controller instance.
-     * @returns Whether the entity of the entity controller can walk.
+     * @returns Whether the entity of the entity controller can jump.
      */
-    canWalk: (controller: DefaultPlayerEntityController) => boolean;
+    canJump: (controller: DefaultPlayerEntityController) => boolean;
     /**
      * A function allowing custom logic to determine if the entity can run.
      * @param controller - The default player entity controller instance.
@@ -1483,11 +1485,17 @@ export declare class DefaultPlayerEntityController extends BaseEntityController 
      */
     canRun: (controller: DefaultPlayerEntityController) => boolean;
     /**
-     * A function allowing custom logic to determine if the entity can jump.
+     * A function allowing custom logic to determine if the entity can swim.
      * @param controller - The default player entity controller instance.
-     * @returns Whether the entity of the entity controller can jump.
+     * @returns Whether the entity of the entity controller can swim.
      */
-    canJump: (controller: DefaultPlayerEntityController) => boolean;
+    canSwim: (controller: DefaultPlayerEntityController) => boolean;
+    /**
+     * A function allowing custom logic to determine if the entity can walk.
+     * @param controller - The default player entity controller instance.
+     * @returns Whether the entity of the entity controller can walk.
+     */
+    canWalk: (controller: DefaultPlayerEntityController) => boolean;
     /** The looped animation(s) that will play when the entity is idle. */
     idleLoopedAnimations: string[];
     /** The oneshot animation(s) that will play when the entity interacts (left click) */
@@ -1567,10 +1575,12 @@ export declare interface DefaultPlayerEntityControllerOptions {
     autoCancelMouseLeftClick?: boolean;
     /** A function allowing custom logic to determine if the entity can jump. */
     canJump?: () => boolean;
-    /** A function allowing custom logic to determine if the entity can walk. */
-    canWalk?: () => boolean;
     /** A function allowing custom logic to determine if the entity can run. */
     canRun?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can swim. */
+    canSwim?: () => boolean;
+    /** A function allowing custom logic to determine if the entity can walk. */
+    canWalk?: () => boolean;
     /** Overrides the animation(s) that will play when the entity is idle. */
     idleLoopedAnimations?: string[];
     /** Overrides the animation(s) that will play when the entity interacts (left click) */
@@ -1988,6 +1998,8 @@ export declare class EntityManager {
 
 
 
+    /** The number of spawned entities in the world. */
+    get entityCount(): number;
     /** The world the entity manager is for. */
     get world(): World;
 
@@ -2074,7 +2086,7 @@ export declare class ErrorHandler {
  *
  * @public
  */
-export declare interface EventPayloads extends AudioEventPayloads, BaseEntityControllerEventPayloads, BlockTypeEventPayloads, BlockTypeRegistryEventPayloads, ChatEventPayloads, ChunkEventPayloads, ConnectionEventPayloads, EntityEventPayloads, GameServerEventPayloads, PlayerCameraEventPayloads, PlayerEventPayloads, PlayerManagerEventPayloads, PlayerUIEventPayloads, SceneUIEventPayloads, SimulationEventPayloads, SocketEventPayloads, LightEventPayloads, WebServerEventPayloads, WorldEventPayloads, WorldLoopEventPayloads {
+export declare interface EventPayloads extends AudioEventPayloads, BaseEntityControllerEventPayloads, BlockTypeEventPayloads, BlockTypeRegistryEventPayloads, ChatEventPayloads, ChunkEventPayloads, ConnectionEventPayloads, EntityEventPayloads, GameServerEventPayloads, PlayerCameraEventPayloads, PlayerEventPayloads, PlayerManagerEventPayloads, PlayerUIEventPayloads, SceneUIEventPayloads, SimulationEventPayloads, SocketEventPayloads, LightEventPayloads, WebServerEventPayloads, WorldEventPayloads, WorldLoopEventPayloads, WorldManagerEventPayloads {
 }
 
 /**
@@ -2225,11 +2237,8 @@ export declare class GameServer {
 
     /** The web server for the game server. */
     get webServer(): WebServer;
-    /** The worlds managed by the game server. */
-    get worlds(): {
-        [id: string]: World;
-    };
-
+    /** The world manager for the game server */
+    get worldManager(): WorldManager;
 
 }
 
@@ -3501,10 +3510,11 @@ export declare class Player extends EventRouter implements protocol.Serializable
      * @param world - The world to join the player to.
      */
     joinWorld(world: World): void;
+
     /**
-     * Removes the player from the current {@link World} they are in.
+     * Resets all inputs keys
      */
-    leaveWorld(): void;
+    resetInputs(): void;
     /**
      * Set the persisted data for the player. This data can
      * later be retrieved using {@link Player.getPersistedData},
@@ -3519,6 +3529,7 @@ export declare class Player extends EventRouter implements protocol.Serializable
      * @returns The persisted data for the player.
      */
     setPersistedData(data: Record<string, unknown>): Promise<Record<string, unknown> | void>;
+
 
 
 
@@ -3604,6 +3615,11 @@ export declare class PlayerCamera extends EventRouter implements protocol.Serial
      * @param position - The position to look at.
      */
     lookAtPosition(position: Vector3Like): void;
+    /**
+     * Resets the camera to its default, unattached,
+     * spectator mode state.
+     */
+    reset(): void;
     /**
      * Sets the entity the camera is attached to.
      * @param entity - The entity to attach the camera to.
@@ -3826,6 +3842,7 @@ export declare enum PlayerEvent {
     CHAT_MESSAGE_SEND = "PLAYER.CHAT_MESSAGE_SEND",
     JOINED_WORLD = "PLAYER.JOINED_WORLD",
     LEFT_WORLD = "PLAYER.LEFT_WORLD",
+    RECONNECTED_WORLD = "PLAYER.RECONNECTED_WORLD",
     REQUEST_SYNC = "PLAYER.REQUEST_SYNC"
 }
 
@@ -3843,6 +3860,11 @@ export declare interface PlayerEventPayloads {
     };
     /** Emitted when a player leaves a world. */
     [PlayerEvent.LEFT_WORLD]: {
+        player: Player;
+        world: World;
+    };
+    /** Emitted when a player reconnects to a world after a disconnect. */
+    [PlayerEvent.RECONNECTED_WORLD]: {
         player: Player;
         world: World;
     };
@@ -3867,8 +3889,8 @@ export declare type PlayerInput = Partial<Record<keyof InputSchema, boolean>>;
  *
  * <h2>Events</h2>
  *
- * This class is an EventRouter, and instances of it emit
- * events with payloads listed under {@link PlayerManagerEventPayloads}
+ * This class emits global events with payloads listed
+ * under {@link PlayerManagerEventPayloads}
  *
  * @example
  * ```typescript
@@ -3885,6 +3907,8 @@ export declare class PlayerManager {
     static readonly instance: PlayerManager;
 
 
+    /** The number of players currently connected to the server. */
+    get playerCount(): number;
     /**
      * Get all connected players.
      * @returns An array of all connected players.
@@ -3904,6 +3928,15 @@ export declare class PlayerManager {
     getConnectedPlayerByUsername(username: string): Player | undefined;
 
 
+
+
+}
+
+/** Event types a PlayerManager can emit. See {@link PlayerManagerEventPayloads} for the payloads. @public */
+export declare enum PlayerManagerEvent {
+    PLAYER_CONNECTED = "PLAYER_MANAGER.PLAYER_CONNECTED",
+    PLAYER_DISCONNECTED = "PLAYER_MANAGER.PLAYER_DISCONNECTED",
+    PLAYER_RECONNECTED = "PLAYER_MANAGER.PLAYER_RECONNECTED"
 }
 
 /** Event payloads for PlayerManager emitted events. @public */
@@ -3914,6 +3947,10 @@ export declare interface PlayerManagerEventPayloads {
     };
     /** Emitted when a player disconnects from the server. */
     [PlayerManagerEvent.PLAYER_DISCONNECTED]: {
+        player: Player;
+    };
+    /** Emitted when a player reconnects to the server. */
+    [PlayerManagerEvent.PLAYER_RECONNECTED]: {
         player: Player;
     };
 }
@@ -5654,6 +5691,7 @@ export declare class World extends EventRouter implements protocol.Serializable 
 
 
 
+
     /**
      * @param options - The options for the world.
      */
@@ -5676,6 +5714,8 @@ export declare class World extends EventRouter implements protocol.Serializable 
     get skyboxUri(): string;
     /** The audio manager for the world. */
     get audioManager(): AudioManager;
+    /** An arbitrary identifier tag of the world. Useful for your own logic. */
+    get tag(): string | undefined;
     /** The block type registry for the world. */
     get blockTypeRegistry(): BlockTypeRegistry;
     /** The chat manager for the world. */
@@ -5865,6 +5905,81 @@ export declare interface WorldLoopEventPayloads {
     };
 }
 
+/**
+ * Manages all worlds in a game server.
+ *
+ * @remarks
+ * The WorldManager is created internally as a global
+ * singleton accessible with the static property
+ * `WorldManager.instance`.
+ *
+ * <h2>Events</h2>
+ *
+ * This class emits global events with payloads listed
+ * under {@link WorldManagerEventPayloads}
+ *
+ * @example
+ * ```typescript
+ * import { WorldManager } from 'hytopia';
+ *
+ * const worldManager = WorldManager.instance;
+ * const newWorld = worldManager.createWorld({
+ *   name: 'My New World',
+ *   skyboxUri: 'skyboxes/partly-cloudy',
+ * });
+ * ```
+ *
+ * @public
+ */
+export declare class WorldManager {
+    /** The global WorldManager instance as a singleton. */
+    static readonly instance: WorldManager;
+
+
+    /**
+     * Creates a new world.
+     * @param options - The options for the world.
+     * @param start - Whether to start the world immediately, defaults to true.
+     * @returns The created world.
+     */
+    createWorld(options: Omit<WorldOptions, 'id'>): World;
+    /**
+     * Gets all worlds.
+     * @returns All worlds.
+     */
+    getAllWorlds(): World[];
+    /**
+     * Gets the default world.
+     * @returns The default world.
+     */
+    getDefaultWorld(): World;
+    /**
+     * Gets all worlds with a specific tag.
+     * @param tag - The tag to get the worlds for.
+     * @returns All worlds with the provided tag.
+     */
+    getWorldsByTag(tag: string): World[];
+    /**
+     * Gets a world by its id.
+     * @param id - The id of the world to get.
+     * @returns The world with the provided id, or undefined if no world is found.
+     */
+    getWorld(id: number): World | undefined;
+}
+
+/** Event types a WorldManager instance can emit to the global event router. See {@link WorldManagerEventPayloads} for the payloads. @public */
+export declare enum WorldManagerEvent {
+    WORLD_CREATED = "WORLD_MANAGER.WORLD_CREATED"
+}
+
+/** Event payloads for WorldManager emitted events. @public */
+export declare interface WorldManagerEventPayloads {
+    /** Emitted when a world is created. */
+    [WorldManagerEvent.WORLD_CREATED]: {
+        world: World;
+    };
+}
+
 /** A map representation for a world. @public */
 export declare interface WorldMap {
     /** The block types in the map. */
@@ -5903,6 +6018,8 @@ export declare interface WorldOptions {
     name: string;
     /** The URI of the skybox cubemap for the world. */
     skyboxUri: string;
+    /** An arbitrary identifier tag of the world. Useful for your own logic */
+    tag?: string;
     /** The tick rate for the world. */
     tickRate?: number;
     /** The gravity vector for the world. */

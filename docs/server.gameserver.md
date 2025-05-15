@@ -129,7 +129,7 @@ The web server for the game server.
 </td></tr>
 <tr><td>
 
-[worlds](./server.gameserver.worlds.md)
+[worldManager](./server.gameserver.worldmanager.md)
 
 
 </td><td>
@@ -139,12 +139,12 @@ The web server for the game server.
 
 </td><td>
 
-{ \[id: string\]: [World](./server.world.md)<!-- -->; }
+[WorldManager](./server.worldmanager.md)
 
 
 </td><td>
 
-The worlds managed by the game server.
+The world manager for the game server
 
 
 </td></tr>

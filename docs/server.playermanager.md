@@ -18,7 +18,7 @@ The PlayerManager is created internally as a global singleton accessible with th
 
 <h2>Events</h2>
 
-This class is an EventRouter, and instances of it emit events with payloads listed under [PlayerManagerEventPayloads](./server.playermanagereventpayloads.md)
+This class emits global events with payloads listed under [PlayerManagerEventPayloads](./server.playermanagereventpayloads.md)
 
 The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlayerManager` class.
 
@@ -75,6 +75,27 @@ Description
 </td><td>
 
 The global PlayerManager instance as a singleton.
+
+
+</td></tr>
+<tr><td>
+
+[playerCount](./server.playermanager.playercount.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The number of players currently connected to the server.
 
 
 </td></tr>

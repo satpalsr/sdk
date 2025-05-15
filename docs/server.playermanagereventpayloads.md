@@ -73,4 +73,23 @@ Emitted when a player disconnects from the server.
 
 
 </td></tr>
+<tr><td>
+
+["PLAYER\_MANAGER.PLAYER\_RECONNECTED"](./server.playermanagereventpayloads._player_manager.player_reconnected_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ player: [Player](./server.player.md)<!-- -->; }
+
+
+</td><td>
+
+Emitted when a player reconnects to the server.
+
+
+</td></tr>
 </tbody></table>

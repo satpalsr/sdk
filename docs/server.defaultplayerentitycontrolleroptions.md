@@ -94,6 +94,25 @@ _(Optional)_ A function allowing custom logic to determine if the entity can run
 </td></tr>
 <tr><td>
 
+[canSwim?](./server.defaultplayerentitycontrolleroptions.canswim.md)
+
+
+</td><td>
+
+
+</td><td>
+
+() =&gt; boolean
+
+
+</td><td>
+
+_(Optional)_ A function allowing custom logic to determine if the entity can swim.
+
+
+</td></tr>
+<tr><td>
+
 [canWalk?](./server.defaultplayerentitycontrolleroptions.canwalk.md)
 
 

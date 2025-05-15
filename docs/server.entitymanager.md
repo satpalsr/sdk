@@ -52,6 +52,27 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[entityCount](./server.entitymanager.entitycount.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The number of spawned entities in the world.
+
+
+</td></tr>
+<tr><td>
+
 [world](./server.entitymanager.world.md)
 
 

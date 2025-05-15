@@ -259,7 +259,7 @@ Joins a player to a world.
 </td></tr>
 <tr><td>
 
-[leaveWorld()](./server.player.leaveworld.md)
+[resetInputs()](./server.player.resetinputs.md)
 
 
 </td><td>
@@ -267,7 +267,7 @@ Joins a player to a world.
 
 </td><td>
 
-Removes the player from the current [World](./server.world.md) they are in.
+Resets all inputs keys
 
 
 </td></tr>

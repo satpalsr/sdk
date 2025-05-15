@@ -94,6 +94,25 @@ Emitted when a player leaves a world.
 </td></tr>
 <tr><td>
 
+["PLAYER.RECONNECTED\_WORLD"](./server.playereventpayloads._player.reconnected_world_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+{ player: [Player](./server.player.md)<!-- -->; world: [World](./server.world.md)<!-- -->; }
+
+
+</td><td>
+
+Emitted when a player reconnects to a world after a disconnect.
+
+
+</td></tr>
+<tr><td>
+
 ["PLAYER.REQUEST\_SYNC"](./server.playereventpayloads._player.request_sync_.md)
 
 

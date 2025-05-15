@@ -74,6 +74,20 @@ LEFT\_WORLD
 </td></tr>
 <tr><td>
 
+RECONNECTED\_WORLD
+
+
+</td><td>
+
+`"PLAYER.RECONNECTED_WORLD"`
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 REQUEST\_SYNC
 
 

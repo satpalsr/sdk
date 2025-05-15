@@ -399,6 +399,20 @@ Makes the camera look at a position. If the camera was previously tracking an en
 </td></tr>
 <tr><td>
 
+[reset()](./server.playercamera.reset.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resets the camera to its default, unattached, spectator mode state.
+
+
+</td></tr>
+<tr><td>
+
 [setAttachedToEntity(entity)](./server.playercamera.setattachedtoentity.md)
 
 

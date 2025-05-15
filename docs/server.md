@@ -457,6 +457,17 @@ Manages the tick loop for a world.
 
 
 </td></tr>
+<tr><td>
+
+[WorldManager](./server.worldmanager.md)
+
+
+</td><td>
+
+Manages all worlds in a game server.
+
+
+</td></tr>
 </tbody></table>
 
 ## Abstract Classes
@@ -676,6 +687,17 @@ Event types a Player can emit. See [PlayerEventPayloads](./server.playereventpay
 </td></tr>
 <tr><td>
 
+[PlayerManagerEvent](./server.playermanagerevent.md)
+
+
+</td><td>
+
+Event types a PlayerManager can emit. See [PlayerManagerEventPayloads](./server.playermanagereventpayloads.md) for the payloads.
+
+
+</td></tr>
+<tr><td>
+
 [PlayerUIEvent](./server.playeruievent.md)
 
 
@@ -737,6 +759,17 @@ Event types a World instance can emit. See [WorldEventPayloads](./server.worldev
 </td><td>
 
 Event types a WorldLoop instance can emit. See [WorldLoopEventPayloads](./server.worldloopeventpayloads.md) for the payloads.
+
+
+</td></tr>
+<tr><td>
+
+[WorldManagerEvent](./server.worldmanagerevent.md)
+
+
+</td><td>
+
+Event types a WorldManager instance can emit to the global event router. See [WorldManagerEventPayloads](./server.worldmanagereventpayloads.md) for the payloads.
 
 
 </td></tr>
@@ -1306,6 +1339,17 @@ Event payloads for World emitted events.
 </td><td>
 
 Event payloads for WorldLoop emitted events.
+
+
+</td></tr>
+<tr><td>
+
+[WorldManagerEventPayloads](./server.worldmanagereventpayloads.md)
+
+
+</td><td>
+
+Event payloads for WorldManager emitted events.
 
 
 </td></tr>

@@ -208,6 +208,25 @@ The URI of the skybox cubemap for the world.
 </td></tr>
 <tr><td>
 
+[tag?](./server.worldoptions.tag.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ An arbitrary identifier tag of the world. Useful for your own logic
+
+
+</td></tr>
+<tr><td>
+
 [tickRate?](./server.worldoptions.tickrate.md)
 
 

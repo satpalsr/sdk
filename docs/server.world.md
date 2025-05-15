@@ -448,6 +448,27 @@ The URI of the skybox cubemap for the world.
 
 
 </td></tr>
+<tr><td>
+
+[tag](./server.world.tag.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+An arbitrary identifier tag of the world. Useful for your own logic.
+
+
+</td></tr>
 </tbody></table>
 
 ## Methods
