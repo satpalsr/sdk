@@ -375,6 +375,7 @@ export default class GamePlayerEntity extends DefaultPlayerEntity {
     this.resetAnimations();
 
     this.playerController.on(BaseEntityControllerEvent.TICK_WITH_PLAYER_INPUT, this._onTickWithPlayerInput);
+    this.playerController.canSwim = () => false;
   }
 
   private _setupPlayerHeadshotCollider(): void {
