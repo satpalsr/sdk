@@ -54,5 +54,8 @@
   },
   "trustedDependencies": [
     "mediasoup"
-  ]
+  ],
+  "scripts": {
+    "prepublishOnly": "node ./bin/writeVersion.js"
+  }
 }
