@@ -25290,6 +25290,54 @@
           "members": [
             {
               "kind": "Method",
+              "canonicalReference": "server!ModelRegistry#getAnimationNames:member(1)",
+              "docComment": "/**\n * Retrieves an array of all known animation names for a model.\n *\n * @param modelUri - The URI of the model to retrieve the animation names for.\n *\n * @returns An array of all known animation names for the model.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAnimationNames(modelUri: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "modelUri",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getAnimationNames"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "server!ModelRegistry#getBoundingBox:member(1)",
               "docComment": "/**\n * Retrieves the bounding box of a model.\n *\n * @param modelUri - The URI of the model to retrieve the bounding box for.\n *\n * @returns The bounding box of the model.\n */\n",
               "excerptTokens": [

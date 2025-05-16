@@ -134,6 +134,20 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[getAnimationNames(modelUri)](./server.modelregistry.getanimationnames.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Retrieves an array of all known animation names for a model.
+
+
+</td></tr>
+<tr><td>
+
 [getBoundingBox(modelUri)](./server.modelregistry.getboundingbox.md)
 
 
