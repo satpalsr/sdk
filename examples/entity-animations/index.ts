@@ -7,6 +7,13 @@ import {
 
 import worldMap from './assets/map.json';
 
+/**
+ * This is a simple example used to visualize and debug animations.
+ * In this example, there is no player control, it simply gives a rotatable
+ * camera view around the spawned animated entity and allows slash (/) commands
+ * to be used to control the animation playback for visualization.
+ */
+
 startServer(world => {
   world.loadMap(worldMap);
 
