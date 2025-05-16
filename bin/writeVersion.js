@@ -5,4 +5,8 @@ const fs = require('fs');
 const package = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const server = fs.readFileSync('./server.js', 'utf8');
 
+if (!server.includes('__DEV_SDK_VERSION__')) {
+  throw new Error('__DEV_SDK_VERSION__ not found in server.js. Please create a fresh build before publishing with: cd ../server && bun run build.');
+}
+
 fs.writeFileSync('./server.js', server.replace(/__DEV_SDK_VERSION__/g, package.version));
