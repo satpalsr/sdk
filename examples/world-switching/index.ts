@@ -11,6 +11,24 @@ import {
   BlockType,
 } from 'hytopia';
 
+/**
+ * This example demonstrates how to use the world switching system.
+ * 
+ * The world switching system is designed to be flexible and performant, allowing you to:
+ * - Create and manage multiple distinct worlds
+ * - Switch players between worlds seamlessly
+ * - Handle world-specific events and state
+ * - Worlds act as fully isolated simulations from one another
+ * 
+ * Performance considerations:
+ * - Memory usage is the primary constraint since each world's representative colliders for its map are stored in RAM
+ * - The system can typically handle tens of millions of blocks across multiple worlds before memory becomes an issue
+ * - Physics performance depends on the number of active (non-sleeping) entities across all worlds
+ * - Worlds with only sleeping entities (entities that haven't moved recently) use minimal CPU resources (< 0.1ms per world)
+ * - You can typically run a few thousand entities in total across all worlds before performance issues arise so long as they can sleep (not all moving at once).
+ * - Worlds are currently all simulated in the same thread, so 1 non-performant world will have some impact on the performance of other worlds.
+ */
+
 // We'll use 2 maps in this example, 1 for each unique world.
 import world1Map from './assets/maps/world1.json';
 import world2Map from './assets/maps/world2.json';
