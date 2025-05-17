@@ -3204,6 +3204,13 @@ export declare class ModelRegistry {
 
 
     /**
+     * Retrieves an array of all known animation names for a model.
+     *
+     * @param modelUri - The URI of the model to retrieve the animation names for.
+     * @returns An array of all known animation names for the model.
+     */
+    getAnimationNames(modelUri: string): string[];
+    /**
      * Retrieves the bounding box of a model.
      *
      * @param modelUri - The URI of the model to retrieve the bounding box for.
