@@ -7,7 +7,7 @@ import {
   ColliderShape,
 } from 'hytopia';
 
-import worldMap from './assets/maps/farm-start.json';
+import worldMap from './assets/maps/central-town.json';
 
 /**
  * startServer is always the entry point for our game.
@@ -52,9 +52,11 @@ startServer(world => {
   const rodent4 = new Entity({
     name: 'Rodent',
     modelUri: 'models/npcs/mushroom-boy.gltf',
-    modelPreferredShape: ColliderShape.BLOCK,
     modelLoopedAnimations: [ 'idle' ],
     modelScale: 0.5,
+    rigidBodyOptions: {
+      enabledRotations: { x: false, y: true, z: false },
+    }
   });
   rodent4.spawn(world, { x: 0, y: 10, z: 0 });
 
