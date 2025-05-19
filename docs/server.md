@@ -1311,6 +1311,17 @@ A 3-dimensional vector.
 </td></tr>
 <tr><td>
 
+[VoxelsColliderOptions](./server.voxelscollideroptions.md)
+
+
+</td><td>
+
+The options for a voxels collider.
+
+
+</td></tr>
+<tr><td>
+
 [WedgeColliderOptions](./server.wedgecollideroptions.md)
 
 

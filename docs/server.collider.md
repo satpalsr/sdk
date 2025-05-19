@@ -665,4 +665,18 @@ Sets the tag of the collider.
 
 
 </td></tr>
+<tr><td>
+
+[setVoxel(coordinate, filled)](./server.collider.setvoxel.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets the voxel at the given coordinate as filled or not filled.
+
+
+</td></tr>
 </tbody></table>

@@ -45,7 +45,7 @@ Description
 
 </td><td>
 
-[TrimeshColliderOptions](./server.trimeshcollideroptions.md)
+[VoxelsColliderOptions](./server.voxelscollideroptions.md)
 
 
 </td><td>

@@ -609,7 +609,7 @@ export declare class BlockType extends EventRouter implements protocol.Serializa
     /** The unique identifier for the block type. */
     get id(): number;
     /** The collider options for the block type. */
-    get colliderOptions(): TrimeshColliderOptions;
+    get colliderOptions(): VoxelsColliderOptions;
     /** Whether the block type is a liquid. */
     get isLiquid(): boolean;
     /** Whether the block type is meshable. */
@@ -651,7 +651,7 @@ export declare interface BlockTypeOptions {
     /** The unique numeric identifier for the block type. */
     id: number;
     /** The custom collider options for the block type. */
-    customColliderOptions?: TrimeshColliderOptions;
+    customColliderOptions?: VoxelsColliderOptions;
     /** Whether the block type is a liquid. */
     isLiquid?: boolean;
     /** The name of the block type. */
@@ -880,19 +880,23 @@ export declare class Chunk extends EventRouter implements protocol.Serializable 
 
 
 
+
+
+
+
     /**
      * Creates a new chunk instance.
      */
     constructor();
     /** The blocks in the chunk as a flat Uint8Array[4096], each index as 0 or a block type id. */
     get blocks(): Readonly<Uint8Array>;
-
     /** Whether the chunk is actively simulated in the internal physics engine. */
     get isSimulated(): boolean;
     /** Whether the chunk has been spawned. */
     get isSpawned(): boolean;
     /** The origin coordinate of the chunk. */
     get originCoordinate(): Vector3Like | undefined;
+
     /** The world the chunk belongs to. */
     get world(): World | undefined;
     /**
@@ -949,8 +953,6 @@ export declare class Chunk extends EventRouter implements protocol.Serializable 
     setBlock(localCoordinate: Vector3Like, blockTypeId: number): void;
 
 
-
-    private _meshColliders;
 
 
 
@@ -1202,6 +1204,12 @@ export declare class Collider extends EventRouter {
      */
     setTag(tag: string): void;
     /**
+     * Sets the voxel at the given coordinate as filled or not filled.
+     * @param coordinate - The coordinate of the voxel to set.
+     * @param filled - True if the voxel at the coordinate should be filled, false if it should be removed.
+     */
+    setVoxel(coordinate: Vector3Like, filled: boolean): void;
+    /**
      * Adds the collider to the simulation.
      * @param simulation - The simulation to add the collider to.
      * @param parentRigidBody - The parent rigid body of the collider.
@@ -1231,10 +1239,11 @@ export declare class Collider extends EventRouter {
 
 
 
+
 }
 
 /** The options for a collider. @public */
-export declare type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | WedgeColliderOptions | NoneColliderOptions;
+export declare type ColliderOptions = BallColliderOptions | BlockColliderOptions | CapsuleColliderOptions | ConeColliderOptions | CylinderColliderOptions | RoundCylinderColliderOptions | TrimeshColliderOptions | VoxelsColliderOptions | WedgeColliderOptions | NoneColliderOptions;
 
 /** The shapes a collider can be. @public */
 export declare enum ColliderShape {
@@ -1246,6 +1255,7 @@ export declare enum ColliderShape {
     CYLINDER = "cylinder",
     ROUND_CYLINDER = "round-cylinder",
     TRIMESH = "trimesh",
+    VOXELS = "voxels",
     WEDGE = "wedge"
 }
 
@@ -5620,6 +5630,15 @@ export declare interface Vector3Like {
     x: number;
     y: number;
     z: number;
+}
+
+/** The options for a voxels collider. @public */
+export declare interface VoxelsColliderOptions extends BaseColliderOptions {
+    shape: ColliderShape.VOXELS;
+    /** The coordinate of each voxel in the collider. */
+    coordinates?: Vector3Like[];
+    /** The size of each voxel in the collider. */
+    size?: Vector3Like;
 }
 
 /**
