@@ -144,20 +144,6 @@ TRIMESH
 </td></tr>
 <tr><td>
 
-VOXELS
-
-
-</td><td>
-
-`"voxels"`
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
 WEDGE
 
 

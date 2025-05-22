@@ -4920,8 +4920,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "VoxelsColliderOptions",
-                  "canonicalReference": "server!VoxelsColliderOptions:interface"
+                  "text": "TrimeshColliderOptions",
+                  "canonicalReference": "server!TrimeshColliderOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -5322,8 +5322,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "VoxelsColliderOptions",
-                  "canonicalReference": "server!VoxelsColliderOptions:interface"
+                  "text": "TrimeshColliderOptions",
+                  "canonicalReference": "server!TrimeshColliderOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -9281,71 +9281,6 @@
               "name": "setTag"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "server!Collider#setVoxel:member(1)",
-              "docComment": "/**\n * Sets the voxel at the given coordinate as filled or not filled.\n *\n * @param coordinate - The coordinate of the voxel to set.\n *\n * @param filled - True if the voxel at the coordinate should be filled, false if it should be removed.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "setVoxel(coordinate: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", filled: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "coordinate",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "filled",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": false
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "setVoxel"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "server!Collider#shape:member",
               "docComment": "/**\n * The shape of the collider.\n */\n",
@@ -9487,15 +9422,6 @@
             },
             {
               "kind": "Reference",
-              "text": "VoxelsColliderOptions",
-              "canonicalReference": "server!VoxelsColliderOptions:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " | "
-            },
-            {
-              "kind": "Reference",
               "text": "WedgeColliderOptions",
               "canonicalReference": "server!WedgeColliderOptions:interface"
             },
@@ -9518,7 +9444,7 @@
           "name": "ColliderOptions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 20
+            "endIndex": 18
           }
         },
         {
@@ -9703,27 +9629,6 @@
               },
               "releaseTag": "Public",
               "name": "TRIMESH"
-            },
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "server!ColliderShape.VOXELS:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "VOXELS = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"voxels\""
-                }
-              ],
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "name": "VOXELS"
             },
             {
               "kind": "EnumMember",
@@ -43563,126 +43468,6 @@
             }
           ],
           "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "server!VoxelsColliderOptions:interface",
-          "docComment": "/**\n * The options for a voxels collider.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface VoxelsColliderOptions extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseColliderOptions",
-              "canonicalReference": "server!BaseColliderOptions:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " "
-            }
-          ],
-          "fileUrlPath": "src/worlds/physics/Collider.ts",
-          "releaseTag": "Public",
-          "name": "VoxelsColliderOptions",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!VoxelsColliderOptions#coordinates:member",
-              "docComment": "/**\n * The coordinate of each voxel in the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "coordinates?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "coordinates",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!VoxelsColliderOptions#shape:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "shape: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ColliderShape.VOXELS",
-                  "canonicalReference": "server!ColliderShape.VOXELS:member"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "shape",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "server!VoxelsColliderOptions#size:member",
-              "docComment": "/**\n * The size of each voxel in the collider.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "size?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Vector3Like",
-                  "canonicalReference": "server!Vector3Like:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "size",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
         },
         {
           "kind": "TypeAlias",

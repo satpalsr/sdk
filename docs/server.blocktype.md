@@ -107,7 +107,7 @@ Description
 
 </td><td>
 
-[VoxelsColliderOptions](./server.voxelscollideroptions.md)
+[TrimeshColliderOptions](./server.trimeshcollideroptions.md)
 
 
 </td><td>
