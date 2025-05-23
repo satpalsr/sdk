@@ -33,24 +33,29 @@ startServer(world => {
   // Enter /pathfind to make the zombie pathfind to the player
   let pathfindMarkers: Entity[] = [];
   world.chatManager.registerCommand('/pathfind', (player, args) => {
-    // Get the entity of the palyer that entered the command
-    const playerEntities = world.entityManager.getPlayerEntitiesByPlayer(player);
-    const playerEntity = playerEntities[0];
-    const playerPosition = playerEntity.position;
-
     // Remove all existing pathfind markers, which we use in the example just to visualize the path taken.
     pathfindMarkers.forEach(marker => marker.despawn());
     pathfindMarkers = [];
     
-    // Pathfind the zombie to the player
+    // Define fixed target coordinates
+    const targetPosition = { x: -4, y: 1, z: 10 };
+    
+    // Calculate approximate distance to target for setting appropriate iteration limit
+    const startPos = zombie.position;
+    const approxDistance = Math.abs(targetPosition.x - startPos.x) + 
+                         Math.abs(targetPosition.y - startPos.y) + 
+                         Math.abs(targetPosition.z - startPos.z);
+    const requiredIterations = Math.max(1000, approxDistance * 50); // Scale with distance
+    
+    // Pathfind the zombie to the fixed coordinates
     const pathfindingController = zombie.controller as PathfindingEntityController;
 
     // .pathfind() is synchronous and returns immediately soon as a path is found or not, but before the entity has reached the target.
-    const succeeded = pathfindingController.pathfind(playerPosition, 3, { // all possible options for example
+    const succeeded = pathfindingController.pathfind(targetPosition, 3, { // all possible options for example
       debug: true, // Setting true will console log pathfinding result info
       maxFall: 5, // The maximum fall distance (in blocks) the entity can fall when considering a path.
-      maxJump: 2,  // The maximum height (in blocks) the entity will jump when considering a path, the controller will apply the jumps automatically while pathfinding.
-      maxOpenSetIterations: 400, // A performance optimization value. A lower value will make pathfinding faster but may fail for longer paths, a higher value can make pathfinding take longer but will work better for longer paths.
+      maxJump: 2,  // The maximum height (in blocks) the entity will jump when considering a path
+      maxOpenSetIterations: requiredIterations, // Dynamically set based on distance
       verticalPenalty: -1, // A behavior control. The more negative the value, the more the entity will prefer taking a route that requires jumping and falling, even going out of its way to do so. A more positive value will prefer avoiding jumps and falls unless absolutely necessary.
       pathfindAbortCallback: () => { // Invoked when maxOpenSetIterations is reached and pathfinding aborts.
         console.log('Pathfinding aborted');
